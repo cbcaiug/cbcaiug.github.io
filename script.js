@@ -8,7 +8,7 @@
 const { useState, useEffect, useRef, useCallback } = React;
 
 // --- SVG ICONS (as React components) ---
-const Icon = ({ C, ...props }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>{C}</svg>;
+const Icon = ({ C, ...props }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>{C}</svg>;
 const SendIcon = (props) => <Icon {...props} C={<><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></>} />;
 const StopIcon = (props) => <Icon {...props} C={<rect x="3" y="3" width="18" height="18" rx="2" ry="2" />} />;
 const PaperclipIcon = (props) => <Icon {...props} C={<><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.59a2 2 0 0 1-2.83-2.83l8.49-8.48"/></>} />;
@@ -36,6 +36,30 @@ const NewWhatsAppIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width
 // --- CONFIGURATION ---
 const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxZHjqJoIwvdsXE_wrr8Dil9vIFvrv9BKe7ZZln8LtkEbOgLcPrzust6K-MSN7NcLZN/exec';
 const FEEDBACK_TRIGGER_COUNT = 3;
+
+// --- NEW: Event Tracking Function ---
+// This function sends event data to the backend to be logged.
+const trackEvent = (eventType, assistantName, details = {}) => {
+    const payload = {
+        action: 'logEvent',
+        event: {
+            type: eventType, // e.g., 'generation', 'share', 'feedback_skipped'
+            assistant: assistantName,
+            details: details // e.g., { rating: 5, text: 'Great!' }
+        }
+    };
+    // Send the data to the backend. We use 'no-cors' and 'text/plain'
+    // as a robust way to send data to Google Apps Script without needing a complex response.
+    fetch(GAS_WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify(payload)
+    }).catch(error => console.error('Event tracking failed:', error));
+};
+
 
 // --- PROMPT MANAGEMENT ---
 // This object handles fetching assistant data from the Google Apps Script backend.
@@ -169,6 +193,12 @@ const FeedbackModal = ({ isOpen, onClose, onSubmit, assistantName }) => {
     }
   };
 
+  // MODIFIED: This function now also calls the trackEvent function
+  const handleClose = () => {
+      trackEvent('feedback_skipped', assistantName);
+      onClose();
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -222,7 +252,7 @@ const FeedbackModal = ({ isOpen, onClose, onSubmit, assistantName }) => {
                       {submitStatus === 'error' && <p className="text-red-600 text-sm mt-2 text-center">Sorry, something went wrong. Please try again.</p>}
 
                       <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                          <button onClick={onClose} className="w-full px-6 py-3 bg-slate-200 text-slate-800 font-semibold rounded-lg hover:bg-slate-300 transition-colors">
+                          <button onClick={handleClose} className="w-full px-6 py-3 bg-slate-200 text-slate-800 font-semibold rounded-lg hover:bg-slate-300 transition-colors">
                               Not Now
                           </button>
                           <button onClick={handleSubmit} disabled={(rating === 0 && !isEmailValid) || isSubmitting} className="w-full px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors disabled:bg-indigo-300 disabled:cursor-not-allowed flex items-center justify-center gap-2">
@@ -254,10 +284,6 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate }) =>
 
   if (msg.isLoading) return null;
 
-  // *** FIX: Conditionally set menu position based on message role ***
-  // For user messages (on the right), the menu should open to the left (right-0).
-  // For assistant messages (on the left), the menu should open to the right (left-0).
-  // Note: The flex layout for user messages is reversed, so the menu appears on the left of the bubble.
   const menuPositionClass = msg.role === 'user' ? 'left-0' : 'right-0';
 
   return (
@@ -353,22 +379,17 @@ function App() {
   const isFileUploadDisabled = !selectedModel?.vision;
 
   // --- HANDLERS & LOGIC (REFACTORED) ---
-
-  // useCallback to create a memoized function for loading the initial assistant message.
-  // This avoids re-creating the function on every render and can be called from multiple places.
   const loadInitialMessage = useCallback(async (promptKey) => {
       const chatKey = `chatHistory_${promptKey}`;
       const savedChat = JSON.parse(localStorage.getItem(chatKey));
       const hours = parseFloat(autoDeleteHours || '2');
 
-      // If a recent chat history exists, load it.
       if (savedChat && (autoDeleteHours === 'never' || (Date.now() - savedChat.timestamp) / 36e5 < hours)) {
           setChatHistory(savedChat.history);
           setIsPromptMissing(false);
           return;
       }
 
-      // Otherwise, fetch the initial prompt for the assistant.
       const promptContent = await PromptManager.getPromptContent(promptKey);
 
       if (!promptContent) {
@@ -378,23 +399,19 @@ function App() {
           setIsPromptMissing(false);
           let finalMessage;
           try {
-              // Try to parse the prompt as JSON to find a specific introduction message.
               const promptJson = JSON.parse(promptContent);
               const intro = promptJson?.interaction_flow?.introduction_message?.display_text;
               if (intro) {
-                  // If found, use it as the initial message.
                   finalMessage = intro.replace(/\\n/g, '\n');
               } else {
-                  // If JSON is valid but no intro message, use a default.
                   finalMessage = `${promptKey} assistant is ready. How can I assist you?`;
               }
           } catch (e) {
-              // If prompt is not JSON, it might be a plain text system prompt. Use a default intro.
               finalMessage = `${promptKey} assistant is ready. How can I assist you?`;
           }
           setChatHistory([{ role: 'assistant', content: finalMessage, id: Date.now() }]);
       }
-  }, [autoDeleteHours]); // Dependency on autoDeleteHours to re-evaluate if it changes.
+  }, [autoDeleteHours]);
 
 
   // --- EFFECTS ---
@@ -527,19 +544,8 @@ function App() {
   };
 
   const handleFeedbackSubmit = async (submissionData) => {
-      const payload = {
-          action: 'submitFeedback',
-          ...submissionData
-      };
-
-      await fetch(GAS_WEB_APP_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-              'Content-Type': 'text/plain;charset=utf-8',
-          },
-          body: JSON.stringify(payload)
-      });
+      // This function now uses the centralized trackEvent function
+      trackEvent('feedback_submitted', submissionData.assistantName, submissionData);
   };
 
 
@@ -554,6 +560,8 @@ function App() {
   };
 
   const handleShare = async (shareData) => {
+      // MODIFIED: Track the share event
+      trackEvent('share', activePromptKey);
       if (navigator.share) {
           try {
               await navigator.share(shareData);
@@ -589,7 +597,6 @@ function App() {
       }
   };
   
-  // Refactored API call logic to be reusable for sending and regenerating
   const fetchAndStreamResponse = async ({ historyForApi, systemPrompt, onUpdate, onComplete, onError }) => {
       const apiKey = apiKeys[selectedProvider.apiKeyName];
       if (!apiKey || apiKeyStatus[selectedProvider.key] !== 'valid') {
@@ -739,6 +746,8 @@ function App() {
               });
               if (!abortControllerRef.current.signal.aborted) {
                   setGenerationCount(prevCount => prevCount + 1);
+                  // MODIFIED: Track the generation event
+                  trackEvent('generation', activePromptKey);
               }
               abortControllerRef.current = null;
           },
@@ -799,13 +808,14 @@ function App() {
               });
               if (!abortControllerRef.current.signal.aborted) {
                   setGenerationCount(prevCount => prevCount + 1);
+                   // MODIFIED: Track the generation event
+                  trackEvent('regeneration', activePromptKey);
               }
               abortControllerRef.current = null;
           },
           onError: (err) => {
               setError(err);
               setIsLoading(false);
-              // Revert the message to its original state on error
               setChatHistory(prev => {
                   const updatedHistory = [...prev];
                   updatedHistory[indexToRegenerate] = originalMessage;
@@ -849,20 +859,16 @@ function App() {
       }
   };
 
-  // Clears the chat without reloading the page.
   const clearChat = () => {
       const chatKey = `chatHistory_${activePromptKey}`;
       localStorage.removeItem(chatKey);
       setPendingFile(null);
       setPendingFilePreview(null);
       setError('');
-      // Reload the initial message for the current assistant.
       loadInitialMessage(activePromptKey);
   };
   
-  // Resets all app settings without reloading the page.
   const resetSettings = () => {
-      // Clear all relevant data from localStorage.
       localStorage.removeItem('aiAssistantState');
       localStorage.removeItem('generationCount');
       localStorage.removeItem('feedbackTimestamps');
@@ -873,7 +879,6 @@ function App() {
       });
       setShowResetConfirm(false);
 
-      // Reset all state variables to their default values.
       setApiKeys({});
       setApiKeyStatus({});
       setSidebarWidth(320);
@@ -882,7 +887,6 @@ function App() {
       setAutoDeleteHours('2');
       setGenerationCount(0);
       
-      // Reset the chat view to the initial message.
       loadInitialMessage(activePromptKey);
   };
 
