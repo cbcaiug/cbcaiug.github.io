@@ -37,17 +37,24 @@ const NewWhatsAppIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width
 const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxZHjqJoIwvdsXE_wrr8Dil9vIFvrv9BKe7ZZln8LtkEbOgLcPrzust6K-MSN7NcLZN/exec';
 const FEEDBACK_TRIGGER_COUNT = 3;
 
-// --- NEW: Event Tracking Function ---
-// This function sends event data to the backend to be logged.
+// --- Event Tracking Function ---
+// MODIFIED: This function now checks for an 'admin=true' URL parameter
+// and passes the user type to the backend.
 const trackEvent = (eventType, assistantName, details = {}) => {
+    // Check the URL for the admin parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const isAdmin = urlParams.get('admin') === 'true';
+
     const payload = {
         action: 'logEvent',
         event: {
             type: eventType, // e.g., 'generation', 'share', 'feedback_skipped'
             assistant: assistantName,
-            details: details // e.g., { rating: 5, text: 'Great!' }
+            details: details, // e.g., { rating: 5, text: 'Great!' }
+            userType: isAdmin ? 'Admin' : 'User' // Add the user type here
         }
     };
+    
     // Send the data to the backend. We use 'no-cors' and 'text/plain'
     // as a robust way to send data to Google Apps Script without needing a complex response.
     fetch(GAS_WEB_APP_URL, {
@@ -193,7 +200,6 @@ const FeedbackModal = ({ isOpen, onClose, onSubmit, assistantName }) => {
     }
   };
 
-  // MODIFIED: This function now also calls the trackEvent function
   const handleClose = () => {
       trackEvent('feedback_skipped', assistantName);
       onClose();
@@ -425,7 +431,10 @@ function App() {
           setAvailableAssistants(assistants);
           const menu = {};
           assistants.forEach(assistant => {
-              menu[assistant] = `?assistant=${encodeURIComponent(assistant)}`;
+              // MODIFIED: Preserve the admin=true parameter when switching assistants
+              const urlParams = new URLSearchParams(window.location.search);
+              const adminParam = urlParams.get('admin') === 'true' ? '&admin=true' : '';
+              menu[assistant] = `?assistant=${encodeURIComponent(assistant)}${adminParam}`;
           });
           setNavigationMenu(menu);
           setIsLoadingAssistants(false);
@@ -544,7 +553,6 @@ function App() {
   };
 
   const handleFeedbackSubmit = async (submissionData) => {
-      // This function now uses the centralized trackEvent function
       trackEvent('feedback_submitted', submissionData.assistantName, submissionData);
   };
 
@@ -560,7 +568,6 @@ function App() {
   };
 
   const handleShare = async (shareData) => {
-      // MODIFIED: Track the share event
       trackEvent('share', activePromptKey);
       if (navigator.share) {
           try {
@@ -746,7 +753,6 @@ function App() {
               });
               if (!abortControllerRef.current.signal.aborted) {
                   setGenerationCount(prevCount => prevCount + 1);
-                  // MODIFIED: Track the generation event
                   trackEvent('generation', activePromptKey);
               }
               abortControllerRef.current = null;
@@ -808,7 +814,6 @@ function App() {
               });
               if (!abortControllerRef.current.signal.aborted) {
                   setGenerationCount(prevCount => prevCount + 1);
-                   // MODIFIED: Track the generation event
                   trackEvent('regeneration', activePromptKey);
               }
               abortControllerRef.current = null;
