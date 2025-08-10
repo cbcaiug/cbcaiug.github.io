@@ -352,6 +352,51 @@ function App() {
   const selectedModel = selectedProvider?.models.find(m => m.name === selectedModelName);
   const isFileUploadDisabled = !selectedModel?.vision;
 
+  // --- HANDLERS & LOGIC (REFACTORED) ---
+
+  // useCallback to create a memoized function for loading the initial assistant message.
+  // This avoids re-creating the function on every render and can be called from multiple places.
+  const loadInitialMessage = useCallback(async (promptKey) => {
+      const chatKey = `chatHistory_${promptKey}`;
+      const savedChat = JSON.parse(localStorage.getItem(chatKey));
+      const hours = parseFloat(autoDeleteHours || '2');
+
+      // If a recent chat history exists, load it.
+      if (savedChat && (autoDeleteHours === 'never' || (Date.now() - savedChat.timestamp) / 36e5 < hours)) {
+          setChatHistory(savedChat.history);
+          setIsPromptMissing(false);
+          return;
+      }
+
+      // Otherwise, fetch the initial prompt for the assistant.
+      const promptContent = await PromptManager.getPromptContent(promptKey);
+
+      if (!promptContent) {
+          setIsPromptMissing(true);
+          setChatHistory([]);
+      } else {
+          setIsPromptMissing(false);
+          let finalMessage;
+          try {
+              // Try to parse the prompt as JSON to find a specific introduction message.
+              const promptJson = JSON.parse(promptContent);
+              const intro = promptJson?.interaction_flow?.introduction_message?.display_text;
+              if (intro) {
+                  // If found, use it as the initial message.
+                  finalMessage = intro.replace(/\\n/g, '\n');
+              } else {
+                  // If JSON is valid but no intro message, use a default.
+                  finalMessage = `${promptKey} assistant is ready. How can I assist you?`;
+              }
+          } catch (e) {
+              // If prompt is not JSON, it might be a plain text system prompt. Use a default intro.
+              finalMessage = `${promptKey} assistant is ready. How can I assist you?`;
+          }
+          setChatHistory([{ role: 'assistant', content: finalMessage, id: Date.now() }]);
+      }
+  }, [autoDeleteHours]); // Dependency on autoDeleteHours to re-evaluate if it changes.
+
+
   // --- EFFECTS ---
   useEffect(() => {
       const savedCount = parseInt(localStorage.getItem('generationCount') || '0', 10);
@@ -384,37 +429,10 @@ function App() {
       setSelectedModelName(savedState.selectedModelName || 'gemini-2.5-flash');
       setAutoDeleteHours(savedState.autoDeleteHours || '2');
 
-      const initializeChat = async () => {
-          const chatKey = `chatHistory_${currentPromptKey}`;
-          const savedChat = JSON.parse(localStorage.getItem(chatKey));
-          const hours = parseFloat(savedState.autoDeleteHours || '2');
-          if (savedChat && (savedState.autoDeleteHours === 'never' || (Date.now() - savedChat.timestamp) / 36e5 < hours)) {
-              setChatHistory(savedChat.history);
-              setIsPromptMissing(false);
-              return;
-          }
-
-          const promptContent = await PromptManager.getPromptContent(currentPromptKey);
-
-          if (!promptContent) {
-              setIsPromptMissing(true);
-              setChatHistory([]);
-          } else {
-              setIsPromptMissing(false);
-              let finalMessage = `${currentPromptKey} assistant is ready. How can I assist you?`;
-              try {
-                  const promptJson = JSON.parse(promptContent);
-                  const intro = promptJson?.interaction_flow?.introduction_message?.display_text;
-                  if (intro) finalMessage = intro.replace(/\\n/g, '\n');
-              } catch(e) { /* Not JSON, use default */ }
-              setChatHistory([{ role: 'assistant', content: finalMessage, id: Date.now() }]);
-          }
-      };
-
       if (!isLoadingAssistants) {
-          initializeChat();
+          loadInitialMessage(currentPromptKey);
       }
-  }, [window.location.search, isLoadingAssistants]);
+  }, [window.location.search, isLoadingAssistants, loadInitialMessage]);
 
   useEffect(() => {
       localStorage.setItem('aiAssistantState', JSON.stringify({ apiKeys, apiKeyStatus, sidebarWidth, selectedProviderKey, selectedModelName, autoDeleteHours }));
@@ -831,28 +849,41 @@ function App() {
       }
   };
 
+  // Clears the chat without reloading the page.
   const clearChat = () => {
       const chatKey = `chatHistory_${activePromptKey}`;
       localStorage.removeItem(chatKey);
-      setChatHistory(prev => prev.filter(msg => msg.role !== 'user' && msg.role !== 'assistant')); // Keep initial prompt
       setPendingFile(null);
       setPendingFilePreview(null);
       setError('');
-      // Reload to get the initial prompt message back
-      window.location.reload();
+      // Reload the initial message for the current assistant.
+      loadInitialMessage(activePromptKey);
   };
   
+  // Resets all app settings without reloading the page.
   const resetSettings = () => {
+      // Clear all relevant data from localStorage.
       localStorage.removeItem('aiAssistantState');
       localStorage.removeItem('generationCount');
       localStorage.removeItem('feedbackTimestamps');
-      // Also clear all chat histories
       Object.keys(localStorage).forEach(key => {
           if (key.startsWith('chatHistory_')) {
               localStorage.removeItem(key);
           }
       });
-      window.location.reload();
+      setShowResetConfirm(false);
+
+      // Reset all state variables to their default values.
+      setApiKeys({});
+      setApiKeyStatus({});
+      setSidebarWidth(320);
+      setSelectedProviderKey('google');
+      setSelectedModelName('gemini-2.5-flash');
+      setAutoDeleteHours('2');
+      setGenerationCount(0);
+      
+      // Reset the chat view to the initial message.
+      loadInitialMessage(activePromptKey);
   };
 
   const handleScroll = (direction) => {
