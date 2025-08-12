@@ -336,8 +336,8 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate }) =>
 
   if (msg.isLoading) return null;
 
-    // This logic now works because the menu button is always on the "outer" side.
-  const menuPositionClass = msg.role === 'user' ? 'right-0' : 'left-0';;
+      // This forces ALL menus to anchor their right edge, making them expand to the left.
+  const menuPositionClass = 'right-0';
 
   return (
       <div className="relative" ref={menuRef}>
