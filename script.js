@@ -1176,16 +1176,15 @@ function App() {
 
               <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative">
                   <div className="p-2 sm:p-6 space-y-4">
-                      {chatHistory.map((msg, index) => (
+                                            {chatHistory.map((msg, index) => (
                           <div key={msg.id || index} className={`flex w-full items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
-                              {msg.role === 'user' && (
-                                  <div className="self-center">
-                                      <MessageMenu msg={msg} index={index} onCopy={handleCopy} onShare={handleShare} onDelete={handleDeleteMessage} onRegenerate={handleRegenerate} />
-                                  </div>
-                              )}
+                              
+                              {/* Renders the AI avatar on the left for assistant messages */}
                               {msg.role !== 'user' && (
                                   <div className="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold text-sm shrink-0">AI</div>
                               )}
+                              
+                              {/* The message bubble itself, common to both user and AI */}
                               <div className={`rounded-lg w-full md:w-auto max-w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
                                   {msg.file && (
                                       <div className="p-2 bg-indigo-500/80">
@@ -1194,11 +1193,19 @@ function App() {
                                   )}
                                   <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} />
                               </div>
-                              {msg.role !== 'user' && (
-                                  <div className="self-center">
-                                      <MessageMenu msg={msg} index={index} onCopy={handleCopy} onShare={handleShare} onDelete={handleDeleteMessage} onRegenerate={handleRegenerate} />
-                                  </div>
-                              )}
+
+                              {/* The Message Menu, now always on the right side of the bubble */}
+                              <div className="self-center">
+                                  <MessageMenu
+                                      msg={msg}
+                                      index={index}
+                                      onCopy={handleCopy}
+                                      onShare={handleShare}
+                                      onDelete={handleDeleteMessage}
+                                      onRegenerate={handleRegenerate}
+                                  />
+                              </div>
+                              
                           </div>
                       ))}
                       <div ref={chatEndRef} />
