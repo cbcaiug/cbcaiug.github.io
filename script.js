@@ -112,8 +112,9 @@ const PromptManager = {
 
 // --- AI PROVIDER CONFIGURATION ---
 const AI_PROVIDERS = [
+  // UPDATED: Added latest Gemini 2.0 and 2.5 models for completeness
   { key: 'google', label: 'Google Gemini', apiKeyName: 'googleApiKey', apiKeyUrl: 'https://aistudio.google.com/app/apikey', apiHost: 'https://generativelanguage.googleapis.com', models: [
-      { name: 'gemini-2.5-pro', vision: true }, { name: 'gemini-2.5-flash', vision: true }, { name: 'gemini-1.5-pro-latest', vision: true }, { name: 'gemini-1.5-flash-latest', vision: true }
+      { name: 'gemini-2.5-pro', vision: true }, { name: 'gemini-2.5-flash', vision: true }, { name: 'gemini-2.0-pro', vision: true }, { name: 'gemini-2.0-flash', vision: true }, { name: 'gemini-1.5-pro-latest', vision: true }, { name: 'gemini-1.5-flash-latest', vision: true }
   ]},
   { key: 'openai', label: 'OpenAI GPT', apiKeyName: 'openaiApiKey', apiKeyUrl: 'https://platform.openai.com/api-keys', apiHost: 'https://api.openai.com', models: [
       { name: 'gpt-4o', vision: true }, { name: 'gpt-4-turbo', vision: true }, { name: 'gpt-3.5-turbo', vision: false }
@@ -123,6 +124,14 @@ const AI_PROVIDERS = [
   ]},
   { key: 'groq', label: 'Llama 3 (via Groq)', apiKeyName: 'groqApiKey', apiKeyUrl: 'https://console.groq.com/keys', apiHost: 'https://api.groq.com/openai', models: [
       { name: 'llama3-8b-8192', vision: false }, { name: 'llama3-70b-8192', vision: false }
+  ]},
+  // NEW: Added Deepseek as a provider
+  { key: 'deepseek', label: 'Deepseek (Free Tier)', apiKeyName: 'deepseekApiKey', apiKeyUrl: 'https://platform.deepseek.com/api_keys', apiHost: 'https://api.deepseek.com', models: [
+      { name: 'deepseek-chat', vision: false }, { name: 'deepseek-coder', vision: false }
+  ]},
+  // NEW: Added Qwen (via OpenRouter) as a provider
+  { key: 'qwen', label: 'Qwen (Free Tier)', apiKeyName: 'qwenApiKey', apiKeyUrl: 'https://openrouter.ai/keys', apiHost: 'https://openrouter.ai/api', models: [
+      { name: 'qwen/qwen-2-72b-instruct', vision: false }, { name: 'qwen/qwen-2-7b-instruct', vision: false }
   ]},
 ];
 
