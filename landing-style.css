@@ -40,17 +40,123 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
 .nav-button:hover { background-color: #4338ca; }
 
 /* ======== HERO SECTION ======== */
-.hero-section { display: flex; justify-content: center; align-items: center; text-align: center; padding: 6rem 2rem 8rem 2rem; background: var(--bg-light); }
-.hero-tag { display: inline-block; background-color: #eef2ff; color: var(--primary-color); padding: 0.3rem 0.8rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem; }
-.hero-headline { font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; min-height: 140px; }
-.hero-subheadline { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem auto; }
-.hero-buttons { display: flex; justify-content: center; gap: 1rem; }
-.button-primary, .button-secondary { display: inline-block; padding: 0.8rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.button-primary { background-color: var(--primary-color); color: var(--text-light); }
-.button-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3); }
-.button-secondary { background-color: transparent; color: var(--text-dark); border: 1px solid var(--border-color); }
-.button-secondary:hover { background-color: var(--bg-offwhite); transform: translateY(-2px); }
-.button-large { padding: 1rem 2rem; font-size: 1.1rem; }
+.hero-section {
+    padding: 6rem 2rem;
+    background: var(--bg-light);
+    overflow: hidden; /* Prevents image from breaking layout */
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column for mobile */
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Use a media query to create a side-by-side layout on larger screens */
+@media (min-width: 992px) {
+    .hero-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); /* Two equal columns on desktop */
+    }
+    .hero-content {
+        align-items: flex-start; /* Align content to the left */
+        text-align: left;
+    }
+    .hero-buttons {
+        justify-content: flex-start; /* Align buttons to the left */
+    }
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content on mobile by default */
+    text-align: center;
+}
+
+.hero-tag {
+    display: inline-block;
+    background-color: #eef2ff;
+    color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.hero-headline {
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font size */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    min-height: 100px; /* Ensure space for typewriter */
+}
+
+.hero-subheadline {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons on mobile */
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+}
+
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.button-primary, .button-secondary {
+    display: inline-block;
+    padding: 0.8rem 1.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
+}
+
+.button-secondary {
+    background-color: transparent;
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+}
+
+.button-secondary:hover {
+    background-color: var(--bg-offwhite);
+    transform: translateY(-2px);
+}
+
+.button-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
 
 /* TYPEWRITER CURSOR */
 .cursor { display: inline-block; background-color: var(--text-dark); margin-left: 0.1rem; width: 4px; animation: blink 1s infinite; }
