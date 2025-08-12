@@ -887,12 +887,21 @@ function App() {
       }
   };
 
-  const clearChat = () => {
+    const clearChat = () => {
       const chatKey = `chatHistory_${activePromptKey}`;
+      
+      // Immediately clear the visual chat history for a faster UI response
+      setChatHistory([]); 
+      
+      // Remove the history from persistent storage
       localStorage.removeItem(chatKey);
+      
+      // Clear any pending attachments or errors
       setPendingFile(null);
       setPendingFilePreview(null);
       setError('');
+      
+      // Asynchronously load the initial welcome message for the current assistant
       loadInitialMessage(activePromptKey);
   };
   
