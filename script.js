@@ -1145,14 +1145,15 @@ function App() {
                   <button onClick={() => setIsMenuOpen(true)} className="p-1 text-slate-600 hover:text-slate-900 lg:hidden"><MenuIcon className="w-6 h-6" /></button>
                   <h2 className="text-xl font-semibold text-slate-800 text-center flex-1">{activePromptKey} Assistant</h2>
                   <div className="flex items-center gap-2">
-                    {/* NEW: Notification Bell Button */}
+                    {/* UPDATED: Buttons now have text labels */}
                       <button
                           onClick={() => setIsNotificationsOpen(true)}
                           title="Notifications"
-                          className="p-2 rounded-full hover:bg-slate-200 relative"
+                          className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors"
                       >
-                          <BellIcon className="w-5 h-5 text-slate-500"/>
-                          {hasNewNotification && <span className="absolute top-2 right-2 block w-2 h-2 bg-red-500 rounded-full"></span>}
+                          <BellIcon className="w-5 h-5"/>
+                          <span className="hidden sm:inline">Notifications</span>
+                          {hasNewNotification && <span className="block w-2.5 h-2.5 bg-red-500 rounded-full"></span>}
                       </button>
                       <button
                           onClick={() => handleShare({
@@ -1165,7 +1166,10 @@ function App() {
                       >
                           <Share2Icon className="w-5 h-5 text-slate-500"/>
                       </button>
-                      <button onClick={clearChat} title="Clear chat messages" className="p-2 rounded-full hover:bg-slate-200"><TrashIcon className="w-5 h-5 text-slate-500"/></button>
+                      <button onClick={clearChat} title="Clear chat messages" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors">
+                           <TrashIcon className="w-5 h-5"/>
+                           <span className="hidden sm:inline">Clear Chat</span>
+                       </button>
                   </div>
               </header>
 
@@ -1248,7 +1252,12 @@ function App() {
                           <button onClick={() => {setPendingFile(null); setPendingFilePreview(null);}} className="p-1 rounded-full hover:bg-slate-300 shrink-0"><XIcon className="w-4 h-4" /></button>
                       </div></div>}
                       <div className="flex items-end gap-2 sm:gap-4">
-                          <label htmlFor="file-upload" title={isFileUploadDisabled ? "File upload not supported by this model" : "Attach File"} className={`p-3 rounded-full hover:bg-slate-100 self-end ${isFileUploadDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}><PaperclipIcon className="w-6 h-6 text-slate-600"/></label>
+                            <div className="flex flex-col items-center self-end">
+                              <label htmlFor="file-upload" title={isFileUploadDisabled ? "File upload not supported by this model" : "Attach File"} className={`p-3 rounded-full hover:bg-slate-100 ${isFileUploadDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}>
+                                  <PaperclipIcon className="w-6 h-6 text-slate-600"/>
+                              </label>
+                              <span className="text-xs text-slate-400 hidden sm:inline">Attach</span>
+                           </div>
                           <input id="file-upload" type="file" className="hidden" onChange={handleFileSelect} disabled={isFileUploadDisabled}/>
                           <textarea
                               ref={userInputRef}
@@ -1265,8 +1274,16 @@ function App() {
                               className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48"
                               rows="1"
                           />
-                          <button onClick={isLoading ? handleStopGeneration : handleSendMessage} disabled={!isLoading && !userInput.trim() && !pendingFile} className="p-3 rounded-full bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end">
-                              {isLoading ? <StopIcon className="w-6 h-6"/> : <SendIcon className="w-6 h-6"/>}
+                          <button 
+                              onClick={isLoading ? handleStopGeneration : handleSendMessage} 
+                              disabled={!isLoading && !userInput.trim() && !pendingFile} 
+                              className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold"
+                          >
+                              {isLoading ? (
+                                  <><StopIcon className="w-5 h-5"/><span>Stop</span></>
+                              ) : (
+                                  <><SendIcon className="w-5 h-5"/><span>Send</span></>
+                              )}
                           </button>
                       </div>
                   </div>
