@@ -85,18 +85,17 @@ body {
     white-space: pre-wrap; 
 }
 
-/* Blinking cursor for streaming effect */
-.blinking-cursor {
+/* Streaming indicator for AI responses */
+.streaming-indicator {
     display: inline-block;
-    width: 8px;
-    height: 1.2rem;
-    background-color: #4f46e5;
-    animation: blink 1s step-end infinite;
-    vertical-align: bottom;
-}
-@keyframes blink {
-    from, to { background-color: transparent }
-    50% { background-color: #4f46e5; }
+    width: 14px;
+    height: 14px;
+    border: 2px solid #94a3b8; /* A lighter gray for the track */
+    border-top: 2px solid #4f46e5; /* The main indigo color for the spinning part */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    vertical-align: -2px; /* Aligns the spinner nicely with the text */
+    margin-left: 8px; /* Adds a little space after the last word */
 }
 
 /* Loading spinner for API calls */
