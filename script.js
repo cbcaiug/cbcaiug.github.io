@@ -31,6 +31,8 @@ const SettingsIcon = (props) => <Icon {...props} C={<path d="M12.22 2h-4.44l-2 6
 const NewPhoneIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.02.74-.25 1.02l-2.2 2.2z"/></svg>;
 const NewEnvelopeIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>;
 const NewWhatsAppIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#25D366" {...props}><path d="M19.11 4.9a9.88 9.88 0 0 0-14.22 0 9.88 9.88 0 0 0 0 14.22l-2.09 2.09 2.23 2.23 2.09-2.09a9.88 9.88 0 0 0 14.22 0c3.89-3.89 3.89-10.33 0-14.22zM12 19.94a7.94 7.94 0 0 1-6.4-12.84l.09-.09.09-.09a7.94 7.94 0 0 1 12.62 0l.09.09.09.09A7.94 7.94 0 0 1 12 19.94zm-1.1-6.61h-2.26v-1.5h2.26v-2.26h1.5v2.26h2.26v1.5h-2.26v2.26h-1.5z"/></svg>;
+const BellIcon = (props) => <Icon {...props} C={<><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></>} />;
+//const RefreshCwIcon = (props) => <Icon {...props} C={<><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></>} />;
 
 
 // --- CONFIGURATION ---
@@ -391,6 +393,9 @@ function App() {
   const [generationCount, setGenerationCount] = useState(0);
   const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
+  const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+  const [notifications, setNotifications] = useState([]);
+  const [hasNewNotification, setHasNewNotification] = useState(false);
 
 
   // --- REFS ---
@@ -1079,6 +1084,15 @@ function App() {
                   <button onClick={() => setIsMenuOpen(true)} className="p-1 text-slate-600 hover:text-slate-900 lg:hidden"><MenuIcon className="w-6 h-6" /></button>
                   <h2 className="text-xl font-semibold text-slate-800 text-center flex-1">{activePromptKey} Assistant</h2>
                   <div className="flex items-center gap-2">
+                    {/* NEW: Notification Bell Button */}
+                      <button
+                          onClick={() => setIsNotificationsOpen(true)}
+                          title="Notifications"
+                          className="p-2 rounded-full hover:bg-slate-200 relative"
+                      >
+                          <BellIcon className="w-5 h-5 text-slate-500"/>
+                          {hasNewNotification && <span className="absolute top-2 right-2 block w-2 h-2 bg-red-500 rounded-full"></span>}
+                      </button>
                       <button
                           onClick={() => handleShare({
                               title: 'AI Educational Assistant',
@@ -1128,6 +1142,27 @@ function App() {
                       <button onClick={() => handleScroll('down')} className="p-2 rounded-full bg-black bg-opacity-40 text-white hover:bg-opacity-60 transition-opacity"><ChevronDownIcon className="w-5 h-5"/></button>
                   </div>
               </main>
+              {/* --- NEW: NOTIFICATIONS PANEL --- */}
+              <div className={`fixed top-0 right-0 h-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${isNotificationsOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ width: 'min(400px, 100vw)' }}>
+                  <div className="flex flex-col h-full">
+                      <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
+                          <h3 className="text-xl font-semibold text-slate-800">Notifications</h3>
+                          <button onClick={() => setIsNotificationsOpen(false)} className="p-2 rounded-full hover:bg-slate-100">
+                              <XIcon className="w-6 h-6 text-slate-600" />
+                          </button>
+                      </header>
+                      <div className="flex-1 overflow-y-auto p-4 custom-scrollbar">
+                          {/* We will populate this with real data in the next step */}
+                          <div className="text-center text-slate-500 mt-10">
+                              <BellIcon className="w-12 h-12 mx-auto mb-4"/>
+                              <p className="font-medium">No new notifications</p>
+                              <p className="text-sm">Check back later for updates!</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              {/* --- Overlay for when panel is open --- */}
+              {isNotificationsOpen && <div onClick={() => setIsNotificationsOpen(false)} className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"></div>}
 
               {error && <div className="p-4 bg-red-100 text-red-700 border-t border-red-200 flex-shrink-0">{error}</div>}
 
