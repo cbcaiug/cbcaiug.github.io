@@ -296,6 +296,27 @@ const FeedbackModal = ({ isOpen, onClose, onSubmit, assistantName }) => {
       </div>
   );
 };
+// NEW: Component for the dismissible update banner
+const UpdateBanner = ({ latestUpdate, onDismiss }) => {
+    if (!latestUpdate) return null;
+
+    return (
+        <div className="bg-indigo-600 text-white p-3 flex items-center justify-between z-20">
+            <div className="flex items-center gap-3">
+                <BellIcon className="w-6 h-6 shrink-0"/>
+                <p className="text-sm font-medium">
+                    <span className="font-bold mr-2">New Update:</span>
+                    {latestUpdate.message}
+                    {latestUpdate.url && <a href={latestUpdate.url} target="_blank" rel="noopener noreferrer" className="ml-2 underline hover:opacity-80">Learn more &raquo;</a>}
+                </p>
+            </div>
+            <button onClick={onDismiss} className="p-1 rounded-full hover:bg-indigo-500">
+                <XIcon className="w-5 h-5"/>
+            </button>
+        </div>
+    );
+};
+
 
 // Context menu for each message (copy, share, delete, regenerate)
 const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate }) => {
@@ -396,6 +417,7 @@ function App() {
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const [notifications, setNotifications] = useState([]);
   const [hasNewNotification, setHasNewNotification] = useState(false);
+  const [showUpdateBanner, setShowUpdateBanner] = useState(false);
 
 
   // --- REFS ---
@@ -448,17 +470,22 @@ function App() {
 
 
   // --- EFFECTS ---
-  useEffect(() => {
+    useEffect(() => {
       const savedCount = parseInt(localStorage.getItem('generationCount') || '0', 10);
       setGenerationCount(savedCount);
 
-      const initializeAssistants = async () => {
+      const initializeApp = async () => {
           setIsLoadingAssistants(true);
-          const assistants = await PromptManager.getAvailableAssistants();
+
+          // Fetch assistants and notifications in parallel
+          const [assistants] = await Promise.all([
+              PromptManager.getAvailableAssistants(),
+              fetchNotifications() // This is the new function we're calling
+          ]);
+          
           setAvailableAssistants(assistants);
           const menu = {};
           assistants.forEach(assistant => {
-              // MODIFIED: Preserve the admin=true parameter when switching assistants
               const urlParams = new URLSearchParams(window.location.search);
               const adminParam = urlParams.get('admin') === 'true' ? '&admin=true' : '';
               menu[assistant] = `?assistant=${encodeURIComponent(assistant)}${adminParam}`;
@@ -466,7 +493,7 @@ function App() {
           setNavigationMenu(menu);
           setIsLoadingAssistants(false);
       };
-      initializeAssistants();
+      initializeApp();
   }, []);
 
   useEffect(() => {
@@ -805,6 +832,38 @@ function App() {
           }
       });
   };
+  // NEW: Function to fetch updates from the backend
+  const fetchNotifications = async () => {
+    try {
+        const response = await fetch(`${GAS_WEB_APP_URL}?action=getUpdates`);
+        const data = await response.json();
+        if (data.success && data.updates && data.updates.length > 0) {
+            setNotifications(data.updates);
+            
+            // Logic for the one-time banner
+            const latestTimestamp = data.updates[0].timestamp;
+            const lastSeenTimestamp = localStorage.getItem('lastSeenUpdateTimestamp');
+            
+            if (latestTimestamp !== lastSeenTimestamp) {
+                setShowUpdateBanner(true);
+                setHasNewNotification(true); // Show red dot on bell icon
+            }
+        }
+    } catch (error) {
+        console.error("Failed to fetch notifications:", error);
+    }
+  };
+  // NEW: Function to dismiss the banner and save the timestamp
+  const dismissUpdateBanner = () => {
+      setShowUpdateBanner(false);
+      // Mark the latest update as "seen" so the banner doesn't reappear
+      if (notifications.length > 0) {
+          localStorage.setItem('lastSeenUpdateTimestamp', notifications[0].timestamp);
+          setHasNewNotification(false); // Hide red dot once banner is dismissed
+      }
+  };
+
+
   
   const handleRegenerate = async (indexToRegenerate) => {
       if (isLoading) return;
@@ -1080,6 +1139,8 @@ function App() {
 
           {/* --- MAIN CHAT INTERFACE --- */}
           <div className="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
+            {/* NEW: Insert the banner here */}
+              {showUpdateBanner && <UpdateBanner latestUpdate={notifications[0]} onDismiss={dismissUpdateBanner} />}
               <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0 bg-white z-10">
                   <button onClick={() => setIsMenuOpen(true)} className="p-1 text-slate-600 hover:text-slate-900 lg:hidden"><MenuIcon className="w-6 h-6" /></button>
                   <h2 className="text-xl font-semibold text-slate-800 text-center flex-1">{activePromptKey} Assistant</h2>
@@ -1151,13 +1212,26 @@ function App() {
                               <XIcon className="w-6 h-6 text-slate-600" />
                           </button>
                       </header>
-                      <div className="flex-1 overflow-y-auto p-4 custom-scrollbar">
-                          {/* We will populate this with real data in the next step */}
-                          <div className="text-center text-slate-500 mt-10">
-                              <BellIcon className="w-12 h-12 mx-auto mb-4"/>
-                              <p className="font-medium">No new notifications</p>
-                              <p className="text-sm">Check back later for updates!</p>
-                          </div>
+                        <div className="flex-1 overflow-y-auto custom-scrollbar">
+                          {notifications.length > 0 ? (
+                              <div className="space-y-4 p-4">
+                                  {notifications.map((note, index) => (
+                                      <div key={index} className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                                          <p className="font-semibold text-slate-800">{note.message}</p>
+                                          <p className="text-xs text-slate-500 mt-2">
+                                              {new Date(note.timestamp).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                                          </p>
+                                          {note.url && <a href={note.url} target="_blank" rel="noopener noreferrer" className="text-sm text-indigo-600 hover:underline mt-2 inline-block">Learn More &raquo;</a>}
+                                      </div>
+                                  ))}
+                              </div>
+                          ) : (
+                              <div className="text-center text-slate-500 mt-10 p-4">
+                                  <BellIcon className="w-12 h-12 mx-auto mb-4 text-slate-400"/>
+                                  <p className="font-medium">No new notifications</p>
+                                  <p className="text-sm">Check back later for updates!</p>
+                              </div>
+                          )}
                       </div>
                   </div>
               </div>
