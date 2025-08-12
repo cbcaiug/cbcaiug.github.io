@@ -137,11 +137,12 @@ const AI_PROVIDERS = [
 
 // --- REACT COMPONENTS ---
 
-// Renders markdown content and handles adding the scroll guide for tables
+// Renders markdown content, the "thinking" indicator, and the scroll guide for tables
 const MarkdownRenderer = ({ htmlContent, isLoading }) => {
     const contentRef = useRef(null);
 
     useEffect(() => {
+        // This effect for table scroll guides remains unchanged
         if (contentRef.current) {
             const tables = contentRef.current.querySelectorAll('table');
             tables.forEach(table => {
@@ -160,7 +161,19 @@ const MarkdownRenderer = ({ htmlContent, isLoading }) => {
         }
     }, [htmlContent, isLoading]);
 
-    const finalHtml = htmlContent + (isLoading ? '<span class="blinking-cursor"></span>' : '');
+    // NEW: If the AI is loading but hasn't sent any text yet, show a "thinking" message.
+    // We check for empty content (and ignore empty <p> tags that marked.js might create).
+    if (isLoading && !htmlContent.trim().replace(/<p><\/p>/g, '')) {
+        return (
+            <div className="p-4 flex items-center text-slate-500">
+                <div className="loading-spinner mr-3"></div>
+                <span className="font-medium">AI is thinking...</span>
+            </div>
+        );
+    }
+    
+    // UPDATED: If content is streaming, append the new spinner instead of the old cursor.
+    const finalHtml = htmlContent + (isLoading ? '<span class="streaming-indicator"></span>' : '');
     return <div ref={contentRef} className="markdown-content p-4" dangerouslySetInnerHTML={{ __html: finalHtml }} />;
 };
 
