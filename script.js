@@ -336,7 +336,8 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate }) =>
 
   if (msg.isLoading) return null;
 
-  const menuPositionClass = msg.role === 'user' ? 'left-0' : 'right-0';
+    // This logic now works because the menu button is always on the "outer" side.
+  const menuPositionClass = msg.role === 'user' ? 'right-0' : 'left-0';;
 
   return (
       <div className="relative" ref={menuRef}>
