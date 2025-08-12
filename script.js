@@ -513,7 +513,7 @@ function App() {
   }, [chatHistory[chatHistory.length - 1]?.content]);
 
   // --- HANDLERS & LOGIC ---
-  const validateApiKey = useCallback(async (provider, key) => {
+    const validateApiKey = useCallback(async (provider, key) => {
       if (!key) {
           setApiKeyStatus(prev => ({ ...prev, [provider.key]: 'unchecked' }));
           return;
@@ -522,10 +522,16 @@ function App() {
       let isValid = false;
       try {
           let response;
-          if (provider.key === 'google') {
+          // Use a unified approach for OpenAI-compatible APIs
+          if (['openai', 'groq', 'deepseek', 'qwen'].includes(provider.key)) {
+              const headers = { 'Authorization': `Bearer ${key}` };
+              if (provider.key === 'qwen') {
+                 // OpenRouter might require specific headers if not using standard Bearer token auth, but Bearer is common.
+                 // This assumes a standard setup.
+              }
+              response = await fetch(`${provider.apiHost}/v1/models`, { headers });
+          } else if (provider.key === 'google') {
               response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${key}`);
-          } else if (provider.key === 'openai' || provider.key === 'groq') {
-              response = await fetch(`${provider.apiHost}/v1/models`, { headers: { 'Authorization': `Bearer ${key}` }});
           } else if (provider.key === 'anthropic') {
               response = await fetch(`${provider.apiHost}/v1/messages`, {
                   method: 'POST',
@@ -533,20 +539,28 @@ function App() {
                   body: JSON.stringify({ model: "claude-3-haiku-20240307", max_tokens: 1, messages: [{role: "user", content: "ping"}] })
               });
           }
-          if (response.ok) {
+          
+          if (response && response.ok) {
               isValid = true;
               setApiKeyStatus(prev => ({ ...prev, [provider.key]: 'valid' }));
+              // NEW: Show a success toast message on valid key
+              setApiKeyToast(`${provider.label} API Key Verified!`);
           }
-      } catch (error) {}
+      } catch (error) {
+        console.error(`API Key validation failed for ${provider.label}:`, error);
+      }
+
+      if (apiKeyToastTimeoutRef.current) clearTimeout(apiKeyToastTimeoutRef.current);
+      apiKeyToastTimeoutRef.current = setTimeout(() => setApiKeyToast(''), 3000);
 
       if (!isValid) {
           setApiKeyStatus(prev => ({ ...prev, [provider.key]: 'invalid' }));
-          setApiKeyToast(`Invalid ${provider.label} API Key`);
-          if (apiKeyToastTimeoutRef.current) clearTimeout(apiKeyToastTimeoutRef.current);
-          apiKeyToastTimeoutRef.current = setTimeout(() => setApiKeyToast(''), 3000);
+          // Set invalid message only if a success message wasn't just set
+          if (!apiKeyToast) {
+            setApiKeyToast(`Invalid ${provider.label} API Key`);
+          }
       }
-
-  }, []);
+  }, [apiKeyToast]); // Dependency on apiKeyToast to prevent race conditions
 
   const handleApiKeyChange = (keyName, provider, value) => {
       setApiKeys(prev => ({...prev, [keyName]: value}));
@@ -1135,8 +1149,10 @@ function App() {
               </div>
           )}
           {apiKeyToast && (
-              <div className="fixed top-5 left-1/2 -translate-x-1/2 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2">
-                  <AlertCircleIcon className="w-5 h-5"/>
+              <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${
+                  apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'
+              }`}>
+                  {apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5"/> : <CheckCircleIcon className="w-5 h-5"/>}
                   <span>{apiKeyToast}</span>
               </div>
           )}
