@@ -260,3 +260,214 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
         gap: 1rem;
     }
 }
+/* ================================ */
+/* STYLES FOR FLOATING CONTACT WIDGET */
+/* ================================ */
+
+/* Main container for the widget */
+.contact-widget {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1020; /* Ensure it's above other content but below mobile menus if any */
+}
+
+/* The floating chat bubble button */
+.widget-bubble-btn {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color); /* Uses your site's primary color */
+    color: white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.widget-bubble-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+/* --- NEW CSS FOR THE TEXT LABEL --- */
+
+/* Style for the text label itself */
+.widget-bubble-text {
+    position: absolute;
+    right: calc(100% + 1rem); /* Position it to the left of the bubble */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: var(--text-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; /* Prevent the text from wrapping */
+    font-weight: 600;
+    font-size: 0.9rem;
+    /* Animation setup */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Show the text label when the user hovers over the main widget container */
+.contact-widget:hover .widget-bubble-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* On mobile, we don't have hover, so we just hide the text label */
+@media (max-width: 768px) {
+    .widget-bubble-text {
+        display: none;
+    }
+}
+
+/* The pop-up form container */
+.widget-form-container {
+    position: absolute;
+    bottom: calc(100% + 1rem); /* Positions it right above the bubble */
+    right: 0;
+    width: 350px;
+    max-width: calc(100vw - 2rem); /* Ensure it doesn't go off-screen on mobile */
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden; /* Important for the rounded corners */
+    /* Animation setup */
+    transform-origin: bottom right;
+    transform: scale(0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+}
+
+/* Styles for when the form is open/visible */
+.contact-widget.open .widget-form-container {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hide the bubble when the form is open, show the close button */
+.contact-widget.open .widget-bubble-btn {
+    opacity: 0;
+    transform: scale(0);
+    visibility: hidden;
+}
+
+/* Form header styling */
+.widget-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+.widget-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.widget-header p {
+    margin: 0.25rem 0 0 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+.widget-close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+.widget-close-btn:hover {
+    opacity: 1;
+}
+
+/* Form styling */
+.widget-form {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Important for consistent sizing */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+.form-group-submit {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.widget-submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.widget-submit-btn:hover {
+    background-color: #4338ca; /* A slightly darker shade of primary */
+}
+.widget-submit-btn:disabled {
+    background-color: #a5b4fc; /* Lighter shade for disabled state */
+    cursor: not-allowed;
+}
+
+/* Spinner for loading state */
+.widget-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #e0e7ff; /* Lighter indigo */
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Success message styling */
+.widget-success-message {
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+.widget-success-message h4 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0 0 0.5rem 0;
+}
