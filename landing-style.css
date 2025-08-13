@@ -300,41 +300,20 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
         display: flex; /* Show the hamburger button on mobile */
     }
 }
-/* ======== NEW FOOTER STYLES ======== */
+/* ======== FOOTER CONTACT ICONS ======== */
 .footer-contacts {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap onto the next line on small screens */
     justify-content: center;
-    align-items: center;
-    gap: 0.5rem 1.5rem; /* Vertical and horizontal gap */
+    gap: 2rem; /* Adds space between the icons */
     margin-top: 1rem;
 }
 
-.contact-item {
-    display: inline-flex; /* Aligns icon and text */
-    align-items: center;
-    gap: 0.5rem; /* Space between icon and text */
-    color: #9ca3af; /* Default text and icon color */
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
+.footer-icon-link {
+    color: #9ca3af; /* Sets the default icon color (Gray-400) */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
 }
 
-.contact-item:hover {
-    color: var(--text-light); /* Change color on hover */
-    transform: translateY(-2px); /* Slight lift effect on hover */
-}
-
-.contact-separator {
-    color: #4b5563; /* A darker gray for the separator line */
-}
-
-/* Responsive styles for very small screens */
-@media (max-width: 600px) {
-    .contact-separator {
-        display: none; /* Hide the separator line */
-    }
-    .footer-contacts {
-        flex-direction: column; /* Stack the contact items vertically */
-        gap: 1rem;
-    }
+.footer-icon-link:hover {
+    color: var(--text-light); /* Changes icon color to white on hover */
+    transform: scale(1.1); /* Slightly enlarges the icon on hover */
 }
