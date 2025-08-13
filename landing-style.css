@@ -249,7 +249,10 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
 
 /* NEW: Styles for the dedicated chat button */
 .card-chat-button {
-    display: inline-block;
+    display: inline-flex; /* Use flex to align icon and text */
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Space between icon and text */
     text-align: center;
     background-color: transparent;
     border: 1px solid var(--border-color);
@@ -262,11 +265,20 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     margin-top: auto; /* Aligns the button to the bottom of the card */
 }
 
+/* NEW: Style for the SVG icon inside the button */
+.card-chat-button svg {
+    width: 18px;
+    height: 18px;
+    /* The color of the icon is inherited from its parent's 'color' property */
+    transition: color 0.3s ease;
+}
+
+/* UPDATED: Hover effect for the button */
 .card-chat-button:hover {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
-    color: var(--text-light);
-}
+    color: var(--text-light); /* This will make both the text AND the icon turn white */
+}}
 
 /* Placeholder card styles remain the same */
 .assistant-card-placeholder { 
