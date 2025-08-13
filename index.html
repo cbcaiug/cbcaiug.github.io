@@ -27,12 +27,6 @@
                 <a href="#footer">Contacts</a>
                 <a href="#assistants" class="nav-button">Get Started</a>
             </div>
-            <!-- NEW: The hamburger menu button, which will only be visible on mobile -->
-            <button class="hamburger-menu" aria-label="Open navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </nav>
     </header>
 
@@ -184,26 +178,7 @@
             document.querySelectorAll('.fade-in-section').forEach(section => {
                 observer.observe(section);
             });
-            // --- NEW: HAMBURGER MENU LOGIC ---
-            const hamburgerButton = document.querySelector('.hamburger-menu');
-            const navLinksContainer = document.querySelector('.nav-links-container');
-            const navLinks = document.querySelectorAll('.nav-links a');
-
-            hamburgerButton.addEventListener('click', () => {
-                hamburgerButton.classList.toggle('is-open');
-                navLinksContainer.classList.toggle('is-open');
-            });
-
-            // Close menu when a link is clicked
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navLinksContainer.classList.contains('is-open')) {
-                        hamburgerButton.classList.remove('is-open');
-                        navLinksContainer.classList.remove('is-open');
-                    }
-                });
-            });
-            // --- END OF HAMBURGER MENU LOGIC ---
+            // Typewriter effect for the hero section
 
             // Typewriter effect logic
             const typingElement = document.getElementById('typewriter-text');
