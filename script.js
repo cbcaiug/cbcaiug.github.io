@@ -34,7 +34,12 @@ const NewEnvelopeIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width
 const NewWhatsAppIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#25D366" {...props}><path d="M19.11 4.9a9.88 9.88 0 0 0-14.22 0 9.88 9.88 0 0 0 0 14.22l-2.09 2.09 2.23 2.23 2.09-2.09a9.88 9.88 0 0 0 14.22 0c3.89-3.89 3.89-10.33 0-14.22zM12 19.94a7.94 7.94 0 0 1-6.4-12.84l.09-.09.09-.09a7.94 7.94 0 0 1 12.62 0l.09.09.09.09A7.94 7.94 0 0 1 12 19.94zm-1.1-6.61h-2.26v-1.5h2.26v-2.26h1.5v2.26h2.26v1.5h-2.26v2.26h-1.5z"/></svg>;
 const BellIcon = (props) => <Icon {...props} C={<><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></>} />;
 //const RefreshCwIcon = (props) => <Icon {...props} C={<><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></>} />;
-
+// NEW: Add the SparkIcon for the new AI avatar (UPDATED to a solid, clearer icon)
+const SparkIcon = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}>
+        <path d="M11.1,13.8V23l8.8-13.8h-5.2L11.1,0,3.2,13.8Z"/>
+    </svg>
+);
 
 // --- CONFIGURATION ---
 const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxZHjqJoIwvdsXE_wrr8Dil9vIFvrv9BKe7ZZln8LtkEbOgLcPrzust6K-MSN7NcLZN/exec';
@@ -139,7 +144,12 @@ const AI_PROVIDERS = [
 ];
 
 // --- REACT COMPONENTS ---
-
+// NEW: A dedicated component for the AI avatar, as per the new design.
+const AiAvatar = () => (
+    <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: 'var(--app-primary-soft)' }}>
+        <SparkIcon className="w-5 h-5" style={{ color: 'var(--app-primary)' }} />
+    </div>
+);
 // Renders markdown content, the "thinking" indicator, and the scroll guide for tables
 const MarkdownRenderer = ({ htmlContent, isLoading }) => {
     const contentRef = useRef(null);
@@ -1047,7 +1057,7 @@ function App() {
                       <label htmlFor="custom-prompt-upload-error" className="w-full inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors cursor-pointer">Upload Custom Prompt</label>
                       <input id="custom-prompt-upload-error" type="file" className="hidden" accept=".txt,.json" onChange={handleCustomPromptUpload} />
                   </div>
-                   <a href={window.location.pathname} className="mt-6 inline-flex items-center justify-center gap-2 text-slate-600 hover:text-slate-900 font-semibold"><HomeIcon className="w-5 h-5"/>Return to Home</a>
+                   <a href = "/" className="mt-6 inline-flex items-center justify-center gap-2 text-slate-600 hover:text-slate-900 font-semibold"><HomeIcon className="w-5 h-5"/>Return to Home</a>
               </div>
           </div>
       );
@@ -1180,10 +1190,8 @@ function App() {
                                             {chatHistory.map((msg, index) => (
                           <div key={msg.id || index} className={`flex w-full items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
                               
-                              {/* Renders the AI avatar on the left for assistant messages */}
-                              {msg.role !== 'user' && (
-                                  <div className="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold text-sm shrink-0">AI</div>
-                              )}
+                              {/* Renders the NEW AI avatar on the left for assistant messages */}
+                              {msg.role !== 'user' && <AiAvatar />}
                               
                               {/* The message bubble itself, common to both user and AI */}
                               <div className={`rounded-lg w-full md:w-auto max-w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
