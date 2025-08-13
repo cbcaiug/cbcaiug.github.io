@@ -150,6 +150,16 @@ const AiAvatar = () => (
         <SparkIcon className="w-5 h-5" style={{ color: 'var(--app-primary)' }} />
     </div>
 );
+// UPDATED: A dedicated component for the polished RECTANGULAR loading screen.
+const LoadingScreen = ({ text }) => (
+    <div className="loading-screen-container">
+        <div className="loading-logo-wrapper">
+            {/* The spinner is now created by the CSS on this wrapper div */}
+            <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Loading Logo" className="loading-logo-img" />
+        </div>
+        <p className="loading-screen-text">{text}</p>
+    </div>
+);
 // Renders markdown content, the "thinking" indicator, and the scroll guide for tables
 const MarkdownRenderer = ({ htmlContent, isLoading }) => {
     const contentRef = useRef(null);
@@ -1040,8 +1050,13 @@ function App() {
   }, []);
 
   // --- RENDER ---
-  if (isLoadingAssistants) {
-      return <div className="flex items-center justify-center h-screen bg-slate-100"><div className="text-center"><div className="loading-spinner mx-auto mb-4"></div><p className="text-slate-600">Loading assistants...</p></div></div>;
+    if (isLoadingAssistants) {
+      return (
+          // ADDED 'items-center' and 'justify-center' to perfectly center the content.
+          <div className="h-screen w-screen flex items-center justify-center bg-slate-50">
+              <LoadingScreen text="Getting AI Assistants ready for you..." />
+          </div>
+      );
   }
 
   if (isPromptMissing) {
