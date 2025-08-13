@@ -4,7 +4,15 @@
  * Keeping styles separate from the HTML structure and JavaScript logic
  * makes the project cleaner and easier to maintain.
 */
-
+/* NEW: Central color palette for the application */
+:root {
+    --app-primary: #14b8a6;       /* Teal-500 for buttons and highlights */
+    --app-primary-dark: #0f766e;  /* Teal-700 for dark backgrounds like the sidebar */
+    --app-primary-soft: #f0fdfa;  /* Teal-50, a very soft background for the AI avatar */
+    --app-primary-text: #0d9488;  /* Teal-600 for the AI response text */
+    
+    --app-user-bubble: #4338ca;   /* A nice Indigo for the user's chat bubble to provide contrast */
+}
 /* Base styles for mobile keyboard handling and layout */
 html, body, #root { 
     height: 100%; 
