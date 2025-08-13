@@ -178,8 +178,79 @@
             document.querySelectorAll('.fade-in-section').forEach(section => {
                 observer.observe(section);
             });
-            // Typewriter effect for the hero section
+            // --- NEW: FLOATING CONTACT WIDGET LOGIC ---
+            const contactWidget = document.querySelector('.contact-widget');
+            const bubbleBtn = document.querySelector('.widget-bubble-btn');
+            const closeBtn = document.querySelector('.widget-close-btn');
+            const contactForm = document.querySelector('.widget-form');
+            const formContainer = document.querySelector('.widget-form-container');
+            const successMessage = document.querySelector('.widget-success-message');
+            const submitBtn = document.querySelector('.widget-submit-btn');
+            const spinner = document.querySelector('.widget-spinner');
+            // The URL to your deployed Google Apps Script
+            const GAS_URL = 'https://script.google.com/macros/s/AKfycbxZHjqJoIwvdsXE_wrr8Dil9vIFvrv9BKe7ZZln8LtkEbOgLcPrzust6K-MSN7NcLZN/exec';
 
+            // Function to open the widget
+            const openWidget = () => contactWidget.classList.add('open');
+
+            // Function to close the widget
+            const closeWidget = () => contactWidget.classList.remove('open');
+
+            // Add event listeners
+            bubbleBtn.addEventListener('click', openWidget);
+            closeBtn.addEventListener('click', closeWidget);
+
+            // Handle form submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent the default page reload
+
+                // Show loading state
+                spinner.style.display = 'block';
+                submitBtn.disabled = true;
+
+                const payload = {
+                    action: 'contact_form_submitted',
+                    details: {
+                        name: contactForm.name.value,
+                        email: contactForm.email.value,
+                        message: contactForm.message.value
+                    }
+                };
+                
+                // Send the data to the backend
+                fetch(GAS_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Use no-cors for simple "fire and forget" requests to GAS
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(payload)
+                })
+                .then(() => {
+                    // Because we use no-cors, we assume success and proceed
+                    formContainer.style.display = 'none';
+                    successMessage.style.display = 'block';
+
+                    // Automatically close the widget and reset the form after 4 seconds
+                    setTimeout(() => {
+                        closeWidget();
+                        // Use another timeout to reset the form after the closing animation finishes
+                        setTimeout(() => {
+                            formContainer.style.display = 'block';
+                            successMessage.style.display = 'none';
+                            contactForm.reset();
+                            spinner.style.display = 'none';
+                            submitBtn.disabled = false;
+                        }, 500);
+                    }, 4000);
+                })
+                .catch(error => {
+                    console.error('Error submitting contact form:', error);
+                    alert('There was an error sending your message. Please try again.');
+                    // Reset button on error
+                    spinner.style.display = 'none';
+                    submitBtn.disabled = false;
+                });
+            });
+            // --- END OF WIDGET LOGIC ---
             // Typewriter effect logic
             const typingElement = document.getElementById('typewriter-text');
             const cursorElement = document.querySelector('.cursor');
@@ -223,5 +294,60 @@
             setTimeout(type, 500);
         });
     </script>
+        <!-- ================================== -->
+    <!-- NEW: FLOATING CONTACT WIDGET START -->
+    <!-- ================================== -->
+    <div class="contact-widget">
+        <!-- This is the pop-up form window, which will be hidden by default -->
+        <div class="widget-form-container">
+            <!-- Form Header -->
+            <div class="widget-header">
+                <h3>Contact Us</h3>
+                <p>Have a question or feedback? Let us know!</p>
+                <button class="widget-close-btn" aria-label="Close contact form">&times;</button>
+            </div>
+
+            <!-- The Form itself -->
+            <form class="widget-form">
+                <div class="form-group">
+                    <label for="widget-name">Name</label>
+                    <input type="text" id="widget-name" name="name" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="widget-email">Email (Optional)</label>
+                    <input type="email" id="widget-email" name="email" placeholder="your.email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="widget-message">Message</label>
+                    <textarea id="widget-message" name="message" rows="4" placeholder="Your message..." required></textarea>
+                </div>
+                <div class="form-group-submit">
+                    <button type="submit" class="widget-submit-btn">Send Message</button>
+                    <!-- Loading spinner for when form is submitting -->
+                    <div class="widget-spinner" style="display: none;"></div>
+                </div>
+            </form>
+
+            <!-- Success Message (hidden by default) -->
+            <div class="widget-success-message" style="display: none;">
+                <h4>Thank You!</h4>
+                <p>Your message has been sent. We'll get back to you shortly.</p>
+            </div>
+        </div>
+
+        <!-- This is the floating chat bubble button that the user will click -->
+        <button class="widget-bubble-btn" aria-label="Open contact form">
+            <span class="widget-bubble-text">Leave a message</span>
+            <!-- A simple "chat" icon SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+    </div>
+    <!-- ================================ -->
+    <!-- FLOATING CONTACT WIDGET END -->
+    <!-- ================================ -->
+
+</body>
 </body>
 </html>
