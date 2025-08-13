@@ -329,9 +329,11 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
 
 /* The pop-up form container */
 .widget-form-container {
-    position: absolute;
-    bottom: calc(100% + 1rem); /* Positions it right above the bubble */
-    right: 0;
+    /* UPDATED: Changed position to 'fixed' to be relative to the viewport, not the bubble */
+    position: fixed;
+    /* UPDATED: Aligned it to the same spot as the bubble */
+    bottom: 2rem; 
+    right: 2rem;
     width: 350px;
     max-width: calc(100vw - 2rem); /* Ensure it doesn't go off-screen on mobile */
     background-color: white;
