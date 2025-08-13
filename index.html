@@ -264,8 +264,8 @@
 
             function type() {
                 const currentWord = words[wordIndex];
-                
-                if (currentWord === "Deeper.") {
+                // NEW: Apply the gradient style if the word is either "Smarter." or "Deeper."
+                if (currentWord === "Deeper."|| currentWord === "Smarter.") {
                     typingElement.classList.add('gradient-text');
                 } else {
                     typingElement.classList.remove('gradient-text');
