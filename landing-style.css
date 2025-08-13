@@ -188,16 +188,125 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
 .step-card p { color: var(--text-muted); }
 
 /* ======== ASSISTANTS SECTION ======== */
-.assistants-section { padding: 6rem 2rem; background-color: var(--bg-offwhite); }
-.assistants-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-.assistant-card { display: block; background-color: var(--bg-light); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); text-decoration: none; color: var(--text-dark); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.assistant-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); }
-.assistant-card h3 { font-size: 1.5rem; margin-top: 0; margin-bottom: 0.5rem; color: var(--primary-color); }
-.assistant-card p { color: var(--text-muted); line-height: 1.5; }
-.assistant-card-placeholder { border-style: dashed; border-color: #cbd5e1; background-color: transparent; padding: 2rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: border-color 0.3s ease, background-color 0.3s ease; }
-.assistant-card-placeholder:hover { border-color: var(--primary-color); background-color: #fff; }
-.placeholder-icon { font-size: 2rem; font-weight: 300; color: #9ca3af; width: 60px; height: 60px; border-radius: 50%; border: 2px dashed #cbd5e1; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; transition: color 0.3s ease, border-color 0.3s ease; }
-.assistant-card-placeholder:hover .placeholder-icon { color: var(--primary-color); border-color: var(--primary-color); }
+/* ======== ASSISTANTS SECTION (ENHANCED) ======== */
+.assistants-section { 
+    padding: 6rem 2rem; 
+    background-color: var(--bg-offwhite); 
+}
+
+.assistants-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+/* NEW: The card is now a flex container to better control layout */
+.assistant-card { 
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    background-color: var(--bg-light); 
+    padding: 2rem; 
+    border-radius: 16px; /* Slightly more rounded corners */
+    border: 1px solid var(--border-color); 
+    text-decoration: none; 
+    color: var(--text-dark); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.assistant-card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); 
+}
+
+/* NEW: Style for the icon container */
+.assistant-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: #eef2ff; /* Light indigo background */
+    color: var(--primary-color); /* The primary indigo color for the icon stroke */
+    margin-bottom: 1.5rem;
+}
+
+.assistant-card h3 { 
+    font-size: 1.5rem; 
+    margin-top: 0; 
+    margin-bottom: 0.5rem; 
+    color: var(--text-dark); /* Changed from primary color to dark for better hierarchy */
+}
+
+.assistant-card p { 
+    color: var(--text-muted); 
+    line-height: 1.6;
+    flex-grow: 1; /* NEW: This makes the description take up available space, pushing the button to the bottom */
+    margin-bottom: 1.5rem;
+}
+
+/* NEW: Styles for the dedicated chat button */
+.card-chat-button {
+    display: inline-block;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin-top: auto; /* Aligns the button to the bottom of the card */
+}
+
+.card-chat-button:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+/* Placeholder card styles remain the same */
+.assistant-card-placeholder { 
+    border-style: dashed; 
+    border-color: #cbd5e1; 
+    background-color: transparent; 
+    padding: 2rem; 
+    border-radius: 16px; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    transition: border-color 0.3s ease, background-color 0.3s ease; 
+}
+
+.assistant-card-placeholder:hover { 
+    border-color: var(--primary-color); 
+    background-color: #fff; 
+}
+
+.placeholder-icon { 
+    font-size: 2rem; 
+    font-weight: 300; 
+    color: #9ca3af; 
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    border: 2px dashed #cbd5e1; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 1rem; 
+    transition: color 0.3s ease, border-color 0.3s ease; 
+}
+
+.assistant-card-placeholder:hover .placeholder-icon { 
+    color: var(--primary-color); 
+    border-color: var(--primary-color); 
+}
 
 /* ======== TESTIMONIAL SECTION ======== */
 .testimonial-section { position: relative; padding: 8rem 2rem; text-align: center; color: white; background-image: url('https://images.pexels.com/photos/256517/pexels-photo-256517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); background-size: cover; background-position: center; }
