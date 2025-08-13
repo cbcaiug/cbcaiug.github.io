@@ -1,302 +1,221 @@
-/*
- * landing-style.css
- * Styles specifically for the new landing page (index.html).
-*/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Educational Assistant for Uganda's CBC</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg">
+    <link rel="stylesheet" href="landing-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
 
-/* ======== GENERAL SETUP & VARIABLES ======== */
-:root {
-    --primary-color: #4f46e5; /* Indigo */
-    --secondary-color: #db2777; /* Pink */
-    --text-dark: #111827; /* Gray 900 */
-    --text-light: #f9fafb; /* Gray 50 */
-    --text-muted: #4b5563; /* Gray 600 */
-    --bg-light: #ffffff;
-    --bg-offwhite: #f9fafb;
-    --border-color: #e5e7eb;
-}
+    <!-- ======== HEADER / NAVIGATION ======== -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="#" class="logo">
+                <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="CBC AI Tool Logo">
+                <span>AI Educational Assistant</span>
+            </a>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#assistants">Assistants</a>
+                <a href="https://youtu.be/KGplNQfdf_w" target="_blank">Watch Demo 🎥</a>
+                <a href="#footer">Contacts</a>
+                <a href="#assistants" class="nav-button">Get Started</a>
+            </div>
+            <!-- NEW: The hamburger menu button, which will only be visible on mobile -->
+            <button class="hamburger-menu" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
 
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); margin: 0; line-height: 1.6; }
+    <main>
+        <!-- ======== HERO SECTION (UPDATED) ======== -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content fade-in-section">
+                    <div class="hero-tag">Free for All Teachers</div>
+                    <h1 class="hero-headline">
+                        Teach <span id="typewriter-text" class="typewriter-text"></span><span class="cursor">&nbsp;</span>
+                    </h1>
+                    <p class="hero-subheadline">
+                        Your AI partner for Uganda's CBC. Reclaim your time and focus on what matters most—your students.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#assistants" class="button-primary">Start Creating</a>
+                        <a href="https://youtu.be/KGplNQfdf_w" target="_blank" class="button-secondary">Watch Demo 🎥</a>
+                    </div>
+                </div>
+                <div class="hero-image-container fade-in-section">
+                    <img src="https://github.com/derikmusa/derikmusa.github.io/blob/2f28a6c2fd8c6042c904c8ed0494e5e9b1281c31/copilot-splash.png?raw=true" alt="AI Assistant Splash Image" class="hero-image">
+                </div>
+            </div>
+        </section>
+        </section>
 
-/* ======== GRADIENT TEXT UTILITY ======== */
-.gradient-text {
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    /*text-fill-color: transparent;*/
-    display: inline;
-}
+        <!-- ======== VALUE PROPOSITION SECTION ======== -->
+        <section class="value-prop-section fade-in-section">
+            <div class="value-prop-grid">
+                <!-- Card 1: Administrate Less -->
+                <div class="value-prop-card">
+                    <div class="value-prop-icon">
+                        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12,2A7,7 0 0,0 5,9c0,2.38 1.19,4.47 3,5.74V17a1,1 0 0,0 1,1h6a1,1 0 0,0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74A7,7 0 0,0 12,2z"></path></svg>
+                    </div>
+                    <h2 class="value-prop-title">Administrate less. Inspire more.</h2>
+                    <p class="value-prop-text">Create high-quality lesson plans, rubrics, assessments, and more in minutes, not hours.</p>
+                    <div class="value-prop-tag">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12,17.27L18.18,21L17,14.64L22,9.73L14.81,8.63L12,2L9.19,8.63L2,9.73L7,14.64L5.82,21L12,17.27Z"></path></svg>
+                        Giving back 10+ hours/week
+                    </div>
+                </div>
+                <!-- Card 2: Always Free -->
+                <div class="value-prop-card card-highlight">
+                    <h2 class="value-prop-title">Always Free for Teachers</h2>
+                    <a href="#assistants" class="button-primary button-large">Start Creating</a>
+                </div>
+            </div>
+        </section>
 
-/* ======== HEADER / NAVIGATION ======== */
-.main-header { position: sticky; top: 0; width: 100%; z-index: 1000; background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
-.main-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; }
-.logo { display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem; font-weight: 700; color: var(--text-dark); text-decoration: none; }
-.logo img { height: 40px; width: 40px; border-radius: 8px; }
-.nav-links { display: flex; align-items: center; gap: 1.5rem; }
-.nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; transition: color 0.3s ease; }
-.nav-links a:hover { color: var(--primary-color); }
-.nav-button { background-color: var(--primary-color); color: var(--text-light) !important; padding: 0.5rem 1rem; border-radius: 6px; transition: background-color 0.3s ease; }
-.nav-button:hover { background-color: #4338ca; }
+        <!-- ======== HOW IT WORKS SECTION ======== -->
+        <section id="how-it-works" class="how-it-works-section fade-in-section">
+            <h2 class="section-title">Get Started in 3 Simple Steps</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Select Your Task</h3>
+                    <p>Choose a specialized tool like the Item Writer or Lesson Plan Generator.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Provide Context</h3>
+                    <p>Input key details from your syllabus like subject, topic, and learning outcomes.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Generate & Refine</h3>
+                    <p>Receive a high-quality draft and copy it to your word editor for final touches.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ======== ASSISTANTS (FEATURES) SECTION ======== -->
+        <section id="assistants" class="assistants-section fade-in-section">
+            <h2 class="section-title">Flexible AI Built for <span class="gradient-text">Your Classroom</span></h2>
+            <div class="assistants-grid">
+                <a href="app.html?assistant=Item+Writer" class="assistant-card"><h3>Item Writer</h3><p>Generates scenario-based assessment items with structured scoring guides.</p></a>
+                <a href="app.html?assistant=Lesson+Plans+(NCDC)" class="assistant-card"><h3>Lesson Plan Generator</h3><p>Creates detailed lesson plans following the official NCDC template.</p></a>
+                <a href="app.html?assistant=Scheme+of+Work+(CBC)" class="assistant-card"><h3>Scheme of Work Creator</h3><p>Develops structured schemes of work based on syllabus requirements.</p></a>
+                <a href="app.html?assistant=Lesson+Notes+Generator" class="assistant-card"><h3>Lesson Notes Generator</h3><p>Produces comprehensive and well-structured lecture notes for any topic.</p></a>
+                <a href="app.html?assistant=Student+Workbook" class="assistant-card"><h3>Student Workbook</h3><p>Develops tailored workbooks with activities to reinforce learning.</p></a>
+                <a href="app.html?assistant=Lab+Assistant" class="assistant-card"><h3>Lab Assistant</h3><p>Analyzes lab feasibility and safety for Chemistry practicals.</p></a>
+                <div class="assistant-card-placeholder">
+                    <div class="placeholder-icon">+</div>
+                    <h3>New Tools on the Horizon</h3>
+                    <p>We're always developing new assistants to support your teaching.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ======== TESTIMONIAL SECTION ======== -->
+        <section class="testimonial-section fade-in-section">
+            <div class="testimonial-overlay"></div>
+            <div class="testimonial-content">
+                <h3 class="testimonial-quote">"I want to support learning, but I need tools that actually work. This is it."</h3>
+            </div>
+        </section>
+        
+    </main>
 
-/* ======== HERO SECTION ======== */
-.hero-section {
-    padding: 6rem 2rem;
-    background: var(--bg-light);
-    overflow: hidden; /* Prevents image from breaking layout */
-}
+    <!-- ======== FOOTER ======== -->
+    <footer id="footer" class="main-footer">
+        <p>&copy; 2025 AI Educational Assistant.</p>
+        <p>Contact: cbcaitool@gmail.com | +256750470234</p>
+    </footer>
 
-.hero-container {
-    display: grid;
-    grid-template-columns: 1fr; /* Default to single column for mobile */
-    gap: 2rem;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    <!-- JavaScript for animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Intersection Observer for fade-in animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+            // --- NEW: HAMBURGER MENU LOGIC ---
+            const hamburgerButton = document.querySelector('.hamburger-menu');
+            const navLinksContainer = document.querySelector('.nav-links-container');
+            const navLinks = document.querySelectorAll('.nav-links a');
 
-/* Use a media query to create a side-by-side layout on larger screens */
-@media (min-width: 992px) {
-    .hero-container {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); /* Two equal columns on desktop */
-    }
-    .hero-content {
-        align-items: flex-start; /* Align content to the left */
-        text-align: left;
-    }
-    .hero-buttons {
-        justify-content: flex-start; /* Align buttons to the left */
-    }
-}
+            hamburgerButton.addEventListener('click', () => {
+                hamburgerButton.classList.toggle('is-open');
+                navLinksContainer.classList.toggle('is-open');
+            });
 
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content on mobile by default */
-    text-align: center;
-}
+            // Close menu when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinksContainer.classList.contains('is-open')) {
+                        hamburgerButton.classList.remove('is-open');
+                        navLinksContainer.classList.remove('is-open');
+                    }
+                });
+            });
+            // --- END OF HAMBURGER MENU LOGIC ---
 
-.hero-tag {
-    display: inline-block;
-    background-color: #eef2ff;
-    color: var(--primary-color);
-    padding: 0.3rem 0.8rem;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
+            // Typewriter effect logic
+            const typingElement = document.getElementById('typewriter-text');
+            const cursorElement = document.querySelector('.cursor');
+            const words = ["Smarter.", "Deeper."];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const typingSpeed = 150;
+            const erasingSpeed = 100;
+            const delayBetweenWords = 2000;
 
-.hero-headline {
-    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font size */
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    min-height: 100px; /* Ensure space for typewriter */
-}
+            function type() {
+                const currentWord = words[wordIndex];
+                
+                if (currentWord === "Deeper.") {
+                    typingElement.classList.add('gradient-text');
+                } else {
+                    typingElement.classList.remove('gradient-text');
+                }
 
-.hero-subheadline {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    max-width: 500px;
-    margin-bottom: 2rem;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center; /* Center buttons on mobile */
-    gap: 1rem;
-    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
-}
-
-.hero-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 1rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.button-primary, .button-secondary {
-    display: inline-block;
-    padding: 0.8rem 1.75rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.button-primary {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-}
-
-.button-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
-}
-
-.button-secondary {
-    background-color: transparent;
-    color: var(--text-dark);
-    border: 1px solid var(--border-color);
-}
-
-.button-secondary:hover {
-    background-color: var(--bg-offwhite);
-    transform: translateY(-2px);
-}
-
-.button-large {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-}
-
-/* TYPEWRITER CURSOR */
-.cursor { display: inline-block; background-color: var(--text-dark); margin-left: 0.1rem; width: 4px; animation: blink 1s infinite; }
-@keyframes blink { 50% { background-color: transparent; } }
-
-/* ======== VALUE PROPOSITION SECTION ======== */
-.value-prop-section { padding: 0 2rem; margin-top: -4rem; }
-.value-prop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1000px; margin: 0 auto; }
-.value-prop-card { background: var(--bg-light); border-radius: 16px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); padding: 2rem; }
-.value-prop-icon { display: inline-flex; justify-content: center; align-items: center; width: 48px; height: 48px; border-radius: 12px; background-color: #eef2ff; color: var(--primary-color); margin-bottom: 1rem; }
-.value-prop-icon svg { width: 28px; height: 28px; }
-.value-prop-title { font-size: 1.75rem; font-weight: 700; margin: 0 0 0.5rem 0; }
-.value-prop-text { color: var(--text-muted); font-size: 1rem; max-width: 500px; margin: 0.5rem auto 1.5rem 0; }
-.value-prop-tag { display: inline-flex; align-items: center; gap: 0.5rem; background-color: var(--bg-offwhite); border: 1px solid var(--border-color); padding: 0.4rem 0.8rem; border-radius: 8px; font-weight: 500; font-size: 0.9rem; }
-.card-highlight { background-color: var(--primary-color); color: var(--text-light); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-.card-highlight .value-prop-title { color: var(--text-light); }
-.card-highlight .button-primary { background-color: var(--bg-light); color: var(--primary-color); }
-
-/* ======== SHARED STYLES ======== */
-.section-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; padding: 0 1rem; }
-
-/* ======== HOW IT WORKS SECTION ======== */
-.how-it-works-section { padding: 8rem 2rem 6rem 2rem; background-color: var(--bg-light); }
-.steps-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-.step-card { background: var(--bg-offwhite); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.step-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
-.step-number { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); background-color: #eef2ff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
-.step-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; margin-top: 0; }
-.step-card p { color: var(--text-muted); }
-
-/* ======== ASSISTANTS SECTION ======== */
-.assistants-section { padding: 6rem 2rem; background-color: var(--bg-offwhite); }
-.assistants-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-.assistant-card { display: block; background-color: var(--bg-light); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); text-decoration: none; color: var(--text-dark); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.assistant-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); }
-.assistant-card h3 { font-size: 1.5rem; margin-top: 0; margin-bottom: 0.5rem; color: var(--primary-color); }
-.assistant-card p { color: var(--text-muted); line-height: 1.5; }
-.assistant-card-placeholder { border-style: dashed; border-color: #cbd5e1; background-color: transparent; padding: 2rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: border-color 0.3s ease, background-color 0.3s ease; }
-.assistant-card-placeholder:hover { border-color: var(--primary-color); background-color: #fff; }
-.placeholder-icon { font-size: 2rem; font-weight: 300; color: #9ca3af; width: 60px; height: 60px; border-radius: 50%; border: 2px dashed #cbd5e1; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; transition: color 0.3s ease, border-color 0.3s ease; }
-.assistant-card-placeholder:hover .placeholder-icon { color: var(--primary-color); border-color: var(--primary-color); }
-
-/* ======== TESTIMONIAL SECTION ======== */
-.testimonial-section { position: relative; padding: 8rem 2rem; text-align: center; color: white; background-image: url('https://images.pexels.com/photos/256517/pexels-photo-256517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); background-size: cover; background-position: center; }
-.testimonial-overlay { position: absolute; inset: 0; background-color: rgba(0, 0, 0, 0.5); }
-.testimonial-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
-.testimonial-quote { font-size: 2.75rem; font-weight: 700; line-height: 1.3; }
-
-/* ======== FOOTER ======== */
-.main-footer { text-align: center; padding: 2rem; background-color: var(--text-dark); color: #9ca3af; }
-.main-footer p { margin: 0.25rem 0; font-size: 0.9rem; }
-
-/* ======== ANIMATIONS ======== */
-.fade-in-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-.fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
-
-/* ======== RESPONSIVE STYLES ======== */
-@media (max-width: 900px) {
-    .value-prop-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 768px) {
-    .hero-headline { font-size: 2.75rem; min-height: 100px; }
-    .testimonial-quote { font-size: 2rem; }
-    .section-title { font-size: 2rem; }
-    .nav-links { gap: 1rem; }
-    .nav-links a:not(.nav-button) { display: none; }
-    .main-nav { padding: 1rem; }
-}
-/* ======== HAMBURGER MENU & MOBILE NAV ======== */
-.hamburger-menu {
-    display: none; /* Hidden by default on desktop */
-    flex-direction: column;
-    justify-content: space-around;
-    width: 2rem;
-    height: 2rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 10;
-}
-
-.hamburger-menu span {
-    width: 2rem;
-    height: 0.25rem;
-    background: var(--text-dark);
-    border-radius: 10px;
-    transition: all 0.3s linear;
-    position: relative;
-    transform-origin: 1px;
-}
-
-/* Animate hamburger to an 'X' when open */
-.hamburger-menu.is-open span:nth-child(1) {
-    transform: rotate(45deg);
-}
-.hamburger-menu.is-open span:nth-child(2) {
-    opacity: 0;
-    transform: translateX(20px);
-}
-.hamburger-menu.is-open span:nth-child(3) {
-    transform: rotate(-45deg);
-}
-
-
-/* Responsive styles for mobile navigation */
-@media (max-width: 768px) {
-    .nav-links-container {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: 70%;
-        max-width: 300px;
-        background-color: var(--bg-light);
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
-        padding-top: 4rem; /* Add padding to not overlap with header */
-    }
-
-    .nav-links-container.is-open {
-        transform: translateX(0);
-    }
-    
-    .nav-links {
-        flex-direction: column;
-        gap: 2rem;
-        align-items: center;
-    }
-
-    .nav-links a:not(.nav-button) {
-        display: block; /* Make sure the links are visible */
-        font-size: 1.2rem;
-    }
-
-    .hamburger-menu {
-        display: flex; /* Show the hamburger button on mobile */
-    }
-}
+                if (isDeleting) {
+                    typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                        setTimeout(type, 500);
+                        return;
+                    }
+                } else {
+                    typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                    if (charIndex === currentWord.length) {
+                        isDeleting = true;
+                        setTimeout(type, delayBetweenWords);
+                        return;
+                    }
+                }
+                setTimeout(type, isDeleting ? erasingSpeed : typingSpeed);
+            }
+            setTimeout(type, 500);
+        });
+    </script>
+</body>
+</html>
