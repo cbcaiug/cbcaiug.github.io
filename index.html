@@ -134,7 +134,7 @@
     </main>
 
     <!-- ======== FOOTER ======== -->
-    <footer id="footer" class="main-footer">
+        <footer id="footer" class="main-footer">
         <p>&copy; 2025 AI Educational Assistant.</p>
         
         <!-- UPDATED: Contact info is now visible text with clickable icons -->
@@ -170,6 +170,43 @@
         </div>
     </footer>
 
+    <!-- Now, we need to add some new CSS for these classes -->
+    <style>
+        .footer-contacts {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap onto the next line on small screens */
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem 1.5rem; /* Vertical and horizontal gap */
+            margin-top: 1rem;
+        }
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .contact-item:hover {
+            color: var(--text-light);
+            transform: translateY(-2px); /* Slight lift effect on hover */
+        }
+        .contact-separator {
+            color: #4b5563; /* A darker gray for the separator */
+        }
+        /* On very small screens, hide the separator and stack the items */
+        @media (max-width: 600px) {
+            .contact-separator {
+                display: none;
+            }
+            .footer-contacts {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+    <!-- ======== END OF FOOTER CONTACTA WITH ICONS ======== -->
     <!-- JavaScript for animations -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
