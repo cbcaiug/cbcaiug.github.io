@@ -60,7 +60,8 @@ body {
 /* Table styling for horizontal scrolling on smaller screens */
 .markdown-content table {
     display: block;
-    width: 100%;
+    /* UPDATED: Removed 'width: 100%' to allow tables to scroll independently without stretching their container */
+    /*width: 100%;*/
     overflow-x: auto;
     border-collapse: collapse;
     margin-bottom: 1rem;
