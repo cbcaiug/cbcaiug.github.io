@@ -188,7 +188,6 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
 .step-card p { color: var(--text-muted); }
 
 /* ======== ASSISTANTS SECTION ======== */
-/* ======== ASSISTANTS SECTION (ENHANCED) ======== */
 .assistants-section { 
     padding: 6rem 2rem; 
     background-color: var(--bg-offwhite); 
@@ -202,13 +201,12 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     margin: 0 auto; 
 }
 
-/* NEW: The card is now a flex container to better control layout */
 .assistant-card { 
     display: flex;
-    flex-direction: column; /* Stacks items vertically */
+    flex-direction: column;
     background-color: var(--bg-light); 
     padding: 2rem; 
-    border-radius: 16px; /* Slightly more rounded corners */
+    border-radius: 16px;
     border: 1px solid var(--border-color); 
     text-decoration: none; 
     color: var(--text-dark); 
@@ -220,7 +218,6 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); 
 }
 
-/* NEW: Style for the icon container */
 .assistant-icon-wrapper {
     display: inline-flex;
     align-items: center;
@@ -228,8 +225,8 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     width: 48px;
     height: 48px;
     border-radius: 12px;
-    background-color: #eef2ff; /* Light indigo background */
-    color: var(--primary-color); /* The primary indigo color for the icon stroke */
+    background-color: #eef2ff;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
 }
 
@@ -237,32 +234,26 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     font-size: 1.5rem; 
     margin-top: 0; 
     margin-bottom: 0.5rem; 
-    color: var(--text-dark); /* Changed from primary color to dark for better hierarchy */
+    color: var(--text-dark);
 }
 
 .assistant-card p { 
     color: var(--text-muted); 
     line-height: 1.6;
-    flex-grow: 1; /* NEW: This makes the description take up available space, pushing the button to the bottom */
+    flex-grow: 1;
     margin-bottom: 1.5rem;
 }
 
-/* UPDATED: Styles for the dedicated chat button to match the new design */
+/* UPDATED: Chat button styles for better balance and consistency. */
 .card-chat-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    align-self: center; /* Keeps the button centered horizontally */
     
-    /* ====> EXPERIMENT HERE (WIDTH & CENTERING) <==== */
-    /* This sets a fixed width for the button. Try changing it. */
-    width: 200px; 
-    /* This centers the button horizontally within the card. */
-    align-self: center; 
-    
-    /* ====> EXPERIMENT HERE (HEIGHT) <==== */
-    /* This controls the button's height. I've reduced it slightly. */
-    padding: 0.5rem 1rem; /* The first value is vertical, the second is horizontal. */
+    /* REMOVED fixed width, using padding for flexible sizing */
+    padding: 0.75rem 2.5rem; /* Increased padding for a better look */
 
     border: 2px solid var(--border-color);
     color: var(--text-dark);
@@ -273,22 +264,18 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* NEW: Style for the SVG icon inside the button */
 .card-chat-button svg {
     width: 18px;
     height: 18px;
-    /* The color of the icon is inherited from its parent's 'color' property */
     transition: color 0.3s ease;
 }
 
-/* UPDATED: Hover effect for the button */
 .card-chat-button:hover {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
-    color: var(--text-light); /* This will make both the text AND the icon turn white */
+    color: var(--text-light);
 }
 
-/* Placeholder card styles remain the same */
 .assistant-card-placeholder { 
     border-style: dashed; 
     border-color: #cbd5e1; 
@@ -354,19 +341,19 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     .nav-links { gap: 1rem; }
     .nav-links a:not(.nav-button) { display: none; }
     .main-nav { padding: 1rem; }
-     /* THIS IS THE CORRECT AND FINAL FIX */
     .assistants-grid {
-        grid-template-columns: 1fr; /* Force the grid to a single column on mobile */}
+        grid-template-columns: 1fr;
+    }
     
 }
   
 /* ======== FOOTER CONTACTS ======== */
 .footer-contacts {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap onto the next line on small screens */
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem 1.5rem; /* Vertical and horizontal gap */
+    gap: 0.5rem 1.5rem;
     margin-top: 1rem;
 }
 .contact-item {
@@ -379,12 +366,11 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
 }
 .contact-item:hover {
     color: var(--text-light);
-    transform: translateY(-2px); /* Slight lift effect on hover */
+    transform: translateY(-2px);
 }
 .contact-separator {
-    color: #4b5563; /* A darker gray for the separator */
+    color: #4b5563;
 }
-/* On very small screens, hide the separator and stack the items */
 @media (max-width: 600px) {
     .contact-separator {
         display: none;
@@ -398,19 +384,17 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
 /* STYLES FOR FLOATING CONTACT WIDGET */
 /* ================================ */
 
-/* Main container for the widget */
 .contact-widget {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    z-index: 1020; /* Ensure it's above other content but below mobile menus if any */
+    z-index: 1020;
 }
 
-/* The floating chat bubble button */
 .widget-bubble-btn {
     width: 60px;
     height: 60px;
-    background-color: var(--primary-color); /* Uses your site's primary color */
+    background-color: var(--primary-color);
     color: white;
     border-radius: 50%;
     border: none;
@@ -426,12 +410,10 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     transform: scale(1.1);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
-/* --- NEW CSS FOR THE TEXT LABEL --- */
 
-/* Style for the text label itself */
 .widget-bubble-text {
     position: absolute;
-    right: calc(100% + 1rem); /* Position it to the left of the bubble */
+    right: calc(100% + 1rem);
     top: 50%;
     transform: translateY(-50%);
     background-color: white;
@@ -439,42 +421,35 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     padding: 0.5rem 1rem;
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    white-space: nowrap; /* Prevent the text from wrapping */
+    white-space: nowrap;
     font-weight: 600;
     font-size: 0.9rem;
-    /* Animation setup */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
 }
 
-/* Show the text label when the user hovers over the main widget container */
 .contact-widget:hover .widget-bubble-text {
     opacity: 1;
     visibility: visible;
 }
 
-/* On mobile, we don't have hover, so we just hide the text label */
 @media (max-width: 768px) {
     .widget-bubble-text {
         display: none;
     }
 }
 
-/* The pop-up form container */
 .widget-form-container {
-    /* UPDATED: Changed position to 'fixed' to be relative to the viewport, not the bubble */
     position: fixed;
-    /* UPDATED: Aligned it to the same spot as the bubble */
     bottom: 2rem; 
     right: 2rem;
     width: 350px;
-    max-width: calc(100vw - 2rem); /* Ensure it doesn't go off-screen on mobile */
+    max-width: calc(100vw - 2rem);
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-    overflow: hidden; /* Important for the rounded corners */
-    /* Animation setup */
+    overflow: hidden;
     transform-origin: bottom right;
     transform: scale(0.5);
     opacity: 0;
@@ -482,21 +457,18 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
 }
 
-/* Styles for when the form is open/visible */
 .contact-widget.open .widget-form-container {
     transform: scale(1);
     opacity: 1;
     visibility: visible;
 }
 
-/* Hide the bubble when the form is open, show the close button */
 .contact-widget.open .widget-bubble-btn {
     opacity: 0;
     transform: scale(0);
     visibility: hidden;
 }
 
-/* Form header styling */
 .widget-header {
     background-color: var(--primary-color);
     color: white;
@@ -530,7 +502,6 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     opacity: 1;
 }
 
-/* Form styling */
 .widget-form {
     padding: 1.5rem;
     display: flex;
@@ -550,7 +521,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     border: 1px solid var(--border-color);
     border-radius: 6px;
     font-size: 1rem;
-    box-sizing: border-box; /* Important for consistent sizing */
+    box-sizing: border-box;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 .form-group input:focus,
@@ -576,18 +547,17 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     transition: background-color 0.2s;
 }
 .widget-submit-btn:hover {
-    background-color: #4338ca; /* A slightly darker shade of primary */
+    background-color: #4338ca;
 }
 .widget-submit-btn:disabled {
-    background-color: #a5b4fc; /* Lighter shade for disabled state */
+    background-color: #a5b4fc;
     cursor: not-allowed;
 }
 
-/* Spinner for loading state */
 .widget-spinner {
     width: 24px;
     height: 24px;
-    border: 3px solid #e0e7ff; /* Lighter indigo */
+    border: 3px solid #e0e7ff;
     border-top: 3px solid var(--primary-color);
     border-radius: 50%;
     animation: spin 1s linear infinite;
@@ -597,7 +567,6 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     100% { transform: rotate(360deg); }
 }
 
-/* Success message styling */
 .widget-success-message {
     padding: 2rem 1.5rem;
     text-align: center;
