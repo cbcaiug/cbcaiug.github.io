@@ -8,7 +8,6 @@
 const { useState, useEffect, useRef, useCallback } = React;
 
 // --- SVG ICONS (as React components) ---
-// Adjusted strokeWidth to 1.8 for optimal rendering without clipping.
 const Icon = ({ C, ...props }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>{C}</svg>;
 const SendIcon = (props) => <Icon {...props} C={<><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></>} />;
 const StopIcon = (props) => <Icon {...props} C={<rect x="3" y="3" width="18" height="18" rx="2" ry="2" />} />;
@@ -38,14 +37,12 @@ const SparkIcon = (props) => (
         <path d="M11.1,13.8V23l8.8-13.8h-5.2L11.1,0,3.2,13.8Z"/>
     </svg>
 );
-// NEW: Icon for DOCX download functionality
 const FileTextIcon = (props) => <Icon {...props} C={<><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><line x1="10" y1="9" x2="8" y2="9" /></>} />;
 
 
 // --- CONFIGURATION ---
 const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxZHjqJoIwvdsXE_wrr8Dil9vIFvrv9BKe7ZZln8LtkEbOgLcPrzust6K-MSN7NcLZN/exec';
 const FEEDBACK_TRIGGER_COUNT = 3;
-// NEW: Timeout for the "taking longer than usual" message in milliseconds
 const LONG_RESPONSE_TIMEOUT = 10000; // 10 seconds
 
 // --- Event Tracking Function ---
@@ -131,12 +128,6 @@ const AI_PROVIDERS = [
 ];
 
 // --- REACT COMPONENTS ---
-const AiAvatar = () => (
-    <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: 'var(--app-primary-soft)' }}>
-        <SparkIcon className="w-5 h-5" style={{ color: 'var(--app-primary)' }} />
-    </div>
-);
-
 const LoadingScreen = ({ text }) => (
     <div className="loading-screen-container">
         <div className="loading-logo-wrapper">
@@ -174,7 +165,6 @@ const MarkdownRenderer = ({ htmlContent, isLoading, isTakingLong }) => {
         return (
             <div className="p-4 flex items-center text-slate-500">
                 <div className="loading-spinner mr-3"></div>
-                {/* NEW: Conditional message based on isTakingLong state */}
                 <span className="font-medium">
                     {isTakingLong ? "AI is taking a bit longer than usual..." : "AI is thinking..."}
                 </span>
@@ -341,12 +331,10 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDo
 
   if (msg.isLoading) return null;
   
-  // This forces ALL menus to anchor their right edge, making them expand to the left.
   const menuPositionClass = 'right-0';
 
   return (
-      // MODIFIED: This container is now part of a flex-col layout in the parent
-      <div className="relative self-end mt-1" ref={menuRef}>
+      <div className="relative self-center" ref={menuRef}>
           <button
               onClick={() => setIsOpen(prev => !prev)}
               className="p-2 rounded-full hover:bg-slate-200 text-slate-500"
@@ -355,7 +343,7 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDo
               <MoreVerticalIcon className="w-5 h-5" />
           </button>
           {isOpen && (
-              <div className={`absolute ${menuPositionClass} bottom-full mb-2 w-52 bg-white rounded-md shadow-lg z-20 border border-slate-200`}>
+              <div className={`absolute ${menuPositionClass} mt-2 w-52 bg-white rounded-md shadow-lg z-20 border border-slate-200`}>
                   <button
                       onClick={() => { onCopy(msg.content); setIsOpen(false); }}
                       className="w-full text-left flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100"
@@ -363,7 +351,6 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDo
                       <CopyIcon className="w-4 h-4" />
                       <span>Copy Message</span>
                   </button>
-                  {/* NEW: DOCX Download button */}
                   {msg.role === 'assistant' && (
                      <button
                         onClick={() => { onDocxDownload(msg.content); setIsOpen(false); }}
@@ -436,7 +423,6 @@ function App() {
   const [notifications, setNotifications] = useState([]);
   const [hasNewNotification, setHasNewNotification] = useState(false);
   const [showUpdateBanner, setShowUpdateBanner] = useState(false);
-  // NEW: State for the "taking longer than usual" message
   const [isTakingLong, setIsTakingLong] = useState(false);
 
 
@@ -447,7 +433,6 @@ function App() {
   const validationTimeoutRef = useRef(null);
   const apiKeyToastTimeoutRef = useRef(null);
   const abortControllerRef = useRef(null);
-  // NEW: Ref for the "taking long" timer
   const longResponseTimerRef = useRef(null);
 
   // --- DERIVED STATE ---
@@ -455,7 +440,7 @@ function App() {
   const selectedModel = selectedProvider?.models.find(m => m.name === selectedModelName);
   const isFileUploadDisabled = !selectedModel?.vision;
 
-  // --- HANDLERS & LOGIC (REFACTORED) ---
+  // --- HANDLERS & LOGIC ---
   const loadInitialMessage = useCallback(async (promptKey) => {
       const chatKey = `chatHistory_${promptKey}`;
       const savedChat = JSON.parse(localStorage.getItem(chatKey));
@@ -688,11 +673,10 @@ function App() {
       setIsTakingLong(false);
   };
   
-  // NEW: Handler for the DOCX download functionality
+  // MODIFIED: Added explicit check for window.htmlToDocx to prevent race condition errors.
   const handleDocxDownload = async (messageContent) => {
-      // Ensure the htmlToDocx function is available from the global scope (window)
-      if (typeof htmlToDocx === 'undefined') {
-          setError("DOCX export library not found. Please refresh the page.");
+      if (typeof window.htmlToDocx === 'undefined') {
+          setError("DOCX export library is still loading. Please try again in a moment.");
           return;
       }
       
@@ -704,7 +688,7 @@ function App() {
       const fullHtml = header + htmlString + footer;
 
       try {
-          const fileBuffer = await htmlToDocx(fullHtml, null, {
+          const fileBuffer = await window.htmlToDocx(fullHtml, null, {
               table: { row: { cantSplit: true } },
               footer: true,
               header: true
@@ -714,7 +698,6 @@ function App() {
           const url = URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.href = url;
-          // Generate a clean filename
           const fileName = `${activePromptKey.replace(/[^a-zA-Z0-9]/g, '_')}_${new Date().toISOString().slice(0,10)}.docx`;
           a.download = fileName;
           document.body.appendChild(a);
@@ -740,11 +723,10 @@ function App() {
 
       abortControllerRef.current = new AbortController();
       
-      // NEW: Set a timer to show the "taking longer" message
       if(longResponseTimerRef.current) clearTimeout(longResponseTimerRef.current);
       longResponseTimerRef.current = setTimeout(() => {
           setIsTakingLong(true);
-      }, LONG_RESPONSE_TIMEOUT); // You can adjust this duration at the top of the file
+      }, LONG_RESPONSE_TIMEOUT);
 
       try {
           let requestUrl, requestHeaders, requestBody;
@@ -807,7 +789,6 @@ function App() {
 
               for (const line of lines) {
                   if (line.startsWith('data: ')) {
-                      // NEW: Once we get data, clear the "taking long" timer and reset the state
                       if (!firstChunkReceived) {
                           firstChunkReceived = true;
                           clearTimeout(longResponseTimerRef.current);
@@ -835,7 +816,6 @@ function App() {
               onError(err.message);
           }
       } finally {
-          // Final cleanup of the timer and state
           clearTimeout(longResponseTimerRef.current);
           setIsTakingLong(false);
           onComplete();
@@ -1245,37 +1225,30 @@ function App() {
                   <div className="px-1 p-2 sm:p-6 space-y-4">
                       {chatHistory.map((msg, index) => (
                           <div key={msg.id || index} className={`flex w-full items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
-                              {msg.role !== 'user' && <AiAvatar />}
                               
-                              {/* MODIFIED: This new wrapper allows the menu to be placed below the bubble */}
-                              <div className={`flex flex-col w-full max-w-full ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
-                                  <div className={`rounded-lg w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
-                                      {msg.file && (
-                                          <div className="p-2 bg-indigo-500/80">
-                                              {msg.file.previewUrl ? <img src={msg.file.previewUrl} className="max-w-xs rounded-md"/> : <div className="flex items-center gap-2 p-2"><FileIcon className="w-6 h-6"/><span>{msg.file.name}</span></div>}
-                                          </div>
-                                      )}
-                                      <MarkdownRenderer 
-                                          htmlContent={marked.parse(msg.content || '')} 
-                                          isLoading={msg.isLoading}
-                                          isTakingLong={isTakingLong} // Pass the new state here
-                                      />
-                                  </div>
-                                  
-                                  {/* The Message Menu is now inside the new wrapper, appearing below */}
-                                  <MessageMenu
-                                      msg={msg}
-                                      index={index}
-                                      onCopy={handleCopy}
-                                      onShare={handleShare}
-                                      onDelete={handleDeleteMessage}
-                                      onRegenerate={handleRegenerate}
-                                      onDocxDownload={handleDocxDownload} // Pass new handler
+                              {/* MODIFIED: The message bubble and its menu are now direct siblings */}
+                              <div className={`rounded-lg max-w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
+                                  {msg.file && (
+                                      <div className="p-2 bg-indigo-500/80">
+                                          {msg.file.previewUrl ? <img src={msg.file.previewUrl} className="max-w-xs rounded-md"/> : <div className="flex items-center gap-2 p-2"><FileIcon className="w-6 h-6"/><span>{msg.file.name}</span></div>}
+                                      </div>
+                                  )}
+                                  <MarkdownRenderer 
+                                      htmlContent={marked.parse(msg.content || '')} 
+                                      isLoading={msg.isLoading}
+                                      isTakingLong={isTakingLong}
                                   />
                               </div>
-
-                              {/* This is for the user's avatar, if you ever add one */}
-                              {msg.role === 'user' && <div className="w-8 h-8 rounded-full bg-slate-300 flex items-center justify-center shrink-0"></div>}
+                              
+                              <MessageMenu
+                                  msg={msg}
+                                  index={index}
+                                  onCopy={handleCopy}
+                                  onShare={handleShare}
+                                  onDelete={handleDeleteMessage}
+                                  onRegenerate={handleRegenerate}
+                                  onDocxDownload={handleDocxDownload}
+                              />
                           </div>
                       ))}
                       <div ref={chatEndRef} />
