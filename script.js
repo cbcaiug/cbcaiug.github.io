@@ -28,11 +28,13 @@ const StarIcon = (props) => <Icon {...props} C={<polygon points="12 2 15.09 8.26
 const Share2Icon = (props) => <Icon {...props} C={<><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></>} />;
 const RefreshCwIcon = (props) => <Icon {...props} C={<><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></>} />;
 const SettingsIcon = (props) => <Icon {...props} C={<path d="M12.22 2h-4.44l-2 6-6 2 2 6 6 2 2-6 6-2-2-6zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>} />;
-const NewPhoneIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.02.74-.25 1.02l-2.2 2.2z"/></svg>;
-const NewEnvelopeIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>;
-const NewWhatsAppIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#25D366" {...props}><path d="M19.11 4.9a9.88 9.88 0 0 0-14.22 0 9.88 9.88 0 0 0 0 14.22l-2.09 2.09 2.23 2.23 2.09-2.09a9.88 9.88 0 0 0 14.22 0c3.89-3.89 3.89-10.33 0-14.22zM12 19.94a7.94 7.94 0 0 1-6.4-12.84l.09-.09.09-.09a7.94 7.94 0 0 1 12.62 0l.09.09.09.09A7.94 7.94 0 0 1 12 19.94zm-1.1-6.61h-2.26v-1.5h2.26v-2.26h1.5v2.26h2.26v1.5h-2.26v2.26h-1.5z"/></svg>;
 const BellIcon = (props) => <Icon {...props} C={<><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></>} />;
 const FileTextIcon = (props) => <Icon {...props} C={<><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><line x1="10" y1="9" x2="8" y2="9" /></>} />;
+
+// --- NEW/MODIFIED ICONS to match landing page footer ---
+const FooterEmailIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>;
+const FooterPhoneIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.02.74-.25 1.02l-2.2 2.2z"/></svg>;
+const FooterWhatsAppIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 512" fill="currentColor" {...props}><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-67.6-9.5-97.8-26.7l-7-4.1-72.5 19.1 19.4-70.5-4.5-7.3c-18.4-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>;
 
 
 // --- CONFIGURATION ---
@@ -1224,18 +1226,30 @@ function App() {
                           )}
                       </div>
                   </div>
+                  {/* ================================================================= */}
+                  {/* MODIFIED: Replaced the old footer with the new one to match the landing page. */}
+                  {/* This uses the new icon components and adds text labels for clarity. */}
+                  {/* ================================================================= */}
                   <div className="p-4 mt-auto space-y-3 flex-shrink-0 border-t border-slate-700">
                        <p className="text-sm text-slate-400 text-center">A Project by Derrick Musamali</p>
-                       <div className="flex justify-center items-center gap-6 text-slate-400">
-                          <a href="tel:+256750470234" title="Call" className="hover:text-white transition-colors">
-                              <NewPhoneIcon className="w-6 h-6"/>
-                          </a>
-                          <a href="https://wa.me/256750470234" target="_blank" rel="noopener noreferrer" title="WhatsApp" className="hover:opacity-80 transition-opacity">
-                              <NewWhatsAppIcon className="w-6 h-6"/>
-                          </a>
-                          <a href="mailto:musadrk2@gmail.com" title="Email" className="hover:text-white transition-colors">
-                              <NewEnvelopeIcon className="w-6 h-6 text-slate-400 hover:text-white"/>
-                          </a>
+                       <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-slate-400">
+                            {/* Email */}
+                            <a href="mailto:cbcaitool@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors" title="Send an Email">
+                                <FooterEmailIcon />
+                                <span className="text-sm">cbcaitool@gmail.com</span>
+                            </a>
+                            
+                            {/* Phone */}
+                            <a href="tel:+256750470234" className="flex items-center gap-2 hover:text-white transition-colors" title="Make a Call">
+                                <FooterPhoneIcon />
+                                <span className="text-sm">+256750470234</span>
+                            </a>
+
+                            {/* WhatsApp */}
+                            <a href="https://wa.me/256750470234" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors" title="Chat on WhatsApp">
+                                <FooterWhatsAppIcon />
+                                <span className="text-sm">+256750470234</span>
+                            </a>
                        </div>
                        <a href= "/" rel="external" className="flex items-center justify-center gap-2 w-full text-center mt-2 py-2 bg-slate-700 hover:bg-slate-600 rounded-md transition-colors"><HomeIcon className="w-5 h-5"/>Return to Home</a>
                   </div>
