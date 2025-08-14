@@ -39,7 +39,7 @@ const FooterWhatsAppIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" wi
 
 // --- CONFIGURATION ---
 const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxZHjqJoIwvdsXE_wrr8Dil9vIFvrv9BKe7ZZln8LtkEbOgLcPrzust6K-MSN7NcLZN/exec';
-const FEEDBACK_TRIGGER_COUNT = 3;
+const FEEDBACK_TRIGGER_COUNT = 5;
 const LONG_RESPONSE_TIMEOUT = 10000; // 10 seconds
 
 // --- Event Tracking Function ---
