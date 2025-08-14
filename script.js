@@ -1202,7 +1202,8 @@ function App() {
               </header>
 
               <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative">
-                  <div className="p-2 sm:p-6 space-y-4">
+                  {/* UPDATED: Reduced horizontal padding on mobile for full-width chat bubbles */}
+                  <div className="px-1 p-2 sm:p-6 space-y-4">
                                             {chatHistory.map((msg, index) => (
                           <div key={msg.id || index} className={`flex w-full items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
                               
