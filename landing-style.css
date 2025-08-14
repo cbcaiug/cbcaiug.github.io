@@ -16,7 +16,7 @@
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); margin: 0; line-height: 1.6; overflow-x: hidden; /* This prevents horizontal scrolling */}
+body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); margin: 0; line-height: 1.6;}
 
 /* ======== GRADIENT TEXT UTILITY ======== */
 .gradient-text {
@@ -337,6 +337,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
 /* ======== RESPONSIVE STYLES ======== */
 @media (max-width: 900px) {
     .value-prop-grid { grid-template-columns: 1fr; }
+
 }
 @media (max-width: 768px) {
     .hero-headline { font-size: 2.75rem; min-height: 100px; }
@@ -345,6 +346,10 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     .nav-links { gap: 1rem; }
     .nav-links a:not(.nav-button) { display: none; }
     .main-nav { padding: 1rem; }
+     /* THIS IS THE CORRECT AND FINAL FIX */
+    .assistants-grid {
+        grid-template-columns: 1fr; /* Force the grid to a single column on mobile */}
+    
 }
   
 /* ======== FOOTER CONTACTS ======== */
