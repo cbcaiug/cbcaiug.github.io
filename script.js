@@ -8,7 +8,7 @@
 const { useState, useEffect, useRef, useCallback } = React;
 
 // --- SVG ICONS (as React components) ---
-// FINAL FIX: Adjusted strokeWidth to 1.8 for optimal rendering without clipping.
+// Adjusted strokeWidth to 1.8 for optimal rendering without clipping.
 const Icon = ({ C, ...props }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>{C}</svg>;
 const SendIcon = (props) => <Icon {...props} C={<><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></>} />;
 const StopIcon = (props) => <Icon {...props} C={<rect x="3" y="3" width="18" height="18" rx="2" ry="2" />} />;
@@ -33,51 +33,46 @@ const NewPhoneIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="2
 const NewEnvelopeIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>;
 const NewWhatsAppIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#25D366" {...props}><path d="M19.11 4.9a9.88 9.88 0 0 0-14.22 0 9.88 9.88 0 0 0 0 14.22l-2.09 2.09 2.23 2.23 2.09-2.09a9.88 9.88 0 0 0 14.22 0c3.89-3.89 3.89-10.33 0-14.22zM12 19.94a7.94 7.94 0 0 1-6.4-12.84l.09-.09.09-.09a7.94 7.94 0 0 1 12.62 0l.09.09.09.09A7.94 7.94 0 0 1 12 19.94zm-1.1-6.61h-2.26v-1.5h2.26v-2.26h1.5v2.26h2.26v1.5h-2.26v2.26h-1.5z"/></svg>;
 const BellIcon = (props) => <Icon {...props} C={<><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></>} />;
-//const RefreshCwIcon = (props) => <Icon {...props} C={<><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></>} />;
-// NEW: Add the SparkIcon for the new AI avatar (UPDATED to a solid, clearer icon)
 const SparkIcon = (props) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}>
         <path d="M11.1,13.8V23l8.8-13.8h-5.2L11.1,0,3.2,13.8Z"/>
     </svg>
 );
+// NEW: Icon for DOCX download functionality
+const FileTextIcon = (props) => <Icon {...props} C={<><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><line x1="10" y1="9" x2="8" y2="9" /></>} />;
+
 
 // --- CONFIGURATION ---
 const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxZHjqJoIwvdsXE_wrr8Dil9vIFvrv9BKe7ZZln8LtkEbOgLcPrzust6K-MSN7NcLZN/exec';
 const FEEDBACK_TRIGGER_COUNT = 3;
+// NEW: Timeout for the "taking longer than usual" message in milliseconds
+const LONG_RESPONSE_TIMEOUT = 10000; // 10 seconds
 
 // --- Event Tracking Function ---
-// MODIFIED: This function now checks for an 'admin=true' URL parameter
-// and passes the user type to the backend.
 const trackEvent = (eventType, assistantName, details = {}) => {
-    // Check the URL for the admin parameter
     const urlParams = new URLSearchParams(window.location.search);
     const isAdmin = urlParams.get('admin') === 'true';
 
     const payload = {
         action: 'logEvent',
         event: {
-            type: eventType, // e.g., 'generation', 'share', 'feedback_skipped'
+            type: eventType,
             assistant: assistantName,
-            details: details, // e.g., { rating: 5, text: 'Great!' }
-            userType: isAdmin ? 'Admin' : 'User' // Add the user type here
+            details: details,
+            userType: isAdmin ? 'Admin' : 'User'
         }
     };
     
-    // Send the data to the backend. We use 'no-cors' and 'text/plain'
-    // as a robust way to send data to Google Apps Script without needing a complex response.
     fetch(GAS_WEB_APP_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: {
-            'Content-Type': 'text/plain;charset=utf-8',
-        },
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(payload)
     }).catch(error => console.error('Event tracking failed:', error));
 };
 
 
 // --- PROMPT MANAGEMENT ---
-// This object handles fetching assistant data from the Google Apps Script backend.
 const PromptManager = {
   cache: {},
   availableAssistants: [],
@@ -92,12 +87,7 @@ const PromptManager = {
       throw new Error(data.error || 'Failed to fetch assistants');
     } catch (error) {
       console.error('Error fetching assistants:', error);
-      // Fallback data in case the backend is unreachable
-      return [
-        "Item Writer", "Lesson Notes Generator", "Lesson Plans (with Biblical values)", "Lesson Plans (no Biblical values)",
-        "Mark Scheme Generator", "Scheme of Work (with Biblical values)", "Scheme of Work (no Biblical values)",
-        "Student Workbook", "UCE Project Work Assistant", "Lab Assistant"
-      ];
+      return [ "Item Writer", "Lesson Notes Generator" ];
     }
   },
   async getPromptContent(assistantName) {
@@ -120,7 +110,6 @@ const PromptManager = {
 
 // --- AI PROVIDER CONFIGURATION ---
 const AI_PROVIDERS = [
-  // UPDATED: Added latest Gemini 2.0 and 2.5 models for completeness
   { key: 'google', label: 'Google Gemini', apiKeyName: 'googleApiKey', apiKeyUrl: 'https://aistudio.google.com/app/apikey', apiHost: 'https://generativelanguage.googleapis.com', models: [
       { name: 'gemini-2.5-pro', vision: true }, { name: 'gemini-2.5-flash', vision: true }, { name: 'gemini-2.0-pro', vision: true }, { name: 'gemini-2.0-flash', vision: true }, { name: 'gemini-1.5-pro-latest', vision: true }, { name: 'gemini-1.5-flash-latest', vision: true }
   ]},
@@ -133,39 +122,35 @@ const AI_PROVIDERS = [
   { key: 'groq', label: 'Llama 3 (via Groq)', apiKeyName: 'groqApiKey', apiKeyUrl: 'https://console.groq.com/keys', apiHost: 'https://api.groq.com/openai', models: [
       { name: 'llama3-8b-8192', vision: false }, { name: 'llama3-70b-8192', vision: false }
   ]},
-  // NEW: Added Deepseek as a provider
   { key: 'deepseek', label: 'Deepseek (Free Tier)', apiKeyName: 'deepseekApiKey', apiKeyUrl: 'https://platform.deepseek.com/api_keys', apiHost: 'https://api.deepseek.com', models: [
       { name: 'deepseek-chat', vision: false }, { name: 'deepseek-coder', vision: false }
   ]},
-  // NEW: Added Qwen (via OpenRouter) as a provider
   { key: 'qwen', label: 'Qwen (Free Tier)', apiKeyName: 'qwenApiKey', apiKeyUrl: 'https://openrouter.ai/keys', apiHost: 'https://openrouter.ai/api', models: [
       { name: 'qwen/qwen-2-72b-instruct', vision: false }, { name: 'qwen/qwen-2-7b-instruct', vision: false }
   ]},
 ];
 
 // --- REACT COMPONENTS ---
-// NEW: A dedicated component for the AI avatar, as per the new design.
 const AiAvatar = () => (
     <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: 'var(--app-primary-soft)' }}>
         <SparkIcon className="w-5 h-5" style={{ color: 'var(--app-primary)' }} />
     </div>
 );
-// UPDATED: A dedicated component for the polished RECTANGULAR loading screen.
+
 const LoadingScreen = ({ text }) => (
     <div className="loading-screen-container">
         <div className="loading-logo-wrapper">
-            {/* The spinner is now created by the CSS on this wrapper div */}
             <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Loading Logo" className="loading-logo-img" />
         </div>
         <p className="loading-screen-text">{text}</p>
     </div>
 );
-// Renders markdown content, the "thinking" indicator, and the scroll guide for tables
-const MarkdownRenderer = ({ htmlContent, isLoading }) => {
+
+// Renders markdown content, handles "thinking" and "taking long" indicators
+const MarkdownRenderer = ({ htmlContent, isLoading, isTakingLong }) => {
     const contentRef = useRef(null);
 
     useEffect(() => {
-        // This effect for table scroll guides remains unchanged
         if (contentRef.current) {
             const tables = contentRef.current.querySelectorAll('table');
             tables.forEach(table => {
@@ -184,23 +169,23 @@ const MarkdownRenderer = ({ htmlContent, isLoading }) => {
         }
     }, [htmlContent, isLoading]);
 
-    // NEW: If the AI is loading but hasn't sent any text yet, show a "thinking" message.
-    // We check for empty content (and ignore empty <p> tags that marked.js might create).
+    // If loading and no content yet, show the thinking/taking long message
     if (isLoading && !htmlContent.trim().replace(/<p><\/p>/g, '')) {
         return (
             <div className="p-4 flex items-center text-slate-500">
                 <div className="loading-spinner mr-3"></div>
-                <span className="font-medium">AI is thinking...</span>
+                {/* NEW: Conditional message based on isTakingLong state */}
+                <span className="font-medium">
+                    {isTakingLong ? "AI is taking a bit longer than usual..." : "AI is thinking..."}
+                </span>
             </div>
         );
     }
     
-    // UPDATED: If content is streaming, append the new spinner instead of the old cursor.
     const finalHtml = htmlContent + (isLoading ? '<span class="streaming-indicator"></span>' : '');
     return <div ref={contentRef} className="markdown-content p-4" dangerouslySetInnerHTML={{ __html: finalHtml }} />;
 };
 
-// Feedback modal component
 const FeedbackModal = ({ isOpen, onClose, onSubmit, assistantName }) => {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
@@ -317,7 +302,7 @@ const FeedbackModal = ({ isOpen, onClose, onSubmit, assistantName }) => {
       </div>
   );
 };
-// NEW: Component for the dismissible update banner
+
 const UpdateBanner = ({ latestUpdate, onDismiss }) => {
     if (!latestUpdate) return null;
 
@@ -339,8 +324,8 @@ const UpdateBanner = ({ latestUpdate, onDismiss }) => {
 };
 
 
-// Context menu for each message (copy, share, delete, regenerate)
-const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate }) => {
+// Context menu for each message (copy, share, delete, etc.)
+const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDocxDownload }) => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -355,12 +340,13 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate }) =>
   }, [menuRef]);
 
   if (msg.isLoading) return null;
-
-      // This forces ALL menus to anchor their right edge, making them expand to the left.
+  
+  // This forces ALL menus to anchor their right edge, making them expand to the left.
   const menuPositionClass = 'right-0';
 
   return (
-      <div className="relative" ref={menuRef}>
+      // MODIFIED: This container is now part of a flex-col layout in the parent
+      <div className="relative self-end mt-1" ref={menuRef}>
           <button
               onClick={() => setIsOpen(prev => !prev)}
               className="p-2 rounded-full hover:bg-slate-200 text-slate-500"
@@ -369,7 +355,7 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate }) =>
               <MoreVerticalIcon className="w-5 h-5" />
           </button>
           {isOpen && (
-              <div className={`absolute ${menuPositionClass} mt-2 w-48 bg-white rounded-md shadow-lg z-20 border border-slate-200`}>
+              <div className={`absolute ${menuPositionClass} bottom-full mb-2 w-52 bg-white rounded-md shadow-lg z-20 border border-slate-200`}>
                   <button
                       onClick={() => { onCopy(msg.content); setIsOpen(false); }}
                       className="w-full text-left flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100"
@@ -377,6 +363,16 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate }) =>
                       <CopyIcon className="w-4 h-4" />
                       <span>Copy Message</span>
                   </button>
+                  {/* NEW: DOCX Download button */}
+                  {msg.role === 'assistant' && (
+                     <button
+                        onClick={() => { onDocxDownload(msg.content); setIsOpen(false); }}
+                        className="w-full text-left flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100"
+                    >
+                        <FileTextIcon className="w-4 h-4" />
+                        <span>Download as .docx</span>
+                    </button>
+                  )}
                   <button
                       onClick={() => { onShare({ title: 'AI Assistant Response', text: msg.content }); setIsOpen(false); }}
                       className="w-full text-left flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100"
@@ -440,6 +436,8 @@ function App() {
   const [notifications, setNotifications] = useState([]);
   const [hasNewNotification, setHasNewNotification] = useState(false);
   const [showUpdateBanner, setShowUpdateBanner] = useState(false);
+  // NEW: State for the "taking longer than usual" message
+  const [isTakingLong, setIsTakingLong] = useState(false);
 
 
   // --- REFS ---
@@ -449,6 +447,8 @@ function App() {
   const validationTimeoutRef = useRef(null);
   const apiKeyToastTimeoutRef = useRef(null);
   const abortControllerRef = useRef(null);
+  // NEW: Ref for the "taking long" timer
+  const longResponseTimerRef = useRef(null);
 
   // --- DERIVED STATE ---
   const selectedProvider = AI_PROVIDERS.find(p => p.key === selectedProviderKey);
@@ -498,11 +498,9 @@ function App() {
 
       const initializeApp = async () => {
           setIsLoadingAssistants(true);
-
-          // Fetch assistants and notifications in parallel
           const [assistants] = await Promise.all([
               PromptManager.getAvailableAssistants(),
-              fetchNotifications() // This is the new function we're calling
+              fetchNotifications()
           ]);
           
           setAvailableAssistants(assistants);
@@ -589,14 +587,8 @@ function App() {
       let isValid = false;
       try {
           let response;
-          // Use a unified approach for OpenAI-compatible APIs
           if (['openai', 'groq', 'deepseek', 'qwen'].includes(provider.key)) {
-              const headers = { 'Authorization': `Bearer ${key}` };
-              if (provider.key === 'qwen') {
-                 // OpenRouter might require specific headers if not using standard Bearer token auth, but Bearer is common.
-                 // This assumes a standard setup.
-              }
-              response = await fetch(`${provider.apiHost}/v1/models`, { headers });
+              response = await fetch(`${provider.apiHost}/v1/models`, { headers: { 'Authorization': `Bearer ${key}` } });
           } else if (provider.key === 'google') {
               response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${key}`);
           } else if (provider.key === 'anthropic') {
@@ -610,7 +602,6 @@ function App() {
           if (response && response.ok) {
               isValid = true;
               setApiKeyStatus(prev => ({ ...prev, [provider.key]: 'valid' }));
-              // NEW: Show a success toast message on valid key
               setApiKeyToast(`${provider.label} API Key Verified!`);
           }
       } catch (error) {
@@ -622,12 +613,11 @@ function App() {
 
       if (!isValid) {
           setApiKeyStatus(prev => ({ ...prev, [provider.key]: 'invalid' }));
-          // Set invalid message only if a success message wasn't just set
           if (!apiKeyToast) {
             setApiKeyToast(`Invalid ${provider.label} API Key`);
           }
       }
-  }, [apiKeyToast]); // Dependency on apiKeyToast to prevent race conditions
+  }, [apiKeyToast]);
 
   const handleApiKeyChange = (keyName, provider, value) => {
       setApiKeys(prev => ({...prev, [keyName]: value}));
@@ -692,8 +682,55 @@ function App() {
       if (abortControllerRef.current) {
           abortControllerRef.current.abort();
       }
+      if(longResponseTimerRef.current) {
+          clearTimeout(longResponseTimerRef.current);
+      }
+      setIsTakingLong(false);
   };
   
+  // NEW: Handler for the DOCX download functionality
+  const handleDocxDownload = async (messageContent) => {
+      // Ensure the htmlToDocx function is available from the global scope (window)
+      if (typeof htmlToDocx === 'undefined') {
+          setError("DOCX export library not found. Please refresh the page.");
+          return;
+      }
+      
+      const htmlString = marked.parse(messageContent);
+
+      const header = `<p style="font-size: 10pt; color: #888888;">Generated by AI Educational Assistant for ${activePromptKey}</p><br/>`;
+      const footer = `<br/><p style="font-size: 10pt; color: #888888;">Created by Derrick Musamali | cbc-ai-tool.netlify.app</p>`;
+      
+      const fullHtml = header + htmlString + footer;
+
+      try {
+          const fileBuffer = await htmlToDocx(fullHtml, null, {
+              table: { row: { cantSplit: true } },
+              footer: true,
+              header: true
+          });
+
+          const blob = new Blob([fileBuffer], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          // Generate a clean filename
+          const fileName = `${activePromptKey.replace(/[^a-zA-Z0-9]/g, '_')}_${new Date().toISOString().slice(0,10)}.docx`;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          
+          trackEvent('docx_download', activePromptKey);
+
+      } catch (error) {
+          console.error("Error generating DOCX file:", error);
+          setError("Sorry, there was an error creating the DOCX file.");
+      }
+  };
+
+
   const fetchAndStreamResponse = async ({ historyForApi, systemPrompt, onUpdate, onComplete, onError }) => {
       const apiKey = apiKeys[selectedProvider.apiKeyName];
       if (!apiKey || apiKeyStatus[selectedProvider.key] !== 'valid') {
@@ -702,6 +739,12 @@ function App() {
       }
 
       abortControllerRef.current = new AbortController();
+      
+      // NEW: Set a timer to show the "taking longer" message
+      if(longResponseTimerRef.current) clearTimeout(longResponseTimerRef.current);
+      longResponseTimerRef.current = setTimeout(() => {
+          setIsTakingLong(true);
+      }, LONG_RESPONSE_TIMEOUT); // You can adjust this duration at the top of the file
 
       try {
           let requestUrl, requestHeaders, requestBody;
@@ -751,6 +794,7 @@ function App() {
           const reader = response.body.getReader();
           const decoder = new TextDecoder();
           let buffer = '';
+          let firstChunkReceived = false;
 
           while (true) {
               if (abortControllerRef.current.signal.aborted) break;
@@ -763,6 +807,13 @@ function App() {
 
               for (const line of lines) {
                   if (line.startsWith('data: ')) {
+                      // NEW: Once we get data, clear the "taking long" timer and reset the state
+                      if (!firstChunkReceived) {
+                          firstChunkReceived = true;
+                          clearTimeout(longResponseTimerRef.current);
+                          setIsTakingLong(false);
+                      }
+
                       const dataStr = line.substring(6);
                       if (dataStr.trim() === '[DONE]') break;
                       try {
@@ -784,6 +835,9 @@ function App() {
               onError(err.message);
           }
       } finally {
+          // Final cleanup of the timer and state
+          clearTimeout(longResponseTimerRef.current);
+          setIsTakingLong(false);
           onComplete();
       }
   };
@@ -854,7 +908,7 @@ function App() {
           }
       });
   };
-  // NEW: Function to fetch updates from the backend
+
   const fetchNotifications = async () => {
     try {
         const response = await fetch(`${GAS_WEB_APP_URL}?action=getUpdates`);
@@ -862,26 +916,24 @@ function App() {
         if (data.success && data.updates && data.updates.length > 0) {
             setNotifications(data.updates);
             
-            // Logic for the one-time banner
             const latestTimestamp = data.updates[0].timestamp;
             const lastSeenTimestamp = localStorage.getItem('lastSeenUpdateTimestamp');
             
             if (latestTimestamp !== lastSeenTimestamp) {
                 setShowUpdateBanner(true);
-                setHasNewNotification(true); // Show red dot on bell icon
+                setHasNewNotification(true);
             }
         }
     } catch (error) {
         console.error("Failed to fetch notifications:", error);
     }
   };
-  // NEW: Function to dismiss the banner and save the timestamp
+
   const dismissUpdateBanner = () => {
       setShowUpdateBanner(false);
-      // Mark the latest update as "seen" so the banner doesn't reappear
       if (notifications.length > 0) {
           localStorage.setItem('lastSeenUpdateTimestamp', notifications[0].timestamp);
-          setHasNewNotification(false); // Hide red dot once banner is dismissed
+          setHasNewNotification(false);
       }
   };
 
@@ -988,19 +1040,11 @@ function App() {
 
     const clearChat = () => {
       const chatKey = `chatHistory_${activePromptKey}`;
-      
-      // Immediately clear the visual chat history for a faster UI response
       setChatHistory([]); 
-      
-      // Remove the history from persistent storage
       localStorage.removeItem(chatKey);
-      
-      // Clear any pending attachments or errors
       setPendingFile(null);
       setPendingFilePreview(null);
       setError('');
-      
-      // Asynchronously load the initial welcome message for the current assistant
       loadInitialMessage(activePromptKey);
   };
   
@@ -1052,7 +1096,6 @@ function App() {
   // --- RENDER ---
     if (isLoadingAssistants) {
       return (
-          // ADDED 'items-center' and 'justify-center' to perfectly center the content.
           <div className="h-screen w-screen flex items-center justify-center bg-slate-50">
               <LoadingScreen text="Getting AI Assistants ready for you..." />
           </div>
@@ -1158,7 +1201,6 @@ function App() {
                               <NewEnvelopeIcon className="w-6 h-6 text-slate-400 hover:text-white"/>
                           </a>
                        </div>
-                       {/* UPDATED: Added rel="external" to force a full page navigation */}
                        <a href= "/" rel="external" className="flex items-center justify-center gap-2 w-full text-center mt-2 py-2 bg-slate-700 hover:bg-slate-600 rounded-md transition-colors"><HomeIcon className="w-5 h-5"/>Return to Home</a>
                   </div>
               </div>
@@ -1167,13 +1209,11 @@ function App() {
 
           {/* --- MAIN CHAT INTERFACE --- */}
           <div className="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
-            {/* NEW: Insert the banner here */}
               {showUpdateBanner && <UpdateBanner latestUpdate={notifications[0]} onDismiss={dismissUpdateBanner} />}
               <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0 bg-white z-10">
                   <button onClick={() => setIsMenuOpen(true)} className="p-1 text-slate-600 hover:text-slate-900 lg:hidden"><MenuIcon className="w-6 h-6" /></button>
                   <h2 className="text-xl font-semibold text-slate-800 text-center flex-1">{activePromptKey} Assistant</h2>
                   <div className="flex items-center gap-2">
-                    {/* UPDATED: Buttons now have text labels */}
                       <button
                           onClick={() => setIsNotificationsOpen(true)}
                           title="Notifications"
@@ -1202,27 +1242,27 @@ function App() {
               </header>
 
               <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative">
-                  {/* UPDATED: Reduced horizontal padding on mobile for full-width chat bubbles */}
                   <div className="px-1 p-2 sm:p-6 space-y-4">
-                                            {chatHistory.map((msg, index) => (
+                      {chatHistory.map((msg, index) => (
                           <div key={msg.id || index} className={`flex w-full items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
-                              
-                              {/* Renders the NEW AI avatar on the left for assistant messages */}
                               {msg.role !== 'user' && <AiAvatar />}
                               
-                              {/* The message bubble itself, common to both user and AI */}
-                              {/* UPDATED: Removed 'md:w-auto' to prevent the bubble from shrinking on mobile */}
-                              <div className={`rounded-lg w-full max-w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
-                                  {msg.file && (
-                                      <div className="p-2 bg-indigo-500/80">
-                                          {msg.file.previewUrl ? <img src={msg.file.previewUrl} className="max-w-xs rounded-md"/> : <div className="flex items-center gap-2 p-2"><FileIcon className="w-6 h-6"/><span>{msg.file.name}</span></div>}
-                                      </div>
-                                  )}
-                                  <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} />
-                              </div>
-
-                              {/* The Message Menu, now always on the right side of the bubble */}
-                              <div className="self-center">
+                              {/* MODIFIED: This new wrapper allows the menu to be placed below the bubble */}
+                              <div className={`flex flex-col w-full max-w-full ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
+                                  <div className={`rounded-lg w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
+                                      {msg.file && (
+                                          <div className="p-2 bg-indigo-500/80">
+                                              {msg.file.previewUrl ? <img src={msg.file.previewUrl} className="max-w-xs rounded-md"/> : <div className="flex items-center gap-2 p-2"><FileIcon className="w-6 h-6"/><span>{msg.file.name}</span></div>}
+                                          </div>
+                                      )}
+                                      <MarkdownRenderer 
+                                          htmlContent={marked.parse(msg.content || '')} 
+                                          isLoading={msg.isLoading}
+                                          isTakingLong={isTakingLong} // Pass the new state here
+                                      />
+                                  </div>
+                                  
+                                  {/* The Message Menu is now inside the new wrapper, appearing below */}
                                   <MessageMenu
                                       msg={msg}
                                       index={index}
@@ -1230,9 +1270,12 @@ function App() {
                                       onShare={handleShare}
                                       onDelete={handleDeleteMessage}
                                       onRegenerate={handleRegenerate}
+                                      onDocxDownload={handleDocxDownload} // Pass new handler
                                   />
                               </div>
-                              
+
+                              {/* This is for the user's avatar, if you ever add one */}
+                              {msg.role === 'user' && <div className="w-8 h-8 rounded-full bg-slate-300 flex items-center justify-center shrink-0"></div>}
                           </div>
                       ))}
                       <div ref={chatEndRef} />
@@ -1242,7 +1285,7 @@ function App() {
                       <button onClick={() => handleScroll('down')} className="p-2 rounded-full bg-black bg-opacity-40 text-white hover:bg-opacity-60 transition-opacity"><ChevronDownIcon className="w-5 h-5"/></button>
                   </div>
               </main>
-              {/* --- NEW: NOTIFICATIONS PANEL --- */}
+              {/* --- NOTIFICATIONS PANEL --- */}
               <div className={`fixed top-0 right-0 h-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${isNotificationsOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ width: 'min(400px, 100vw)' }}>
                   <div className="flex flex-col h-full">
                       <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
@@ -1274,7 +1317,6 @@ function App() {
                       </div>
                   </div>
               </div>
-              {/* --- Overlay for when panel is open --- */}
               {isNotificationsOpen && <div onClick={() => setIsNotificationsOpen(false)} className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"></div>}
 
               {error && <div className="p-4 bg-red-100 text-red-700 border-t border-red-200 flex-shrink-0">{error}</div>}
