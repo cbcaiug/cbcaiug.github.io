@@ -247,22 +247,30 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     margin-bottom: 1.5rem;
 }
 
-/* NEW: Styles for the dedicated chat button */
+/* UPDATED: Styles for the dedicated chat button to match the new design */
 .card-chat-button {
-    display: inline-flex; /* Use flex to align icon and text */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem; /* Space between icon and text */
-    text-align: center;
-    background-color: transparent;
-    border: 1px solid var(--border-color);
+    gap: 0.5rem;
+    
+    /* ====> EXPERIMENT HERE (WIDTH & CENTERING) <==== */
+    /* This sets a fixed width for the button. Try changing it. */
+    width: 200px; 
+    /* This centers the button horizontally within the card. */
+    align-self: center; 
+    
+    /* ====> EXPERIMENT HERE (HEIGHT) <==== */
+    /* This controls the button's height. I've reduced it slightly. */
+    padding: 0.5rem 1rem; /* The first value is vertical, the second is horizontal. */
+
+    border: 2px solid var(--border-color);
     color: var(--text-dark);
-    padding: 0.6rem 1.2rem;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
+    margin-top: auto;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    margin-top: auto; /* Aligns the button to the bottom of the card */
 }
 
 /* NEW: Style for the SVG icon inside the button */
