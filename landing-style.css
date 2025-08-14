@@ -278,7 +278,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     color: var(--text-light); /* This will make both the text AND the icon turn white */
-}}
+}
 
 /* Placeholder card styles remain the same */
 .assistant-card-placeholder { 
