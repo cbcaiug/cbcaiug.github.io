@@ -1211,7 +1211,8 @@ function App() {
                               {msg.role !== 'user' && <AiAvatar />}
                               
                               {/* The message bubble itself, common to both user and AI */}
-                              <div className={`rounded-lg w-full md:w-auto max-w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
+                              {/* UPDATED: Removed 'md:w-auto' to prevent the bubble from shrinking on mobile */}
+                              <div className={`rounded-lg w-full max-w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
                                   {msg.file && (
                                       <div className="p-2 bg-indigo-500/80">
                                           {msg.file.previewUrl ? <img src={msg.file.previewUrl} className="max-w-xs rounded-md"/> : <div className="flex items-center gap-2 p-2"><FileIcon className="w-6 h-6"/><span>{msg.file.name}</span></div>}
