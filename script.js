@@ -1158,7 +1158,8 @@ function App() {
                               <NewEnvelopeIcon className="w-6 h-6 text-slate-400 hover:text-white"/>
                           </a>
                        </div>
-                       <a href={window.location.pathname} className="flex items-center justify-center gap-2 w-full text-center mt-2 py-2 bg-slate-700 hover:bg-slate-600 rounded-md transition-colors"><HomeIcon className="w-5 h-5"/>Return to Home</a>
+                       {/* UPDATED: Added rel="external" to force a full page navigation */}
+                       <a href= "/" rel="external" className="flex items-center justify-center gap-2 w-full text-center mt-2 py-2 bg-slate-700 hover:bg-slate-600 rounded-md transition-colors"><HomeIcon className="w-5 h-5"/>Return to Home</a>
                   </div>
               </div>
               <div onMouseDown={startResizing} className="resize-handle hidden lg:block"></div>
