@@ -30,6 +30,8 @@ const RefreshCwIcon = (props) => <Icon {...props} C={<><path d="M3 12a9 9 0 0 1 
 const SettingsIcon = (props) => <Icon {...props} C={<path d="M12.22 2h-4.44l-2 6-6 2 2 6 6 2 2-6 6-2-2-6zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>} />;
 const BellIcon = (props) => <Icon {...props} C={<><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></>} />;
 const FileTextIcon = (props) => <Icon {...props} C={<><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><line x1="10" y1="9" x2="8" y2="9" /></>} />;
+const HelpCircleIcon = (props) => <Icon {...props} C={<><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></>} />;
+
 
 // --- NEW/MODIFIED ICONS to match landing page footer ---
 const FooterEmailIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>;
@@ -105,7 +107,13 @@ const PromptManager = {
 // --- AI PROVIDER CONFIGURATION ---
 const AI_PROVIDERS = [
   { key: 'google', label: 'Google Gemini', apiKeyName: 'googleApiKey', apiKeyUrl: 'https://aistudio.google.com/app/apikey', apiHost: 'https://generativelanguage.googleapis.com', models: [
-      { name: 'gemini-2.5-pro', vision: true }, { name: 'gemini-2.5-flash', vision: true }, { name: 'gemini-2.0-pro', vision: true }, { name: 'gemini-2.0-flash', vision: true }, { name: 'gemini-1.5-pro-latest', vision: true }, { name: 'gemini-1.5-flash-latest', vision: true }
+      // MODIFIED: Added new Gemini models as per user request
+      { name: 'gemini-2.5-pro', vision: true },
+      { name: 'gemini-2.5-flash', vision: true },
+      { name: 'gemini-2.0-pro', vision: true },
+      { name: 'gemini-2.0-flash', vision: true },
+      { name: 'gemini-1.5-pro-latest', vision: true }, 
+      { name: 'gemini-1.5-flash-latest', vision: true }
   ]},
   { key: 'openai', label: 'OpenAI GPT', apiKeyName: 'openaiApiKey', apiKeyUrl: 'https://platform.openai.com/api-keys', apiHost: 'https://api.openai.com', models: [
       { name: 'gpt-4o', vision: true }, { name: 'gpt-4-turbo', vision: true }, { name: 'gpt-3.5-turbo', vision: false }
@@ -331,7 +339,7 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDo
   const menuPositionClass = 'right-0';
 
   return (
-      <div className="relative self-end mt-1" ref={menuRef}>
+      <div className="relative self-end mt-1" ref={menuRef} id={`message-options-menu-${index}`}>
           <button
               onClick={() => setIsOpen(prev => !prev)}
               className="p-2 rounded-full hover:bg-slate-200 text-slate-500"
@@ -396,7 +404,7 @@ function App() {
   const [apiKeyStatus, setApiKeyStatus] = useState({});
   const [sidebarWidth, setSidebarWidth] = useState(320);
   const [selectedProviderKey, setSelectedProviderKey] = useState('google');
-  const [selectedModelName, setSelectedModelName] = useState('gemini-2.5-flash');
+  const [selectedModelName, setSelectedModelName] = useState('gemini-1.5-flash-latest');
   const [autoDeleteHours, setAutoDeleteHours] = useState('2');
   const [chatHistory, setChatHistory] = useState([]);
   const [pendingFile, setPendingFile] = useState(null);
@@ -508,13 +516,27 @@ function App() {
       setApiKeyStatus(savedState.apiKeyStatus || {});
       setSidebarWidth(savedState.sidebarWidth || 320);
       setSelectedProviderKey(savedState.selectedProviderKey || 'google');
-      setSelectedModelName(savedState.selectedModelName || 'gemini-2.5-flash');
+      setSelectedModelName(savedState.selectedModelName || 'gemini-1.5-flash-latest');
       setAutoDeleteHours(savedState.autoDeleteHours || '2');
 
       if (!isLoadingAssistants) {
           loadInitialMessage(currentPromptKey);
       }
   }, [window.location.search, isLoadingAssistants, loadInitialMessage]);
+  
+  // MODIFIED: Effect to run the tutorial for first-time visitors.
+  useEffect(() => {
+    if (!isLoadingAssistants) { // Ensure assistants are loaded so the UI is ready
+        const hasSeenTutorial = localStorage.getItem('hasSeenCbcAiTutorial');
+        if (!hasSeenTutorial) {
+            // Use a timeout to ensure the DOM has rendered completely
+            setTimeout(() => {
+                startTutorial();
+                localStorage.setItem('hasSeenCbcAiTutorial', 'true');
+            }, 500);
+        }
+    }
+  }, [isLoadingAssistants]);
 
   useEffect(() => {
       localStorage.setItem('aiAssistantState', JSON.stringify({ apiKeys, apiKeyStatus, sidebarWidth, selectedProviderKey, selectedModelName, autoDeleteHours }));
@@ -644,49 +666,25 @@ function App() {
       }
   };
 
-    // =================================================================
-    // MODIFIED: This function now copies rich text (HTML) to the clipboard.
-    // This allows pasting formatted content into apps like Word or Google Docs.
-    // =================================================================
     const handleCopy = async (markdownContent) => {
         try {
-            // Convert the raw markdown into HTML using the 'marked' library
             const htmlContent = marked.parse(markdownContent);
-
-            // Create a temporary container to properly structure the HTML for copying
             const container = document.createElement('div');
             container.innerHTML = htmlContent;
-
-            // Add the standard attribution line to the end of the content
             const attribution = document.createElement('p');
             attribution.innerHTML = '<br><br>---<br><em>Generated by the CBC AI Educational Assistant</em><br><em>Created by Derrick Musamali | Visit: <a href="https://cbc-ai-tool.netlify.app/">https://cbc-ai-tool.netlify.app/</a></em>';
             container.appendChild(attribution);
-
             const finalHtml = container.innerHTML;
-            const plainText = container.innerText; // Get a plain text version as a fallback
-
-            // Create a "blob" (a file-like object) for the HTML content
+            const plainText = container.innerText;
             const blobHtml = new Blob([finalHtml], { type: 'text/html' });
-            // Create a blob for the plain text fallback
             const blobText = new Blob([plainText], { type: 'text/plain' });
-
-            // Use the modern Clipboard API to write both HTML and plain text formats
-            await navigator.clipboard.write([
-                new ClipboardItem({
-                    'text/html': blobHtml,
-                    'text/plain': blobText
-                })
-            ]);
-
-            // Show a success message
+            await navigator.clipboard.write([ new ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText }) ]);
             setShowCopyToast(true);
             setTimeout(() => setShowCopyToast(false), 3000);
-
         } catch (err) {
-            // If the rich text copy fails, fall back to copying plain text
             console.error('Rich text copy failed, falling back to plain text. Error:', err);
             try {
-                const plainText = marked.parse(markdownContent).replace(/<[^>]*>/g, ''); // Basic conversion
+                const plainText = marked.parse(markdownContent).replace(/<[^>]*>/g, '');
                 const attributionText = "\n\n---\nGenerated by the CBC AI Educational Assistant\nCreated by Derrick Musamali | Visit: https://cbc-ai-tool.netlify.app/";
                 await navigator.clipboard.writeText(plainText + attributionText);
                 setShowCopyToast(true);
@@ -713,88 +711,112 @@ function App() {
       setIsTakingLong(false);
   };
   
-  // DOCX download handler using the 'docx' library.
-  const handleDocxDownload = async (markdownContent) => {
+    // =================================================================
+    // FIXED: This function now correctly uses the 'docx' library
+    // to parse markdown and generate a valid DOCX file.
+    // =================================================================
+    const handleDocxDownload = async (markdownContent) => {
+      // Check if the docx library is available on the window object
       if (typeof docx === 'undefined') {
           setError("DOCX export library is still loading. Please try again in a moment.");
           console.error("`docx` library not found on window object.");
           return;
       }
       
-      const { Document, Packer, Paragraph, TextRun, HeadingLevel, Table, TableRow, TableCell, WidthType, AlignmentType, BorderStyle } = docx;
+      // Destructure necessary components from the docx library
+      const { Document, Packer, Paragraph, TextRun, HeadingLevel, Table, TableRow, TableCell, WidthType, AlignmentType, BorderStyle, ShadingType } = docx;
 
       try {
+          // Use the 'marked' library to parse the markdown into a token tree
           const tokens = marked.lexer(markdownContent);
-          const children = [];
+          const children = []; // This array will hold all our docx components
 
+          // Helper function to parse inline elements (like bold, italics)
           const parseInlines = (inlines) => {
               const runs = [];
+              if (!inlines) return runs;
               for (const inline of inlines) {
-                  if (inline.type === 'strong') {
-                      runs.push(new TextRun({ text: inline.text, bold: true }));
-                  } else if (inline.type === 'em') {
-                      runs.push(new TextRun({ text: inline.text, italics: true }));
+                  let text = inline.text || (inline.tokens ? inline.tokens.map(t => t.text).join('') : '');
+                  if (inline.type === 'strong' || inline.type === 'em') {
+                      // Recursively parse nested tokens if they exist
+                      const nestedRuns = parseInlines(inline.tokens);
+                      nestedRuns.forEach(run => {
+                           if (inline.type === 'strong') run.options.bold = true;
+                           if (inline.type === 'em') run.options.italics = true;
+                      });
+                      runs.push(...nestedRuns);
                   } else {
-                      runs.push(new TextRun(inline.text));
+                      runs.push(new TextRun({ text, bold: false, italics: false }));
                   }
               }
               return runs;
           };
 
+          // Iterate through the top-level tokens from the markdown
           for (const token of tokens) {
               if (token.type === 'heading') {
                   children.push(new Paragraph({
                       children: parseInlines(token.tokens),
-                      heading: `Heading${token.depth}`
+                      heading: `Heading${token.depth}` // Maps h1 -> Heading1, etc.
                   }));
               } else if (token.type === 'paragraph') {
                   children.push(new Paragraph({ children: parseInlines(token.tokens) }));
               } else if (token.type === 'list') {
                   for (const item of token.items) {
+                      // For each list item, create a bulleted paragraph
                       children.push(new Paragraph({
                           children: parseInlines(item.tokens[0].tokens),
                           bullet: { level: 0 }
                       }));
                   }
               } else if (token.type === 'table') {
+                  // Create the table header row
                   const header = new TableRow({
                       children: token.header.map(cell => new TableCell({
                           children: [new Paragraph({ children: parseInlines(cell.tokens), alignment: AlignmentType.CENTER })],
-                          shading: { fill: "E5E7EB" }
+                          shading: { fill: "E5E7EB", type: ShadingType.CLEAR, color: "auto" } // Light grey shading
                       })),
                       tableHeader: true,
                   });
+                  // Create the data rows
                   const rows = token.rows.map(row => new TableRow({
                       children: row.map(cell => new TableCell({ children: [new Paragraph({ children: parseInlines(cell.tokens) })] }))
                   }));
+                  // Assemble the table
                   const table = new Table({
                       rows: [header, ...rows],
                       width: { size: 100, type: WidthType.PERCENTAGE }
                   });
                   children.push(table);
               } else if (token.type === 'space') {
-                  children.push(new Paragraph(""));
+                  children.push(new Paragraph("")); // Add an empty paragraph for spacing
               }
           }
 
+          // Create the final document with headers, footers, and content
           const doc = new Document({
               sections: [{
                   headers: {
-                      default: new Paragraph({
-                          children: [new TextRun({ text: `Generated by AI Assistant for ${activePromptKey}`, size: 16, color: "888888", italics: true })],
-                          alignment: AlignmentType.RIGHT
+                      default: new docx.Header({
+                          children: [new Paragraph({
+                              children: [new TextRun({ text: `Generated by AI Assistant for ${activePromptKey}`, size: 16, color: "888888", italics: true })],
+                              alignment: AlignmentType.RIGHT
+                          })],
                       }),
                   },
                   footers: {
-                      default: new Paragraph({
-                          children: [new TextRun({ text: "Created by Derrick Musamali | cbc-ai-tool.netlify.app", size: 16, color: "888888", italics: true })],
-                          alignment: AlignmentType.CENTER
+                      default: new docx.Footer({
+                          children: [new Paragraph({
+                              children: [new TextRun({ text: "Created by Derrick Musamali | cbc-ai-tool.netlify.app", size: 16, color: "888888", italics: true })],
+                              alignment: AlignmentType.CENTER
+                          })],
                       }),
                   },
                   children,
               }]
           });
 
+          // Use the Packer to convert the document object into a blob
           const blob = await Packer.toBlob(doc);
           const url = URL.createObjectURL(blob);
           const a = document.createElement('a');
@@ -1133,6 +1155,8 @@ function App() {
       localStorage.removeItem('aiAssistantState');
       localStorage.removeItem('generationCount');
       localStorage.removeItem('feedbackTimestamps');
+      // NEW: Also clear the tutorial flag on reset
+      localStorage.removeItem('hasSeenCbcAiTutorial');
       Object.keys(localStorage).forEach(key => {
           if (key.startsWith('chatHistory_')) {
               localStorage.removeItem(key);
@@ -1144,7 +1168,7 @@ function App() {
       setApiKeyStatus({});
       setSidebarWidth(320);
       setSelectedProviderKey('google');
-      setSelectedModelName('gemini-2.5-flash');
+      setSelectedModelName('gemini-1.5-flash-latest');
       setAutoDeleteHours('2');
       setGenerationCount(0);
       
@@ -1173,6 +1197,139 @@ function App() {
       window.addEventListener("mousemove", handleMouseMove);
       window.addEventListener("mouseup", handleMouseUp);
   }, []);
+
+  // =================================================================
+  // FIXED & OVERHAULED: This function now correctly handles the
+  // tutorial flow for both desktop and mobile.
+  // =================================================================
+  const startTutorial = () => {
+    // Check if we are on a mobile-width screen (Tailwind's lg breakpoint is 1024px)
+    const isMobileView = window.innerWidth < 1024;
+
+    // On mobile, we need to programmatically open the menu for the tutorial.
+    if (isMobileView) {
+        setIsMenuOpen(true);
+    }
+
+    const intro = introJs();
+
+    // When the tutorial is finished or exited, close the menu on mobile.
+    const cleanup = () => {
+        if (isMobileView) {
+            setIsMenuOpen(false);
+        }
+    };
+    intro.oncomplete(cleanup);
+    intro.onexit(cleanup);
+
+    // Check if the first message exists to attach the context menu step
+    const firstMessageOptionsMenu = document.querySelector('#message-options-menu-0');
+    
+    const steps = [
+        {
+            title: 'Welcome!',
+            intro: 'Hello! This is a quick tour to help you get started with the AI Educational Assistant.'
+        },
+        {
+            element: '#settings-panel',
+            title: 'Settings Panel',
+            intro: 'This is the main settings panel. Here you can choose your assistant, select an AI provider, and enter your API keys.',
+            position: 'right'
+        },
+        {
+            element: '#assistant-selector-container',
+            title: 'Select an Assistant',
+            intro: 'Choose from a list of specialized AI assistants, each designed for a specific educational task.',
+            position: 'right'
+        },
+        {
+            element: '#provider-selector-container',
+            title: 'AI Provider & Model',
+            intro: 'Select your preferred AI provider (like Google, OpenAI, etc.) and the specific model you want to use.',
+            position: 'right'
+        },
+        {
+            element: '#api-key-container',
+            title: 'API Key',
+            intro: 'You need an API key from your chosen provider to use the tool. Click the link to get your key, then paste it here. Your key is saved securely in your browser.',
+            position: 'right'
+        },
+        {
+            element: '#chat-input-area',
+            title: 'Chat Input',
+            intro: 'This is where you will interact with the AI.',
+            position: 'top'
+        },
+        {
+            element: '#file-attach-button',
+            title: 'Attach Files',
+            intro: 'Click here to attach a file, like an image or document. Note: Only models that support vision (like GPT-4o or Gemini) can "see" images.',
+            position: 'top'
+        },
+        {
+            element: '#chat-input',
+            title: 'Type Your Message',
+            intro: 'Type your instructions or questions for the AI here.',
+            position: 'top'
+        },
+        {
+            element: '#send-button',
+            title: 'Send & Stop',
+            intro: 'Click this button to send your message. While the AI is responding, this will turn into a "Stop" button to interrupt the generation.',
+            position: 'top'
+        }
+    ];
+
+    // Conditionally add the step for the message options menu if it exists
+    if (firstMessageOptionsMenu) {
+        steps.push({
+            element: '#message-options-menu-0',
+            title: 'Message Options',
+            intro: 'After the AI responds, click the three dots to open a menu where you can copy, regenerate, share, or download the message as a .docx file.',
+            position: 'left'
+        });
+    }
+
+    steps.push(
+        {
+            element: '#clear-chat-button',
+            title: 'Clear Chat',
+            intro: 'Click here to clear the current conversation and start fresh.',
+            position: 'bottom'
+        },
+        {
+            element: '#notifications-button',
+            title: 'Notifications',
+            intro: 'Check here for news and updates about the app.',
+            position: 'bottom'
+        },
+        {
+            element: '#help-button',
+            title: 'Need Help?',
+            intro: 'You can click this "Help" button anytime to see this tour again!',
+            position: 'bottom'
+        },
+        {
+            element: '#reset-settings-button',
+            title: 'Reset All Settings',
+            intro: 'If you run into issues, you can use this to reset all your settings, including API keys and chat history, to their default state.',
+            position: 'right'
+        },
+        {
+            title: 'You\'re All Set!',
+            intro: 'That\'s it! You\'re ready to start creating. Enjoy using the tool!'
+        }
+    );
+
+    intro.setOptions({
+        steps: steps,
+        showBullets: false,
+        showStepNumbers: true,
+        exitOnOverlayClick: false,
+        tooltipClass: 'custom-intro-tooltip'
+    }).start();
+  };
+
 
   // --- RENDER ---
     if (isLoadingAssistants) {
@@ -1206,6 +1363,7 @@ function App() {
       <div className="h-screen w-screen overflow-hidden flex bg-white">
           {/* --- SIDEBAR / SETTINGS PANEL --- */}
           <div
+              id="settings-panel"
               style={{ width: `${sidebarWidth}px`, maxWidth: '100vw' }}
               className={`absolute lg:static top-0 left-0 h-full bg-slate-800 text-white flex flex-col z-40 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}
           >
@@ -1215,7 +1373,7 @@ function App() {
                        <button onClick={() => setIsMenuOpen(false)} className="lg:hidden p-1 text-slate-400 hover:text-white"><XIcon className="w-6 h-6"/></button>
                   </div>
                   <div className="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-5">
-                      <div>
+                      <div id="assistant-selector-container">
                           <label className="text-sm text-slate-400">Select an Assistant</label>
                           <select onChange={handlePromptSelectionChange} value={navigationMenu[activePromptKey] || ""} className="w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
                               {availableAssistants.map(assistant => (
@@ -1226,7 +1384,7 @@ function App() {
                            <label htmlFor="custom-prompt-upload" className="mt-2 text-sm text-indigo-400 hover:text-indigo-300 cursor-pointer block text-center py-2 border border-dashed border-slate-600 rounded-md hover:border-indigo-500 transition-colors">Upload Custom Prompt</label>
                           <input id="custom-prompt-upload" type="file" className="hidden" accept=".txt,.json" onChange={handleCustomPromptUpload} />
                       </div>
-                      <div>
+                      <div id="provider-selector-container">
                           <label className="text-sm text-slate-400">AI Provider</label>
                           <select value={selectedProviderKey} onChange={handleProviderChange} className="w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
                               {AI_PROVIDERS.map(p => <option key={p.key} value={p.key}>{p.label}</option>)}
@@ -1238,7 +1396,7 @@ function App() {
                               {selectedProvider?.models.map(model => <option key={model.name} value={model.name}>{model.name}</option>)}
                           </select>
                       </div>
-                       <div>
+                       <div id="api-key-container">
                           <label className="text-sm text-slate-400">{selectedProvider?.label} API Key</label>
                           <div className="relative">
                               <input type="password" value={apiKeys[selectedProvider?.apiKeyName] || ''} onChange={(e) => handleApiKeyChange(selectedProvider.apiKeyName, selectedProvider, e.target.value)} placeholder={`Paste your ${selectedProvider?.label} key here`} className="w-full mt-1 p-2 pr-8 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
@@ -1251,7 +1409,7 @@ function App() {
                           <a href={selectedProvider?.apiKeyUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-indigo-400 hover:underline mt-1 block">Get your key here &raquo;</a>
                       </div>
                       <div><label className="text-sm text-slate-400">Auto-delete Chat</label><select value={autoDeleteHours} onChange={(e) => setAutoDeleteHours(e.target.value)} className="w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"><option value="1">After 1 Hour</option><option value="2">After 2 Hours</option><option value="24">After 24 Hours</option><option value="never">Never</option></select></div>
-                       <div>
+                       <div id="reset-settings-button">
                           <label className="text-sm text-slate-400">App Settings</label>
                           {showResetConfirm ? (
                               <div className="mt-1 p-2 bg-red-900/50 border border-red-500 rounded-md text-center">
@@ -1299,6 +1457,16 @@ function App() {
                   <h2 className="text-xl font-semibold text-slate-800 text-center flex-1">{activePromptKey} Assistant</h2>
                   <div className="flex items-center gap-2">
                       <button
+                          id="help-button"
+                          onClick={startTutorial}
+                          title="Start Tutorial"
+                          className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors"
+                      >
+                          <HelpCircleIcon className="w-5 h-5"/>
+                          <span className="hidden sm:inline">Help</span>
+                      </button>
+                      <button
+                          id="notifications-button"
                           onClick={() => setIsNotificationsOpen(true)}
                           title="Notifications"
                           className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors"
@@ -1318,7 +1486,7 @@ function App() {
                       >
                           <Share2Icon className="w-5 h-5 text-slate-500"/>
                       </button>
-                      <button onClick={clearChat} title="Clear chat messages" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors">
+                      <button id="clear-chat-button" onClick={clearChat} title="Clear chat messages" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors">
                            <TrashIcon className="w-5 h-5"/>
                            <span className="hidden sm:inline">Clear Chat</span>
                        </button>
@@ -1399,7 +1567,7 @@ function App() {
 
               {error && <div className="p-4 bg-red-100 text-red-700 border-t border-red-200 flex-shrink-0">{error}</div>}
 
-              <footer className="p-4 border-t border-slate-200 bg-white flex-shrink-0">
+              <footer id="chat-input-area" className="p-4 border-t border-slate-200 bg-white flex-shrink-0">
                   <div className="relative mx-auto max-w-4xl">
                       {pendingFile && <div className="absolute bottom-full left-0 mb-2 max-w-md p-2"><div className="flex items-start gap-2 bg-slate-200 text-slate-700 rounded-lg p-2 text-sm">
                           {pendingFilePreview ? <img src={pendingFilePreview} alt="Preview" className="w-16 h-16 object-cover rounded-md"/> : <FileIcon className="w-12 h-12 text-slate-500 shrink-0"/>}
@@ -1407,7 +1575,7 @@ function App() {
                           <button onClick={() => {setPendingFile(null); setPendingFilePreview(null);}} className="p-1 rounded-full hover:bg-slate-300 shrink-0"><XIcon className="w-4 h-4" /></button>
                       </div></div>}
                       <div className="flex items-end gap-2 sm:gap-4">
-                            <div className="flex flex-col items-center self-end">
+                            <div id="file-attach-button" className="flex flex-col items-center self-end">
                               <label htmlFor="file-upload" title={isFileUploadDisabled ? "File upload not supported by this model" : "Attach File"} className={`p-3 rounded-full hover:bg-slate-100 ${isFileUploadDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}>
                                   <PaperclipIcon className="w-6 h-6 text-slate-600"/>
                               </label>
@@ -1430,6 +1598,7 @@ function App() {
                               rows="1"
                           />
                           <button 
+                              id="send-button"
                               onClick={isLoading ? handleStopGeneration : handleSendMessage} 
                               disabled={!isLoading && !userInput.trim() && !pendingFile} 
                               className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold"
