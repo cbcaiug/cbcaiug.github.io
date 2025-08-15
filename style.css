@@ -4,13 +4,11 @@
  * Keeping styles separate from the HTML structure and JavaScript logic
  * makes the project cleaner and easier to maintain.
 */
-/* NEW: Central color palette for the application */
 :root {
     --app-primary: #14b8a6;       /* Teal-500 for buttons and highlights */
     --app-primary-dark: #0f766e;  /* Teal-700 for dark backgrounds like the sidebar */
     --app-primary-soft: #f0fdfa;  /* Teal-50, a very soft background for the AI avatar */
     --app-primary-text: #0d9488;  /* Teal-600 for the AI response text */
-    
     --app-user-bubble: #4338ca;   /* A nice Indigo for the user's chat bubble to provide contrast */
 }
 /* Base styles for mobile keyboard handling and layout */
@@ -57,11 +55,11 @@ body {
 .markdown-content ol { list-style-type: decimal; }
 .markdown-content li { margin-bottom: 0.25rem; }
 
-/* Table styling for horizontal scrolling on smaller screens */
+/* * Table styling for horizontal scrolling on smaller screens.
+ * This is the original, correct implementation that ensures only the table scrolls.
+*/
 .markdown-content table {
     display: block;
-    /* UPDATED: Removed 'width: 100%' to allow tables to scroll independently without stretching their container */
-    /*width: 100%;*/
     overflow-x: auto;
     border-collapse: collapse;
     margin-bottom: 1rem;
@@ -94,16 +92,18 @@ body {
     white-space: pre-wrap; 
 }
 
-/* Streaming indicator for AI responses */
+/* * MODIFIED: Streaming indicator for AI responses.
+ * Made larger and thicker for better visibility as requested.
+*/
 .streaming-indicator {
     display: inline-block;
-    width: 14px;
-    height: 14px;
-    border: 2px solid #94a3b8; /* A lighter gray for the track */
-    border-top: 2px solid var(--app-primary); /* UPDATED to use the new app primary color */
+    width: 18px;
+    height: 18px;
+    border: 3px solid #94a3b8; /* A lighter gray for the track */
+    border-top: 3px solid var(--app-primary); /* Use the app primary color */
     border-radius: 50%;
     animation: spin 1s linear infinite;
-    vertical-align: -2px; /* Aligns the spinner nicely with the text */
+    vertical-align: -4px; /* Aligns the spinner nicely with the text */
     margin-left: 8px; /* Adds a little space after the last word */
 }
 
@@ -113,7 +113,7 @@ body {
     width: 16px;
     height: 16px;
     border: 2px solid #e5e7eb;
-    border-top: 2px solid var(--app-primary); /* UPDATED to use the new app primary color */
+    border-top: 2px solid var(--app-primary);
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -166,30 +166,23 @@ textarea#chat-input {
     padding: 2rem;
 }
 
-/* A larger, rectangular container for the logo and spinner effect 
-Adjusting its size will make the whole element bigger or smaller*/
 .loading-logo-wrapper {
     position: relative;
-    /* ====> EXPERIMENT HERE <==== */
-    width: 180px; /* Try increasing this to 140px, 160px, etc. */
-    height: 180px; /* Keep this the same as the width for a square shape. */
-
-    margin-bottom: 2.5rem; /* You can increase this if you want more space between the logo and text. */
+    width: 180px;
+    height: 180px;
+    margin-bottom: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* The background is now part of the spinner */
 }
 
-/* The actual logo image, centered inside */
 .loading-logo-img {
-    width: 160px;  /* Slightly smaller than the wrapper to give it a border */
+    width: 160px;
     height: 160px;
-    border-radius: 16px; /* A nice, modern rounded rectangle */
+    border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* NEW: The rectangular spinner using pseudo-elements */
 .loading-logo-wrapper::before,
 .loading-logo-wrapper::after {
     content: '';
@@ -198,10 +191,8 @@ Adjusting its size will make the whole element bigger or smaller*/
     left: 0;
     width: 100%;
     height: 100%;
-    /* ====> EXPERIMENT HERE <==== */
-    border-radius: 24px; /* Adjust this to match the roundness of the main wrapper. */
-    border: 4px solid transparent; /* Increase this to 5px or 6px for a thicker spinner. */
-    
+    border-radius: 24px;
+    border: 4px solid transparent;
     transition: all 0.5s;
 }
 
@@ -216,10 +207,8 @@ Adjusting its size will make the whole element bigger or smaller*/
     100% { transform: rotate(360deg); }
 }
 
-/* Text styles remain largely the same, but we can make the font bigger */
 .loading-screen-text {
-    /* ====> EXPERIMENT HERE <==== */
-    font-size: 1.4rem; /* Try increasing this to 1.5rem or 1.6rem. */
+    font-size: 1.4rem;
     font-weight: 600;
     color: #334155;
     text-align: center;
