@@ -106,7 +106,6 @@ const PromptManager = {
 // --- AI PROVIDER CONFIGURATION ---
 const AI_PROVIDERS = [
   { key: 'google', label: 'Google Gemini', apiKeyName: 'googleApiKey', apiKeyUrl: 'https://aistudio.google.com/app/apikey', apiHost: 'https://generativelanguage.googleapis.com', models: [
-      // This list has been updated to include the full range of Gemini models as requested.
       { name: 'gemini-2.5-pro', vision: true }, 
       { name: 'gemini-2.5-flash', vision: true },
       { name: 'gemini-2.0-pro', vision: true },
@@ -315,11 +314,6 @@ const UpdateBanner = ({ latestUpdate, onDismiss }) => {
     );
 };
 
-// =================================================================
-// NEW: Consent Modal for Terms, Privacy, and Cookies
-// This modal appears for first-time users and requires them to
-// agree to the terms before they can use the application.
-// =================================================================
 const ConsentModal = ({ onAccept }) => {
     const [termsAccepted, setTermsAccepted] = useState(false);
     const [privacyAccepted, setPrivacyAccepted] = useState(false);
@@ -478,7 +472,7 @@ function App() {
   const [hasNewNotification, setHasNewNotification] = useState(false);
   const [showUpdateBanner, setShowUpdateBanner] = useState(false);
   const [isTakingLong, setIsTakingLong] = useState(false);
-  const [showConsentModal, setShowConsentModal] = useState(false); // NEW state for consent modal
+  const [showConsentModal, setShowConsentModal] = useState(false);
 
 
   // --- REFS ---
@@ -533,8 +527,6 @@ function App() {
 
   // --- EFFECTS ---
     useEffect(() => {
-      // NEW: Check for user consent.
-      // We use a versioned key so we can ask for consent again if terms change.
       if (!localStorage.getItem('userConsentV1')) {
           setShowConsentModal(true);
       }
@@ -581,7 +573,7 @@ function App() {
   }, [window.location.search, isLoadingAssistants, loadInitialMessage]);
   
   useEffect(() => {
-    if (!isLoadingAssistants && !showConsentModal) { // Don't show tutorial if consent modal is open
+    if (!isLoadingAssistants && !showConsentModal) { 
         const hasSeenTutorial = localStorage.getItem('hasSeenCbcAiTutorial');
         if (!hasSeenTutorial) {
             setTimeout(() => {
@@ -1194,7 +1186,6 @@ function App() {
       localStorage.removeItem('generationCount');
       localStorage.removeItem('feedbackTimestamps');
       localStorage.removeItem('hasSeenCbcAiTutorial');
-      // NEW: Also clear consent on full reset
       localStorage.removeItem('userConsentV1');
       Object.keys(localStorage).forEach(key => {
           if (key.startsWith('chatHistory_')) {
@@ -1212,7 +1203,6 @@ function App() {
       setGenerationCount(0);
       
       loadInitialMessage(activePromptKey);
-      // NEW: Show consent modal again after reset
       setShowConsentModal(true);
   };
 
@@ -1253,11 +1243,18 @@ function App() {
     intro.oncomplete(cleanup);
     intro.onexit(cleanup);
     const firstMessageOptionsMenu = document.querySelector('#message-options-menu-0');
+    
+    // =================================================================
+    // TUTORIAL STEPS CORRECTION:
+    // The selector for 'AI Provider & Model' is updated to point to
+    // the new wrapper div ('#provider-model-selector-group') to ensure
+    // both dropdowns are highlighted correctly.
+    // =================================================================
     const steps = [
         { title: 'Welcome!', intro: 'Hello! This is a quick tour to help you get started with the AI Educational Assistant.' },
         { element: '#settings-panel', title: 'Settings Panel', intro: 'This is the main settings panel. Here you can choose your assistant, select an AI provider, and enter your API keys.', position: 'right' },
         { element: '#assistant-selector-container', title: 'Select an Assistant', intro: 'Choose from a list of specialized AI assistants, each designed for a specific educational task.', position: 'right' },
-        { element: '#provider-selector-container', title: 'AI Provider & Model', intro: 'Select your preferred AI provider (like Google, OpenAI, etc.) and the specific model you want to use.', position: 'right' },
+        { element: '#provider-model-selector-group', title: 'AI Provider & Model', intro: 'Select your preferred AI provider (like Google, OpenAI, etc.) and the specific model you want to use.', position: 'right' },
         { element: '#api-key-container', title: 'API Key', intro: 'You need an API key from your chosen provider to use the tool. Click the link to get your key, then paste it here. Your key is saved securely in your browser.', position: 'right' },
         { element: '#chat-input-area', title: 'Chat Input', intro: 'This is where you will interact with the AI.', position: 'top' },
         { element: '#file-attach-button', title: 'Attach Files', intro: 'Click here to attach a file, like an image or document. Note: Only models that support vision (like GPT-4o or Gemini) can "see" images.', position: 'top' },
@@ -1277,7 +1274,6 @@ function App() {
     intro.setOptions({ steps: steps, showBullets: false, showStepNumbers: true, exitOnOverlayClick: false, tooltipClass: 'custom-intro-tooltip' }).start();
   };
 
-  // NEW: Handler for accepting the terms in the consent modal
   const handleConsentAccept = () => {
       localStorage.setItem('userConsentV1', 'true');
       setShowConsentModal(false);
@@ -1314,7 +1310,6 @@ function App() {
 
   return (
       <div className="h-screen w-screen overflow-hidden flex bg-white">
-          {/* NEW: Render the consent modal if needed */}
           {showConsentModal && <ConsentModal onAccept={handleConsentAccept} />}
 
           <div
@@ -1339,18 +1334,26 @@ function App() {
                            <label htmlFor="custom-prompt-upload" className="mt-2 text-sm text-indigo-400 hover:text-indigo-300 cursor-pointer block text-center py-2 border border-dashed border-slate-600 rounded-md hover:border-indigo-500 transition-colors">Upload Custom Prompt</label>
                           <input id="custom-prompt-upload" type="file" className="hidden" accept=".txt,.json" onChange={handleCustomPromptUpload} />
                       </div>
-                      <div id="provider-selector-container">
-                          <label className="text-sm text-slate-400">AI Provider</label>
-                          <select value={selectedProviderKey} onChange={handleProviderChange} className="w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                              {AI_PROVIDERS.map(p => <option key={p.key} value={p.key}>{p.label}</option>)}
-                          </select>
+                      
+                      {/* ================================================================= */}
+                      {/* TUTORIAL FIX: Added a wrapper div with a new ID here to group   */}
+                      {/* the provider and model selectors for better tutorial highlighting.*/}
+                      {/* ================================================================= */}
+                      <div id="provider-model-selector-group">
+                          <div id="provider-selector-container">
+                              <label className="text-sm text-slate-400">AI Provider</label>
+                              <select value={selectedProviderKey} onChange={handleProviderChange} className="w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                  {AI_PROVIDERS.map(p => <option key={p.key} value={p.key}>{p.label}</option>)}
+                              </select>
+                          </div>
+                          <div className="mt-5">
+                              <label className="text-sm text-slate-400">AI Model</label>
+                              <select value={selectedModelName} onChange={(e) => setSelectedModelName(e.target.value)} className="w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                  {selectedProvider?.models.map(model => <option key={model.name} value={model.name}>{model.name}</option>)}
+                              </select>
+                          </div>
                       </div>
-                      <div>
-                          <label className="text-sm text-slate-400">AI Model</label>
-                          <select value={selectedModelName} onChange={(e) => setSelectedModelName(e.target.value)} className="w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                              {selectedProvider?.models.map(model => <option key={model.name} value={model.name}>{model.name}</option>)}
-                          </select>
-                      </div>
+
                        <div id="api-key-container">
                           <label className="text-sm text-slate-400">{selectedProvider?.label} API Key</label>
                           <div className="relative">
@@ -1393,7 +1396,6 @@ function App() {
                                 <span className="text-sm">+256750470234</span>
                             </a>
                        </div>
-                       {/* Legal links added to sidebar footer */}
                        <div className="text-center text-xs text-slate-500">
                             <a href="terms.html" target="_blank" className="hover:text-slate-300 transition-colors">Terms of Service</a>
                             <span className="mx-2">|</span>
