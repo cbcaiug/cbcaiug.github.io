@@ -32,8 +32,7 @@ const BellIcon = (props) => <Icon {...props} C={<><path d="M6 8a6 6 0 0 1 12 0c0
 const FileTextIcon = (props) => <Icon {...props} C={<><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><line x1="10" y1="9" x2="8" y2="9" /></>} />;
 const HelpCircleIcon = (props) => <Icon {...props} C={<><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></>} />;
 
-
-// --- NEW/MODIFIED ICONS to match landing page footer ---
+// --- Footer Icons ---
 const FooterEmailIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>;
 const FooterPhoneIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.02.74-.25 1.02l-2.2 2.2z"/></svg>;
 const FooterWhatsAppIcon = (props) => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 512" fill="currentColor" {...props}><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-67.6-9.5-97.8-26.7l-7-4.1-72.5 19.1 19.4-70.5-4.5-7.3c-18.4-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>;
@@ -107,8 +106,8 @@ const PromptManager = {
 // --- AI PROVIDER CONFIGURATION ---
 const AI_PROVIDERS = [
   { key: 'google', label: 'Google Gemini', apiKeyName: 'googleApiKey', apiKeyUrl: 'https://aistudio.google.com/app/apikey', apiHost: 'https://generativelanguage.googleapis.com', models: [
-      // MODIFIED: Added new Gemini models as per user request
-      { name: 'gemini-2.5-pro', vision: true },
+      // This list has been updated to include the full range of Gemini models as requested.
+      { name: 'gemini-2.5-pro', vision: true }, 
       { name: 'gemini-2.5-flash', vision: true },
       { name: 'gemini-2.0-pro', vision: true },
       { name: 'gemini-2.0-flash', vision: true },
@@ -142,7 +141,6 @@ const LoadingScreen = ({ text }) => (
     </div>
 );
 
-// Renders markdown content, handles "thinking" and "taking long" indicators
 const MarkdownRenderer = ({ htmlContent, isLoading, isTakingLong }) => {
     const contentRef = useRef(null);
 
@@ -165,7 +163,6 @@ const MarkdownRenderer = ({ htmlContent, isLoading, isTakingLong }) => {
         }
     }, [htmlContent, isLoading]);
 
-    // If loading and no content yet, show the thinking/taking long message
     if (isLoading && !htmlContent.trim().replace(/<p><\/p>/g, '')) {
         return (
             <div className="p-4 flex items-center text-slate-500">
@@ -318,8 +315,60 @@ const UpdateBanner = ({ latestUpdate, onDismiss }) => {
     );
 };
 
+// =================================================================
+// NEW: Consent Modal for Terms, Privacy, and Cookies
+// This modal appears for first-time users and requires them to
+// agree to the terms before they can use the application.
+// =================================================================
+const ConsentModal = ({ onAccept }) => {
+    const [termsAccepted, setTermsAccepted] = useState(false);
+    const [privacyAccepted, setPrivacyAccepted] = useState(false);
 
-// Context menu for each message (copy, share, delete, etc.)
+    const canProceed = termsAccepted && privacyAccepted;
+
+    return (
+        <div className="consent-modal-overlay">
+            <div className="consent-modal-content">
+                <div className="flex items-center gap-3 mb-4">
+                     <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Logo" className="h-12 w-12 rounded-lg"/>
+                     <h2 className="text-2xl font-bold text-slate-800">Welcome!</h2>
+                </div>
+                <p className="text-slate-600 mb-4 text-sm">Before you begin, please review and agree to our terms of use.</p>
+                
+                <div className="bg-slate-50 p-3 rounded-md mb-4">
+                    <p className="text-xs text-slate-500">
+                        This site uses your browser's local storage to save chat history and settings. We also use analytics to improve the service. By continuing, you acknowledge this.
+                    </p>
+                </div>
+
+                <div className="space-y-3">
+                    <label className="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" checked={termsAccepted} onChange={() => setTermsAccepted(!termsAccepted)} className="mt-1 h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"/>
+                        <span className="text-sm text-slate-700">
+                            I have read and agree to the <a href="terms.html" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-semibold hover:underline">Terms of Service</a>.
+                        </span>
+                    </label>
+                    <label className="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" checked={privacyAccepted} onChange={() => setPrivacyAccepted(!privacyAccepted)} className="mt-1 h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"/>
+                        <span className="text-sm text-slate-700">
+                           I acknowledge the <a href="privacy.html" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-semibold hover:underline">Privacy Policy</a>.
+                        </span>
+                    </label>
+                </div>
+
+                <button 
+                    onClick={onAccept} 
+                    disabled={!canProceed} 
+                    className="w-full mt-6 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors disabled:bg-indigo-300 disabled:cursor-not-allowed"
+                >
+                    Proceed to App
+                </button>
+            </div>
+        </div>
+    );
+};
+
+
 const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDocxDownload }) => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
@@ -429,6 +478,7 @@ function App() {
   const [hasNewNotification, setHasNewNotification] = useState(false);
   const [showUpdateBanner, setShowUpdateBanner] = useState(false);
   const [isTakingLong, setIsTakingLong] = useState(false);
+  const [showConsentModal, setShowConsentModal] = useState(false); // NEW state for consent modal
 
 
   // --- REFS ---
@@ -483,6 +533,12 @@ function App() {
 
   // --- EFFECTS ---
     useEffect(() => {
+      // NEW: Check for user consent.
+      // We use a versioned key so we can ask for consent again if terms change.
+      if (!localStorage.getItem('userConsentV1')) {
+          setShowConsentModal(true);
+      }
+
       const savedCount = parseInt(localStorage.getItem('generationCount') || '0', 10);
       setGenerationCount(savedCount);
 
@@ -524,19 +580,17 @@ function App() {
       }
   }, [window.location.search, isLoadingAssistants, loadInitialMessage]);
   
-  // MODIFIED: Effect to run the tutorial for first-time visitors.
   useEffect(() => {
-    if (!isLoadingAssistants) { // Ensure assistants are loaded so the UI is ready
+    if (!isLoadingAssistants && !showConsentModal) { // Don't show tutorial if consent modal is open
         const hasSeenTutorial = localStorage.getItem('hasSeenCbcAiTutorial');
         if (!hasSeenTutorial) {
-            // Use a timeout to ensure the DOM has rendered completely
             setTimeout(() => {
                 startTutorial();
                 localStorage.setItem('hasSeenCbcAiTutorial', 'true');
             }, 500);
         }
     }
-  }, [isLoadingAssistants]);
+  }, [isLoadingAssistants, showConsentModal]);
 
   useEffect(() => {
       localStorage.setItem('aiAssistantState', JSON.stringify({ apiKeys, apiKeyStatus, sidebarWidth, selectedProviderKey, selectedModelName, autoDeleteHours }));
@@ -711,34 +765,25 @@ function App() {
       setIsTakingLong(false);
   };
   
-    // =================================================================
-    // FIXED: This function now correctly uses the 'docx' library
-    // to parse markdown and generate a valid DOCX file.
-    // =================================================================
     const handleDocxDownload = async (markdownContent) => {
-      // Check if the docx library is available on the window object
       if (typeof docx === 'undefined') {
           setError("DOCX export library is still loading. Please try again in a moment.");
           console.error("`docx` library not found on window object.");
           return;
       }
       
-      // Destructure necessary components from the docx library
       const { Document, Packer, Paragraph, TextRun, HeadingLevel, Table, TableRow, TableCell, WidthType, AlignmentType, BorderStyle, ShadingType } = docx;
 
       try {
-          // Use the 'marked' library to parse the markdown into a token tree
           const tokens = marked.lexer(markdownContent);
-          const children = []; // This array will hold all our docx components
+          const children = [];
 
-          // Helper function to parse inline elements (like bold, italics)
           const parseInlines = (inlines) => {
               const runs = [];
               if (!inlines) return runs;
               for (const inline of inlines) {
                   let text = inline.text || (inline.tokens ? inline.tokens.map(t => t.text).join('') : '');
                   if (inline.type === 'strong' || inline.type === 'em') {
-                      // Recursively parse nested tokens if they exist
                       const nestedRuns = parseInlines(inline.tokens);
                       nestedRuns.forEach(run => {
                            if (inline.type === 'strong') run.options.bold = true;
@@ -752,48 +797,42 @@ function App() {
               return runs;
           };
 
-          // Iterate through the top-level tokens from the markdown
           for (const token of tokens) {
               if (token.type === 'heading') {
                   children.push(new Paragraph({
                       children: parseInlines(token.tokens),
-                      heading: `Heading${token.depth}` // Maps h1 -> Heading1, etc.
+                      heading: `Heading${token.depth}`
                   }));
               } else if (token.type === 'paragraph') {
                   children.push(new Paragraph({ children: parseInlines(token.tokens) }));
               } else if (token.type === 'list') {
                   for (const item of token.items) {
-                      // For each list item, create a bulleted paragraph
                       children.push(new Paragraph({
                           children: parseInlines(item.tokens[0].tokens),
                           bullet: { level: 0 }
                       }));
                   }
               } else if (token.type === 'table') {
-                  // Create the table header row
                   const header = new TableRow({
                       children: token.header.map(cell => new TableCell({
                           children: [new Paragraph({ children: parseInlines(cell.tokens), alignment: AlignmentType.CENTER })],
-                          shading: { fill: "E5E7EB", type: ShadingType.CLEAR, color: "auto" } // Light grey shading
+                          shading: { fill: "E5E7EB", type: ShadingType.CLEAR, color: "auto" }
                       })),
                       tableHeader: true,
                   });
-                  // Create the data rows
                   const rows = token.rows.map(row => new TableRow({
                       children: row.map(cell => new TableCell({ children: [new Paragraph({ children: parseInlines(cell.tokens) })] }))
                   }));
-                  // Assemble the table
                   const table = new Table({
                       rows: [header, ...rows],
                       width: { size: 100, type: WidthType.PERCENTAGE }
                   });
                   children.push(table);
               } else if (token.type === 'space') {
-                  children.push(new Paragraph("")); // Add an empty paragraph for spacing
+                  children.push(new Paragraph(""));
               }
           }
 
-          // Create the final document with headers, footers, and content
           const doc = new Document({
               sections: [{
                   headers: {
@@ -816,7 +855,6 @@ function App() {
               }]
           });
 
-          // Use the Packer to convert the document object into a blob
           const blob = await Packer.toBlob(doc);
           const url = URL.createObjectURL(blob);
           const a = document.createElement('a');
@@ -1155,8 +1193,9 @@ function App() {
       localStorage.removeItem('aiAssistantState');
       localStorage.removeItem('generationCount');
       localStorage.removeItem('feedbackTimestamps');
-      // NEW: Also clear the tutorial flag on reset
       localStorage.removeItem('hasSeenCbcAiTutorial');
+      // NEW: Also clear consent on full reset
+      localStorage.removeItem('userConsentV1');
       Object.keys(localStorage).forEach(key => {
           if (key.startsWith('chatHistory_')) {
               localStorage.removeItem(key);
@@ -1173,6 +1212,8 @@ function App() {
       setGenerationCount(0);
       
       loadInitialMessage(activePromptKey);
+      // NEW: Show consent modal again after reset
+      setShowConsentModal(true);
   };
 
   const handleScroll = (direction) => {
@@ -1198,22 +1239,12 @@ function App() {
       window.addEventListener("mouseup", handleMouseUp);
   }, []);
 
-  // =================================================================
-  // FIXED & OVERHAULED: This function now correctly handles the
-  // tutorial flow for both desktop and mobile.
-  // =================================================================
   const startTutorial = () => {
-    // Check if we are on a mobile-width screen (Tailwind's lg breakpoint is 1024px)
     const isMobileView = window.innerWidth < 1024;
-
-    // On mobile, we need to programmatically open the menu for the tutorial.
     if (isMobileView) {
         setIsMenuOpen(true);
     }
-
     const intro = introJs();
-
-    // When the tutorial is finished or exited, close the menu on mobile.
     const cleanup = () => {
         if (isMobileView) {
             setIsMenuOpen(false);
@@ -1221,113 +1252,35 @@ function App() {
     };
     intro.oncomplete(cleanup);
     intro.onexit(cleanup);
-
-    // Check if the first message exists to attach the context menu step
     const firstMessageOptionsMenu = document.querySelector('#message-options-menu-0');
-    
     const steps = [
-        {
-            title: 'Welcome!',
-            intro: 'Hello! This is a quick tour to help you get started with the AI Educational Assistant.'
-        },
-        {
-            element: '#settings-panel',
-            title: 'Settings Panel',
-            intro: 'This is the main settings panel. Here you can choose your assistant, select an AI provider, and enter your API keys.',
-            position: 'right'
-        },
-        {
-            element: '#assistant-selector-container',
-            title: 'Select an Assistant',
-            intro: 'Choose from a list of specialized AI assistants, each designed for a specific educational task.',
-            position: 'right'
-        },
-        {
-            element: '#provider-selector-container',
-            title: 'AI Provider & Model',
-            intro: 'Select your preferred AI provider (like Google, OpenAI, etc.) and the specific model you want to use.',
-            position: 'right'
-        },
-        {
-            element: '#api-key-container',
-            title: 'API Key',
-            intro: 'You need an API key from your chosen provider to use the tool. Click the link to get your key, then paste it here. Your key is saved securely in your browser.',
-            position: 'right'
-        },
-        {
-            element: '#chat-input-area',
-            title: 'Chat Input',
-            intro: 'This is where you will interact with the AI.',
-            position: 'top'
-        },
-        {
-            element: '#file-attach-button',
-            title: 'Attach Files',
-            intro: 'Click here to attach a file, like an image or document. Note: Only models that support vision (like GPT-4o or Gemini) can "see" images.',
-            position: 'top'
-        },
-        {
-            element: '#chat-input',
-            title: 'Type Your Message',
-            intro: 'Type your instructions or questions for the AI here.',
-            position: 'top'
-        },
-        {
-            element: '#send-button',
-            title: 'Send & Stop',
-            intro: 'Click this button to send your message. While the AI is responding, this will turn into a "Stop" button to interrupt the generation.',
-            position: 'top'
-        }
+        { title: 'Welcome!', intro: 'Hello! This is a quick tour to help you get started with the AI Educational Assistant.' },
+        { element: '#settings-panel', title: 'Settings Panel', intro: 'This is the main settings panel. Here you can choose your assistant, select an AI provider, and enter your API keys.', position: 'right' },
+        { element: '#assistant-selector-container', title: 'Select an Assistant', intro: 'Choose from a list of specialized AI assistants, each designed for a specific educational task.', position: 'right' },
+        { element: '#provider-selector-container', title: 'AI Provider & Model', intro: 'Select your preferred AI provider (like Google, OpenAI, etc.) and the specific model you want to use.', position: 'right' },
+        { element: '#api-key-container', title: 'API Key', intro: 'You need an API key from your chosen provider to use the tool. Click the link to get your key, then paste it here. Your key is saved securely in your browser.', position: 'right' },
+        { element: '#chat-input-area', title: 'Chat Input', intro: 'This is where you will interact with the AI.', position: 'top' },
+        { element: '#file-attach-button', title: 'Attach Files', intro: 'Click here to attach a file, like an image or document. Note: Only models that support vision (like GPT-4o or Gemini) can "see" images.', position: 'top' },
+        { element: '#chat-input', title: 'Type Your Message', intro: 'Type your instructions or questions for the AI here.', position: 'top' },
+        { element: '#send-button', title: 'Send & Stop', intro: 'Click this button to send your message. While the AI is responding, this will turn into a "Stop" button to interrupt the generation.', position: 'top' }
     ];
-
-    // Conditionally add the step for the message options menu if it exists
     if (firstMessageOptionsMenu) {
-        steps.push({
-            element: '#message-options-menu-0',
-            title: 'Message Options',
-            intro: 'After the AI responds, click the three dots to open a menu where you can copy, regenerate, share, or download the message as a .docx file.',
-            position: 'left'
-        });
+        steps.push({ element: '#message-options-menu-0', title: 'Message Options', intro: 'After the AI responds, click the three dots to open a menu where you can copy, regenerate, share, or download the message as a .docx file.', position: 'left' });
     }
-
     steps.push(
-        {
-            element: '#clear-chat-button',
-            title: 'Clear Chat',
-            intro: 'Click here to clear the current conversation and start fresh.',
-            position: 'bottom'
-        },
-        {
-            element: '#notifications-button',
-            title: 'Notifications',
-            intro: 'Check here for news and updates about the app.',
-            position: 'bottom'
-        },
-        {
-            element: '#help-button',
-            title: 'Need Help?',
-            intro: 'You can click this "Help" button anytime to see this tour again!',
-            position: 'bottom'
-        },
-        {
-            element: '#reset-settings-button',
-            title: 'Reset All Settings',
-            intro: 'If you run into issues, you can use this to reset all your settings, including API keys and chat history, to their default state.',
-            position: 'right'
-        },
-        {
-            title: 'You\'re All Set!',
-            intro: 'That\'s it! You\'re ready to start creating. Enjoy using the tool!'
-        }
+        { element: '#clear-chat-button', title: 'Clear Chat', intro: 'Click here to clear the current conversation and start fresh.', position: 'bottom' },
+        { element: '#notifications-button', title: 'Notifications', intro: 'Check here for news and updates about the app.', position: 'bottom' },
+        { element: '#help-button', title: 'Need Help?', intro: 'You can click this "Help" button anytime to see this tour again!', position: 'bottom' },
+        { element: '#reset-settings-button', title: 'Reset All Settings', intro: 'If you run into issues, you can use this to reset all your settings, including API keys and chat history, to their default state.', position: 'right' },
+        { title: 'You\'re All Set!', intro: 'That\'s it! You\'re ready to start creating. Enjoy using the tool!' }
     );
+    intro.setOptions({ steps: steps, showBullets: false, showStepNumbers: true, exitOnOverlayClick: false, tooltipClass: 'custom-intro-tooltip' }).start();
+  };
 
-    intro.setOptions({
-        steps: steps,
-        showBullets: false,
-        showStepNumbers: true,
-        exitOnOverlayClick: false,
-        tooltipClass: 'custom-intro-tooltip'
-    }).start();
+  // NEW: Handler for accepting the terms in the consent modal
+  const handleConsentAccept = () => {
+      localStorage.setItem('userConsentV1', 'true');
+      setShowConsentModal(false);
   };
 
 
@@ -1361,7 +1314,9 @@ function App() {
 
   return (
       <div className="h-screen w-screen overflow-hidden flex bg-white">
-          {/* --- SIDEBAR / SETTINGS PANEL --- */}
+          {/* NEW: Render the consent modal if needed */}
+          {showConsentModal && <ConsentModal onAccept={handleConsentAccept} />}
+
           <div
               id="settings-panel"
               style={{ width: `${sidebarWidth}px`, maxWidth: '100vw' }}
@@ -1428,20 +1383,21 @@ function App() {
                       </div>
                   </div>
                   <div className="p-4 mt-auto space-y-3 flex-shrink-0 border-t border-slate-700">
-                       {/* <p className="text-sm text-slate-400 text-center">A Project by Derrick Musamali</p> */}
                        <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-slate-400">
                             <a href="mailto:cbcaitool@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors" title="Send an Email">
                                 <FooterEmailIcon />
                                 <span className="text-sm">cbcaitool@gmail.com</span>
                             </a>
-                            {/* <a href="tel:+256750470234" className="flex items-center gap-2 hover:text-white transition-colors" title="Make a Call">
-                                <FooterPhoneIcon />
-                                <span className="text-sm">+256750470234</span>
-                            </a> */}
                             <a href="https://wa.me/256750470234" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors" title="Chat on WhatsApp">
                                 <FooterWhatsAppIcon />
                                 <span className="text-sm">+256750470234</span>
                             </a>
+                       </div>
+                       {/* Legal links added to sidebar footer */}
+                       <div className="text-center text-xs text-slate-500">
+                            <a href="terms.html" target="_blank" className="hover:text-slate-300 transition-colors">Terms of Service</a>
+                            <span className="mx-2">|</span>
+                            <a href="privacy.html" target="_blank" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
                        </div>
                        <a href= "/" rel="external" className="flex items-center justify-center gap-2 w-full text-center mt-2 py-2 bg-slate-700 hover:bg-slate-600 rounded-md transition-colors"><HomeIcon className="w-5 h-5"/>Return to Home</a>
                   </div>
@@ -1449,7 +1405,6 @@ function App() {
               <div onMouseDown={startResizing} className="resize-handle hidden lg:block"></div>
           </div>
 
-          {/* --- MAIN CHAT INTERFACE --- */}
           <div className="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
               {showUpdateBanner && <UpdateBanner latestUpdate={notifications[0]} onDismiss={dismissUpdateBanner} />}
               <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0 bg-white z-10">
@@ -1531,7 +1486,6 @@ function App() {
                       <button onClick={() => handleScroll('down')} className="p-2 rounded-full bg-black bg-opacity-40 text-white hover:bg-opacity-60 transition-opacity"><ChevronDownIcon className="w-5 h-5"/></button>
                   </div>
               </main>
-              {/* --- NOTIFICATIONS PANEL --- */}
               <div className={`fixed top-0 right-0 h-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${isNotificationsOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ width: 'min(400px, 100vw)' }}>
                   <div className="flex flex-col h-full">
                       <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
@@ -1616,7 +1570,7 @@ function App() {
 
           {/* --- TOAST NOTIFICATIONS --- */}
           {showCopyToast && (
-              <div className="fixed bottom-10 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">
+              <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">
                   Copied to clipboard!
               </div>
           )}
