@@ -1,86 +1,84 @@
-AI Educational Assistant for Uganda's CBC
+AI Educational Assistant Suite for Uganda's CBC
+A suite of specialized AI-powered tools designed to support educators in Uganda with the Competency-Based Curriculum (CBC). This project aims to reduce administrative workload and empower teachers to focus on what matters most: their students.
 
-A suite of specialized AI-powered tools for educators in Uganda, designed to assist with item writing, lesson planning, and more, all aligned with the National Curriculum Development Centre (NCDC) Competency-Based Curriculum (CBC) framework.
+AI is here to enhance, not take over jobs... at least not yet.
 
-AI is here to enhance NOT take over jobs.... At least not yet
+🚀 Live Application: cbc-ai-tool.netlify.app
 
-🚀 Live Application
-
-Access the live tool here: https://cbc-ai-tool.netlify.app/
-
-🎥 Demonstration & Guide
-
-Before you begin, watch the full video tutorial and read the guide to understand how to get your API key and use the application effectively.
+🎥 Demonstration & Essential Guides
+Before you begin, please watch the full video tutorial and read the guide to understand how to get your API key and use the application effectively.
 
 Watch the Video Guide: 🎥 https://youtu.be/KGplNQfdf_w
 
 Read the PDF Guide: 📄 View PDF on Google Drive
 
-
 ✨ Core Features
-
 Specialized AI Assistants: Access a growing list of AI assistants with custom-built prompts specifically designed for Uganda's CBC educational context.
 
-Secure Prompt Management: All core prompts are stored securely on a Google Apps Script backend, ensuring they are not exposed to the client-side browser.
+Secure Prompt Management: All core prompts are stored securely on a Google Apps Script backend, ensuring they are not exposed on the client-side.
 
-Multi-API & Model Support: Seamlessly switch between major AI providers and their models, including:
+Multi-API & Model Support: Seamlessly switch between major AI providers and their models (Google Gemini, Anthropic Claude, OpenAI GPT, Groq Llama 3, etc.).
 
-Google Gemini
+Real-time Streaming: AI responses are streamed in real-time for a fast, interactive user experience.
 
-Anthropic Claude
+File Uploads: Attach syllabus pages, images, or documents to provide the AI with context for generating accurate materials (for vision-enabled models).
 
-OpenAI GPT
+Copy & Download: Generated content is formatted with Markdown, making it easy to copy into any word processor or download directly as a .docx file.
 
-Groq (Llama 3)
-
-Qwen
-
-DeepSeek
-
-Real-time Streaming: AI responses are streamed in real-time, providing a fast and interactive user experience.
-
-File Uploads: Attach syllabus pages, images, or documents to provide the AI with the necessary context for generating accurate materials.
-
-Copy-Paste Friendly: All generated content is formatted with Markdown, making it easy to copy and paste directly into any word processor (like Microsoft Word or LibreOffice Writer) for final editing and formatting.
-
-User Feedback: A built-in feedback form helps improve the tool by collecting user experiences after several generations.
+User Feedback: A built-in feedback form helps improve the tool by collecting user experiences.
 
 Responsive Design: A clean, modern interface that works beautifully on both desktop and mobile devices.
 
 🛠️ Assistants Available
+Assistant Name
 
-Item Writer Assistant: Quickly generates sample scenario-based assessment items and structured scoring guides aligned with CBC principles.
+Description
 
-Lesson Plan Generator (NCDC): Creates detailed lesson plans that follow the official NCDC template, saving educators hours of preparation time.
+Item Writer
 
-And more to come!
+Generates scenario-based assessment items with structured scoring guides.
 
-🔧 Technical Architecture
+Lesson Plan Generator
 
-This application uses a modern, secure client-server architecture to protect the proprietary prompts and ensure a smooth user experience.
+Creates detailed lesson plans following the official NCDC template.
 
-Frontend (Client-Side):
+Scheme of Work Creator
 
-Built with React and styled with Tailwind CSS.
+Develops structured schemes of work based on syllabus requirements.
 
-Contained within a single, clean index.html file.
+Lesson Notes Generator
 
-Hosted on Netlify for fast, global delivery.
+Produces comprehensive and well-structured notes for any topic.
 
-The frontend is "dumb" — it contains no prompt logic. It dynamically fetches the list of available assistants and their corresponding prompts from the backend.
+Coteacher
 
-Backend (Server-Side):
+An all-purpose teaching assistant for questions and brainstorming.
 
-Powered by Google Apps Script (GAS), deployed as a Web App.
+AI in Education Coach
 
-Acts as a secure API endpoint.
+Provides guidance on integrating AI into the classroom.
 
-Stores and manages all confidential AI prompts.
+Essay Grading Assistant
 
-Handles all communication with the various third-party AI APIs (Google, OpenAI, Anthropic, etc.).
+Helps grade student essays based on a provided rubric.
+
+💻 Tech Stack
+Frontend: React (via CDN), Tailwind CSS, Marked.js (for Markdown rendering), docx (for .docx export).
+
+Backend (for Prompts): Google Apps Script.
+
+Deployment: Netlify.
+
+🔧 How It Works (Bring Your Own Key Model)
+This application is designed with user privacy and cost-effectiveness in mind.
+
+No User Accounts: The app does not require you to sign up or create an account.
+
+User-Provided API Keys: To use the AI models, you must provide your own API key from a provider like Google, OpenAI, etc.
+
+Local Storage: Your API keys and chat history are stored only in your browser's local storage. They are never sent to or stored on our servers, ensuring your data remains private and secure.
 
 🚀 Getting Started
-
 Get an API Key: You must have an API key from an AI provider. The video and PDF guides above show a step-by-step process for getting a free key from Google AI Studio.
 
 Open the Application: Navigate to https://cbc-ai-tool.netlify.app/.
@@ -89,18 +87,19 @@ Open Settings: Click the menu icon (☰) on the top-left to open the Settings si
 
 Select Provider & Model: Choose the AI provider (e.g., Google Gemini) and the model you wish to use.
 
-Enter API Key: Paste your API key into the designated input field. Your key is saved in your browser's local storage for your convenience and is not sent anywhere else.
+Enter API Key: Paste your API key into the designated input field.
 
 Start Chatting: Select an assistant from the dropdown menu and begin your session!
 
-👨‍💻 Project Creator
+⚠️ Disclaimer
+The content generated by the AI is intended to be a draft or a starting point. While the models are powerful, they can make mistakes or generate inaccurate information. Always review and verify the generated content to ensure it meets your standards and is appropriate for your classroom.
 
+👨‍💻 Project Creator
 This project was conceptualized, designed, and developed by Derrick Musamali.
 
-Email: musadrk2@gmail.com
+Email: cbcaitool@gmail.com
 
-Phone: +256750470234
+WhatsApp: +256750470234
 
 📜 License
-
 This project is licensed under the MIT License. See the LICENSE file for details.
