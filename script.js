@@ -1428,16 +1428,16 @@ function App() {
                       </div>
                   </div>
                   <div className="p-4 mt-auto space-y-3 flex-shrink-0 border-t border-slate-700">
-                       <p className="text-sm text-slate-400 text-center">A Project by Derrick Musamali</p>
+                       {/* <p className="text-sm text-slate-400 text-center">A Project by Derrick Musamali</p> */}
                        <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-slate-400">
                             <a href="mailto:cbcaitool@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors" title="Send an Email">
                                 <FooterEmailIcon />
                                 <span className="text-sm">cbcaitool@gmail.com</span>
                             </a>
-                            <a href="tel:+256750470234" className="flex items-center gap-2 hover:text-white transition-colors" title="Make a Call">
+                            {/* <a href="tel:+256750470234" className="flex items-center gap-2 hover:text-white transition-colors" title="Make a Call">
                                 <FooterPhoneIcon />
                                 <span className="text-sm">+256750470234</span>
-                            </a>
+                            </a> */}
                             <a href="https://wa.me/256750470234" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors" title="Chat on WhatsApp">
                                 <FooterWhatsAppIcon />
                                 <span className="text-sm">+256750470234</span>
