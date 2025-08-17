@@ -1,0 +1,95 @@
+/**
+ * css/chat.css
+ *
+ * This file contains all styles related to the main chat interface.
+ * This includes the chat bubbles, the markdown content within them,
+ * the input area, and the streaming/loading indicators.
+ */
+
+/* Markdown content styling for AI responses */
+.markdown-content h1, .markdown-content h2, .markdown-content h3 {
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.markdown-content h1 { font-size: 1.5em; }
+.markdown-content h2 { font-size: 1.25em; }
+.markdown-content h3 { font-size: 1.1em; }
+.markdown-content p { margin-bottom: 0.75rem; }
+.markdown-content ul, .markdown-content ol {
+    margin-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.markdown-content ul { list-style-type: disc; }
+.markdown-content ol { list-style-type: decimal; }
+.markdown-content li { margin-bottom: 0.25rem; }
+
+/* Table styling for horizontal scrolling on smaller screens */
+.markdown-content table {
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+.markdown-content th, .markdown-content td {
+    border: 1px solid #d1d5db; /* gray-300 */
+    padding: 0.5rem 0.75rem;
+}
+.markdown-content th {
+    background-color: #f3f4f6; /* gray-100 */
+    font-weight: 600;
+}
+
+.markdown-content blockquote {
+    border-left: 4px solid #d1d5db; /* gray-300 */
+    padding-left: 1rem;
+    margin-left: 0;
+    color: #4b5563; /* gray-600 */
+}
+.markdown-content code {
+    background-color: #e5e7eb; /* gray-200 */
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+}
+.markdown-content pre > code {
+    display: block;
+    padding: 0.75rem;
+    white-space: pre-wrap;
+}
+
+/* Streaming indicator for AI responses */
+.streaming-indicator {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 3px solid #94a3b8; /* slate-400 */
+    border-top: 3px solid var(--app-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    vertical-align: -4px;
+    margin-left: 8px;
+}
+
+/* General purpose loading spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #e5e7eb; /* gray-200 */
+    border-top: 2px solid var(--app-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Auto-resizing textarea in the footer */
+textarea#chat-input {
+    min-height: 48px;
+    height: 48px;
+}

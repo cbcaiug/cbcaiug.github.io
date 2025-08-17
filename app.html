@@ -4,32 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO and Sharing Meta Tags -->
+    <!-- Meta Tags -->
     <title>AI Educational Assistant</title>
-    <meta name="description" content="A suite of specialized AI-powered tools for educators, designed to assist with item writing, lesson planning, and more. Compiled by Derrick Musamali.">
-    <meta name="author" content="Derrick Musamali">
-    <link rel="icon" href="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg
-">
+    <meta name="description" content="A suite of specialized AI-powered tools for educators.">
+    <link rel="icon" href="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg">
 
-    <!-- Open Graph (Facebook, WhatsApp, etc.) -->
-    <meta property="og:title" content="AI Educational Assistant Suite">
-    <meta property="og:description" content="A collection of specialized AI tools for educators.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg
-">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI Educational Assistant Suite">
-    <meta name="twitter:description" content="A collection of specialized AI tools for educators.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg
-">
-
-    <!--
-      ******************************************************************
-      * GOOGLE ANALYTICS SCRIPT
-      ******************************************************************
-    -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCTLDP04EJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -44,36 +24,42 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    
-    <!-- ================================================================= -->
-    <!-- DOCX Library: Used in script.js to reliably generate DOCX files.  -->
-    <!-- ================================================================= -->
     <script src="https://unpkg.com/docx@8.5.0/build/index.js"></script>
-    
-    <!-- ================================================================= -->
-    <!-- NEW: Intro.js for the in-app tutorial.                            -->
-    <!-- ================================================================= -->
     <script src="https://unpkg.com/intro.js/intro.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/intro.js/introjs.css">
 
-
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Link to your local stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Application Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/tutorial.css">
 
 </head>
 <body class="bg-slate-100">
-    <!-- The React app will be rendered inside this div -->
     <div id="root"></div>
 
-    <!-- 
-      Link to your local JavaScript file.
-      IMPORTANT: The type is "text/babel" because we are writing JSX (React's syntax)
-      directly in the JS file without a build step. Babel will transpile it in the browser.
-    -->
-    <script type="text/babel" src="script.js"></script>
+    <!-- Application Scripts (Order is important) -->
+<!-- Libraries & Services -->
+<script type="text/babel" src="js/services/api.js"></script>
+<script type="text/babel" src="js/utils/helpers.js"></script>
+
+<!-- UI Components -->
+<script type="text/babel" src="js/components/Icons.js"></script>
+<script type="text/babel" src="js/components/Modals.js"></script>
+<script type="text/babel" src="js/components/Chat.js"></script>
+<script type="text/babel" src="js/components/Sidebar.js"></script>
+
+<!-- Main App Component -->
+<script type="text/babel" src="js/components/App.js"></script>
+
+<!-- Entry Point -->
+<script type="text/babel" src="js/main.js"></script>
 </body>
 </html>

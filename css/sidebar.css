@@ -1,0 +1,21 @@
+/**
+ * css/sidebar.css
+ *
+ * This file contains styles specifically for the settings sidebar,
+ * including its layout, form elements, and the resizable handle.
+ */
+
+/* Resizable sidebar handle */
+.resize-handle {
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 4px;
+    height: 100%;
+    cursor: col-resize;
+    background-color: transparent;
+    z-index: 50;
+}
+.resize-handle:hover {
+    background-color: var(--app-user-bubble); /* Use the indigo color for hover */
+}
