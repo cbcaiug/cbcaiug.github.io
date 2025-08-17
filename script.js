@@ -7,7 +7,7 @@
 
 const { useState, useEffect, useRef, useCallback } = React;
 
-// --- SVG ICONS (as React components) ---
+// --- SVG IONS (as React components) ---
 const Icon = ({ C, ...props }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>{C}</svg>;
 const SendIcon = (props) => <Icon {...props} C={<><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></>} />;
 const StopIcon = (props) => <Icon {...props} C={<rect x="3" y="3" width="18" height="18" rx="2" ry="2" />} />;
@@ -307,7 +307,7 @@ const UpdateBanner = ({ latestUpdate, onDismiss }) => {
                     {latestUpdate.url && <a href={latestUpdate.url} target="_blank" rel="noopener noreferrer" className="ml-2 underline hover:opacity-80">Learn more &raquo;</a>}
                 </p>
             </div>
-            <button onClick={onDismiss} className="p-1 rounded-full hover:bg-indigo-500">
+            <button id="update-banner-close-btn" onClick={onDismiss} className="p-1 rounded-full hover:bg-indigo-500">
                 <XIcon className="w-5 h-5"/>
             </button>
         </div>
@@ -577,7 +577,9 @@ function App() {
         const hasSeenTutorial = localStorage.getItem('hasSeenCbcAiTutorial');
         if (!hasSeenTutorial) {
             setTimeout(() => {
-                startTutorial();
+                // The tutorial is now launched via a dedicated handler
+                // to better manage the panel state.
+                handleHelpButtonClick(); 
                 localStorage.setItem('hasSeenCbcAiTutorial', 'true');
             }, 500);
         }
@@ -1229,50 +1231,167 @@ function App() {
       window.addEventListener("mouseup", handleMouseUp);
   }, []);
 
+  // =================================================================
+  // TUTORIAL LOGIC: This section is updated for better reliability.
+  // =================================================================
   const startTutorial = () => {
-    const isMobileView = window.innerWidth < 1024;
-    if (isMobileView) {
-        setIsMenuOpen(true);
-    }
     const intro = introJs();
-    const cleanup = () => {
-        if (isMobileView) {
-            setIsMenuOpen(false);
-        }
-    };
-    intro.oncomplete(cleanup);
-    intro.onexit(cleanup);
     const firstMessageOptionsMenu = document.querySelector('#message-options-menu-0');
     
-    // =================================================================
-    // TUTORIAL STEPS CORRECTION:
-    // The selector for 'AI Provider & Model' is updated to point to
-    // the new wrapper div ('#provider-model-selector-group') to ensure
-    // both dropdowns are highlighted correctly.
-    // =================================================================
+    // Define all tutorial steps in a logical order.
     const steps = [
-        { title: 'Welcome!', intro: 'Hello! This is a quick tour to help you get started with the AI Educational Assistant.' },
-        { element: '#settings-panel', title: 'Settings Panel', intro: 'This is the main settings panel. Here you can choose your assistant, select an AI provider, and enter your API keys.', position: 'right' },
-        { element: '#assistant-selector-container', title: 'Select an Assistant', intro: 'Choose from a list of specialized AI assistants, each designed for a specific educational task.', position: 'right' },
-        { element: '#provider-model-selector-group', title: 'AI Provider & Model', intro: 'Select your preferred AI provider (like Google, OpenAI, etc.) and the specific model you want to use.', position: 'right' },
-        { element: '#api-key-container', title: 'API Key', intro: 'You need an API key from your chosen provider to use the tool. Click the link to get your key, then paste it here. Your key is saved securely in your browser.', position: 'right' },
-        { element: '#chat-input-area', title: 'Chat Input', intro: 'This is where you will interact with the AI.', position: 'top' },
-        { element: '#file-attach-button', title: 'Attach Files', intro: 'Click here to attach a file, like an image or document. Note: Only models that support vision (like GPT-4o or Gemini) can "see" images.', position: 'top' },
-        { element: '#chat-input', title: 'Type Your Message', intro: 'Type your instructions or questions for the AI here.', position: 'top' },
-        { element: '#send-button', title: 'Send & Stop', intro: 'Click this button to send your message. While the AI is responding, this will turn into a "Stop" button to interrupt the generation.', position: 'top' }
+        {
+            title: 'Welcome!',
+            intro: 'Hello! This is a quick tour to help you get started with the AI Educational Assistant.'
+        },
+        {
+            element: '#settings-panel',
+            title: 'Settings Panel',
+            intro: 'This is where you control the app. We\'ll look at the key settings now.',
+            position: 'right'
+        },
+        {
+            element: '#assistant-selector-container',
+            title: '1. Select an Assistant',
+            intro: 'Choose from a list of specialized AI assistants, each designed for a specific educational task.',
+            position: 'right'
+        },
+        {
+            element: '#provider-model-selector-group',
+            title: '2. AI Provider & Model',
+            intro: 'Select your preferred AI provider (like Google, OpenAI, etc.) and the specific model you want to use.',
+            position: 'right'
+        },
+        {
+            element: '#api-key-container',
+            title: '3. API Key',
+            intro: 'You need an API key from your chosen provider. Click the link to get your key, then paste it here. Your key is saved securely in your browser, not on our servers.',
+            position: 'right'
+        },
+        {
+            element: '#reset-settings-button',
+            title: '4. App Settings',
+            intro: 'If you run into issues, you can use this to reset all your settings, including API keys and chat history, to their default state.',
+            position: 'right'
+        },
+        {
+            element: '#contact-info-panel',
+            title: '5. Get In Touch',
+            intro: 'If you have questions, feedback, or need help, use these contact details to reach out.',
+            position: 'right'
+        }
     ];
-    if (firstMessageOptionsMenu) {
-        steps.push({ element: '#message-options-menu-0', title: 'Message Options', intro: 'After the AI responds, click the three dots to open a menu where you can copy, regenerate, share, or download the message as a .docx file.', position: 'left' });
+
+    const updateBannerCloseButton = document.querySelector('#update-banner-close-btn');
+    if (updateBannerCloseButton && updateBannerCloseButton.offsetParent !== null) {
+        steps.push({
+            element: '#update-banner-close-btn',
+            title: 'App Updates',
+            intro: 'You can dismiss update notifications by clicking the "X".',
+            position: 'bottom'
+        });
     }
+
+    steps.push({
+        element: '#share-app-button',
+        title: 'Share The App',
+        intro: 'Like the tool? Click here to share it with your colleagues!',
+        position: 'bottom'
+    });
+
     steps.push(
-        { element: '#clear-chat-button', title: 'Clear Chat', intro: 'Click here to clear the current conversation and start fresh.', position: 'bottom' },
-        { element: '#notifications-button', title: 'Notifications', intro: 'Check here for news and updates about the app.', position: 'bottom' },
-        { element: '#help-button', title: 'Need Help?', intro: 'You can click this "Help" button anytime to see this tour again!', position: 'bottom' },
-        { element: '#reset-settings-button', title: 'Reset All Settings', intro: 'If you run into issues, you can use this to reset all your settings, including API keys and chat history, to their default state.', position: 'right' },
-        { title: 'You\'re All Set!', intro: 'That\'s it! You\'re ready to start creating. Enjoy using the tool!' }
+        {
+            element: '#chat-input-area',
+            title: 'Chat Input',
+            intro: 'This is where you will interact with the AI.',
+            position: 'top'
+        },
+        {
+            element: '#file-attach-button',
+            title: 'Attach Files',
+            intro: 'Click here to attach a file, like an image or document. Note: Only models that support vision (like GPT-4o or Gemini) can "see" images.',
+            position: 'top'
+        },
+        {
+            element: '#chat-input',
+            title: 'Type Your Message',
+            intro: 'Type your instructions or questions for the AI here.',
+            position: 'top'
+        },
+        {
+            element: '#send-button',
+            title: 'Send & Stop',
+            intro: 'Click this button to send your message. While the AI is responding, this will turn into a "Stop" button to interrupt the generation.',
+            position: 'top'
+        }
     );
-    intro.setOptions({ steps: steps, showBullets: false, showStepNumbers: true, exitOnOverlayClick: false, tooltipClass: 'custom-intro-tooltip' }).start();
+
+    if (firstMessageOptionsMenu) {
+        steps.push({
+            element: '#message-options-menu-0',
+            title: 'Message Options',
+            intro: 'After the AI responds, click the three dots to open a menu where you can copy, regenerate, share, or download the message as a .docx file.',
+            position: 'left'
+        });
+    }
+    
+    steps.push(
+        {
+            element: '#clear-chat-button',
+            title: 'Clear Chat',
+            intro: 'Click here to clear the current conversation and start fresh.',
+            position: 'bottom'
+        },
+        {
+            element: '#notifications-button',
+            title: 'Notifications',
+            intro: 'Check here for news and updates about the app.',
+            position: 'bottom'
+        },
+        {
+            element: '#help-button',
+            title: 'Need Help?',
+            intro: 'You can click this "Help" button anytime to see this tour again!',
+            position: 'bottom'
+        },
+        {
+            title: 'You\'re All Set!',
+            intro: 'That\'s it! You\'re ready to start creating. Enjoy using the tool!'
+        }
+    );
+
+    intro.setOptions({
+        steps: steps,
+        showBullets: false,
+        showStepNumbers: true,
+        exitOnOverlayClick: false,
+        tooltipClass: 'custom-intro-tooltip'
+    });
+    
+    // When the tutorial is over, close the panel on mobile.
+    intro.onexit(() => {
+        if (window.innerWidth < 1024) {
+            setIsMenuOpen(false);
+        }
+    });
+
+    intro.start();
   };
+
+  // ***NEW, MORE RELIABLE HANDLER***
+  const handleHelpButtonClick = () => {
+      const isMobileView = window.innerWidth < 1024;
+      // If on mobile and the menu is closed, open it first.
+      if (isMobileView && !isMenuOpen) {
+          setIsMenuOpen(true);
+          // Give React a moment to update the DOM before starting the tour.
+          setTimeout(startTutorial, 200); 
+      } else {
+          // If on desktop or the menu is already open, start immediately.
+          startTutorial();
+      }
+  };
+
 
   const handleConsentAccept = () => {
       localStorage.setItem('userConsentV1', 'true');
@@ -1335,10 +1454,6 @@ function App() {
                           <input id="custom-prompt-upload" type="file" className="hidden" accept=".txt,.json" onChange={handleCustomPromptUpload} />
                       </div>
                       
-                      {/* ================================================================= */}
-                      {/* TUTORIAL FIX: Added a wrapper div with a new ID here to group   */}
-                      {/* the provider and model selectors for better tutorial highlighting.*/}
-                      {/* ================================================================= */}
                       <div id="provider-model-selector-group">
                           <div id="provider-selector-container">
                               <label className="text-sm text-slate-400">AI Provider</label>
@@ -1386,7 +1501,7 @@ function App() {
                       </div>
                   </div>
                   <div className="p-4 mt-auto space-y-3 flex-shrink-0 border-t border-slate-700">
-                       <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-slate-400">
+                       <div id="contact-info-panel" className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-slate-400">
                             <a href="mailto:cbcaitool@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors" title="Send an Email">
                                 <FooterEmailIcon />
                                 <span className="text-sm">cbcaitool@gmail.com</span>
@@ -1415,7 +1530,7 @@ function App() {
                   <div className="flex items-center gap-2">
                       <button
                           id="help-button"
-                          onClick={startTutorial}
+                          onClick={handleHelpButtonClick}
                           title="Start Tutorial"
                           className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors"
                       >
@@ -1433,6 +1548,7 @@ function App() {
                           {hasNewNotification && <span className="block w-2.5 h-2.5 bg-red-500 rounded-full"></span>}
                       </button>
                       <button
+                          id="share-app-button"
                           onClick={() => handleShare({
                               title: 'AI Educational Assistant',
                               text: 'Check out this suite of AI-powered tools for educators!',

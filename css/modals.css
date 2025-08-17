@@ -1,0 +1,40 @@
+/**
+ * css/modals.css
+ *
+ * This file contains styles for all modal dialogs, such as the
+ * feedback modal and the initial consent modal.
+ */
+
+/* Star rating styles for the feedback modal */
+.star-rating .star {
+    cursor: pointer;
+    color: #d1d5db; /* gray-300 */
+    transition: color 0.2s;
+}
+.star-rating .star.hover,
+.star-rating .star.selected {
+    color: #f59e0b; /* amber-500 */
+}
+
+/* Styles for the Terms, Privacy, and Cookie Consent Modal */
+.consent-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.8); /* slate-900 with opacity */
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* High z-index to be on top of everything */
+    padding: 1rem;
+}
+
+.consent-modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid #e2e8f0; /* slate-200 */
+}
