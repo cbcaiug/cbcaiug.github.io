@@ -338,6 +338,24 @@
                 });
             });
             // --- END OF WIDGET LOGIC ---
+                        // --- NEW: COOKIE BANNER LOGIC ---
+            const cookieNotice = document.getElementById('cookie-notice');
+            const acceptBtn = document.getElementById('cookie-accept-btn');
+
+            // Check if the user has already accepted the cookie consent
+            if (!localStorage.getItem('cookieConsentAccepted')) {
+                // If not, show the banner after a short delay to be less intrusive
+                setTimeout(() => {
+                    cookieNotice.style.display = 'flex';
+                }, 1500); // Banner appears after 1.5 seconds
+            }
+
+            // When the accept button is clicked, hide the banner and save the preference
+            acceptBtn.addEventListener('click', () => {
+                cookieNotice.style.display = 'none';
+                localStorage.setItem('cookieConsentAccepted', 'true');
+            });
+            // --- END OF COOKIE BANNER LOGIC ---
             // Typewriter effect logic
             const typingElement = document.getElementById('typewriter-text');
             const cursorElement = document.querySelector('.cursor');
@@ -433,6 +451,18 @@
     </div>
     <!-- ================================ -->
     <!-- FLOATING CONTACT WIDGET END -->
+    <!-- ================================ -->
+      <!-- NEW: COOKIE CONSENT BANNER START -->
+    <!-- ================================== -->
+    <div class="cookie-notice" id="cookie-notice">
+        <p>
+            This site uses local storage to save chat history and settings. By continuing, you agree to our
+            <a href="privacy.html" target="_blank">Privacy Policy</a>.
+        </p>
+        <button class="cookie-accept-btn" id="cookie-accept-btn">Accept</button>
+    </div>
+    <!-- ================================ -->
+    <!-- COOKIE CONSENT BANNER END      -->
     <!-- ================================ -->
 
 </body>
