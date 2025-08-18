@@ -87,13 +87,14 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDo
                       <CopyIcon className="w-4 h-4" />
                       <span>Copy Message</span>
                   </button>
+                {/* This is the check to only show the button for assistant messages */}
                   {msg.role === 'assistant' && (
                      <button
                         onClick={() => { onDocxDownload(msg.content); setIsOpen(false); }}
                         className="w-full text-left flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100"
                     >
                         <FileTextIcon className="w-4 h-4" />
-                        <span>Download as .docx</span>
+                        <span>Save as Google Doc</span>
                     </button>
                   )}
                   <button
