@@ -306,9 +306,20 @@ const App = () => {
       }
   };
 
+    // UPDATED: This function now validates the API key before processing the message.
   const handleSendMessage = async () => {
+      // First, check if there's any input or if the app is already busy.
       if ((!userInput.trim() && !pendingFile) || isLoading) return;
+
+      // NEW: Immediately check for a valid API key before doing anything else.
+      const apiKey = apiKeys[selectedProvider.apiKeyName];
+      if (!apiKey || apiKeyStatus[selectedProvider.key] !== 'valid') {
+          // If the key is invalid, show an error and STOP. Do not clear the user's input.
+          setError(`Please enter a valid ${selectedProvider.label} API Key in the settings panel.`);
+          return; 
+      }
       
+      // If the key is valid, we can proceed as normal.
       setIsLoading(true);
       setError('');
       
