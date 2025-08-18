@@ -676,12 +676,23 @@ const App = () => {
         }
     );
 
-    intro.setOptions({
+        intro.setOptions({
         steps: steps,
         showBullets: false,
         showStepNumbers: true,
         exitOnOverlayClick: false,
-        tooltipClass: 'custom-intro-tooltip'
+        tooltipClass: 'custom-intro-tooltip',
+        // NEW: Add a handler to close the sidebar when moving from the sidebar to the main app content
+        onbeforechange: function() {
+            // The 'Get In Touch' step is the last one in the sidebar (at index 6 of our steps array)
+            // We only want this to happen when moving forwards from that step.
+            if (this._currentStep === 6 && this._direction === 'forward') {
+                const isMobileView = window.innerWidth < 1024;
+                if (isMobileView) {
+                   setIsMenuOpen(false);
+                }
+            }
+        }
     });
     
     intro.onexit(() => {
