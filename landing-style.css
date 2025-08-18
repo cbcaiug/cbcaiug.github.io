@@ -227,9 +227,17 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     .hero-headline { font-size: 2.75rem; min-height: 100px; }
     .testimonial-quote { font-size: 2rem; }
     .section-title { font-size: 2rem; }
-    .nav-links { gap: 1rem; }
-    .nav-links a:not(.nav-button) { display: none; }
-    .main-nav { padding: 1rem; }
+        /* UPDATED: Styles for a responsive navigation bar */
+    .main-nav {
+        padding: 1rem;
+        flex-direction: column; /* Stack the logo and links vertically */
+        gap: 1rem; /* Add space between the logo and the links */
+    }
+    .nav-links {
+        gap: 0.5rem 1rem; /* Adjust gap for wrapping */
+        flex-wrap: wrap; /* Allow links to wrap to the next line */
+        justify-content: center; /* Center the links when they wrap */
+    }
     .assistants-grid { grid-template-columns: 1fr; }
 }
   
