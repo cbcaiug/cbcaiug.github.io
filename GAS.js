@@ -483,10 +483,14 @@ function createGoogleDocFromHtml(htmlContent, title) {
         // Google's services will convert this HTML blob into a formatted doc.
         const blob = Utilities.newBlob(htmlContent, 'text/html', `${title}.html`);
         
-        // Define the resource for the new file we're creating in Google Drive.
+                // Define the resource for the new file we're creating in Google Drive.
+        const FOLDER_ID = "1UdUZfa3f-TK4bbRDRk_VW1gJnFGzZBaj"; // <-- IMPORTANT: Replace with your actual folder ID.
+
         const fileResource = {
             title: `${title} - AI Assistant`, // Add a suffix to the title.
-            mimeType: 'application/vnd.google-apps.document' // Specify that we want a Google Doc.
+            mimeType: 'application/vnd.google-apps.document', // Specify that we want a Google Doc.
+            // NEW: This tells Drive to create the file inside our specific folder.
+            parents: [{ id: FOLDER_ID }]
         };
 
         // Use the Drive API to insert the new file, providing the blob as the content.
