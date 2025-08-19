@@ -135,22 +135,25 @@ function doPost(e) {
                 message: "Contact form submitted successfully."
             })).setMimeType(ContentService.MimeType.JSON);
         }
-                // NEW: Action to create a Google Doc from HTML content
-        else if (action === 'createDoc') {
-            const { htmlContent, title } = body.details;
-            const docUrl = createGoogleDocFromHtml(htmlContent, title);
-            
-            logEventToSheet({
-                type: 'google_doc_created',
-                assistant: title, // Use the doc title as the assistant name for this log event
-                details: { url: docUrl }
-            });
+        // NEW: Action to create a Google Doc from HTML content
+    else if (action === 'createDoc') {
+    const { htmlContent, title } = body.details;
+    // This function will now return an object with both the url and the id
+    const docInfo = createGoogleDocFromHtml(htmlContent, title);
+    
+    logEventToSheet({
+        type: 'google_doc_created',
+        assistant: title, // Use the doc title as the assistant name for this log event
+        details: { url: docInfo.url } // We still log the URL as before
+    });
 
-            return ContentService.createTextOutput(JSON.stringify({
-                success: true,
-                url: docUrl
-            })).setMimeType(ContentService.MimeType.JSON);
-        }
+    // We now return the full object, including the new document ID, to the frontend
+    return ContentService.createTextOutput(JSON.stringify({
+        success: true,
+        url: docInfo.url,
+        id: docInfo.id 
+    })).setMimeType(ContentService.MimeType.JSON);
+}
         return ContentService.createTextOutput(JSON.stringify({
             success: false,
             error: "Invalid POST action."
@@ -508,8 +511,12 @@ function createGoogleDocFromHtml(htmlContent, title) {
         };
         Drive.Permissions.insert(permission, fileId);
 
-        // Return the public URL of the document.
-        return docFile.alternateLink || `https://docs.google.com/document/d/${fileId}/`;
+        // Return an object containing both the public URL and the file ID.
+// The frontend will use the ID to create direct download links.
+return {
+    url: docFile.alternateLink || `https://docs.google.com/document/d/${fileId}/`,
+    id: fileId
+};
 
     } catch (error) {
         console.error('Error creating Google Doc:', error.toString());
