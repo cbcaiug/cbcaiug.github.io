@@ -47,6 +47,9 @@ const App = () => {
   const [showUpdateBanner, setShowUpdateBanner] = useState(false);
   const [isTakingLong, setIsTakingLong] = useState(false);
   const [showConsentModal, setShowConsentModal] = useState(false);
+  // NEW: State for the Google Doc success and download modal
+const [isDocModalOpen, setIsDocModalOpen] = useState(false);
+const [createdDocInfo, setCreatedDocInfo] = useState(null);
   // NEW: Add state to track remaining trial generations.
   const [trialGenerations, setTrialGenerations] = useState(TRIAL_GENERATION_LIMIT);
 
@@ -260,53 +263,52 @@ const App = () => {
       }, 800);
   };
   
-   // NEW: This function sends content to the Google Apps Script backend to create a Google Doc.
-  const handleDocxDownload = async (markdownContent) => {
-      // Use the error state to provide feedback to the user that the process has started.
-      setError('Creating your Google Doc, please wait...');
+   // UPDATED: This function now receives the doc ID and opens our new modal.
+const handleDocxDownload = async (markdownContent) => {
+    // Use the error state to provide feedback to the user that the process has started.
+    setError('Creating your Google Doc, please wait...');
 
-      try {
-          // First, convert the raw markdown from the chat message into clean HTML.
-          const htmlContent = marked.parse(markdownContent);
-          
-          // Prepare the data payload to send to our Google Apps Script.
-          const payload = {
-              action: 'createDoc',
-              details: {
-                  htmlContent: htmlContent,
-                  title: activePromptKey // Use the current assistant's name as the document title.
-              }
-          };
+    try {
+        // First, convert the raw markdown from the chat message into clean HTML.
+        const htmlContent = marked.parse(markdownContent);
+        
+        // Prepare the data payload to send to our Google Apps Script.
+        const payload = {
+            action: 'createDoc',
+            details: {
+                htmlContent: htmlContent,
+                title: activePromptKey // Use the current assistant's name as the document title.
+            }
+        };
 
-          // Send the HTML data to our backend script.
-          // Note: We do not use 'no-cors' here because we need to read the response from the server.
-          const response = await fetch(GAS_WEB_APP_URL, {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'text/plain;charset=utf-8', // Best practice for GAS
-              },
-              body: JSON.stringify(payload)
-          });
+        // Send the HTML data to our backend script.
+        const response = await fetch(GAS_WEB_APP_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(payload)
+        });
 
-          // Parse the response from the server.
-          const data = await response.json();
+        // Parse the response from the server.
+        const data = await response.json();
 
-          // Check if the request was successful and if we received a URL.
-          if (data.success && data.url) {
-              // Open the new Google Doc in a new browser tab for the user.
-              window.open(data.url, '_blank');
-              setError(''); // Clear the "Creating..." message on success.
-          } else {
-              // If the server reported an error, throw it so our catch block can handle it.
-              throw new Error(data.error || 'The server did not return a valid document URL.');
-          }
+        // Check if we received the URL and the new ID.
+        if (data.success && data.url && data.id) {
+            // Store the document info (URL and ID) in our new state.
+            setCreatedDocInfo({ url: data.url, id: data.id });
+            // Open our new modal instead of a new tab.
+            setIsDocModalOpen(true);
+            setError(''); // Clear the "Creating..." message.
+        } else {
+            // If the server reported an error, throw it so our catch block can handle it.
+            throw new Error(data.error || 'The server did not return the required document information.');
+        }
 
-      } catch (error) {
-          console.error("Error creating Google Doc:", error);
-          // Display a user-friendly error message in the app's UI.
-          setError(`Failed to create Google Doc: ${error.message}`);
-      }
-  };
+    } catch (error) {
+        console.error("Error creating Google Doc:", error);
+        // Display a user-friendly error message.
+        setError(`Failed to create Google Doc: ${error.message}`);
+    }
+};
 
     // UPDATED: This function now validates the API key before processing the message.
   const handleSendMessage = async () => {
@@ -1051,6 +1053,12 @@ const App = () => {
           {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
           {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5"/> : <CheckCircleIcon className="w-5 h-5"/>}<span>{apiKeyToast}</span></div>}
           <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={handleFeedbackSubmit} assistantName={activePromptKey} />
+            {/* NEW: Add the Google Doc success modal to the UI */}
+<DocSuccessModal 
+    isOpen={isDocModalOpen} 
+    onClose={() => setIsDocModalOpen(false)} 
+    docInfo={createdDocInfo} 
+/>
       </div>
   );
 }

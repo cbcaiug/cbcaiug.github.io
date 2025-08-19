@@ -204,3 +204,63 @@ const ConsentModal = ({ onAccept }) => {
         </div>
     );
 };
+// NEW: Modal to show after a Google Doc is created successfully.
+// It provides direct links to view or download the document.
+const DocSuccessModal = ({ isOpen, onClose, docInfo }) => {
+    if (!isOpen || !docInfo) return null;
+
+    // Construct the direct download URLs using the document's ID.
+    const downloadUrlDocx = `https://docs.google.com/document/d/${docInfo.id}/export?format=docx`;
+    const downloadUrlPdf = `https://docs.google.com/document/d/${docInfo.id}/export?format=pdf`;
+
+    return (
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full transform transition-all scale-100 opacity-100">
+                <div className="text-center">
+                    <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                    <h2 className="text-2xl font-bold text-slate-800">Document Created!</h2>
+                    <p className="text-slate-600 mt-2">Your document is ready. You can now view it online or download it directly.</p>
+                </div>
+
+                <div className="mt-6 space-y-3">
+                    {/* Button to view the document in a new tab */}
+                    <a 
+                        href={docInfo.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors"
+                    >
+                        <FileTextIcon className="w-5 h-5" />
+                        <span>View in Google Docs</span>
+                    </a>
+
+                    {/* Button to download as .docx */}
+                    <a 
+                        href={downloadUrlDocx} 
+                        download
+                        className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-slate-700 text-white font-semibold rounded-lg hover:bg-slate-600 transition-colors"
+                    >
+                        <DownloadCloudIcon className="w-5 h-5" />
+                        <span>Download as Word (.docx)</span>
+                    </a>
+
+                    {/* Button to download as .pdf */}
+                    <a 
+                        href={downloadUrlPdf} 
+                        download
+                        className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-red-700 text-white font-semibold rounded-lg hover:bg-red-600 transition-colors"
+                    >
+                        <DownloadCloudIcon className="w-5 h-5" />
+                        <span>Download as PDF</span>
+                    </a>
+                </div>
+
+                <div className="mt-6 text-center">
+                    <button onClick={onClose} className="w-full sm:w-auto px-6 py-2 bg-slate-200 text-slate-800 font-semibold rounded-lg hover:bg-slate-300 transition-colors">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
