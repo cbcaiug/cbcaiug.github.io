@@ -767,6 +767,22 @@ const App = () => {
            localStorage.setItem(chatKey, JSON.stringify({ history: chatHistory, timestamp: Date.now() }));
       }
   }, [chatHistory, activePromptKey]);
+    // NEW: This effect runs whenever the selected model changes.
+  useEffect(() => {
+    // We don't want to show a notification when the app first loads,
+    // so we check if the chat history is not empty.
+    if (chatHistory.length > 0) {
+      // Create a new system message object to be added to the chat.
+      const modelSwitchMessage = {
+        role: 'system', // A special role for system messages
+        content: `*Model switched to ${selectedModelName}*`,
+        id: Date.now() // Unique ID for the message
+      };
+      
+      // Add the new message to the existing chat history.
+      setChatHistory(prevHistory => [...prevHistory, modelSwitchMessage]);
+    }
+  }, [selectedModelName]); // This tells React to run the effect only when selectedModelName changes.
 
   useEffect(() => {
       // Handle feedback modal trigger
@@ -890,22 +906,34 @@ const App = () => {
               </header>
 
               <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative">
-                  <div className="px-1 p-2 sm:p-6 space-y-4">
-                      {chatHistory.map((msg, index) => (
-                          <div key={msg.id || index} className={`flex w-full items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
-                              <div className={`flex flex-col w-full max-w-full ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
-                                  <div className={`rounded-lg w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
-                                      {msg.file && (
-                                          <div className="p-2 bg-indigo-500/80">
-                                              {msg.file.previewUrl ? <img src={msg.file.previewUrl} className="max-w-xs rounded-md"/> : <div className="flex items-center gap-2 p-2"><FileIcon className="w-6 h-6"/><span>{msg.file.name}</span></div>}
-                                          </div>
-                                      )}
-                                      <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
+                                    <div className="px-1 p-2 sm:p-6 space-y-4">
+                      {chatHistory.map((msg, index) => {
+                          // For system messages, we render a simple, centered div.
+                          if (msg.role === 'system') {
+                              return (
+                                  <div key={msg.id || index} className="text-center text-xs text-slate-500 italic my-2">
+                                      🤖 {msg.content}
                                   </div>
-                                  <MessageMenu msg={msg} index={index} onCopy={(content) => handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError)} onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))} onRegenerate={handleRegenerate} onDocxDownload={handleDocxDownload} />
+                              );
+                          }
+
+                          // For user and assistant messages, we render the full chat bubble.
+                          return (
+                              <div key={msg.id || index} className={`flex w-full items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
+                                  <div className={`flex flex-col w-full max-w-full ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
+                                      <div className={`rounded-lg w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
+                                          {msg.file && (
+                                              <div className="p-2 bg-indigo-500/80">
+                                                  {msg.file.previewUrl ? <img src={msg.file.previewUrl} className="max-w-xs rounded-md"/> : <div className="flex items-center gap-2 p-2"><FileIcon className="w-6 h-6"/><span>{msg.file.name}</span></div>}
+                                              </div>
+                                          )}
+                                          <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
+                                      </div>
+                                      <MessageMenu msg={msg} index={index} onCopy={(content) => handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError)} onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))} onRegenerate={handleRegenerate} onDocxDownload={handleDocxDownload} />
+                                  </div>
                               </div>
-                          </div>
-                      ))}
+                          );
+                      })}
                       <div ref={chatEndRef} />
                   </div>
                             </main>
