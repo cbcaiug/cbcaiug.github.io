@@ -944,10 +944,11 @@ const App = () => {
               </div>
               {isNotificationsOpen && <div onClick={() => setIsNotificationsOpen(false)} className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"></div>}
 
-              {error && <div className="p-4 bg-red-100 text-red-700 border-t border-red-200 flex-shrink-0">{error}</div>}
+              
 
               <footer id="chat-input-area" className="p-4 border-t border-slate-200 bg-white flex-shrink-0">
                   <div className="relative mx-auto max-w-4xl">
+                                  {error && <div className="p-4 bg-red-100 text-red-700 border-t border-red-200 flex-shrink-0">{error}</div>}
                       {pendingFile && <div className="absolute bottom-full left-0 mb-2 max-w-md p-2"><div className="flex items-start gap-2 bg-slate-200 text-slate-700 rounded-lg p-2 text-sm">
                           {pendingFilePreview ? <img src={pendingFilePreview} alt="Preview" className="w-16 h-16 object-cover rounded-md"/> : <FileIcon className="w-12 h-12 text-slate-500 shrink-0"/>}
                           <div className="flex-grow"><p className="font-semibold">File attached:</p><p className="text-xs break-all">{pendingFile.name}</p></div>
