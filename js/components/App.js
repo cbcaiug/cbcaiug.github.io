@@ -7,6 +7,10 @@
  */
 
 const { useState, useEffect, useRef, useCallback } = React;
+// NEW: Add the public API key for the free trial.
+// IMPORTANT: For your security, delete the key you shared with me and generate a new one.
+const PUBLIC_TRIAL_API_KEY = "AIzaSyCVoSQNX0Ra1XQhYmOEpBZhJFEyZePMGJs";
+const TRIAL_GENERATION_LIMIT = 5; // Set the number of free uses.
 
 // --- MAIN APP COMPONENT ---
 const App = () => {
@@ -43,6 +47,8 @@ const App = () => {
   const [showUpdateBanner, setShowUpdateBanner] = useState(false);
   const [isTakingLong, setIsTakingLong] = useState(false);
   const [showConsentModal, setShowConsentModal] = useState(false);
+  // NEW: Add state to track remaining trial generations.
+  const [trialGenerations, setTrialGenerations] = useState(TRIAL_GENERATION_LIMIT);
 
   // --- REFS ---
   const chatContainerRef = useRef(null);
@@ -61,12 +67,8 @@ const App = () => {
   const isFileUploadDisabled = !selectedModel?.vision;
 
   // --- API & STREAMING LOGIC ---
-  const fetchAndStreamResponse = async ({ historyForApi, systemPrompt, onUpdate, onComplete, onError }) => {
-      const apiKey = apiKeys[selectedProvider.apiKeyName];
-      if (!apiKey || apiKeyStatus[selectedProvider.key] !== 'valid') {
-          onError(`Please enter a valid ${selectedProvider.label} API Key in the settings panel.`);
-          return;
-      }
+  const fetchAndStreamResponse = async ({ historyForApi, systemPrompt, apiKey, onUpdate, onComplete, onError }) => {
+      
 
       abortControllerRef.current = new AbortController();
       
@@ -311,12 +313,29 @@ const App = () => {
       // First, check if there's any input or if the app is already busy.
       if ((!userInput.trim() && !pendingFile) || isLoading) return;
 
-      // NEW: Immediately check for a valid API key before doing anything else.
-      const apiKey = apiKeys[selectedProvider.apiKeyName];
-      if (!apiKey || apiKeyStatus[selectedProvider.key] !== 'valid') {
-          // If the key is invalid, show an error and STOP. Do not clear the user's input.
+      // UPDATED: New logic to handle both user keys and the public trial key.
+      let apiKey = apiKeys[selectedProvider.apiKeyName];
+      let isTrial = false;
+
+      // Check if the user has provided their own valid key.
+      if (apiKey && apiKeyStatus[selectedProvider.key] === 'valid') {
+          // User has a valid key, proceed as normal.
+          isTrial = false;
+      } else if (PUBLIC_TRIAL_API_KEY && selectedProvider.key === 'google') {
+          // If no user key, check if they have trial generations left.
+          // The trial only works for the 'google' provider for now.
+          if (trialGenerations > 0) {
+              apiKey = PUBLIC_TRIAL_API_KEY; // Use the public key.
+              isTrial = true;
+          } else {
+              // Out of trial generations.
+              setError("You've used all your free trial generations! Please add your own free API key in the settings to continue.");
+              return;
+          }
+      } else {
+          // No user key and no trial available.
           setError(`Please enter a valid ${selectedProvider.label} API Key in the settings panel.`);
-          return; 
+          return;
       }
       
       // If the key is valid, we can proceed as normal.
@@ -352,6 +371,7 @@ const App = () => {
       await fetchAndStreamResponse({
           historyForApi: newHistory.slice(0, -1),
           systemPrompt,
+          apiKey,
           onUpdate: (chunk) => {
               setChatHistory(prev => {
                   const updatedHistory = [...prev];
@@ -362,7 +382,7 @@ const App = () => {
                   return updatedHistory;
               });
           },
-          onComplete: () => {
+                    onComplete: () => {
               setIsLoading(false);
               setChatHistory(prev => {
                   const updatedHistory = [...prev];
@@ -370,9 +390,18 @@ const App = () => {
                   if (lastMsg) lastMsg.isLoading = false;
                   return updatedHistory;
               });
+              
               if (!abortControllerRef.current.signal.aborted) {
+                  // If this was a trial generation, count it down.
+                  if (isTrial) {
+                      const newCount = trialGenerations - 1;
+                      setTrialGenerations(newCount);
+                      localStorage.setItem('trialGenerationsCount', newCount.toString());
+                      trackEvent('trial_generation', activePromptKey);
+                  } else {
+                      trackEvent('generation', activePromptKey);
+                  }
                   setGenerationCount(prevCount => prevCount + 1);
-                  trackEvent('generation', activePromptKey);
               }
               abortControllerRef.current = null;
           },
@@ -692,6 +721,9 @@ const App = () => {
 
           const savedCount = parseInt(localStorage.getItem('generationCount') || '0', 10);
           setGenerationCount(savedCount);
+          // NEW: Load the saved trial count from local storage.
+          const savedTrialCount = parseInt(localStorage.getItem('trialGenerationsCount') || TRIAL_GENERATION_LIMIT, 10);
+          setTrialGenerations(savedTrialCount);
 
           setIsLoadingAssistants(true);
           const [assistants, fetchedNotifications] = await Promise.all([
@@ -998,9 +1030,18 @@ const App = () => {
                               }
                           }} disabled={isFileUploadDisabled}/>
                           <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); }}} placeholder="Type your message or attach a file..." className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48" rows="1" />
-                          <button id="send-button" onClick={isLoading ? () => { if (abortControllerRef.current) abortControllerRef.current.abort(); if(longResponseTimerRef.current) clearTimeout(longResponseTimerRef.current); setIsTakingLong(false); } : handleSendMessage} disabled={!isLoading && !userInput.trim() && !pendingFile} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
-                              {isLoading ? ( <><StopIcon className="w-5 h-5"/><span>Stop</span></> ) : ( <><SendIcon className="w-5 h-5"/><span>Send</span></> )}
-                          </button>
+                                                    {/* UPDATED: Wrap the send button and add the trial counter text */}
+                          <div className="flex flex-col items-center">
+                              <button id="send-button" onClick={isLoading ? () => { if (abortControllerRef.current) abortControllerRef.current.abort(); if(longResponseTimerRef.current) clearTimeout(longResponseTimerRef.current); setIsTakingLong(false); } : handleSendMessage} disabled={!isLoading && !userInput.trim() && !pendingFile} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
+                                  {isLoading ? ( <><StopIcon className="w-5 h-5"/><span>Stop</span></> ) : ( <><SendIcon className="w-5 h-5"/><span>Send</span></> )}
+                              </button>
+                              {/* NEW: This text will only show if the user has NOT entered their own valid API key */}
+                              {(!apiKeys[selectedProvider.apiKeyName] || apiKeyStatus[selectedProvider.key] !== 'valid') && (
+                                <p className="text-xs text-slate-500 mt-1 text-center">
+                                    {trialGenerations > 0 ? `${trialGenerations} free uses remaining.` : 'Add API key to continue.'}
+                                </p>
+                              )}
+                          </div>
                       </div>
                   </div>
               </footer>
