@@ -268,36 +268,41 @@ function getUpdatesFromSheet() {
  * =================================================================
  */
 
+// UPDATED: This function is now more robust and handles all feedback cases clearly.
 function sendInstantFeedbackEmail(details) {
     const { rating, feedbackText, assistantName, email } = details;
 
-    const hasRating = rating && rating > 0;
-    const hasEmail = email && email.trim() !== '';
-    let subject = "AI Assistant Info";
-    if (hasRating && hasEmail) {
-        subject = `New Signup & Feedback: ${rating} ★`;
-    } else if (hasRating) {
-        subject = `New Feedback: ${rating} ★`;
-    } else if (hasEmail) {
-        subject = `🎉 New Email Signup`;
+    // Determine a clearer subject line based on what was submitted.
+    let subject = `⭐ New Feedback for "${assistantName}"`; // A clear default subject.
+    if (rating && email) {
+        subject = `⭐ Signup & Feedback (${rating}★) for "${assistantName}"`;
+    } else if (rating) {
+        subject = `⭐ New Feedback (${rating}★) for "${assistantName}"`;
+    } else if (email) {
+        subject = `🎉 New Signup for "${assistantName}"`;
     }
 
-    let emailBody = `<p style="font-family: Arial, sans-serif;">You've received a new submission from your AI Educational Assistant!</p><hr>`;
+    let emailBody = `<p style="font-family: Arial, sans-serif;">You've received a new submission for the <strong>${assistantName || 'AI Assistant'}</strong>.</p><hr>`;
 
-    if (hasRating) {
+    // Always show the rating section if a rating was given.
+    if (rating) {
         emailBody += `
-        <p style="font-family: Arial, sans-serif;"><strong>Assistant Used:</strong> ${assistantName || 'N/A'}</p>
-        <p style="font-family: Arial, sans-serif;"><strong>Rating:</strong> <span style="color: #f59e0b;">${'★'.repeat(rating)}</span><span style="color: #d1d5db;">${'☆'.repeat(5 - rating)}</span></p>
-        <p style="font-family: Arial, sans-serif;"><strong>Feedback:</strong></p>
-        <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; font-family: monospace;">${feedbackText || 'No detailed feedback provided.'}</pre>
-        <hr>`;
+        <p style="font-family: Arial, sans-serif;"><strong>Rating:</strong> <span style="color: #f59e0b;">${'★'.repeat(rating)}</span><span style="color: #d1d5db;">${'☆'.repeat(5 - rating)}</span></p>`;
     }
 
-    if (hasEmail) {
-        emailBody += `
-        <p style="font-family: Arial, sans-serif;"><strong>🎉 New Email Signup!</strong></p>
-        <p style="font-family: Arial, sans-serif;">A user has signed up for future updates.</p>
-        <p style="font-family: Arial, sans-serif;"><strong>Email:</strong> ${email}</p>`;
+    // Always include the feedback text box, showing a message if it was empty.
+    emailBody += `
+        <p style="font-family: Arial, sans-serif;"><strong>Feedback Provided:</strong></p>
+        <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; font-family: monospace;">${feedbackText || 'No detailed feedback was provided.'}</pre>`;
+
+    // Always clarify whether the user consented to be contacted.
+    if (email) {
+        emailBody += `<hr>
+        <p style="font-family: Arial, sans-serif;"><strong>🎉 Contact Consent: YES</strong></p>
+        <p style="font-family: Arial, sans-serif;">A user has signed up for updates with the email: <strong>${email}</strong></p>`;
+    } else {
+        emailBody += `<hr>
+        <p style="font-family: Arial, sans-serif;"><strong>Contact Consent:</strong> No</p>`;
     }
 
     MailApp.sendEmail({
