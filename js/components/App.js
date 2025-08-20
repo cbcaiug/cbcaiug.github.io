@@ -16,6 +16,8 @@ const formatBytes = (bytes, decimals = 2) => {
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
 };
+// Generate a unique session ID for this user's visit.
+const SESSION_ID = `session_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
 // NEW: Add the public API key for the free trial.
 // IMPORTANT: For your security, delete the key you shared with me and generate a new one.
 const PUBLIC_TRIAL_API_KEY = "AIzaSyCVoSQNX0Ra1XQhYmOEpBZhJFEyZePMGJs";
@@ -448,9 +450,9 @@ const userMessage = {
                       const newCount = trialGenerations - 1;
                       setTrialGenerations(newCount);
                       localStorage.setItem('trialGenerationsCount', newCount.toString());
-                      trackEvent('trial_generation', activePromptKey);
+                      trackEvent('trial_generation', activePromptKey, { sessionId: SESSION_ID });
                   } else {
-                      trackEvent('generation', activePromptKey);
+                      trackEvent('generation', activePromptKey, { sessionId: SESSION_ID });
                   }
                   setGenerationCount(prevCount => prevCount + 1);
               }
@@ -513,7 +515,7 @@ const userMessage = {
               });
               if (!abortControllerRef.current.signal.aborted) {
                   setGenerationCount(prevCount => prevCount + 1);
-                  trackEvent('regeneration', activePromptKey);
+                  trackEvent('regeneration', activePromptKey, { sessionId: SESSION_ID });
               }
               abortControllerRef.current = null;
           },
@@ -1169,7 +1171,7 @@ const handleRemoveFile = (fileId) => {
           {/* --- TOASTS & MODALS --- */}
           {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
           {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5"/> : <CheckCircleIcon className="w-5 h-5"/>}<span>{apiKeyToast}</span></div>}
-          <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={handleFeedbackSubmit} assistantName={activePromptKey} />
+          <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={(feedbackData) => handleFeedbackSubmit({ ...feedbackData, sessionId: SESSION_ID })} assistantName={activePromptKey} />
             {/* NEW: Add the Google Doc success modal to the UI */}
 <DocSuccessModal 
     isOpen={isDocModalOpen} 

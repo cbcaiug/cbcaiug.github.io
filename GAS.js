@@ -96,25 +96,27 @@ function doGet(e) {
 
 function doPost(e) {
     try {
-        // UPDATED: More robust parsing for the request body.
-        // Handles cases where data arrives as stringified JSON in postData.contents
-        // or as simple parameters.
+        console.log("doPost triggered.");
         let body;
         if (e.postData && e.postData.contents) {
             body = JSON.parse(e.postData.contents);
         } else {
-            // Fallback for form data submitted as parameters
             body = e.parameter;
         }
+        console.log("Request body parsed. Action: " + body.action);
 
         const action = body.action;
 
         if (action === 'logEvent') {
             const event = body.event;
-            logEventToSheet(event);
+            console.log("Action is 'logEvent'. Event type: " + event.type);
+            
+            logEventToSheet(event); // This logs to the sheet.
 
             if (event.type === 'feedback_submitted') {
+                console.log("Event type is 'feedback_submitted'. Attempting to send email...");
                 sendInstantFeedbackEmail(event.details);
+                console.log("sendInstantFeedbackEmail function was called.");
             }
 
             return ContentService.createTextOutput(JSON.stringify({
@@ -122,47 +124,43 @@ function doPost(e) {
                 message: "Event logged successfully."
             })).setMimeType(ContentService.MimeType.JSON);
         
-        } 
-        else if (action === 'contact_form_submitted') {
+        } else if (action === 'contact_form_submitted') {
+            console.log("Action is 'contact_form_submitted'.");
             sendContactFormEmail(body.details);
-            
             logEventToSheet({
                 type: 'contact_form_submitted',
                 assistant: 'Landing Page Widget',
                 details: body.details
             });
-
             return ContentService.createTextOutput(JSON.stringify({
                 success: true,
                 message: "Contact form submitted successfully."
             })).setMimeType(ContentService.MimeType.JSON);
-        }
-        // NEW: Action to create a Google Doc from HTML content
-    else if (action === 'createDoc') {
-    const { htmlContent, title } = body.details;
-    // This function will now return an object with both the url and the id
-    const docInfo = createGoogleDocFromHtml(htmlContent, title);
-    
-    logEventToSheet({
-        type: 'google_doc_created',
-        assistant: title, // Use the doc title as the assistant name for this log event
-        details: { url: docInfo.url } // We still log the URL as before
-    });
 
-    // We now return the full object, including the new document ID, to the frontend
-    return ContentService.createTextOutput(JSON.stringify({
-        success: true,
-        url: docInfo.url,
-        id: docInfo.id 
-    })).setMimeType(ContentService.MimeType.JSON);
-}
+        } else if (action === 'createDoc') {
+            console.log("Action is 'createDoc'.");
+            const { htmlContent, title } = body.details;
+            const docInfo = createGoogleDocFromHtml(htmlContent, title);
+            logEventToSheet({
+                type: 'google_doc_created',
+                assistant: title,
+                details: { url: docInfo.url }
+            });
+            return ContentService.createTextOutput(JSON.stringify({
+                success: true,
+                url: docInfo.url,
+                id: docInfo.id
+            })).setMimeType(ContentService.MimeType.JSON);
+        }
+        
+        console.log("No valid action found in doPost.");
         return ContentService.createTextOutput(JSON.stringify({
             success: false,
             error: "Invalid POST action."
         })).setMimeType(ContentService.MimeType.JSON);
 
     } catch (error) {
-        console.error('Error in doPost:', error);
+        console.error('CRITICAL Error in doPost:', error.toString());
         console.error('Received postData:', e.postData ? e.postData.contents : 'No postData');
         return ContentService.createTextOutput(JSON.stringify({
             success: false,
@@ -189,9 +187,10 @@ function logEventToSheet(event) {
 
         delete eventDetails.sessionId; 
         
-        const detailsString = Object.keys(eventDetails).length > 0 ? JSON.stringify(eventDetails) : '{}';
+        // UPDATED: Use the new helper function to create a human-readable details string.
+const formattedDetails = formatDetailsForSheet(event.type, eventDetails);;
 
-        sheet.appendRow([timestamp, userType, event.type, event.assistant, sessionId, detailsString]);
+        sheet.appendRow([timestamp, userType, event.type, event.assistant, sessionId, formattedDetails]);
 
     } catch (error) {
         console.error(`Failed to log event to sheet: ${error.toString()}`);
@@ -240,7 +239,49 @@ function getSheet(sheetName, headers = []) {
 
     return sheet;
 }
+/**
+ * NEW: Formats the details of an event into a human-readable string for Google Sheets.
+ * Handles different event types to provide the most useful output.
+ * @param {string} eventType - The type of the event (e.g., 'feedback_submitted').
+ * @param {object} details - The details object for the event.
+ * @return {string} A formatted string, potentially with Google Sheets formulas.
+ */
+function formatDetailsForSheet(eventType, details) {
+  try {
+    if (!details || Object.keys(details).length === 0) {
+      return "No details provided.";
+    }
 
+    if (eventType === 'google_doc_created' && details.url) {
+      // If it's a doc creation, create a clickable hyperlink in the sheet.
+      return `=HYPERLINK("${details.url}", "View Generated Document")`;
+    }
+
+    if (eventType === 'feedback_submitted') {
+      // If it's feedback, create a clean, multi-line report.
+      const report = [];
+      if (details.rating) {
+        report.push(`Rating: ${details.rating} / 5`);
+      }
+      if (details.feedbackText) {
+        // Use quotes to handle feedback that might contain commas or special characters.
+        report.push(`Feedback: "${details.feedbackText}"`);
+      }
+      if (details.email) {
+        report.push(`Email Signup: ${details.email}`);
+      }
+      // Join with CHAR(10), which is the formula for a newline in a Sheets cell.
+      return report.join(String.fromCharCode(10));
+    }
+
+    // For any other event type, just return the standard JSON string as a fallback.
+    return JSON.stringify(details);
+
+  } catch (e) {
+    // If formatting fails for any reason, return the raw object to avoid losing data.
+    return JSON.stringify(details);
+  }
+}
 
 function getUpdatesFromSheet() {
     try {
@@ -271,7 +312,7 @@ function getUpdatesFromSheet() {
  */
 
 // UPDATED: This function is now more robust and handles all feedback cases clearly.
-function sendInstantFeedbackEmail(details) {
+function sendInstantFeedbackEmail(details = {}) {
     const { rating, feedbackText, assistantName, email } = details;
 
     // Determine a clearer subject line based on what was submitted.
@@ -307,12 +348,15 @@ function sendInstantFeedbackEmail(details) {
         <p style="font-family: Arial, sans-serif;"><strong>Contact Consent:</strong> No</p>`;
     }
 
-    MailApp.sendEmail({
-        to: YOUR_EMAIL_ADDRESS,
-        subject: subject,
-        htmlBody: emailBody,
-        name: "AI Assistant Bot"
-    });
+    // We've added a 'replyTo' parameter. This is a minor change, but it is often
+// enough to force Google's security system to re-request authorization.
+MailApp.sendEmail({
+    to: YOUR_EMAIL_ADDRESS,
+    subject: subject,
+    htmlBody: emailBody,
+    name: "AI Assistant Bot",
+    replyTo: email || YOUR_EMAIL_ADDRESS // If user provides email, you can reply directly
+});
 }
 
 function sendContactFormEmail(details) {
