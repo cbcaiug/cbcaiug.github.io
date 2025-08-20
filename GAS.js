@@ -28,9 +28,11 @@ const ASSISTANT_FILES = {
     "Scheme of Work (with Biblical Integration)": "sow-bv",
     "Lesson Notes Generator": "lesson-notes",
     "UCE Project Assistant": "uce-project-assistant",
-    "Coteacher": "coteacher",
     "AI in Education Coach": "ai-coach",
-    "Essay Grading Assistant": "essay-grader"
+    "Essay Grading Assistant": "essay-grader",
+    // --- NEW ASSISTANTS ADDED ---
+    "Coteacher": "coteacher",
+    "Data & Document Analyst": "data-analyst"
 };
 
 
