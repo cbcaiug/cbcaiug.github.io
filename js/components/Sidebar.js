@@ -118,11 +118,14 @@ const Sidebar = ({
                               <span className="text-sm">+256750470234</span>
                           </a>
                      </div>
-                     <div className="text-center text-xs text-slate-500">
-                          <a href="terms.html" target="_blank" className="hover:text-slate-300 transition-colors">Terms of Service</a>
-                          <span className="mx-2">|</span>
-                          <a href="privacy.html" target="_blank" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
-                     </div>
+                     {/* UPDATED: Added the 'About Me' link for consistency */}
+<div className="text-center text-xs text-slate-500">
+    <a href="about.html" target="_blank" className="hover:text-slate-300 transition-colors">About Me</a>
+    <span className="mx-2">|</span>
+    <a href="terms.html" target="_blank" className="hover:text-slate-300 transition-colors">Terms of Service</a>
+    <span className="mx-2">|</span>
+    <a href="privacy.html" target="_blank" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
+</div>
                      <a href= "/" rel="external" className="flex items-center justify-center gap-2 w-full text-center mt-2 py-2 bg-slate-700 hover:bg-slate-600 rounded-md transition-colors"><HomeIcon className="w-5 h-5"/>Return to Home</a>
                 </div>
             </div>
