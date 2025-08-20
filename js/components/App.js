@@ -7,6 +7,15 @@
  */
 
 const { useState, useEffect, useRef, useCallback } = React;
+// --- HELPERS ---
+const formatBytes = (bytes, decimals = 2) => {
+    if (!+bytes) return '0 Bytes';
+    const k = 1024;
+    const dm = decimals < 0 ? 0 : decimals;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+};
 // NEW: Add the public API key for the free trial.
 // IMPORTANT: For your security, delete the key you shared with me and generate a new one.
 const PUBLIC_TRIAL_API_KEY = "AIzaSyCVoSQNX0Ra1XQhYmOEpBZhJFEyZePMGJs";
@@ -24,8 +33,8 @@ const App = () => {
   const [selectedModelName, setSelectedModelName] = useState('gemini-1.5-flash-latest');
   const [autoDeleteHours, setAutoDeleteHours] = useState('2');
   const [chatHistory, setChatHistory] = useState([]);
-  const [pendingFile, setPendingFile] = useState(null);
-  const [pendingFilePreview, setPendingFilePreview] = useState(null);
+  // UPDATED: State to hold an array of pending files for multi-file upload.
+    const [pendingFiles, setPendingFiles] = useState([]);;
   const [userInput, setUserInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
@@ -70,6 +79,7 @@ const [isGroundingEnabled, setIsGroundingEnabled] = useState(false);
   const selectedProvider = AI_PROVIDERS.find(p => p.key === selectedProviderKey);
   const selectedModel = selectedProvider?.models.find(m => m.name === selectedModelName);
   const isFileUploadDisabled = !selectedModel?.vision;
+  const MAX_TOTAL_UPLOAD_SIZE = 10 * 1024 * 1024; // 10 MB in bytes
 
   // --- API & STREAMING LOGIC ---
   const fetchAndStreamResponse = async ({ historyForApi, systemPrompt, apiKey, onUpdate, onComplete, onError }) => {
@@ -93,8 +103,11 @@ if (selectedProvider.key === 'google') {
 
     const chatHistoryForApi = historyForApi.map(msg => {
         const parts = [{ text: msg.content || "" }];
-        if (msg.role === 'user' && msg.fileDataForApi) {
-            parts.push({ inline_data: { mime_type: msg.fileDataForApi.mime_type, data: msg.fileDataForApi.data } });
+        if (msg.role === 'user' && msg.fileDataForApi && msg.fileDataForApi.length > 0) {
+            // This used to be a single push, now it adds all files
+msg.fileDataForApi.forEach(file => {
+    parts.push({ inline_data: { mime_type: file.mime_type, data: file.data } });
+});
         }
         return { role: msg.role === 'user' ? 'user' : 'model', parts };
     });
@@ -340,7 +353,7 @@ const handleDocxDownload = async (markdownContent) => {
     // UPDATED: This function now validates the API key before processing the message.
   const handleSendMessage = async () => {
       // First, check if there's any input or if the app is already busy.
-      if ((!userInput.trim() && !pendingFile) || isLoading) return;
+      if ((!userInput.trim() && pendingFiles.length === 0) || isLoading) return;
 
       // UPDATED: New logic to handle both user keys and the public trial key.
       let apiKey = apiKeys[selectedProvider.apiKeyName];
@@ -371,23 +384,32 @@ const handleDocxDownload = async (markdownContent) => {
       setIsLoading(true);
       setError('');
       
-      let fileDataForApi = null;
-      if (pendingFile && !isFileUploadDisabled) {
-          try {
-              fileDataForApi = await processFileForApi(pendingFile);
-          } catch(e) {
-              setError("Could not read file.");
-              setIsLoading(false);
-              return;
-          }
-      }
+   // Process all pending files concurrently.
+const fileProcessingPromises = pendingFiles.map(f => processFileForApi(f.file));
+// The result from Promise.all will be an array of { mime_type, data } objects.
+const filesDataForApi = await Promise.all(fileProcessingPromises).catch(e => {
+    setError("Could not read one or more files.");
+    setIsLoading(false);
+    return null;
+});
 
-      const userMessage = { role: 'user', content: userInput, file: pendingFile ? { name: pendingFile.name, previewUrl: pendingFilePreview } : null, fileDataForApi, id: Date.now() };
+if (!filesDataForApi) return; // Stop if any file processing failed.
+
+// Create the user message object. The Gemini API can handle an array of file data directly.
+const userMessage = { 
+    role: 'user', 
+    content: userInput, 
+    // We include the 'files' property just for displaying previews in the UI.
+    files: pendingFiles.map(f => ({ name: f.file.name, previewUrl: f.previewUrl })),
+    // This is the actual data sent to the API.
+    fileDataForApi: filesDataForApi,
+    id: Date.now() 
+};
       const assistantPlaceholder = { role: 'assistant', content: '', isLoading: true, id: Date.now() + 1 };
       
       const newHistory = [...chatHistory, userMessage, assistantPlaceholder];
       setChatHistory(newHistory);
-      setUserInput(''); setPendingFile(null); setPendingFilePreview(null);
+      setUserInput(''); setPendingFiles([]);
 
       const systemPrompt = activePromptKey === 'custom' ? customPromptContent : await PromptManager.getPromptContent(activePromptKey);
       if (!systemPrompt) {
@@ -511,12 +533,40 @@ const handleDocxDownload = async (markdownContent) => {
       const chatKey = `chatHistory_${activePromptKey}`;
       setChatHistory([]); 
       localStorage.removeItem(chatKey);
-      setPendingFile(null);
-      setPendingFilePreview(null);
+      setPendingFiles([]);
       setError('');
       loadInitialMessage(activePromptKey);
   };
-  
+  // NEW: Handles adding one or more files, checking against the total size limit.
+const handleFileChange = (e) => {
+    const files = Array.from(e.target.files);
+    if (!files.length || isFileUploadDisabled) return;
+
+    let currentTotalSize = pendingFiles.reduce((sum, f) => sum + f.file.size, 0);
+
+    const newFiles = files.map(file => {
+        const previewUrl = file.type.startsWith('image/') ? URL.createObjectURL(file) : null;
+        return { file, previewUrl, id: Date.now() + Math.random() };
+    });
+
+    for (const newFile of newFiles) {
+        if (currentTotalSize + newFile.file.size > MAX_TOTAL_UPLOAD_SIZE) {
+            setError(`Cannot add "${newFile.file.name}". Total size cannot exceed 10 MB.`);
+            // We stop adding files once the limit is reached.
+            break;
+        }
+        setPendingFiles(prev => [...prev, newFile]);
+        currentTotalSize += newFile.file.size;
+    }
+    
+    // Clear the input value so the user can select the same file again if they remove it.
+    e.target.value = null;
+};
+
+// NEW: Handles removing a specific file from the pending list.
+const handleRemoveFile = (fileId) => {
+    setPendingFiles(prev => prev.filter(f => f.id !== fileId));
+};
   const resetSettings = () => {
       localStorage.removeItem('aiAssistantState');
       localStorage.removeItem('generationCount');
@@ -986,10 +1036,20 @@ const handleDocxDownload = async (markdownContent) => {
                               <div key={msg.id || index} className={`flex w-full items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
                                   <div className={`flex flex-col w-full max-w-full ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
                                       <div className={`rounded-lg w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
-                                          {msg.file && (
-                                              <div className="p-2 bg-indigo-500/80">
-                                                  {msg.file.previewUrl ? <img src={msg.file.previewUrl} className="max-w-xs rounded-md"/> : <div className="flex items-center gap-2 p-2"><FileIcon className="w-6 h-6"/><span>{msg.file.name}</span></div>}
-                                              </div>
+                                          {msg.files && msg.files.length > 0 && (
+                                              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2 bg-indigo-500/80">
+    {msg.files.map((file, idx) => (
+        <div key={idx} className="relative group">
+            {file.previewUrl ? 
+                <img src={file.previewUrl} alt={file.name} className="w-full h-24 object-cover rounded-md"/> :
+                <div className="w-full h-24 bg-indigo-400 rounded-md flex flex-col items-center justify-center text-white p-1">
+                    <FileIcon className="w-8 h-8"/>
+                    <span className="text-xs text-center truncate w-full mt-1">{file.name}</span>
+                </div>
+            }
+        </div>
+    ))}
+</div>
                                           )}
                                           <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
                                       </div>
@@ -1041,11 +1101,45 @@ const handleDocxDownload = async (markdownContent) => {
               <footer id="chat-input-area" className="p-4 border-t border-slate-200 bg-white flex-shrink-0">
                   <div className="relative mx-auto max-w-4xl">
                                   {error && <div className="p-4 bg-red-100 text-red-700 border-t border-red-200 flex-shrink-0">{error}</div>}
-                      {pendingFile && <div className="absolute bottom-full left-0 mb-2 max-w-md p-2"><div className="flex items-start gap-2 bg-slate-200 text-slate-700 rounded-lg p-2 text-sm">
-                          {pendingFilePreview ? <img src={pendingFilePreview} alt="Preview" className="w-16 h-16 object-cover rounded-md"/> : <FileIcon className="w-12 h-12 text-slate-500 shrink-0"/>}
-                          <div className="flex-grow"><p className="font-semibold">File attached:</p><p className="text-xs break-all">{pendingFile.name}</p></div>
-                          <button onClick={() => {setPendingFile(null); setPendingFilePreview(null);}} className="p-1 rounded-full hover:bg-slate-300 shrink-0"><XIcon className="w-4 h-4" /></button>
-                      </div></div>}
+                      {/* NEW: Attachment Manager UI */}
+{pendingFiles.length > 0 && (
+    <div className="absolute bottom-full left-0 mb-2 w-full max-w-2xl p-2">
+        <div className="bg-slate-200 rounded-lg p-3 shadow-md">
+            {/* Header with total size and progress bar */}
+            <div className="flex justify-between items-center mb-2">
+                <h4 className="text-sm font-semibold text-slate-800">Attachments ({pendingFiles.length})</h4>
+                <span className="text-xs font-medium text-slate-600">
+                    {formatBytes(pendingFiles.reduce((sum, f) => sum + f.file.size, 0))} / {formatBytes(MAX_TOTAL_UPLOAD_SIZE)}
+                </span>
+            </div>
+            <div className="w-full bg-slate-300 rounded-full h-1.5 mb-3">
+                <div 
+                    className="bg-indigo-600 h-1.5 rounded-full" 
+                    style={{ width: `${(pendingFiles.reduce((sum, f) => sum + f.file.size, 0) / MAX_TOTAL_UPLOAD_SIZE) * 100}%` }}
+                ></div>
+            </div>
+
+            {/* List of attached files */}
+            <div className="space-y-2 max-h-48 overflow-y-auto custom-scrollbar pr-1">
+                {pendingFiles.map(f => (
+                    <div key={f.id} className="flex items-center gap-2 bg-white p-1.5 rounded-md text-sm">
+                        {f.previewUrl ? 
+                            <img src={f.previewUrl} alt="Preview" className="w-10 h-10 object-cover rounded-md shrink-0"/> : 
+                            <FileIcon className="w-10 h-10 text-slate-500 shrink-0 p-1"/>
+                        }
+                        <div className="flex-grow overflow-hidden">
+                            <p className="font-medium text-slate-800 truncate">{f.file.name}</p>
+                            <p className="text-xs text-slate-500">{formatBytes(f.file.size)}</p>
+                        </div>
+                        <button onClick={() => handleRemoveFile(f.id)} className="p-1.5 rounded-full hover:bg-slate-200 text-slate-500 shrink-0">
+                            <XIcon className="w-4 h-4" />
+                        </button>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+)}
                       <div className="flex items-end gap-2 sm:gap-4">
                             <div id="file-attach-button" className="flex flex-col items-center self-end">
                               <label htmlFor="file-upload" title={isFileUploadDisabled ? "File upload not supported by this model" : "Attach File"} className={`p-3 rounded-full hover:bg-slate-100 ${isFileUploadDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}>
@@ -1053,18 +1147,11 @@ const handleDocxDownload = async (markdownContent) => {
                               </label>
                               <span className="text-xs text-slate-400 hidden sm:inline">Attach</span>
                            </div>
-                          <input id="file-upload" type="file" className="hidden" onChange={(e) => {
-                              const file = e.target.files[0];
-                              if (file && !isFileUploadDisabled) {
-                                  setPendingFile(file);
-                                  if (file.type.startsWith('image/')) { setPendingFilePreview(URL.createObjectURL(file)); }
-                                  else { setPendingFilePreview(null); }
-                              }
-                          }} disabled={isFileUploadDisabled}/>
+                          <input id="file-upload" type="file" className="hidden" onChange={handleFileChange} disabled={isFileUploadDisabled}/>
                           <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); }}} placeholder="Type your message or attach a file..." className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48" rows="1" />
                                                     {/* UPDATED: Wrap the send button and add the trial counter text */}
                           <div className="flex flex-col items-center">
-                              <button id="send-button" onClick={isLoading ? () => { if (abortControllerRef.current) abortControllerRef.current.abort(); if(longResponseTimerRef.current) clearTimeout(longResponseTimerRef.current); setIsTakingLong(false); } : handleSendMessage} disabled={!isLoading && !userInput.trim() && !pendingFile} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
+                              <button id="send-button" onClick={isLoading ? () => { if (abortControllerRef.current) abortControllerRef.current.abort(); if(longResponseTimerRef.current) clearTimeout(longResponseTimerRef.current); setIsTakingLong(false); } : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
                                   {isLoading ? ( <><StopIcon className="w-5 h-5"/><span>Stop</span></> ) : ( <><SendIcon className="w-5 h-5"/><span>Send</span></> )}
                               </button>
                               {/* NEW: This text will only show if the user has NOT entered their own valid API key */}
