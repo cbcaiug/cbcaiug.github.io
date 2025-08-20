@@ -50,6 +50,8 @@ const App = () => {
   // NEW: State for the Google Doc success and download modal
 const [isDocModalOpen, setIsDocModalOpen] = useState(false);
 const [createdDocInfo, setCreatedDocInfo] = useState(null);
+    // NEW: State for the Google Search (grounding) toggle
+const [isGroundingEnabled, setIsGroundingEnabled] = useState(false);
   // NEW: Add state to track remaining trial generations.
   const [trialGenerations, setTrialGenerations] = useState(TRIAL_GENERATION_LIMIT);
 
@@ -82,19 +84,44 @@ const [createdDocInfo, setCreatedDocInfo] = useState(null);
 
       try {
           let requestUrl, requestHeaders, requestBody;
+if (selectedProvider.key === 'google') {
+    requestUrl = `${selectedProvider.apiHost}/v1beta/models/${selectedModel.name}:streamGenerateContent?key=${apiKey}&alt=sse`;
+    requestHeaders = { 'Content-Type': 'application/json' };
 
-          if (selectedProvider.key === 'google') {
-              requestUrl = `${selectedProvider.apiHost}/v1beta/models/${selectedModel.name}:streamGenerateContent?key=${apiKey}&alt=sse`;
-              requestHeaders = { 'Content-Type': 'application/json' };
-              const geminiMessages = historyForApi.map(msg => {
-                  const parts = [{ text: msg.content || "" }];
-                  if (msg.role === 'user' && msg.fileDataForApi) {
-                      parts.push({ inline_data: { mime_type: msg.fileDataForApi.mime_type, data: msg.fileDataForApi.data } });
-                  }
-                  return { role: msg.role === 'user' ? 'user' : 'model', parts };
-              });
-              requestBody = JSON.stringify({ contents: geminiMessages, systemInstruction: { parts: [{ text: systemPrompt }] } });
-          } else {
+    // We will now conditionally build the history based on whether grounding is active.
+    let geminiHistory;
+
+    const chatHistoryForApi = historyForApi.map(msg => {
+        const parts = [{ text: msg.content || "" }];
+        if (msg.role === 'user' && msg.fileDataForApi) {
+            parts.push({ inline_data: { mime_type: msg.fileDataForApi.mime_type, data: msg.fileDataForApi.data } });
+        }
+        return { role: msg.role === 'user' ? 'user' : 'model', parts };
+    });
+
+    // If grounding is OFF, we use the system prompt for better persona control.
+    if (!isGroundingEnabled) {
+        geminiHistory = [
+            { role: 'user', parts: [{ text: systemPrompt }] },
+            { role: 'model', parts: [{ text: "Okay, I am ready." }] },
+            ...chatHistoryForApi
+        ];
+    } else {
+        // If grounding is ON, we send a cleaner history to avoid conflicts with the 'tools' parameter.
+        geminiHistory = chatHistoryForApi;
+    }
+
+    const geminiRequestBody = {
+        contents: geminiHistory
+    };
+
+    if (isGroundingEnabled) {
+        geminiRequestBody.tools = [{ "google_search_retrieval": {} }];
+    }
+    
+    requestBody = JSON.stringify(geminiRequestBody);
+}
+          else {
               requestUrl = `${selectedProvider.apiHost}/v1/chat/completions`;
               requestHeaders = { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` };
               if (selectedProvider.key === 'anthropic') {
@@ -893,6 +920,9 @@ const handleDocxDownload = async (markdownContent) => {
               apiKeyStatus={apiKeyStatus}
               autoDeleteHours={autoDeleteHours}
               showResetConfirm={showResetConfirm}
+              // NEW: Pass grounding state and handler to the Sidebar
+            isGroundingEnabled={isGroundingEnabled}
+            onGroundingChange={setIsGroundingEnabled}
               onClose={() => setIsMenuOpen(false)}
               onPromptSelectionChange={(e) => { if (e.target.value) window.location.href = e.target.value; }}
               onCustomPromptUpload={async (e) => {
