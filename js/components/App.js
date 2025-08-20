@@ -7,6 +7,21 @@
  */
 
 const { useState, useEffect, useRef, useCallback } = React;
+// --- HELPERS ---
+const formatBytes = (bytes, decimals = 2) => {
+    if (!+bytes) return '0 Bytes';
+    const k = 1024;
+    const dm = decimals < 0 ? 0 : decimals;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+};
+// Generate a unique session ID for this user's visit.
+const SESSION_ID = `session_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
+// NEW: Add the public API key for the free trial.
+// IMPORTANT: For your security, delete the key you shared with me and generate a new one.
+const PUBLIC_TRIAL_API_KEY = "AIzaSyCVoSQNX0Ra1XQhYmOEpBZhJFEyZePMGJs";
+const TRIAL_GENERATION_LIMIT = 5; // Set the number of free uses.
 
 // --- MAIN APP COMPONENT ---
 const App = () => {
@@ -20,8 +35,8 @@ const App = () => {
   const [selectedModelName, setSelectedModelName] = useState('gemini-1.5-flash-latest');
   const [autoDeleteHours, setAutoDeleteHours] = useState('2');
   const [chatHistory, setChatHistory] = useState([]);
-  const [pendingFile, setPendingFile] = useState(null);
-  const [pendingFilePreview, setPendingFilePreview] = useState(null);
+  // UPDATED: State to hold an array of pending files for multi-file upload.
+    const [pendingFiles, setPendingFiles] = useState([]);;
   const [userInput, setUserInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
@@ -43,6 +58,13 @@ const App = () => {
   const [showUpdateBanner, setShowUpdateBanner] = useState(false);
   const [isTakingLong, setIsTakingLong] = useState(false);
   const [showConsentModal, setShowConsentModal] = useState(false);
+  // NEW: State for the Google Doc success and download modal
+const [isDocModalOpen, setIsDocModalOpen] = useState(false);
+const [createdDocInfo, setCreatedDocInfo] = useState(null);
+    // NEW: State for the Google Search (grounding) toggle
+const [isGroundingEnabled, setIsGroundingEnabled] = useState(false);
+  // NEW: Add state to track remaining trial generations.
+  const [trialGenerations, setTrialGenerations] = useState(TRIAL_GENERATION_LIMIT);
 
   // --- REFS ---
   const chatContainerRef = useRef(null);
@@ -59,14 +81,11 @@ const App = () => {
   const selectedProvider = AI_PROVIDERS.find(p => p.key === selectedProviderKey);
   const selectedModel = selectedProvider?.models.find(m => m.name === selectedModelName);
   const isFileUploadDisabled = !selectedModel?.vision;
+  const MAX_TOTAL_UPLOAD_SIZE = 10 * 1024 * 1024; // 10 MB in bytes
 
   // --- API & STREAMING LOGIC ---
-  const fetchAndStreamResponse = async ({ historyForApi, systemPrompt, onUpdate, onComplete, onError }) => {
-      const apiKey = apiKeys[selectedProvider.apiKeyName];
-      if (!apiKey || apiKeyStatus[selectedProvider.key] !== 'valid') {
-          onError(`Please enter a valid ${selectedProvider.label} API Key in the settings panel.`);
-          return;
-      }
+  const fetchAndStreamResponse = async ({ historyForApi, systemPrompt, apiKey, onUpdate, onComplete, onError }) => {
+      
 
       abortControllerRef.current = new AbortController();
       
@@ -77,19 +96,47 @@ const App = () => {
 
       try {
           let requestUrl, requestHeaders, requestBody;
+if (selectedProvider.key === 'google') {
+    requestUrl = `${selectedProvider.apiHost}/v1beta/models/${selectedModel.name}:streamGenerateContent?key=${apiKey}&alt=sse`;
+    requestHeaders = { 'Content-Type': 'application/json' };
 
-          if (selectedProvider.key === 'google') {
-              requestUrl = `${selectedProvider.apiHost}/v1beta/models/${selectedModel.name}:streamGenerateContent?key=${apiKey}&alt=sse`;
-              requestHeaders = { 'Content-Type': 'application/json' };
-              const geminiMessages = historyForApi.map(msg => {
-                  const parts = [{ text: msg.content || "" }];
-                  if (msg.role === 'user' && msg.fileDataForApi) {
-                      parts.push({ inline_data: { mime_type: msg.fileDataForApi.mime_type, data: msg.fileDataForApi.data } });
-                  }
-                  return { role: msg.role === 'user' ? 'user' : 'model', parts };
-              });
-              requestBody = JSON.stringify({ contents: geminiMessages, systemInstruction: { parts: [{ text: systemPrompt }] } });
-          } else {
+    // We will now conditionally build the history based on whether grounding is active.
+    let geminiHistory;
+
+    const chatHistoryForApi = historyForApi.map(msg => {
+        const parts = [{ text: msg.content || "" }];
+        if (msg.role === 'user' && msg.fileDataForApi && msg.fileDataForApi.length > 0) {
+            // This used to be a single push, now it adds all files
+msg.fileDataForApi.forEach(file => {
+    parts.push({ inline_data: { mime_type: file.mime_type, data: file.data } });
+});
+        }
+        return { role: msg.role === 'user' ? 'user' : 'model', parts };
+    });
+
+    // If grounding is OFF, we use the system prompt for better persona control.
+    if (!isGroundingEnabled) {
+        geminiHistory = [
+            { role: 'user', parts: [{ text: systemPrompt }] },
+            { role: 'model', parts: [{ text: "Okay, I am ready." }] },
+            ...chatHistoryForApi
+        ];
+    } else {
+        // If grounding is ON, we send a cleaner history to avoid conflicts with the 'tools' parameter.
+        geminiHistory = chatHistoryForApi;
+    }
+
+    const geminiRequestBody = {
+        contents: geminiHistory
+    };
+
+    if (isGroundingEnabled) {
+        geminiRequestBody.tools = [{ "google_search_retrieval": {} }];
+    }
+    
+    requestBody = JSON.stringify(geminiRequestBody);
+}
+          else {
               requestUrl = `${selectedProvider.apiHost}/v1/chat/completions`;
               requestHeaders = { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` };
               if (selectedProvider.key === 'anthropic') {
@@ -258,138 +305,113 @@ const App = () => {
       }, 800);
   };
   
-  const handleDocxDownload = async (markdownContent) => {
-      if (typeof docx === 'undefined') {
-          setError("DOCX export library is still loading. Please try again in a moment.");
-          console.error("`docx` library not found on window object.");
+   // UPDATED: This function now receives the doc ID and opens our new modal.
+const handleDocxDownload = async (markdownContent) => {
+    // Use the error state to provide feedback to the user that the process has started.
+    setError('Creating your Google Doc, please wait...');
+
+    try {
+        // First, convert the raw markdown from the chat message into clean HTML.
+        const htmlContent = marked.parse(markdownContent);
+        
+        // Prepare the data payload to send to our Google Apps Script.
+        const payload = {
+            action: 'createDoc',
+            details: {
+                htmlContent: htmlContent,
+                title: activePromptKey // Use the current assistant's name as the document title.
+            }
+        };
+
+        // Send the HTML data to our backend script.
+        const response = await fetch(GAS_WEB_APP_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(payload)
+        });
+
+        // Parse the response from the server.
+        const data = await response.json();
+
+        // Check if we received the URL and the new ID.
+        if (data.success && data.url && data.id) {
+            // Store the document info (URL and ID) in our new state.
+            setCreatedDocInfo({ url: data.url, id: data.id });
+            // Open our new modal instead of a new tab.
+            setIsDocModalOpen(true);
+            setError(''); // Clear the "Creating..." message.
+        } else {
+            // If the server reported an error, throw it so our catch block can handle it.
+            throw new Error(data.error || 'The server did not return the required document information.');
+        }
+
+    } catch (error) {
+        console.error("Error creating Google Doc:", error);
+        // Display a user-friendly error message.
+        setError(`Failed to create Google Doc: ${error.message}`);
+    }
+};
+
+    // UPDATED: This function now validates the API key before processing the message.
+  const handleSendMessage = async () => {
+      // First, check if there's any input or if the app is already busy.
+      if ((!userInput.trim() && pendingFiles.length === 0) || isLoading) return;
+
+      // UPDATED: New logic to handle both user keys and the public trial key.
+      let apiKey = apiKeys[selectedProvider.apiKeyName];
+      let isTrial = false;
+
+      // Check if the user has provided their own valid key.
+      if (apiKey && apiKeyStatus[selectedProvider.key] === 'valid') {
+          // User has a valid key, proceed as normal.
+          isTrial = false;
+      } else if (PUBLIC_TRIAL_API_KEY && selectedProvider.key === 'google') {
+          // If no user key, check if they have trial generations left.
+          // The trial only works for the 'google' provider for now.
+          if (trialGenerations > 0) {
+              apiKey = PUBLIC_TRIAL_API_KEY; // Use the public key.
+              isTrial = true;
+          } else {
+              // Out of trial generations.
+              setError("You've used all your free trial generations! Please add your own free API key in the settings to continue.");
+              return;
+          }
+      } else {
+          // No user key and no trial available.
+          setError(`Please enter a valid ${selectedProvider.label} API Key in the settings panel.`);
           return;
       }
       
-      const { Document, Packer, Paragraph, TextRun, HeadingLevel, Table, TableRow, TableCell, WidthType, AlignmentType, BorderStyle, ShadingType } = docx;
-
-      try {
-          const tokens = marked.lexer(markdownContent);
-          const children = [];
-
-          const parseInlines = (inlines) => {
-              const runs = [];
-              if (!inlines) return runs;
-              for (const inline of inlines) {
-                  let text = inline.text || (inline.tokens ? inline.tokens.map(t => t.text).join('') : '');
-                  if (inline.type === 'strong' || inline.type === 'em') {
-                      const nestedRuns = parseInlines(inline.tokens);
-                      nestedRuns.forEach(run => {
-                           if (inline.type === 'strong') run.options.bold = true;
-                           if (inline.type === 'em') run.options.italics = true;
-                      });
-                      runs.push(...nestedRuns);
-                  } else {
-                      runs.push(new TextRun({ text, bold: false, italics: false }));
-                  }
-              }
-              return runs;
-          };
-
-          for (const token of tokens) {
-              if (token.type === 'heading') {
-                  children.push(new Paragraph({
-                      children: parseInlines(token.tokens),
-                      heading: `Heading${token.depth}`
-                  }));
-              } else if (token.type === 'paragraph') {
-                  children.push(new Paragraph({ children: parseInlines(token.tokens) }));
-              } else if (token.type === 'list') {
-                  for (const item of token.items) {
-                      children.push(new Paragraph({
-                          children: parseInlines(item.tokens[0].tokens),
-                          bullet: { level: 0 }
-                      }));
-                  }
-              } else if (token.type === 'table') {
-                  const header = new TableRow({
-                      children: token.header.map(cell => new TableCell({
-                          children: [new Paragraph({ children: parseInlines(cell.tokens), alignment: AlignmentType.CENTER })],
-                          shading: { fill: "E5E7EB", type: ShadingType.CLEAR, color: "auto" }
-                      })),
-                      tableHeader: true,
-                  });
-                  const rows = token.rows.map(row => new TableRow({
-                      children: row.map(cell => new TableCell({ children: [new Paragraph({ children: parseInlines(cell.tokens) })] }))
-                  }));
-                  const table = new Table({
-                      rows: [header, ...rows],
-                      width: { size: 100, type: WidthType.PERCENTAGE }
-                  });
-                  children.push(table);
-              } else if (token.type === 'space') {
-                  children.push(new Paragraph(""));
-              }
-          }
-
-          const doc = new Document({
-              sections: [{
-                  headers: {
-                      default: new docx.Header({
-                          children: [new Paragraph({
-                              children: [new TextRun({ text: `Generated by AI Assistant for ${activePromptKey}`, size: 16, color: "888888", italics: true })],
-                              alignment: AlignmentType.RIGHT
-                          })],
-                      }),
-                  },
-                  footers: {
-                      default: new docx.Footer({
-                          children: [new Paragraph({
-                              children: [new TextRun({ text: "Created by Derrick Musamali | cbc-ai-tool.netlify.app", size: 16, color: "888888", italics: true })],
-                              alignment: AlignmentType.CENTER
-                          })],
-                      }),
-                  },
-                  children,
-              }]
-          });
-
-          const blob = await Packer.toBlob(doc);
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          const fileName = `${activePromptKey.replace(/[^a-zA-Z0-9]/g, '_')}_${new Date().toISOString().slice(0,10)}.docx`;
-          a.download = fileName;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-          
-          trackEvent('docx_download', activePromptKey);
-
-      } catch (error) {
-          console.error("Error generating DOCX file:", error);
-          setError("Sorry, there was an error creating the DOCX file.");
-      }
-  };
-
-  const handleSendMessage = async () => {
-      if ((!userInput.trim() && !pendingFile) || isLoading) return;
-      
+      // If the key is valid, we can proceed as normal.
       setIsLoading(true);
       setError('');
       
-      let fileDataForApi = null;
-      if (pendingFile && !isFileUploadDisabled) {
-          try {
-              fileDataForApi = await processFileForApi(pendingFile);
-          } catch(e) {
-              setError("Could not read file.");
-              setIsLoading(false);
-              return;
-          }
-      }
+   // Process all pending files concurrently.
+const fileProcessingPromises = pendingFiles.map(f => processFileForApi(f.file));
+// The result from Promise.all will be an array of { mime_type, data } objects.
+const filesDataForApi = await Promise.all(fileProcessingPromises).catch(e => {
+    setError("Could not read one or more files.");
+    setIsLoading(false);
+    return null;
+});
 
-      const userMessage = { role: 'user', content: userInput, file: pendingFile ? { name: pendingFile.name, previewUrl: pendingFilePreview } : null, fileDataForApi, id: Date.now() };
+if (!filesDataForApi) return; // Stop if any file processing failed.
+
+// Create the user message object. The Gemini API can handle an array of file data directly.
+const userMessage = { 
+    role: 'user', 
+    content: userInput, 
+    // We include the 'files' property just for displaying previews in the UI.
+    files: pendingFiles.map(f => ({ name: f.file.name, previewUrl: f.previewUrl })),
+    // This is the actual data sent to the API.
+    fileDataForApi: filesDataForApi,
+    id: Date.now() 
+};
       const assistantPlaceholder = { role: 'assistant', content: '', isLoading: true, id: Date.now() + 1 };
       
       const newHistory = [...chatHistory, userMessage, assistantPlaceholder];
       setChatHistory(newHistory);
-      setUserInput(''); setPendingFile(null); setPendingFilePreview(null);
+      setUserInput(''); setPendingFiles([]);
 
       const systemPrompt = activePromptKey === 'custom' ? customPromptContent : await PromptManager.getPromptContent(activePromptKey);
       if (!systemPrompt) {
@@ -402,6 +424,7 @@ const App = () => {
       await fetchAndStreamResponse({
           historyForApi: newHistory.slice(0, -1),
           systemPrompt,
+          apiKey,
           onUpdate: (chunk) => {
               setChatHistory(prev => {
                   const updatedHistory = [...prev];
@@ -412,7 +435,7 @@ const App = () => {
                   return updatedHistory;
               });
           },
-          onComplete: () => {
+                    onComplete: () => {
               setIsLoading(false);
               setChatHistory(prev => {
                   const updatedHistory = [...prev];
@@ -420,9 +443,18 @@ const App = () => {
                   if (lastMsg) lastMsg.isLoading = false;
                   return updatedHistory;
               });
+              
               if (!abortControllerRef.current.signal.aborted) {
+                  // If this was a trial generation, count it down.
+                  if (isTrial) {
+                      const newCount = trialGenerations - 1;
+                      setTrialGenerations(newCount);
+                      localStorage.setItem('trialGenerationsCount', newCount.toString());
+                      trackEvent('trial_generation', activePromptKey, { sessionId: SESSION_ID });
+                  } else {
+                      trackEvent('generation', activePromptKey, { sessionId: SESSION_ID });
+                  }
                   setGenerationCount(prevCount => prevCount + 1);
-                  trackEvent('generation', activePromptKey);
               }
               abortControllerRef.current = null;
           },
@@ -483,7 +515,7 @@ const App = () => {
               });
               if (!abortControllerRef.current.signal.aborted) {
                   setGenerationCount(prevCount => prevCount + 1);
-                  trackEvent('regeneration', activePromptKey);
+                  trackEvent('regeneration', activePromptKey, { sessionId: SESSION_ID });
               }
               abortControllerRef.current = null;
           },
@@ -503,12 +535,40 @@ const App = () => {
       const chatKey = `chatHistory_${activePromptKey}`;
       setChatHistory([]); 
       localStorage.removeItem(chatKey);
-      setPendingFile(null);
-      setPendingFilePreview(null);
+      setPendingFiles([]);
       setError('');
       loadInitialMessage(activePromptKey);
   };
-  
+  // NEW: Handles adding one or more files, checking against the total size limit.
+const handleFileChange = (e) => {
+    const files = Array.from(e.target.files);
+    if (!files.length || isFileUploadDisabled) return;
+
+    let currentTotalSize = pendingFiles.reduce((sum, f) => sum + f.file.size, 0);
+
+    const newFiles = files.map(file => {
+        const previewUrl = file.type.startsWith('image/') ? URL.createObjectURL(file) : null;
+        return { file, previewUrl, id: Date.now() + Math.random() };
+    });
+
+    for (const newFile of newFiles) {
+        if (currentTotalSize + newFile.file.size > MAX_TOTAL_UPLOAD_SIZE) {
+            setError(`Cannot add "${newFile.file.name}". Total size cannot exceed 10 MB.`);
+            // We stop adding files once the limit is reached.
+            break;
+        }
+        setPendingFiles(prev => [...prev, newFile]);
+        currentTotalSize += newFile.file.size;
+    }
+    
+    // Clear the input value so the user can select the same file again if they remove it.
+    e.target.value = null;
+};
+
+// NEW: Handles removing a specific file from the pending list.
+const handleRemoveFile = (fileId) => {
+    setPendingFiles(prev => prev.filter(f => f.id !== fileId));
+};
   const resetSettings = () => {
       localStorage.removeItem('aiAssistantState');
       localStorage.removeItem('generationCount');
@@ -676,12 +736,41 @@ const App = () => {
         }
     );
 
-    intro.setOptions({
+        intro.setOptions({
         steps: steps,
         showBullets: false,
         showStepNumbers: true,
         exitOnOverlayClick: false,
-        tooltipClass: 'custom-intro-tooltip'
+        tooltipClass: 'custom-intro-tooltip',
+                // FINAL ATTEMPT: Manual DOM control to resolve timing issue.
+        onbeforechange: function() {
+            const currentStepConfig = this._introItems[this._currentStep];
+
+            if (currentStepConfig && currentStepConfig.element === '#contact-info-panel' && this._direction === 'forward') {
+                const isMobileView = window.innerWidth < 1024;
+                if (isMobileView) {
+                    
+                    // 1. Manually find the sidebar in the DOM.
+                    const sidebar = document.getElementById('settings-panel');
+                    if (sidebar) {
+                        // 2. Force the closing animation to start immediately by changing its class.
+                        sidebar.classList.remove('translate-x-0');
+                        sidebar.classList.add('-translate-x-full');
+                    }
+
+                    // 3. IMPORTANT: Tell React that the sidebar is now closed so it doesn't get confused later.
+                    setIsMenuOpen(false);
+
+                    // 4. Pause the tutorial, then manually advance to the next step after the animation is finished.
+                    setTimeout(() => {
+                        intro.nextStep();
+                    }, 350); // Wait for animation to complete.
+
+                    // 5. Stop the tutorial from advancing on its own.
+                    return false;
+                }
+            }
+        }
     });
     
     intro.onexit(() => {
@@ -713,6 +802,9 @@ const App = () => {
 
           const savedCount = parseInt(localStorage.getItem('generationCount') || '0', 10);
           setGenerationCount(savedCount);
+          // NEW: Load the saved trial count from local storage.
+          const savedTrialCount = parseInt(localStorage.getItem('trialGenerationsCount') || TRIAL_GENERATION_LIMIT, 10);
+          setTrialGenerations(savedTrialCount);
 
           setIsLoadingAssistants(true);
           const [assistants, fetchedNotifications] = await Promise.all([
@@ -788,6 +880,22 @@ const App = () => {
            localStorage.setItem(chatKey, JSON.stringify({ history: chatHistory, timestamp: Date.now() }));
       }
   }, [chatHistory, activePromptKey]);
+    // NEW: This effect runs whenever the selected model changes.
+  useEffect(() => {
+    // We don't want to show a notification when the app first loads,
+    // so we check if the chat history is not empty.
+    if (chatHistory.length > 0) {
+      // Create a new system message object to be added to the chat.
+      const modelSwitchMessage = {
+        role: 'system', // A special role for system messages
+        content: `*Model switched to ${selectedModelName}*`,
+        id: Date.now() // Unique ID for the message
+      };
+      
+      // Add the new message to the existing chat history.
+      setChatHistory(prevHistory => [...prevHistory, modelSwitchMessage]);
+    }
+  }, [selectedModelName]); // This tells React to run the effect only when selectedModelName changes.
 
   useEffect(() => {
       // Handle feedback modal trigger
@@ -864,6 +972,9 @@ const App = () => {
               apiKeyStatus={apiKeyStatus}
               autoDeleteHours={autoDeleteHours}
               showResetConfirm={showResetConfirm}
+              // NEW: Pass grounding state and handler to the Sidebar
+            isGroundingEnabled={isGroundingEnabled}
+            onGroundingChange={setIsGroundingEnabled}
               onClose={() => setIsMenuOpen(false)}
               onPromptSelectionChange={(e) => { if (e.target.value) window.location.href = e.target.value; }}
               onCustomPromptUpload={async (e) => {
@@ -911,22 +1022,44 @@ const App = () => {
               </header>
 
               <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative">
-                  <div className="px-1 p-2 sm:p-6 space-y-4">
-                      {chatHistory.map((msg, index) => (
-                          <div key={msg.id || index} className={`flex w-full items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
-                              <div className={`flex flex-col w-full max-w-full ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
-                                  <div className={`rounded-lg w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
-                                      {msg.file && (
-                                          <div className="p-2 bg-indigo-500/80">
-                                              {msg.file.previewUrl ? <img src={msg.file.previewUrl} className="max-w-xs rounded-md"/> : <div className="flex items-center gap-2 p-2"><FileIcon className="w-6 h-6"/><span>{msg.file.name}</span></div>}
-                                          </div>
-                                      )}
-                                      <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
+                                    <div className="px-1 p-2 sm:p-6 space-y-4">
+                      {chatHistory.map((msg, index) => {
+                          // For system messages, we render a simple, centered div.
+                          if (msg.role === 'system') {
+                              return (
+                                  <div key={msg.id || index} className="text-center text-xs text-slate-500 italic my-2">
+                                      🤖 {msg.content}
                                   </div>
-                                  <MessageMenu msg={msg} index={index} onCopy={(content) => handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError)} onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))} onRegenerate={handleRegenerate} onDocxDownload={handleDocxDownload} />
+                              );
+                          }
+
+                          // For user and assistant messages, we render the full chat bubble.
+                          return (
+                              <div key={msg.id || index} className={`flex w-full items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
+                                  <div className={`flex flex-col w-full max-w-full ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
+                                      <div className={`rounded-lg w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
+                                          {msg.files && msg.files.length > 0 && (
+                                              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2 bg-indigo-500/80">
+    {msg.files.map((file, idx) => (
+        <div key={idx} className="relative group">
+            {file.previewUrl ? 
+                <img src={file.previewUrl} alt={file.name} className="w-full h-24 object-cover rounded-md"/> :
+                <div className="w-full h-24 bg-indigo-400 rounded-md flex flex-col items-center justify-center text-white p-1">
+                    <FileIcon className="w-8 h-8"/>
+                    <span className="text-xs text-center truncate w-full mt-1">{file.name}</span>
+                </div>
+            }
+        </div>
+    ))}
+</div>
+                                          )}
+                                          <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
+                                      </div>
+                                      <MessageMenu msg={msg} index={index} onCopy={(content) => handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError)} onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))} onRegenerate={handleRegenerate} onDocxDownload={handleDocxDownload} />
+                                  </div>
                               </div>
-                          </div>
-                      ))}
+                          );
+                      })}
                       <div ref={chatEndRef} />
                   </div>
                             </main>
@@ -965,15 +1098,50 @@ const App = () => {
               </div>
               {isNotificationsOpen && <div onClick={() => setIsNotificationsOpen(false)} className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"></div>}
 
-              {error && <div className="p-4 bg-red-100 text-red-700 border-t border-red-200 flex-shrink-0">{error}</div>}
+              
 
               <footer id="chat-input-area" className="p-4 border-t border-slate-200 bg-white flex-shrink-0">
                   <div className="relative mx-auto max-w-4xl">
-                      {pendingFile && <div className="absolute bottom-full left-0 mb-2 max-w-md p-2"><div className="flex items-start gap-2 bg-slate-200 text-slate-700 rounded-lg p-2 text-sm">
-                          {pendingFilePreview ? <img src={pendingFilePreview} alt="Preview" className="w-16 h-16 object-cover rounded-md"/> : <FileIcon className="w-12 h-12 text-slate-500 shrink-0"/>}
-                          <div className="flex-grow"><p className="font-semibold">File attached:</p><p className="text-xs break-all">{pendingFile.name}</p></div>
-                          <button onClick={() => {setPendingFile(null); setPendingFilePreview(null);}} className="p-1 rounded-full hover:bg-slate-300 shrink-0"><XIcon className="w-4 h-4" /></button>
-                      </div></div>}
+                                  {error && <div className="p-4 bg-red-100 text-red-700 border-t border-red-200 flex-shrink-0">{error}</div>}
+                      {/* NEW: Attachment Manager UI */}
+{pendingFiles.length > 0 && (
+    <div className="absolute bottom-full left-0 mb-2 w-full max-w-2xl p-2">
+        <div className="bg-slate-200 rounded-lg p-3 shadow-md">
+            {/* Header with total size and progress bar */}
+            <div className="flex justify-between items-center mb-2">
+                <h4 className="text-sm font-semibold text-slate-800">Attachments ({pendingFiles.length})</h4>
+                <span className="text-xs font-medium text-slate-600">
+                    {formatBytes(pendingFiles.reduce((sum, f) => sum + f.file.size, 0))} / {formatBytes(MAX_TOTAL_UPLOAD_SIZE)}
+                </span>
+            </div>
+            <div className="w-full bg-slate-300 rounded-full h-1.5 mb-3">
+                <div 
+                    className="bg-indigo-600 h-1.5 rounded-full" 
+                    style={{ width: `${(pendingFiles.reduce((sum, f) => sum + f.file.size, 0) / MAX_TOTAL_UPLOAD_SIZE) * 100}%` }}
+                ></div>
+            </div>
+
+            {/* List of attached files */}
+            <div className="space-y-2 max-h-48 overflow-y-auto custom-scrollbar pr-1">
+                {pendingFiles.map(f => (
+                    <div key={f.id} className="flex items-center gap-2 bg-white p-1.5 rounded-md text-sm">
+                        {f.previewUrl ? 
+                            <img src={f.previewUrl} alt="Preview" className="w-10 h-10 object-cover rounded-md shrink-0"/> : 
+                            <FileIcon className="w-10 h-10 text-slate-500 shrink-0 p-1"/>
+                        }
+                        <div className="flex-grow overflow-hidden">
+                            <p className="font-medium text-slate-800 truncate">{f.file.name}</p>
+                            <p className="text-xs text-slate-500">{formatBytes(f.file.size)}</p>
+                        </div>
+                        <button onClick={() => handleRemoveFile(f.id)} className="p-1.5 rounded-full hover:bg-slate-200 text-slate-500 shrink-0">
+                            <XIcon className="w-4 h-4" />
+                        </button>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+)}
                       <div className="flex items-end gap-2 sm:gap-4">
                             <div id="file-attach-button" className="flex flex-col items-center self-end">
                               <label htmlFor="file-upload" title={isFileUploadDisabled ? "File upload not supported by this model" : "Attach File"} className={`p-3 rounded-full hover:bg-slate-100 ${isFileUploadDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}>
@@ -981,18 +1149,20 @@ const App = () => {
                               </label>
                               <span className="text-xs text-slate-400 hidden sm:inline">Attach</span>
                            </div>
-                          <input id="file-upload" type="file" className="hidden" onChange={(e) => {
-                              const file = e.target.files[0];
-                              if (file && !isFileUploadDisabled) {
-                                  setPendingFile(file);
-                                  if (file.type.startsWith('image/')) { setPendingFilePreview(URL.createObjectURL(file)); }
-                                  else { setPendingFilePreview(null); }
-                              }
-                          }} disabled={isFileUploadDisabled}/>
+                          <input id="file-upload" type="file" className="hidden" onChange={handleFileChange} disabled={isFileUploadDisabled}/>
                           <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); }}} placeholder="Type your message or attach a file..." className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48" rows="1" />
-                          <button id="send-button" onClick={isLoading ? () => { if (abortControllerRef.current) abortControllerRef.current.abort(); if(longResponseTimerRef.current) clearTimeout(longResponseTimerRef.current); setIsTakingLong(false); } : handleSendMessage} disabled={!isLoading && !userInput.trim() && !pendingFile} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
-                              {isLoading ? ( <><StopIcon className="w-5 h-5"/><span>Stop</span></> ) : ( <><SendIcon className="w-5 h-5"/><span>Send</span></> )}
-                          </button>
+                                                    {/* UPDATED: Wrap the send button and add the trial counter text */}
+                          <div className="flex flex-col items-center">
+                              <button id="send-button" onClick={isLoading ? () => { if (abortControllerRef.current) abortControllerRef.current.abort(); if(longResponseTimerRef.current) clearTimeout(longResponseTimerRef.current); setIsTakingLong(false); } : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
+                                  {isLoading ? ( <><StopIcon className="w-5 h-5"/><span>Stop</span></> ) : ( <><SendIcon className="w-5 h-5"/><span>Send</span></> )}
+                              </button>
+                              {/* NEW: This text will only show if the user has NOT entered their own valid API key */}
+                              {(!apiKeys[selectedProvider.apiKeyName] || apiKeyStatus[selectedProvider.key] !== 'valid') && (
+                                <p className="text-xs text-slate-500 mt-1 text-center">
+                                    {trialGenerations > 0 ? `${trialGenerations} free uses remaining.` : 'Add API key to continue.'}
+                                </p>
+                              )}
+                          </div>
                       </div>
                   </div>
               </footer>
@@ -1001,7 +1171,13 @@ const App = () => {
           {/* --- TOASTS & MODALS --- */}
           {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
           {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5"/> : <CheckCircleIcon className="w-5 h-5"/>}<span>{apiKeyToast}</span></div>}
-          <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={handleFeedbackSubmit} assistantName={activePromptKey} />
+          <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={(feedbackData) => handleFeedbackSubmit({ ...feedbackData, sessionId: SESSION_ID })} assistantName={activePromptKey} />
+            {/* NEW: Add the Google Doc success modal to the UI */}
+<DocSuccessModal 
+    isOpen={isDocModalOpen} 
+    onClose={() => setIsDocModalOpen(false)} 
+    docInfo={createdDocInfo} 
+/>
       </div>
   );
 }

@@ -32,6 +32,9 @@ const Sidebar = ({
     onResetSettings,
     onShowResetConfirm,
     onStartResizing,
+    // NEW: Props for the grounding toggle
+isGroundingEnabled,
+onGroundingChange,
 
 }) => {
 
@@ -74,6 +77,29 @@ const Sidebar = ({
                                 {selectedProvider?.models.map(model => <option key={model.name} value={model.name}>{model.name}</option>)}
                             </select>
                         </div>
+                        {/* NEW: Google Search Grounding Toggle */}
+<div className="mt-5">
+    <label className={`flex items-center justify-between ${selectedProviderKey === 'google' ? 'cursor-pointer' : 'cursor-not-allowed opacity-50'}`}>
+        <span className="flex flex-col">
+            <span className="text-sm font-medium text-slate-300">Enable Web Search</span>
+            <span className="text-xs text-slate-400">
+                {/* Change the description based on provider */}
+                {selectedProviderKey === 'google' ? 'For up-to-date answers' : 'Only available for Gemini models'}
+            </span>
+        </span>
+        <div className={`relative inline-block w-10 h-5 transition-colors duration-300 ease-in-out rounded-full ${isGroundingEnabled && selectedProviderKey === 'google' ? 'bg-indigo-500' : 'bg-slate-600'}`}>
+            <input
+                type="checkbox"
+                className="absolute opacity-0 w-0 h-0"
+                checked={isGroundingEnabled}
+                // The toggle can only be changed if the provider is google
+                onChange={() => selectedProviderKey === 'google' && onGroundingChange(!isGroundingEnabled)}
+                disabled={selectedProviderKey !== 'google'}
+            />
+            <span className={`absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300 ease-in-out ${isGroundingEnabled && selectedProviderKey === 'google' ? 'translate-x-5' : 'translate-x-0'}`}></span>
+        </div>
+    </label>
+</div>
                     </div>
 
                      <div id="api-key-container">
@@ -118,11 +144,14 @@ const Sidebar = ({
                               <span className="text-sm">+256750470234</span>
                           </a>
                      </div>
-                     <div className="text-center text-xs text-slate-500">
-                          <a href="terms.html" target="_blank" className="hover:text-slate-300 transition-colors">Terms of Service</a>
-                          <span className="mx-2">|</span>
-                          <a href="privacy.html" target="_blank" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
-                     </div>
+                     {/* UPDATED: Added the 'About Me' link for consistency */}
+<div className="text-center text-xs text-slate-500">
+    <a href="about.html" target="_blank" className="hover:text-slate-300 transition-colors">About Me</a>
+    <span className="mx-2">|</span>
+    <a href="terms.html" target="_blank" className="hover:text-slate-300 transition-colors">Terms of Service</a>
+    <span className="mx-2">|</span>
+    <a href="privacy.html" target="_blank" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
+</div>
                      <a href= "/" rel="external" className="flex items-center justify-center gap-2 w-full text-center mt-2 py-2 bg-slate-700 hover:bg-slate-600 rounded-md transition-colors"><HomeIcon className="w-5 h-5"/>Return to Home</a>
                 </div>
             </div>

@@ -10,40 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .content-prose h1 {
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-        .content-prose h2 {
-            font-size: 1.5rem; /* text-2xl */
-            font-weight: 700;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid #e5e7eb; /* cool-gray-200 */
-            padding-bottom: 0.5rem;
-        }
-        .content-prose p, .content-prose ul {
-            color: #4b5563; /* cool-gray-600 */
-            line-height: 1.75;
-        }
-        .content-prose strong {
-            color: #111827; /* cool-gray-900 */
-        }
-        .content-prose ul {
-            list-style-position: inside;
-            list-style-type: disc;
-        }
-        .content-prose a {
-            color: #4f46e5; /* indigo-600 */
-            text-decoration: none;
-        }
-        .content-prose a:hover {
-            text-decoration: underline;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .content-prose h1 { font-size: 2.25rem; font-weight: 800; margin-bottom: 1rem; }
+        .content-prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.5rem; }
+        .content-prose p, .content-prose ul { color: #4b5563; line-height: 1.75; }
+        .content-prose strong { color: #111827; }
+        .content-prose ul { list-style-position: inside; list-style-type: disc; }
+        .content-prose a { color: #4f46e5; text-decoration: none; }
+        .content-prose a:hover { text-decoration: underline; }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -66,9 +40,9 @@
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white p-8 sm:p-12 rounded-xl shadow-lg content-prose">
                 <h1>Privacy Policy</h1>
-                <p class="text-sm text-gray-500">Last Updated: August 15, 2025</p>
+                <p class="text-sm text-gray-500">Last Updated: August 18, 2025</p>
 
-                <p>Thank you for using the AI Educational Assistant ("the Service"), created by Derrick Musamali ("we," "us," or "our"). Your privacy is critically important to us. This Privacy Policy explains what information is handled by our Service and why.</p>
+                <p>Thank you for using the AI Educational Assistant ("the Service"). Your privacy is critically important to us. This Privacy Policy explains what information is handled by our Service and why.</p>
 
                 <h2>1. The Core Principle: Your Data is Yours</h2>
                 <p>Our Service is designed with a "privacy-first" approach. We do not have user accounts, and we do not have a database to store your personal information or conversations.</p>
@@ -76,19 +50,22 @@
                 <h2>2. Information Handled by the Service</h2>
                 <p>To provide its functionality, the Service uses your browser's <strong>local storage</strong> to save the following information directly on your device:</p>
                 <ul>
-                    <li><strong>API Keys:</strong> You provide your own API keys from third-party AI providers (like Google, OpenAI, etc.). These keys are required to communicate with the AI models. They are stored only in your browser's local storage and are sent directly from your browser to the AI provider's service. They are never transmitted to or stored by our servers.</li>
-                    <li><strong>Chat History:</strong> Your conversations with the AI assistants are saved in your browser's local storage to allow you to continue your work between sessions. This data is also stored only on your device.</li>
-                    <li><strong>Application Settings:</strong> Your preferences, such as the selected AI provider and model, are saved in local storage for your convenience.</li>
+                    <li><strong>API Keys:</strong> You provide your own API keys from third-party AI providers. These keys are stored only in your browser's local storage and are sent directly from your browser to the AI provider's service. They are never transmitted to or stored on our servers.</li>
+                    <li><strong>Chat History:</strong> Your conversations with the AI assistants are saved in your browser's local storage to allow you to continue your work between sessions. This data is stored only on your device.</li>
+                    <li><strong>Application Settings:</strong> Your preferences, such as the selected AI model, are saved in local storage for your convenience.</li>
                 </ul>
 
                 <h2>3. Third-Party Services</h2>
+                <p>Our Service integrates with the following third-party services to provide its full functionality:</p>
                 <ul>
-                    <li><strong>AI Providers:</strong> When you send a message, the content of that message and your API key are sent directly to the third-party AI service you have selected (e.g., Google, OpenAI). Their use of your data is governed by their respective privacy policies. We are not responsible for the data practices of these third-party services.</li>
-                    <li><strong>Google Analytics:</strong> We use Google Analytics to collect anonymous usage data to help us understand how the Service is being used and how to improve it. This includes information like which features are most popular and general user demographics. This data is aggregated and cannot be used to identify you personally.</li>
+                    <li><strong>AI Providers (e.g., Google, OpenAI):</strong> When you send a message, the content of that message and your API key are sent directly to the third-party AI service you have selected. Their use of your data is governed by their respective privacy policies.</li>
+                    <li><strong>Google Analytics:</strong> We use Google Analytics to collect anonymous usage data to help us understand how the Service is being used and how to improve it. This data is aggregated and cannot be used to identify you personally.</li>
+                    <!-- UPDATED: Added a section for the Google Docs feature -->
+                    <li><strong>Google Drive/Docs:</strong> When you use the "Save as Google Doc" feature, the AI-generated content is sent to our backend server, which then uses the Google Drive API to create a Google Document. This document is created in our account and made publicly available to you via a shareable link. No personal information is sent during this process.</li>
                 </ul>
 
                 <h2>4. Data Security</h2>
-                <p>Because your sensitive data (API keys and chat history) is stored locally on your device, you are in control of it. We recommend clearing your browser's cache and local storage if you are using a shared or public computer.</p>
+                <p>Because your most sensitive data (API keys and chat history) is stored locally on your device, you are in control. We recommend clearing your browser's cache and local storage if you are using a shared or public computer.</p>
 
                 <h2>5. Children's Privacy</h2>
                 <p>This Service is intended for educators and is not directed at children under the age of 13. We do not knowingly collect any personally identifiable information from children.</p>

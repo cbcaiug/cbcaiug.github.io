@@ -210,8 +210,9 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
 /* ======== FOOTER ======== */
 .main-footer { text-align: center; padding: 2rem; background-color: var(--text-dark); color: #9ca3af; }
 .main-footer p { margin: 0.25rem 0; font-size: 0.9rem; }
-.footer-links { margin-bottom: 1rem; }
-.footer-links a { color: #9ca3af; text-decoration: none; transition: color 0.3s ease; }
+/* UPDATED: Styles for the new About/Terms/Privacy links */
+.footer-links { margin-top: 1.5rem; }
+.footer-links a { color: #9ca3af; text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem; }
 .footer-links a:hover { color: var(--text-light); }
 .footer-separator { margin: 0 0.75rem; color: #4b5563; }
 
@@ -227,9 +228,17 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
     .hero-headline { font-size: 2.75rem; min-height: 100px; }
     .testimonial-quote { font-size: 2rem; }
     .section-title { font-size: 2rem; }
-    .nav-links { gap: 1rem; }
-    .nav-links a:not(.nav-button) { display: none; }
-    .main-nav { padding: 1rem; }
+        /* UPDATED: Styles for a responsive navigation bar */
+    .main-nav {
+        padding: 1rem;
+        flex-direction: column; /* Stack the logo and links vertically */
+        gap: 1rem; /* Add space between the logo and the links */
+    }
+    .nav-links {
+        gap: 0.5rem 1rem; /* Adjust gap for wrapping */
+        flex-wrap: wrap; /* Allow links to wrap to the next line */
+        justify-content: center; /* Center the links when they wrap */
+    }
     .assistants-grid { grid-template-columns: 1fr; }
 }
   
