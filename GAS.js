@@ -21,6 +21,8 @@ const LOG_SHEET_NAME = "AI_Assistant_Log";
 const UPDATES_SHEET_NAME = "Updates";
 
 const ASSISTANT_FILES = {
+    // MODIFIED: 21/08/2025 8:25 PM EAT - Added the new Prompt Assistant.
+    "Prompt Assistant": "prompt-assistant",
     "Item Writer": "item-writer",
     "Lesson Plans (NCDC)": "lesson-plans-no-bv",
     "Lesson Plans (with Biblical Integration)": "lesson-plans-bv",
