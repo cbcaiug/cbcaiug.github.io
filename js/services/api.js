@@ -7,7 +7,7 @@
  */
 
 // --- CONFIGURATION CONSTANTS ---
-const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyvnZV4CIDMerGHCnKdfO2QVdic78k2xCMEKaR6FPs8rhNwl--IFFsWexUcQ9-Y6Ujk/exec';
+const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz4BOmExVYPK2S246Ta6qwT1eEfU21bUh1k1iShbeEO_NtvuUJsPV85wUaz4jomR9yv/exec';
 
 const AI_PROVIDERS = [
   { key: 'google', label: 'Google Gemini', apiKeyName: 'googleApiKey', apiKeyUrl: 'https://aistudio.google.com/app/apikey', apiHost: 'https://generativelanguage.googleapis.com', models: [
