@@ -16,7 +16,8 @@
  */
 
 // --- CONFIGURATION ---
-const YOUR_EMAIL_ADDRESS = "musadrk2@gmail.com"; // For receiving notifications
+// MODIFIED: 22/08/2025 8:35 PM EAT - Updated notification email address.
+const YOUR_EMAIL_ADDRESS = "cbcaitool@gmail.com"; // For receiving notifications
 const LOG_SHEET_NAME = "AI_Assistant_Log";
 const UPDATES_SHEET_NAME = "Updates";
 
@@ -133,11 +134,16 @@ function doPost(e) {
         } else if (action === 'contact_form_submitted') {
             console.log("Action is 'contact_form_submitted'.");
             sendContactFormEmail(body.details);
+            
+            // MODIFIED: 22/08/2025 8:30 PM EAT - Bug fix for widget logging.
+            // This now correctly captures the IP and calls the updated logEventToSheet function.
+            const ipAddress = e.source ? e.source.remoteAddress : 'N/A';
             logEventToSheet({
                 type: 'contact_form_submitted',
                 assistant: 'Landing Page Widget',
                 details: body.details
-            });
+            }, ipAddress);
+            
             return ContentService.createTextOutput(JSON.stringify({
                 success: true,
                 message: "Contact form submitted successfully."
