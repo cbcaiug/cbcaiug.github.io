@@ -16,24 +16,35 @@ const formatBytes = (bytes, decimals = 2) => {
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
 };
-// MODIFIED: 21/08/2025 7:36 PM EAT - Implemented "Fun" human-readable session IDs.
+// MODIFIED: 21/08/2025 8:30 PM EAT - Session ID now persists in sessionStorage for the browser tab.
 const generateReadableId = () => {
     // Word lists for creating memorable IDs.
     const adjectives = ["Agile", "Bright", "Clever", "Daring", "Eager", "Fast", "Gifted", "Honest", "Jolly", "Keen", "Loyal", "Mighty"];
     const nouns = ["Lion", "Eagle", "River", "Star", "Flame", "Shield", "Quest", "Spark", "Vision", "Peak", "Core", "Nexus"];
     
-    // Pick one random word from each list.
     const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
     const noun = nouns[Math.floor(Math.random() * nouns.length)];
     
-    // Get the current minute of the hour (0-59) and a random number for uniqueness.
     const minute = new Date().getMinutes();
     const randomNum = Math.floor(Math.random() * 100);
 
-    // Combine them into a single, readable string.
     return `${adj}-${noun}-${minute}${randomNum}`;
 };
-const SESSION_ID = generateReadableId();
+
+// This function ensures the Session ID is consistent for the entire browser tab session.
+const getSessionId = () => {
+    // Try to get an existing ID from sessionStorage.
+    let sessionId = sessionStorage.getItem('cbcAiToolSessionId');
+    
+    // If no ID exists, create a new one and save it for future reloads in this tab.
+    if (!sessionId) {
+        sessionId = generateReadableId();
+        sessionStorage.setItem('cbcAiToolSessionId', sessionId);
+    }
+    
+    return sessionId;
+};
+const SESSION_ID = getSessionId();
 // END OF MODIFICATION
 
 // NEW: Add the public API key for the free trial.
