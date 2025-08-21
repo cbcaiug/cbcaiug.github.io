@@ -117,9 +117,9 @@ onGroundingChange,
                               <FooterEmailIcon />
                               <span className="text-sm">cbcaitool@gmail.com</span>
                           </a>
-                          <a href="https://wa.me/256750470234" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors" title="Chat on WhatsApp">
+                          <a href="https://wa.me/256726654714" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors" title="Chat on WhatsApp">
                               <FooterWhatsAppIcon />
-                              <span className="text-sm">+256750470234</span>
+                              <span className="text-sm">+256726654714</span>
                           </a>
                      </div>
                      {/* UPDATED: Added the 'About Me' link for consistency */}
