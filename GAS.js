@@ -111,7 +111,11 @@ function doPost(e) {
             const event = body.event;
             console.log("Action is 'logEvent'. Event type: " + event.type);
             
-            logEventToSheet(event); // This logs to the sheet.
+            // MODIFIED: 21/08/2025 4:31 PM - Capture IP Address from the request.
+            const ipAddress = e.source ? e.source.remoteAddress : 'N/A';
+            
+            // Pass the new data to our logging function. The Browser/OS info will be added from the client later.
+            logEventToSheet(event, ipAddress);
 
             if (event.type === 'feedback_submitted') {
                 console.log("Event type is 'feedback_submitted'. Attempting to send email...");
@@ -175,22 +179,32 @@ function doPost(e) {
  * =================================================================
  */
 
-function logEventToSheet(event) {
+// MODIFIED: 21/08/2025 4:31 PM - Function now accepts ipAddress and extracts browserOs.
+function logEventToSheet(event, ipAddress = 'N/A') {
     try {
-        const headers = ["Timestamp", "UserType", "EventType", "AssistantName", "SessionID", "Details"];
-        const sheet = getSheet(LOG_SHEET_NAME, headers);
-        const timestamp = new Date();
+        const headers = ["SessionID", "Timestamp", "IPAddress", "BrowserOS", "UserType", "EventType", "AssistantName", "Details"];
+        
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = (now.getMonth() + 1).toString().padStart(2, '0');
+        const monthlyLogSheetName = `Log - ${year}-${month}`;
+
+        const sheet = getSheet(monthlyLogSheetName, headers);
         
         const eventDetails = event.details || {};
         const sessionId = eventDetails.sessionId || 'N/A';
         const userType = event.userType || 'User';
+        // NEW: 21/08/2025 4:31 PM - Extract Browser/OS from the details payload sent by the client.
+        const browserOs = eventDetails.browserOs || 'N/A';
 
+        // Clean the details object of metadata before it gets formatted for the "Details" column.
         delete eventDetails.sessionId; 
+        delete eventDetails.browserOs;
         
-        // UPDATED: Use the new helper function to create a human-readable details string.
-const formattedDetails = formatDetailsForSheet(event.type, eventDetails);;
+        const formattedDetails = formatDetailsForSheet(event.type, eventDetails);
 
-        sheet.appendRow([timestamp, userType, event.type, event.assistant, sessionId, formattedDetails]);
+        // MODIFIED: 21/08/2025 4:31 PM - Appending row with new data in the correct order.
+        sheet.appendRow([sessionId, new Date(), ipAddress, browserOs, userType, event.type, event.assistant, formattedDetails]);
 
     } catch (error) {
         console.error(`Failed to log event to sheet: ${error.toString()}`);
@@ -198,6 +212,12 @@ const formattedDetails = formatDetailsForSheet(event.type, eventDetails);;
 }
 
 
+/**
+ * MODIFIED: 21/08/2025 4:16 PM - Overhauled to support monthly log sheets.
+ * - Now creates a well-structured spreadsheet on first run.
+ * - Ensures "Updates" sheet is always first.
+ * - Adds new monthly log sheets to the end of the workbook.
+ */
 function getSheet(sheetName, headers = []) {
     const properties = PropertiesService.getScriptProperties();
     const spreadsheetId = properties.getProperty('logSheetId');
@@ -207,28 +227,45 @@ function getSheet(sheetName, headers = []) {
         try {
             spreadsheet = SpreadsheetApp.openById(spreadsheetId);
         } catch (e) {
-            spreadsheet = null;
+            spreadsheet = null; // Spreadsheet was deleted, will be recreated.
         }
     }
 
+    // If the spreadsheet doesn't exist, create and configure it from scratch.
     if (!spreadsheet) {
-        spreadsheet = SpreadsheetApp.create(LOG_SHEET_NAME);
+        spreadsheet = SpreadsheetApp.create("AI Assistant Analytics Log");
         properties.setProperty('logSheetId', spreadsheet.getId());
         console.log(`Created new log spreadsheet with ID: ${spreadsheet.getId()}`);
 
-        const defaultSheet = spreadsheet.getSheets()[0];
-        defaultSheet.setName(LOG_SHEET_NAME);
+        // 1. Delete the default "Sheet1".
+        spreadsheet.deleteSheet(spreadsheet.getSheets()[0]);
+
+        // 2. Create and configure the "Updates" sheet first.
+        const updatesSheet = spreadsheet.insertSheet(UPDATES_SHEET_NAME, 0); // Insert at position 0
+        const updatesHeaders = ["Timestamp", "UpdateMessage", "DetailsURL"];
+        const updatesHeaderRange = updatesSheet.getRange(1, 1, 1, updatesHeaders.length);
+        updatesHeaderRange.setValues([updatesHeaders]);
+        updatesHeaderRange.setFontWeight("bold");
+        updatesSheet.setFrozenRows(1);
+
+        // 3. Create the very first monthly log sheet.
+        const logSheet = spreadsheet.insertSheet(sheetName, 1); // Insert at position 1
         if (headers.length > 0) {
-            const headerRange = defaultSheet.getRange(1, 1, 1, headers.length);
+            const headerRange = logSheet.getRange(1, 1, 1, headers.length);
             headerRange.setValues([headers]);
             headerRange.setFontWeight("bold");
-            defaultSheet.setFrozenRows(1);
+            logSheet.setFrozenRows(1);
         }
+        return logSheet; // Return the newly created log sheet.
     }
 
+    // If the spreadsheet exists, check for the requested sheet.
     let sheet = spreadsheet.getSheetByName(sheetName);
     if (!sheet) {
-        sheet = spreadsheet.insertSheet(sheetName);
+        // If sheet doesn't exist, create it at the end of the workbook.
+        const sheetIndex = spreadsheet.getSheets().length;
+        sheet = spreadsheet.insertSheet(sheetName, sheetIndex);
+        
         if (headers.length > 0) {
             const headerRange = sheet.getRange(1, 1, 1, headers.length);
             headerRange.setValues([headers]);

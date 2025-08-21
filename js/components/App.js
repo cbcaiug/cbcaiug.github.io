@@ -16,8 +16,26 @@ const formatBytes = (bytes, decimals = 2) => {
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
 };
-// Generate a unique session ID for this user's visit.
-const SESSION_ID = `session_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
+// MODIFIED: 21/08/2025 7:36 PM EAT - Implemented "Fun" human-readable session IDs.
+const generateReadableId = () => {
+    // Word lists for creating memorable IDs.
+    const adjectives = ["Agile", "Bright", "Clever", "Daring", "Eager", "Fast", "Gifted", "Honest", "Jolly", "Keen", "Loyal", "Mighty"];
+    const nouns = ["Lion", "Eagle", "River", "Star", "Flame", "Shield", "Quest", "Spark", "Vision", "Peak", "Core", "Nexus"];
+    
+    // Pick one random word from each list.
+    const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+    const noun = nouns[Math.floor(Math.random() * nouns.length)];
+    
+    // Get the current minute of the hour (0-59) and a random number for uniqueness.
+    const minute = new Date().getMinutes();
+    const randomNum = Math.floor(Math.random() * 100);
+
+    // Combine them into a single, readable string.
+    return `${adj}-${noun}-${minute}${randomNum}`;
+};
+const SESSION_ID = generateReadableId();
+// END OF MODIFICATION
+
 // NEW: Add the public API key for the free trial.
 // IMPORTANT: For your security, delete the key you shared with me and generate a new one.
 const PUBLIC_TRIAL_API_KEY = "AIzaSyCVoSQNX0Ra1XQhYmOEpBZhJFEyZePMGJs";

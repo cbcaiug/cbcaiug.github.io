@@ -47,6 +47,10 @@ const trackEvent = (eventType, assistantName, details = {}) => {
     const urlParams = new URLSearchParams(window.location.search);
     const isAdmin = urlParams.get('admin') === 'true';
 
+    // NEW: 21/08/2025 5:05 PM - Add browser and OS info to the details payload.
+    // The navigator.userAgent string contains all this information.
+    details.browserOs = navigator.userAgent;
+
     const payload = {
         action: 'logEvent',
         event: {
@@ -59,7 +63,7 @@ const trackEvent = (eventType, assistantName, details = {}) => {
     
     fetch(GAS_WEB_APP_URL, {
         method: 'POST',
-        mode: 'no-cors',
+        mode: 'no-cors', // Use no-cors for simple, one-way data sending.
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(payload)
     }).catch(error => console.error('Event tracking failed:', error));
