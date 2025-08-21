@@ -77,29 +77,7 @@ onGroundingChange,
                                 {selectedProvider?.models.map(model => <option key={model.name} value={model.name}>{model.name}</option>)}
                             </select>
                         </div>
-                        {/* NEW: Google Search Grounding Toggle */}
-<div className="mt-5">
-    <label className={`flex items-center justify-between ${selectedProviderKey === 'google' ? 'cursor-pointer' : 'cursor-not-allowed opacity-50'}`}>
-        <span className="flex flex-col">
-            <span className="text-sm font-medium text-slate-300">Enable Web Search</span>
-            <span className="text-xs text-slate-400">
-                {/* Change the description based on provider */}
-                {selectedProviderKey === 'google' ? 'For up-to-date answers' : 'Only available for Gemini models'}
-            </span>
-        </span>
-        <div className={`relative inline-block w-10 h-5 transition-colors duration-300 ease-in-out rounded-full ${isGroundingEnabled && selectedProviderKey === 'google' ? 'bg-indigo-500' : 'bg-slate-600'}`}>
-            <input
-                type="checkbox"
-                className="absolute opacity-0 w-0 h-0"
-                checked={isGroundingEnabled}
-                // The toggle can only be changed if the provider is google
-                onChange={() => selectedProviderKey === 'google' && onGroundingChange(!isGroundingEnabled)}
-                disabled={selectedProviderKey !== 'google'}
-            />
-            <span className={`absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300 ease-in-out ${isGroundingEnabled && selectedProviderKey === 'google' ? 'translate-x-5' : 'translate-x-0'}`}></span>
-        </div>
-    </label>
-</div>
+                        
                     </div>
 
                      <div id="api-key-container">

@@ -1002,9 +1002,9 @@ const handleRemoveFile = (fileId) => {
               apiKeyStatus={apiKeyStatus}
               autoDeleteHours={autoDeleteHours}
               showResetConfirm={showResetConfirm}
-              // NEW: Pass grounding state and handler to the Sidebar
-            isGroundingEnabled={isGroundingEnabled}
-            onGroundingChange={setIsGroundingEnabled}
+              // MODIFIED: 21/08/2025 10:05 PM EAT - Commented out props for the hidden Web Search feature.
+              // isGroundingEnabled={isGroundingEnabled}
+              // onGroundingChange={setIsGroundingEnabled}
               onClose={() => setIsMenuOpen(false)}
               onPromptSelectionChange={(e) => { if (e.target.value) window.location.href = e.target.value; }}
               onCustomPromptUpload={async (e) => {
