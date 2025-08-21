@@ -55,7 +55,8 @@ const TRIAL_GENERATION_LIMIT = 5; // Set the number of free uses.
 // --- MAIN APP COMPONENT ---
 const App = () => {
   // --- STATE MANAGEMENT ---
-  const getAssistantFromURL = () => new URLSearchParams(window.location.search).get('assistant') || 'Item Writer';
+  // MODIFIED: 21/08/2025 9:45 PM EAT - Changed default assistant to Coteacher for a better user welcome.
+const getAssistantFromURL = () => new URLSearchParams(window.location.search).get('assistant') || 'Coteacher';
 
   const [apiKeys, setApiKeys] = useState({});
   const [apiKeyStatus, setApiKeyStatus] = useState({});
