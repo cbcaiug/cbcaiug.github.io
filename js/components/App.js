@@ -48,7 +48,7 @@ const SESSION_ID = getSessionId();
 // END OF MODIFICATION
 
 // The number of free uses before a user must provide their own key.
-const TRIAL_GENERATION_LIMIT = 5;
+const TRIAL_GENERATION_LIMIT = 50;
 
 // --- MAIN APP COMPONENT ---
 const App = () => {
