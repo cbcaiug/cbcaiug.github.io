@@ -7,12 +7,12 @@
 
 const { useCallback } = React;
 
+// A new prop 'onAssistantChange' is added, and 'onPromptSelectionChange' and 'navigationMenu' are removed.
 const Sidebar = ({
     // State props
     isMenuOpen,
     sidebarWidth,
     availableAssistants,
-    navigationMenu,
     activePromptKey,
     selectedProviderKey,
     selectedModelName,
@@ -23,7 +23,7 @@ const Sidebar = ({
 
     // Handler props
     onClose,
-    onPromptSelectionChange,
+    onAssistantChange, // <-- MODIFIED: This is the new handler for changing assistants
     onCustomPromptUpload,
     onProviderChange,
     onModelChange,
@@ -32,9 +32,8 @@ const Sidebar = ({
     onResetSettings,
     onShowResetConfirm,
     onStartResizing,
-    // NEW: Props for the grounding toggle
-isGroundingEnabled,
-onGroundingChange,
+    isGroundingEnabled,
+    onGroundingChange,
 
 }) => {
 
@@ -53,16 +52,18 @@ onGroundingChange,
                 </div>
                 <div className="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-5">
                     <div id="assistant-selector-container">
-                        <label className="text-sm text-slate-400">Select an Assistant</label>
-                        <select onChange={onPromptSelectionChange} value={navigationMenu[activePromptKey] || ""} className="w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                            {availableAssistants.map(assistant => (
-                                <option key={assistant} value={navigationMenu[assistant]}>{assistant}</option>
-                            ))}
-                            {activePromptKey === 'custom' && <option value="">Custom Prompt</option>}
-                        </select>
-                         <label htmlFor="custom-prompt-upload" className="mt-2 text-sm text-indigo-400 hover:text-indigo-300 cursor-pointer block text-center py-2 border border-dashed border-slate-600 rounded-md hover:border-indigo-500 transition-colors">Upload Custom Prompt</label>
-                        <input id="custom-prompt-upload" type="file" className="hidden" accept=".txt,.json" onChange={onCustomPromptUpload} />
-                    </div>
+    <label className="text-sm text-slate-400">Select an Assistant</label>
+    {/* MODIFIED: The dropdown now uses the new onAssistantChange prop and works with assistant names directly. */}
+    <select onChange={(e) => onAssistantChange(e.target.value)} value={activePromptKey} className="w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        {availableAssistants.map(assistant => (
+            <option key={assistant} value={assistant}>{assistant}</option>
+        ))}
+        {/* This ensures the "Custom Prompt" option shows up if it was loaded from a file */}
+        {activePromptKey === 'custom' && !availableAssistants.includes('custom') && <option value="custom">Custom Prompt</option>}
+    </select>
+     <label htmlFor="custom-prompt-upload" className="mt-2 text-sm text-indigo-400 hover:text-indigo-300 cursor-pointer block text-center py-2 border border-dashed border-slate-600 rounded-md hover:border-indigo-500 transition-colors">Upload Custom Prompt</label>
+    <input id="custom-prompt-upload" type="file" className="hidden" accept=".txt,.json" onChange={onCustomPromptUpload} />
+</div>
                     
                     <div id="provider-model-selector-group">
                         <div id="provider-selector-container">

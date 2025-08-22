@@ -55,8 +55,7 @@ const TRIAL_GENERATION_LIMIT = 5; // Set the number of free uses.
 // --- MAIN APP COMPONENT ---
 const App = () => {
   // --- STATE MANAGEMENT ---
-  // MODIFIED: 21/08/2025 9:45 PM EAT - Changed default assistant to Coteacher for a better user welcome.
-const getAssistantFromURL = () => new URLSearchParams(window.location.search).get('assistant') || 'Coteacher';
+  
 
   const [apiKeys, setApiKeys] = useState({});
   const [apiKeyStatus, setApiKeyStatus] = useState({});
@@ -71,7 +70,8 @@ const getAssistantFromURL = () => new URLSearchParams(window.location.search).ge
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [customPromptContent, setCustomPromptContent] = useState('');
-  const [activePromptKey, setActivePromptKey] = useState(getAssistantFromURL());
+  // The initial assistant is now read from the URL once, and then managed by the app's state.
+const [activePromptKey, setActivePromptKey] = useState(() => new URLSearchParams(window.location.search).get('assistant') || 'Coteacher');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPromptMissing, setIsPromptMissing] = useState(false);
   const [availableAssistants, setAvailableAssistants] = useState([]);
@@ -87,6 +87,22 @@ const getAssistantFromURL = () => new URLSearchParams(window.location.search).ge
   const [hasNewNotification, setHasNewNotification] = useState(false);
   const [showUpdateBanner, setShowUpdateBanner] = useState(false);
   const [isTakingLong, setIsTakingLong] = useState(false);
+  // NEW: This function handles switching assistants without a page reload.
+const handleAssistantChange = (newAssistantKey) => {
+    if (newAssistantKey === activePromptKey) return; // Do nothing if the same assistant is selected
+
+    // Update the app's state to the new assistant
+    setActivePromptKey(newAssistantKey);
+
+    // Update the browser's URL bar without reloading the page
+    const url = new URL(window.location);
+    url.searchParams.set('assistant', newAssistantKey);
+    window.history.pushState({}, '', url);
+
+    // Clear the current chat and load the initial message for the new assistant
+    setChatHistory([]); // Clear existing messages
+    loadInitialMessage(newAssistantKey); // Load the welcome message for the new assistant
+};
   const [showConsentModal, setShowConsentModal] = useState(false);
   // NEW: State for the Google Doc success and download modal
 const [isDocModalOpen, setIsDocModalOpen] = useState(false);
@@ -861,29 +877,24 @@ const handleRemoveFile = (fileId) => {
               }
           }
 
+          // NEW: Load settings and the initial message for the current assistant
+          const savedState = JSON.parse(localStorage.getItem('aiAssistantState')) || {};
+          setApiKeys(savedState.apiKeys || {});
+          setApiKeyStatus(savedState.apiKeyStatus || {});
+          setSidebarWidth(savedState.sidebarWidth || 320);
+          setSelectedProviderKey(savedState.selectedProviderKey || 'google');
+          setSelectedModelName(savedState.selectedModelName || 'gemini-1.5-flash-latest');
+          setAutoDeleteHours(savedState.autoDeleteHours || '2');
+
+          // Load the welcome message for the assistant that was determined from the URL
+          loadInitialMessage(activePromptKey);
+
           setIsLoadingAssistants(false);
       };
       initializeApp();
   }, []);
 
-  useEffect(() => {
-      // Load settings and initial message when assistant changes or on first load
-      const currentPromptKey = getAssistantFromURL();
-      setActivePromptKey(currentPromptKey);
-      document.title = `${currentPromptKey} | AI Assistant`;
 
-      const savedState = JSON.parse(localStorage.getItem('aiAssistantState')) || {};
-      setApiKeys(savedState.apiKeys || {});
-      setApiKeyStatus(savedState.apiKeyStatus || {});
-      setSidebarWidth(savedState.sidebarWidth || 320);
-      setSelectedProviderKey(savedState.selectedProviderKey || 'google');
-      setSelectedModelName(savedState.selectedModelName || 'gemini-1.5-flash-latest');
-      setAutoDeleteHours(savedState.autoDeleteHours || '2');
-
-      if (!isLoadingAssistants) {
-          loadInitialMessage(currentPromptKey);
-      }
-  }, [window.location.search, isLoadingAssistants, loadInitialMessage]);
   
   useEffect(() => {
     // Trigger the tutorial for first-time visitors
@@ -910,6 +921,10 @@ const handleRemoveFile = (fileId) => {
            localStorage.setItem(chatKey, JSON.stringify({ history: chatHistory, timestamp: Date.now() }));
       }
   }, [chatHistory, activePromptKey]);
+    // This effect updates the page title whenever the active assistant changes.
+  useEffect(() => {
+      document.title = `${activePromptKey} | AI Assistant`;
+  }, [activePromptKey]); // It runs only when the activePromptKey state changes.
     // NEW: This effect runs whenever the selected model changes.
   useEffect(() => {
     // We don't want to show a notification when the app first loads,
@@ -991,23 +1006,21 @@ const handleRemoveFile = (fileId) => {
           }} />}
           
           <Sidebar
-              isMenuOpen={isMenuOpen}
-              sidebarWidth={sidebarWidth}
-              availableAssistants={availableAssistants}
-              navigationMenu={navigationMenu}
-              activePromptKey={activePromptKey}
-              selectedProviderKey={selectedProviderKey}
-              selectedModelName={selectedModelName}
-              apiKeys={apiKeys}
-              apiKeyStatus={apiKeyStatus}
-              autoDeleteHours={autoDeleteHours}
-              showResetConfirm={showResetConfirm}
-              // MODIFIED: 21/08/2025 10:05 PM EAT - Commented out props for the hidden Web Search feature.
-              // isGroundingEnabled={isGroundingEnabled}
-              // onGroundingChange={setIsGroundingEnabled}
-              onClose={() => setIsMenuOpen(false)}
-              onPromptSelectionChange={(e) => { if (e.target.value) window.location.href = e.target.value; }}
-              onCustomPromptUpload={async (e) => {
+    isMenuOpen={isMenuOpen}
+    sidebarWidth={sidebarWidth}
+    availableAssistants={availableAssistants}
+    activePromptKey={activePromptKey}
+    selectedProviderKey={selectedProviderKey}
+    selectedModelName={selectedModelName}
+    apiKeys={apiKeys}
+    apiKeyStatus={apiKeyStatus}
+    autoDeleteHours={autoDeleteHours}
+    showResetConfirm={showResetConfirm}
+    isGroundingEnabled={isGroundingEnabled}
+    onGroundingChange={setIsGroundingEnabled}
+    onClose={() => setIsMenuOpen(false)}
+    onAssistantChange={handleAssistantChange} // <-- MODIFIED: Using the new handler
+    onCustomPromptUpload={async (e) => {
                   const file = e.target.files[0];
                   if (!file) return;
                   try {
