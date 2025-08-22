@@ -856,9 +856,22 @@ const handleRemoveFile = (fileId) => {
 
           const savedCount = parseInt(localStorage.getItem('generationCount') || '0', 10);
           setGenerationCount(savedCount);
-          // NEW: Load the saved trial count from local storage.
-          const savedTrialCount = parseInt(localStorage.getItem('trialGenerationsCount') || TRIAL_GENERATION_LIMIT, 10);
-          setTrialGenerations(savedTrialCount);
+
+          // NEW: Smartly reset trial generations when the policy changes.
+          const TRIAL_POLICY_VERSION = 'v2'; // Increment this to reset everyone's trial count in the future.
+          const savedPolicyVersion = localStorage.getItem('trialPolicyVersion');
+          let trialCount;
+
+          if (savedPolicyVersion !== TRIAL_POLICY_VERSION) {
+            // If the user is on an old version, give them the new full amount of trials.
+            trialCount = TRIAL_GENERATION_LIMIT;
+            localStorage.setItem('trialGenerationsCount', trialCount.toString());
+            localStorage.setItem('trialPolicyVersion', TRIAL_POLICY_VERSION); // Save the new version.
+          } else {
+            // Otherwise, load their saved count as usual.
+            trialCount = parseInt(localStorage.getItem('trialGenerationsCount') || TRIAL_GENERATION_LIMIT, 10);
+          }
+          setTrialGenerations(trialCount);
 
           setIsLoadingAssistants(true);
           const [assistants, fetchedNotifications] = await Promise.all([
