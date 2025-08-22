@@ -119,6 +119,8 @@ const [isGroundingEnabled, setIsGroundingEnabled] = useState(false);
       setSelectedModelName('gemini-1.5-flash-latest'); // Reset to a default Gemini model
     }
   };
+  // NEW: State to hold the "sticky" trial key for the current session to reduce backend calls.
+  const [activeTrialApiKey, setActiveTrialApiKey] = useState(null);
   // NEW: Add state to track remaining trial generations.
   const [trialGenerations, setTrialGenerations] = useState(TRIAL_GENERATION_LIMIT);
 
@@ -408,23 +410,32 @@ const handleDocxDownload = async (markdownContent) => {
     }
 };
 
-      const handleSendMessage = async () => {
+        const handleSendMessage = async () => {
       // First, check if there's any input or if the app is already busy.
       if ((!userInput.trim() && pendingFiles.length === 0) || isLoading) return;
 
       let apiKey = apiKeys[selectedProvider.apiKeyName];
       let isTrial = false;
 
-      // This new logic is much stricter and checks the user's intent first.
+      // Final, efficient logic for handling API keys.
       if (useSharedApiKey) {
-          // The user explicitly wants to use the shared key.
-          if (selectedProvider.key === 'google' && trialGenerations > 0) {
+          // === SHARED KEY LOGIC ===
+          if (selectedProvider.key !== 'google' || trialGenerations <= 0) {
+              setError("Shared key is only for Google Gemini, or you are out of free trials. Please turn off the toggle and add your own key.");
+              return;
+          }
+
+          // Use the "sticky" key if we have it.
+          if (activeTrialApiKey) {
+              apiKey = activeTrialApiKey;
+          } else {
+              // Otherwise, fetch a new one from the backend.
               try {
                   const response = await fetch(`${GAS_WEB_APP_URL}?action=getTrialApiKey`);
                   const data = await response.json();
                   if (data.success && data.apiKey) {
                       apiKey = data.apiKey;
-                      isTrial = true;
+                      setActiveTrialApiKey(apiKey); // Save the key for the next message.
                   } else {
                       throw new Error(data.error || 'Failed to fetch trial key.');
                   }
@@ -432,50 +443,40 @@ const handleDocxDownload = async (markdownContent) => {
                   setError(`Could not retrieve trial key: ${err.message}`);
                   return;
               }
-          } else {
-              // This case handles when they are out of trials.
-              setError("You've used all your free trial generations! Please add your own free API key in the settings to continue.");
-              return;
           }
+          isTrial = true;
+
       } else {
-          // The user wants to use their own personal key.
-          if (apiKey && apiKeyStatus[selectedProvider.key] === 'valid') {
-              // Their key is present and valid.
-              isTrial = false;
-          } else {
-              // Their key is missing or invalid, so we show an error and stop.
+          // === PERSONAL KEY LOGIC ===
+          if (!apiKey || apiKeyStatus[selectedProvider.key] !== 'valid') {
               setError(`Please enter a valid ${selectedProvider.label} API Key in the settings panel.`);
               return;
           }
+          isTrial = false;
       }
       
       // If we have a valid key (either trial or personal), we can proceed.
       setIsLoading(true);
       setError('');
       
-   // Process all pending files concurrently.
-const fileProcessingPromises = pendingFiles.map(f => processFileForApi(f.file));
-// The result from Promise.all will be an array of { mime_type, data } objects.
-const filesDataForApi = await Promise.all(fileProcessingPromises).catch(e => {
-    setError("Could not read one or more files.");
-    setIsLoading(false);
-    return null;
-});
+      const fileProcessingPromises = pendingFiles.map(f => processFileForApi(f.file));
+      const filesDataForApi = await Promise.all(fileProcessingPromises).catch(e => {
+          setError("Could not read one or more files.");
+          setIsLoading(false);
+          return null;
+      });
 
-if (!filesDataForApi) return; // Stop if any file processing failed.
+      if (!filesDataForApi) return;
 
-// Create the user message object. The Gemini API can handle an array of file data directly.
-const userMessage = { 
-    role: 'user', 
-    content: userInput, 
-    // We include the 'files' property just for displaying previews in the UI.
-    files: pendingFiles.map(f => ({ name: f.file.name, previewUrl: f.previewUrl })),
-    // This is the actual data sent to the API.
-    fileDataForApi: filesDataForApi,
-    id: Date.now() 
-};
+      const userMessage = { 
+          role: 'user', 
+          content: userInput, 
+          files: pendingFiles.map(f => ({ name: f.file.name, previewUrl: f.previewUrl })),
+          fileDataForApi: filesDataForApi,
+          id: Date.now() 
+      };
+
       const assistantPlaceholder = { role: 'assistant', content: '', isLoading: true, id: Date.now() + 1 };
-      
       const newHistory = [...chatHistory, userMessage, assistantPlaceholder];
       setChatHistory(newHistory);
       setUserInput(''); setPendingFiles([]);
@@ -496,13 +497,11 @@ const userMessage = {
               setChatHistory(prev => {
                   const updatedHistory = [...prev];
                   const lastMsg = updatedHistory[updatedHistory.length - 1];
-                  if (lastMsg && lastMsg.isLoading) {
-                      lastMsg.content += chunk;
-                  }
+                  if (lastMsg && lastMsg.isLoading) lastMsg.content += chunk;
                   return updatedHistory;
               });
           },
-                    onComplete: () => {
+          onComplete: () => {
               setIsLoading(false);
               setChatHistory(prev => {
                   const updatedHistory = [...prev];
@@ -512,7 +511,6 @@ const userMessage = {
               });
               
               if (!abortControllerRef.current.signal.aborted) {
-                  // If this was a trial generation, count it down.
                   if (isTrial) {
                       const newCount = trialGenerations - 1;
                       setTrialGenerations(newCount);
@@ -526,7 +524,13 @@ const userMessage = {
               abortControllerRef.current = null;
           },
           onError: (err) => {
-              setError(err);
+              // If a trial key fails, clear it so we fetch a new one next time.
+              if (isTrial) {
+                  setActiveTrialApiKey(null);
+                  setError("The current shared key failed. A new key will be tried on your next message.");
+              } else {
+                  setError(err);
+              }
               setChatHistory(prev => prev.slice(0, -2));
               setIsLoading(false);
           }
