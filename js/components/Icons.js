@@ -13,6 +13,7 @@ const Icon = ({ C, ...props }) => <svg xmlns="http://www.w3.org/2000/svg" width=
 const SendIcon = (props) => <Icon {...props} C={<><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></>} />;
 const StopIcon = (props) => <Icon {...props} C={<rect x="3" y="3" width="18" height="18" rx="2" ry="2" />} />;
 const PaperclipIcon = (props) => <Icon {...props} C={<><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.59a2 2 0 0 1-2.83-2.83l8.49-8.48"/></>} />;
+const PlusIcon = (props) => <Icon {...props} C={<><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></>} />;
 const FileIcon = (props) => <Icon {...props} C={<><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /></>} />;
 const XIcon = (props) => <Icon {...props} C={<><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></>} />;
 const TrashIcon = (props) => <Icon {...props} C={<><path d="M3 6h18" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /><line x1="10" y1="11" x2="10" y2="17" /><line x1="14" y1="11" x2="14" y2="17" /></>} />;

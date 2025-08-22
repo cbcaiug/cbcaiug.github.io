@@ -1228,7 +1228,7 @@ const handleRemoveFile = (fileId) => {
                       <div className="flex items-end gap-2 sm:gap-4">
                             <div id="file-attach-button" className="flex flex-col items-center self-end">
                               <label htmlFor="file-upload" title={isFileUploadDisabled ? "File upload not supported by this model" : "Attach File"} className={`p-3 rounded-full hover:bg-slate-100 ${isFileUploadDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}>
-                                  <PaperclipIcon className="w-6 h-6 text-slate-600"/>
+                                  <PlusIcon className="w-6 h-6 text-slate-600"/>
                               </label>
                               <span className="text-xs text-slate-400 hidden sm:inline">Attach</span>
                            </div>
