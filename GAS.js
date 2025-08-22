@@ -583,7 +583,8 @@ function createGoogleDocFromHtml(htmlContent, title) {
         const blob = Utilities.newBlob(htmlContent, 'text/html', `${title}.html`);
         
                 // Define the resource for the new file we're creating in Google Drive.
-        const FOLDER_ID = "1UdUZfa3f-TK4bbRDRk_VW1gJnFGzZBaj"; // <-- IMPORTANT: Replace with your actual folder ID.
+        // Retrieve the Folder ID from Script Properties for better management.
+const FOLDER_ID = PropertiesService.getScriptProperties().getProperty('FOLDER_ID');
 
         const fileResource = {
             title: `${title} - AI Assistant`, // Add a suffix to the title.
