@@ -79,19 +79,37 @@ function doGet(e) {
                 updates: updates
             }));
         } else if (action === 'getTrialApiKey') {
-            // This action securely provides the trial API key to the client.
-            const scriptProperties = PropertiesService.getScriptProperties();
-            const apiKey = scriptProperties.getProperty('PUBLIC_TRIAL_API_KEY');
+            // This action iterates through stored trial keys and returns the first valid one.
+            const scriptProperties = PropertiesService.getScriptProperties().getProperties();
+            let availableKey = null;
 
-            if (apiKey) {
+            // Loop through numbered API keys (TRIAL_API_KEY_1, TRIAL_API_KEY_2, etc.)
+            for (let i = 1; i <= 10; i++) { // Checks for up to 10 keys
+                const keyPropertyName = 'TRIAL_API_KEY_' + i;
+                const currentKey = scriptProperties[keyPropertyName];
+
+                if (currentKey) {
+                    // Test the key by making a lightweight request to the Google AI API.
+                    const validationUrl = `https://generativelanguage.googleapis.com/v1beta/models?key=${currentKey}`;
+                    const response = UrlFetchApp.fetch(validationUrl, { muteHttpExceptions: true });
+
+                    // A 200 OK status means the key is valid and not rate-limited.
+                    if (response.getResponseCode() === 200) {
+                        availableKey = currentKey;
+                        break; // Found a working key, so we stop checking.
+                    }
+                }
+            }
+
+            if (availableKey) {
                 output = ContentService.createTextOutput(JSON.stringify({
                     success: true,
-                    apiKey: apiKey
+                    apiKey: availableKey
                 }));
             } else {
                 output = ContentService.createTextOutput(JSON.stringify({
                     success: false,
-                    error: 'Trial API Key is not configured on the server.'
+                    error: 'All available trial API keys have reached their daily limit. Please add your own key.'
                 }));
             }
         } else {
