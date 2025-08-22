@@ -165,9 +165,13 @@ function doPost(e) {
                 message: "Event logged successfully."
             })).setMimeType(ContentService.MimeType.JSON);
         
-        } else if (action === 'contact_form_submitted') {
+                } else if (action === 'contact_form_submitted') {
             console.log("Action is 'contact_form_submitted'.");
-            sendContactFormEmail(body.details);
+            sendContactFormEmail(body.details); // This sends the notification to you.
+            sendAutoReplyToUser(body.details); // NEW: This sends the automated reply to the user.
+            
+            // MODIFIED: 22/08/2025 8:30 PM EAT - Bug fix for widget logging.
+            // This now correctly captures the IP and calls the updated logEventToSheet function.
             
             // MODIFIED: 22/08/2025 8:30 PM EAT - Bug fix for widget logging.
             // This now correctly captures the IP and calls the updated logEventToSheet function.
@@ -456,6 +460,37 @@ function sendContactFormEmail(details) {
         subject: subject,
         htmlBody: emailBody,
         name: "Website Contact Bot"
+    });
+}
+/**
+ * NEW: Sends an automated confirmation email to a user who submitted the contact form.
+ * @param {object} details - The contact form details, containing name and email.
+ */
+function sendAutoReplyToUser(details) {
+    const { name, email } = details;
+
+    // This function will only proceed if an email address was actually provided.
+    if (!email) {
+        return; // Exit if there's no email to reply to.
+    }
+    
+    // Use a smart salutation based on whether a name was provided.
+    const salutation = name ? `Hello ${name},` : 'Hello,';
+
+    const subject = "We've received your message!";
+    const emailBody = `
+      <p style="font-family: Arial, sans-serif;">${salutation}</p>
+      <p style="font-family: Arial, sans-serif;">Thank you for reaching out to the AI Educational Assistant team. We have received your message and will get back to you as soon as possible.</p>
+      <br>
+      <p style="font-family: Arial, sans-serif;">Best regards,<br>The AI Educational Assistant Team</p>
+    `;
+
+    MailApp.sendEmail({
+        to: email,
+        subject: subject,
+        htmlBody: emailBody,
+        name: "AI Educational Assistant",
+        bcc: YOUR_EMAIL_ADDRESS // BCC the owner so you get a copy of the auto-reply.
     });
 }
 
