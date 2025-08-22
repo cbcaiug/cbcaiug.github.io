@@ -107,6 +107,18 @@ const [isDocModalOpen, setIsDocModalOpen] = useState(false);
 const [createdDocInfo, setCreatedDocInfo] = useState(null);
     // NEW: State for the Google Search (grounding) toggle
 const [isGroundingEnabled, setIsGroundingEnabled] = useState(false);
+  // NEW: State to manage whether the user wants to use the shared (trial) API key.
+    const [useSharedApiKey, setUseSharedApiKey] = useState(true);
+
+  // This new handler ensures that when the shared key is enabled,
+  // the provider is always reset to Google Gemini.
+  const handleSharedKeyToggle = (isEnabled) => {
+    setUseSharedApiKey(isEnabled);
+    if (isEnabled) {
+      setSelectedProviderKey('google');
+      setSelectedModelName('gemini-1.5-flash-latest'); // Reset to a default Gemini model
+    }
+  };
   // NEW: Add state to track remaining trial generations.
   const [trialGenerations, setTrialGenerations] = useState(TRIAL_GENERATION_LIMIT);
 
@@ -400,43 +412,44 @@ const handleDocxDownload = async (markdownContent) => {
       // First, check if there's any input or if the app is already busy.
       if ((!userInput.trim() && pendingFiles.length === 0) || isLoading) return;
 
-      // This logic now fetches the trial key from the backend when needed.
       let apiKey = apiKeys[selectedProvider.apiKeyName];
       let isTrial = false;
 
-      // Check if the user has provided their own valid key.
-      if (apiKey && apiKeyStatus[selectedProvider.key] === 'valid') {
-          // User has a valid key, proceed as normal.
-          isTrial = false;
-      } else if (selectedProvider.key === 'google') {
-          // If no user key, check if they have trial generations left for the Google provider.
-          if (trialGenerations > 0) {
-              // NEW: Fetch the trial key from the secure backend.
+      // This new logic is much stricter and checks the user's intent first.
+      if (useSharedApiKey) {
+          // The user explicitly wants to use the shared key.
+          if (selectedProvider.key === 'google' && trialGenerations > 0) {
               try {
                   const response = await fetch(`${GAS_WEB_APP_URL}?action=getTrialApiKey`);
                   const data = await response.json();
                   if (data.success && data.apiKey) {
-                      apiKey = data.apiKey; // Use the key from the backend
+                      apiKey = data.apiKey;
                       isTrial = true;
                   } else {
                       throw new Error(data.error || 'Failed to fetch trial key.');
                   }
               } catch (err) {
                   setError(`Could not retrieve trial key: ${err.message}`);
-                  return; // Stop if we can't get the key.
+                  return;
               }
           } else {
-              // Out of trial generations.
+              // This case handles when they are out of trials.
               setError("You've used all your free trial generations! Please add your own free API key in the settings to continue.");
               return;
           }
       } else {
-          // No user key and no trial available for the selected provider.
-          setError(`Please enter a valid ${selectedProvider.label} API Key in the settings panel.`);
-          return;
+          // The user wants to use their own personal key.
+          if (apiKey && apiKeyStatus[selectedProvider.key] === 'valid') {
+              // Their key is present and valid.
+              isTrial = false;
+          } else {
+              // Their key is missing or invalid, so we show an error and stop.
+              setError(`Please enter a valid ${selectedProvider.label} API Key in the settings panel.`);
+              return;
+          }
       }
       
-      // If the key is valid, we can proceed as normal.
+      // If we have a valid key (either trial or personal), we can proceed.
       setIsLoading(true);
       setError('');
       
@@ -1026,7 +1039,7 @@ const handleRemoveFile = (fileId) => {
               setShowConsentModal(false);
           }} />}
           
-          <Sidebar
+                    <Sidebar
     isMenuOpen={isMenuOpen}
     sidebarWidth={sidebarWidth}
     availableAssistants={availableAssistants}
@@ -1038,6 +1051,8 @@ const handleRemoveFile = (fileId) => {
     autoDeleteHours={autoDeleteHours}
     showResetConfirm={showResetConfirm}
     isGroundingEnabled={isGroundingEnabled}
+    useSharedApiKey={useSharedApiKey}
+    onUseSharedApiKeyChange={handleSharedKeyToggle}
     onGroundingChange={setIsGroundingEnabled}
     onClose={() => setIsMenuOpen(false)}
     onAssistantChange={handleAssistantChange} // <-- MODIFIED: Using the new handler
@@ -1220,8 +1235,8 @@ const handleRemoveFile = (fileId) => {
                               <button id="send-button" onClick={isLoading ? () => { if (abortControllerRef.current) abortControllerRef.current.abort(); if(longResponseTimerRef.current) clearTimeout(longResponseTimerRef.current); setIsTakingLong(false); } : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
                                   {isLoading ? ( <><StopIcon className="w-5 h-5"/><span>Stop</span></> ) : ( <><SendIcon className="w-5 h-5"/><span>Send</span></> )}
                               </button>
-                              {/* NEW: This text will only show if the user has NOT entered their own valid API key */}
-                              {(!apiKeys[selectedProvider.apiKeyName] || apiKeyStatus[selectedProvider.key] !== 'valid') && (
+                                                            {/* The trial counter now only appears when the shared key mode is active. */}
+                              {useSharedApiKey && (
                                 <p className="text-xs text-slate-500 mt-1 text-center">
                                     {trialGenerations > 0 ? `${trialGenerations} free uses remaining.` : 'Add API key to continue.'}
                                 </p>

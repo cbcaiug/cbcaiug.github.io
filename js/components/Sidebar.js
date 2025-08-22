@@ -20,10 +20,12 @@ const Sidebar = ({
     apiKeyStatus,
     autoDeleteHours,
     showResetConfirm,
+    isGroundingEnabled,
+    useSharedApiKey, // New prop to get the toggle's state
 
     // Handler props
     onClose,
-    onAssistantChange, // <-- MODIFIED: This is the new handler for changing assistants
+    onAssistantChange,
     onCustomPromptUpload,
     onProviderChange,
     onModelChange,
@@ -32,8 +34,8 @@ const Sidebar = ({
     onResetSettings,
     onShowResetConfirm,
     onStartResizing,
-    isGroundingEnabled,
     onGroundingChange,
+    onUseSharedApiKeyChange, // New prop to change the toggle's state
 
 }) => {
 
@@ -66,9 +68,33 @@ const Sidebar = ({
 </div>
                     
                     <div id="provider-model-selector-group">
-                        <div id="provider-selector-container">
+                        {/* NEW: Toggle switch for using shared API key */}
+                        <div className="flex items-center justify-between bg-slate-700 p-3 rounded-lg">
+                            <div>
+                                <label htmlFor="shared-key-toggle" className="font-semibold text-white">Use Shared API Key</label>
+                                <p className="text-xs text-slate-400">Recommended for new users</p>
+                            </div>
+                            <label htmlFor="shared-key-toggle" className="relative inline-flex items-center cursor-pointer">
+                                <input 
+                                    type="checkbox" 
+                                    checked={useSharedApiKey} 
+                                    onChange={(e) => onUseSharedApiKeyChange(e.target.checked)} 
+                                    id="shared-key-toggle" 
+                                    className="sr-only peer"
+                                />
+                                <div className="w-11 h-6 bg-slate-600 rounded-full peer peer-focus:ring-2 peer-focus:ring-indigo-500 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                            </label>
+                        </div>
+
+                        <div id="provider-selector-container" className="mt-5">
                             <label className="text-sm text-slate-400">AI Provider</label>
-                            <select value={selectedProviderKey} onChange={onProviderChange} className="w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            {/* This dropdown is now disabled if the shared key toggle is on */}
+                            <select 
+                                value={selectedProviderKey} 
+                                onChange={onProviderChange} 
+                                disabled={useSharedApiKey}
+                                className="w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
                                 {AI_PROVIDERS.map(p => <option key={p.key} value={p.key}>{p.label}</option>)}
                             </select>
                         </div>
@@ -84,7 +110,14 @@ const Sidebar = ({
                      <div id="api-key-container">
                         <label className="text-sm text-slate-400">{selectedProvider?.label} API Key</label>
                         <div className="relative">
-                            <input type="password" value={apiKeys[selectedProvider?.apiKeyName] || ''} onChange={(e) => onApiKeyChange(selectedProvider.apiKeyName, selectedProvider, e.target.value)} placeholder={`Paste your ${selectedProvider?.label} key here`} className="w-full mt-1 p-2 pr-8 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                            <input 
+                                type="password" 
+                                value={apiKeys[selectedProvider?.apiKeyName] || ''} 
+                                onChange={(e) => onApiKeyChange(selectedProvider.apiKeyName, selectedProvider, e.target.value)} 
+                                placeholder={useSharedApiKey ? "Shared key is active" : `Paste your ${selectedProvider?.label} key here`}
+                                disabled={useSharedApiKey}
+                                className="w-full mt-1 p-2 pr-8 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed" 
+                            />
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2">
                                 {apiKeyStatus[selectedProvider.key] === 'checking' && <div className="loading-spinner"></div>}
                                 {apiKeyStatus[selectedProvider.key] === 'valid' && <CheckCircleIcon className="w-5 h-5 text-green-500"/>}
