@@ -47,10 +47,8 @@ const getSessionId = () => {
 const SESSION_ID = getSessionId();
 // END OF MODIFICATION
 
-// NEW: Add the public API key for the free trial.
-// IMPORTANT: For your security, delete the key you shared with me and generate a new one.
-const PUBLIC_TRIAL_API_KEY = "AIzaSyCVoSQNX0Ra1XQhYmOEpBZhJFEyZePMGJs";
-const TRIAL_GENERATION_LIMIT = 5; // Set the number of free uses.
+// The number of free uses before a user must provide their own key.
+const TRIAL_GENERATION_LIMIT = 5;
 
 // --- MAIN APP COMPONENT ---
 const App = () => {
@@ -398,12 +396,11 @@ const handleDocxDownload = async (markdownContent) => {
     }
 };
 
-    // UPDATED: This function now validates the API key before processing the message.
-  const handleSendMessage = async () => {
+      const handleSendMessage = async () => {
       // First, check if there's any input or if the app is already busy.
       if ((!userInput.trim() && pendingFiles.length === 0) || isLoading) return;
 
-      // UPDATED: New logic to handle both user keys and the public trial key.
+      // This logic now fetches the trial key from the backend when needed.
       let apiKey = apiKeys[selectedProvider.apiKeyName];
       let isTrial = false;
 
@@ -411,19 +408,30 @@ const handleDocxDownload = async (markdownContent) => {
       if (apiKey && apiKeyStatus[selectedProvider.key] === 'valid') {
           // User has a valid key, proceed as normal.
           isTrial = false;
-      } else if (PUBLIC_TRIAL_API_KEY && selectedProvider.key === 'google') {
-          // If no user key, check if they have trial generations left.
-          // The trial only works for the 'google' provider for now.
+      } else if (selectedProvider.key === 'google') {
+          // If no user key, check if they have trial generations left for the Google provider.
           if (trialGenerations > 0) {
-              apiKey = PUBLIC_TRIAL_API_KEY; // Use the public key.
-              isTrial = true;
+              // NEW: Fetch the trial key from the secure backend.
+              try {
+                  const response = await fetch(`${GAS_WEB_APP_URL}?action=getTrialApiKey`);
+                  const data = await response.json();
+                  if (data.success && data.apiKey) {
+                      apiKey = data.apiKey; // Use the key from the backend
+                      isTrial = true;
+                  } else {
+                      throw new Error(data.error || 'Failed to fetch trial key.');
+                  }
+              } catch (err) {
+                  setError(`Could not retrieve trial key: ${err.message}`);
+                  return; // Stop if we can't get the key.
+              }
           } else {
               // Out of trial generations.
               setError("You've used all your free trial generations! Please add your own free API key in the settings to continue.");
               return;
           }
       } else {
-          // No user key and no trial available.
+          // No user key and no trial available for the selected provider.
           setError(`Please enter a valid ${selectedProvider.label} API Key in the settings panel.`);
           return;
       }

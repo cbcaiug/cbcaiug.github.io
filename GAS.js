@@ -78,6 +78,22 @@ function doGet(e) {
                 success: true,
                 updates: updates
             }));
+        } else if (action === 'getTrialApiKey') {
+            // This action securely provides the trial API key to the client.
+            const scriptProperties = PropertiesService.getScriptProperties();
+            const apiKey = scriptProperties.getProperty('PUBLIC_TRIAL_API_KEY');
+
+            if (apiKey) {
+                output = ContentService.createTextOutput(JSON.stringify({
+                    success: true,
+                    apiKey: apiKey
+                }));
+            } else {
+                output = ContentService.createTextOutput(JSON.stringify({
+                    success: false,
+                    error: 'Trial API Key is not configured on the server.'
+                }));
+            }
         } else {
             output = ContentService.createTextOutput(JSON.stringify({
                 success: false,
