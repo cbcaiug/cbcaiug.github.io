@@ -156,8 +156,9 @@ function doPost(e) {
 
             if (event.type === 'feedback_submitted') {
                 console.log("Event type is 'feedback_submitted'. Attempting to send email...");
-                sendInstantFeedbackEmail(event.details);
-                console.log("sendInstantFeedbackEmail function was called.");
+                sendInstantFeedbackEmail(event.details); // This sends the notification to you.
+                sendAutoReplyForFeedback(event.details); // NEW: This sends the confirmation to the user.
+                console.log("Email functions were called.");
             }
 
             return ContentService.createTextOutput(JSON.stringify({
@@ -493,7 +494,33 @@ function sendAutoReplyToUser(details) {
         bcc: YOUR_EMAIL_ADDRESS // BCC the owner so you get a copy of the auto-reply.
     });
 }
+/**
+ * NEW: Sends an automated confirmation email to a user who signed up via the feedback form.
+ * @param {object} details - The feedback form details, containing the user's email and the assistant name.
+ */
+function sendAutoReplyForFeedback(details) {
+    // This function will only proceed if an email address was actually provided.
+    const { email, assistantName } = details;
+    if (!email) {
+        return; // Exit if there's no email to reply to.
+    }
 
+    const subject = "Thank you for your feedback!";
+    const emailBody = `
+      <p style="font-family: Arial, sans-serif;">Hello,</p>
+      <p style="font-family: Arial, sans-serif;">Thank you for your feedback on the "${assistantName || 'AI Assistant'}" and for signing up for updates. We have received your submission.</p>
+      <p style-="font-family: Arial, sans-serif;">Your insights are valuable as we continue to improve the tool for educators.</p>
+      <br>
+      <p style="font-family: Arial, sans-serif;">Best regards,<br>The AI Educational Assistant Team</p>
+    `;
+
+    MailApp.sendEmail({
+        to: email,
+        subject: subject,
+        htmlBody: emailBody,
+        name: "AI Educational Assistant"
+    });
+}
 
 
 function sendDailySummary() {
