@@ -59,7 +59,7 @@ const App = () => {
   const [apiKeyStatus, setApiKeyStatus] = useState({});
   const [sidebarWidth, setSidebarWidth] = useState(320);
   const [selectedProviderKey, setSelectedProviderKey] = useState('google');
-  const [selectedModelName, setSelectedModelName] = useState('gemini-1.5-flash-latest');
+  const [selectedModelName, setSelectedModelName] = useState('gemini-2.5-flash');
   const [autoDeleteHours, setAutoDeleteHours] = useState('2');
   const [chatHistory, setChatHistory] = useState([]);
   // UPDATED: State to hold an array of pending files for multi-file upload.
@@ -116,7 +116,7 @@ const [isGroundingEnabled, setIsGroundingEnabled] = useState(false);
     setUseSharedApiKey(isEnabled);
     if (isEnabled) {
       setSelectedProviderKey('google');
-      setSelectedModelName('gemini-1.5-flash-latest'); // Reset to a default Gemini model
+      setSelectedModelName('gemini-2.5-flash'); // Reset to a default Gemini model
     }
   };
   // NEW: State to hold the "sticky" trial key for the current session to reduce backend calls.
@@ -684,7 +684,7 @@ const handleRemoveFile = (fileId) => {
       setApiKeyStatus({});
       setSidebarWidth(320);
       setSelectedProviderKey('google');
-      setSelectedModelName('gemini-1.5-flash-latest');
+      setSelectedModelName('gemini-2.5-flash');
       setAutoDeleteHours('2');
       setGenerationCount(0);
       
@@ -948,7 +948,7 @@ const handleRemoveFile = (fileId) => {
           setApiKeyStatus(savedState.apiKeyStatus || {});
           setSidebarWidth(savedState.sidebarWidth || 320);
           setSelectedProviderKey(savedState.selectedProviderKey || 'google');
-          setSelectedModelName(savedState.selectedModelName || 'gemini-1.5-flash-latest');
+          setSelectedModelName(savedState.selectedModelName || 'gemini-2.5-flash');
           setAutoDeleteHours(savedState.autoDeleteHours || '2');
 
           // Load the welcome message for the assistant that was determined from the URL
