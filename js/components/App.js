@@ -121,6 +121,8 @@ const [isGroundingEnabled, setIsGroundingEnabled] = useState(false);
   };
   // NEW: State to hold the "sticky" trial key for the current session to reduce backend calls.
   const [activeTrialApiKey, setActiveTrialApiKey] = useState(null);
+    // NEW: Friendly label for the currently active shared/trial key (e.g., "Key #3")
+    const [activeSharedKeyLabel, setActiveSharedKeyLabel] = useState('');
   // NEW: Add state to track remaining trial generations.
   const [trialGenerations, setTrialGenerations] = useState(TRIAL_GENERATION_LIMIT);
 
@@ -151,6 +153,10 @@ const [isGroundingEnabled, setIsGroundingEnabled] = useState(false);
       longResponseTimerRef.current = setTimeout(() => {
           setIsTakingLong(true);
       }, LONG_RESPONSE_TIMEOUT);
+
+    // Track whether the request/stream failed so callers don't treat
+    // failed attempts as successful completions.
+    let hadError = false;
 
       try {
           let requestUrl, requestHeaders, requestBody;
@@ -264,13 +270,18 @@ msg.fileDataForApi.forEach(file => {
           }
 
       } catch (err) {
+          hadError = true;
           if (err.name !== 'AbortError') {
               onError(err.message);
           }
       } finally {
           clearTimeout(longResponseTimerRef.current);
           setIsTakingLong(false);
-          onComplete();
+
+          const wasAborted = abortControllerRef.current && abortControllerRef.current.signal && abortControllerRef.current.signal.aborted;
+          if (!hadError && !wasAborted) {
+              try { onComplete(); } catch (e) { console.error('onComplete handler failed', e); }
+          }
       }
   };
 
@@ -436,6 +447,9 @@ const handleDocxDownload = async (markdownContent) => {
                   if (data.success && data.apiKey) {
                       apiKey = data.apiKey;
                       setActiveTrialApiKey(apiKey); // Save the key for the next message.
+                      // Record the friendly label if returned by the server
+                      if (data.keyLabel) setActiveSharedKeyLabel(data.keyLabel);
+                      else if (data.keyIndex) setActiveSharedKeyLabel(`Key #${data.keyIndex}`);
                   } else {
                       throw new Error(data.error || 'Failed to fetch trial key.');
                   }
@@ -526,6 +540,15 @@ const handleDocxDownload = async (markdownContent) => {
           onError: (err) => {
               // If a trial key fails, clear it so we fetch a new one next time.
               if (isTrial) {
+                  // Report the failed trial key to the backend so it can be temporarily blacklisted.
+                  try {
+                      fetch(`${GAS_WEB_APP_URL}`, {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({ action: 'reportFailedTrialKey', key: apiKey })
+                      }).catch(e => console.warn('Failed to report trial key to server', e));
+                  } catch (e) { console.warn('Failed to report trial key to server', e); }
+
                   setActiveTrialApiKey(null);
                   setError("The current shared key failed. A new key will be tried on your next message. Alternatively, disable use of shared keys in the settings and use YOUR OWN PERSONAL API KEY.");
               } else {
@@ -1057,6 +1080,7 @@ const handleRemoveFile = (fileId) => {
     isGroundingEnabled={isGroundingEnabled}
     useSharedApiKey={useSharedApiKey}
     onUseSharedApiKeyChange={handleSharedKeyToggle}
+    activeSharedKeyLabel={activeSharedKeyLabel}
     onGroundingChange={setIsGroundingEnabled}
     onClose={() => setIsMenuOpen(false)}
     onAssistantChange={handleAssistantChange} // <-- MODIFIED: Using the new handler

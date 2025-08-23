@@ -22,6 +22,7 @@ const Sidebar = ({
     showResetConfirm,
     isGroundingEnabled,
     useSharedApiKey, // New prop to get the toggle's state
+    activeSharedKeyLabel, // New prop: friendly label for currently active shared key (e.g., "Key #3")
 
     // Handler props
     onClose,
@@ -69,10 +70,11 @@ const Sidebar = ({
                     
                     <div id="provider-model-selector-group">
                         {/* NEW: Toggle switch for using shared API key */}
-                        <div className="flex items-center justify-between bg-slate-700 p-3 rounded-lg">
+            <div className="flex items-center justify-between bg-slate-700 p-3 rounded-lg">
                             <div>
                                 <label htmlFor="shared-key-toggle" className="font-semibold text-white">Use Shared API Key</label>
                                 <p className="text-xs text-slate-400">Recommended for new users</p>
+                {activeSharedKeyLabel && <p className="text-xs text-indigo-300 mt-1">Active: <strong className="text-sm">{activeSharedKeyLabel}</strong></p>}
                             </div>
                             <label htmlFor="shared-key-toggle" className="relative inline-flex items-center cursor-pointer">
                                 <input 

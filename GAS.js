@@ -21,6 +21,10 @@ const YOUR_EMAIL_ADDRESS = "cbcaitool@gmail.com"; // For receiving notifications
 const LOG_SHEET_NAME = "AI_Assistant_Log";
 const UPDATES_SHEET_NAME = "Updates";
 
+// Blacklist storage key and hold duration for trial keys (26 hours)
+const TRIAL_KEY_BLACKLIST_PROP = 'TRIAL_KEY_BLACKLIST';
+const TRIAL_KEY_HOLD_MS = 26 * 60 * 60 * 1000; // 26 hours
+
 const ASSISTANT_FILES = {
     // MODIFIED: 21/08/2025 8:25 PM EAT - Added the new Prompt Assistant.
     "Prompt Assistant": "prompt-assistant",
@@ -80,36 +84,73 @@ function doGet(e) {
             }));
         } else if (action === 'getTrialApiKey') {
             // This action iterates through stored trial keys and returns the first valid one.
-            const scriptProperties = PropertiesService.getScriptProperties().getProperties();
+            const scriptProperties = PropertiesService.getScriptProperties();
+            const allProps = scriptProperties.getProperties();
+
+            // Load blacklist from properties (stored as JSON: { key: timestamp })
+            let blacklist = {};
+            try {
+                const raw = allProps[TRIAL_KEY_BLACKLIST_PROP];
+                if (raw) blacklist = JSON.parse(raw);
+            } catch (e) {
+                blacklist = {};
+            }
+
+            const now = Date.now();
             let availableKey = null;
+            let availableKeyIndex = null;
 
             // Loop through numbered API keys (TRIAL_API_KEY_1, TRIAL_API_KEY_2, etc.)
             for (let i = 1; i <= 10; i++) { // Checks for up to 10 keys
                 const keyPropertyName = 'TRIAL_API_KEY_' + i;
-                const currentKey = scriptProperties[keyPropertyName];
+                const currentKey = allProps[keyPropertyName];
 
-                if (currentKey) {
-                    // Test the key by making a lightweight request to the Google AI API.
+                if (!currentKey) continue;
+
+                // Skip blacklisted keys still on hold
+                const blacklistedAt = blacklist[currentKey];
+                if (blacklistedAt && (now - blacklistedAt) < TRIAL_KEY_HOLD_MS) {
+                    // still blacklisted
+                    continue;
+                } else if (blacklistedAt) {
+                    // expired - remove from blacklist
+                    delete blacklist[currentKey];
+                }
+
+                // Test the key by making a lightweight request to the Google AI API using UrlFetchApp
+                try {
                     const validationUrl = `https://generativelanguage.googleapis.com/v1beta/models?key=${currentKey}`;
                     const response = UrlFetchApp.fetch(validationUrl, { muteHttpExceptions: true });
 
-                    // A 200 OK status means the key is valid and not rate-limited.
+                    // A 200 OK status means the key is likely valid and not rate-limited.
                     if (response.getResponseCode() === 200) {
                         availableKey = currentKey;
+                        availableKeyIndex = i;
                         break; // Found a working key, so we stop checking.
+                    } else {
+                        // If this key failed validation, add it to blacklist for a hold period
+                        blacklist[currentKey] = now;
                     }
+                } catch (e) {
+                    // On exception, blacklist key temporarily to avoid immediate reuse
+                    blacklist[currentKey] = now;
                 }
             }
+
+            // Persist updated blacklist
+            scriptProperties.setProperty(TRIAL_KEY_BLACKLIST_PROP, JSON.stringify(blacklist));
 
             if (availableKey) {
                 output = ContentService.createTextOutput(JSON.stringify({
                     success: true,
-                    apiKey: availableKey
+                    apiKey: availableKey,
+                    keyIndex: availableKeyIndex,
+                    keyLabel: `Key #${availableKeyIndex}`
                 }));
             } else {
                 output = ContentService.createTextOutput(JSON.stringify({
                     success: false,
-                    error: 'All available trial API keys have reached their daily limit. Please add your own key.'
+                    error: 'All available trial API keys are temporarily on hold or have reached limits. Please add your own key.'
                 }));
             }
         } else {
@@ -202,6 +243,25 @@ function doPost(e) {
                 url: docInfo.url,
                 id: docInfo.id
             })).setMimeType(ContentService.MimeType.JSON);
+        }
+        else if (action === 'reportFailedTrialKey') {
+            // Client reports a trial key that failed during usage.
+            const failedKey = body.key;
+            if (!failedKey) {
+                return ContentService.createTextOutput(JSON.stringify({ success: false, error: 'No key provided.' })).setMimeType(ContentService.MimeType.JSON);
+            }
+
+            const props = PropertiesService.getScriptProperties();
+            let blacklist = {};
+            try {
+                const raw = props.getProperty(TRIAL_KEY_BLACKLIST_PROP);
+                if (raw) blacklist = JSON.parse(raw);
+            } catch (e) { blacklist = {}; }
+
+            blacklist[failedKey] = Date.now();
+            props.setProperty(TRIAL_KEY_BLACKLIST_PROP, JSON.stringify(blacklist));
+
+            return ContentService.createTextOutput(JSON.stringify({ success: true, message: 'Key blacklisted for temporary hold.' })).setMimeType(ContentService.MimeType.JSON);
         }
         
         console.log("No valid action found in doPost.");
