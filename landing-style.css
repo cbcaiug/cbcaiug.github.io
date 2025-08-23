@@ -1,3 +1,9 @@
+.widget-spinner {
+    display: none;
+}
+.widget-success-message {
+    display: none;
+}
 /*
  * landing-style.css
  * Styles specifically for the new landing page (index.html).
@@ -28,7 +34,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
 }
 
 /* ======== HEADER / NAVIGATION ======== */
-.main-header { position: sticky; top: 0; width: 100%; z-index: 1000; background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
+.main-header { position: sticky; top: 0; width: 100%; z-index: 1000; background-color: rgba(255, 255, 255, 0.8); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
 .main-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; }
 .logo { display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem; font-weight: 700; color: var(--text-dark); text-decoration: none; }
 .logo img { height: 40px; width: 40px; border-radius: 8px; }
