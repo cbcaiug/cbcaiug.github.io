@@ -421,12 +421,15 @@ const handleDocxDownload = async (markdownContent) => {
     }
 };
 
-        const handleSendMessage = async () => {
+                const handleSendMessage = async () => {
       // First, check if there's any input or if the app is already busy.
       if ((!userInput.trim() && pendingFiles.length === 0) || isLoading) return;
 
       let apiKey = apiKeys[selectedProvider.apiKeyName];
       let isTrial = false;
+      // NEW: Create a variable to hold the key label for this specific message's log.
+      // This solves the timing issue.
+      let keyLabelForLogging;
 
       // Final, efficient logic for handling API keys.
       if (useSharedApiKey) {
@@ -436,20 +439,25 @@ const handleDocxDownload = async (markdownContent) => {
               return;
           }
 
+          isTrial = true; // Mark this as a trial generation.
+
           // Use the "sticky" key if we have it.
           if (activeTrialApiKey) {
               apiKey = activeTrialApiKey;
+              // For subsequent messages, the state will be correct.
+              keyLabelForLogging = activeSharedKeyLabel;
           } else {
-                            // Otherwise, fetch a new one from the backend.
+              // Otherwise, fetch a new one from the backend.
               try {
                   const response = await fetch(`${GAS_WEB_APP_URL}?action=getTrialApiKey`);
                   const data = await response.json();
                   if (data.success && data.apiKey) {
                       apiKey = data.apiKey;
                       setActiveTrialApiKey(apiKey); // Save the key for this session.
-                      // NEW: Check for the friendly label and save it to the state.
                       if (data.keyLabel) {
+                          // Set the state for the UI, AND set our local variable for the immediate log.
                           setActiveSharedKeyLabel(data.keyLabel);
+                          keyLabelForLogging = data.keyLabel;
                       }
                   } else {
                       throw new Error(data.error || 'Failed to fetch trial key.');
@@ -459,7 +467,6 @@ const handleDocxDownload = async (markdownContent) => {
                   return;
               }
           }
-          isTrial = true;
 
       } else {
           // === PERSONAL KEY LOGIC ===
@@ -468,6 +475,8 @@ const handleDocxDownload = async (markdownContent) => {
               return;
           }
           isTrial = false;
+          // For personal keys, the label is always the same.
+          keyLabelForLogging = 'PERSONAL KEY';
       }
       
       // If we have a valid key (either trial or personal), we can proceed.
@@ -525,39 +534,27 @@ const handleDocxDownload = async (markdownContent) => {
                   return updatedHistory;
               });
               
-                            // This block runs only on a successful generation.
               if (!abortControllerRef.current.signal.aborted) {
-                  // Determine the correct label for the key that was used.
-                  const keyLabelForLogging = isTrial ? activeSharedKeyLabel : 'PERSONAL KEY';
+                  // Use our new local variable for logging.
+                  const finalKeyLabel = keyLabelForLogging || (isTrial ? 'SHARED KEY' : 'PERSONAL KEY');
 
                   if (isTrial) {
                       const newCount = trialGenerations - 1;
                       setTrialGenerations(newCount);
                       localStorage.setItem('trialGenerationsCount', newCount.toString());
-                      // Log the event with the "SHARED KEY #X" label.
-                      trackEvent('trial_generation', activePromptKey, { sessionId: SESSION_ID, apiKeyUsed: keyLabelForLogging });
+                      trackEvent('trial_generation', activePromptKey, { sessionId: SESSION_ID, apiKeyUsed: finalKeyLabel });
                   } else {
-                      // Log the event with the "PERSONAL KEY" label.
-                      trackEvent('generation', activePromptKey, { sessionId: SESSION_ID, apiKeyUsed: keyLabelForLogging });
+                      trackEvent('generation', activePromptKey, { sessionId: SESSION_ID, apiKeyUsed: finalKeyLabel });
                   }
                   setGenerationCount(prevCount => prevCount + 1);
               }
               abortControllerRef.current = null;
           },
           onError: (err) => {
-              // If a trial key fails, clear it so we fetch a new one next time.
               if (isTrial) {
-                  // Report the failed trial key to the backend so it can be temporarily blacklisted.
-                  try {
-                      fetch(`${GAS_WEB_APP_URL}`, {
-                          method: 'POST',
-                          headers: { 'Content-Type': 'application/json' },
-                          body: JSON.stringify({ action: 'reportFailedTrialKey', key: apiKey })
-                      }).catch(e => console.warn('Failed to report trial key to server', e));
-                  } catch (e) { console.warn('Failed to report trial key to server', e); }
-
-                  setActiveTrialApiKey(null);
-                  setError("The current shared key failed. A new key will be tried on your next message. Alternatively, disable use of shared keys in the settings and use YOUR OWN PERSONAL API KEY.");
+                  setActiveTrialApiKey(null); // Clear the failed key
+                  setActiveSharedKeyLabel(''); // Clear its label
+                  setError("The current shared key failed. A new key will be tried on your next message.");
               } else {
                   setError(err);
               }
