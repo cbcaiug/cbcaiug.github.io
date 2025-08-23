@@ -440,16 +440,17 @@ const handleDocxDownload = async (markdownContent) => {
           if (activeTrialApiKey) {
               apiKey = activeTrialApiKey;
           } else {
-              // Otherwise, fetch a new one from the backend.
+                            // Otherwise, fetch a new one from the backend.
               try {
                   const response = await fetch(`${GAS_WEB_APP_URL}?action=getTrialApiKey`);
                   const data = await response.json();
                   if (data.success && data.apiKey) {
                       apiKey = data.apiKey;
-                      setActiveTrialApiKey(apiKey); // Save the key for the next message.
-                      // Record the friendly label if returned by the server
-                      if (data.keyLabel) setActiveSharedKeyLabel(data.keyLabel);
-                      else if (data.keyIndex) setActiveSharedKeyLabel(`Key #${data.keyIndex}`);
+                      setActiveTrialApiKey(apiKey); // Save the key for this session.
+                      // NEW: Check for the friendly label and save it to the state.
+                      if (data.keyLabel) {
+                          setActiveSharedKeyLabel(data.keyLabel);
+                      }
                   } else {
                       throw new Error(data.error || 'Failed to fetch trial key.');
                   }
@@ -524,14 +525,20 @@ const handleDocxDownload = async (markdownContent) => {
                   return updatedHistory;
               });
               
+                            // This block runs only on a successful generation.
               if (!abortControllerRef.current.signal.aborted) {
+                  // Determine the correct label for the key that was used.
+                  const keyLabelForLogging = isTrial ? activeSharedKeyLabel : 'PERSONAL KEY';
+
                   if (isTrial) {
                       const newCount = trialGenerations - 1;
                       setTrialGenerations(newCount);
                       localStorage.setItem('trialGenerationsCount', newCount.toString());
-                      trackEvent('trial_generation', activePromptKey, { sessionId: SESSION_ID });
+                      // Log the event with the "SHARED KEY #X" label.
+                      trackEvent('trial_generation', activePromptKey, { sessionId: SESSION_ID, apiKeyUsed: keyLabelForLogging });
                   } else {
-                      trackEvent('generation', activePromptKey, { sessionId: SESSION_ID });
+                      // Log the event with the "PERSONAL KEY" label.
+                      trackEvent('generation', activePromptKey, { sessionId: SESSION_ID, apiKeyUsed: keyLabelForLogging });
                   }
                   setGenerationCount(prevCount => prevCount + 1);
               }

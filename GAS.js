@@ -289,7 +289,7 @@ function doPost(e) {
 // MODIFIED: 21/08/2025 4:31 PM - Function now accepts ipAddress and extracts browserOs.
 function logEventToSheet(event, ipAddress = 'N/A') {
     try {
-        const headers = ["SessionID", "Timestamp", "IPAddress", "BrowserOS", "UserType", "EventType", "AssistantName", "Details"];
+        const headers = ["SessionID", "Timestamp", "IPAddress", "BrowserOS", "UserType", "EventType", "AssistantName", "ApiKeyUsed", "Details"];
         
         const now = new Date();
         const year = now.getFullYear();
@@ -311,7 +311,13 @@ function logEventToSheet(event, ipAddress = 'N/A') {
         const formattedDetails = formatDetailsForSheet(event.type, eventDetails);
 
         // MODIFIED: 21/08/2025 4:31 PM - Appending row with new data in the correct order.
-        sheet.appendRow([sessionId, new Date(), ipAddress, browserOs, userType, event.type, event.assistant, formattedDetails]);
+        // Extract the API key label we're sending from the frontend.
+        const apiKeyUsed = eventDetails.apiKeyUsed || 'N/A';
+        // Clean up the details object so this extra info doesn't appear in the 'Details' column.
+        delete eventDetails.apiKeyUsed; 
+
+        // Append the new row with the ApiKeyUsed data in the correct position.
+        sheet.appendRow([sessionId, new Date(), ipAddress, browserOs, userType, event.type, event.assistant, apiKeyUsed, formattedDetails]);
 
     } catch (error) {
         console.error(`Failed to log event to sheet: ${error.toString()}`);
