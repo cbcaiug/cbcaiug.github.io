@@ -527,7 +527,7 @@ const handleDocxDownload = async (markdownContent) => {
               // If a trial key fails, clear it so we fetch a new one next time.
               if (isTrial) {
                   setActiveTrialApiKey(null);
-                  setError("The current shared key failed. A new key will be tried on your next message.");
+                  setError("The current shared key failed. A new key will be tried on your next message. Alternatively, disable use of shared keys in the settings and use YOUR OWN PERSONAL API KEY.");
               } else {
                   setError(err);
               }
