@@ -692,203 +692,11 @@ const handleRemoveFile = (fileId) => {
       setShowConsentModal(true);
   };
 
-  // --- TUTORIAL LOGIC ---
-  const startResizing = useCallback((mouseDownEvent) => {
-      const handleMouseMove = (mouseMoveEvent) => {
-          const newWidth = mouseDownEvent.clientX + (mouseMoveEvent.clientX - mouseDownEvent.clientX);
-          if (newWidth > 280 && newWidth < 800) {
-              setSidebarWidth(newWidth);
-          }
-      };
-      const handleMouseUp = () => {
-          window.removeEventListener("mousemove", handleMouseMove);
-          window.removeEventListener("mouseup", handleMouseUp);
-      };
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseup", handleMouseUp);
-  }, []);
-
-  const startTutorial = () => {
-    const intro = introJs();
-    const firstMessageOptionsMenu = document.querySelector('#message-options-menu-0');
-    
-    // Define all tutorial steps in a logical order.
-    const steps = [
-        {
-            title: 'Welcome!',
-            intro: 'Hello! This is a quick tour to help you get started with the AI Educational Assistant.'
-        },
-        {
-            element: '#settings-panel',
-            title: 'Settings Panel',
-            intro: 'This is where you control the app. We\'ll look at the key settings now.',
-            position: 'right'
-        },
-        {
-            element: '#assistant-selector-container',
-            title: '1. Select an Assistant',
-            intro: 'Choose from a list of specialized AI assistants, each designed for a specific educational task.',
-            position: 'right'
-        },
-        {
-            element: '#provider-model-selector-group',
-            title: '2. AI Provider & Model',
-            intro: 'Select your preferred AI provider (like Google, OpenAI, etc.) and the specific model you want to use.',
-            position: 'right'
-        },
-        {
-            element: '#api-key-container',
-            title: '3. API Key',
-            intro: 'You need an API key from your chosen provider. Click the link to get your key, then paste it here. Your key is saved securely in your browser, not on our servers.',
-            position: 'right'
-        },
-        {
-            element: '#reset-settings-button',
-            title: '4. App Settings',
-            intro: 'If you run into issues, you can use this to reset all your settings, including API keys and chat history, to their default state.',
-            position: 'right'
-        },
-        {
-            element: '#contact-info-panel',
-            title: '5. Get In Touch',
-            intro: 'If you have questions, feedback, or need help, use these contact details to reach out.',
-            position: 'right'
-        }
-    ];
-
-    const updateBannerCloseButton = document.querySelector('#update-banner-close-btn');
-    if (updateBannerCloseButton && updateBannerCloseButton.offsetParent !== null) {
-        steps.push({
-            element: '#update-banner-close-btn',
-            title: 'App Updates',
-            intro: 'You can dismiss update notifications by clicking the "X".',
-            position: 'bottom'
-        });
-    }
-
-    steps.push({
-        element: '#share-app-button',
-        title: 'Share The App',
-        intro: 'Like the tool? Click here to share it with your colleagues!',
-        position: 'bottom'
-    });
-
-    steps.push(
-        {
-            element: '#chat-input-area',
-            title: 'Chat Input',
-            intro: 'This is where you will interact with the AI.',
-            position: 'top'
-        },
-        {
-            element: '#file-attach-button',
-            title: 'Attach Files',
-            intro: 'Click here to attach a file, like an image or document. Note: Only models that support vision (like GPT-4o or Gemini) can "see" images.',
-            position: 'top'
-        },
-        {
-            element: '#chat-input',
-            title: 'Type Your Message',
-            intro: 'Type your instructions or questions for the AI here.',
-            position: 'top'
-        },
-        {
-            element: '#send-button',
-            title: 'Send & Stop',
-            intro: 'Click this button to send your message. While the AI is responding, this will turn into a "Stop" button to interrupt the generation.',
-            position: 'top'
-        }
-    );
-
-    if (firstMessageOptionsMenu) {
-        steps.push({
-            element: '#message-options-menu-0',
-            title: 'Message Options',
-            intro: 'After the AI responds, click the three dots to open a menu where you can copy, regenerate, share, or download the message as a .docx file.',
-            position: 'left'
-        });
-    }
-    
-    steps.push(
-        {
-            element: '#clear-chat-button',
-            title: 'Clear Chat',
-            intro: 'Click here to clear the current conversation and start fresh.',
-            position: 'bottom'
-        },
-        {
-            element: '#notifications-button',
-            title: 'Notifications',
-            intro: 'Check here for news and updates about the app.',
-            position: 'bottom'
-        },
-        {
-            element: '#help-button',
-            title: 'Need Help?',
-            intro: 'You can click this "Help" button anytime to see this tour again!',
-            position: 'bottom'
-        },
-        {
-            title: 'You\'re All Set!',
-            intro: 'That\'s it! You\'re ready to start creating. Enjoy using the tool!'
-        }
-    );
-
-        intro.setOptions({
-        steps: steps,
-        showBullets: false,
-        showStepNumbers: true,
-        exitOnOverlayClick: false,
-        tooltipClass: 'custom-intro-tooltip',
-                // FINAL ATTEMPT: Manual DOM control to resolve timing issue.
-        onbeforechange: function() {
-            const currentStepConfig = this._introItems[this._currentStep];
-
-            if (currentStepConfig && currentStepConfig.element === '#contact-info-panel' && this._direction === 'forward') {
-                const isMobileView = window.innerWidth < 1024;
-                if (isMobileView) {
-                    
-                    // 1. Manually find the sidebar in the DOM.
-                    const sidebar = document.getElementById('settings-panel');
-                    if (sidebar) {
-                        // 2. Force the closing animation to start immediately by changing its class.
-                        sidebar.classList.remove('translate-x-0');
-                        sidebar.classList.add('-translate-x-full');
-                    }
-
-                    // 3. IMPORTANT: Tell React that the sidebar is now closed so it doesn't get confused later.
-                    setIsMenuOpen(false);
-
-                    // 4. Pause the tutorial, then manually advance to the next step after the animation is finished.
-                    setTimeout(() => {
-                        intro.nextStep();
-                    }, 350); // Wait for animation to complete.
-
-                    // 5. Stop the tutorial from advancing on its own.
-                    return false;
-                }
-            }
-        }
-    });
-    
-    intro.onexit(() => {
-        if (window.innerWidth < 1024) {
-            setIsMenuOpen(false);
-        }
-    });
-
-    intro.start();
-  };
-
-  const handleHelpButtonClick = () => {
-      const isMobileView = window.innerWidth < 1024;
-      if (isMobileView && !isMenuOpen) {
-          setIsMenuOpen(true);
-          setTimeout(startTutorial, 200); 
-      } else {
-          startTutorial();
-      }
-  };
+// --- TUTORIAL LOGIC ---
+// The tutorial has been temporarily disabled to fix a bug.
+// The following are empty placeholder functions to prevent the app from crashing.
+const startResizing = useCallback(() => {}, []);
+const handleHelpButtonClick = () => {};
 
   // --- EFFECTS ---
   useEffect(() => {
@@ -962,17 +770,19 @@ const handleRemoveFile = (fileId) => {
 
   
   useEffect(() => {
-    // Trigger the tutorial for first-time visitors
-    if (!isLoadingAssistants && !showConsentModal) { 
-        const hasSeenTutorial = localStorage.getItem('hasSeenCbcAiTutorial');
-        if (!hasSeenTutorial) {
-            setTimeout(() => {
-                handleHelpButtonClick(); 
-                localStorage.setItem('hasSeenCbcAiTutorial', 'true');
-            }, 500);
-        }
-    }
-  }, [isLoadingAssistants, showConsentModal]);
+  // Trigger the tutorial for first-time visitors - CURRENTLY DISABLED
+  /*
+  if (!isLoadingAssistants && !showConsentModal) { 
+      const hasSeenTutorial = localStorage.getItem('hasSeenCbcAiTutorial');
+      if (!hasSeenTutorial) {
+          setTimeout(() => {
+              handleHelpButtonClick(); 
+              localStorage.setItem('hasSeenCbcAiTutorial', 'true');
+          }, 500);
+      }
+  }
+  */
+}, [isLoadingAssistants, showConsentModal]);
 
   useEffect(() => {
       // Save state to local storage on change
