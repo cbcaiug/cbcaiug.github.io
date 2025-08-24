@@ -5,10 +5,9 @@
  * for the application like API key management, model selection, and help links.
  */
 
-const { useCallback } = React;
 
 // A new prop 'onAssistantChange' is added, and 'onPromptSelectionChange' and 'navigationMenu' are removed.
-const Sidebar = ({
+export  const Sidebar = ({
     // State props
     isMenuOpen,
     sidebarWidth,

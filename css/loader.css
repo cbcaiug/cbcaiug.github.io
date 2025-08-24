@@ -4,7 +4,18 @@
  * This file contains the styles for the initial application loading screen
  * with the animated logo.
  */
-
+/**
+ * NEW: Styles for the root element to center the static loader.
+ * This ensures the fallback loader in app.html is centered on the screen
+ * before the React application takes over.
+ */
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
 .loading-screen-container {
     display: flex;
     flex-direction: column;

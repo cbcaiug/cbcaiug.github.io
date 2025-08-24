@@ -5,8 +5,26 @@
  * It manages the overall state, such as settings, chat history,
  * and communication between different child components.
  */
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { marked } from 'marked';
 
-const { useState, useEffect, useRef, useCallback } = React;
+// Import functions and constants from our service and utility files
+import { PromptManager, trackEvent, handleFeedbackSubmit, fetchNotifications, processFileForApi, AI_PROVIDERS, GAS_WEB_APP_URL } from '../services/api.jsx';
+import { handleShare, handleCopyToClipboard } from '../utils/helpers.jsx';
+
+// Import all our UI components
+import { MarkdownRenderer, MessageMenu } from './Chat.jsx';
+import { LoadingScreen, FeedbackModal, UpdateBanner, ConsentModal, DocSuccessModal } from './Modals.jsx';
+import { Sidebar } from './Sidebar.jsx';
+
+// Import all our Icons
+import { 
+    SendIcon, StopIcon, PaperclipIcon, PlusCircleIcon, FileIcon, XIcon, TrashIcon, HomeIcon, MenuIcon, AlertTriangleIcon, 
+    ChevronUpIcon, ChevronDownIcon, CopyIcon, MoreVerticalIcon, CheckCircleIcon, AlertCircleIcon, StarIcon, Share2Icon, 
+    RefreshCwIcon, SettingsIcon, BellIcon, FileTextIcon, HelpCircleIcon, DownloadCloudIcon, 
+    FooterEmailIcon, FooterPhoneIcon, FooterWhatsAppIcon 
+} from './Icons.jsx';
+
 // --- HELPERS ---
 const formatBytes = (bytes, decimals = 2) => {
     if (!+bytes) return '0 Bytes';
@@ -1292,3 +1310,4 @@ const handleRemoveFile = (fileId) => {
       </div>
   );
 }
+export default App;

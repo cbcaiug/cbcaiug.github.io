@@ -7,9 +7,9 @@
  */
 
 // --- CONFIGURATION CONSTANTS ---
-const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxYOIr8TxQu2GV3uyTQ-vIiud5J7RnvMNheQFIHTPJPZbxIcV2LgcAhjh2VaslZPaf4/exec';
+export const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxYOIr8TxQu2GV3uyTQ-vIiud5J7RnvMNheQFIHTPJPZbxIcV2LgcAhjh2VaslZPaf4/exec';
 
-const AI_PROVIDERS = [
+export const AI_PROVIDERS = [
   { key: 'google', label: 'Google Gemini', apiKeyName: 'googleApiKey', apiKeyUrl: 'https://aistudio.google.com/app/apikey', apiHost: 'https://generativelanguage.googleapis.com', models: [
       { name: 'gemini-2.5-pro', vision: true }, 
       { name: 'gemini-2.5-flash', vision: true },
@@ -43,7 +43,7 @@ const AI_PROVIDERS = [
  * @param {string} assistantName - The name of the assistant being used.
  * @param {object} details - Additional details about the event.
  */
-const trackEvent = (eventType, assistantName, details = {}) => {
+export const trackEvent = (eventType, assistantName, details = {}) => {
     const urlParams = new URLSearchParams(window.location.search);
     const isAdmin = urlParams.get('admin') === 'true';
 
@@ -73,14 +73,14 @@ const trackEvent = (eventType, assistantName, details = {}) => {
  * Submits feedback data to the backend. This is a specific implementation of trackEvent.
  * @param {object} submissionData - The data from the feedback form.
  */
-const handleFeedbackSubmit = async (submissionData) => {
+export const handleFeedbackSubmit = async (submissionData) => {
     trackEvent('feedback_submitted', submissionData.assistantName, submissionData);
 };
 
 
 // --- PROMPT & NOTIFICATION MANAGEMENT ---
 
-const PromptManager = {
+export const PromptManager = {
   cache: {},
   availableAssistants: [],
   async getAvailableAssistants() {
@@ -119,7 +119,7 @@ const PromptManager = {
  * Fetches the latest notifications/updates from the backend.
  * @returns {Promise<Array>} A promise that resolves to an array of update objects.
  */
-const fetchNotifications = async () => {
+export const fetchNotifications = async () => {
     try {
         const response = await fetch(`${GAS_WEB_APP_URL}?action=getUpdates`);
         const data = await response.json();
@@ -140,7 +140,7 @@ const fetchNotifications = async () => {
  * @param {File} file - The file object from the input.
  * @returns {Promise<object>} A promise that resolves to an object with mime_type and base64 data.
  */
-const processFileForApi = (file) => {
+export const processFileForApi = (file) => {
     return new Promise((resolve, reject) => {
         if (!file) reject("No file provided");
         const reader = new FileReader();

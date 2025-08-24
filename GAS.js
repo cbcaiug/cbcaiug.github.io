@@ -16,11 +16,18 @@
  */
 
 // --- CONFIGURATION ---
-const YOUR_EMAIL_ADDRESS = "musadrk2@gmail.com"; // For receiving notifications
+// MODIFIED: 22/08/2025 8:35 PM EAT - Updated notification email address.
+const YOUR_EMAIL_ADDRESS = "cbcaitool@gmail.com"; // For receiving notifications
 const LOG_SHEET_NAME = "AI_Assistant_Log";
 const UPDATES_SHEET_NAME = "Updates";
 
+// Blacklist storage key and hold duration for trial keys (26 hours)
+const TRIAL_KEY_BLACKLIST_PROP = 'TRIAL_KEY_BLACKLIST';
+const TRIAL_KEY_HOLD_MS = 26 * 60 * 60 * 1000; // 26 hours
+
 const ASSISTANT_FILES = {
+    // MODIFIED: 21/08/2025 8:25 PM EAT - Added the new Prompt Assistant.
+    "Prompt Assistant": "prompt-assistant",
     "Item Writer": "item-writer",
     "Lesson Plans (NCDC)": "lesson-plans-no-bv",
     "Lesson Plans (with Biblical Integration)": "lesson-plans-bv",
@@ -75,6 +82,77 @@ function doGet(e) {
                 success: true,
                 updates: updates
             }));
+        } else if (action === 'getTrialApiKey') {
+            // This action iterates through stored trial keys and returns the first valid one.
+            const scriptProperties = PropertiesService.getScriptProperties();
+            const allProps = scriptProperties.getProperties();
+
+            // Load blacklist from properties (stored as JSON: { key: timestamp })
+            let blacklist = {};
+            try {
+                const raw = allProps[TRIAL_KEY_BLACKLIST_PROP];
+                if (raw) blacklist = JSON.parse(raw);
+            } catch (e) {
+                blacklist = {};
+            }
+
+            const now = Date.now();
+            let availableKey = null;
+            let availableKeyIndex = null;
+
+            // Loop through numbered API keys (TRIAL_API_KEY_1, TRIAL_API_KEY_2, etc.)
+            for (let i = 1; i <= 10; i++) { // Checks for up to 10 keys
+                const keyPropertyName = 'TRIAL_API_KEY_' + i;
+                const currentKey = allProps[keyPropertyName];
+
+                if (!currentKey) continue;
+
+                // Skip blacklisted keys still on hold
+                const blacklistedAt = blacklist[currentKey];
+                if (blacklistedAt && (now - blacklistedAt) < TRIAL_KEY_HOLD_MS) {
+                    // still blacklisted
+                    continue;
+                } else if (blacklistedAt) {
+                    // expired - remove from blacklist
+                    delete blacklist[currentKey];
+                }
+
+                // Test the key by making a lightweight request to the Google AI API using UrlFetchApp
+                try {
+                    const validationUrl = `https://generativelanguage.googleapis.com/v1beta/models?key=${currentKey}`;
+                    const response = UrlFetchApp.fetch(validationUrl, { muteHttpExceptions: true });
+
+                    // A 200 OK status means the key is likely valid and not rate-limited.
+                    if (response.getResponseCode() === 200) {
+                        availableKey = currentKey;
+                        availableKeyIndex = i;
+                        break; // Found a working key, so we stop checking.
+                    } else {
+                        // If this key failed validation, add it to blacklist for a hold period
+                        blacklist[currentKey] = now;
+                    }
+                } catch (e) {
+                    // On exception, blacklist key temporarily to avoid immediate reuse
+                    blacklist[currentKey] = now;
+                }
+            }
+
+            // Persist updated blacklist
+            scriptProperties.setProperty(TRIAL_KEY_BLACKLIST_PROP, JSON.stringify(blacklist));
+
+            if (availableKey) {
+                output = ContentService.createTextOutput(JSON.stringify({
+                    success: true,
+                    apiKey: availableKey,
+                    keyIndex: availableKeyIndex,
+                    keyLabel: `Key #${availableKeyIndex}`
+                }));
+            } else {
+                output = ContentService.createTextOutput(JSON.stringify({
+                    success: false,
+                    error: 'All available trial API keys are temporarily on hold or have reached limits. Please add your own key.'
+                }));
+            }
         } else {
             output = ContentService.createTextOutput(JSON.stringify({
                 success: false,
@@ -111,12 +189,17 @@ function doPost(e) {
             const event = body.event;
             console.log("Action is 'logEvent'. Event type: " + event.type);
             
-            logEventToSheet(event); // This logs to the sheet.
+            // MODIFIED: 21/08/2025 4:31 PM - Capture IP Address from the request.
+            const ipAddress = e.source ? e.source.remoteAddress : 'N/A';
+            
+            // Pass the new data to our logging function. The Browser/OS info will be added from the client later.
+            logEventToSheet(event, ipAddress);
 
             if (event.type === 'feedback_submitted') {
                 console.log("Event type is 'feedback_submitted'. Attempting to send email...");
-                sendInstantFeedbackEmail(event.details);
-                console.log("sendInstantFeedbackEmail function was called.");
+                sendInstantFeedbackEmail(event.details); // This sends the notification to you.
+                sendAutoReplyForFeedback(event.details); // NEW: This sends the confirmation to the user.
+                console.log("Email functions were called.");
             }
 
             return ContentService.createTextOutput(JSON.stringify({
@@ -124,14 +207,23 @@ function doPost(e) {
                 message: "Event logged successfully."
             })).setMimeType(ContentService.MimeType.JSON);
         
-        } else if (action === 'contact_form_submitted') {
+                } else if (action === 'contact_form_submitted') {
             console.log("Action is 'contact_form_submitted'.");
-            sendContactFormEmail(body.details);
+            sendContactFormEmail(body.details); // This sends the notification to you.
+            sendAutoReplyToUser(body.details); // NEW: This sends the automated reply to the user.
+            
+            // MODIFIED: 22/08/2025 8:30 PM EAT - Bug fix for widget logging.
+            // This now correctly captures the IP and calls the updated logEventToSheet function.
+            
+            // MODIFIED: 22/08/2025 8:30 PM EAT - Bug fix for widget logging.
+            // This now correctly captures the IP and calls the updated logEventToSheet function.
+            const ipAddress = e.source ? e.source.remoteAddress : 'N/A';
             logEventToSheet({
                 type: 'contact_form_submitted',
                 assistant: 'Landing Page Widget',
                 details: body.details
-            });
+            }, ipAddress);
+            
             return ContentService.createTextOutput(JSON.stringify({
                 success: true,
                 message: "Contact form submitted successfully."
@@ -151,6 +243,25 @@ function doPost(e) {
                 url: docInfo.url,
                 id: docInfo.id
             })).setMimeType(ContentService.MimeType.JSON);
+        }
+        else if (action === 'reportFailedTrialKey') {
+            // Client reports a trial key that failed during usage.
+            const failedKey = body.key;
+            if (!failedKey) {
+                return ContentService.createTextOutput(JSON.stringify({ success: false, error: 'No key provided.' })).setMimeType(ContentService.MimeType.JSON);
+            }
+
+            const props = PropertiesService.getScriptProperties();
+            let blacklist = {};
+            try {
+                const raw = props.getProperty(TRIAL_KEY_BLACKLIST_PROP);
+                if (raw) blacklist = JSON.parse(raw);
+            } catch (e) { blacklist = {}; }
+
+            blacklist[failedKey] = Date.now();
+            props.setProperty(TRIAL_KEY_BLACKLIST_PROP, JSON.stringify(blacklist));
+
+            return ContentService.createTextOutput(JSON.stringify({ success: true, message: 'Key blacklisted for temporary hold.' })).setMimeType(ContentService.MimeType.JSON);
         }
         
         console.log("No valid action found in doPost.");
@@ -175,22 +286,38 @@ function doPost(e) {
  * =================================================================
  */
 
-function logEventToSheet(event) {
+// MODIFIED: 21/08/2025 4:31 PM - Function now accepts ipAddress and extracts browserOs.
+function logEventToSheet(event, ipAddress = 'N/A') {
     try {
-        const headers = ["Timestamp", "UserType", "EventType", "AssistantName", "SessionID", "Details"];
-        const sheet = getSheet(LOG_SHEET_NAME, headers);
-        const timestamp = new Date();
+        const headers = ["SessionID", "Timestamp", "IPAddress", "BrowserOS", "UserType", "EventType", "AssistantName", "ApiKeyUsed", "Details"];
+        
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = (now.getMonth() + 1).toString().padStart(2, '0');
+        const monthlyLogSheetName = `Log - ${year}-${month}`;
+
+        const sheet = getSheet(monthlyLogSheetName, headers);
         
         const eventDetails = event.details || {};
         const sessionId = eventDetails.sessionId || 'N/A';
         const userType = event.userType || 'User';
+        // NEW: 21/08/2025 4:31 PM - Extract Browser/OS from the details payload sent by the client.
+        const browserOs = eventDetails.browserOs || 'N/A';
 
+        // Clean the details object of metadata before it gets formatted for the "Details" column.
         delete eventDetails.sessionId; 
+        delete eventDetails.browserOs;
         
-        // UPDATED: Use the new helper function to create a human-readable details string.
-const formattedDetails = formatDetailsForSheet(event.type, eventDetails);;
+        const formattedDetails = formatDetailsForSheet(event.type, eventDetails);
 
-        sheet.appendRow([timestamp, userType, event.type, event.assistant, sessionId, formattedDetails]);
+        // MODIFIED: 21/08/2025 4:31 PM - Appending row with new data in the correct order.
+        // Extract the API key label we're sending from the frontend.
+        const apiKeyUsed = eventDetails.apiKeyUsed || 'N/A';
+        // Clean up the details object so this extra info doesn't appear in the 'Details' column.
+        delete eventDetails.apiKeyUsed; 
+
+        // Append the new row with the ApiKeyUsed data in the correct position.
+        sheet.appendRow([sessionId, new Date(), ipAddress, browserOs, userType, event.type, event.assistant, apiKeyUsed, formattedDetails]);
 
     } catch (error) {
         console.error(`Failed to log event to sheet: ${error.toString()}`);
@@ -198,6 +325,12 @@ const formattedDetails = formatDetailsForSheet(event.type, eventDetails);;
 }
 
 
+/**
+ * MODIFIED: 21/08/2025 4:16 PM - Overhauled to support monthly log sheets.
+ * - Now creates a well-structured spreadsheet on first run.
+ * - Ensures "Updates" sheet is always first.
+ * - Adds new monthly log sheets to the end of the workbook.
+ */
 function getSheet(sheetName, headers = []) {
     const properties = PropertiesService.getScriptProperties();
     const spreadsheetId = properties.getProperty('logSheetId');
@@ -207,28 +340,45 @@ function getSheet(sheetName, headers = []) {
         try {
             spreadsheet = SpreadsheetApp.openById(spreadsheetId);
         } catch (e) {
-            spreadsheet = null;
+            spreadsheet = null; // Spreadsheet was deleted, will be recreated.
         }
     }
 
+    // If the spreadsheet doesn't exist, create and configure it from scratch.
     if (!spreadsheet) {
-        spreadsheet = SpreadsheetApp.create(LOG_SHEET_NAME);
+        spreadsheet = SpreadsheetApp.create("AI Assistant Analytics Log");
         properties.setProperty('logSheetId', spreadsheet.getId());
         console.log(`Created new log spreadsheet with ID: ${spreadsheet.getId()}`);
 
-        const defaultSheet = spreadsheet.getSheets()[0];
-        defaultSheet.setName(LOG_SHEET_NAME);
+        // 1. Delete the default "Sheet1".
+        spreadsheet.deleteSheet(spreadsheet.getSheets()[0]);
+
+        // 2. Create and configure the "Updates" sheet first.
+        const updatesSheet = spreadsheet.insertSheet(UPDATES_SHEET_NAME, 0); // Insert at position 0
+        const updatesHeaders = ["Timestamp", "UpdateMessage", "DetailsURL"];
+        const updatesHeaderRange = updatesSheet.getRange(1, 1, 1, updatesHeaders.length);
+        updatesHeaderRange.setValues([updatesHeaders]);
+        updatesHeaderRange.setFontWeight("bold");
+        updatesSheet.setFrozenRows(1);
+
+        // 3. Create the very first monthly log sheet.
+        const logSheet = spreadsheet.insertSheet(sheetName, 1); // Insert at position 1
         if (headers.length > 0) {
-            const headerRange = defaultSheet.getRange(1, 1, 1, headers.length);
+            const headerRange = logSheet.getRange(1, 1, 1, headers.length);
             headerRange.setValues([headers]);
             headerRange.setFontWeight("bold");
-            defaultSheet.setFrozenRows(1);
+            logSheet.setFrozenRows(1);
         }
+        return logSheet; // Return the newly created log sheet.
     }
 
+    // If the spreadsheet exists, check for the requested sheet.
     let sheet = spreadsheet.getSheetByName(sheetName);
     if (!sheet) {
-        sheet = spreadsheet.insertSheet(sheetName);
+        // If sheet doesn't exist, create it at the end of the workbook.
+        const sheetIndex = spreadsheet.getSheets().length;
+        sheet = spreadsheet.insertSheet(sheetName, sheetIndex);
+        
         if (headers.length > 0) {
             const headerRange = sheet.getRange(1, 1, 1, headers.length);
             headerRange.setValues([headers]);
@@ -379,7 +529,64 @@ function sendContactFormEmail(details) {
         name: "Website Contact Bot"
     });
 }
+/**
+ * NEW: Sends an automated confirmation email to a user who submitted the contact form.
+ * @param {object} details - The contact form details, containing name and email.
+ */
+function sendAutoReplyToUser(details) {
+    const { name, email } = details;
 
+    // This function will only proceed if an email address was actually provided.
+    if (!email) {
+        return; // Exit if there's no email to reply to.
+    }
+    
+    // Use a smart salutation based on whether a name was provided.
+    const salutation = name ? `Hello ${name},` : 'Hello,';
+
+    const subject = "We've received your message!";
+    const emailBody = `
+      <p style="font-family: Arial, sans-serif;">${salutation}</p>
+      <p style="font-family: Arial, sans-serif;">Thank you for reaching out to the AI Educational Assistant team. We have received your message and will get back to you as soon as possible.</p>
+      <br>
+      <p style="font-family: Arial, sans-serif;">Best regards,<br>The AI Educational Assistant Team</p>
+    `;
+
+    MailApp.sendEmail({
+        to: email,
+        subject: subject,
+        htmlBody: emailBody,
+        name: "AI Educational Assistant",
+        bcc: YOUR_EMAIL_ADDRESS // BCC the owner so you get a copy of the auto-reply.
+    });
+}
+/**
+ * NEW: Sends an automated confirmation email to a user who signed up via the feedback form.
+ * @param {object} details - The feedback form details, containing the user's email and the assistant name.
+ */
+function sendAutoReplyForFeedback(details) {
+    // This function will only proceed if an email address was actually provided.
+    const { email, assistantName } = details;
+    if (!email) {
+        return; // Exit if there's no email to reply to.
+    }
+
+    const subject = "Thank you for your feedback!";
+    const emailBody = `
+      <p style="font-family: Arial, sans-serif;">Hello,</p>
+      <p style="font-family: Arial, sans-serif;">Thank you for your feedback on the "${assistantName || 'AI Assistant'}" and for signing up for updates. We have received your submission.</p>
+      <p style-="font-family: Arial, sans-serif;">Your insights are valuable as we continue to improve the tool for educators.</p>
+      <br>
+      <p style="font-family: Arial, sans-serif;">Best regards,<br>The AI Educational Assistant Team</p>
+    `;
+
+    MailApp.sendEmail({
+        to: email,
+        subject: subject,
+        htmlBody: emailBody,
+        name: "AI Educational Assistant"
+    });
+}
 
 
 function sendDailySummary() {
@@ -538,7 +745,8 @@ function createGoogleDocFromHtml(htmlContent, title) {
         const blob = Utilities.newBlob(htmlContent, 'text/html', `${title}.html`);
         
                 // Define the resource for the new file we're creating in Google Drive.
-        const FOLDER_ID = "1UdUZfa3f-TK4bbRDRk_VW1gJnFGzZBaj"; // <-- IMPORTANT: Replace with your actual folder ID.
+        // Retrieve the Folder ID from Script Properties for better management.
+const FOLDER_ID = PropertiesService.getScriptProperties().getProperty('FOLDER_ID');
 
         const fileResource = {
             title: `${title} - AI Assistant`, // Add a suffix to the title.

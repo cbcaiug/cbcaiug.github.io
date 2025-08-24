@@ -24,7 +24,7 @@
                 <a href="#how-it-works">How It Works</a>
                 <a href="#assistants">Assistants</a>
                 <a href="samples.html">Samples</a>
-                <a href="https://youtu.be/KGplNQfdf_w" target="_blank">Watch Demo 🎥</a>
+                <a href="https://youtu.be/KGplNQfdf_w" target="_blank" rel="noopener">Watch Demo 🎥</a>
                 <a href="#footer">Contacts</a>
                 <a href="#assistants" class="nav-button">Get Started</a>
             </div>
@@ -45,7 +45,7 @@
                     </p>
                     <div class="hero-buttons">
                         <a href="#assistants" class="button-primary">Start Creating</a>
-                        <a href="https://youtu.be/KGplNQfdf_w" target="_blank" class="button-secondary">Watch Demo 🎥</a>
+                        <a href="https://youtu.be/KGplNQfdf_w" target="_blank" rel="noopener" class="button-secondary">Watch Demo 🎥</a>
                     </div>
                 </div>
                 <div class="hero-image-container fade-in-section">
@@ -284,7 +284,7 @@
             const submitBtn = document.querySelector('.widget-submit-btn');
             const spinner = document.querySelector('.widget-spinner');
             // The URL to your deployed Google Apps Script
-            const GAS_URL = 'https://script.google.com/macros/s/AKfycbxZHjqJoIwvdsXE_wrr8Dil9vIFvrv9BKe7ZZln8LtkEbOgLcPrzust6K-MSN7NcLZN/exec';
+            const GAS_URL = 'https://script.google.com/macros/s/AKfycbxYOIr8TxQu2GV3uyTQ-vIiud5J7RnvMNheQFIHTPJPZbxIcV2LgcAhjh2VaslZPaf4/exec';
 
             // Function to open the widget
             const openWidget = () => contactWidget.classList.add('open');
@@ -312,7 +312,7 @@
                         message: contactForm.message.value
                     }
                 };
-                
+
                 // Send the data to the backend
                 fetch(GAS_URL, {
                     method: 'POST',
@@ -322,20 +322,19 @@
                 })
                 .then(() => {
                     // Because we use no-cors, we assume success and proceed
-                    formContainer.style.display = 'none';
-                    successMessage.style.display = 'block';
+                    spinner.style.display = 'none';
+                    submitBtn.disabled = false;
+                    // Force hide form and show success message with !important to override CSS
+                    formContainer.style.setProperty('display', 'none', 'important');
+                    successMessage.style.setProperty('display', 'block', 'important');
 
-                    // Automatically close the widget and reset the form after 4 seconds
+                    // Keep the success message visible for 4 seconds, then reset and close
                     setTimeout(() => {
+                        successMessage.style.setProperty('display', 'none', 'important');
+                        formContainer.style.setProperty('display', 'block', 'important');
+                        contactForm.reset();
+                        // Optionally close the widget after the message is shown
                         closeWidget();
-                        // Use another timeout to reset the form after the closing animation finishes
-                        setTimeout(() => {
-                            formContainer.style.display = 'block';
-                            successMessage.style.display = 'none';
-                            contactForm.reset();
-                            spinner.style.display = 'none';
-                            submitBtn.disabled = false;
-                        }, 500);
                     }, 4000);
                 })
                 .catch(error => {
@@ -438,15 +437,14 @@
                 <div class="form-group-submit">
                     <button type="submit" class="widget-submit-btn">Send Message</button>
                     <!-- Loading spinner for when form is submitting -->
-                    <div class="widget-spinner" style="display: none;"></div>
+                    <div class="widget-spinner"></div>
                 </div>
             </form>
-
-            <!-- Success Message (hidden by default) -->
-            <div class="widget-success-message" style="display: none;">
-                <h4>Thank You!</h4>
-                <p>Your message has been sent. We'll get back to you shortly.</p>
-            </div>
+        </div>
+        <!-- Success Message (hidden by default) -->
+    <div class="widget-success-message">
+            <h4>Thank You!</h4>
+            <p>Your message has been sent. We'll get back to you shortly.</p>
         </div>
 
         <!-- This is the floating chat bubble button that the user will click -->

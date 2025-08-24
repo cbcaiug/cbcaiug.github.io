@@ -18,15 +18,14 @@
       gtag('config', 'G-YCTLDP04EJ');
     </script>
 
-    <!-- External Dependencies -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://unpkg.com/docx@8.5.0/build/index.js"></script>
-    <script src="https://unpkg.com/intro.js/intro.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/intro.js/introjs.css">
+       <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" defer></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" defer></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+    <script src="https://unpkg.com/docx@8.5.0/build/index.js" defer></script>
+    <script src="https://unpkg.com/intro.js/intro.js" defer></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,23 +42,36 @@
 
 </head>
 <body class="bg-slate-100">
-    <div id="root"></div>
+        <!-- 
+      This is a static fallback loading screen.
+      It is placed directly in the HTML to prevent a "white flash" while the main
+      React application and its scripts are loading and compiling. React will
+      automatically replace this content once it initializes.
+    -->
+    <div id="root">
+      <div class="loading-screen-container">
+        <div class="loading-logo-wrapper">
+                    <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Loading Logo" class="loading-logo-img" style="width: 160px; height: 160px;" />
+        </div>
+        <p class="loading-screen-text">Initializing AI Assistant...</p>
+      </div>
+    </div>
 
     <!-- Application Scripts (Order is important) -->
 <!-- Libraries & Services -->
-<script type="text/babel" src="js/services/api.js"></script>
-<script type="text/babel" src="js/utils/helpers.js"></script>
+<script type="text/babel" src="js/services/api.js" defer></script>
+<script type="text/babel" src="js/utils/helpers.js" defer></script>
 
 <!-- UI Components -->
-<script type="text/babel" src="js/components/Icons.js"></script>
-<script type="text/babel" src="js/components/Modals.js"></script>
-<script type="text/babel" src="js/components/Chat.js"></script>
-<script type="text/babel" src="js/components/Sidebar.js"></script>
+<script type="text/babel" src="js/components/Icons.js" defer></script>
+<script type="text/babel" src="js/components/Modals.js" defer></script>
+<script type="text/babel" src="js/components/Chat.js" defer></script>
+<script type="text/babel" src="js/components/Sidebar.js" defer></script>
 
 <!-- Main App Component -->
-<script type="text/babel" src="js/components/App.js"></script>
+<script type="text/babel" src="js/components/App.js" defer></script>
 
 <!-- Entry Point -->
-<script type="text/babel" src="js/main.js"></script>
+<script type="text/babel" src="js/main.js" defer></script>
 </body>
 </html>

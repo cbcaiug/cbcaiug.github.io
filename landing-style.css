@@ -1,3 +1,9 @@
+.widget-spinner {
+    display: none;
+}
+.widget-success-message {
+    display: none;
+}
 /*
  * landing-style.css
  * Styles specifically for the new landing page (index.html).
@@ -28,7 +34,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
 }
 
 /* ======== HEADER / NAVIGATION ======== */
-.main-header { position: sticky; top: 0; width: 100%; z-index: 1000; background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
+.main-header { position: sticky; top: 0; width: 100%; z-index: 1000; background-color: rgba(255, 255, 255, 0.8); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
 .main-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; }
 .logo { display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem; font-weight: 700; color: var(--text-dark); text-decoration: none; }
 .logo img { height: 40px; width: 40px; border-radius: 8px; }
@@ -277,8 +283,30 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); colo
 .widget-submit-btn:disabled { background-color: #a5b4fc; cursor: not-allowed; }
 .widget-spinner { width: 24px; height: 24px; border: 3px solid #e0e7ff; border-top: 3px solid var(--primary-color); border-radius: 50%; animation: spin 1s linear infinite; }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-.widget-success-message { padding: 2rem 1.5rem; text-align: center; }
-.widget-success-message h4 { font-size: 1.5rem; color: var(--primary-color); margin: 0 0 0.5rem 0; }
+.widget-success-message {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    max-width: 350px;
+    width: 90vw;
+    background: rgba(255,255,255,0.98);
+    z-index: 2000;
+    display: none;
+    border-radius: 12px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.1);
+    font-size: 1.1rem;
+    align-items: center;
+    justify-content: center;
+}
+.widget-success-message h4 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0 0 0.5rem 0;
+}
 
 /* ======== THEMED COOKIE NOTICE BANNER ======== */
 .cookie-notice {
