@@ -935,7 +935,11 @@ const handleHelpButtonClick = () => {};
                   <button onClick={() => setIsMenuOpen(true)} className="p-1 text-slate-600 hover:text-slate-900 lg:hidden"><MenuIcon className="w-6 h-6" /></button>
                   <h2 className="text-xl font-semibold text-slate-800 text-center flex-1">{activePromptKey} Assistant</h2>
                   <div className="flex items-center gap-2">
-                      <button id="help-button" onClick={handleHelpButtonClick} title="Start Tutorial" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors"><HelpCircleIcon className="w-5 h-5"/><span className="hidden sm:inline">Help</span></button>
+                      {/* The Help button is now a direct link to WhatsApp for support. */}
+<a href="https://wa.me/256726654714" target="_blank" rel="noopener noreferrer" id="help-button" title="Get Help on WhatsApp" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors no-underline">
+    <HelpCircleIcon className="w-5 h-5"/>
+    <span className="hidden sm:inline">Help</span>
+</a>
                       <button id="notifications-button" onClick={() => setIsNotificationsOpen(true)} title="Notifications" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors"><BellIcon className="w-5 h-5"/><span className="hidden sm:inline">Notifications</span>{hasNewNotification && <span className="block w-2.5 h-2.5 bg-red-500 rounded-full"></span>}</button>
                       <button id="share-app-button" onClick={() => handleShare({ title: 'AI Educational Assistant', text: 'Check out this suite of AI-powered tools for educators!', url: window.location.href }, () => setShowCopyToast(true))} title="Share this app" className="p-2 rounded-full hover:bg-slate-200"><Share2Icon className="w-5 h-5 text-slate-500"/></button>
                       <button id="clear-chat-button" onClick={clearChat} title="Clear chat messages" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors"><TrashIcon className="w-5 h-5"/><span className="hidden sm:inline">Clear Chat</span></button>
