@@ -39,29 +39,32 @@
     <main class="py-12 sm:py-16">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white p-8 sm:p-12 rounded-xl shadow-lg content-prose">
+                <!-- MODIFIED: 24/08/2025 - Added policy for handling generated documents. -->
                 <h1>Privacy Policy</h1>
-                <p class="text-sm text-gray-500">Last Updated: August 21, 2025</p>
+                <p class="text-sm text-gray-500">Last Updated: August 24, 2025</p>
 
                 <p>Thank you for using the AI Educational Assistant ("the Service"). Your privacy is critically important to us. This Privacy Policy explains what information is handled by our Service and why.</p>
 
-                <h2>1. The Core Principle: Your Data is Yours</h2>
-                <p>Our Service is designed with a "privacy-first" approach. We do not have user accounts, and we do not have a database to store your personal information or conversations.</p>
-
-                <h2>2. Information Handled by the Service</h2>
-                <p>To provide its functionality, the Service uses your browser's <strong>local storage</strong> to save the following information directly on your device:</p>
+                <h2>1. Information Stored On Your Device (Local Storage)</h2>
+                <p>The Service is designed to keep your most sensitive data on your own computer. Your browser's <strong>local storage</strong> is used to save the following:</p>
                 <ul>
-                    <li><strong>API Keys:</strong> You provide your own API keys from third-party AI providers. These keys are stored only in your browser's local storage and are sent directly from your browser to the AI provider's service. They are never transmitted to or stored on our servers.</li>
-                    <li><strong>Chat History:</strong> Your conversations with the AI assistants are saved in your browser's local storage to allow you to continue your work between sessions. This data is stored only on your device.</li>
-                    <li><strong>Application Settings:</strong> Your preferences, such as the selected AI model, are saved in local storage for your convenience.</li>
+                    <li><strong>API Keys:</strong> Your personal keys from third-party AI providers are stored only in your browser. They are never sent to our servers.</li>
+                    <li><strong>Chat History:</strong> Your conversations are saved in your browser so you can continue your work between sessions.</li>
+                    <li><strong>Application Settings:</strong> Your preferences, such as the selected AI model, are saved for your convenience.</li>
+                </ul>
+
+                <h2>2. Information Processed By Our Server</h2>
+                <p>Certain features require processing data on our backend server (a secure Google Apps Script).</p>
+                <ul>
+                    <li><strong>Generated Document Handling:</strong> When you use the "Save as Google Doc" feature, the AI-generated text is sent to our server to create a Google Document. <strong>These documents are stored in our private Google Drive folder.</strong> We may review these documents to analyze how the AI is performing and to improve the quality of our prompts and assistants. No personal information is attached to these documents.</li>
+                    <li><strong>Analytics:</strong> We collect anonymous usage data (like which assistant is used and your browser type) through Google Analytics to understand how the Service is being used and how to improve it. This data is aggregated and cannot be used to personally identify you.</li>
                 </ul>
 
                 <h2>3. Third-Party Services</h2>
-                <p>Our Service integrates with the following third-party services to provide its full functionality:</p>
+                <p>Our Service integrates with third-party services whose own privacy policies apply:</p>
                 <ul>
-                    <li><strong>AI Providers (e.g., Google, OpenAI):</strong> When you send a message, the content of that message and your API key are sent directly to the third-party AI service you have selected. Their use of your data is governed by their respective privacy policies.</li>
-                    <!-- MODIFIED: 21/08/2025 5:08 PM - Added mention of Browser/OS data collection. -->
-                    <li><strong>Google Analytics:</strong> We use Google Analytics to collect anonymous usage data to help us understand how the Service is being used and how to improve it. This data includes information sent by your browser, such as browser type and operating system. This data is aggregated and cannot be used to identify you personally.</li>
-                    <li><strong>Google Drive/Docs:</strong> When you use the "Save as Google Doc" feature, the AI-generated content is sent to our backend server, which then uses the Google Drive API to create a Google Document. This document is created in our account and made publicly available to you via a shareable link. No personal information is sent during this process.</li>
+                    <li><strong>AI Providers (e.g., Google, OpenAI):</strong> When you send a message, your prompt and API key are sent directly from your browser to the AI service you have selected.</li>
+                    <li><strong>Google Drive/Docs:</strong> The "Save as Google Doc" feature uses the Google Drive API to create and store documents as described in Section 2.</li>
                 </ul>
 
                 <h2>4. Data Security</h2>
