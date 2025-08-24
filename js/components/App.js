@@ -385,12 +385,13 @@ const handleDocxDownload = async (markdownContent) => {
         
         // Prepare the data payload to send to our Google Apps Script.
         const payload = {
-            action: 'createDoc',
-            details: {
-                htmlContent: htmlContent,
-                title: activePromptKey // Use the current assistant's name as the document title.
-            }
-        };
+        action: 'createDoc',
+        details: {
+        htmlContent: htmlContent,
+        title: activePromptKey, // The assistant's name (e.g., "Item Writer")
+        modelName: selectedModelName // The AI model used (e.g., "gemini-2.5-flash")
+    }
+};
 
         // Send the HTML data to our backend script.
         const response = await fetch(GAS_WEB_APP_URL, {

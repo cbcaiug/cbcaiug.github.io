@@ -229,21 +229,24 @@ function doPost(e) {
                 message: "Contact form submitted successfully."
             })).setMimeType(ContentService.MimeType.JSON);
 
-        } else if (action === 'createDoc') {
-            console.log("Action is 'createDoc'.");
-            const { htmlContent, title } = body.details;
-            const docInfo = createGoogleDocFromHtml(htmlContent, title);
-            logEventToSheet({
-                type: 'google_doc_created',
-                assistant: title,
-                details: { url: docInfo.url }
-            });
-            return ContentService.createTextOutput(JSON.stringify({
-                success: true,
-                url: docInfo.url,
-                id: docInfo.id
-            })).setMimeType(ContentService.MimeType.JSON);
-        }
+        // This block handles the creation of a Google Doc from the user's generated content.
+} else if (action === 'createDoc') {
+    console.log("Action is 'createDoc'.");
+    // We now receive the modelName from the frontend.
+    const { htmlContent, title, modelName } = body.details; 
+    // Pass the new modelName to our document creation function.
+    const docInfo = createGoogleDocFromHtml(htmlContent, title, modelName); 
+    logEventToSheet({
+        type: 'google_doc_created',
+        assistant: title,
+        details: { url: docInfo.url, model: modelName || 'N/A' } // Also log the model used.
+    });
+    return ContentService.createTextOutput(JSON.stringify({
+        success: true,
+        url: docInfo.url,
+        id: docInfo.id
+    })).setMimeType(ContentService.MimeType.JSON);
+}
         else if (action === 'reportFailedTrialKey') {
             // Client reports a trial key that failed during usage.
             const failedKey = body.key;
@@ -308,15 +311,17 @@ function logEventToSheet(event, ipAddress = 'N/A') {
         delete eventDetails.sessionId; 
         delete eventDetails.browserOs;
         
-        const formattedDetails = formatDetailsForSheet(event.type, eventDetails);
+        //const formattedDetails = formatDetailsForSheet(event.type, eventDetails);
 
         // MODIFIED: 21/08/2025 4:31 PM - Appending row with new data in the correct order.
-        // Extract the API key label we're sending from the frontend.
+        // Extract the API key label if it exists, otherwise default to 'N/A'.
         const apiKeyUsed = eventDetails.apiKeyUsed || 'N/A';
-        // Clean up the details object so this extra info doesn't appear in the 'Details' column.
-        delete eventDetails.apiKeyUsed; 
+        delete eventDetails.apiKeyUsed; // Clean it from the main details object.
+        
+        // Format the rest of the details for the "Details" column.
+        const formattedDetails = formatDetailsForSheet(event.type, eventDetails);
 
-        // Append the new row with the ApiKeyUsed data in the correct position.
+        // Append the row with the new ApiKeyUsed data included as plain text.
         sheet.appendRow([sessionId, new Date(), ipAddress, browserOs, userType, event.type, event.assistant, apiKeyUsed, formattedDetails]);
 
     } catch (error) {
@@ -735,51 +740,47 @@ function sendDailySummary() {
  * Creates a Google Doc from an HTML string and returns its URL.
  * The document is created in the script owner's Drive and is publicly viewable.
  * @param {string} htmlContent - The HTML content for the document body.
- * @param {string} title - The title for the new document.
- * @return {string} The URL of the newly created Google Doc.
+ * @param {string} title - The base title for the new document (e.g., "Item Writer").
+ * @param {string} modelName - The name of the AI model used (e.g., "gemini-2.5-pro").
+ * @return {{url: string, id: string}} An object with the URL and ID of the new Doc.
  */
-function createGoogleDocFromHtml(htmlContent, title) {
+function createGoogleDocFromHtml(htmlContent, title, modelName) {
     try {
         // Create a temporary blob from the HTML content.
-        // Google's services will convert this HTML blob into a formatted doc.
         const blob = Utilities.newBlob(htmlContent, 'text/html', `${title}.html`);
         
-                // Define the resource for the new file we're creating in Google Drive.
+        // Construct the final document title, including the model name if it exists.
+        const finalTitle = modelName ? `${title} by ${modelName}` : `${title} - AI Assistant`;
+
         // Retrieve the Folder ID from Script Properties for better management.
-const FOLDER_ID = PropertiesService.getScriptProperties().getProperty('FOLDER_ID');
+        const FOLDER_ID = PropertiesService.getScriptProperties().getProperty('FOLDER_ID');
 
         const fileResource = {
-            title: `${title} - AI Assistant`, // Add a suffix to the title.
-            mimeType: 'application/vnd.google-apps.document', // Specify that we want a Google Doc.
-            // NEW: This tells Drive to create the file inside our specific folder.
+            title: finalTitle, // Use our newly constructed title.
+            mimeType: 'application/vnd.google-apps.document',
             parents: [{ id: FOLDER_ID }]
         };
 
-        // Use the Drive API to insert the new file, providing the blob as the content.
-        // This is where the automatic conversion from HTML to a Google Doc happens.
+        // Use the Drive API to insert the new file.
         const docFile = Drive.Files.insert(fileResource, blob);
-
-        // Get the ID of the file that was just created.
         const fileId = docFile.id;
 
-        // IMPORTANT: Set the sharing permissions to make the file public.
+        // Set sharing permissions to make the file public.
         const permission = {
             value: 'anyone',
             type: 'anyone',
-            role: 'reader' // Users can view, but not edit the original.
+            role: 'reader'
         };
         Drive.Permissions.insert(permission, fileId);
 
-        // Return an object containing both the public URL and the file ID.
-// The frontend will use the ID to create direct download links.
-return {
-    url: docFile.alternateLink || `https://docs.google.com/document/d/${fileId}/`,
-    id: fileId
-};
+        // Return both the public URL and the file ID.
+        return {
+            url: docFile.alternateLink || `https://docs.google.com/document/d/${fileId}/`,
+            id: fileId
+        };
 
     } catch (error) {
         console.error('Error creating Google Doc:', error.toString());
-        // This will allow the doPost function to catch the error and notify the user.
         throw new Error(error.toString());
     }
 }
