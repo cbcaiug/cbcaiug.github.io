@@ -866,7 +866,7 @@ const handleHelpButtonClick = () => {};
               <div className="text-center bg-white p-8 rounded-lg shadow-lg max-w-lg">
                   <AlertTriangleIcon className="w-16 h-16 text-amber-500 mx-auto mb-4" />
                   <h2 className="text-2xl font-bold text-slate-800 mb-2">Assistant Not Configured</h2>
-                  <p className="text-slate-600 mb-4">The "{activePromptKey}" assistant has not been configured yet in the Google Apps Script.</p>
+                  <p className="text-slate-600 mb-4">The "{activePromptKey}" assistant is not yet availabe.</p>
                   <p className="text-slate-600 mb-6">Please contact the administrator or select another assistant.</p>
                   <a href = "/" className="mt-6 inline-flex items-center justify-center gap-2 text-slate-600 hover:text-slate-900 font-semibold"><HomeIcon className="w-5 h-5"/>Return to Home</a>
               </div>
