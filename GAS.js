@@ -31,15 +31,16 @@ const ASSISTANT_FILES = {
     "Item Writer": "item-writer",
     "Lesson Plans (NCDC)": "lesson-plans-no-bv",
     "Lesson Plans (with Biblical Integration)": "lesson-plans-bv",
+    "UACE SoW NCDC" : "uace-sow-no-bv",
     "Scheme of Work(NCDC)": "sow-no-bv",
     "Scheme of Work (with Biblical Integration)": "sow-bv",
     "Lesson Notes Generator": "lesson-notes",
     "UCE Project Assistant": "uce-project-assistant",
     "AI in Education Coach": "ai-coach",
     "Essay Grading Assistant": "essay-grader",
-    // --- NEW ASSISTANTS ADDED ---
     "Coteacher": "coteacher",
-    "Data & Document Analyst": "data-analyst"
+    "Data & Document Analyst": "data-analyst",
+    "UCE BIO Item Writer" : "uce-bio-item",
 };
 
 
