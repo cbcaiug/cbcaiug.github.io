@@ -941,6 +941,10 @@ const handleHelpButtonClick = () => {};
     <HelpCircleIcon className="w-5 h-5"/>
     <span className="hidden sm:inline">Help</span>
 </a>
+                      <a href="gift.html" target="_blank" rel="noopener noreferrer" id="gift-button" title="Support the Creator" className="flex items-center gap-2 p-2 rounded-lg hover:bg-amber-50 text-amber-600 font-medium text-sm transition-colors no-underline">
+                          <span className="text-lg">🎁</span>
+                          <span className="hidden sm:inline">Send me a gift</span>
+                      </a>
                       <button id="notifications-button" onClick={() => setIsNotificationsOpen(true)} title="Notifications" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors"><BellIcon className="w-5 h-5"/><span className="hidden sm:inline">Notifications</span>{hasNewNotification && <span className="block w-2.5 h-2.5 bg-red-500 rounded-full"></span>}</button>
                       <button id="share-app-button" onClick={() => handleShare({ title: 'AI Educational Assistant', text: 'Check out this suite of AI-powered tools for educators!', url: window.location.href }, () => setShowCopyToast(true))} title="Share this app" className="p-2 rounded-full hover:bg-slate-200"><Share2Icon className="w-5 h-5 text-slate-500"/></button>
                       <button id="clear-chat-button" onClick={clearChat} title="Clear chat messages" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors"><TrashIcon className="w-5 h-5"/><span className="hidden sm:inline">Clear Chat</span></button>
