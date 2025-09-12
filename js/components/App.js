@@ -574,6 +574,42 @@ const handleDocxDownload = async (markdownContent) => {
           return;
       }
 
+      // Get API key using same logic as handleSendMessage
+      let apiKey = apiKeys[selectedProvider.apiKeyName];
+      
+      if (useSharedApiKey) {
+          if (selectedProvider.key !== 'google' || trialGenerations <= 0) {
+              setError("Shared key is only for Google Gemini, or you are out of free trials. Please turn off the toggle and add your own key.");
+              return;
+          }
+          
+          if (activeTrialApiKey) {
+              apiKey = activeTrialApiKey;
+          } else {
+              try {
+                  const response = await fetch(`${GAS_WEB_APP_URL}?action=getTrialApiKey`);
+                  const data = await response.json();
+                  if (data.success && data.apiKey) {
+                      apiKey = data.apiKey;
+                      setActiveTrialApiKey(apiKey);
+                      if (data.keyLabel) {
+                          setActiveSharedKeyLabel(data.keyLabel);
+                      }
+                  } else {
+                      throw new Error(data.error || 'Failed to fetch trial key.');
+                  }
+              } catch (err) {
+                  setError(`Could not retrieve trial key: ${err.message}`);
+                  return;
+              }
+          }
+      } else {
+          if (!apiKey || apiKeyStatus[selectedProvider.key] !== 'valid') {
+              setError(`Please enter a valid ${selectedProvider.label} API Key in the settings panel.`);
+              return;
+          }
+      }
+
       setIsLoading(true);
       setError('');
       
@@ -594,6 +630,7 @@ const handleDocxDownload = async (markdownContent) => {
       await fetchAndStreamResponse({
           historyForApi,
           systemPrompt,
+          apiKey,
           onUpdate: (chunk) => {
               setChatHistory(prev => {
                   const updatedHistory = [...prev];
@@ -1032,7 +1069,7 @@ const handleHelpButtonClick = () => {};
 
               <footer id="chat-input-area" className="p-4 border-t border-slate-200 bg-white flex-shrink-0">
                   <div className="relative mx-auto max-w-4xl">
-                                  {error && <div className="p-4 bg-red-100 text-red-700 border-t border-red-200 flex-shrink-0">{error}</div>}
+                                  {error && <div className={`p-4 border-t flex-shrink-0 ${error.includes('Creating your Google Doc') ? 'bg-green-100 text-green-700 border-green-200' : 'bg-red-100 text-red-700 border-red-200'}`}>{error}</div>}
                       {/* NEW: Attachment Manager UI */}
 {pendingFiles.length > 0 && (
     <div className="absolute bottom-full left-0 mb-2 w-full max-w-2xl p-2">
