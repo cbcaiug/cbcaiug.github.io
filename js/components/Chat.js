@@ -50,79 +50,59 @@ const MarkdownRenderer = ({ htmlContent, isLoading, isTakingLong }) => {
 };
 
 const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDocxDownload }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef(null);
-
-  // Effect to handle clicking outside of the menu to close it
-  useEffect(() => {
-      const handleClickOutside = (event) => {
-          if (menuRef.current && !menuRef.current.contains(event.target)) {
-              setIsOpen(false);
-          }
-      };
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [menuRef]);
-
   // Don't render the menu for a message that is still loading
   if (msg.isLoading) return null;
-  
-  const menuPositionClass = 'right-0'; // Keep the menu position consistent
 
   return (
-      <div className="relative self-end mt-1" ref={menuRef} id={`message-options-menu-${index}`}>
+      <div className="flex items-center justify-end gap-1 mt-2 px-4 pb-2" id={`message-options-menu-${index}`}>
           <button
-              onClick={() => setIsOpen(prev => !prev)}
-              className="p-2 rounded-full hover:bg-slate-200 text-slate-500"
-              title="Options"
+              onClick={() => onCopy(msg.content)}
+              className="flex items-center gap-1 px-2 py-1 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors"
+              title="Copy Message"
           >
-              <MoreVerticalIcon className="w-5 h-5" />
+              <CopyIcon className="w-3 h-3" />
+              <span>Copy</span>
           </button>
-          {isOpen && (
-              <div className={`absolute ${menuPositionClass} bottom-full mb-2 w-52 bg-white rounded-md shadow-lg z-20 border border-slate-200`}>
-                  <button
-                      onClick={() => { onCopy(msg.content); setIsOpen(false); }}
-                      className="w-full text-left flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100"
-                  >
-                      <CopyIcon className="w-4 h-4" />
-                      <span>Copy Message</span>
-                  </button>
-                {/* This is the check to only show the button for assistant messages */}
-                  {msg.role === 'assistant' && (
-                     <button
-                        onClick={() => { onDocxDownload(msg.content); setIsOpen(false); }}
-                        className="w-full text-left flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100"
-                    >
-                        <FileTextIcon className="w-4 h-4" />
-                        <span>Save as Google Doc</span>
-                    </button>
-                  )}
-                  <button
-                      onClick={() => { onShare({ title: 'AI Assistant Response', text: msg.content }); setIsOpen(false); }}
-                      className="w-full text-left flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100"
-                  >
-                      <Share2Icon className="w-4 h-4" />
-                      <span>Share Message</span>
-                  </button>
-                  {msg.role === 'assistant' && (
-                      <button
-                          onClick={() => { onRegenerate(index); setIsOpen(false); }}
-                          className="w-full text-left flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100"
-                      >
-                          <RefreshCwIcon className="w-4 h-4" />
-                          <span>Regenerate</span>
-                      </button>
-                  )}
-                  <div className="border-t border-slate-100 my-1"></div>
-                  <button
-                      onClick={() => { onDelete(index); setIsOpen(false); }}
-                      className="w-full text-left flex items-center gap-3 px-4 py-2 text-sm text-red-600 hover:bg-red-50"
-                  >
-                      <TrashIcon className="w-4 h-4" />
-                      <span>Delete Message</span>
-                  </button>
-              </div>
+          
+          {msg.role === 'assistant' && (
+              <button
+                  onClick={() => onDocxDownload(msg.content)}
+                  className="flex items-center gap-1 px-2 py-1 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors"
+                  title="Save as Google Doc"
+              >
+                  <FileTextIcon className="w-3 h-3" />
+                  <span>Save</span>
+              </button>
           )}
+          
+          <button
+              onClick={() => onShare({ title: 'AI Assistant Response', text: msg.content })}
+              className="flex items-center gap-1 px-2 py-1 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors"
+              title="Share Message"
+          >
+              <Share2Icon className="w-3 h-3" />
+              <span>Share</span>
+          </button>
+          
+          {msg.role === 'assistant' && (
+              <button
+                  onClick={() => onRegenerate(index)}
+                  className="flex items-center gap-1 px-2 py-1 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors"
+                  title="Regenerate Response"
+              >
+                  <RefreshCwIcon className="w-3 h-3" />
+                  <span>Regenerate</span>
+              </button>
+          )}
+          
+          <button
+              onClick={() => onDelete(index)}
+              className="flex items-center gap-1 px-2 py-1 text-xs text-red-600 hover:text-red-800 hover:bg-red-50 rounded transition-colors"
+              title="Delete Message"
+          >
+              <TrashIcon className="w-3 h-3" />
+              <span>Delete</span>
+          </button>
       </div>
   );
 };
