@@ -37,9 +37,21 @@ const Sidebar = ({
     onUseSharedApiKeyChange,
 }) => {
     const [activeTab, setActiveTab] = useState('ai');
-    const [showAdvanced, setShowAdvanced] = useState(false);
+    const [showPersonalKey, setShowPersonalKey] = useState(!useSharedApiKey);
+    const [keyModeToast, setKeyModeToast] = useState('');
     
     const selectedProvider = AI_PROVIDERS.find(p => p.key === selectedProviderKey);
+
+    // Handle personal key toggle
+    const handlePersonalKeyToggle = (enabled) => {
+        setShowPersonalKey(enabled);
+        onUseSharedApiKeyChange(!enabled);
+        
+        // Show toast notification
+        const message = enabled ? 'Using personal API key' : 'Using shared API key';
+        setKeyModeToast(message);
+        setTimeout(() => setKeyModeToast(''), 3000);
+    };
 
     // Keyboard navigation
     useEffect(() => {
@@ -115,7 +127,7 @@ const Sidebar = ({
                         <input 
                             type="checkbox" 
                             checked={useSharedApiKey} 
-                            onChange={(e) => onUseSharedApiKeyChange(e.target.checked)} 
+                            onChange={(e) => handlePersonalKeyToggle(!e.target.checked)} 
                             id="shared-key-toggle" 
                             className="sr-only peer"
                         />
@@ -124,84 +136,70 @@ const Sidebar = ({
                 </div>
             </div>
 
-            {/* AI Provider & Model - Only show if not using shared key */}
-            {!useSharedApiKey && (
-                <div className="space-y-3">
-                    <div>
-                        <label className="text-sm text-slate-400">AI Provider</label>
-                        <select 
-                            value={selectedProviderKey} 
-                            onChange={onProviderChange} 
-                            className="settings-input w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                        >
-                            {AI_PROVIDERS.map(p => <option key={p.key} value={p.key}>{p.label}</option>)}
-                        </select>
-                    </div>
-                    <div>
-                        <label className="text-sm text-slate-400">AI Model</label>
-                        <select 
-                            value={selectedModelName} 
-                            onChange={onModelChange} 
-                            className="settings-input w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                        >
-                            {selectedProvider?.models.map(model => <option key={model.name} value={model.name}>{model.name}</option>)}
-                        </select>
-                    </div>
-                </div>
-            )}
-
-            {/* API Key Input - Only show if not using shared key */}
-            {!useSharedApiKey && (
-                <div>
-                    <label className="text-sm text-slate-400">{selectedProvider?.label} API Key</label>
-                    <div className="relative">
-                        <input 
-                            type="password" 
-                            value={apiKeys[selectedProvider?.apiKeyName] || ''} 
-                            onChange={(e) => onApiKeyChange(selectedProvider.apiKeyName, selectedProvider, e.target.value)} 
-                            placeholder={`Paste your ${selectedProvider?.label} key here`}
-                            className="settings-input w-full mt-1 p-2 pr-8 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" 
-                        />
-                        <div className="absolute inset-y-0 right-0 flex items-center pr-2">
-                            {apiKeyStatus[selectedProvider.key] === 'checking' && <div className="loading-spinner"></div>}
-                            {apiKeyStatus[selectedProvider.key] === 'valid' && <CheckCircleIcon className="w-5 h-5 text-green-500"/>}
-                            {apiKeyStatus[selectedProvider.key] === 'invalid' && <AlertCircleIcon className="w-5 h-5 text-red-500"/>}
-                        </div>
-                    </div>
-                    <a href={selectedProvider?.apiKeyUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-indigo-400 hover:underline mt-1 block">
-                        Get your key here &raquo;
-                    </a>
-                </div>
-            )}
-
-            {/* Advanced AI Settings */}
+            {/* Personal API Key Settings */}
             <div>
                 <button
-                    onClick={() => setShowAdvanced(!showAdvanced)}
+                    onClick={() => handlePersonalKeyToggle(!showPersonalKey)}
                     className="flex items-center justify-between w-full text-sm text-slate-400 hover:text-white transition-colors"
                 >
-                    <span>Advanced Settings</span>
-                    <svg className={`w-4 h-4 transition-transform ${showAdvanced ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
+                    <span>Use Personal API Key</span>
+                    <div className="flex items-center gap-2">
+                        <label className="relative inline-flex items-center cursor-pointer">
+                            <input 
+                                type="checkbox" 
+                                checked={showPersonalKey} 
+                                onChange={(e) => handlePersonalKeyToggle(e.target.checked)} 
+                                className="sr-only peer"
+                            />
+                            <div className="w-8 h-4 bg-slate-600 rounded-full peer peer-focus:ring-1 peer-focus:ring-indigo-500 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[1px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-indigo-600"></div>
+                        </label>
+                        <svg className={`w-4 h-4 transition-transform ${showPersonalKey ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
                 </button>
                 
-                {showAdvanced && selectedProvider?.key === 'google' && (
-                    <div className="mt-3 p-3 bg-slate-700 rounded-lg">
-                        <div className="flex items-center justify-between">
-                            <div>
-                                <label className="text-sm font-medium text-white">Google Search Grounding</label>
-                                <p className="text-xs text-slate-400">Enable web search for responses</p>
-                            </div>
-                            <label className="relative inline-flex items-center cursor-pointer">
+                {showPersonalKey && (
+                    <div className="mt-3 space-y-3 p-3 bg-slate-700 rounded-lg">
+                        <div>
+                            <label className="text-sm text-slate-400">AI Provider</label>
+                            <select 
+                                value={selectedProviderKey} 
+                                onChange={onProviderChange} 
+                                className="settings-input w-full mt-1 p-2 bg-slate-600 border border-slate-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            >
+                                {AI_PROVIDERS.map(p => <option key={p.key} value={p.key}>{p.label}</option>)}
+                            </select>
+                        </div>
+                        <div>
+                            <label className="text-sm text-slate-400">AI Model</label>
+                            <select 
+                                value={selectedModelName} 
+                                onChange={onModelChange} 
+                                className="settings-input w-full mt-1 p-2 bg-slate-600 border border-slate-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            >
+                                {selectedProvider?.models.map(model => <option key={model.name} value={model.name}>{model.name}</option>)}
+                            </select>
+                        </div>
+                        <div>
+                            <label className="text-sm text-slate-400">{selectedProvider?.label} API Key</label>
+                            <div className="relative">
                                 <input 
-                                    type="checkbox" 
-                                    checked={isGroundingEnabled} 
-                                    onChange={(e) => onGroundingChange(e.target.checked)} 
-                                    className="sr-only peer"
+                                    type="password" 
+                                    value={apiKeys[selectedProvider?.apiKeyName] || ''} 
+                                    onChange={(e) => onApiKeyChange(selectedProvider.apiKeyName, selectedProvider, e.target.value)} 
+                                    placeholder={`Paste your ${selectedProvider?.label} key here`}
+                                    className="settings-input w-full mt-1 p-2 pr-8 bg-slate-600 border border-slate-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" 
                                 />
-                                <div className="w-11 h-6 bg-slate-600 rounded-full peer peer-focus:ring-2 peer-focus:ring-indigo-500 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
-                            </label>
+                                <div className="absolute inset-y-0 right-0 flex items-center pr-2">
+                                    {apiKeyStatus[selectedProvider.key] === 'checking' && <div className="loading-spinner"></div>}
+                                    {apiKeyStatus[selectedProvider.key] === 'valid' && <CheckCircleIcon className="w-5 h-5 text-green-500"/>}
+                                    {apiKeyStatus[selectedProvider.key] === 'invalid' && <AlertCircleIcon className="w-5 h-5 text-red-500"/>}
+                                </div>
+                            </div>
+                            <a href={selectedProvider?.apiKeyUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-indigo-400 hover:underline mt-1 block">
+                                Get your key here &raquo;
+                            </a>
                         </div>
                     </div>
                 )}
@@ -343,6 +341,14 @@ const Sidebar = ({
                     {activeTab === 'about' && <AboutTab />}
                 </div>
             </div>
+            
+            {/* Toast Notification */}
+            {keyModeToast && (
+                <div className="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2">
+                    <CheckCircleIcon className="w-5 h-5"/>
+                    <span>{keyModeToast}</span>
+                </div>
+            )}
             
             {/* Resize Handle */}
             <div onMouseDown={onStartResizing} className="resize-handle hidden lg:block"></div>
