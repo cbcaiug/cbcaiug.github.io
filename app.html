@@ -34,6 +34,39 @@
     
     <!-- Application Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Enhanced scrollbar styling */
+        .enhanced-scrollbar::-webkit-scrollbar {
+            width: 14px;
+        }
+        .enhanced-scrollbar::-webkit-scrollbar-track {
+            background: #374151;
+            border-radius: 7px;
+        }
+        .enhanced-scrollbar::-webkit-scrollbar-thumb {
+            background: #6b7280;
+            border-radius: 7px;
+            border: 2px solid #374151;
+        }
+        .enhanced-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+        
+        /* Tab navigation */
+        .settings-tab {
+            transition: all 0.2s ease;
+        }
+        .settings-tab.active {
+            background: #4f46e5;
+            color: white;
+        }
+        
+        /* Keyboard navigation focus */
+        .settings-input:focus {
+            outline: 2px solid #4f46e5;
+            outline-offset: 2px;
+        }
+    </style>
     <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/chat.css">
