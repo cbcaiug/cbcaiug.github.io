@@ -136,7 +136,35 @@ const Sidebar = ({
                 </div>
             </div>
 
-            {/* Personal API Key Settings */}
+            {/* AI Provider & Model - Always visible */}
+            <div className="space-y-3">
+                <div>
+                    <label className="text-sm text-slate-400">AI Provider</label>
+                    <select 
+                        value={selectedProviderKey} 
+                        onChange={onProviderChange} 
+                        disabled={useSharedApiKey}
+                        className={`settings-input w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 ${useSharedApiKey ? 'opacity-60 cursor-not-allowed' : ''}`}
+                    >
+                        {AI_PROVIDERS.map(p => <option key={p.key} value={p.key}>{p.label}</option>)}
+                    </select>
+                    {useSharedApiKey && (
+                        <p className="text-xs text-slate-500 mt-1">Locked to Google Gemini for shared keys</p>
+                    )}
+                </div>
+                <div>
+                    <label className="text-sm text-slate-400">AI Model</label>
+                    <select 
+                        value={selectedModelName} 
+                        onChange={onModelChange} 
+                        className="settings-input w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    >
+                        {selectedProvider?.models.map(model => <option key={model.name} value={model.name}>{model.name}</option>)}
+                    </select>
+                </div>
+            </div>
+
+            {/* Personal API Key Settings - Only API Key Input */}
             <div>
                 <button
                     onClick={() => handlePersonalKeyToggle(!showPersonalKey)}
@@ -160,27 +188,7 @@ const Sidebar = ({
                 </button>
                 
                 {showPersonalKey && (
-                    <div className="mt-3 space-y-3 p-3 bg-slate-700 rounded-lg">
-                        <div>
-                            <label className="text-sm text-slate-400">AI Provider</label>
-                            <select 
-                                value={selectedProviderKey} 
-                                onChange={onProviderChange} 
-                                className="settings-input w-full mt-1 p-2 bg-slate-600 border border-slate-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                            >
-                                {AI_PROVIDERS.map(p => <option key={p.key} value={p.key}>{p.label}</option>)}
-                            </select>
-                        </div>
-                        <div>
-                            <label className="text-sm text-slate-400">AI Model</label>
-                            <select 
-                                value={selectedModelName} 
-                                onChange={onModelChange} 
-                                className="settings-input w-full mt-1 p-2 bg-slate-600 border border-slate-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                            >
-                                {selectedProvider?.models.map(model => <option key={model.name} value={model.name}>{model.name}</option>)}
-                            </select>
-                        </div>
+                    <div className="mt-3 p-3 bg-slate-700 rounded-lg">
                         <div>
                             <label className="text-sm text-slate-400">{selectedProvider?.label} API Key</label>
                             <div className="relative">
