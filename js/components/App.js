@@ -674,14 +674,14 @@ const handleDocxDownload = async (markdownContent) => {
       });
   };
 
-  const clearChat = () => {
+  const clearChat = useCallback(() => {
       const chatKey = `chatHistory_${activePromptKey}`;
       setChatHistory([]); 
       localStorage.removeItem(chatKey);
       setPendingFiles([]);
       setError('');
       loadInitialMessage(activePromptKey);
-  };
+  }, [activePromptKey, loadInitialMessage]);
   // NEW: Handles adding one or more files, checking against the total size limit.
 const handleFileChange = (e) => {
     const files = Array.from(e.target.files);
@@ -742,6 +742,42 @@ const handleRemoveFile = (fileId) => {
 // The following are empty placeholder functions to prevent the app from crashing.
 const startResizing = useCallback(() => {}, []);
 const handleHelpButtonClick = () => {};
+
+  // --- CLIPBOARD PASTE HANDLER ---
+  const handlePaste = useCallback((e) => {
+    const items = e.clipboardData?.items;
+    if (!items || isFileUploadDisabled) return;
+
+    const files = [];
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      if (item.kind === 'file') {
+        const file = item.getAsFile();
+        if (file) files.push(file);
+      }
+    }
+
+    if (files.length > 0) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      let currentTotalSize = pendingFiles.reduce((sum, f) => sum + f.file.size, 0);
+
+      const newFiles = files.map(file => {
+        const previewUrl = file.type.startsWith('image/') ? URL.createObjectURL(file) : null;
+        return { file, previewUrl, id: Date.now() + Math.random() };
+      });
+
+      for (const newFile of newFiles) {
+        if (currentTotalSize + newFile.file.size > MAX_TOTAL_UPLOAD_SIZE) {
+          setError(`Cannot paste "${newFile.file.name}". Total size cannot exceed 10 MB.`);
+          break;
+        }
+        setPendingFiles(prev => [...prev, newFile]);
+        currentTotalSize += newFile.file.size;
+      }
+    }
+  }, [pendingFiles, isFileUploadDisabled, MAX_TOTAL_UPLOAD_SIZE]);
 
   // --- EFFECTS ---
   useEffect(() => {
@@ -810,6 +846,10 @@ const handleHelpButtonClick = () => {};
           setIsLoadingAssistants(false);
       };
       initializeApp();
+
+      // Add paste event listener
+      document.addEventListener('paste', handlePaste);
+      return () => document.removeEventListener('paste', handlePaste);
   }, []);
 
 
@@ -990,7 +1030,7 @@ const handleHelpButtonClick = () => {};
                           <span className="hidden sm:inline">Send me a gift</span>
                       </a>
                       <button id="notifications-button" onClick={() => setIsNotificationsOpen(true)} title="Notifications" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors"><BellIcon className="w-5 h-5"/><span className="hidden sm:inline">Notifications</span>{hasNewNotification && <span className="block w-2.5 h-2.5 bg-red-500 rounded-full"></span>}</button>
-                      <button id="share-app-button" onClick={() => handleShare({ title: 'AI Educational Assistant', text: 'Check out this suite of AI-powered tools for educators!', url: window.location.href }, () => setShowCopyToast(true))} title="Share this app" className="p-2 rounded-full hover:bg-slate-200"><Share2Icon className="w-5 h-5 text-slate-500"/></button>
+                      <button id="share-app-button" onClick={() => handleShare({ title: 'AI Educational Assistant', text: 'Check out this suite of AI-powered tools for educators!', url: window.location.href }, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} title="Share this app" className="p-2 rounded-full hover:bg-slate-200"><Share2Icon className="w-5 h-5 text-slate-500"/></button>
                       <button id="clear-chat-button" onClick={clearChat} title="Clear chat messages" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors"><TrashIcon className="w-5 h-5"/><span className="hidden sm:inline">Clear Chat</span></button>
                   </div>
               </header>
