@@ -374,6 +374,35 @@
             // --- END OF COOKIE BANNER LOGIC ---
             
             // --- REVIEWS LOADING LOGIC ---
+            let allReviews = [];
+            let showingAll = false;
+            
+            const renderReviews = (reviews, showAll = false) => {
+                const reviewsToShow = showAll ? reviews : reviews.slice(0, 3);
+                const reviewsHtml = reviewsToShow.map(review => {
+                    const date = new Date(review.timestamp).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+                    return `
+                        <div class="review-card">
+                            <div class="review-stars">
+                                ${Array.from({length: 5}, (_, i) => 
+                                    `<span class="review-star">${i < review.rating ? '★' : '☆'}</span>`
+                                ).join('')}
+                            </div>
+                            <p class="review-comment">"${review.comment}"</p>
+                            <div class="review-meta">
+                                <span class="review-assistant">${review.assistant}</span>
+                                <span class="review-date">${date}</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                const showMoreBtn = !showAll && reviews.length > 3 ? 
+                    `<div class="text-center mt-6"><button id="show-more-reviews" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">Show More Reviews (${reviews.length - 3})</button></div>` : '';
+                
+                return reviewsHtml + showMoreBtn;
+            };
+            
             const loadReviews = async () => {
                 const reviewsContainer = document.getElementById('reviews-container');
                 if (!reviewsContainer) return;
@@ -385,25 +414,17 @@
                     const data = await response.json();
                     
                     if (data.success && data.reviews && data.reviews.length > 0) {
-                        reviewsContainer.innerHTML = data.reviews.map(review => {
-                            const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
-                            const date = new Date(review.timestamp).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-                            
-                            return `
-                                <div class="review-card">
-                                    <div class="review-stars">
-                                        ${Array.from({length: 5}, (_, i) => 
-                                            `<span class="review-star">${i < review.rating ? '★' : '☆'}</span>`
-                                        ).join('')}
-                                    </div>
-                                    <p class="review-comment">"${review.comment}"</p>
-                                    <div class="review-meta">
-                                        <span class="review-assistant">${review.assistant}</span>
-                                        <span class="review-date">${date}</span>
-                                    </div>
-                                </div>
-                            `;
-                        }).join('');
+                        allReviews = data.reviews;
+                        reviewsContainer.innerHTML = renderReviews(allReviews, showingAll);
+                        
+                        // Add click handler for show more button
+                        const showMoreBtn = document.getElementById('show-more-reviews');
+                        if (showMoreBtn) {
+                            showMoreBtn.addEventListener('click', () => {
+                                showingAll = true;
+                                reviewsContainer.innerHTML = renderReviews(allReviews, true);
+                            });
+                        }
                     } else {
                         reviewsContainer.innerHTML = '<div class="reviews-empty">No reviews available yet. Be the first to share your experience!</div>';
                     }
