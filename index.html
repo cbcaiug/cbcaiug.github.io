@@ -205,6 +205,14 @@
             </div>
         </section>
         
+        <!-- ======== REVIEWS SECTION ======== -->
+        <section id="reviews" class="reviews-section fade-in-section">
+            <h2 class="section-title">What Teachers Are Saying</h2>
+            <div id="reviews-container" class="reviews-grid">
+                <!-- Reviews will be loaded here -->
+            </div>
+        </section>
+        
         <!-- ======== TESTIMONIAL SECTION ======== -->
         <section class="testimonial-section fade-in-section">
             <div class="testimonial-overlay"></div>
@@ -364,6 +372,51 @@
                 localStorage.setItem('cookieConsentAccepted', 'true');
             });
             // --- END OF COOKIE BANNER LOGIC ---
+            
+            // --- REVIEWS LOADING LOGIC ---
+            const loadReviews = async () => {
+                const reviewsContainer = document.getElementById('reviews-container');
+                if (!reviewsContainer) return;
+                
+                reviewsContainer.innerHTML = '<div class="reviews-loading">Loading reviews...</div>';
+                
+                try {
+                    const response = await fetch('https://script.google.com/macros/s/AKfycbxYOIr8TxQu2GV3uyTQ-vIiud5J7RnvMNheQFIHTPJPZbxIcV2LgcAhjh2VaslZPaf4/exec?action=getReviews');
+                    const data = await response.json();
+                    
+                    if (data.success && data.reviews && data.reviews.length > 0) {
+                        reviewsContainer.innerHTML = data.reviews.map(review => {
+                            const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+                            const date = new Date(review.timestamp).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+                            
+                            return `
+                                <div class="review-card">
+                                    <div class="review-stars">
+                                        ${Array.from({length: 5}, (_, i) => 
+                                            `<span class="review-star">${i < review.rating ? '★' : '☆'}</span>`
+                                        ).join('')}
+                                    </div>
+                                    <p class="review-comment">"${review.comment}"</p>
+                                    <div class="review-meta">
+                                        <span class="review-assistant">${review.assistant}</span>
+                                        <span class="review-date">${date}</span>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('');
+                    } else {
+                        reviewsContainer.innerHTML = '<div class="reviews-empty">No reviews available yet. Be the first to share your experience!</div>';
+                    }
+                } catch (error) {
+                    console.error('Failed to load reviews:', error);
+                    reviewsContainer.innerHTML = '<div class="reviews-empty">Reviews will appear here soon!</div>';
+                }
+            };
+            
+            // Load reviews when page loads
+            loadReviews();
+            // --- END OF REVIEWS LOGIC ---
+            
             // Typewriter effect logic
             const typingElement = document.getElementById('typewriter-text');
             const cursorElement = document.querySelector('.cursor');

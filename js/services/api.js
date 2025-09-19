@@ -133,6 +133,24 @@ const fetchNotifications = async () => {
     }
 };
 
+/**
+ * Fetches recent positive reviews from the backend.
+ * @returns {Promise<Array>} A promise that resolves to an array of review objects.
+ */
+const fetchReviews = async () => {
+    try {
+        const response = await fetch(`${GAS_WEB_APP_URL}?action=getReviews`);
+        const data = await response.json();
+        if (data.success && data.reviews) {
+            return data.reviews;
+        }
+        return [];
+    } catch (error) {
+        console.error("Failed to fetch reviews:", error);
+        return [];
+    }
+};
+
 // --- FILE & DATA PROCESSING ---
 
 /**

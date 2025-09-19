@@ -83,6 +83,12 @@ function doGet(e) {
                 success: true,
                 updates: updates
             }));
+        } else if (action === 'getReviews') {
+            const reviews = getReviewsFromSheet();
+            output = ContentService.createTextOutput(JSON.stringify({
+                success: true,
+                reviews: reviews
+            }));
         } else if (action === 'getTrialApiKey') {
             // This action iterates through stored trial keys and returns the first valid one.
             const scriptProperties = PropertiesService.getScriptProperties();
@@ -456,6 +462,87 @@ function getUpdatesFromSheet() {
 
     } catch (error) {
         console.error(`Failed to get updates from sheet: ${error.toString()}`);
+        return [];
+    }
+}
+
+function getReviewsFromSheet() {
+    try {
+        const now = new Date();
+        const currentMonth = now.getMonth() + 1;
+        const currentYear = now.getFullYear();
+        
+        const reviews = [];
+        
+        // Check current and previous 2 months for reviews
+        for (let i = 0; i < 3; i++) {
+            let month = currentMonth - i;
+            let year = currentYear;
+            
+            if (month <= 0) {
+                month += 12;
+                year -= 1;
+            }
+            
+            const monthStr = month.toString().padStart(2, '0');
+            const sheetName = `Log - ${year}-${monthStr}`;
+            
+            try {
+                const sheet = getSheet(sheetName);
+                const data = sheet.getDataRange().getValues();
+                
+                if (data.length <= 1) continue;
+                
+                const headers = data[0];
+                const eventTypeIdx = headers.indexOf("EventType");
+                const detailsIdx = headers.indexOf("Details");
+                const timestampIdx = headers.indexOf("Timestamp");
+                const assistantIdx = headers.indexOf("AssistantName");
+                
+                data.slice(1).forEach(row => {
+                    if (row[eventTypeIdx] === 'feedback_submitted') {
+                        try {
+                            const detailsStr = row[detailsIdx];
+                            // Handle the formatted details from formatDetailsForSheet
+                            if (detailsStr && detailsStr.includes('Rating:')) {
+                                const lines = detailsStr.split('\n');
+                                let rating = null;
+                                let comment = null;
+                                
+                                lines.forEach(line => {
+                                    if (line.startsWith('Rating:')) {
+                                        rating = parseInt(line.match(/Rating: (\d+)/)?.[1]);
+                                    } else if (line.startsWith('Feedback:')) {
+                                        comment = line.replace('Feedback: "', '').replace('"', '');
+                                    }
+                                });
+                                
+                                if (rating >= 4 && comment && comment !== 'No detailed feedback was provided.') {
+                                    reviews.push({
+                                        rating: rating,
+                                        comment: comment,
+                                        assistant: row[assistantIdx] || 'AI Assistant',
+                                        timestamp: new Date(row[timestampIdx]).toISOString()
+                                    });
+                                }
+                            }
+                        } catch (e) {
+                            // Skip malformed entries
+                        }
+                    }
+                });
+            } catch (e) {
+                // Sheet doesn't exist, continue
+            }
+        }
+        
+        // Sort by timestamp (newest first) and limit to 6 reviews
+        return reviews
+            .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+            .slice(0, 6);
+            
+    } catch (error) {
+        console.error(`Failed to get reviews from sheet: ${error.toString()}`);
         return [];
     }
 }
