@@ -378,12 +378,12 @@
                     const date = new Date(review.timestamp).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
                     return `
                         <div class="review-card">
-                            <div class="review-stars">
+                            ${review.rating > 0 ? `<div class="review-stars">
                                 ${Array.from({length: 5}, (_, i) => 
                                     `<span class="review-star">${i < review.rating ? '★' : '☆'}</span>`
                                 ).join('')}
-                            </div>
-                            <p class="review-comment">"${review.comment}"</p>
+                            </div>` : ''}
+                            ${review.comment ? `<p class="review-comment">"${review.comment}"</p>` : ''}
                             <div class="review-meta">
                                 <span class="review-assistant">${review.assistant}</span>
                                 <span class="review-date">${date}</span>

@@ -89,6 +89,12 @@ function doGet(e) {
                 success: true,
                 reviews: reviews
             }));
+        } else if (action === 'debugReviews') {
+            const debug = debugReviewsFromSheet();
+            output = ContentService.createTextOutput(JSON.stringify({
+                success: true,
+                debug: debug
+            }));
         } else if (action === 'getTrialApiKey') {
             // This action iterates through stored trial keys and returns the first valid one.
             const scriptProperties = PropertiesService.getScriptProperties();
@@ -466,6 +472,35 @@ function getUpdatesFromSheet() {
     }
 }
 
+function debugReviewsFromSheet() {
+    try {
+        const now = new Date();
+        const currentMonth = now.getMonth() + 1;
+        const currentYear = now.getFullYear();
+        const monthStr = currentMonth.toString().padStart(2, '0');
+        const sheetName = `Log - ${currentYear}-${monthStr}`;
+        
+        const sheet = getSheet(sheetName);
+        const data = sheet.getDataRange().getValues();
+        
+        const headers = data[0];
+        const feedbackRows = data.slice(1).filter(row => row[headers.indexOf("EventType")] === 'feedback_submitted');
+        
+        return {
+            sheetName: sheetName,
+            totalRows: data.length - 1,
+            feedbackRows: feedbackRows.length,
+            sampleFeedback: feedbackRows.slice(0, 2).map(row => ({
+                details: row[headers.indexOf("Details")],
+                assistant: row[headers.indexOf("AssistantName")],
+                timestamp: row[headers.indexOf("Timestamp")]
+            }))
+        };
+    } catch (error) {
+        return { error: error.toString() };
+    }
+}
+
 function getReviewsFromSheet() {
     try {
         const now = new Date();
@@ -517,10 +552,10 @@ function getReviewsFromSheet() {
                                     }
                                 });
                                 
-                                if (rating >= 4 && comment && comment !== 'No detailed feedback was provided.') {
+                                if (rating || comment) {
                                     reviews.push({
-                                        rating: rating,
-                                        comment: comment,
+                                        rating: rating || 0,
+                                        comment: comment || '',
                                         assistant: row[assistantIdx] || 'AI Assistant',
                                         timestamp: new Date(row[timestampIdx]).toISOString()
                                     });
@@ -836,7 +871,7 @@ function createGoogleDocFromHtml(htmlContent, title, modelName) {
     try {
         // Create a temporary blob from the HTML content.
         const blob = Utilities.newBlob(htmlContent, 'text/html', `${title}.html`);
-        
+        ss
         // Construct the final document title, including the model name if it exists.
         const finalTitle = modelName ? `${title} by ${modelName}` : `${title} - AI Assistant`;
 
