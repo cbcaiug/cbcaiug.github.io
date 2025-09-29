@@ -882,10 +882,28 @@ const handleHelpButtonClick = () => {};
            localStorage.setItem(chatKey, JSON.stringify({ history: chatHistory, timestamp: Date.now() }));
       }
   }, [chatHistory, activePromptKey]);
-    // This effect updates the page title whenever the active assistant changes.
+    // This effect updates the page title and meta tags whenever the active assistant changes.
   useEffect(() => {
-      document.title = `${activePromptKey} | AI Assistant`;
-  }, [activePromptKey]); // It runs only when the activePromptKey state changes.
+      const assistantDescriptions = {
+          'Item Writer': 'Generate scenario-based assessment items with structured scoring guides for Uganda\'s CBC curriculum.',
+          'Lesson Plans (NCDC)': 'Create detailed lesson plans following the official NCDC template for Ugandan educators.',
+          'Scheme of Work(NCDC)': 'Develop structured schemes of work based on Uganda\'s CBC syllabus requirements.',
+          'Lesson Notes Generator': 'Produce comprehensive and well-structured lecture notes for any educational topic.',
+          'Coteacher': 'Your all-purpose AI teaching assistant for questions, brainstorming, and classroom support.',
+          'AI in Education Coach': 'Get guidance on integrating AI tools effectively into your classroom teaching.',
+          'Essay Grading Assistant': 'Efficiently grade student essays using specified rubrics and assessment criteria.'
+      };
+      
+      const title = `${activePromptKey} | AI Educational Assistant`;
+      const description = assistantDescriptions[activePromptKey] || 'AI-powered educational tool for Uganda\'s CBC curriculum.';
+      
+      document.title = title;
+      document.getElementById('page-description').content = description;
+      document.getElementById('og-title').content = title;
+      document.getElementById('og-description').content = description;
+      document.getElementById('twitter-title').content = title;
+      document.getElementById('twitter-description').content = description;
+  }, [activePromptKey]);
     // NEW: This effect runs whenever the selected model changes.
   useEffect(() => {
     // We don't want to show a notification when the app first loads,
