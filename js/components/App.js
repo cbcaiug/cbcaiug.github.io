@@ -885,13 +885,20 @@ const handleHelpButtonClick = () => {};
     // This effect updates the page title and meta tags whenever the active assistant changes.
   useEffect(() => {
       const assistantDescriptions = {
+          'Prompt Assistant': 'AI-powered prompt engineering and optimization tool for educational content creation.',
           'Item Writer': 'Generate scenario-based assessment items with structured scoring guides for Uganda\'s CBC curriculum.',
           'Lesson Plans (NCDC)': 'Create detailed lesson plans following the official NCDC template for Ugandan educators.',
+          'Lesson Plans (with Biblical Integration)': 'Create NCDC lesson plans with integrated biblical values and Christian worldview perspectives.',
+          'UACE SoW NCDC': 'Develop comprehensive schemes of work specifically for Uganda Advanced Certificate of Education (UACE) level.',
           'Scheme of Work(NCDC)': 'Develop structured schemes of work based on Uganda\'s CBC syllabus requirements.',
+          'Scheme of Work (with Biblical Integration)': 'Create CBC schemes of work incorporating biblical principles and Christian educational values.',
           'Lesson Notes Generator': 'Produce comprehensive and well-structured lecture notes for any educational topic.',
-          'Coteacher': 'Your all-purpose AI teaching assistant for questions, brainstorming, and classroom support.',
+          'UCE Project Assistant': 'Guide students through Uganda Certificate of Education (UCE) project planning and execution.',
           'AI in Education Coach': 'Get guidance on integrating AI tools effectively into your classroom teaching.',
-          'Essay Grading Assistant': 'Efficiently grade student essays using specified rubrics and assessment criteria.'
+          'Essay Grading Assistant': 'Efficiently grade student essays using specified rubrics and assessment criteria.',
+          'Coteacher': 'Your all-purpose AI teaching assistant for questions, brainstorming, and classroom support.',
+          'Data & Document Analyst': 'Analyze educational data, documents, and research materials with AI-powered insights.',
+          'UCE BIO Item Writer': 'Generate biology assessment items specifically designed for Uganda Certificate of Education (UCE) level.'
       };
       
       const title = `${activePromptKey} | AI Educational Assistant`;
