@@ -448,8 +448,7 @@ const handleDocxDownload = async (markdownContent) => {
 
     } catch (error) {
         console.error("Error creating Google Doc:", error);
-        // Display a user-friendly error message.
-        setError(`Failed to create Google Doc: ${error.message}`);
+        setError('Unable to create document right now. Please try again in a moment.');
     }
 };
 

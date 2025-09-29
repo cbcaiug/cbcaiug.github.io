@@ -245,20 +245,31 @@ function doPost(e) {
         // This block handles the creation of a Google Doc from the user's generated content.
 } else if (action === 'createDoc') {
     console.log("Action is 'createDoc'.");
-    // We now receive the modelName from the frontend.
-    const { htmlContent, title, modelName } = body.details; 
-    // Pass the new modelName to our document creation function.
-    const docInfo = createGoogleDocFromHtml(htmlContent, title, modelName); 
-    logEventToSheet({
-        type: 'google_doc_created',
-        assistant: title,
-        details: { url: docInfo.url, model: modelName || 'N/A' } // Also log the model used.
-    });
-    return ContentService.createTextOutput(JSON.stringify({
-        success: true,
-        url: docInfo.url,
-        id: docInfo.id
-    })).setMimeType(ContentService.MimeType.JSON);
+    try {
+        const { htmlContent, title, modelName } = body.details; 
+        const docInfo = createGoogleDocFromHtml(htmlContent, title, modelName); 
+        logEventToSheet({
+            type: 'google_doc_created',
+            assistant: title,
+            details: { url: docInfo.url, model: modelName || 'N/A' }
+        });
+        return ContentService.createTextOutput(JSON.stringify({
+            success: true,
+            url: docInfo.url,
+            id: docInfo.id
+        })).setMimeType(ContentService.MimeType.JSON);
+    } catch (error) {
+        console.error('Doc creation error:', error);
+        logEventToSheet({
+            type: 'doc_creation_error',
+            assistant: body.details?.title || 'Unknown',
+            details: { error: error.toString(), stack: error.stack }
+        });
+        return ContentService.createTextOutput(JSON.stringify({
+            success: false,
+            error: 'Document creation temporarily unavailable. Please try again later.'
+        })).setMimeType(ContentService.MimeType.JSON);
+    }
 }
         else if (action === 'reportFailedTrialKey') {
             // Client reports a trial key that failed during usage.
@@ -871,7 +882,7 @@ function createGoogleDocFromHtml(htmlContent, title, modelName) {
     try {
         // Create a temporary blob from the HTML content.
         const blob = Utilities.newBlob(htmlContent, 'text/html', `${title}.html`);
-        ss
+        
         // Construct the final document title, including the model name if it exists.
         const finalTitle = modelName ? `${title} by ${modelName}` : `${title} - AI Assistant`;
 
@@ -907,3 +918,4 @@ function createGoogleDocFromHtml(htmlContent, title, modelName) {
         throw new Error(error.toString());
     }
 }
+s
