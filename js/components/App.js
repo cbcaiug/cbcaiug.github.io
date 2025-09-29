@@ -69,7 +69,37 @@ const App = () => {
   const [error, setError] = useState('');
   const [customPromptContent, setCustomPromptContent] = useState('');
   // The initial assistant is now read from the URL once, and then managed by the app's state.
-const [activePromptKey, setActivePromptKey] = useState(() => new URLSearchParams(window.location.search).get('assistant') || 'Coteacher');
+const [activePromptKey, setActivePromptKey] = useState(() => {
+    const assistant = new URLSearchParams(window.location.search).get('assistant') || 'Coteacher';
+    // Set initial meta tags immediately
+    const assistantDescriptions = {
+        'Prompt Assistant': 'AI-powered prompt engineering and optimization tool for educational content creation.',
+        'Item Writer': 'Generate scenario-based assessment items with structured scoring guides for Uganda\'s CBC curriculum.',
+        'Lesson Plans (NCDC)': 'Create detailed lesson plans following the official NCDC template for Ugandan educators.',
+        'Lesson Plans (with Biblical Integration)': 'Create NCDC lesson plans with integrated biblical values and Christian worldview perspectives.',
+        'UACE SoW NCDC': 'Develop comprehensive schemes of work specifically for Uganda Advanced Certificate of Education (UACE) level.',
+        'Scheme of Work(NCDC)': 'Develop structured schemes of work based on Uganda\'s CBC syllabus requirements.',
+        'Scheme of Work (with Biblical Integration)': 'Create CBC schemes of work incorporating biblical principles and Christian educational values.',
+        'Lesson Notes Generator': 'Produce comprehensive and well-structured lecture notes for any educational topic.',
+        'UCE Project Assistant': 'Guide students through Uganda Certificate of Education (UCE) project planning and execution.',
+        'AI in Education Coach': 'Get guidance on integrating AI tools effectively into your classroom teaching.',
+        'Essay Grading Assistant': 'Efficiently grade student essays using specified rubrics and assessment criteria.',
+        'Coteacher': 'Your all-purpose AI teaching assistant for questions, brainstorming, and classroom support.',
+        'Data & Document Analyst': 'Analyze educational data, documents, and research materials with AI-powered insights.',
+        'UCE BIO Item Writer': 'Generate biology assessment items specifically designed for Uganda Certificate of Education (UCE) level.'
+    };
+    const title = `${assistant} | AI Educational Assistant`;
+    const description = assistantDescriptions[assistant] || 'AI-powered educational tool for Uganda\'s CBC curriculum.';
+    
+    document.title = title;
+    if (document.getElementById('page-description')) document.getElementById('page-description').content = description;
+    if (document.getElementById('og-title')) document.getElementById('og-title').content = title;
+    if (document.getElementById('og-description')) document.getElementById('og-description').content = description;
+    if (document.getElementById('twitter-title')) document.getElementById('twitter-title').content = title;
+    if (document.getElementById('twitter-description')) document.getElementById('twitter-description').content = description;
+    
+    return assistant;
+});
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPromptMissing, setIsPromptMissing] = useState(false);
   const [availableAssistants, setAvailableAssistants] = useState([]);
