@@ -246,13 +246,15 @@ function doPost(e) {
 } else if (action === 'createDoc') {
     console.log("Action is 'createDoc'.");
     try {
-        const { htmlContent, title, modelName } = body.details; 
-        const docInfo = createGoogleDocFromHtml(htmlContent, title, modelName); 
+        const { htmlContent, title, modelName, sessionId, browserOs } = body.details; 
+        const docInfo = createGoogleDocFromHtml(htmlContent, title, modelName);
+        
+        const ipAddress = e.source ? e.source.remoteAddress : 'N/A';
         logEventToSheet({
             type: 'google_doc_created',
             assistant: title,
-            details: { url: docInfo.url, model: modelName || 'N/A' }
-        });
+            details: { url: docInfo.url, model: modelName || 'N/A', sessionId: sessionId || 'N/A', browserOs: browserOs || 'N/A' }
+        }, ipAddress);
         return ContentService.createTextOutput(JSON.stringify({
             success: true,
             url: docInfo.url,
@@ -260,11 +262,12 @@ function doPost(e) {
         })).setMimeType(ContentService.MimeType.JSON);
     } catch (error) {
         console.error('Doc creation error:', error);
+        const ipAddress = e.source ? e.source.remoteAddress : 'N/A';
         logEventToSheet({
             type: 'doc_creation_error',
             assistant: body.details?.title || 'Unknown',
-            details: { error: error.toString(), stack: error.stack }
-        });
+            details: { error: error.toString(), stack: error.stack, sessionId: body.details?.sessionId || 'N/A', browserOs: body.details?.browserOs || 'N/A' }
+        }, ipAddress);
         return ContentService.createTextOutput(JSON.stringify({
             success: false,
             error: 'Document creation temporarily unavailable. Please try again later.'

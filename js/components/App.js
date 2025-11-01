@@ -420,7 +420,9 @@ const handleDocxDownload = async (markdownContent) => {
         details: {
         htmlContent: htmlContent,
         title: activePromptKey, // The assistant's name (e.g., "Item Writer")
-        modelName: selectedModelName // The AI model used (e.g., "gemini-2.5-flash")
+        modelName: selectedModelName, // The AI model used (e.g., "gemini-2.5-flash")
+        sessionId: SESSION_ID, // Include session ID for logging
+        browserOs: navigator.userAgent // Include browser/OS info
     }
 };
 
