@@ -49,29 +49,34 @@ const MarkdownRenderer = ({ htmlContent, isLoading, isTakingLong }) => {
     return <div ref={contentRef} className="markdown-content p-4" dangerouslySetInnerHTML={{ __html: finalHtml }} />;
 };
 
-const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDocxDownload }) => {
+const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDocxDownload, usageCount }) => {
   // Don't render the menu for a message that is still loading
   if (msg.isLoading) return null;
+
+  const isLimitReached = usageCount <= 0;
+  const buttonClass = isLimitReached 
+    ? "flex items-center gap-1 px-2 py-1 text-xs text-red-600 hover:text-red-800 hover:bg-red-50 rounded transition-colors"
+    : "flex items-center gap-1 px-2 py-1 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors";
 
   return (
       <div className="flex items-center justify-end gap-1 mt-2 px-4 pb-2" id={`message-options-menu-${index}`}>
           <button
               onClick={() => onCopy(msg.content)}
-              className="flex items-center gap-1 px-2 py-1 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors"
-              title="Copy Message"
+              className={buttonClass}
+              title={isLimitReached ? "Free limit reached - Click to upgrade" : "Copy Message"}
           >
               <CopyIcon className="w-3 h-3" />
-              <span>Copy</span>
+              <span>Copy {usageCount}/5</span>
           </button>
           
           {msg.role === 'assistant' && (
               <button
                   onClick={() => onDocxDownload(msg.content)}
-                  className="flex items-center gap-1 px-2 py-1 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors"
-                  title="Save as Google Doc"
+                  className={buttonClass}
+                  title={isLimitReached ? "Free limit reached - Click to upgrade" : "Save as Google Doc"}
               >
                   <FileTextIcon className="w-3 h-3" />
-                  <span>Save</span>
+                  <span>Save {usageCount}/5</span>
               </button>
           )}
           

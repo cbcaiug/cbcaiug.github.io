@@ -138,6 +138,11 @@ const [createdDocInfo, setCreatedDocInfo] = useState(null);
   const [isHelpMenuOpen, setIsHelpMenuOpen] = useState(false);
     // NEW: State for the Google Search (grounding) toggle
 const [isGroundingEnabled, setIsGroundingEnabled] = useState(false);
+  // NEW: State for Save/Copy usage counter (5 free uses)
+const [usageCount, setUsageCount] = useState(() => {
+    const saved = localStorage.getItem('saveUsageCount');
+    return saved ? parseInt(saved, 10) : 5;
+});
   // NEW: State to manage whether the user wants to use the shared (trial) API key.
     const [useSharedApiKey, setUseSharedApiKey] = useState(true);
 
@@ -407,6 +412,12 @@ msg.fileDataForApi.forEach(file => {
   
    // UPDATED: This function now receives the doc ID and opens our new modal.
 const handleDocxDownload = async (markdownContent) => {
+    // Check usage limit
+    if (usageCount <= 0) {
+        window.open('https://forms.gle/YOUR_PAYMENT_FORM_LINK', '_blank');
+        return;
+    }
+
     // Use the error state to provide feedback to the user that the process has started.
     setError('Creating your Google Doc, please wait...');
 
@@ -438,6 +449,11 @@ const handleDocxDownload = async (markdownContent) => {
 
         // Check if we received the URL and the new ID.
         if (data.success && data.url && data.id) {
+            // Decrement usage count
+            const newCount = usageCount - 1;
+            setUsageCount(newCount);
+            localStorage.setItem('saveUsageCount', newCount.toString());
+            
             // Store the document info (URL and ID) in our new state.
             setCreatedDocInfo({ url: data.url, id: data.id });
             // Open our new modal instead of a new tab.
@@ -1140,7 +1156,16 @@ const handleHelpButtonClick = () => {};
 </div>
                                           )}
                                           <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
-                                          <MessageMenu msg={msg} index={index} onCopy={(content) => handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError)} onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))} onRegenerate={handleRegenerate} onDocxDownload={handleDocxDownload} />
+                                          <MessageMenu msg={msg} index={index} usageCount={usageCount} onCopy={(content) => {
+                                              if (usageCount <= 0) {
+                                                  window.open('https://forms.gle/YOUR_PAYMENT_FORM_LINK', '_blank');
+                                                  return;
+                                              }
+                                              const newCount = usageCount - 1;
+                                              setUsageCount(newCount);
+                                              localStorage.setItem('saveUsageCount', newCount.toString());
+                                              handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError);
+                                          }} onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))} onRegenerate={handleRegenerate} onDocxDownload={handleDocxDownload} />
                                       </div>
                                   </div>
                               </div>
