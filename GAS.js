@@ -20,6 +20,7 @@
 const YOUR_EMAIL_ADDRESS = "cbcaitool@gmail.com"; // For receiving notifications
 const LOG_SHEET_NAME = "AI_Assistant_Log";
 const UPDATES_SHEET_NAME = "Updates";
+const PAYMENTS_SHEET_NAME = "Payments";
 
 // Blacklist storage key and hold duration for trial keys (26 hours)
 const TRIAL_KEY_BLACKLIST_PROP = 'TRIAL_KEY_BLACKLIST';
@@ -94,6 +95,13 @@ function doGet(e) {
             output = ContentService.createTextOutput(JSON.stringify({
                 success: true,
                 debug: debug
+            }));
+        } else if (action === 'getPaymentFormUrl') {
+            // Return the payment form URL
+            const formUrl = getOrCreatePaymentForm();
+            output = ContentService.createTextOutput(JSON.stringify({
+                success: true,
+                formUrl: formUrl
             }));
         } else if (action === 'getTrialApiKey') {
             // This action iterates through stored trial keys and returns the first valid one.
@@ -867,6 +875,83 @@ function sendDailySummary() {
         MailApp.sendEmail(YOUR_EMAIL_ADDRESS, "AI Assistant Script Error", `The daily summary function failed with error: ${error.toString()}`);
     }
 }
+/**
+ * =================================================================
+ * PAYMENT FORM & SHEET MANAGEMENT
+ * =================================================================
+ */
+
+/**
+ * Creates or retrieves the payment form and sets up the Payments sheet
+ */
+function getOrCreatePaymentForm() {
+    const props = PropertiesService.getScriptProperties();
+    let formId = props.getProperty('PAYMENT_FORM_ID');
+    
+    if (formId) {
+        try {
+            const form = FormApp.openById(formId);
+            return form.getPublishedUrl();
+        } catch (e) {
+            formId = null; // Form was deleted, recreate
+        }
+    }
+    
+    // Create new form
+    const form = FormApp.create('CBC AI Tool - Payment');
+    formId = form.getId();
+    props.setProperty('PAYMENT_FORM_ID', formId);
+    
+    // Set up form
+    form.setDescription('Complete your payment to continue using the AI Educational Assistant.');
+    form.setCollectEmail(true);
+    form.setAllowResponseEdits(false);
+    
+    // Add fields
+    form.addTextItem().setTitle('Session ID (Username)').setRequired(true).setHelpText('Your unique session ID from the app');
+    form.addTextItem().setTitle('User Name').setRequired(false);
+    form.addParagraphTextItem().setTitle('Items Purchased').setRequired(true).setHelpText('List of items from your cart');
+    form.addTextItem().setTitle('Total Amount (UGX)').setRequired(true);
+    form.addTextItem().setTitle('Transaction ID').setRequired(true).setHelpText('Enter your mobile money transaction ID');
+    form.addFileUploadItem().setTitle('Payment Screenshot').setRequired(true);
+    form.addParagraphTextItem().setTitle('Additional Notes').setRequired(false);
+    
+    // Link form to Payments sheet
+    const spreadsheetId = props.getProperty('logSheetId');
+    if (spreadsheetId) {
+        const spreadsheet = SpreadsheetApp.openById(spreadsheetId);
+        
+        // Create Payments sheet if doesn't exist
+        let paymentsSheet = spreadsheet.getSheetByName(PAYMENTS_SHEET_NAME);
+        if (!paymentsSheet) {
+            paymentsSheet = spreadsheet.insertSheet(PAYMENTS_SHEET_NAME, 1); // After Updates
+            const headers = ['Timestamp', 'Email', 'SessionID', 'UserName', 'Items', 'TotalAmount', 'TransactionID', 'PaymentScreenshot', 'Notes', 'Status'];
+            paymentsSheet.getRange(1, 1, 1, headers.length).setValues([headers]).setFontWeight('bold');
+            paymentsSheet.setFrozenRows(1);
+            
+            // Add Status dropdown in column J
+            const statusRule = SpreadsheetApp.newDataValidation()
+                .requireValueInList(['Pending', 'Verified', 'Rejected'], true)
+                .build();
+            paymentsSheet.getRange('J2:J1000').setDataValidation(statusRule);
+        }
+        
+        // Set form destination
+        form.setDestination(FormApp.DestinationType.SPREADSHEET, spreadsheetId);
+    }
+    
+    // Send notification email
+    MailApp.sendEmail({
+        to: YOUR_EMAIL_ADDRESS,
+        subject: '✅ Payment Form Created',
+        htmlBody: `<p>Your payment form has been created successfully!</p>
+                   <p><strong>Form URL:</strong> <a href="${form.getPublishedUrl()}">${form.getPublishedUrl()}</a></p>
+                   <p><strong>Edit Form:</strong> <a href="${form.getEditUrl()}">${form.getEditUrl()}</a></p>`
+    });
+    
+    return form.getPublishedUrl();
+}
+
 /**
  * =================================================================
  * DOCUMENT CREATION

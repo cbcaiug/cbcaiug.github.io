@@ -147,6 +147,7 @@ const [isLimitModalOpen, setIsLimitModalOpen] = useState(false);
 const [pendingAction, setPendingAction] = useState(null);
 const [cartItems, setCartItems] = useState(() => JSON.parse(localStorage.getItem('cart') || '[]'));
 const [isCartOpen, setIsCartOpen] = useState(false);
+const [paymentFormUrl, setPaymentFormUrl] = useState('');
   // NEW: State to manage whether the user wants to use the shared (trial) API key.
     const [useSharedApiKey, setUseSharedApiKey] = useState(true);
 
@@ -907,6 +908,14 @@ const handleHelpButtonClick = () => {};
 
           // Load the welcome message for the assistant that was determined from the URL
           loadInitialMessage(activePromptKey);
+          
+          // Fetch payment form URL
+          fetch(`${GAS_WEB_APP_URL}?action=getPaymentFormUrl`)
+              .then(res => res.json())
+              .then(data => {
+                  if (data.success) setPaymentFormUrl(data.formUrl);
+              })
+              .catch(err => console.error('Failed to fetch payment form:', err));
 
           setIsLoadingAssistants(false);
       };
@@ -1319,14 +1328,21 @@ const handleHelpButtonClick = () => {};
                   localStorage.setItem('cart', JSON.stringify(updatedCart));
               }}
               onCheckout={() => {
-                  // Build Google Form URL with pre-filled data
-                  const formUrl = 'https://forms.gle/YOUR_FORM_ID';
+                  if (!paymentFormUrl) {
+                      alert('Payment form is loading, please try again.');
+                      return;
+                  }
+                  const itemsList = cartItems.map((item, i) => `${i+1}. ${item.assistantName} (${new Date(item.timestamp).toLocaleString()})`).join('\n');
+                  const total = cartItems.length * 1000;
+                  
+                  // Note: Replace entry IDs after form is created
                   const params = new URLSearchParams({
-                      'entry.SESSION_ID': SESSION_ID,
-                      'entry.ITEMS': cartItems.map((item, i) => `Item ${i+1}: ${item.assistantName}`).join(', '),
-                      'entry.TOTAL': (cartItems.length * 1000).toString()
+                      'entry.1234567890': SESSION_ID,
+                      'entry.0987654321': itemsList,
+                      'entry.1122334455': total.toString()
                   });
-                  window.open(`${formUrl}?${params.toString()}`, '_blank');
+                  
+                  window.open(`${paymentFormUrl}?${params.toString()}`, '_blank');
               }}
           />
           <LimitReachedModal 
