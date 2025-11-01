@@ -148,6 +148,7 @@ const [pendingAction, setPendingAction] = useState(null);
 const [cartItems, setCartItems] = useState(() => JSON.parse(localStorage.getItem('cart') || '[]'));
 const [isCartOpen, setIsCartOpen] = useState(false);
 const [paymentFormUrl, setPaymentFormUrl] = useState('https://docs.google.com/forms/d/e/1FAIpQLSfo92FKmdwzdbXLIqbm5GRrjxRLFwEH2b8AGsBBAdcB4mccZw/viewform');
+const [currentCartId, setCurrentCartId] = useState(() => localStorage.getItem('currentCartId') || null);
   // NEW: State to manage whether the user wants to use the shared (trial) API key.
     const [useSharedApiKey, setUseSharedApiKey] = useState(true);
 
@@ -473,7 +474,7 @@ const handleDocxDownload = async (markdownContent) => {
             localStorage.setItem('saveUsageCount', newCount.toString());
             
             // Store the document info (URL and ID) in our new state.
-            setCreatedDocInfo({ url: data.url, id: data.id });
+            setCreatedDocInfo({ url: data.url, downloadUrl: data.downloadUrl, id: data.id });
             // Open our new modal instead of a new tab.
             setIsDocModalOpen(true);
             setError(''); // Clear the "Creating..." message.
@@ -1318,6 +1319,11 @@ const handleHelpButtonClick = () => {};
                   const updatedCart = cartItems.filter(item => item.id !== itemId);
                   setCartItems(updatedCart);
                   localStorage.setItem('cart', JSON.stringify(updatedCart));
+                  // Clear CartID if cart is empty
+                  if (updatedCart.length === 0) {
+                      setCurrentCartId(null);
+                      localStorage.removeItem('currentCartId');
+                  }
               }}
               onCheckout={() => {
                   if (!paymentFormUrl) {
@@ -1330,10 +1336,18 @@ const handleHelpButtonClick = () => {};
                   const params = new URLSearchParams({
                       'entry.1510315924': SESSION_ID,
                       'entry.153116271': itemsList,
-                      'entry.1062442954': total.toString()
+                      'entry.1062442954': total.toString(),
+                      'entry.322933472': currentCartId || 'N/A'
                   });
                   
                   window.open(`${paymentFormUrl}?${params.toString()}`, '_blank');
+                  
+                  // Clear cart and CartID after checkout
+                  setCartItems([]);
+                  localStorage.removeItem('cart');
+                  setCurrentCartId(null);
+                  localStorage.removeItem('currentCartId');
+                  setIsCartOpen(false);
               }}
           />
           <LimitReachedModal 
@@ -1341,27 +1355,87 @@ const handleHelpButtonClick = () => {};
               onClose={() => setIsLimitModalOpen(false)} 
               itemType={pendingAction?.type || 'download'}
               inCart={pendingAction?.inCart}
-              onAddToCart={() => {
-                  const newItem = {
-                      id: Date.now(),
-                      type: pendingAction.type,
-                      assistantName: activePromptKey,
-                      sessionId: SESSION_ID,
-                      timestamp: new Date().toISOString(),
-                      price: 1000,
-                      content: pendingAction.content
-                  };
-                  const updatedCart = [...cartItems, newItem];
-                  setCartItems(updatedCart);
-                  localStorage.setItem('cart', JSON.stringify(updatedCart));
+              onAddToCart={async () => {
+                  // Generate CartID if first item
+                  let cartId = currentCartId;
+                  if (!cartId) {
+                      cartId = `CART-${Date.now()}`;
+                      setCurrentCartId(cartId);
+                      localStorage.setItem('currentCartId', cartId);
+                  }
+                  
+                  const itemId = `ITEM-${Date.now()}`;
+                  
+                  // Show creating message
+                  setError('Creating your Google Doc, please wait...');
                   setIsLimitModalOpen(false);
-                  setShowCopyToast(true);
-                  setTimeout(() => setShowCopyToast(false), 3000);
+                  
+                  try {
+                      const htmlContent = marked.parse(pendingAction.content);
+                      const payload = {
+                          action: 'createDoc',
+                          details: {
+                              htmlContent: htmlContent,
+                              title: activePromptKey,
+                              modelName: selectedModelName,
+                              sessionId: SESSION_ID,
+                              browserOs: navigator.userAgent
+                          }
+                      };
+                      
+                      const response = await fetch(GAS_WEB_APP_URL, {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                          body: JSON.stringify(payload)
+                      });
+                      
+                      const data = await response.json();
+                      
+                      if (data.success && data.url && data.downloadUrl) {
+                          // Log to analytics with CartID and ItemID
+                          trackEvent('cart_doc_created', activePromptKey, {
+                              sessionId: SESSION_ID,
+                              cartId: cartId,
+                              itemId: itemId,
+                              docDownloadUrl: data.downloadUrl
+                          });
+                          
+                          const newItem = {
+                              id: Date.now(),
+                              itemId: itemId,
+                              type: pendingAction.type,
+                              assistantName: activePromptKey,
+                              sessionId: SESSION_ID,
+                              cartId: cartId,
+                              timestamp: new Date().toISOString(),
+                              price: 1000,
+                              content: pendingAction.content,
+                              docUrl: data.url,
+                              downloadUrl: data.downloadUrl
+                          };
+                          const updatedCart = [...cartItems, newItem];
+                          setCartItems(updatedCart);
+                          localStorage.setItem('cart', JSON.stringify(updatedCart));
+                          setError('');
+                          setShowCopyToast(true);
+                          setTimeout(() => setShowCopyToast(false), 3000);
+                      } else {
+                          throw new Error(data.error || 'Failed to create document');
+                      }
+                  } catch (error) {
+                      console.error('Error creating cart doc:', error);
+                      setError('Unable to create document. Please try again.');
+                  }
               }}
               onRemoveFromCart={() => {
                   const updatedCart = cartItems.filter(item => item.content !== pendingAction.content);
                   setCartItems(updatedCart);
                   localStorage.setItem('cart', JSON.stringify(updatedCart));
+                  // Clear CartID if cart is empty
+                  if (updatedCart.length === 0) {
+                      setCurrentCartId(null);
+                      localStorage.removeItem('currentCartId');
+                  }
                   setIsLimitModalOpen(false);
               }}
           />

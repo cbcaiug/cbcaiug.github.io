@@ -341,7 +341,7 @@ function doPost(e) {
 // MODIFIED: 21/08/2025 4:31 PM - Function now accepts ipAddress and extracts browserOs.
 function logEventToSheet(event, ipAddress = 'N/A') {
     try {
-        const headers = ["SessionID", "Timestamp", "IPAddress", "BrowserOS", "UserType", "EventType", "AssistantName", "ApiKeyUsed", "Details"];
+        const headers = ["SessionID", "Timestamp", "IPAddress", "BrowserOS", "UserType", "EventType", "AssistantName", "ApiKeyUsed", "CartID", "ItemID", "DocDownloadURL", "Details"];
         
         const now = new Date();
         const year = now.getFullYear();
@@ -353,25 +353,23 @@ function logEventToSheet(event, ipAddress = 'N/A') {
         const eventDetails = event.details || {};
         const sessionId = eventDetails.sessionId || 'N/A';
         const userType = event.userType || 'User';
-        // NEW: 21/08/2025 4:31 PM - Extract Browser/OS from the details payload sent by the client.
         const browserOs = eventDetails.browserOs || 'N/A';
+        const apiKeyUsed = eventDetails.apiKeyUsed || 'N/A';
+        const cartId = eventDetails.cartId || 'N/A';
+        const itemId = eventDetails.itemId || 'N/A';
+        const docDownloadUrl = eventDetails.docDownloadUrl || 'N/A';
 
-        // Clean the details object of metadata before it gets formatted for the "Details" column.
+        // Clean metadata from details
         delete eventDetails.sessionId; 
         delete eventDetails.browserOs;
+        delete eventDetails.apiKeyUsed;
+        delete eventDetails.cartId;
+        delete eventDetails.itemId;
+        delete eventDetails.docDownloadUrl;
         
-        //const formattedDetails = formatDetailsForSheet(event.type, eventDetails);
-
-        // MODIFIED: 21/08/2025 4:31 PM - Appending row with new data in the correct order.
-        // Extract the API key label if it exists, otherwise default to 'N/A'.
-        const apiKeyUsed = eventDetails.apiKeyUsed || 'N/A';
-        delete eventDetails.apiKeyUsed; // Clean it from the main details object.
-        
-        // Format the rest of the details for the "Details" column.
         const formattedDetails = formatDetailsForSheet(event.type, eventDetails);
 
-        // Append the row with the new ApiKeyUsed data included as plain text.
-        sheet.appendRow([sessionId, new Date(), ipAddress, browserOs, userType, event.type, event.assistant, apiKeyUsed, formattedDetails]);
+        sheet.appendRow([sessionId, new Date(), ipAddress, browserOs, userType, event.type, event.assistant, apiKeyUsed, cartId, itemId, docDownloadUrl, formattedDetails]);
 
     } catch (error) {
         console.error(`Failed to log event to sheet: ${error.toString()}`);
@@ -1006,9 +1004,10 @@ function createGoogleDocFromHtml(htmlContent, title, modelName) {
         };
         Drive.Permissions.insert(permission, fileId);
 
-        // Return both the public URL and the file ID.
+        // Return view URL, download URL, and file ID.
         return {
             url: docFile.alternateLink || `https://docs.google.com/document/d/${fileId}/`,
+            downloadUrl: `https://docs.google.com/document/d/${fileId}/export?format=docx`,
             id: fileId
         };
 
