@@ -205,27 +205,45 @@ const ConsentModal = ({ onAccept }) => {
     );
 };
 // NEW: Modal to show when user runs out of free uses
-const LimitReachedModal = ({ isOpen, onClose, onAddToCart, itemType }) => {
+const LimitReachedModal = ({ isOpen, onClose, onAddToCart, onRemoveFromCart, itemType, inCart }) => {
     if (!isOpen) return null;
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full">
-                <div className="text-center">
-                    <AlertCircleIcon className="w-16 h-16 text-amber-500 mx-auto mb-4" />
-                    <h2 className="text-2xl font-bold text-slate-800">Free Uses Exhausted</h2>
-                    <p className="text-slate-600 mt-2">You've used all 5 free {itemType}s. Add this item to your cart to continue.</p>
-                    <p className="text-sm text-slate-500 mt-2">Price: 1,000 UGX per item</p>
-                </div>
+                {inCart ? (
+                    <div className="text-center">
+                        <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                        <h2 className="text-2xl font-bold text-slate-800">Already in Cart</h2>
+                        <p className="text-slate-600 mt-2">This item is already in your cart. Remove it?</p>
+                    </div>
+                ) : (
+                    <div className="text-center">
+                        <AlertCircleIcon className="w-16 h-16 text-amber-500 mx-auto mb-4" />
+                        <h2 className="text-2xl font-bold text-slate-800">Free Uses Exhausted</h2>
+                        <p className="text-slate-600 mt-2">You've used all 5 free {itemType}s. Add this item to your cart to continue.</p>
+                        <p className="text-sm text-slate-500 mt-2">Price: 1,000 UGX per item</p>
+                    </div>
+                )}
 
                 <div className="mt-6 space-y-3">
-                    <button 
-                        onClick={onAddToCart}
-                        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors"
-                    >
-                        <ShoppingCartIcon className="w-5 h-5" />
-                        Add to Cart (1,000 UGX)
-                    </button>
+                    {inCart ? (
+                        <button 
+                            onClick={onRemoveFromCart}
+                            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition-colors"
+                        >
+                            <TrashIcon className="w-5 h-5" />
+                            Remove from Cart
+                        </button>
+                    ) : (
+                        <button 
+                            onClick={onAddToCart}
+                            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors"
+                        >
+                            <ShoppingCartIcon className="w-5 h-5" />
+                            Add to Cart (1,000 UGX)
+                        </button>
+                    )}
                     <button 
                         onClick={onClose}
                         className="w-full px-6 py-2 bg-slate-200 text-slate-800 font-semibold rounded-lg hover:bg-slate-300 transition-colors"
@@ -233,6 +251,74 @@ const LimitReachedModal = ({ isOpen, onClose, onAddToCart, itemType }) => {
                         Cancel
                     </button>
                 </div>
+            </div>
+        </div>
+    );
+};
+
+// NEW: Cart Modal to show items and checkout
+const CartModal = ({ isOpen, onClose, cartItems, onRemoveItem, onCheckout }) => {
+    if (!isOpen) return null;
+
+    const total = cartItems.length * 1000;
+
+    return (
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-lg shadow-2xl max-w-lg w-full max-h-[90vh] flex flex-col">
+                <div className="p-6 border-b border-slate-200 flex justify-between items-center">
+                    <h2 className="text-2xl font-bold text-slate-800">Your Cart</h2>
+                    <button onClick={onClose} className="p-2 rounded-full hover:bg-slate-100">
+                        <XIcon className="w-6 h-6 text-slate-600" />
+                    </button>
+                </div>
+
+                <div className="flex-1 overflow-y-auto p-6">
+                    {cartItems.length === 0 ? (
+                        <div className="text-center py-8 text-slate-500">
+                            <ShoppingCartIcon className="w-16 h-16 mx-auto mb-4 text-slate-300" />
+                            <p>Your cart is empty</p>
+                        </div>
+                    ) : (
+                        <div className="space-y-3">
+                            {cartItems.map((item, index) => (
+                                <div key={item.id} className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                                    <div className="flex justify-between items-start">
+                                        <div className="flex-1">
+                                            <p className="font-semibold text-slate-800">Item #{index + 1}</p>
+                                            <p className="text-sm text-slate-600">{item.assistantName}</p>
+                                            <p className="text-xs text-slate-500 mt-1">{new Date(item.timestamp).toLocaleString()}</p>
+                                        </div>
+                                        <div className="text-right">
+                                            <p className="font-bold text-slate-800">1,000 UGX</p>
+                                            <button 
+                                                onClick={() => onRemoveItem(item.id)}
+                                                className="mt-2 text-xs text-red-600 hover:text-red-800 flex items-center gap-1"
+                                            >
+                                                <TrashIcon className="w-3 h-3" />
+                                                Remove
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                {cartItems.length > 0 && (
+                    <div className="p-6 border-t border-slate-200 bg-slate-50">
+                        <div className="flex justify-between items-center mb-4">
+                            <span className="text-lg font-semibold text-slate-800">Total:</span>
+                            <span className="text-2xl font-bold text-indigo-600">{total.toLocaleString()} UGX</span>
+                        </div>
+                        <button 
+                            onClick={onCheckout}
+                            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors"
+                        >
+                            Proceed to Checkout
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     );

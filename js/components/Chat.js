@@ -54,16 +54,20 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDo
   if (msg.isLoading) return null;
 
   const isLimitReached = usageCount <= 0;
-  const buttonClass = isLimitReached 
+  const copyButtonClass = isLimitReached 
+    ? "flex items-center gap-1 px-2 py-1 text-xs text-slate-400 cursor-not-allowed rounded"
+    : "flex items-center gap-1 px-2 py-1 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors";
+  const saveButtonClass = isLimitReached
     ? "flex items-center gap-1 px-2 py-1 text-xs text-red-600 hover:text-red-800 hover:bg-red-50 rounded transition-colors"
     : "flex items-center gap-1 px-2 py-1 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors";
 
   return (
       <div className="flex items-center justify-end gap-1 mt-2 px-4 pb-2" id={`message-options-menu-${index}`}>
           <button
-              onClick={() => onCopy(msg.content)}
-              className={buttonClass}
-              title={isLimitReached ? "Free limit reached - Click to upgrade" : "Copy Message"}
+              onClick={() => !isLimitReached && onCopy(msg.content)}
+              className={copyButtonClass}
+              disabled={isLimitReached}
+              title={isLimitReached ? "Free uses exhausted" : "Copy Message"}
           >
               <CopyIcon className="w-3 h-3" />
               <span>Copy {usageCount}/5</span>
@@ -72,8 +76,8 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDo
           {msg.role === 'assistant' && (
               <button
                   onClick={() => onDocxDownload(msg.content)}
-                  className={buttonClass}
-                  title={isLimitReached ? "Free limit reached - Click to upgrade" : "Save as Google Doc"}
+                  className={saveButtonClass}
+                  title={isLimitReached ? "Free uses exhausted - Add to cart" : "Save as Google Doc"}
               >
                   <FileTextIcon className="w-3 h-3" />
                   <span>Save {usageCount}/5</span>

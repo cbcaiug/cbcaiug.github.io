@@ -145,6 +145,8 @@ const [usageCount, setUsageCount] = useState(() => {
 });
 const [isLimitModalOpen, setIsLimitModalOpen] = useState(false);
 const [pendingAction, setPendingAction] = useState(null);
+const [cartItems, setCartItems] = useState(() => JSON.parse(localStorage.getItem('cart') || '[]'));
+const [isCartOpen, setIsCartOpen] = useState(false);
   // NEW: State to manage whether the user wants to use the shared (trial) API key.
     const [useSharedApiKey, setUseSharedApiKey] = useState(true);
 
@@ -412,11 +414,23 @@ msg.fileDataForApi.forEach(file => {
       }, 800);
   };
   
+   // Check if item already in cart (by content only, not type)
+const isInCart = (content) => {
+    return cartItems.some(item => item.content === content);
+};
+
    // UPDATED: This function now receives the doc ID and opens our new modal.
 const handleDocxDownload = async (markdownContent) => {
+    // Check if already in cart
+    if (isInCart(markdownContent)) {
+        setPendingAction({ type: 'save', content: markdownContent, inCart: true });
+        setIsLimitModalOpen(true);
+        return;
+    }
+    
     // Check usage limit
     if (usageCount <= 0) {
-        setPendingAction({ type: 'save', content: markdownContent });
+        setPendingAction({ type: 'save', content: markdownContent, inCart: false });
         setIsLimitModalOpen(true);
         return;
     }
@@ -1096,6 +1110,19 @@ const handleHelpButtonClick = () => {};
                   <button onClick={() => setIsMenuOpen(true)} className="p-1 text-slate-600 hover:text-slate-900 lg:hidden"><MenuIcon className="w-6 h-6" /></button>
                   <h2 className="text-xl font-semibold text-slate-800 text-center flex-1">{activePromptKey} Assistant</h2>
                   <div className="flex items-center gap-2">
+                      {/* Cart Icon with Badge */}
+                      {cartItems.length > 0 && (
+                          <button 
+                              onClick={() => setIsCartOpen(true)}
+                              className="relative p-2 rounded-lg hover:bg-slate-100 transition-colors"
+                              title="View Cart"
+                          >
+                              <ShoppingCartIcon className="w-6 h-6 text-slate-600" />
+                              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                                  {cartItems.length}
+                              </span>
+                          </button>
+                      )}
                       {/* Help dropdown menu */}
                       <div className="relative">
                           <button onClick={() => setIsHelpMenuOpen(!isHelpMenuOpen)} id="help-button" title="Help & Feedback" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors">
@@ -1160,11 +1187,6 @@ const handleHelpButtonClick = () => {};
                                           )}
                                           <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
                                           <MessageMenu msg={msg} index={index} usageCount={usageCount} onCopy={(content) => {
-                                              if (usageCount <= 0) {
-                                                  setPendingAction({ type: 'copy', content });
-                                                  setIsLimitModalOpen(true);
-                                                  return;
-                                              }
                                               const newCount = usageCount - 1;
                                               setUsageCount(newCount);
                                               localStorage.setItem('saveUsageCount', newCount.toString());
@@ -1287,25 +1309,53 @@ const handleHelpButtonClick = () => {};
           {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
           {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5"/> : <CheckCircleIcon className="w-5 h-5"/>}<span>{apiKeyToast}</span></div>}
           <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={(feedbackData) => handleFeedbackSubmit({ ...feedbackData, sessionId: SESSION_ID })} assistantName={activePromptKey} />
+          <CartModal 
+              isOpen={isCartOpen}
+              onClose={() => setIsCartOpen(false)}
+              cartItems={cartItems}
+              onRemoveItem={(itemId) => {
+                  const updatedCart = cartItems.filter(item => item.id !== itemId);
+                  setCartItems(updatedCart);
+                  localStorage.setItem('cart', JSON.stringify(updatedCart));
+              }}
+              onCheckout={() => {
+                  // Build Google Form URL with pre-filled data
+                  const formUrl = 'https://forms.gle/YOUR_FORM_ID';
+                  const params = new URLSearchParams({
+                      'entry.SESSION_ID': SESSION_ID,
+                      'entry.ITEMS': cartItems.map((item, i) => `Item ${i+1}: ${item.assistantName}`).join(', '),
+                      'entry.TOTAL': (cartItems.length * 1000).toString()
+                  });
+                  window.open(`${formUrl}?${params.toString()}`, '_blank');
+              }}
+          />
           <LimitReachedModal 
               isOpen={isLimitModalOpen} 
               onClose={() => setIsLimitModalOpen(false)} 
               itemType={pendingAction?.type || 'download'}
+              inCart={pendingAction?.inCart}
               onAddToCart={() => {
-                  // Add item to cart
-                  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-                  cart.push({
+                  const newItem = {
                       id: Date.now(),
                       type: pendingAction.type,
                       assistantName: activePromptKey,
                       sessionId: SESSION_ID,
                       timestamp: new Date().toISOString(),
-                      price: 1000
-                  });
-                  localStorage.setItem('cart', JSON.stringify(cart));
+                      price: 1000,
+                      content: pendingAction.content
+                  };
+                  const updatedCart = [...cartItems, newItem];
+                  setCartItems(updatedCart);
+                  localStorage.setItem('cart', JSON.stringify(updatedCart));
                   setIsLimitModalOpen(false);
                   setShowCopyToast(true);
                   setTimeout(() => setShowCopyToast(false), 3000);
+              }}
+              onRemoveFromCart={() => {
+                  const updatedCart = cartItems.filter(item => item.content !== pendingAction.content);
+                  setCartItems(updatedCart);
+                  localStorage.setItem('cart', JSON.stringify(updatedCart));
+                  setIsLimitModalOpen(false);
               }}
           />
             {/* NEW: Add the Google Doc success modal to the UI */}
