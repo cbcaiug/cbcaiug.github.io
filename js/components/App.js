@@ -143,6 +143,8 @@ const [usageCount, setUsageCount] = useState(() => {
     const saved = localStorage.getItem('saveUsageCount');
     return saved ? parseInt(saved, 10) : 5;
 });
+const [isLimitModalOpen, setIsLimitModalOpen] = useState(false);
+const [pendingAction, setPendingAction] = useState(null);
   // NEW: State to manage whether the user wants to use the shared (trial) API key.
     const [useSharedApiKey, setUseSharedApiKey] = useState(true);
 
@@ -414,7 +416,8 @@ msg.fileDataForApi.forEach(file => {
 const handleDocxDownload = async (markdownContent) => {
     // Check usage limit
     if (usageCount <= 0) {
-        window.open('https://forms.gle/YOUR_PAYMENT_FORM_LINK', '_blank');
+        setPendingAction({ type: 'save', content: markdownContent });
+        setIsLimitModalOpen(true);
         return;
     }
 
@@ -1158,7 +1161,8 @@ const handleHelpButtonClick = () => {};
                                           <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
                                           <MessageMenu msg={msg} index={index} usageCount={usageCount} onCopy={(content) => {
                                               if (usageCount <= 0) {
-                                                  window.open('https://forms.gle/YOUR_PAYMENT_FORM_LINK', '_blank');
+                                                  setPendingAction({ type: 'copy', content });
+                                                  setIsLimitModalOpen(true);
                                                   return;
                                               }
                                               const newCount = usageCount - 1;
@@ -1283,6 +1287,27 @@ const handleHelpButtonClick = () => {};
           {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
           {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5"/> : <CheckCircleIcon className="w-5 h-5"/>}<span>{apiKeyToast}</span></div>}
           <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={(feedbackData) => handleFeedbackSubmit({ ...feedbackData, sessionId: SESSION_ID })} assistantName={activePromptKey} />
+          <LimitReachedModal 
+              isOpen={isLimitModalOpen} 
+              onClose={() => setIsLimitModalOpen(false)} 
+              itemType={pendingAction?.type || 'download'}
+              onAddToCart={() => {
+                  // Add item to cart
+                  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                  cart.push({
+                      id: Date.now(),
+                      type: pendingAction.type,
+                      assistantName: activePromptKey,
+                      sessionId: SESSION_ID,
+                      timestamp: new Date().toISOString(),
+                      price: 1000
+                  });
+                  localStorage.setItem('cart', JSON.stringify(cart));
+                  setIsLimitModalOpen(false);
+                  setShowCopyToast(true);
+                  setTimeout(() => setShowCopyToast(false), 3000);
+              }}
+          />
             {/* NEW: Add the Google Doc success modal to the UI */}
 <DocSuccessModal 
     isOpen={isDocModalOpen} 

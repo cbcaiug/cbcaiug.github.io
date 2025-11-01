@@ -204,6 +204,40 @@ const ConsentModal = ({ onAccept }) => {
         </div>
     );
 };
+// NEW: Modal to show when user runs out of free uses
+const LimitReachedModal = ({ isOpen, onClose, onAddToCart, itemType }) => {
+    if (!isOpen) return null;
+
+    return (
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full">
+                <div className="text-center">
+                    <AlertCircleIcon className="w-16 h-16 text-amber-500 mx-auto mb-4" />
+                    <h2 className="text-2xl font-bold text-slate-800">Free Uses Exhausted</h2>
+                    <p className="text-slate-600 mt-2">You've used all 5 free {itemType}s. Add this item to your cart to continue.</p>
+                    <p className="text-sm text-slate-500 mt-2">Price: 1,000 UGX per item</p>
+                </div>
+
+                <div className="mt-6 space-y-3">
+                    <button 
+                        onClick={onAddToCart}
+                        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors"
+                    >
+                        <ShoppingCartIcon className="w-5 h-5" />
+                        Add to Cart (1,000 UGX)
+                    </button>
+                    <button 
+                        onClick={onClose}
+                        className="w-full px-6 py-2 bg-slate-200 text-slate-800 font-semibold rounded-lg hover:bg-slate-300 transition-colors"
+                    >
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 // NEW: Modal to show after a Google Doc is created successfully.
 // It provides direct links to view or download the document.
 const DocSuccessModal = ({ isOpen, onClose, docInfo }) => {
