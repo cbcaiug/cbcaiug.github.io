@@ -138,10 +138,10 @@ const [createdDocInfo, setCreatedDocInfo] = useState(null);
   const [isHelpMenuOpen, setIsHelpMenuOpen] = useState(false);
     // NEW: State for the Google Search (grounding) toggle
 const [isGroundingEnabled, setIsGroundingEnabled] = useState(false);
-  // NEW: State for Save/Copy usage counter (5 free uses)
+  // NEW: State for Save/Copy usage counter (20 free uses)
 const [usageCount, setUsageCount] = useState(() => {
     const saved = localStorage.getItem('saveUsageCount');
-    return saved ? parseInt(saved, 10) : 5;
+    return saved ? parseInt(saved, 10) : 20;
 });
 const [isLimitModalOpen, setIsLimitModalOpen] = useState(false);
 const [pendingAction, setPendingAction] = useState(null);
@@ -1119,19 +1119,21 @@ const handleHelpButtonClick = () => {};
                   <button onClick={() => setIsMenuOpen(true)} className="p-1 text-slate-600 hover:text-slate-900 lg:hidden"><MenuIcon className="w-6 h-6" /></button>
                   <h2 className="text-xl font-semibold text-slate-800 text-center flex-1">{activePromptKey} Assistant</h2>
                   <div className="flex items-center gap-2">
-                      {/* Cart Icon with Badge */}
-                      <button 
-                          onClick={() => setIsCartOpen(true)}
-                          className="relative p-2 rounded-lg hover:bg-slate-100 transition-colors"
-                          title="View Cart"
-                      >
-                          <ShoppingCartIcon className="w-6 h-6 text-slate-600" />
-                          {cartItems.length > 0 && (
-                              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                                  {cartItems.length}
-                              </span>
-                          )}
-                      </button>
+                      {/* Cart Icon with Badge - Only show when out of free saves */}
+                      {usageCount === 0 && (
+                          <button 
+                              onClick={() => setIsCartOpen(true)}
+                              className="relative p-2 rounded-lg hover:bg-slate-100 transition-colors"
+                              title="View Cart"
+                          >
+                              <ShoppingCartIcon className="w-6 h-6 text-slate-600" />
+                              {cartItems.length > 0 && (
+                                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                                      {cartItems.length}
+                                  </span>
+                              )}
+                          </button>
+                      )}
                       {/* Help dropdown menu */}
                       <div className="relative">
                           <button onClick={() => setIsHelpMenuOpen(!isHelpMenuOpen)} id="help-button" title="Help & Feedback" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors">
@@ -1362,81 +1364,22 @@ const handleHelpButtonClick = () => {};
               onClose={() => setIsLimitModalOpen(false)} 
               itemType={pendingAction?.type || 'download'}
               inCart={pendingAction?.inCart}
-              onAddToCart={async () => {
-                  // Generate CartID if first item
-                  let cartId = currentCartId;
-                  if (!cartId) {
-                      cartId = `CART-${Date.now()}`;
-                      setCurrentCartId(cartId);
-                      localStorage.setItem('currentCartId', cartId);
-                  }
-                  
-                  const itemId = `ITEM-${Date.now()}`;
-                  
-                  // Show creating message
-                  setError('Creating your Google Doc, please wait...');
+              onAddToCart={() => {
+                  const newItem = {
+                      id: Date.now(),
+                      type: pendingAction.type,
+                      assistantName: activePromptKey,
+                      sessionId: SESSION_ID,
+                      timestamp: new Date().toISOString(),
+                      price: 1000,
+                      content: pendingAction.content
+                  };
+                  const updatedCart = [...cartItems, newItem];
+                  setCartItems(updatedCart);
+                  localStorage.setItem('cart', JSON.stringify(updatedCart));
                   setIsLimitModalOpen(false);
-                  
-                  try {
-                      const htmlContent = marked.parse(pendingAction.content);
-                      const payload = {
-                          action: 'createDoc',
-                          details: {
-                              htmlContent: htmlContent,
-                              title: activePromptKey,
-                              modelName: selectedModelName,
-                              sessionId: SESSION_ID,
-                              browserOs: navigator.userAgent
-                          }
-                      };
-                      
-                      const response = await fetch(GAS_WEB_APP_URL, {
-                          method: 'POST',
-                          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                          body: JSON.stringify(payload)
-                      });
-                      
-                      const data = await response.json();
-                      
-                      if (data.success && data.url) {
-                          // Log to analytics with CartID and ItemID
-                          const downloadUrl = data.downloadUrl || `https://docs.google.com/document/d/${data.id}/export?format=docx`;
-                          
-                          trackEvent('cart_doc_created', activePromptKey, {
-                              sessionId: SESSION_ID,
-                              cartId: cartId,
-                              itemId: itemId,
-                              docDownloadUrl: downloadUrl
-                          });
-                          
-                          const downloadUrl = data.downloadUrl || `https://docs.google.com/document/d/${data.id}/export?format=docx`;
-                          
-                          const newItem = {
-                              id: Date.now(),
-                              itemId: itemId,
-                              type: pendingAction.type,
-                              assistantName: activePromptKey,
-                              sessionId: SESSION_ID,
-                              cartId: cartId,
-                              timestamp: new Date().toISOString(),
-                              price: 1000,
-                              content: pendingAction.content,
-                              docUrl: data.url,
-                              downloadUrl: downloadUrl
-                          };
-                          const updatedCart = [...cartItems, newItem];
-                          setCartItems(updatedCart);
-                          localStorage.setItem('cart', JSON.stringify(updatedCart));
-                          setError('');
-                          setShowCopyToast(true);
-                          setTimeout(() => setShowCopyToast(false), 3000);
-                      } else {
-                          throw new Error(data.error || 'Failed to create document');
-                      }
-                  } catch (error) {
-                      console.error('Error creating cart doc:', error);
-                      setError('Unable to create document. Please try again.');
-                  }
+                  setShowCopyToast(true);
+                  setTimeout(() => setShowCopyToast(false), 3000);
               }}
               onRemoveFromCart={() => {
                   const updatedCart = cartItems.filter(item => item.content !== pendingAction.content);
