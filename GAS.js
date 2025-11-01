@@ -271,12 +271,7 @@ function doPost(e) {
         const { htmlContent, title, modelName, sessionId, browserOs } = body.details; 
         const docInfo = createGoogleDocFromHtml(htmlContent, title, modelName);
         
-        const ipAddress = e.source ? e.source.remoteAddress : 'N/A';
-        logEventToSheet({
-            type: 'google_doc_created',
-            assistant: title,
-            details: { url: docInfo.url, model: modelName || 'N/A', sessionId: sessionId || 'N/A', browserOs: browserOs || 'N/A' }
-        }, ipAddress);
+        // Note: Logging is handled by the client via trackEvent (either google_doc_created or cart_doc_created)
         return ContentService.createTextOutput(JSON.stringify({
             success: true,
             url: docInfo.url,
@@ -888,6 +883,76 @@ function sendDailySummary() {
         MailApp.sendEmail(YOUR_EMAIL_ADDRESS, "AI Assistant Script Error", `The daily summary function failed with error: ${error.toString()}`);
     }
 }
+/**
+ * =================================================================
+ * SHEET COLUMN UPDATER (Run once manually)
+ * =================================================================
+ */
+
+function updateExistingSheetColumns() {
+    const props = PropertiesService.getScriptProperties();
+    const spreadsheetId = props.getProperty('logSheetId');
+    
+    if (!spreadsheetId) {
+        Logger.log('❌ No spreadsheet found');
+        return;
+    }
+    
+    const spreadsheet = SpreadsheetApp.openById(spreadsheetId);
+    const targetSheet = spreadsheet.getSheetByName('Log - 2025-11');
+    
+    if (!targetSheet) {
+        Logger.log('❌ Sheet "Log - 2025-11" not found');
+        return;
+    }
+    
+    Logger.log('✅ Found sheet: Log - 2025-11');
+    
+    // Check if sheet has data
+    if (targetSheet.getLastRow() < 1) {
+        Logger.log('❌ Sheet is empty');
+        return;
+    }
+    
+    // Get headers
+    const lastCol = targetSheet.getLastColumn();
+    if (lastCol < 1) {
+        Logger.log('❌ No columns in sheet');
+        return;
+    }
+    
+    const headers = targetSheet.getRange(1, 1, 1, lastCol).getValues()[0];
+    Logger.log('Current headers: ' + headers.join(', '));
+    
+    // Check if already updated
+    if (headers.includes('CartID')) {
+        Logger.log('✅ Sheet already has new columns');
+        return;
+    }
+    
+    // Find ApiKeyUsed column
+    const apiKeyIndex = headers.indexOf('ApiKeyUsed');
+    if (apiKeyIndex === -1) {
+        Logger.log('❌ ApiKeyUsed column not found');
+        return;
+    }
+    
+    Logger.log('Found ApiKeyUsed at column ' + (apiKeyIndex + 1));
+    
+    // Insert 3 columns after ApiKeyUsed
+    targetSheet.insertColumnsAfter(apiKeyIndex + 1, 3);
+    
+    // Set new headers
+    targetSheet.getRange(1, apiKeyIndex + 2).setValue('CartID');
+    targetSheet.getRange(1, apiKeyIndex + 3).setValue('ItemID');
+    targetSheet.getRange(1, apiKeyIndex + 4).setValue('DocDownloadURL');
+    
+    // Bold headers
+    targetSheet.getRange(1, apiKeyIndex + 2, 1, 3).setFontWeight('bold');
+    
+    Logger.log('✅ Successfully added columns: CartID, ItemID, DocDownloadURL');
+}
+
 /**
  * =================================================================
  * PAYMENT FORM & SHEET MANAGEMENT

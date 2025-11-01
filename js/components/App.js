@@ -473,6 +473,13 @@ const handleDocxDownload = async (markdownContent) => {
             setUsageCount(newCount);
             localStorage.setItem('saveUsageCount', newCount.toString());
             
+            // Log the doc creation
+            trackEvent('google_doc_created', activePromptKey, {
+                sessionId: SESSION_ID,
+                url: data.url,
+                model: selectedModelName
+            });
+            
             // Store the document info (URL and ID) in our new state.
             setCreatedDocInfo({ url: data.url, downloadUrl: data.downloadUrl, id: data.id });
             // Open our new modal instead of a new tab.
