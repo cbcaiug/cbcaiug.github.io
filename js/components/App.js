@@ -1398,14 +1398,18 @@ const handleHelpButtonClick = () => {};
                       
                       const data = await response.json();
                       
-                      if (data.success && data.url && data.downloadUrl) {
+                      if (data.success && data.url) {
                           // Log to analytics with CartID and ItemID
+                          const downloadUrl = data.downloadUrl || `https://docs.google.com/document/d/${data.id}/export?format=docx`;
+                          
                           trackEvent('cart_doc_created', activePromptKey, {
                               sessionId: SESSION_ID,
                               cartId: cartId,
                               itemId: itemId,
-                              docDownloadUrl: data.downloadUrl
+                              docDownloadUrl: downloadUrl
                           });
+                          
+                          const downloadUrl = data.downloadUrl || `https://docs.google.com/document/d/${data.id}/export?format=docx`;
                           
                           const newItem = {
                               id: Date.now(),
@@ -1418,7 +1422,7 @@ const handleHelpButtonClick = () => {};
                               price: 1000,
                               content: pendingAction.content,
                               docUrl: data.url,
-                              downloadUrl: data.downloadUrl
+                              downloadUrl: downloadUrl
                           };
                           const updatedCart = [...cartItems, newItem];
                           setCartItems(updatedCart);
