@@ -70,7 +70,7 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDo
               title={isLimitReached ? "Free uses exhausted" : "Copy Message"}
           >
               <CopyIcon className="w-3 h-3" />
-              <span>Copy {usageCount}/5</span>
+              <span>Copy {usageCount}/20</span>
           </button>
           
           {msg.role === 'assistant' && (
@@ -80,7 +80,7 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDo
                   title={isLimitReached ? "Free uses exhausted - Add to cart" : "Save as Google Doc"}
               >
                   <FileTextIcon className="w-3 h-3" />
-                  <span>Save {usageCount}/5</span>
+                  <span>Save {usageCount}/20</span>
               </button>
           )}
           
