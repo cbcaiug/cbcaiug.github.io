@@ -1113,18 +1113,18 @@ const handleHelpButtonClick = () => {};
                   <h2 className="text-xl font-semibold text-slate-800 text-center flex-1">{activePromptKey} Assistant</h2>
                   <div className="flex items-center gap-2">
                       {/* Cart Icon with Badge */}
-                      {cartItems.length > 0 && (
-                          <button 
-                              onClick={() => setIsCartOpen(true)}
-                              className="relative p-2 rounded-lg hover:bg-slate-100 transition-colors"
-                              title="View Cart"
-                          >
-                              <ShoppingCartIcon className="w-6 h-6 text-slate-600" />
+                      <button 
+                          onClick={() => setIsCartOpen(true)}
+                          className="relative p-2 rounded-lg hover:bg-slate-100 transition-colors"
+                          title="View Cart"
+                      >
+                          <ShoppingCartIcon className="w-6 h-6 text-slate-600" />
+                          {cartItems.length > 0 && (
                               <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                                   {cartItems.length}
                               </span>
-                          </button>
-                      )}
+                          )}
+                      </button>
                       {/* Help dropdown menu */}
                       <div className="relative">
                           <button onClick={() => setIsHelpMenuOpen(!isHelpMenuOpen)} id="help-button" title="Help & Feedback" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors">

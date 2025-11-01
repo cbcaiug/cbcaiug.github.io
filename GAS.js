@@ -280,6 +280,7 @@ function doPost(e) {
         return ContentService.createTextOutput(JSON.stringify({
             success: true,
             url: docInfo.url,
+            downloadUrl: docInfo.downloadUrl,
             id: docInfo.id
         })).setMimeType(ContentService.MimeType.JSON);
     } catch (error) {
