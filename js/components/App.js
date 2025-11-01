@@ -147,7 +147,7 @@ const [isLimitModalOpen, setIsLimitModalOpen] = useState(false);
 const [pendingAction, setPendingAction] = useState(null);
 const [cartItems, setCartItems] = useState(() => JSON.parse(localStorage.getItem('cart') || '[]'));
 const [isCartOpen, setIsCartOpen] = useState(false);
-const [paymentFormUrl, setPaymentFormUrl] = useState('https://forms.gle/MmRAnTR83WBx3czM6');
+const [paymentFormUrl, setPaymentFormUrl] = useState('https://docs.google.com/forms/d/e/1FAIpQLSfo92FKmdwzdbXLIqbm5GRrjxRLFwEH2b8AGsBBAdcB4mccZw/viewform');
   // NEW: State to manage whether the user wants to use the shared (trial) API key.
     const [useSharedApiKey, setUseSharedApiKey] = useState(true);
 
