@@ -1017,4 +1017,3 @@ function createGoogleDocFromHtml(htmlContent, title, modelName) {
         throw new Error(error.toString());
     }
 }
-s

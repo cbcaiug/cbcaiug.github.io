@@ -1335,11 +1335,10 @@ const handleHelpButtonClick = () => {};
                   const itemsList = cartItems.map((item, i) => `${i+1}. ${item.assistantName} (${new Date(item.timestamp).toLocaleString()})`).join('\n');
                   const total = cartItems.length * 1000;
                   
-                  // Note: Replace entry IDs after form is created
                   const params = new URLSearchParams({
-                      'entry.1234567890': SESSION_ID,
-                      'entry.0987654321': itemsList,
-                      'entry.1122334455': total.toString()
+                      'entry.1510315924': SESSION_ID,
+                      'entry.153116271': itemsList,
+                      'entry.1062442954': total.toString()
                   });
                   
                   window.open(`${paymentFormUrl}?${params.toString()}`, '_blank');
