@@ -22,6 +22,20 @@ const LOG_SHEET_NAME = "AI_Assistant_Log";
 const UPDATES_SHEET_NAME = "Updates";
 const PAYMENTS_SHEET_NAME = "Payments";
 
+// Payment Form Configuration
+const PAYMENT_FORM_ENTRY_IDS = {
+    sessionId: 'entry.1510315924',
+    userName: 'entry.1694733586',
+    items: 'entry.153116271',
+    totalAmount: 'entry.1062442954',
+    transactionId: 'entry.302737699',
+    email: 'emailAddress',
+    screenshot: 'entry.XXXXXXXX', // TODO: Find this via test submission with file upload
+    notes: 'entry.XXXXXXXX' // TODO: Find this via test submission with notes
+};
+
+const FOLDER_ID = '1RFRIwy5zFwt4EAoigINMEddQaWViSBVt'; // Google Drive folder for documents
+
 // Blacklist storage key and hold duration for trial keys (26 hours)
 const TRIAL_KEY_BLACKLIST_PROP = 'TRIAL_KEY_BLACKLIST';
 const TRIAL_KEY_HOLD_MS = 26 * 60 * 60 * 1000; // 26 hours
@@ -973,9 +987,6 @@ function createGoogleDocFromHtml(htmlContent, title, modelName) {
         
         // Construct the final document title, including the model name if it exists.
         const finalTitle = modelName ? `${title} by ${modelName}` : `${title} - AI Assistant`;
-
-        // Retrieve the Folder ID from Script Properties for better management.
-        const FOLDER_ID = PropertiesService.getScriptProperties().getProperty('FOLDER_ID');
 
         const fileResource = {
             title: finalTitle, // Use our newly constructed title.
