@@ -147,7 +147,7 @@ const [isLimitModalOpen, setIsLimitModalOpen] = useState(false);
 const [pendingAction, setPendingAction] = useState(null);
 const [cartItems, setCartItems] = useState(() => JSON.parse(localStorage.getItem('cart') || '[]'));
 const [isCartOpen, setIsCartOpen] = useState(false);
-const [paymentFormUrl, setPaymentFormUrl] = useState('');
+const [paymentFormUrl, setPaymentFormUrl] = useState('https://forms.gle/MmRAnTR83WBx3czM6');
   // NEW: State to manage whether the user wants to use the shared (trial) API key.
     const [useSharedApiKey, setUseSharedApiKey] = useState(true);
 
@@ -908,14 +908,6 @@ const handleHelpButtonClick = () => {};
 
           // Load the welcome message for the assistant that was determined from the URL
           loadInitialMessage(activePromptKey);
-          
-          // Fetch payment form URL
-          fetch(`${GAS_WEB_APP_URL}?action=getPaymentFormUrl`)
-              .then(res => res.json())
-              .then(data => {
-                  if (data.success) setPaymentFormUrl(data.formUrl);
-              })
-              .catch(err => console.error('Failed to fetch payment form:', err));
 
           setIsLoadingAssistants(false);
       };
