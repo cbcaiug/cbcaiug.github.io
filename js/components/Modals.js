@@ -311,12 +311,25 @@ const CartModal = ({ isOpen, onClose, cartItems, onRemoveItem, onCheckout }) => 
                             <span className="text-lg font-semibold text-slate-800">Total:</span>
                             <span className="text-2xl font-bold text-indigo-600">{total.toLocaleString()} UGX</span>
                         </div>
-                        <button 
-                            onClick={onCheckout}
-                            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors"
-                        >
-                            Proceed to Checkout
-                        </button>
+                        <div className="space-y-2">
+                            <button 
+                                onClick={onCheckout}
+                                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors"
+                            >
+                                Proceed to Checkout
+                            </button>
+                            <button 
+                                onClick={() => {
+                                    if (confirm('Clear all items from cart?')) {
+                                        cartItems.forEach(item => onRemoveItem(item.id));
+                                    }
+                                }}
+                                className="w-full flex items-center justify-center gap-2 px-6 py-2 bg-slate-200 text-slate-700 font-semibold rounded-lg hover:bg-slate-300 transition-colors"
+                            >
+                                <TrashIcon className="w-4 h-4" />
+                                Clear Cart
+                            </button>
+                        </div>
                     </div>
                 )}
             </div>
