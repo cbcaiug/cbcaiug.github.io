@@ -756,35 +756,40 @@ const handleDocxDownload = async (markdownContent) => {
       setError('');
       loadInitialMessage(activePromptKey);
   }, [activePromptKey, loadInitialMessage]);
-  // NEW: Handles adding one or more files, checking against the total size limit.
+// NEW: Handles adding one or more files, checking against the total size limit.
+// NOTE: use functional updater for setPendingFiles to avoid a race where
+// multiple quick file selections can read stale `pendingFiles` and bypass the limit.
 const handleFileChange = (e) => {
     const files = Array.from(e.target.files);
     if (!files.length || isFileUploadDisabled) return;
 
-    let currentTotalSize = pendingFiles.reduce((sum, f) => sum + f.file.size, 0);
-    const filesToAdd = [];
     const rejected = [];
 
-    for (const file of files) {
-        const newTotal = currentTotalSize + file.size;
-        if (newTotal > MAX_TOTAL_UPLOAD_SIZE) {
-            rejected.push(file.name);
-        } else {
-            const previewUrl = file.type.startsWith('image/') ? URL.createObjectURL(file) : null;
-            filesToAdd.push({ file, previewUrl, id: Date.now() + Math.random() });
-            currentTotalSize = newTotal;
-        }
-    }
+    // Use functional updater to guarantee we base calculations on the latest state
+    setPendingFiles(prev => {
+        let currentTotalSize = prev.reduce((sum, f) => sum + (f.file?.size || 0), 0);
+        const filesToAdd = [];
 
-    if (filesToAdd.length > 0) {
-        setPendingFiles(prev => [...prev, ...filesToAdd]);
-    }
+        for (const file of files) {
+            const newTotal = currentTotalSize + (file.size || 0);
+            if (newTotal > MAX_TOTAL_UPLOAD_SIZE) {
+                rejected.push(file.name);
+            } else {
+                const previewUrl = file.type && file.type.startsWith('image/') ? URL.createObjectURL(file) : null;
+                filesToAdd.push({ file, previewUrl, id: Date.now() + Math.random() });
+                currentTotalSize = newTotal;
+            }
+        }
+
+        if (filesToAdd.length === 0) return prev;
+        return [...prev, ...filesToAdd];
+    });
 
     if (rejected.length > 0) {
         setError(`⚠️ Cannot add ${rejected.length} file(s) - would exceed 10 MB limit!`);
         setTimeout(() => setError(''), 5000);
     }
-    
+
     e.target.value = null;
 };
 
@@ -824,7 +829,7 @@ const startResizing = useCallback(() => {}, []);
 const handleHelpButtonClick = () => {};
 
   // --- CLIPBOARD PASTE HANDLER ---
-  const handlePaste = useCallback((e) => {
+    const handlePaste = useCallback((e) => {
     const items = e.clipboardData?.items;
     if (!items || isFileUploadDisabled) return;
 
@@ -837,34 +842,37 @@ const handleHelpButtonClick = () => {};
       }
     }
 
-    if (files.length > 0) {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      let currentTotalSize = pendingFiles.reduce((sum, f) => sum + f.file.size, 0);
-      const filesToAdd = [];
-      let rejected = [];
+        if (files.length > 0) {
+            e.preventDefault();
+            e.stopPropagation();
 
-      for (const file of files) {
-        if (currentTotalSize + file.size > MAX_TOTAL_UPLOAD_SIZE) {
-          rejected.push(file.name);
-        } else {
-          const previewUrl = file.type.startsWith('image/') ? URL.createObjectURL(file) : null;
-          filesToAdd.push({ file, previewUrl, id: Date.now() + Math.random() });
-          currentTotalSize += file.size;
+            const rejected = [];
+
+            // Use functional updater so we always calculate against the latest pendingFiles
+            setPendingFiles(prev => {
+                let currentTotalSize = prev.reduce((sum, f) => sum + (f.file?.size || 0), 0);
+                const filesToAdd = [];
+
+                for (const file of files) {
+                    if (currentTotalSize + (file.size || 0) > MAX_TOTAL_UPLOAD_SIZE) {
+                        rejected.push(file.name);
+                    } else {
+                        const previewUrl = file.type && file.type.startsWith('image/') ? URL.createObjectURL(file) : null;
+                        filesToAdd.push({ file, previewUrl, id: Date.now() + Math.random() });
+                        currentTotalSize += file.size || 0;
+                    }
+                }
+
+                if (filesToAdd.length === 0) return prev;
+                return [...prev, ...filesToAdd];
+            });
+
+            if (rejected.length > 0) {
+                setError(`Cannot paste ${rejected.length} file(s). Total size would exceed 10 MB limit.`);
+                setTimeout(() => setError(''), 5000);
+            }
         }
-      }
-
-      if (filesToAdd.length > 0) {
-        setPendingFiles(prev => [...prev, ...filesToAdd]);
-      }
-
-      if (rejected.length > 0) {
-        setError(`Cannot paste ${rejected.length} file(s). Total size would exceed 10 MB limit.`);
-        setTimeout(() => setError(''), 5000);
-      }
-    }
-  }, [pendingFiles, isFileUploadDisabled, MAX_TOTAL_UPLOAD_SIZE]);
+    }, [isFileUploadDisabled, MAX_TOTAL_UPLOAD_SIZE]);
 
   // --- EFFECTS ---
   useEffect(() => {
