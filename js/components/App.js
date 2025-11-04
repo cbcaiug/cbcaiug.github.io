@@ -762,23 +762,29 @@ const handleFileChange = (e) => {
     if (!files.length || isFileUploadDisabled) return;
 
     let currentTotalSize = pendingFiles.reduce((sum, f) => sum + f.file.size, 0);
+    const filesToAdd = [];
+    const rejected = [];
 
-    const newFiles = files.map(file => {
-        const previewUrl = file.type.startsWith('image/') ? URL.createObjectURL(file) : null;
-        return { file, previewUrl, id: Date.now() + Math.random() };
-    });
-
-    for (const newFile of newFiles) {
-        if (currentTotalSize + newFile.file.size > MAX_TOTAL_UPLOAD_SIZE) {
-            setError(`Cannot add "${newFile.file.name}". Total size cannot exceed 10 MB.`);
-            // We stop adding files once the limit is reached.
-            break;
+    for (const file of files) {
+        const newTotal = currentTotalSize + file.size;
+        if (newTotal > MAX_TOTAL_UPLOAD_SIZE) {
+            rejected.push(file.name);
+        } else {
+            const previewUrl = file.type.startsWith('image/') ? URL.createObjectURL(file) : null;
+            filesToAdd.push({ file, previewUrl, id: Date.now() + Math.random() });
+            currentTotalSize = newTotal;
         }
-        setPendingFiles(prev => [...prev, newFile]);
-        currentTotalSize += newFile.file.size;
+    }
+
+    if (filesToAdd.length > 0) {
+        setPendingFiles(prev => [...prev, ...filesToAdd]);
+    }
+
+    if (rejected.length > 0) {
+        setError(`⚠️ Cannot add ${rejected.length} file(s) - would exceed 10 MB limit!`);
+        setTimeout(() => setError(''), 5000);
     }
     
-    // Clear the input value so the user can select the same file again if they remove it.
     e.target.value = null;
 };
 
@@ -836,19 +842,26 @@ const handleHelpButtonClick = () => {};
       e.stopPropagation();
       
       let currentTotalSize = pendingFiles.reduce((sum, f) => sum + f.file.size, 0);
+      const filesToAdd = [];
+      let rejected = [];
 
-      const newFiles = files.map(file => {
-        const previewUrl = file.type.startsWith('image/') ? URL.createObjectURL(file) : null;
-        return { file, previewUrl, id: Date.now() + Math.random() };
-      });
-
-      for (const newFile of newFiles) {
-        if (currentTotalSize + newFile.file.size > MAX_TOTAL_UPLOAD_SIZE) {
-          setError(`Cannot paste "${newFile.file.name}". Total size cannot exceed 10 MB.`);
-          break;
+      for (const file of files) {
+        if (currentTotalSize + file.size > MAX_TOTAL_UPLOAD_SIZE) {
+          rejected.push(file.name);
+        } else {
+          const previewUrl = file.type.startsWith('image/') ? URL.createObjectURL(file) : null;
+          filesToAdd.push({ file, previewUrl, id: Date.now() + Math.random() });
+          currentTotalSize += file.size;
         }
-        setPendingFiles(prev => [...prev, newFile]);
-        currentTotalSize += newFile.file.size;
+      }
+
+      if (filesToAdd.length > 0) {
+        setPendingFiles(prev => [...prev, ...filesToAdd]);
+      }
+
+      if (rejected.length > 0) {
+        setError(`Cannot paste ${rejected.length} file(s). Total size would exceed 10 MB limit.`);
+        setTimeout(() => setError(''), 5000);
       }
     }
   }, [pendingFiles, isFileUploadDisabled, MAX_TOTAL_UPLOAD_SIZE]);
@@ -1253,35 +1266,34 @@ const handleHelpButtonClick = () => {};
                       {/* NEW: Attachment Manager UI */}
 {pendingFiles.length > 0 && (
     <div className="absolute bottom-full left-0 mb-2 w-full max-w-2xl p-2">
-        <div className="bg-slate-200 rounded-lg p-3 shadow-md">
-            {/* Header with total size and progress bar */}
+        <div className="bg-slate-200 rounded-lg p-3 shadow-md max-h-40 overflow-y-auto">
+            {/* Header with total size */}
             <div className="flex justify-between items-center mb-2">
                 <h4 className="text-sm font-semibold text-slate-800">Attachments ({pendingFiles.length})</h4>
-                <span className="text-xs font-medium text-slate-600">
-                    {formatBytes(pendingFiles.reduce((sum, f) => sum + f.file.size, 0))} / {formatBytes(MAX_TOTAL_UPLOAD_SIZE)}
-                </span>
-            </div>
-            <div className="w-full bg-slate-300 rounded-full h-1.5 mb-3">
-                <div 
-                    className="bg-indigo-600 h-1.5 rounded-full" 
-                    style={{ width: `${(pendingFiles.reduce((sum, f) => sum + f.file.size, 0) / MAX_TOTAL_UPLOAD_SIZE) * 100}%` }}
-                ></div>
+                <div className="flex items-center gap-2">
+                    <span className={`text-xs font-medium ${pendingFiles.reduce((sum, f) => sum + f.file.size, 0) > MAX_TOTAL_UPLOAD_SIZE * 0.9 ? 'text-red-600 font-bold' : 'text-slate-600'}`}>
+                        {formatBytes(pendingFiles.reduce((sum, f) => sum + f.file.size, 0))} / {formatBytes(MAX_TOTAL_UPLOAD_SIZE)}
+                    </span>
+                    <button onClick={() => setPendingFiles([])} className="text-xs text-red-600 hover:text-red-800 font-medium" title="Clear all attachments">
+                        Clear All
+                    </button>
+                </div>
             </div>
 
-            {/* List of attached files */}
-            <div className="space-y-2 max-h-48 overflow-y-auto custom-scrollbar pr-1">
+            {/* Horizontal list of attached files */}
+            <div className="flex flex-wrap gap-2">
                 {pendingFiles.map(f => (
-                    <div key={f.id} className="flex items-center gap-2 bg-white p-1.5 rounded-md text-sm">
+                    <div key={f.id} className="flex items-center gap-2 bg-white p-2 rounded-md text-sm">
                         {f.previewUrl ? 
                             <img src={f.previewUrl} alt="Preview" className="w-10 h-10 object-cover rounded-md shrink-0"/> : 
                             <FileIcon className="w-10 h-10 text-slate-500 shrink-0 p-1"/>
                         }
-                        <div className="flex-grow overflow-hidden">
-                            <p className="font-medium text-slate-800 truncate">{f.file.name}</p>
+                        <div className="flex-grow overflow-hidden max-w-[100px]">
+                            <p className="font-medium text-slate-800 truncate text-xs">{f.file.name}</p>
                             <p className="text-xs text-slate-500">{formatBytes(f.file.size)}</p>
                         </div>
-                        <button onClick={() => handleRemoveFile(f.id)} className="p-1.5 rounded-full hover:bg-slate-200 text-slate-500 shrink-0">
-                            <XIcon className="w-4 h-4" />
+                        <button onClick={() => handleRemoveFile(f.id)} className="p-1 rounded-full hover:bg-slate-200 text-slate-500 shrink-0">
+                            <XIcon className="w-3 h-3" />
                         </button>
                     </div>
                 ))}
