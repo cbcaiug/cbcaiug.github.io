@@ -4,17 +4,28 @@
  * This file contains the styles for the initial application loading screen
  * with the animated logo.
  */
-/**
- * NEW: Styles for the root element to center the static loader.
- * This ensures the fallback loader in app.html is centered on the screen
- * before the React application takes over.
- */
+/* NEW: Dark theme variables & page background (matches landing page) */
+:root {
+    --primary-color: #0ea5ff; /* Neon sky blue */
+    --text-light: #ffffff;
+    --page-bg: #071022; /* deep navy (landing background) */
+}
+
+/* Apply dark page background and text so the static loader matches landing-style.css */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--text-light);
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Center the static loader inside the root */
 #root {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
 }
 .loading-screen-container {
     display: flex;
@@ -39,7 +50,8 @@
     width: 160px;
     height: 160px;
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* subtler glow suitable for dark backgrounds */
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6), 0 2px 6px rgba(14,165,255,0.08);
 }
 
 .loading-logo-wrapper::before {
@@ -51,8 +63,8 @@
     height: 100%;
     border-radius: 24px;
     border: 4px solid transparent;
-    border-top-color: var(--app-primary);
-    border-right-color: var(--app-primary);
+    border-top-color: var(--primary-color);
+    border-right-color: var(--primary-color);
     animation: border-chase 2s linear infinite;
 }
 
@@ -62,8 +74,8 @@
 }
 
 .loading-screen-text {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    color: #334155; /* slate-700 */
+    color: var(--text-light);
     text-align: center;
 }

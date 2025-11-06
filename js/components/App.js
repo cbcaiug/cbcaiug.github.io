@@ -1057,7 +1057,7 @@ const handleHelpButtonClick = () => {};
   // --- RENDER ---
   if (isLoadingAssistants) {
       return (
-          <div className="h-screen w-screen flex items-center justify-center bg-slate-50">
+          <div className="h-screen w-screen flex items-center justify-center loading-screen-overlay">
               <LoadingScreen text="Getting AI Assistants ready for you..." />
           </div>
       );
