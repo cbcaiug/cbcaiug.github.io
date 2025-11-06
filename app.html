@@ -79,16 +79,11 @@
 
 </head>
 <body>
-        <!-- 
-      This is a static fallback loading screen.
-      It is placed directly in the HTML to prevent a "white flash" while the main
-      React application and its scripts are loading and compiling. React will
-      automatically replace this content once it initializes.
-    -->
+      <!-- Single smooth loader that stays until React is ready -->
     <div id="root">
       <div class="loading-screen-container">
         <div class="loading-logo-wrapper">
-                    <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Loading Logo" class="loading-logo-img" style="width: 160px; height: 160px;" />
+          <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Loading Logo" class="loading-logo-img" />
         </div>
         <p class="loading-screen-text">Initializing AI Assistant...</p>
       </div>

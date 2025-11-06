@@ -51,9 +51,17 @@ const SESSION_ID = getSessionId();
 const TRIAL_GENERATION_LIMIT = 50;
 
 // --- MAIN APP COMPONENT ---
-const App = () => {
+const App = ({ onMount }) => {
   // --- STATE MANAGEMENT ---
   
+  // Call onMount when component is ready
+  useEffect(() => {
+    // Small delay to ensure all initial data is loaded
+    const timer = setTimeout(() => {
+      onMount?.();
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [onMount]);
 
   const [apiKeys, setApiKeys] = useState({});
   const [apiKeyStatus, setApiKeyStatus] = useState({});

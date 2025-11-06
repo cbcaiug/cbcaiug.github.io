@@ -4,14 +4,15 @@
  * This file contains the styles for the initial application loading screen
  * with the animated logo.
  */
-/* NEW: Dark theme variables & page background (matches landing page) */
+/* Dark theme variables & page background */
 :root {
-    --primary-color: #0ea5ff; /* Neon sky blue */
+    --primary-color: #0ea5ff;
     --text-light: #ffffff;
-    --page-bg: #071022; /* deep navy (landing background) */
+    --page-bg: #071022;
+    --loader-fade-duration: 0.4s;
 }
 
-/* Apply dark page background and text so the static loader matches landing-style.css */
+/* Dark theme base styles */
 html, body, #root {
     height: 100%;
     margin: 0;
@@ -20,20 +21,32 @@ html, body, #root {
     font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
-/* Center the static loader inside the root */
+/* Improved root layout */
 #root {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.loading-screen-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 100%;
-    padding: 2rem;
+    overflow: hidden;
+}
+
+/* React app container */
+#react-root {
+    position: absolute;
+    inset: 0;
+    background: var(--page-bg);
+}
+
+/* Enhanced loader container */
+.loading-screen-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--page-bg);
+    z-index: 9999;
 }
 
 .loading-logo-wrapper {
