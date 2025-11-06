@@ -67,7 +67,7 @@ const App = ({ onMount }) => {
   const [apiKeyStatus, setApiKeyStatus] = useState({});
   const [sidebarWidth, setSidebarWidth] = useState(320);
   const [selectedProviderKey, setSelectedProviderKey] = useState('google');
-  const [selectedModelName, setSelectedModelName] = useState('gemini-2.5-flash');
+  const [selectedModelName, setSelectedModelName] = useState('gemini-2.5-pro');
   const [autoDeleteHours, setAutoDeleteHours] = useState('2');
   const [chatHistory, setChatHistory] = useState([]);
   // UPDATED: State to hold an array of pending files for multi-file upload.
@@ -166,7 +166,7 @@ const [currentCartId, setCurrentCartId] = useState(() => localStorage.getItem('c
     setUseSharedApiKey(isEnabled);
     if (isEnabled) {
       setSelectedProviderKey('google');
-      setSelectedModelName('gemini-2.5-flash'); // Reset to a default Gemini model
+      setSelectedModelName('gemini-2.5-pro'); // Reset to a default Gemini model
     }
   };
   // NEW: State to hold the "sticky" trial key for the current session to reduce backend calls.
@@ -956,7 +956,7 @@ const handleHelpButtonClick = () => {};
           setApiKeyStatus(savedState.apiKeyStatus || {});
           setSidebarWidth(savedState.sidebarWidth || 320);
           setSelectedProviderKey(savedState.selectedProviderKey || 'google');
-          setSelectedModelName(savedState.selectedModelName || 'gemini-2.5-flash');
+          setSelectedModelName(savedState.selectedModelName || 'gemini-2.5-pro');
           setAutoDeleteHours(savedState.autoDeleteHours || '2');
 
           // Load the welcome message for the assistant that was determined from the URL
@@ -1141,7 +1141,8 @@ const handleHelpButtonClick = () => {};
               onProviderChange={(e) => {
                   const newProviderKey = e.target.value;
                   setSelectedProviderKey(newProviderKey);
-                  setSelectedModelName(AI_PROVIDERS.find(p => p.key === newProviderKey).models[0].name);
+                  const provider = AI_PROVIDERS.find(p => p.key === newProviderKey);
+                  setSelectedModelName(provider.key === 'google' ? 'gemini-2.5-pro' : provider.models[0].name);
               }}
               onModelChange={(e) => setSelectedModelName(e.target.value)}
               onApiKeyChange={handleApiKeyChange}
