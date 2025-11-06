@@ -208,6 +208,11 @@ const [currentCartId, setCurrentCartId] = useState(() => localStorage.getItem('c
     // failed attempts as successful completions.
     let hadError = false;
 
+    // Batching variables to throttle UI updates
+    let batchedContent = '';
+    let lastUpdateTime = Date.now();
+    const BATCH_INTERVAL = 50; // milliseconds
+
       try {
           let requestUrl, requestHeaders, requestBody;
 if (selectedProvider.key === 'google') {
@@ -312,7 +317,13 @@ msg.fileDataForApi.forEach(file => {
                           else textChunk = data.choices?.[0]?.delta?.content || data.delta?.text || '';
 
                           if (textChunk) {
-                              onUpdate(textChunk);
+                              batchedContent += textChunk;
+                              const now = Date.now();
+                              if (now - lastUpdateTime >= BATCH_INTERVAL) {
+                                  onUpdate(batchedContent);
+                                  batchedContent = '';
+                                  lastUpdateTime = now;
+                              }
                            }
                       } catch (e) { /* Ignore parsing errors */ }
                   }
@@ -325,6 +336,11 @@ msg.fileDataForApi.forEach(file => {
               onError(err.message);
           }
       } finally {
+          // Flush any remaining batched content
+          if (batchedContent) {
+              onUpdate(batchedContent);
+          }
+          
           clearTimeout(longResponseTimerRef.current);
           setIsTakingLong(false);
 
