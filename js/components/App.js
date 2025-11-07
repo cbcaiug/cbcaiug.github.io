@@ -1073,8 +1073,13 @@ const handleHelpButtonClick = () => {};
   }, [userInput]);
 
   useEffect(() => {
-      // Auto-scroll chat
-      chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+      // Auto-scroll chat only when content changes (not on initial load)
+      if (chatHistory.length > 1 || (chatHistory.length === 1 && chatHistory[0].content && !chatHistory[0].content.includes('ready'))) {
+          chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+      } else if (chatHistory.length === 1 && chatContainerRef.current) {
+          // Scroll to top on initial load to show first message
+          chatContainerRef.current.scrollTop = 0;
+      }
   }, [chatHistory[chatHistory.length - 1]?.content]);
 
 
