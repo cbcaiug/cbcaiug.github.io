@@ -40,10 +40,20 @@
     <link rel="stylesheet" href="css/main.css">
     <style>
         /* Safe area support for mobile devices */
+        body {
+            padding-top: 120px;
+        }
+        
         @supports (padding: env(safe-area-inset-top)) {
             body {
-                padding-top: env(safe-area-inset-top);
+                padding-top: calc(120px + env(safe-area-inset-top));
                 padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            body {
+                padding-top: 0;
             }
         }
         
