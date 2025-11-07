@@ -1209,7 +1209,7 @@ const handleHelpButtonClick = () => {};
                   </div>
               </header>
 
-              <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-24 lg:pt-0 pb-16 lg:pb-0">
+              <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-28 lg:pt-0 pb-16 lg:pb-0">
                                     <div className="px-1 p-2 sm:p-6 space-y-4">
                       {chatHistory.map((msg, index) => {
                           // For system messages, we render a simple, centered div.
@@ -1347,7 +1347,7 @@ const handleHelpButtonClick = () => {};
                               <span className="text-xs text-slate-400 hidden sm:inline">Attach</span>
                            </div>
                           <input id="file-upload" type="file" className="hidden" onChange={handleFileChange} disabled={isFileUploadDisabled}/>
-                          <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); }}} placeholder="Type your message or attach a file..." className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48" rows="1" />
+                          <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); }}} placeholder="Type here..." className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48" rows="1" />
                                                     {/* UPDATED: Wrap the send button and add the trial counter text */}
                           <div className="flex flex-col items-center">
                               <button id="send-button" onClick={isLoading ? () => { if (abortControllerRef.current) abortControllerRef.current.abort(); if(longResponseTimerRef.current) clearTimeout(longResponseTimerRef.current); setIsTakingLong(false); } : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
