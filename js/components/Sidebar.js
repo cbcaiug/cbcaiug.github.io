@@ -303,12 +303,12 @@ const Sidebar = ({
 
     return (
         <div
-            style={{ width: `${sidebarWidth}px`, maxWidth: '100vw', paddingTop: 'env(safe-area-inset-top)' }}
+            style={{ width: `${sidebarWidth}px`, maxWidth: '100vw' }}
             className={`absolute lg:static top-0 left-0 h-full bg-slate-800 text-white flex flex-col z-40 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}
         >
             <div className="flex-1 flex flex-col min-h-0">
                 {/* Header */}
-                <div className="flex justify-between items-center p-4 flex-shrink-0 border-b border-slate-700">
+                <div className="flex justify-between items-center p-4 pt-16 lg:pt-4 flex-shrink-0 border-b border-slate-700">
                     <h1 className="text-xl font-bold">Settings</h1>
                     <button onClick={onClose} className="lg:hidden p-1 text-slate-400 hover:text-white">
                         <XIcon className="w-6 h-6"/>

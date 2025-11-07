@@ -1258,9 +1258,9 @@ const handleHelpButtonClick = () => {};
                             </main>
 
               {/* --- NOTIFICATIONS PANEL --- */}
-              <div className={`fixed top-0 right-0 h-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${isNotificationsOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ width: 'min(400px, 100vw)', paddingTop: 'env(safe-area-inset-top)' }}>
+              <div className={`fixed top-0 right-0 h-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${isNotificationsOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ width: 'min(400px, 100vw)' }}>
                   <div className="flex flex-col h-full">
-                      <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
+                      <header className="p-4 pt-16 lg:pt-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
                           <h3 className="text-xl font-semibold text-slate-800">Notifications</h3>
                           <button onClick={() => setIsNotificationsOpen(false)} className="p-2 rounded-full hover:bg-slate-100">
                               <XIcon className="w-6 h-6 text-slate-600" />
