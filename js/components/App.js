@@ -1270,7 +1270,7 @@ const handleHelpButtonClick = () => {};
                       </svg>
                   </button>
                   
-                  <div className="flex flex-col h-full pt-20 lg:pt-0">
+                  <div className="flex flex-col h-full pt-28 lg:pt-0">
                       <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
                           <h3 className="text-xl font-semibold text-slate-800">Notifications</h3>
                       </header>

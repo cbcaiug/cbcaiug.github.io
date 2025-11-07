@@ -317,7 +317,7 @@ const Sidebar = ({
                 </svg>
             </button>
             
-            <div className="flex-1 flex flex-col min-h-0 pt-20 lg:pt-0">
+            <div className="flex-1 flex flex-col min-h-0 pt-28 lg:pt-0">
                 {/* Header */}
                 <div className="flex justify-between items-center p-4 flex-shrink-0 border-b border-slate-700">
                     <h1 className="text-xl font-bold">Settings</h1>
