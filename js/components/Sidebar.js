@@ -307,7 +307,7 @@ const Sidebar = ({
             style={{ width: `${sidebarWidth}px`, maxWidth: '100vw' }}
             className={`fixed lg:static top-0 left-0 h-full bg-slate-800 text-white flex flex-col z-40 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
         >
-            <div className="flex-1 flex flex-col min-h-0 pt-28 lg:pt-0">
+            <div className="flex-1 flex flex-col min-h-0">
                 {/* Header with integrated close button */}
                 <div className="flex justify-between items-center p-4 flex-shrink-0 border-b border-slate-700">
                     <h1 className="text-xl font-bold">Settings</h1>
