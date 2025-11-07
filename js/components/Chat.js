@@ -62,7 +62,7 @@ const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDo
     : "flex items-center gap-1 px-2 py-1 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors";
 
   return (
-      <div className="flex items-center justify-end gap-1 mt-2 px-4 pb-2" id={`message-options-menu-${index}`}>
+      <div className="flex flex-wrap items-center justify-end gap-1 mt-2 px-2 sm:px-4 pb-2" id={`message-options-menu-${index}`}>
           <button
               onClick={() => !isLimitReached && onCopy(msg.content)}
               className={copyButtonClass}
