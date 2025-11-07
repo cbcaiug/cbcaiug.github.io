@@ -1153,13 +1153,8 @@ const handleHelpButtonClick = () => {};
           />
 
           <div className="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
-              {/* {showUpdateBanner && <UpdateBanner latestUpdate={notifications[0]} onDismiss={() => {
-                  setShowUpdateBanner(false);
-                  if (notifications.length > 0) {
-                      localStorage.setItem('lastSeenUpdateTimestamp', notifications[0].timestamp);
-                      setHasNewNotification(false);
-                  }
-              }} />} */}
+              {/* Spacer to prevent browser chrome from cutting off header on mobile */}
+              <div className="h-12 lg:hidden bg-slate-50 flex-shrink-0"></div>
               
               <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0 bg-white z-10">
                   <button onClick={() => setIsMenuOpen(true)} className="p-1 text-slate-600 hover:text-slate-900 lg:hidden"><MenuIcon className="w-6 h-6" /></button>
