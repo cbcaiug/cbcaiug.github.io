@@ -1209,7 +1209,7 @@ const handleHelpButtonClick = () => {};
                   </div>
               </header>
 
-              <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-28 lg:pt-0 pb-16 lg:pb-0">
+              <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-36 lg:pt-0 pb-16 lg:pb-0">
                                     <div className="px-1 p-2 sm:p-6 space-y-4">
                       {chatHistory.map((msg, index) => {
                           // For system messages, we render a simple, centered div.
