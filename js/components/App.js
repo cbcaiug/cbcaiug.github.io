@@ -1259,12 +1259,20 @@ const handleHelpButtonClick = () => {};
 
               {/* --- NOTIFICATIONS PANEL --- */}
               <div className={`fixed top-0 right-0 h-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${isNotificationsOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ width: 'min(400px, 100vw)' }}>
-                  <div className="flex flex-col h-full">
-                      <header className="p-4 pt-16 lg:pt-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
+                  {/* Floating close button - always visible on mobile */}
+                  <button 
+                      onClick={() => setIsNotificationsOpen(false)} 
+                      className="lg:hidden absolute top-1/2 -translate-y-1/2 left-0 bg-slate-200 hover:bg-slate-300 text-slate-800 p-3 rounded-r-lg shadow-lg z-50"
+                      style={{ left: '-12px' }}
+                  >
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                  </button>
+                  
+                  <div className="flex flex-col h-full pt-20 lg:pt-0">
+                      <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
                           <h3 className="text-xl font-semibold text-slate-800">Notifications</h3>
-                          <button onClick={() => setIsNotificationsOpen(false)} className="p-2 rounded-full hover:bg-slate-100">
-                              <XIcon className="w-6 h-6 text-slate-600" />
-                          </button>
                       </header>
                         <div className="flex-1 overflow-y-auto custom-scrollbar">
                           {notifications.length > 0 ? (

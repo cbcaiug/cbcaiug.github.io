@@ -306,13 +306,21 @@ const Sidebar = ({
             style={{ width: `${sidebarWidth}px`, maxWidth: '100vw' }}
             className={`absolute lg:static top-0 left-0 h-full bg-slate-800 text-white flex flex-col z-40 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}
         >
-            <div className="flex-1 flex flex-col min-h-0">
+            {/* Floating close button - always visible on mobile */}
+            <button 
+                onClick={onClose} 
+                className="lg:hidden absolute top-1/2 -translate-y-1/2 right-0 bg-slate-700 hover:bg-slate-600 text-white p-3 rounded-l-lg shadow-lg z-50"
+                style={{ right: '-12px' }}
+            >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            
+            <div className="flex-1 flex flex-col min-h-0 pt-20 lg:pt-0">
                 {/* Header */}
-                <div className="flex justify-between items-center p-4 pt-16 lg:pt-4 flex-shrink-0 border-b border-slate-700">
+                <div className="flex justify-between items-center p-4 flex-shrink-0 border-b border-slate-700">
                     <h1 className="text-xl font-bold">Settings</h1>
-                    <button onClick={onClose} className="lg:hidden p-1 text-slate-400 hover:text-white">
-                        <XIcon className="w-6 h-6"/>
-                    </button>
                 </div>
 
                 {/* Tab Navigation */}
