@@ -302,9 +302,10 @@ const Sidebar = ({
     );
 
     return (
+        <>
         <div
             style={{ width: `${sidebarWidth}px`, maxWidth: '100vw' }}
-            className={`absolute lg:static top-0 left-0 h-full bg-slate-800 text-white flex flex-col z-40 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}
+            className={`fixed lg:static top-0 left-0 h-full bg-slate-800 text-white flex flex-col z-40 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
         >
             <div className="flex-1 flex flex-col min-h-0 pt-28 lg:pt-0">
                 {/* Header with integrated close button */}
@@ -312,7 +313,7 @@ const Sidebar = ({
                     <h1 className="text-xl font-bold">Settings</h1>
                     <button 
                         onClick={onClose} 
-                        className="lg:hidden p-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg"
+                        className="p-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg"
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -366,5 +367,7 @@ const Sidebar = ({
             {/* Resize Handle */}
             <div onMouseDown={onStartResizing} className="resize-handle hidden lg:block"></div>
         </div>
+        {isMenuOpen && <div onClick={onClose} className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"></div>}
+        </>
     );
 };

@@ -108,7 +108,7 @@ const [activePromptKey, setActivePromptKey] = useState(() => {
     
     return assistant;
 });
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(window.innerWidth >= 1024);
   const [isPromptMissing, setIsPromptMissing] = useState(false);
   const [availableAssistants, setAvailableAssistants] = useState([]);
   const [isLoadingAssistants, setIsLoadingAssistants] = useState(true);
@@ -1157,7 +1157,12 @@ const handleHelpButtonClick = () => {};
               <div className="h-12 lg:hidden bg-slate-50 flex-shrink-0"></div>
               
               <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0 bg-white z-10">
-                  <button onClick={() => setIsMenuOpen(true)} className="p-1 text-slate-600 hover:text-slate-900 lg:hidden"><MenuIcon className="w-6 h-6" /></button>
+                  {!isMenuOpen && (
+                      <button onClick={() => setIsMenuOpen(true)} className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors" title="Open Settings">
+                          <SettingsIcon className="w-5 h-5"/>
+                          <span className="hidden sm:inline">Open Settings</span>
+                      </button>
+                  )}
                   <h2 className="text-xl font-semibold text-slate-800 text-center flex-1">{activePromptKey} Assistant</h2>
                   <div className="flex items-center gap-2">
                       {/* Cart Icon - Grayed out and disabled for now */}
@@ -1259,7 +1264,7 @@ const handleHelpButtonClick = () => {};
                           <h3 className="text-xl font-semibold text-slate-800">Notifications</h3>
                           <button 
                               onClick={() => setIsNotificationsOpen(false)} 
-                              className="lg:hidden p-2 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg"
+                              className="p-2 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg"
                           >
                               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -1289,7 +1294,7 @@ const handleHelpButtonClick = () => {};
                       </div>
                   </div>
               </div>
-              {isNotificationsOpen && <div onClick={() => setIsNotificationsOpen(false)} className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"></div>}
+              {isNotificationsOpen && <div onClick={() => setIsNotificationsOpen(false)} className="fixed inset-0 bg-black bg-opacity-50 z-40"></div>}
 
               
 
