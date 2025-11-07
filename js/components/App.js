@@ -1154,15 +1154,14 @@ const handleHelpButtonClick = () => {};
 
           <div className="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
               
-              <header className="fixed lg:static top-0 left-0 right-0 p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0 bg-white z-10">
-                  {!isMenuOpen && (
-                      <button onClick={() => setIsMenuOpen(true)} className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors" title="Open Settings">
-                          <SettingsIcon className="w-5 h-5"/>
-                          <span className="hidden sm:inline">Open Settings</span>
-                      </button>
-                  )}
-                  <h2 className="text-xl font-semibold text-slate-800 text-center flex-1">{activePromptKey} Assistant</h2>
-                  <div className="flex items-center gap-2">
+              <header className="fixed lg:static top-0 left-0 right-0 p-2 lg:p-4 border-b border-slate-200 flex flex-col items-center gap-2 flex-shrink-0 bg-white z-10">
+                  <h2 className="text-lg lg:text-xl font-semibold text-slate-800 text-center w-full">{activePromptKey} Assistant</h2>
+                  <div className="flex flex-wrap items-center justify-center gap-1 lg:gap-2">
+                      {!isMenuOpen && (
+                          <button onClick={() => setIsMenuOpen(true)} className="p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors" title="Open Settings">
+                              <SettingsIcon className="w-5 h-5"/>
+                          </button>
+                      )}
                       {/* Cart Icon - Grayed out and disabled for now */}
                       <button 
                           onClick={() => usageCount === 0 ? setIsCartOpen(true) : null}
@@ -1179,9 +1178,8 @@ const handleHelpButtonClick = () => {};
                       </button>
                       {/* Help dropdown menu */}
                       <div className="relative">
-                          <button onClick={() => setIsHelpMenuOpen(!isHelpMenuOpen)} id="help-button" title="Help & Feedback" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors">
+                          <button onClick={() => setIsHelpMenuOpen(!isHelpMenuOpen)} id="help-button" title="Help & Feedback" className="p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors">
                               <HelpCircleIcon className="w-5 h-5"/>
-                              <span className="hidden sm:inline">Help</span>
                           </button>
                           {isHelpMenuOpen && (
                               <div className="absolute right-0 top-full mt-1 w-48 bg-white border border-slate-200 rounded-lg shadow-lg z-50">
@@ -1197,17 +1195,16 @@ const handleHelpButtonClick = () => {};
                           )}
                       </div>
                       {isHelpMenuOpen && <div onClick={() => setIsHelpMenuOpen(false)} className="fixed inset-0 z-40"></div>}
-                      <a href="gift.html" target="_blank" rel="noopener noreferrer" id="gift-button" title="Support the Creator" className="flex items-center gap-2 p-2 rounded-lg hover:bg-amber-50 text-amber-600 font-medium text-sm transition-colors no-underline">
+                      <a href="gift.html" target="_blank" rel="noopener noreferrer" id="gift-button" title="Support the Creator" className="p-2 rounded-lg hover:bg-amber-50 text-amber-600 transition-colors no-underline">
                           <span className="text-lg">🎁</span>
-                          <span className="hidden sm:inline">Send me a gift</span>
                       </a>
-                      <button id="notifications-button" onClick={() => setIsNotificationsOpen(true)} title="Notifications" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors"><BellIcon className="w-5 h-5"/><span className="hidden sm:inline">Notifications</span>{hasNewNotification && <span className="block w-2.5 h-2.5 bg-red-500 rounded-full"></span>}</button>
+                      <button id="notifications-button" onClick={() => setIsNotificationsOpen(true)} title="Notifications" className="relative p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors"><BellIcon className="w-5 h-5"/>{hasNewNotification && <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>}</button>
                       <button id="share-app-button" onClick={() => handleShare({ title: 'AI Educational Assistant', text: 'Check out this suite of AI-powered tools for educators!', url: window.location.href }, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} title="Share this app" className="p-2 rounded-full hover:bg-slate-200"><Share2Icon className="w-5 h-5 text-slate-500"/></button>
-                      <button id="clear-chat-button" onClick={clearChat} title="Clear chat messages" className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors"><TrashIcon className="w-5 h-5"/><span className="hidden sm:inline">Clear Chat</span></button>
+                      <button id="clear-chat-button" onClick={clearChat} title="Clear chat messages" className="p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors"><TrashIcon className="w-5 h-5"/></button>
                   </div>
               </header>
 
-              <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-20 lg:pt-0">
+              <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-32 lg:pt-0">
                                     <div className="px-1 p-2 sm:p-6 space-y-4">
                       {chatHistory.map((msg, index) => {
                           // For system messages, we render a simple, centered div.
