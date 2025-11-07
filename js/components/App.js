@@ -1159,7 +1159,7 @@ const handleHelpButtonClick = () => {};
 
           <div className="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
               
-              <header className="fixed lg:static top-0 left-0 right-0 p-2 lg:p-4 border-b border-slate-200 flex flex-col items-center gap-2 flex-shrink-0 bg-white z-10">
+              <header className="fixed top-0 left-0 right-0 p-2 lg:p-4 border-b border-slate-200 flex flex-col items-center gap-2 flex-shrink-0 bg-white z-10">
                   <h2 className="text-lg lg:text-xl font-semibold text-slate-800 text-center w-full">{activePromptKey} Assistant</h2>
                   <div className="flex flex-wrap items-center justify-center gap-1 lg:gap-2">
                       {!isMenuOpen && (
@@ -1209,7 +1209,7 @@ const handleHelpButtonClick = () => {};
                   </div>
               </header>
 
-              <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-36 lg:pt-0 pb-32 lg:pb-0">
+              <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-28 pb-48">
                                     <div className="px-1 p-2 sm:p-6 space-y-4">
                       {chatHistory.map((msg, index) => {
                           // For system messages, we render a simple, centered div.
@@ -1298,7 +1298,7 @@ const handleHelpButtonClick = () => {};
 
               
 
-              <footer id="chat-input-area" className="p-4 pb-safe border-t border-slate-200 bg-white flex-shrink-0" style={{paddingBottom: 'max(1rem, env(safe-area-inset-bottom))'}}>
+              <footer id="chat-input-area" className="fixed bottom-0 left-0 right-0 p-4 pb-safe border-t border-slate-200 bg-white flex-shrink-0" style={{paddingBottom: 'max(1rem, env(safe-area-inset-bottom))'}}>
                   <div className="relative mx-auto max-w-4xl">
                                   {error && <div className={`p-4 border-t flex-shrink-0 ${error.includes('Creating your Google Doc') || error.includes('Getting shared API key') ? 'bg-green-100 text-green-700 border-green-200' : 'bg-red-100 text-red-700 border-red-200'}`}>{error}</div>}
                       {/* NEW: Attachment Manager UI */}
