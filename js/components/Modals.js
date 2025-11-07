@@ -347,7 +347,12 @@ const DocSuccessModal = ({ isOpen, onClose, docInfo }) => {
     const downloadUrlPdf = `https://docs.google.com/document/d/${docInfo.id}/export?format=pdf`;
 
     const handleDownload = (url, format) => {
-        window.open(url, '_blank');
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `AI-Generated-Document-${docInfo.id}.${format}`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
 
     return (
