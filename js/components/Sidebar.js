@@ -303,7 +303,7 @@ const Sidebar = ({
 
     return (
         <div
-            style={{ width: `${sidebarWidth}px`, maxWidth: '100vw' }}
+            style={{ width: `${sidebarWidth}px`, maxWidth: '100vw', paddingTop: 'env(safe-area-inset-top)' }}
             className={`absolute lg:static top-0 left-0 h-full bg-slate-800 text-white flex flex-col z-40 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}
         >
             <div className="flex-1 flex flex-col min-h-0">

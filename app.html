@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
     <!-- Meta Tags -->
     <title id="page-title">AI Educational Assistant</title>
@@ -39,6 +39,14 @@
     <!-- Application Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
     <style>
+        /* Safe area support for mobile devices */
+        @supports (padding: env(safe-area-inset-top)) {
+            body {
+                padding-top: env(safe-area-inset-top);
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+        
         /* Enhanced scrollbar styling */
         .enhanced-scrollbar::-webkit-scrollbar {
             width: 14px;
