@@ -1153,10 +1153,8 @@ const handleHelpButtonClick = () => {};
           />
 
           <div className="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
-              {/* Spacer to prevent browser chrome from cutting off header on mobile */}
-              <div className="h-12 lg:hidden bg-slate-50 flex-shrink-0"></div>
               
-              <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0 bg-white z-10">
+              <header className="fixed lg:static top-0 left-0 right-0 p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0 bg-white z-10">
                   {!isMenuOpen && (
                       <button onClick={() => setIsMenuOpen(true)} className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 text-slate-600 font-medium text-sm transition-colors" title="Open Settings">
                           <SettingsIcon className="w-5 h-5"/>
