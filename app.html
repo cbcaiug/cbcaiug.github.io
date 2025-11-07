@@ -41,19 +41,18 @@
     <style>
         /* Safe area support for mobile devices */
         body {
-            padding-top: 120px;
+            /* No padding-top on body; header is fixed and main content has pt-24 */
         }
         
         @supports (padding: env(safe-area-inset-top)) {
             body {
-                padding-top: calc(120px + env(safe-area-inset-top));
                 padding-bottom: env(safe-area-inset-bottom);
             }
         }
         
         @media (min-width: 1024px) {
             body {
-                padding-top: 0;
+                padding-top: 0; /* Ensure no padding-top on desktop */
             }
         }
         
