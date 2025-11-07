@@ -346,6 +346,10 @@ const DocSuccessModal = ({ isOpen, onClose, docInfo }) => {
     const downloadUrlDocx = `https://docs.google.com/document/d/${docInfo.id}/export?format=docx`;
     const downloadUrlPdf = `https://docs.google.com/document/d/${docInfo.id}/export?format=pdf`;
 
+    const handleDownload = (url, format) => {
+        window.open(url, '_blank');
+    };
+
     return (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full transform transition-all scale-100 opacity-100">
@@ -368,24 +372,22 @@ const DocSuccessModal = ({ isOpen, onClose, docInfo }) => {
                     </a>
 
                     {/* Button to download as .docx */}
-                    <a 
-                        href={downloadUrlDocx} 
-                        download
+                    <button 
+                        onClick={() => handleDownload(downloadUrlDocx, 'docx')}
                         className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-slate-700 text-white font-semibold rounded-lg hover:bg-slate-600 transition-colors"
                     >
                         <DownloadCloudIcon className="w-5 h-5" />
                         <span>Download as Word (.docx)</span>
-                    </a>
+                    </button>
 
                     {/* Button to download as .pdf */}
-                    <a 
-                        href={downloadUrlPdf} 
-                        download
+                    <button 
+                        onClick={() => handleDownload(downloadUrlPdf, 'pdf')}
                         className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-red-700 text-white font-semibold rounded-lg hover:bg-red-600 transition-colors"
                     >
                         <DownloadCloudIcon className="w-5 h-5" />
                         <span>Download as PDF</span>
-                    </a>
+                    </button>
                 </div>
 
                 <div className="mt-6 text-center">
