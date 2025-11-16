@@ -209,9 +209,19 @@ export  const ConsentModal = ({ onAccept }) => {
 export  const DocSuccessModal = ({ isOpen, onClose, docInfo }) => {
     if (!isOpen || !docInfo) return null;
 
-    // Construct the direct download URLs using the document's ID.
-    const downloadUrlDocx = `https://docs.google.com/document/d/${docInfo.id}/export?format=docx`;
-    const downloadUrlPdf = `https://docs.google.com/document/d/${docInfo.id}/export?format=pdf`;
+    const handleDownload = (format) => {
+        // Use backend proxy for downloads to ensure proper headers on mobile
+        const downloadUrl = `${GAS_WEB_APP_URL}?action=downloadDoc&docId=${docInfo.id}&format=${format}`;
+        
+        // Track the download attempt
+        trackEvent('doc_download_attempt', 'Document Download', { 
+            docId: docInfo.id, 
+            format: format 
+        });
+        
+        // Open in new window to trigger download
+        window.open(downloadUrl, '_blank');
+    };
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
@@ -235,24 +245,22 @@ export  const DocSuccessModal = ({ isOpen, onClose, docInfo }) => {
                     </a>
 
                     {/* Button to download as .docx */}
-                    <a 
-                        href={downloadUrlDocx} 
-                        download
+                    <button 
+                        onClick={() => handleDownload('docx')}
                         className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-slate-700 text-white font-semibold rounded-lg hover:bg-slate-600 transition-colors"
                     >
                         <DownloadCloudIcon className="w-5 h-5" />
                         <span>Download as Word (.docx)</span>
-                    </a>
+                    </button>
 
                     {/* Button to download as .pdf */}
-                    <a 
-                        href={downloadUrlPdf} 
-                        download
+                    <button 
+                        onClick={() => handleDownload('pdf')}
                         className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-red-700 text-white font-semibold rounded-lg hover:bg-red-600 transition-colors"
                     >
                         <DownloadCloudIcon className="w-5 h-5" />
                         <span>Download as PDF</span>
-                    </a>
+                    </button>
                 </div>
 
                 <div className="mt-6 text-center">

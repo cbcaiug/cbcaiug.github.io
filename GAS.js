@@ -65,12 +65,52 @@ const ASSISTANT_FILES = {
  * =================================================================
  */
 
+/**
+ * Handles document download requests by redirecting with proper headers
+ * @param {string} docId - The Google Doc ID to download
+ * @param {string} format - The export format (docx or pdf)
+ * @return {HtmlService.HtmlOutput} HTML that triggers download
+ */
+function handleDocDownload(docId, format) {
+    const exportUrl = `https://docs.google.com/document/d/${docId}/export?format=${format}`;
+    const fileName = `AI-Generated-Document.${format}`;
+    
+    // Return HTML that triggers immediate download
+    const html = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Downloading...</title>
+        </head>
+        <body>
+            <p>Your download should start automatically...</p>
+            <script>
+                window.location.href = '${exportUrl}';
+            </script>
+        </body>
+        </html>
+    `;
+    
+    return HtmlService.createHtmlOutput(html)
+        .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+}
+
 function doGet(e) {
     try {
         const action = e.parameter.action;
         let output;
 
-        if (action === 'getAssistants') {
+        if (action === 'downloadDoc') {
+            const docId = e.parameter.docId;
+            const format = e.parameter.format || 'docx';
+            
+            if (!docId) {
+                return HtmlService.createHtmlOutput('<h1>Error: Document ID is required</h1>');
+            }
+            
+            return handleDocDownload(docId, format);
+        } else if (action === 'getAssistants') {
             output = ContentService.createTextOutput(JSON.stringify({
                 success: true,
                 assistants: Object.keys(ASSISTANT_FILES)
