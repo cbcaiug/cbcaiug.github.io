@@ -38,7 +38,7 @@ const MarkdownRenderer = ({ htmlContent, isLoading, isTakingLong }) => {
             <div className="p-4 flex items-center text-slate-500">
                 <div className="loading-spinner mr-3"></div>
                 <span className="font-medium">
-                    {isTakingLong ? "AI is taking a bit longer than usual..." : "AI is thinking..."}
+                    {isTakingLong ? "CBC AI is taking a bit longer than usual..." : "CBC AI is thinking..."}
                 </span>
             </div>
         );
