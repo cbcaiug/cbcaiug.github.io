@@ -179,6 +179,8 @@ const [currentCartId, setCurrentCartId] = useState(() => localStorage.getItem('c
   // --- REFS ---
   const chatContainerRef = useRef(null);
   const chatEndRef = useRef(null);
+    // Ref to measure header height for mobile padding adjustment
+    const headerRef = useRef(null);
   const userInputRef = useRef(null);
   const validationTimeoutRef = useRef(null);
   const apiKeyToastTimeoutRef = useRef(null);
@@ -1081,6 +1083,40 @@ const handleHelpButtonClick = () => {};
   }, [chatHistory[chatHistory.length - 1]?.content]);
 
 
+  // Measure the header height and apply padding to the chat inner wrapper
+  // on small viewports so the first assistant message is not hidden by the
+  // fixed header. This is a safe, non-destructive fix that only applies
+  // when `window.innerWidth <= 640` (mobile).</n+  useEffect(() => {
+      const setMainTopPadding = () => {
+          try {
+              const headerEl = headerRef.current;
+              const mainEl = chatContainerRef.current;
+              if (!headerEl || !mainEl) return;
+              const innerDiv = mainEl.querySelector('div');
+              if (!innerDiv) return;
+              const headerHeight = headerEl.offsetHeight || 0;
+              if (window.innerWidth <= 640) {
+                  innerDiv.style.paddingTop = `${headerHeight}px`;
+              } else {
+                  innerDiv.style.paddingTop = '';
+              }
+          } catch (e) {
+              console.error('Failed to adjust chat padding', e);
+          }
+      };
+
+      setMainTopPadding();
+      window.addEventListener('resize', setMainTopPadding);
+      const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(setMainTopPadding) : null;
+      if (ro && headerRef.current) ro.observe(headerRef.current);
+
+      return () => {
+          window.removeEventListener('resize', setMainTopPadding);
+          if (ro) ro.disconnect();
+      };
+  }, []);
+
+
   // --- RENDER ---
   if (isLoadingAssistants) {
       return (
@@ -1157,7 +1193,7 @@ const handleHelpButtonClick = () => {};
 
           <div className="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
               
-              <header className="fixed top-0 left-0 right-0 p-2 lg:p-4 border-b border-slate-200 flex flex-col items-center gap-2 flex-shrink-0 bg-white z-10" style={{ marginLeft: isMenuOpen && window.innerWidth >= 1024 ? sidebarWidth : 0 }}>
+              <header ref={headerRef} className="fixed top-0 left-0 right-0 p-2 lg:p-4 border-b border-slate-200 flex flex-col items-center gap-2 flex-shrink-0 bg-white z-10" style={{ marginLeft: isMenuOpen && window.innerWidth >= 1024 ? sidebarWidth : 0 }}>
                   <h2 className="text-lg lg:text-xl font-semibold text-slate-800 text-center w-full">{activePromptKey} Assistant</h2>
                   <div className="flex flex-wrap items-center justify-center gap-1 lg:gap-2">
                       {!isMenuOpen && (
