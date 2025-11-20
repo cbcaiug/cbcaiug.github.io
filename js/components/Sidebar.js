@@ -109,6 +109,137 @@ const Sidebar = ({
         </button>
     );
 
+    // History state and helpers (local-only)
+    const [historyItems, setHistoryItems] = useState([]);
+    const [showAllHistoryModal, setShowAllHistoryModal] = useState(false);
+    const [isHistoryExpanded, setIsHistoryExpanded] = useState(false);
+    const [historyMenuOpen, setHistoryMenuOpen] = useState(null);
+    const [historyEnabled, setHistoryEnabled] = useState(() => localStorage.getItem('cbc_chat_history_autosave') === '1');
+
+    useEffect(() => {
+        try {
+            const raw = localStorage.getItem('cbc_chat_history');
+            if (raw) {
+                const all = JSON.parse(raw);
+                if (Array.isArray(all)) {
+                    all.sort((a,b)=>b.timestamp - a.timestamp);
+                    setHistoryItems(all);
+                }
+            }
+        } catch (e) { console.error('Failed to load history', e); }
+    }, []);
+
+    useEffect(() => {
+        const h = (e) => {
+            try {
+                const raw = localStorage.getItem('cbc_chat_history');
+                if (raw) {
+                    const all = JSON.parse(raw);
+                    all.sort((a,b)=>b.timestamp - a.timestamp);
+                    setHistoryItems(all);
+                }
+            } catch (err) { console.error('Failed to refresh history', err); }
+        };
+        window.addEventListener('historyUpdated', h);
+        return () => window.removeEventListener('historyUpdated', h);
+    }, []);
+
+    const onSelectHistoryItem = (item) => {
+        if (typeof window !== 'undefined' && window.__LOAD_HISTORY_CHAT__) {
+            window.__LOAD_HISTORY_CHAT__(item);
+        } else if (typeof window !== 'undefined') {
+            const ev = new CustomEvent('loadHistoryChat', {detail: item});
+            window.dispatchEvent(ev);
+        }
+    };
+
+    const handleDeleteHistory = (itemId, e) => {
+        e.stopPropagation();
+        if (confirm('Delete this chat?')) {
+            try {
+                const raw = localStorage.getItem('cbc_chat_history');
+                const arr = raw ? JSON.parse(raw) : [];
+                const filtered = arr.filter(x => x.id !== itemId);
+                localStorage.setItem('cbc_chat_history', JSON.stringify(filtered));
+                window.dispatchEvent(new CustomEvent('historyUpdated'));
+                setHistoryMenuOpen(null);
+            } catch (e) { console.error(e); }
+        }
+    };
+
+    const handleDeleteAllHistory = () => {
+        if (confirm('Delete all chat history? This cannot be undone.')) {
+            try {
+                localStorage.setItem('cbc_chat_history', JSON.stringify([]));
+                window.dispatchEvent(new CustomEvent('historyUpdated'));
+            } catch (e) { console.error(e); }
+        }
+    };
+
+    const HistoryPreview = () => {
+        const list = historyItems.slice(0, 3);
+        return (
+            <div className="space-y-2">
+                <button
+                    onClick={() => setIsHistoryExpanded(!isHistoryExpanded)}
+                    className="flex items-center justify-between w-full text-sm text-slate-400 hover:text-white transition-colors"
+                >
+                    <span>Chat History</span>
+                    <svg className={`w-4 h-4 transition-transform ${isHistoryExpanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                
+                {isHistoryExpanded && (
+                    <div className="space-y-1">
+                        {list.length === 0 && <div className="text-sm text-slate-400 px-2 py-2">No recent chats.</div>}
+                        {list.map(it => (
+                            <div key={it.id} className="relative group">
+                                <button onClick={() => onSelectHistoryItem(it)} className="w-full text-left px-2 py-2 hover:bg-slate-700 rounded-md flex flex-col pr-8">
+                                    <div className="text-sm font-medium truncate">{it.title || it.assistantKey}</div>
+                                    <div className="text-xs text-slate-400 truncate">{it.excerpt || ''}</div>
+                                    <div className="text-xs text-slate-500">{new Date(it.timestamp).toLocaleString()}</div>
+                                </button>
+                                <div className="absolute top-2 right-2">
+                                    <button
+                                        onClick={(e) => { e.stopPropagation(); setHistoryMenuOpen(historyMenuOpen === it.id ? null : it.id); }}
+                                        className="p-1 hover:bg-slate-600 rounded"
+                                    >
+                                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="5" r="2"/>
+                                            <circle cx="12" cy="12" r="2"/>
+                                            <circle cx="12" cy="19" r="2"/>
+                                        </svg>
+                                    </button>
+                                    {historyMenuOpen === it.id && (
+                                        <div className="absolute right-0 top-full mt-1 bg-slate-900 border border-slate-700 rounded shadow-lg z-50 min-w-[120px]">
+                                            <button
+                                                onClick={(e) => handleDeleteHistory(it.id, e)}
+                                                className="w-full text-left px-3 py-2 text-sm hover:bg-slate-700 text-red-400"
+                                            >
+                                                Delete
+                                            </button>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                        {historyItems.length > 3 && (
+                            <button onClick={() => setShowAllHistoryModal(true)} className="w-full py-2 bg-slate-700 hover:bg-slate-600 rounded-md text-sm">
+                                View All History
+                            </button>
+                        )}
+                        {historyItems.length > 0 && (
+                            <button onClick={handleDeleteAllHistory} className="w-full py-2 bg-red-800 hover:bg-red-700 rounded-md text-sm">
+                                Delete All
+                            </button>
+                        )}
+                    </div>
+                )}
+            </div>
+        );
+    };
+
     // Close selector panels on outside click or Escape
     useEffect(() => {
         const onDocClick = (e) => {
@@ -150,7 +281,13 @@ const Sidebar = ({
 
     const AISettingsTab = () => (
         <div className="space-y-4">
+            {/* History Preview (collapsible, closed by default) */}
+            <div className="p-2 bg-slate-800 border border-slate-700 rounded-md">
+                <HistoryPreview />
+            </div>
+
             {/* Assistant Selector */}
+            
             <div>
                 <label className="text-sm text-slate-400">Select Assistant</label>
                     <div className="mt-1 relative">
@@ -186,7 +323,7 @@ const Sidebar = ({
                                             const raw = (availableAssistants || []).slice().sort((a,b)=>a.localeCompare(b));
                                             const groupsDef = [
                                                 { id: 'lesson-plans', name: 'Lesson Plans', keys: ['Lesson Plans (NCDC)', 'Lesson Plans (with Biblical Integration)'] },
-                                                { id: 'scheme-of-work', name: 'Scheme of Work', keys: ['Scheme of Work(NCDC)', 'Scheme of Work (with Biblical Integration)', 'UACE SoW NCDC'] },
+                                                { id: 'scheme-of-work', name: 'Scheme of Work', keys: ['Scheme of Work NCDC', 'Scheme of Work (with Biblical Integration)', 'UACE SoW NCDC'] },
                                                 { id: 'item-writer', name: 'Item Writer', keys: ['Item Writer', 'UCE BIO Item Writer'] }
                                             ];
                                             const groups = {};
@@ -396,12 +533,36 @@ const Sidebar = ({
                 </select>
             </div>
 
+            {/* Save Chat History Toggle */}
+            <div className="bg-slate-700 p-3 rounded-lg">
+                <div className="flex items-center justify-between gap-3">
+                    <div className="flex-1">
+                        <label htmlFor="history-toggle" className="font-semibold text-white cursor-pointer">Save Chat History</label>
+                        <p className="text-xs text-slate-400">Auto-save chats locally</p>
+                    </div>
+                    <label htmlFor="history-toggle" className="relative inline-flex items-center cursor-pointer flex-shrink-0">
+                        <input 
+                            type="checkbox" 
+                            checked={historyEnabled} 
+                            onChange={(e) => {
+                                const checked = e.target.checked;
+                                setHistoryEnabled(checked);
+                                localStorage.setItem('cbc_chat_history_autosave', checked ? '1' : '0');
+                            }} 
+                            id="history-toggle" 
+                            className="sr-only peer"
+                        />
+                        <div className="w-11 h-6 bg-slate-600 rounded-full peer peer-focus:ring-2 peer-focus:ring-indigo-500 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                    </label>
+                </div>
+            </div>
+
             {/* Reset Settings */}
             <div>
                 <label className="text-sm text-slate-400">App Settings</label>
                 {showResetConfirm ? (
                     <div className="mt-1 p-3 bg-red-900/50 border border-red-500 rounded-md">
-                        <p className="text-sm mb-2 text-white">Are you sure? This will clear all API keys and settings.</p>
+                        <p className="text-sm mb-2 text-white">This will clear API keys and chat history only. Usage tracking will remain.</p>
                         <div className="flex gap-2">
                             <button onClick={() => onShowResetConfirm(false)} className="flex-1 text-xs py-2 bg-slate-600 hover:bg-slate-500 rounded transition-colors">
                                 Cancel
@@ -464,6 +625,76 @@ const Sidebar = ({
             </a>
         </div>
     );
+
+    // Full History Modal
+    const FullHistoryModal = () => {
+        const [historySearch, setHistorySearch] = useState('');
+        if (!showAllHistoryModal) return null;
+        const filteredHistory = historyItems.filter(it => 
+            (it.title || '').toLowerCase().includes(historySearch.toLowerCase()) ||
+            (it.excerpt || '').toLowerCase().includes(historySearch.toLowerCase())
+        );
+        return (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-2 sm:p-4">
+                <div className="w-full max-w-2xl bg-slate-800 border border-slate-700 rounded-md flex flex-col max-h-[90vh] sm:max-h-[80vh]">
+                    <div className="flex justify-between items-center p-3 sm:p-4 border-b border-slate-700 flex-shrink-0">
+                        <h3 className="text-base sm:text-lg font-semibold truncate">All Chat History</h3>
+                        <button onClick={() => { setShowAllHistoryModal(false); setHistorySearch(''); }} className="p-2 hover:bg-slate-700 rounded flex-shrink-0 ml-2">✕</button>
+                    </div>
+                    <div className="px-3 sm:px-4 py-2 border-b border-slate-700 flex-shrink-0">
+                        <input
+                            type="search"
+                            placeholder="Search history..."
+                            value={historySearch}
+                            onChange={(e) => setHistorySearch(e.target.value)}
+                            className="w-full p-2 rounded-md bg-slate-700 text-sm border border-slate-600 mb-2"
+                        />
+                        {historyItems.length > 0 && (
+                            <button onClick={handleDeleteAllHistory} className="w-full py-2 bg-red-800 hover:bg-red-700 rounded text-xs sm:text-sm">
+                                Delete All History
+                            </button>
+                        )}
+                    </div>
+                    <div className="flex-1 overflow-y-auto enhanced-scrollbar p-3 sm:p-4">
+                        <div className="space-y-2">
+                            {filteredHistory.length === 0 && <div className="text-sm text-slate-400 text-center py-8">{historySearch ? 'No matching chats.' : 'No saved chats.'}</div>}
+                            {filteredHistory.map(it => (
+                                <div key={it.id} className="p-2 sm:p-3 bg-slate-900 rounded-md flex items-start gap-2 relative group">
+                                    <button onClick={() => { onSelectHistoryItem(it); setShowAllHistoryModal(false); setHistoryMenuOpen(null); }} className="flex-1 text-left min-w-0">
+                                        <div className="font-medium text-sm truncate">{it.title || it.assistantKey}</div>
+                                        <div className="text-xs text-slate-400 line-clamp-2 break-words">{it.excerpt}</div>
+                                        <div className="text-xs text-slate-500 mt-1">{new Date(it.timestamp).toLocaleString()}</div>
+                                    </button>
+                                    <div className="flex-shrink-0 relative">
+                                        <button
+                                            onClick={(e) => { e.stopPropagation(); setHistoryMenuOpen(historyMenuOpen === it.id ? null : it.id); }}
+                                            className="p-2 hover:bg-slate-700 rounded"
+                                        >
+                                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <circle cx="12" cy="5" r="2"/>
+                                                <circle cx="12" cy="12" r="2"/>
+                                                <circle cx="12" cy="19" r="2"/>
+                                            </svg>
+                                        </button>
+                                        {historyMenuOpen === it.id && (
+                                            <div className="absolute right-0 top-full mt-1 bg-slate-900 border border-slate-700 rounded shadow-lg z-50 min-w-[120px]">
+                                                <button
+                                                    onClick={(e) => handleDeleteHistory(it.id, e)}
+                                                    className="w-full text-left px-3 py-2 text-sm hover:bg-slate-700 text-red-400 whitespace-nowrap"
+                                                >
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    };
 
     return (
         <>
@@ -532,6 +763,7 @@ const Sidebar = ({
             <div onMouseDown={onStartResizing} className="resize-handle hidden lg:block"></div>
         </div>
         {isMenuOpen && <div onClick={onClose} className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"></div>}
+        <FullHistoryModal />
         </>
     );
 };

@@ -86,7 +86,7 @@ const [activePromptKey, setActivePromptKey] = useState(() => {
         'Lesson Plans (NCDC)': 'Create detailed lesson plans following the official NCDC template for Ugandan educators.',
         'Lesson Plans (with Biblical Integration)': 'Create NCDC lesson plans with integrated biblical values and Christian worldview perspectives.',
         'UACE SoW NCDC': 'Develop comprehensive schemes of work specifically for Uganda Advanced Certificate of Education (UACE) level.',
-        'Scheme of Work(NCDC)': 'Develop structured schemes of work based on Uganda\'s CBC syllabus requirements.',
+        'Scheme of Work NCDC': 'Develop structured schemes of work based on Uganda\'s CBC syllabus requirements.',
         'Scheme of Work (with Biblical Integration)': 'Create CBC schemes of work incorporating biblical principles and Christian educational values.',
         'Lesson Notes Generator': 'Produce comprehensive and well-structured lecture notes for any educational topic.',
         'UCE Project Assistant': 'Guide students through Uganda Certificate of Education (UCE) project planning and execution.',
@@ -123,12 +123,16 @@ const [activePromptKey, setActivePromptKey] = useState(() => {
   const [hasNewNotification, setHasNewNotification] = useState(false);
   const [showUpdateBanner, setShowUpdateBanner] = useState(false);
   const [isTakingLong, setIsTakingLong] = useState(false);
+    // History enabled flag (opt-in). Default false unless localStorage key is '1'
+    const [historyEnabled, setHistoryEnabled] = useState(() => localStorage.getItem('cbc_chat_history_autosave') === '1');
   // NEW: This function handles switching assistants without a page reload.
 const handleAssistantChange = (newAssistantKey) => {
     if (newAssistantKey === activePromptKey) return; // Do nothing if the same assistant is selected
 
     // Update the app's state to the new assistant
     setActivePromptKey(newAssistantKey);
+    setIsPromptMissing(false);
+    setError('');
 
     // Update the browser's URL bar without reloading the page
     const url = new URL(window.location);
@@ -139,6 +143,15 @@ const handleAssistantChange = (newAssistantKey) => {
     setChatHistory([]); // Clear existing messages
     loadInitialMessage(newAssistantKey); // Load the welcome message for the new assistant
 };
+
+  // Load history chat
+  const handleLoadHistoryChat = useCallback((item) => {
+      if (!item || !item.messages) return;
+      setActivePromptKey(item.assistantKey);
+      setChatHistory(item.messages);
+      setIsPromptMissing(false);
+      setError('');
+  }, []);
   const [showConsentModal, setShowConsentModal] = useState(false);
   // NEW: State for the Google Doc success and download modal
 const [isDocModalOpen, setIsDocModalOpen] = useState(false);
@@ -186,6 +199,8 @@ const [currentCartId, setCurrentCartId] = useState(() => localStorage.getItem('c
   const apiKeyToastTimeoutRef = useRef(null);
   const abortControllerRef = useRef(null);
   const longResponseTimerRef = useRef(null);
+    // History save throttling
+    const lastSavedAtRef = useRef(0);
 
   // --- CONSTANTS & DERIVED STATE ---
   const FEEDBACK_TRIGGER_COUNT = 5;
@@ -389,6 +404,109 @@ msg.fileDataForApi.forEach(file => {
           setChatHistory([{ role: 'assistant', content: finalMessage, id: Date.now() }]);
       }
   }, [autoDeleteHours]);
+
+  // --- Chat History Persistence (local-only, opt-in) ---
+  useEffect(() => {
+      // Listener for explicit save requests from UI
+      const saveHandler = () => {
+          try {
+              if (!chatHistory || chatHistory.length === 0) return;
+              const now = Date.now();
+              const title = `${activePromptKey}`;
+              const excerpt = (chatHistory[chatHistory.length-1]?.content || '').slice(0,120);
+              const item = {
+                  id: `h_${now}`,
+                  title,
+                  assistantKey: activePromptKey,
+                  timestamp: now,
+                  excerpt,
+                  messages: chatHistory
+              };
+              const raw = localStorage.getItem('cbc_chat_history');
+              const arr = raw ? JSON.parse(raw) : [];
+              arr.unshift(item);
+              const limitRaw = parseInt(localStorage.getItem('cbc_chat_history_limit') || '200', 10) || 200;
+              const limited = arr.slice(0, limitRaw);
+              localStorage.setItem('cbc_chat_history', JSON.stringify(limited));
+              window.dispatchEvent(new CustomEvent('historyUpdated', {detail:{item}}));
+          } catch (err) { console.error('Save snapshot failed', err); }
+      };
+      window.addEventListener('requestSaveSnapshot', saveHandler);
+      return () => window.removeEventListener('requestSaveSnapshot', saveHandler);
+  }, [chatHistory, activePromptKey]);
+
+  // Autosave snapshots when assistant replies (opt-in via localStorage key)
+  useEffect(() => {
+      try {
+          if (!chatHistory || chatHistory.length === 0) return;
+          const now = Date.now();
+          if (now - lastSavedAtRef.current < 5000) return; // throttle 5s
+          const autosave = localStorage.getItem('cbc_chat_history_autosave');
+          if (autosave !== '1') return; // disabled by default
+
+          // Save only when last message is assistant and not loading
+          const lastMsg = chatHistory[chatHistory.length - 1];
+          if (!lastMsg || lastMsg.role !== 'assistant' || lastMsg.isLoading) return;
+
+          // Check if this session already saved
+          const sessionKey = `h_session_${activePromptKey}_${SESSION_ID}`;
+          const raw = localStorage.getItem('cbc_chat_history');
+          const arr = raw ? JSON.parse(raw) : [];
+          const existingIndex = arr.findIndex(x => x.id === sessionKey);
+
+          const title = `${activePromptKey}`;
+          const excerpt = (chatHistory[chatHistory.length-1]?.content || '').slice(0,120);
+          const item = {
+              id: sessionKey,
+              title,
+              assistantKey: activePromptKey,
+              timestamp: now,
+              excerpt,
+              messages: chatHistory
+          };
+
+          if (existingIndex >= 0) {
+              // Update existing session
+              arr[existingIndex] = item;
+          } else {
+              // Add new session
+              arr.unshift(item);
+          }
+
+          const limitRaw = parseInt(localStorage.getItem('cbc_chat_history_limit') || '200', 10) || 200;
+          const limited = arr.slice(0, limitRaw);
+          localStorage.setItem('cbc_chat_history', JSON.stringify(limited));
+          lastSavedAtRef.current = now;
+          window.dispatchEvent(new CustomEvent('historyUpdated', {detail: {item}}));
+      } catch (e) { console.error('Failed to save chat history', e); }
+  }, [chatHistory, activePromptKey]);
+
+  // Allow other UI to change active assistant via custom event
+  useEffect(() => {
+      const handler = (e) => {
+          const key = e?.detail?.key;
+          if (key) handleAssistantChange(key);
+      };
+      window.addEventListener('assistantChanged', handler);
+      return () => window.removeEventListener('assistantChanged', handler);
+  }, [handleAssistantChange]);
+
+  // Load history chat from sidebar
+  useEffect(() => {
+      const handler = (e) => {
+          handleLoadHistoryChat(e?.detail);
+      };
+      window.addEventListener('loadHistoryChat', handler);
+      if (typeof window !== 'undefined') {
+          window.__LOAD_HISTORY_CHAT__ = handleLoadHistoryChat;
+      }
+      return () => {
+          window.removeEventListener('loadHistoryChat', handler);
+          if (typeof window !== 'undefined') {
+              delete window.__LOAD_HISTORY_CHAT__;
+          }
+      };
+  }, [handleLoadHistoryChat]);
 
   const validateApiKey = useCallback(async (provider, key) => {
       if (!key) {
@@ -838,28 +956,28 @@ const handleRemoveFile = (fileId) => {
     setPendingFiles(prev => prev.filter(f => f.id !== fileId));
 };
   const resetSettings = () => {
-      localStorage.removeItem('aiAssistantState');
-      localStorage.removeItem('generationCount');
-      localStorage.removeItem('feedbackTimestamps');
-      localStorage.removeItem('hasSeenCbcAiTutorial');
-      localStorage.removeItem('userConsentV1');
+      // Only clear API keys and chat history
+      const savedState = JSON.parse(localStorage.getItem('aiAssistantState')) || {};
+      savedState.apiKeys = {};
+      savedState.apiKeyStatus = {};
+      localStorage.setItem('aiAssistantState', JSON.stringify(savedState));
+      
+      // Clear all chat history
       Object.keys(localStorage).forEach(key => {
           if (key.startsWith('chatHistory_')) {
               localStorage.removeItem(key);
           }
       });
+      localStorage.setItem('cbc_chat_history', JSON.stringify([]));
+      
+      // DO NOT clear: generationCount, saveUsageCount, cart, trialGenerationsCount, etc.
+      
       setShowResetConfirm(false);
-
       setApiKeys({});
       setApiKeyStatus({});
-      setSidebarWidth(320);
-      setSelectedProviderKey('google');
-      setSelectedModelName('gemini-2.5-flash');
-      setAutoDeleteHours('2');
-      setGenerationCount(0);
       
       loadInitialMessage(activePromptKey);
-      setShowConsentModal(true);
+      window.dispatchEvent(new CustomEvent('historyUpdated'));
   };
 
 // --- TUTORIAL LOGIC ---
@@ -1024,7 +1142,7 @@ const handleHelpButtonClick = () => {};
           'Lesson Plans (NCDC)': 'Create detailed lesson plans following the official NCDC template for Ugandan educators.',
           'Lesson Plans (with Biblical Integration)': 'Create NCDC lesson plans with integrated biblical values and Christian worldview perspectives.',
           'UACE SoW NCDC': 'Develop comprehensive schemes of work specifically for Uganda Advanced Certificate of Education (UACE) level.',
-          'Scheme of Work(NCDC)': 'Develop structured schemes of work based on Uganda\'s CBC syllabus requirements.',
+          'Scheme of Work NCDC': 'Develop structured schemes of work based on Uganda\'s CBC syllabus requirements.',
           'Scheme of Work (with Biblical Integration)': 'Create CBC schemes of work incorporating biblical principles and Christian educational values.',
           'Lesson Notes Generator': 'Produce comprehensive and well-structured lecture notes for any educational topic.',
           'UCE Project Assistant': 'Guide students through Uganda Certificate of Education (UCE) project planning and execution.',
