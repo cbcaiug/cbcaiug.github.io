@@ -1086,7 +1086,8 @@ const handleHelpButtonClick = () => {};
   // Measure the header height and apply padding to the chat inner wrapper
   // on small viewports so the first assistant message is not hidden by the
   // fixed header. This is a safe, non-destructive fix that only applies
-  // when `window.innerWidth <= 640` (mobile).</n+  useEffect(() => {
+  // when `window.innerWidth <= 640` (mobile).
+  useEffect(() => {
       const setMainTopPadding = () => {
           try {
               const headerEl = headerRef.current;
@@ -1243,8 +1244,8 @@ const handleHelpButtonClick = () => {};
                   </div>
               </header>
 
-              <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pb-48">
-                                    <div className="px-1 pt-24 pb-2 sm:p-6 space-y-4">
+              <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-32 sm:pt-28 pb-48">
+                                    <div className="px-1 p-2 sm:p-6 space-y-4">
                       {chatHistory.map((msg, index) => {
                           // For system messages, we render a simple, centered div.
                           if (msg.role === 'system') {
