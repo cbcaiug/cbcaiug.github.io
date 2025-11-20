@@ -11,6 +11,8 @@ const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzyTIlqww6YUE6a
 
 const AI_PROVIDERS = [
   { key: 'google', label: 'Google Gemini', apiKeyName: 'googleApiKey', apiKeyUrl: 'https://aistudio.google.com/app/apikey', apiHost: 'https://generativelanguage.googleapis.com', models: [
+      { name: 'gemini-3.0-pro-preview', vision: true },
+      { name: 'gemini-3.0-flash-preview', vision: true },
       { name: 'gemini-2.5-pro', vision: true }, 
       { name: 'gemini-2.5-flash', vision: true },
       { name: 'gemini-2.0-pro', vision: true },
