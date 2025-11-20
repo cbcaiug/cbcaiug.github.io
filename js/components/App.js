@@ -218,7 +218,9 @@ const [currentCartId, setCurrentCartId] = useState(() => localStorage.getItem('c
       try {
           let requestUrl, requestHeaders, requestBody;
 if (selectedProvider.key === 'google') {
-    requestUrl = `${selectedProvider.apiHost}/v1beta/models/${selectedModel.name}:streamGenerateContent?key=${apiKey}&alt=sse`;
+    // Gemini 3.0 preview models require v1alpha endpoint, others use v1beta
+    const apiVersion = selectedModel.name.includes('-preview') ? 'v1alpha' : 'v1beta';
+    requestUrl = `${selectedProvider.apiHost}/${apiVersion}/models/${selectedModel.name}:streamGenerateContent?key=${apiKey}&alt=sse`;
     requestHeaders = { 'Content-Type': 'application/json' };
 
     // We will now conditionally build the history based on whether grounding is active.
@@ -532,6 +534,12 @@ const handleDocxDownload = async (markdownContent) => {
       // This solves the timing issue.
       let keyLabelForLogging;
 
+      // Check if user selected unsupported Gemini 3.0 preview model
+      if (selectedProvider.key === 'google' && selectedModel.name.includes('3.0') && selectedModel.name.includes('preview')) {
+          setError("⚠️ Gemini 3.0 preview models are not yet supported via API keys. They require Google Cloud authentication. Support coming soon! Please select Gemini 2.5 Pro or another model.");
+          return;
+      }
+
       // Final, efficient logic for handling API keys.
       if (useSharedApiKey) {
           // === SHARED KEY LOGIC ===
@@ -675,6 +683,12 @@ const handleDocxDownload = async (markdownContent) => {
       const historyForApi = chatHistory.slice(0, indexToRegenerate);
       if (historyForApi.length === 0 || historyForApi[historyForApi.length - 1].role !== 'user') {
           setError("Cannot regenerate without a preceding user prompt.");
+          return;
+      }
+
+      // Check if user selected unsupported Gemini 3.0 preview model
+      if (selectedProvider.key === 'google' && selectedModel.name.includes('3.0') && selectedModel.name.includes('preview')) {
+          setError("⚠️ Gemini 3.0 preview models are not yet supported via API keys. Please select Gemini 2.5 Pro or another model.");
           return;
       }
 
