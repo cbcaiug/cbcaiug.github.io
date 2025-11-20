@@ -4,7 +4,7 @@
  * Enhanced sidebar with tabbed interface, collapsible sections, and improved UX
  */
 
-const { useCallback, useState, useEffect } = React;
+const { useCallback, useState, useEffect, useRef } = React;
 
 const Sidebar = ({
     // State props
@@ -39,6 +39,23 @@ const Sidebar = ({
     const [activeTab, setActiveTab] = useState('ai');
     const [showPersonalKey, setShowPersonalKey] = useState(!useSharedApiKey);
     const [keyModeToast, setKeyModeToast] = useState('');
+        const [assistantSearch, setAssistantSearch] = useState('');
+        const [assistantSelectorOpen, setAssistantSelectorOpen] = useState(false);
+        const assistantInputRef = useRef(null);
+        const assistantContainerRef = useRef(null);
+        const assistantToggleRef = useRef(null);
+
+        const [providerSearch, setProviderSearch] = useState('');
+        const [providerSelectorOpen, setProviderSelectorOpen] = useState(false);
+        const providerInputRef = useRef(null);
+        const providerContainerRef = useRef(null);
+        const providerToggleRef = useRef(null);
+
+        const [modelSearch, setModelSearch] = useState('');
+        const [modelSelectorOpen, setModelSelectorOpen] = useState(false);
+        const modelInputRef = useRef(null);
+        const modelContainerRef = useRef(null);
+        const modelToggleRef = useRef(null);
     
     const selectedProvider = AI_PROVIDERS.find(p => p.key === selectedProviderKey);
 
@@ -92,23 +109,133 @@ const Sidebar = ({
         </button>
     );
 
+    // Close selector panels on outside click or Escape
+    useEffect(() => {
+        const onDocClick = (e) => {
+            try {
+                const t = e.target;
+                if (assistantSelectorOpen) {
+                    if (assistantContainerRef.current && !assistantContainerRef.current.contains(t) && assistantToggleRef.current && !assistantToggleRef.current.contains(t)) {
+                        setAssistantSelectorOpen(false);
+                    }
+                }
+                if (providerSelectorOpen) {
+                    if (providerContainerRef.current && !providerContainerRef.current.contains(t) && providerToggleRef.current && !providerToggleRef.current.contains(t)) {
+                        setProviderSelectorOpen(false);
+                    }
+                }
+                if (modelSelectorOpen) {
+                    if (modelContainerRef.current && !modelContainerRef.current.contains(t) && modelToggleRef.current && !modelToggleRef.current.contains(t)) {
+                        setModelSelectorOpen(false);
+                    }
+                }
+            } catch (err) { /* ignore */ }
+        };
+        const onKey = (e) => { if (e.key === 'Escape') { setAssistantSelectorOpen(false); setProviderSelectorOpen(false); setModelSelectorOpen(false); } };
+        document.addEventListener('click', onDocClick);
+        document.addEventListener('keydown', onKey);
+        return () => { document.removeEventListener('click', onDocClick); document.removeEventListener('keydown', onKey); };
+    }, [assistantSelectorOpen, providerSelectorOpen, modelSelectorOpen]);
+
+    // Autofocus inputs when panels open
+    useEffect(() => {
+        if (assistantSelectorOpen) setTimeout(()=>assistantInputRef.current?.focus(), 50);
+    }, [assistantSelectorOpen]);
+    useEffect(() => {
+        if (providerSelectorOpen) setTimeout(()=>providerInputRef.current?.focus(), 50);
+    }, [providerSelectorOpen]);
+    useEffect(() => {
+        if (modelSelectorOpen) setTimeout(()=>modelInputRef.current?.focus(), 50);
+    }, [modelSelectorOpen]);
+
     const AISettingsTab = () => (
         <div className="space-y-4">
             {/* Assistant Selector */}
             <div>
                 <label className="text-sm text-slate-400">Select Assistant</label>
-                <select 
-                    onChange={(e) => onAssistantChange(e.target.value)} 
-                    value={activePromptKey} 
-                    className="settings-input w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                >
-                    {availableAssistants.map(assistant => (
-                        <option key={assistant} value={assistant}>{assistant}</option>
-                    ))}
-                    {activePromptKey === 'custom' && !availableAssistants.includes('custom') && 
-                        <option value="custom">Custom Prompt</option>
-                    }
-                </select>
+                    <div className="mt-1 relative">
+                        <button
+                            ref={assistantToggleRef}
+                            type="button"
+                            onClick={(e) => { e.stopPropagation(); setAssistantSelectorOpen(s => !s); }}
+                            className="w-full text-left p-2 bg-slate-700 border border-slate-600 rounded-md flex items-center justify-between focus:outline-none"
+                        >
+                            <span className="truncate">{activePromptKey}</span>
+                            <svg className={`w-4 h-4 ml-2 transition-transform ${assistantSelectorOpen ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+
+                        {assistantSelectorOpen && (
+                            <div ref={assistantContainerRef} onClick={(e)=>e.stopPropagation()} className="mt-2 bg-slate-800 border border-slate-700 rounded-md shadow-lg">
+                                <div className="p-2">
+                                    <input
+                                        ref={assistantInputRef}
+                                        autoFocus
+                                        type="search"
+                                        placeholder="Search assistants"
+                                        value={assistantSearch}
+                                        onChange={(e) => setAssistantSearch(e.target.value)}
+                                        className="w-full p-2 rounded-md bg-slate-700 text-sm border border-slate-600"
+                                    />
+                                </div>
+                                <div className="max-h-64 overflow-y-auto enhanced-scrollbar">
+                                    {/* Reuse existing grouping renderer but wrap onAssistantChange to close the panel after selection */}
+                                    <div className="px-2 pb-2">
+                                        {(() => {
+                                            const raw = (availableAssistants || []).slice().sort((a,b)=>a.localeCompare(b));
+                                            const groupsDef = [
+                                                { id: 'lesson-plans', name: 'Lesson Plans', keys: ['Lesson Plans (NCDC)', 'Lesson Plans (with Biblical Integration)'] },
+                                                { id: 'scheme-of-work', name: 'Scheme of Work', keys: ['Scheme of Work(NCDC)', 'Scheme of Work (with Biblical Integration)', 'UACE SoW NCDC'] },
+                                                { id: 'item-writer', name: 'Item Writer', keys: ['Item Writer', 'UCE BIO Item Writer'] }
+                                            ];
+                                            const groups = {};
+                                            groupsDef.forEach(g => { groups[g.id] = { id: g.id, name: g.name, variants: [] }; });
+                                            const leftovers = [];
+                                            raw.forEach(name => {
+                                                let placed = false;
+                                                for (const g of groupsDef) {
+                                                    if (g.keys.includes(name)) { groups[g.id].variants.push({ key: name, label: name }); placed = true; break; }
+                                                }
+                                                if (!placed) leftovers.push(name);
+                                            });
+                                            leftovers.forEach(name => { const id = name.toLowerCase().replace(/[^a-z0-9]+/g,'-'); groups[id] = { id, name, variants: [{ key: name, label: name }] }; });
+                                            const groupArr = Object.values(groups).sort((a,b)=>a.name.localeCompare(b.name));
+
+                                            return groupArr.map(group => {
+                                                const matches = group.variants.filter(v => v.label.toLowerCase().includes(assistantSearch.toLowerCase()) || group.name.toLowerCase().includes(assistantSearch.toLowerCase()));
+                                                if (matches.length === 0) return null;
+                                                const sorted = matches.sort((a,b)=>a.label.localeCompare(b.label));
+                                                return (
+                                                    <div key={group.id} className="assistant-group">
+                                                        <div className="text-xs text-slate-400 px-2 py-1 border-t border-slate-700">{group.name.replace(/[()]/g,'')}</div>
+                                                        {sorted.map(v => (
+                                                            <button
+                                                                key={v.key}
+                                                                onClick={() => {
+                                                                    setAssistantSelectorOpen(false);
+                                                                    // call parent handler
+                                                                    onAssistantChange(v.key);
+                                                                    // make selection robust: update URL and emit an event
+                                                                    try { const url = new URL(window.location); url.searchParams.set('assistant', v.key); window.history.pushState({}, '', url); } catch(_) {}
+                                                                    try { window.dispatchEvent(new CustomEvent('assistantChanged', {detail:{key:v.key}})); } catch(_) {}
+                                                                }}
+                                                                className="w-full text-left px-3 py-2 hover:bg-slate-700 rounded-md flex items-center justify-between"
+                                                            >
+                                                                <span className="truncate">{(v.label || '').replace(/[()]/g,'')}</span>
+                                                                <svg className="w-4 h-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                                                            </button>
+                                                        ))}
+                                                    </div>
+                                                );
+                                            });
+                                        })()}
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
                 <label htmlFor="custom-prompt-upload" className="mt-2 text-sm text-indigo-400 hover:text-indigo-300 cursor-pointer block text-center py-2 border border-dashed border-slate-600 rounded-md hover:border-indigo-500 transition-colors">
                     Upload Custom Prompt
                 </label>
@@ -136,31 +263,68 @@ const Sidebar = ({
                 </div>
             </div>
 
-            {/* AI Provider & Model - Always visible */}
+            {/* AI Provider & Model - searchable pickers */}
             <div className="space-y-3">
                 <div>
                     <label className="text-sm text-slate-400">AI Provider</label>
-                    <select 
-                        value={selectedProviderKey} 
-                        onChange={onProviderChange} 
-                        disabled={useSharedApiKey}
-                        className={`settings-input w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 ${useSharedApiKey ? 'opacity-60 cursor-not-allowed' : ''}`}
-                    >
-                        {AI_PROVIDERS.map(p => <option key={p.key} value={p.key}>{p.label}</option>)}
-                    </select>
+                    <div className="mt-1 relative">
+                        <button
+                            ref={providerToggleRef}
+                            type="button"
+                            onClick={(e) => { e.stopPropagation(); if (!useSharedApiKey) setProviderSelectorOpen(s=>!s); }}
+                            disabled={useSharedApiKey}
+                            className={`settings-input w-full p-2 bg-slate-700 border border-slate-600 rounded-md text-left ${useSharedApiKey ? 'opacity-60 cursor-not-allowed' : ''}`}
+                        >
+                            <div className="flex items-center justify-between">
+                                <span>{(AI_PROVIDERS.find(p=>p.key===selectedProviderKey)?.label) || selectedProviderKey}</span>
+                                <svg className={`w-4 h-4 ml-2 transition-transform ${providerSelectorOpen ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                            </div>
+                        </button>
+
+                        {providerSelectorOpen && (
+                            <div ref={providerContainerRef} onClick={(e)=>e.stopPropagation()} className="mt-2 bg-slate-800 border border-slate-700 rounded-md shadow-lg">
+                                <div className="p-2">
+                                    <input ref={providerInputRef} autoFocus type="search" placeholder="Search providers" value={providerSearch} onChange={(e)=>setProviderSearch(e.target.value)} className="w-full p-2 rounded-md bg-slate-700 text-sm border border-slate-600" />
+                                </div>
+                                <div className="max-h-48 overflow-y-auto enhanced-scrollbar">
+                                    {AI_PROVIDERS.slice().sort((a,b)=>a.label.localeCompare(b.label)).filter(p=>p.label.toLowerCase().includes(providerSearch.toLowerCase())).map(p => (
+                                        <button key={p.key} onClick={()=>{ setProviderSelectorOpen(false); onProviderChange(p.key); try{ const url=new URL(window.location); url.searchParams.set('provider', p.key); window.history.pushState({},'',url); }catch(_){} }} className="w-full text-left px-3 py-2 hover:bg-slate-700 rounded-md">
+                                            {p.label}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </div>
                     {useSharedApiKey && (
                         <p className="text-xs text-slate-500 mt-1">Locked to Google Gemini for shared keys</p>
                     )}
                 </div>
                 <div>
                     <label className="text-sm text-slate-400">AI Model</label>
-                    <select 
-                        value={selectedModelName} 
-                        onChange={onModelChange} 
-                        className="settings-input w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    >
-                        {selectedProvider?.models.map(model => <option key={model.name} value={model.name}>{model.name}</option>)}
-                    </select>
+                    <div className="mt-1 relative">
+                        <button ref={modelToggleRef} type="button" onClick={(e)=>{ e.stopPropagation(); setModelSelectorOpen(s=>!s); }} className="settings-input w-full p-2 bg-slate-700 border border-slate-600 rounded-md text-left">
+                            <div className="flex items-center justify-between">
+                                <span>{selectedModelName}</span>
+                                <svg className={`w-4 h-4 ml-2 transition-transform ${modelSelectorOpen ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                            </div>
+                        </button>
+
+                        {modelSelectorOpen && (
+                            <div ref={modelContainerRef} onClick={(e)=>e.stopPropagation()} className="mt-2 bg-slate-800 border border-slate-700 rounded-md shadow-lg">
+                                <div className="p-2">
+                                    <input ref={modelInputRef} autoFocus type="search" placeholder="Search models" value={modelSearch} onChange={(e)=>setModelSearch(e.target.value)} className="w-full p-2 rounded-md bg-slate-700 text-sm border border-slate-600" />
+                                </div>
+                                <div className="max-h-48 overflow-y-auto enhanced-scrollbar">
+                                    {(selectedProvider?.models || []).slice().sort((a,b)=>a.name.localeCompare(b.name)).filter(m=>m.name.toLowerCase().includes(modelSearch.toLowerCase())).map(m => (
+                                        <button key={m.name} onClick={()=>{ setModelSelectorOpen(false); onModelChange(m.name); try{ const url=new URL(window.location); url.searchParams.set('model', m.name); window.history.pushState({},'',url); }catch(_){} }} className="w-full text-left px-3 py-2 hover:bg-slate-700 rounded-md">
+                                            {m.name}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
 
