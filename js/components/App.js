@@ -1095,12 +1095,26 @@ const handleHelpButtonClick = () => {};
               if (!headerEl || !mainEl) return;
               const innerDiv = mainEl.querySelector('div');
               if (!innerDiv) return;
-              const headerHeight = headerEl.offsetHeight || 0;
+
+              // Compute overlap between header bottom and main top.
+              // If header overlays the main content (fixed/sticky), we set
+              // padding-top on the inner wrapper so the first message is
+              // fully visible. This accounts for varying header heights
+              // and other banners that might affect layout.
+              const headerRect = headerEl.getBoundingClientRect();
+              const mainRect = mainEl.getBoundingClientRect();
+
+              let requiredPadding = 0;
               if (window.innerWidth <= 640) {
-                  innerDiv.style.paddingTop = `${headerHeight}px`;
-              } else {
-                  innerDiv.style.paddingTop = '';
+                  // If the header bottom is below the main top, we need to
+                  // push the main inner content down by that overlap amount.
+                  if (mainRect.top < headerRect.bottom) {
+                      requiredPadding = Math.ceil(headerRect.bottom - mainRect.top);
+                  }
               }
+
+              // Apply computed padding (or clear it on larger screens)
+              innerDiv.style.paddingTop = requiredPadding ? `${requiredPadding}px` : '';
           } catch (e) {
               console.error('Failed to adjust chat padding', e);
           }

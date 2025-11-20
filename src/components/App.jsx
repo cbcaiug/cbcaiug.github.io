@@ -1078,14 +1078,18 @@ const handleRemoveFile = (fileId) => {
               if (!headerEl || !mainEl) return;
               const innerDiv = mainEl.querySelector('div');
               if (!innerDiv) return;
-              const headerHeight = headerEl.offsetHeight || 0;
-              // Apply only on small viewports where the issue appears
+
+              // Compute overlap between header bottom and main top and apply
+              // padding only when the header would cover the content on mobile.
+              const headerRect = headerEl.getBoundingClientRect();
+              const mainRect = mainEl.getBoundingClientRect();
+              let requiredPadding = 0;
               if (window.innerWidth <= 640) {
-                  innerDiv.style.paddingTop = `${headerHeight}px`;
-              } else {
-                  // Clear mobile-only padding on larger screens
-                  innerDiv.style.paddingTop = '';
+                  if (mainRect.top < headerRect.bottom) {
+                      requiredPadding = Math.ceil(headerRect.bottom - mainRect.top);
+                  }
               }
+              innerDiv.style.paddingTop = requiredPadding ? `${requiredPadding}px` : '';
           } catch (e) {
               // If anything fails, don't block the UI — leave existing styles.
               // eslint-disable-next-line no-console
