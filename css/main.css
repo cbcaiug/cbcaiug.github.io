@@ -44,7 +44,11 @@ body {
 
 /* Ensure first message clears fixed header on mobile */
 @media (max-width: 640px) {
+    /* Provide a small fallback padding for non-JS environments. The header
+       height can vary so a JS-driven adjustment (in App.jsx) will calculate
+       the exact padding. Avoid using !important so the inline style can
+       properly take effect. */
     main[class*="overflow-y-auto"] > div:first-child {
-        padding-top: 6rem !important;
+        padding-top: 1.5rem;
     }
 }
