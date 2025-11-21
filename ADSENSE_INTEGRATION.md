@@ -42,14 +42,27 @@ To remove AdSense completely, delete these 3 lines from each file's `<head>` sec
 
 ```
 
+## Consent Management (GDPR Compliance)
+Added Google Funding Choices (CMP) for EU/EEA/UK/Switzerland users:
+- **Script**: Funding Choices with 2-choice consent (Accept/Manage)
+- **Auto-configured**: Google handles consent collection
+- **No revenue loss**: Complies with GDPR requirements
+
+### Configure in AdSense Dashboard
+1. Go to AdSense → Privacy & messaging → GDPR
+2. Select "Use Google's CMP with 2 choices"
+3. Customize message text (optional)
+4. Publish consent message
+
 ## Next Steps (Optional)
 1. **Wait for approval** - Google will review your site (can take 1-2 weeks)
-2. **Add ads.txt later** - Once approved, add this to `/ads.txt`:
+2. **Configure consent message** - Set up in AdSense dashboard (see above)
+3. **Add ads.txt later** - Once approved, add this to `/ads.txt`:
    ```
    google.com, pub-3466164217437074, DIRECT, f08c47fec0942fa0
    ```
-3. **Monitor performance** - Check AdSense dashboard after 30-60 days
-4. **Consider download monetization** - Implement pay-per-download if traffic grows
+4. **Monitor performance** - Check AdSense dashboard after 30-60 days
+5. **Consider download monetization** - Implement pay-per-download if traffic grows
 
 ## Why This Option?
 - ✅ Easiest to implement and remove
