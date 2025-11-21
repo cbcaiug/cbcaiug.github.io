@@ -20,6 +20,21 @@
 const YOUR_EMAIL_ADDRESS = "cbcaitool@gmail.com"; // For receiving notifications
 const LOG_SHEET_NAME = "AI_Assistant_Log";
 const UPDATES_SHEET_NAME = "Updates";
+const PAYMENTS_SHEET_NAME = "Payments";
+
+// Payment Form Configuration
+const PAYMENT_FORM_ENTRY_IDS = {
+    sessionId: 'entry.1510315924',
+    userName: 'entry.1694733586',
+    items: 'entry.153116271',
+    totalAmount: 'entry.1062442954',
+    transactionId: 'entry.302737699',
+    email: 'emailAddress',
+    screenshot: 'entry.XXXXXXXX', // TODO: Find this via test submission with file upload
+    notes: 'entry.XXXXXXXX' // TODO: Find this via test submission with notes
+};
+
+const FOLDER_ID = '1RFRIwy5zFwt4EAoigINMEddQaWViSBVt'; // Google Drive folder for documents
 
 // Blacklist storage key and hold duration for trial keys (26 hours)
 const TRIAL_KEY_BLACKLIST_PROP = 'TRIAL_KEY_BLACKLIST';
@@ -31,15 +46,16 @@ const ASSISTANT_FILES = {
     "Item Writer": "item-writer",
     "Lesson Plans (NCDC)": "lesson-plans-no-bv",
     "Lesson Plans (with Biblical Integration)": "lesson-plans-bv",
+    "UACE SoW NCDC" : "uace-sow-no-bv",
     "Scheme of Work(NCDC)": "sow-no-bv",
     "Scheme of Work (with Biblical Integration)": "sow-bv",
     "Lesson Notes Generator": "lesson-notes",
     "UCE Project Assistant": "uce-project-assistant",
     "AI in Education Coach": "ai-coach",
     "Essay Grading Assistant": "essay-grader",
-    // --- NEW ASSISTANTS ADDED ---
     "Coteacher": "coteacher",
-    "Data & Document Analyst": "data-analyst"
+    "Data & Document Analyst": "data-analyst",
+    "UCE BIO Item Writer" : "uce-bio-item",
 };
 
 
@@ -49,12 +65,52 @@ const ASSISTANT_FILES = {
  * =================================================================
  */
 
+/**
+ * Handles document download requests by redirecting with proper headers
+ * @param {string} docId - The Google Doc ID to download
+ * @param {string} format - The export format (docx or pdf)
+ * @return {HtmlService.HtmlOutput} HTML that triggers download
+ */
+function handleDocDownload(docId, format) {
+    const exportUrl = `https://docs.google.com/document/d/${docId}/export?format=${format}`;
+    const fileName = `AI-Generated-Document.${format}`;
+    
+    // Return HTML that triggers immediate download
+    const html = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Downloading...</title>
+        </head>
+        <body>
+            <p>Your download should start automatically...</p>
+            <script>
+                window.location.href = '${exportUrl}';
+            </script>
+        </body>
+        </html>
+    `;
+    
+    return HtmlService.createHtmlOutput(html)
+        .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+}
+
 function doGet(e) {
     try {
         const action = e.parameter.action;
         let output;
 
-        if (action === 'getAssistants') {
+        if (action === 'downloadDoc') {
+            const docId = e.parameter.docId;
+            const format = e.parameter.format || 'docx';
+            
+            if (!docId) {
+                return HtmlService.createHtmlOutput('<h1>Error: Document ID is required</h1>');
+            }
+            
+            return handleDocDownload(docId, format);
+        } else if (action === 'getAssistants') {
             output = ContentService.createTextOutput(JSON.stringify({
                 success: true,
                 assistants: Object.keys(ASSISTANT_FILES)
@@ -81,6 +137,25 @@ function doGet(e) {
             output = ContentService.createTextOutput(JSON.stringify({
                 success: true,
                 updates: updates
+            }));
+        } else if (action === 'getReviews') {
+            const reviews = getReviewsFromSheet();
+            output = ContentService.createTextOutput(JSON.stringify({
+                success: true,
+                reviews: reviews
+            }));
+        } else if (action === 'debugReviews') {
+            const debug = debugReviewsFromSheet();
+            output = ContentService.createTextOutput(JSON.stringify({
+                success: true,
+                debug: debug
+            }));
+        } else if (action === 'getPaymentFormUrl') {
+            // Return the payment form URL
+            const formUrl = getOrCreatePaymentForm();
+            output = ContentService.createTextOutput(JSON.stringify({
+                success: true,
+                formUrl: formUrl
             }));
         } else if (action === 'getTrialApiKey') {
             // This action iterates through stored trial keys and returns the first valid one.
@@ -229,21 +304,34 @@ function doPost(e) {
                 message: "Contact form submitted successfully."
             })).setMimeType(ContentService.MimeType.JSON);
 
-        } else if (action === 'createDoc') {
-            console.log("Action is 'createDoc'.");
-            const { htmlContent, title } = body.details;
-            const docInfo = createGoogleDocFromHtml(htmlContent, title);
-            logEventToSheet({
-                type: 'google_doc_created',
-                assistant: title,
-                details: { url: docInfo.url }
-            });
-            return ContentService.createTextOutput(JSON.stringify({
-                success: true,
-                url: docInfo.url,
-                id: docInfo.id
-            })).setMimeType(ContentService.MimeType.JSON);
-        }
+        // This block handles the creation of a Google Doc from the user's generated content.
+} else if (action === 'createDoc') {
+    console.log("Action is 'createDoc'.");
+    try {
+        const { htmlContent, title, modelName, sessionId, browserOs } = body.details; 
+        const docInfo = createGoogleDocFromHtml(htmlContent, title, modelName);
+        
+        // Note: Logging is handled by the client via trackEvent (either google_doc_created or cart_doc_created)
+        return ContentService.createTextOutput(JSON.stringify({
+            success: true,
+            url: docInfo.url,
+            downloadUrl: docInfo.downloadUrl,
+            id: docInfo.id
+        })).setMimeType(ContentService.MimeType.JSON);
+    } catch (error) {
+        console.error('Doc creation error:', error);
+        const ipAddress = e.source ? e.source.remoteAddress : 'N/A';
+        logEventToSheet({
+            type: 'doc_creation_error',
+            assistant: body.details?.title || 'Unknown',
+            details: { error: error.toString(), stack: error.stack, sessionId: body.details?.sessionId || 'N/A', browserOs: body.details?.browserOs || 'N/A' }
+        }, ipAddress);
+        return ContentService.createTextOutput(JSON.stringify({
+            success: false,
+            error: 'Document creation temporarily unavailable. Please try again later.'
+        })).setMimeType(ContentService.MimeType.JSON);
+    }
+}
         else if (action === 'reportFailedTrialKey') {
             // Client reports a trial key that failed during usage.
             const failedKey = body.key;
@@ -289,7 +377,7 @@ function doPost(e) {
 // MODIFIED: 21/08/2025 4:31 PM - Function now accepts ipAddress and extracts browserOs.
 function logEventToSheet(event, ipAddress = 'N/A') {
     try {
-        const headers = ["SessionID", "Timestamp", "IPAddress", "BrowserOS", "UserType", "EventType", "AssistantName", "ApiKeyUsed", "Details"];
+        const headers = ["SessionID", "Timestamp", "IPAddress", "BrowserOS", "UserType", "EventType", "AssistantName", "ApiKeyUsed", "CartID", "ItemID", "DocDownloadURL", "Details"];
         
         const now = new Date();
         const year = now.getFullYear();
@@ -301,23 +389,23 @@ function logEventToSheet(event, ipAddress = 'N/A') {
         const eventDetails = event.details || {};
         const sessionId = eventDetails.sessionId || 'N/A';
         const userType = event.userType || 'User';
-        // NEW: 21/08/2025 4:31 PM - Extract Browser/OS from the details payload sent by the client.
         const browserOs = eventDetails.browserOs || 'N/A';
+        const apiKeyUsed = eventDetails.apiKeyUsed || 'N/A';
+        const cartId = eventDetails.cartId || 'N/A';
+        const itemId = eventDetails.itemId || 'N/A';
+        const docDownloadUrl = eventDetails.docDownloadUrl || 'N/A';
 
-        // Clean the details object of metadata before it gets formatted for the "Details" column.
+        // Clean metadata from details
         delete eventDetails.sessionId; 
         delete eventDetails.browserOs;
+        delete eventDetails.apiKeyUsed;
+        delete eventDetails.cartId;
+        delete eventDetails.itemId;
+        delete eventDetails.docDownloadUrl;
         
         const formattedDetails = formatDetailsForSheet(event.type, eventDetails);
 
-        // MODIFIED: 21/08/2025 4:31 PM - Appending row with new data in the correct order.
-        // Extract the API key label we're sending from the frontend.
-        const apiKeyUsed = eventDetails.apiKeyUsed || 'N/A';
-        // Clean up the details object so this extra info doesn't appear in the 'Details' column.
-        delete eventDetails.apiKeyUsed; 
-
-        // Append the new row with the ApiKeyUsed data in the correct position.
-        sheet.appendRow([sessionId, new Date(), ipAddress, browserOs, userType, event.type, event.assistant, apiKeyUsed, formattedDetails]);
+        sheet.appendRow([sessionId, new Date(), ipAddress, browserOs, userType, event.type, event.assistant, apiKeyUsed, cartId, itemId, docDownloadUrl, formattedDetails]);
 
     } catch (error) {
         console.error(`Failed to log event to sheet: ${error.toString()}`);
@@ -450,6 +538,116 @@ function getUpdatesFromSheet() {
 
     } catch (error) {
         console.error(`Failed to get updates from sheet: ${error.toString()}`);
+        return [];
+    }
+}
+
+function debugReviewsFromSheet() {
+    try {
+        const now = new Date();
+        const currentMonth = now.getMonth() + 1;
+        const currentYear = now.getFullYear();
+        const monthStr = currentMonth.toString().padStart(2, '0');
+        const sheetName = `Log - ${currentYear}-${monthStr}`;
+        
+        const sheet = getSheet(sheetName);
+        const data = sheet.getDataRange().getValues();
+        
+        const headers = data[0];
+        const feedbackRows = data.slice(1).filter(row => row[headers.indexOf("EventType")] === 'feedback_submitted');
+        
+        return {
+            sheetName: sheetName,
+            totalRows: data.length - 1,
+            feedbackRows: feedbackRows.length,
+            sampleFeedback: feedbackRows.slice(0, 2).map(row => ({
+                details: row[headers.indexOf("Details")],
+                assistant: row[headers.indexOf("AssistantName")],
+                timestamp: row[headers.indexOf("Timestamp")]
+            }))
+        };
+    } catch (error) {
+        return { error: error.toString() };
+    }
+}
+
+function getReviewsFromSheet() {
+    try {
+        const now = new Date();
+        const currentMonth = now.getMonth() + 1;
+        const currentYear = now.getFullYear();
+        
+        const reviews = [];
+        
+        // Check current and previous 2 months for reviews
+        for (let i = 0; i < 3; i++) {
+            let month = currentMonth - i;
+            let year = currentYear;
+            
+            if (month <= 0) {
+                month += 12;
+                year -= 1;
+            }
+            
+            const monthStr = month.toString().padStart(2, '0');
+            const sheetName = `Log - ${year}-${monthStr}`;
+            
+            try {
+                const sheet = getSheet(sheetName);
+                const data = sheet.getDataRange().getValues();
+                
+                if (data.length <= 1) continue;
+                
+                const headers = data[0];
+                const eventTypeIdx = headers.indexOf("EventType");
+                const detailsIdx = headers.indexOf("Details");
+                const timestampIdx = headers.indexOf("Timestamp");
+                const assistantIdx = headers.indexOf("AssistantName");
+                
+                data.slice(1).forEach(row => {
+                    if (row[eventTypeIdx] === 'feedback_submitted') {
+                        try {
+                            const detailsStr = row[detailsIdx];
+                            // Handle the formatted details from formatDetailsForSheet
+                            if (detailsStr && detailsStr.includes('Rating:')) {
+                                const lines = detailsStr.split('\n');
+                                let rating = null;
+                                let comment = null;
+                                
+                                lines.forEach(line => {
+                                    if (line.startsWith('Rating:')) {
+                                        rating = parseInt(line.match(/Rating: (\d+)/)?.[1]);
+                                    } else if (line.startsWith('Feedback:')) {
+                                        comment = line.replace('Feedback: "', '').replace('"', '');
+                                    }
+                                });
+                                
+                                if (rating || comment) {
+                                    reviews.push({
+                                        rating: rating || 0,
+                                        comment: comment || '',
+                                        assistant: row[assistantIdx] || 'AI Assistant',
+                                        timestamp: new Date(row[timestampIdx]).toISOString()
+                                    });
+                                }
+                            }
+                        } catch (e) {
+                            // Skip malformed entries
+                        }
+                    }
+                });
+            } catch (e) {
+                // Sheet doesn't exist, continue
+            }
+        }
+        
+        // Sort by timestamp (newest first) and limit to 6 reviews
+        return reviews
+            .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+            .slice(0, 6);
+            
+    } catch (error) {
+        console.error(`Failed to get reviews from sheet: ${error.toString()}`);
         return [];
     }
 }
@@ -727,6 +925,153 @@ function sendDailySummary() {
 }
 /**
  * =================================================================
+ * SHEET COLUMN UPDATER (Run once manually)
+ * =================================================================
+ */
+
+function updateExistingSheetColumns() {
+    const props = PropertiesService.getScriptProperties();
+    const spreadsheetId = props.getProperty('logSheetId');
+    
+    if (!spreadsheetId) {
+        Logger.log('❌ No spreadsheet found');
+        return;
+    }
+    
+    const spreadsheet = SpreadsheetApp.openById(spreadsheetId);
+    const targetSheet = spreadsheet.getSheetByName('Log - 2025-11');
+    
+    if (!targetSheet) {
+        Logger.log('❌ Sheet "Log - 2025-11" not found');
+        return;
+    }
+    
+    Logger.log('✅ Found sheet: Log - 2025-11');
+    
+    // Check if sheet has data
+    if (targetSheet.getLastRow() < 1) {
+        Logger.log('❌ Sheet is empty');
+        return;
+    }
+    
+    // Get headers
+    const lastCol = targetSheet.getLastColumn();
+    if (lastCol < 1) {
+        Logger.log('❌ No columns in sheet');
+        return;
+    }
+    
+    const headers = targetSheet.getRange(1, 1, 1, lastCol).getValues()[0];
+    Logger.log('Current headers: ' + headers.join(', '));
+    
+    // Check if already updated
+    if (headers.includes('CartID')) {
+        Logger.log('✅ Sheet already has new columns');
+        return;
+    }
+    
+    // Find ApiKeyUsed column
+    const apiKeyIndex = headers.indexOf('ApiKeyUsed');
+    if (apiKeyIndex === -1) {
+        Logger.log('❌ ApiKeyUsed column not found');
+        return;
+    }
+    
+    Logger.log('Found ApiKeyUsed at column ' + (apiKeyIndex + 1));
+    
+    // Insert 3 columns after ApiKeyUsed
+    targetSheet.insertColumnsAfter(apiKeyIndex + 1, 3);
+    
+    // Set new headers
+    targetSheet.getRange(1, apiKeyIndex + 2).setValue('CartID');
+    targetSheet.getRange(1, apiKeyIndex + 3).setValue('ItemID');
+    targetSheet.getRange(1, apiKeyIndex + 4).setValue('DocDownloadURL');
+    
+    // Bold headers
+    targetSheet.getRange(1, apiKeyIndex + 2, 1, 3).setFontWeight('bold');
+    
+    Logger.log('✅ Successfully added columns: CartID, ItemID, DocDownloadURL');
+}
+
+/**
+ * =================================================================
+ * PAYMENT FORM & SHEET MANAGEMENT
+ * =================================================================
+ */
+
+/**
+ * Creates or retrieves the payment form and sets up the Payments sheet
+ */
+function getOrCreatePaymentForm() {
+    const props = PropertiesService.getScriptProperties();
+    let formId = props.getProperty('PAYMENT_FORM_ID');
+    
+    if (formId) {
+        try {
+            const form = FormApp.openById(formId);
+            return form.getPublishedUrl();
+        } catch (e) {
+            formId = null; // Form was deleted, recreate
+        }
+    }
+    
+    // Create new form
+    const form = FormApp.create('CBC AI Tool - Payment');
+    formId = form.getId();
+    props.setProperty('PAYMENT_FORM_ID', formId);
+    
+    // Set up form
+    form.setDescription('Complete your payment to continue using the AI Educational Assistant.');
+    form.setCollectEmail(true);
+    form.setAllowResponseEdits(false);
+    
+    // Add fields
+    form.addTextItem().setTitle('Session ID (Username)').setRequired(true).setHelpText('Your unique session ID from the app');
+    form.addTextItem().setTitle('User Name').setRequired(false);
+    form.addParagraphTextItem().setTitle('Items Purchased').setRequired(true).setHelpText('List of items from your cart');
+    form.addTextItem().setTitle('Total Amount (UGX)').setRequired(true);
+    form.addTextItem().setTitle('Transaction ID').setRequired(true).setHelpText('Enter your mobile money transaction ID');
+    form.addFileUploadItem().setTitle('Payment Screenshot').setRequired(true);
+    form.addParagraphTextItem().setTitle('Additional Notes').setRequired(false);
+    
+    // Link form to Payments sheet
+    const spreadsheetId = props.getProperty('logSheetId');
+    if (spreadsheetId) {
+        const spreadsheet = SpreadsheetApp.openById(spreadsheetId);
+        
+        // Create Payments sheet if doesn't exist
+        let paymentsSheet = spreadsheet.getSheetByName(PAYMENTS_SHEET_NAME);
+        if (!paymentsSheet) {
+            paymentsSheet = spreadsheet.insertSheet(PAYMENTS_SHEET_NAME, 1); // After Updates
+            const headers = ['Timestamp', 'Email', 'SessionID', 'UserName', 'Items', 'TotalAmount', 'TransactionID', 'PaymentScreenshot', 'Notes', 'Status'];
+            paymentsSheet.getRange(1, 1, 1, headers.length).setValues([headers]).setFontWeight('bold');
+            paymentsSheet.setFrozenRows(1);
+            
+            // Add Status dropdown in column J
+            const statusRule = SpreadsheetApp.newDataValidation()
+                .requireValueInList(['Pending', 'Verified', 'Rejected'], true)
+                .build();
+            paymentsSheet.getRange('J2:J1000').setDataValidation(statusRule);
+        }
+        
+        // Set form destination
+        form.setDestination(FormApp.DestinationType.SPREADSHEET, spreadsheetId);
+    }
+    
+    // Send notification email
+    MailApp.sendEmail({
+        to: YOUR_EMAIL_ADDRESS,
+        subject: '✅ Payment Form Created',
+        htmlBody: `<p>Your payment form has been created successfully!</p>
+                   <p><strong>Form URL:</strong> <a href="${form.getPublishedUrl()}">${form.getPublishedUrl()}</a></p>
+                   <p><strong>Edit Form:</strong> <a href="${form.getEditUrl()}">${form.getEditUrl()}</a></p>`
+    });
+    
+    return form.getPublishedUrl();
+}
+
+/**
+ * =================================================================
  * DOCUMENT CREATION
  * =================================================================
  */
@@ -735,51 +1080,45 @@ function sendDailySummary() {
  * Creates a Google Doc from an HTML string and returns its URL.
  * The document is created in the script owner's Drive and is publicly viewable.
  * @param {string} htmlContent - The HTML content for the document body.
- * @param {string} title - The title for the new document.
- * @return {string} The URL of the newly created Google Doc.
+ * @param {string} title - The base title for the new document (e.g., "Item Writer").
+ * @param {string} modelName - The name of the AI model used (e.g., "gemini-2.5-pro").
+ * @return {{url: string, id: string}} An object with the URL and ID of the new Doc.
  */
-function createGoogleDocFromHtml(htmlContent, title) {
+function createGoogleDocFromHtml(htmlContent, title, modelName) {
     try {
         // Create a temporary blob from the HTML content.
-        // Google's services will convert this HTML blob into a formatted doc.
         const blob = Utilities.newBlob(htmlContent, 'text/html', `${title}.html`);
         
-                // Define the resource for the new file we're creating in Google Drive.
-        // Retrieve the Folder ID from Script Properties for better management.
-const FOLDER_ID = PropertiesService.getScriptProperties().getProperty('FOLDER_ID');
+        // Construct the final document title, including the model name if it exists.
+        const finalTitle = modelName ? `${title} by ${modelName}` : `${title} - AI Assistant`;
 
         const fileResource = {
-            title: `${title} - AI Assistant`, // Add a suffix to the title.
-            mimeType: 'application/vnd.google-apps.document', // Specify that we want a Google Doc.
-            // NEW: This tells Drive to create the file inside our specific folder.
+            title: finalTitle, // Use our newly constructed title.
+            mimeType: 'application/vnd.google-apps.document',
             parents: [{ id: FOLDER_ID }]
         };
 
-        // Use the Drive API to insert the new file, providing the blob as the content.
-        // This is where the automatic conversion from HTML to a Google Doc happens.
+        // Use the Drive API to insert the new file.
         const docFile = Drive.Files.insert(fileResource, blob);
-
-        // Get the ID of the file that was just created.
         const fileId = docFile.id;
 
-        // IMPORTANT: Set the sharing permissions to make the file public.
+        // Set sharing permissions to make the file public.
         const permission = {
             value: 'anyone',
             type: 'anyone',
-            role: 'reader' // Users can view, but not edit the original.
+            role: 'reader'
         };
         Drive.Permissions.insert(permission, fileId);
 
-        // Return an object containing both the public URL and the file ID.
-// The frontend will use the ID to create direct download links.
-return {
-    url: docFile.alternateLink || `https://docs.google.com/document/d/${fileId}/`,
-    id: fileId
-};
+        // Return view URL, download URL, and file ID.
+        return {
+            url: docFile.alternateLink || `https://docs.google.com/document/d/${fileId}/`,
+            downloadUrl: `https://docs.google.com/document/d/${fileId}/export?format=docx`,
+            id: fileId
+        };
 
     } catch (error) {
         console.error('Error creating Google Doc:', error.toString());
-        // This will allow the doPost function to catch the error and notify the user.
         throw new Error(error.toString());
     }
 }

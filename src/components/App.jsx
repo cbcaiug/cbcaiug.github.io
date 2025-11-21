@@ -69,8 +69,16 @@ const SESSION_ID = getSessionId();
 const TRIAL_GENERATION_LIMIT = 50;
 
 // --- MAIN APP COMPONENT ---
-const App = () => {
+const App = ({ onMount }) => {
   // --- STATE MANAGEMENT ---
+  
+  // Call onMount when component is ready
+  useEffect(() => {
+    if (onMount) {
+      const timer = setTimeout(() => onMount(), 100);
+      return () => clearTimeout(timer);
+    }
+  }, [onMount]);
   
 
   const [apiKeys, setApiKeys] = useState({});
@@ -147,6 +155,8 @@ const [isGroundingEnabled, setIsGroundingEnabled] = useState(false);
   // --- REFS ---
   const chatContainerRef = useRef(null);
   const chatEndRef = useRef(null);
+    // Ref for the header so we can measure its height on small screens
+    const headerRef = useRef(null);
   const userInputRef = useRef(null);
   const validationTimeoutRef = useRef(null);
   const apiKeyToastTimeoutRef = useRef(null);
@@ -1056,6 +1066,49 @@ const handleRemoveFile = (fileId) => {
       chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [chatHistory[chatHistory.length - 1]?.content]);
 
+  // Ensure the first message is not hidden under the header on mobile browsers.
+  // We measure the header height and apply equivalent padding-top to the
+  // chat container's inner wrapper when the viewport is narrow. This handles
+  // dynamic header height changes (banners, icons) and mobile browser UI.
+  useEffect(() => {
+      const setMainTopPadding = () => {
+          try {
+              const headerEl = headerRef.current;
+              const mainEl = chatContainerRef.current;
+              if (!headerEl || !mainEl) return;
+              const innerDiv = mainEl.querySelector('div');
+              if (!innerDiv) return;
+
+              // Compute overlap between header bottom and main top and apply
+              // padding only when the header would cover the content on mobile.
+              const headerRect = headerEl.getBoundingClientRect();
+              const mainRect = mainEl.getBoundingClientRect();
+              let requiredPadding = 0;
+              if (window.innerWidth <= 640) {
+                  if (mainRect.top < headerRect.bottom) {
+                      requiredPadding = Math.ceil(headerRect.bottom - mainRect.top);
+                  }
+              }
+              innerDiv.style.paddingTop = requiredPadding ? `${requiredPadding}px` : '';
+          } catch (e) {
+              // If anything fails, don't block the UI — leave existing styles.
+              // eslint-disable-next-line no-console
+              console.error('Failed to adjust chat padding', e);
+          }
+      };
+
+      // Initial sizing and listeners for dynamic changes
+      setMainTopPadding();
+      window.addEventListener('resize', setMainTopPadding);
+      const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(setMainTopPadding) : null;
+      if (ro && headerRef.current) ro.observe(headerRef.current);
+
+      return () => {
+          window.removeEventListener('resize', setMainTopPadding);
+          if (ro) ro.disconnect();
+      };
+  }, []);
+
 
   // --- RENDER ---
   if (isLoadingAssistants) {
@@ -1139,7 +1192,7 @@ const handleRemoveFile = (fileId) => {
                   }
               }} />}
               
-              <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0 bg-white z-10">
+              <header ref={headerRef} className="sticky top-0 p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0 bg-white z-10">
                   <button onClick={() => setIsMenuOpen(true)} className="p-1 text-slate-600 hover:text-slate-900 lg:hidden"><MenuIcon className="w-6 h-6" /></button>
                   <h2 className="text-xl font-semibold text-slate-800 text-center flex-1">{activePromptKey} Assistant</h2>
                   <div className="flex items-center gap-2">

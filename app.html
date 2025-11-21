@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
     <!-- Meta Tags -->
-    <title>AI Educational Assistant</title>
-    <meta name="description" content="A suite of specialized AI-powered tools for educators.">
+    <title id="page-title">AI Educational Assistant</title>
+    <meta name="description" content="A suite of specialized AI-powered tools for educators." id="page-description">
+    <meta property="og:title" content="AI Educational Assistant" id="og-title">
+    <meta property="og:description" content="A suite of specialized AI-powered tools for educators." id="og-description">
+    <meta property="twitter:title" content="AI Educational Assistant" id="twitter-title">
+    <meta property="twitter:description" content="A suite of specialized AI-powered tools for educators." id="twitter-description">
     <link rel="icon" href="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg">
 
     <!-- Google Analytics -->
@@ -34,6 +38,56 @@
     
     <!-- Application Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Safe area support for mobile devices */
+        body {
+            /* No padding-top on body; header is fixed and main content has pt-24 */
+        }
+        
+        @supports (padding: env(safe-area-inset-top)) {
+            body {
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            body {
+                padding-top: 0; /* Ensure no padding-top on desktop */
+            }
+        }
+        
+        /* Enhanced scrollbar styling */
+        .enhanced-scrollbar::-webkit-scrollbar {
+            width: 14px;
+        }
+        .enhanced-scrollbar::-webkit-scrollbar-track {
+            background: #374151;
+            border-radius: 7px;
+        }
+        .enhanced-scrollbar::-webkit-scrollbar-thumb {
+            background: #6b7280;
+            border-radius: 7px;
+            border: 2px solid #374151;
+        }
+        .enhanced-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+        
+        /* Tab navigation */
+        .settings-tab {
+            transition: all 0.2s ease;
+        }
+        .settings-tab.active {
+            background: #4f46e5;
+            color: white;
+        }
+        
+        /* Keyboard navigation focus */
+        .settings-input:focus {
+            outline: 2px solid #4f46e5;
+            outline-offset: 2px;
+        }
+    </style>
     <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/chat.css">
@@ -41,17 +95,12 @@
     <link rel="stylesheet" href="css/tutorial.css">
 
 </head>
-<body class="bg-slate-100">
-        <!-- 
-      This is a static fallback loading screen.
-      It is placed directly in the HTML to prevent a "white flash" while the main
-      React application and its scripts are loading and compiling. React will
-      automatically replace this content once it initializes.
-    -->
+<body>
+      <!-- Single smooth loader that stays until React is ready -->
     <div id="root">
       <div class="loading-screen-container">
         <div class="loading-logo-wrapper">
-                    <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Loading Logo" class="loading-logo-img" style="width: 160px; height: 160px;" />
+          <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Loading Logo" class="loading-logo-img" />
         </div>
         <p class="loading-screen-text">Initializing AI Assistant...</p>
       </div>

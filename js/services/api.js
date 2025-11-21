@@ -7,10 +7,12 @@
  */
 
 // --- CONFIGURATION CONSTANTS ---
-const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxYOIr8TxQu2GV3uyTQ-vIiud5J7RnvMNheQFIHTPJPZbxIcV2LgcAhjh2VaslZPaf4/exec';
+const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzyTIlqww6YUE6aL61WoU7Lgg2SyV7nMFYbjFfOP-PqUMS6AKRXqmnddqhEpngEnK2v/exec';
 
 const AI_PROVIDERS = [
   { key: 'google', label: 'Google Gemini', apiKeyName: 'googleApiKey', apiKeyUrl: 'https://aistudio.google.com/app/apikey', apiHost: 'https://generativelanguage.googleapis.com', models: [
+      { name: 'gemini-3.0-pro-preview', vision: true },
+      { name: 'gemini-3.0-flash-preview', vision: true },
       { name: 'gemini-2.5-pro', vision: true }, 
       { name: 'gemini-2.5-flash', vision: true },
       { name: 'gemini-2.0-pro', vision: true },
@@ -129,6 +131,24 @@ const fetchNotifications = async () => {
         return [];
     } catch (error) {
         console.error("Failed to fetch notifications:", error);
+        return [];
+    }
+};
+
+/**
+ * Fetches recent positive reviews from the backend.
+ * @returns {Promise<Array>} A promise that resolves to an array of review objects.
+ */
+const fetchReviews = async () => {
+    try {
+        const response = await fetch(`${GAS_WEB_APP_URL}?action=getReviews`);
+        const data = await response.json();
+        if (data.success && data.reviews) {
+            return data.reviews;
+        }
+        return [];
+    } catch (error) {
+        console.error("Failed to fetch reviews:", error);
         return [];
     }
 };
