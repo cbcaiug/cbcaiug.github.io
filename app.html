@@ -4,14 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-    <!-- Meta Tags -->
-    <title id="page-title">AI Educational Assistant</title>
-    <meta name="description" content="A suite of specialized AI-powered tools for educators." id="page-description">
-    <meta property="og:title" content="AI Educational Assistant" id="og-title">
-    <meta property="og:description" content="A suite of specialized AI-powered tools for educators." id="og-description">
-    <meta property="twitter:title" content="AI Educational Assistant" id="twitter-title">
-    <meta property="twitter:description" content="A suite of specialized AI-powered tools for educators." id="twitter-description">
-    <link rel="icon" href="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg">
+    <!-- Dynamic Meta Tags -->
+    <title id="page-title">CBC AI Tool - Educational Assistant</title>
+    <meta name="description" content="Free AI-powered educational tools for Ugandan teachers. Generate lesson plans, assessments, and schemes of work." id="page-description">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="CBC AI Tool - Educational Assistant" id="og-title">
+    <meta property="og:description" content="Free AI-powered educational tools for Ugandan teachers. Generate lesson plans, assessments, and schemes of work." id="og-description">
+    <meta property="og:image" content="https://cbcaiug.github.io/images/cbc-ai-tool-logo.jpeg" id="og-image">
+    <meta property="og:url" content="https://cbcaiug.github.io/app.html" id="og-url">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CBC AI Tool">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CBC AI Tool - Educational Assistant" id="twitter-title">
+    <meta name="twitter:description" content="Free AI-powered educational tools for Ugandan teachers. Generate lesson plans, assessments, and schemes of work." id="twitter-description">
+    <meta name="twitter:image" content="https://cbcaiug.github.io/images/cbc-ai-tool-logo.jpeg" id="twitter-image">
+    
+    <link rel="icon" href="https://cbcaiug.github.io/images/cbc-ai-tool-logo.jpeg">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCTLDP04EJ"></script>
@@ -100,7 +111,7 @@
     <div id="root">
       <div class="loading-screen-container">
         <div class="loading-logo-wrapper">
-          <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Loading Logo" class="loading-logo-img" />
+          <img src="https://cbcaiug.github.io/images/cbc-ai-tool-logo.jpeg" alt="CBC AI Tool Logo" class="loading-logo-img" />
         </div>
         <p class="loading-screen-text">Initializing AI Assistant...</p>
       </div>
@@ -122,5 +133,77 @@
 
 <!-- Entry Point -->
 <script type="text/babel" src="js/main.js" defer></script>
+
+<!-- Dynamic Meta Tag Updates -->
+<script>
+    // Assistant definitions for dynamic meta tags
+    const assistantMeta = {
+        'Item Writer': {
+            title: 'Item Writer - CBC AI Tool',
+            description: 'Generate scenario-based assessment items with structured scoring guides for Uganda\'s CBC curriculum.',
+            icon: '✏️'
+        },
+        'Lesson Plans (NCDC)': {
+            title: 'Lesson Plan Generator - CBC AI Tool', 
+            description: 'Create detailed lesson plans following the official NCDC template for Uganda\'s curriculum.',
+            icon: '📋'
+        },
+        'Scheme of Work(NCDC)': {
+            title: 'Scheme of Work Creator - CBC AI Tool',
+            description: 'Develop structured schemes of work based on Uganda\'s CBC syllabus requirements.',
+            icon: '📅'
+        },
+        'Lesson Notes Generator': {
+            title: 'Lesson Notes Generator - CBC AI Tool',
+            description: 'Produce comprehensive and well-structured lecture notes for any topic.',
+            icon: '📖'
+        },
+        'Coteacher': {
+            title: 'Coteacher - CBC AI Tool',
+            description: 'Your all-purpose teaching assistant for questions and brainstorming about Uganda\'s CBC.',
+            icon: '👥'
+        },
+        'AI in Education Coach': {
+            title: 'AI in Education Coach - CBC AI Tool',
+            description: 'Get guidance on integrating AI tools effectively in your classroom.',
+            icon: '🌐'
+        },
+        'Essay Grading Assistant': {
+            title: 'Essay Grading Assistant - CBC AI Tool',
+            description: 'Grade student essays efficiently using specified rubrics and criteria.',
+            icon: '✅'
+        }
+    };
+    
+    // Update meta tags based on URL parameter
+    function updateMetaTags() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const assistant = urlParams.get('assistant');
+        
+        if (assistant && assistantMeta[assistant]) {
+            const meta = assistantMeta[assistant];
+            const baseUrl = 'https://cbcaiug.github.io/app.html?assistant=' + encodeURIComponent(assistant);
+            
+            // Update title and description
+            document.getElementById('page-title').textContent = meta.title;
+            document.getElementById('page-description').setAttribute('content', meta.description);
+            
+            // Update Open Graph tags
+            document.getElementById('og-title').setAttribute('content', meta.title);
+            document.getElementById('og-description').setAttribute('content', meta.description);
+            document.getElementById('og-url').setAttribute('content', baseUrl);
+            
+            // Update Twitter tags
+            document.getElementById('twitter-title').setAttribute('content', meta.title);
+            document.getElementById('twitter-description').setAttribute('content', meta.description);
+            
+            // Update page title in browser
+            document.title = meta.title;
+        }
+    }
+    
+    // Run on page load
+    updateMetaTags();
+</script>
 </body>
 </html>
