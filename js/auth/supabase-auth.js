@@ -91,6 +91,8 @@ const modalHTML = `
         <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
         <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
         <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
+        <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
+        <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
       </div>
       <div id="otpTimer">Code expires in <span id="otpCountdown">10:00</span></div>
       <button id="verifyOtpBtn" class="btn-primary">Verify Code</button>
@@ -218,7 +220,7 @@ signInBtn.addEventListener('click', async () => {
 // OTP Verification
 verifyOtpBtn.addEventListener('click', async () => {
   const otp = Array.from(otpInputs).map(input => input.value).join('');
-  if (otp.length !== 6) return showOtpMessage('Please enter all 6 digits', 'error');
+  if (otp.length !== 8) return showOtpMessage('Please enter all 8 digits', 'error');
   
   const { data, error } = await supabase.auth.verifyOtp({
     email: pendingEmail,
@@ -315,11 +317,11 @@ otpInputs.forEach((input, index) => {
   });
   input.addEventListener('paste', (e) => {
     e.preventDefault();
-    const paste = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6);
+    const paste = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 8);
     paste.split('').forEach((char, i) => {
       if (otpInputs[i]) otpInputs[i].value = char;
     });
-    if (paste.length > 0) otpInputs[Math.min(paste.length, 5)].focus();
+    if (paste.length > 0) otpInputs[Math.min(paste.length, 7)].focus();
   });
 });}
 
