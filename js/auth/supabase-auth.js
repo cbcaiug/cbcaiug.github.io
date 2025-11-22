@@ -321,7 +321,7 @@ otpInputs.forEach((input, index) => {
     });
     if (paste.length > 0) otpInputs[Math.min(paste.length, 7)].focus();
   });
-});}
+});
 
 const showOtpMessage = (msg, type = 'error') => {
   otpMessage.textContent = msg;
