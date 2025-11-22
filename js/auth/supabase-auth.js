@@ -229,9 +229,9 @@ verifyOtpBtn.addEventListener('click', async () => {
   if (error) return showOtpMessage(error.message, 'error');
   if (data?.user) {
     await ensureQuotaRow(data.user.id);
+    // Wait for auth state to propagate before hiding modal
+    await new Promise(resolve => setTimeout(resolve, 100));
     hideModal();
-    // Trigger auth state change event
-    window.dispatchEvent(new CustomEvent('authStateChanged', { detail: { user: data.user } }));
     window.showConsentModal?.();
   }
 });
