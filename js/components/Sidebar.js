@@ -747,7 +747,8 @@ const Sidebar = ({
                                     onClick={async () => {
                                         if (confirm('Sign out?')) {
                                             await window.supabaseAuth?.signOut();
-                                            window.location.reload();
+                                            // Update local UI state immediately without reloading
+                                            try { setCurrentUser(null); } catch(e) { /* ignore */ }
                                         }
                                     }}
                                     className="text-xs text-red-400 hover:text-red-300 underline"

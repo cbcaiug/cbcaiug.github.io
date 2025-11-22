@@ -15,9 +15,9 @@ const modalHTML = `
 #authModal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.7); z-index: 99999 !important; backdrop-filter: blur(8px); animation: fadeIn 0.2s ease; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-#authBox { background: white; padding: 24px; width: 90%; max-width: 420px; border-radius: 16px; box-shadow: 0 24px 48px rgba(0,0,0,0.2); font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; position: relative; z-index: 100000 !important; max-height: 85vh; overflow-y: auto; animation: slideUp 0.3s ease; }
+#authBox { background: white; padding: 16px; width: 94%; max-width: 420px; border-radius: 12px; box-shadow: 0 18px 36px rgba(0,0,0,0.18); font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; position: relative; z-index: 100000 !important; max-height: calc(100vh - 40px); overflow-y: auto; animation: slideUp 0.18s ease; }
 #authBox * { position: relative; z-index: 100001 !important; }
-#authBox img { display: block; margin: 0 auto 16px; height: 48px; border-radius: 12px; filter: none !important; }
+#authBox img { display: block; margin: 0 auto 8px; height: 40px; border-radius: 8px; filter: none !important; }
 #authBox h2 { margin: 0 0 6px; font-size: 20px; font-weight: 700; text-align: center; color: #1a1a1a; letter-spacing: -0.5px; }
 #authBox p { margin: 0 0 16px; font-size: 13px; color: #666; text-align: center; line-height: 1.4; }
 #authBox input { width: 100%; padding: 12px 14px; margin-bottom: 10px; border: 2px solid #e5e7eb; border-radius: 12px; font-size: 14px; box-sizing: border-box; background: #fafafa !important; color: #1a1a1a !important; transition: all 0.2s; }
@@ -41,9 +41,14 @@ const modalHTML = `
 #authMessage.success { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
 .auth-link { color: #4f46e5; cursor: pointer; text-decoration: none; font-size: 14px; text-align: center; display: block; margin-top: 16px; font-weight: 500; transition: color 0.2s; }
 .auth-link:hover { color: #4338ca; text-decoration: underline; }
-#otpInputs { display: flex; gap: 6px; justify-content: center; margin: 16px 0; }
-#otpInputs input { width: 40px; height: 50px; text-align: center; font-size: 20px; font-weight: 700; margin: 0; border: 2px solid #e5e7eb; border-radius: 10px; background: #fafafa; transition: all 0.2s; }
-#otpInputs input:focus { border-color: #4f46e5; background: white; box-shadow: 0 0 0 3px rgba(79,70,229,0.1); }
+#otpInputs { display: flex; gap: 6px; justify-content: center; margin: 16px 0; flex-wrap: nowrap; }
+#otpInputs input { flex: 1 1 40px; max-width: 56px; min-width: 28px; height: 56px; box-sizing: border-box; padding: 0; text-align: center; font-size: 22px; font-weight: 700; line-height: 56px; margin: 0; border: 2px solid #e5e7eb; border-radius: 10px; background: #fafafa; transition: all 0.12s; color: #1a1a1a; caret-color: #4f46e5; }
+
+/* OTP message styles */
+#otpMessage { min-height: 20px; font-size: 13px; margin-top: 12px; padding: 0; border-radius: 8px; font-weight: 500; text-align: center; }
+#otpMessage.error { color: #dc2626; }
+#otpMessage.success { color: #16a34a; }
+#otpInputs input:focus { border-color: #4f46e5; background: white; box-shadow: 0 0 0 3px rgba(79,70,229,0.1); outline: none; }
 #otpTimer { text-align: center; font-size: 13px; color: #6b7280; margin: 12px 0; font-weight: 500; }
 #otpTimer.expired { color: #dc2626; }
 </style>
@@ -75,6 +80,9 @@ const modalHTML = `
       <!-- Email/Password Form -->
       <input id="emailInput" type="email" placeholder="Email" autocomplete="email">
       <input id="passwordInput" type="password" placeholder="Password" autocomplete="current-password">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+        <a id="forgotPasswordLink" class="auth-link" style="margin:0;display:inline-block;text-align:left">Forgot password?</a>
+      </div>
       <button id="signInBtn" class="btn-primary">Sign In</button>
       <button id="signUpBtn" class="btn-secondary">Create Account</button>
       <div id="authMessage"></div>
@@ -85,14 +93,14 @@ const modalHTML = `
       <h2>Verify Email</h2>
       <p id="otpEmailDisplay">Enter the 6-digit code sent to your email</p>
       <div id="otpInputs">
-        <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
-        <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
-        <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
-        <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
-        <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
-        <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
-        <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
-        <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
+        <input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1">
+        <input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1">
+        <input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1">
+        <input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1">
+        <input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1">
+        <input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1">
+        <input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1">
+        <input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1">
       </div>
       <div id="otpTimer">Code expires in <span id="otpCountdown">10:00</span></div>
       <button id="verifyOtpBtn" class="btn-primary">Verify Code</button>
@@ -126,6 +134,13 @@ const otpInputs = document.querySelectorAll('#otpInputs input');
 let pendingEmail = '';
 let otpTimer = null;
 let otpExpiryTime = null;
+let otpPollInterval = null;
+
+// helper: enable/disable verify button
+function updateVerifyButtonState() {
+  const val = Array.from(otpInputs).map(i => i.value).join('');
+  verifyOtpBtn.disabled = val.length !== otpInputs.length;
+}
 
 const showModal = () => modal.style.display = 'flex';
 const hideModal = () => modal.style.display = 'none';
@@ -175,24 +190,38 @@ if (googleBtn) {
 if (facebookBtn) facebookBtn.remove();
 if (twitterBtn) twitterBtn.remove();
 
-// Sign Up
+// Sign Up - simple email/password, no OTP
 signUpBtn.addEventListener('click', async () => {
   showMessage('');
   const email = emailInput.value.trim();
   const password = passwordInput.value;
   if (!email || !password) return showMessage('Enter email and password');
   if (!email.includes('@')) return showMessage('Please enter a valid email');
+  if (password.length < 6) return showMessage('Password must be at least 6 characters');
   
-  const { error } = await supabase.auth.signInWithOtp({ email, options: { shouldCreateUser: true } });
+  const { data, error } = await supabase.auth.signUp({ 
+    email, 
+    password,
+    options: { emailRedirectTo: window.location.origin }
+  });
   if (error) return showMessage(error.message);
-  
-  pendingEmail = email;
-  authScreen.style.display = 'none';
-  otpScreen.style.display = 'block';
-  document.getElementById('otpEmailDisplay').innerHTML = `Enter the 8-digit code sent to<br><strong>${email}</strong>`;
-  startOtpTimer();
-  otpInputs[0].focus();
-  showMessage('');
+  if (data?.user) {
+    await ensureQuotaRow(data.user.id);
+    hideModal();
+    window.dispatchEvent(new CustomEvent('authStateChanged'));
+    window.showConsentModal?.();
+  }
+});
+
+// Forgot password flow
+const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+forgotPasswordLink.addEventListener('click', async (e) => {
+  e.preventDefault();
+  const email = emailInput.value.trim();
+  if (!email) return showMessage('Enter your email to reset password');
+  const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: window.location.origin });
+  if (error) return showMessage(error.message);
+  showMessage('Password reset email sent (check your inbox)', 'success');
 });
 
 // Sign In
@@ -209,6 +238,7 @@ signInBtn.addEventListener('click', async () => {
     await ensureQuotaRow(data.user.id);
     const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', data.user.id).single();
     hideModal();
+    window.dispatchEvent(new CustomEvent('authStateChanged'));
     if (!quota?.accepted_terms) {
       window.showConsentModal?.();
     }
@@ -229,12 +259,14 @@ verifyOtpBtn.addEventListener('click', async () => {
   if (error) return showOtpMessage(error.message, 'error');
   if (data?.user) {
     await ensureQuotaRow(data.user.id);
-    // Wait for auth state to propagate before hiding modal
-    await new Promise(resolve => setTimeout(resolve, 100));
     hideModal();
+    window.dispatchEvent(new CustomEvent('authStateChanged'));
     window.showConsentModal?.();
   }
 });
+
+// initialize verify button state
+updateVerifyButtonState();
 
 // Resend OTP
 resendOtpLink.addEventListener('click', async () => {
@@ -265,6 +297,7 @@ changeEmailLink.addEventListener('click', () => {
   passwordInput.value = '';
   pendingEmail = '';
   if (otpTimer) clearInterval(otpTimer);
+  if (otpPollInterval) { clearInterval(otpPollInterval); otpPollInterval = null; }
 });
 
 // OTP Timer
@@ -284,6 +317,7 @@ function startOtpTimer() {
       timerContainer.innerHTML = 'Code expired';
       resendOtpLink.style.display = 'block';
       verifyOtpBtn.disabled = true;
+        if (otpPollInterval) { clearInterval(otpPollInterval); otpPollInterval = null; }
       return;
     }
     const minutes = Math.floor(remaining / 60000);
@@ -302,26 +336,55 @@ backToAuthLink.addEventListener('click', () => {
 // OTP input auto-focus
 otpInputs.forEach((input, index) => {
   input.addEventListener('input', (e) => {
-    const val = e.target.value;
-    if (val.length > 1) {
-      e.target.value = val.charAt(0);
-    }
+    const val = e.target.value.replace(/\D/g, '');
+    e.target.value = val ? val.charAt(0) : '';
+    updateVerifyButtonState();
     if (val && index < otpInputs.length - 1) {
-      otpInputs[index + 1].focus();
+      // schedule focus so it works reliably across browsers/devices
+      setTimeout(() => {
+        otpInputs[index + 1].focus();
+        otpInputs[index + 1].select();
+      }, 0);
     }
   });
   input.addEventListener('keydown', (e) => {
-    if (e.key === 'Backspace' && !e.target.value && index > 0) {
+    if (e.key === 'Backspace') {
+      if (!e.target.value && index > 0) {
+        otpInputs[index - 1].focus();
+        otpInputs[index - 1].select();
+      } else {
+        e.target.value = '';
+        updateVerifyButtonState();
+      }
+    } else if (e.key === 'ArrowLeft' && index > 0) {
       otpInputs[index - 1].focus();
+      otpInputs[index - 1].select();
+    } else if (e.key === 'ArrowRight' && index < otpInputs.length - 1) {
+      otpInputs[index + 1].focus();
+      otpInputs[index + 1].select();
+    }
+  });
+  // also handle keyup to catch number entry events on some devices/browsers
+  input.addEventListener('keyup', (e) => {
+    const isDigit = /\d/.test(e.key);
+    if (isDigit) {
+      updateVerifyButtonState();
+      if (index < otpInputs.length - 1) {
+        setTimeout(() => { otpInputs[index + 1].focus(); otpInputs[index + 1].select(); }, 0);
+      }
     }
   });
   input.addEventListener('paste', (e) => {
     e.preventDefault();
-    const paste = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 8);
+    const paste = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, otpInputs.length);
     paste.split('').forEach((char, i) => {
       if (otpInputs[i]) otpInputs[i].value = char;
     });
-    if (paste.length > 0) otpInputs[Math.min(paste.length, 7)].focus();
+    updateVerifyButtonState();
+    if (paste.length > 0) {
+      const lastIndex = Math.min(paste.length - 1, otpInputs.length - 1);
+      setTimeout(()=>{ otpInputs[lastIndex].focus(); otpInputs[lastIndex].select(); }, 0);
+    }
   });
 });
 
