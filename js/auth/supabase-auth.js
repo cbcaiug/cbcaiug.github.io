@@ -207,6 +207,10 @@ signUpBtn.addEventListener('click', async () => {
   if (error) return showMessage(error.message);
   if (data?.user) {
     await ensureQuotaRow(data.user.id);
+    // Manually trigger sidebar update
+    if (window.__updateSidebarUser) {
+      window.__updateSidebarUser(data.user);
+    }
     hideModal();
     window.showConsentModal?.();
   }
@@ -236,6 +240,10 @@ signInBtn.addEventListener('click', async () => {
   if (data?.user) {
     await ensureQuotaRow(data.user.id);
     const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', data.user.id).single();
+    // Manually trigger sidebar update
+    if (window.__updateSidebarUser) {
+      window.__updateSidebarUser(data.user);
+    }
     hideModal();
     if (!quota?.accepted_terms) {
       window.showConsentModal?.();
