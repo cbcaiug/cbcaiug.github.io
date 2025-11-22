@@ -161,14 +161,12 @@ const ensureQuotaRow = async (userId) => {
 (async () => {
   const { data: { user } } = await supabase.auth.getUser();
   if (user) {
-    const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', user.id).maybeSingle();
-    if (quota?.accepted_terms) {
-      hideModal();
-      return;
-    }
     await ensureQuotaRow(user.id);
+    const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', user.id).maybeSingle();
     hideModal();
-    window.showConsentModal?.();
+    if (!quota?.accepted_terms) {
+      window.showConsentModal?.();
+    }
   } else {
     showModal();
   }
