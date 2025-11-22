@@ -72,12 +72,21 @@ const Sidebar = ({
         loadUser();
         
         // Listen for auth state changes
-        const authListener = window.supabaseAuth?.supabase?.auth.onAuthStateChange((event, session) => {
-            setCurrentUser(session?.user || null);
-        });
+        let authListener = null;
+        if (window.supabaseAuth?.supabase) {
+            const { data } = window.supabaseAuth.supabase.auth.onAuthStateChange((event, session) => {
+                setCurrentUser(session?.user || null);
+            });
+            authListener = data;
+        }
+        
+        // Also listen for custom event
+        const handleAuthChange = () => loadUser();
+        window.addEventListener('authStateChanged', handleAuthChange);
         
         return () => {
-            authListener?.data?.subscription?.unsubscribe();
+            authListener?.subscription?.unsubscribe();
+            window.removeEventListener('authStateChanged', handleAuthChange);
         };
     }, []);
 
