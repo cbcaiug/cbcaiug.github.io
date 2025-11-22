@@ -415,6 +415,9 @@ window.supabaseAuth = {
   },
   async signOut() {
     await supabase.auth.signOut();
+    // Force clear all storage
+    localStorage.removeItem('supabase.auth.token');
+    sessionStorage.clear();
     if (window.__updateSidebarUser) {
       window.__updateSidebarUser(null);
     }
