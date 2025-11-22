@@ -230,6 +230,8 @@ verifyOtpBtn.addEventListener('click', async () => {
   if (data?.user) {
     await ensureQuotaRow(data.user.id);
     hideModal();
+    // Trigger auth state change event
+    window.dispatchEvent(new CustomEvent('authStateChanged', { detail: { user: data.user } }));
     window.showConsentModal?.();
   }
 });
