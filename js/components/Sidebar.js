@@ -71,13 +71,21 @@ const Sidebar = ({
         
         loadUser();
         
-        // Listen for auth state changes
-        const authListener = window.supabaseAuth?.supabase?.auth.onAuthStateChange((event, session) => {
-            setCurrentUser(session?.user || null);
-        });
+        // Expose update function
+        window.__updateSidebarUser = (user) => setCurrentUser(user);
+        
+        // Listen for auth state changes from Supabase
+        let authListener = null;
+        if (window.supabaseAuth?.supabase) {
+            const { data } = window.supabaseAuth.supabase.auth.onAuthStateChange((event, session) => {
+                setCurrentUser(session?.user || null);
+            });
+            authListener = data;
+        }
         
         return () => {
-            authListener?.data?.subscription?.unsubscribe();
+            authListener?.subscription?.unsubscribe();
+            delete window.__updateSidebarUser;
         };
     }, []);
 
@@ -737,8 +745,10 @@ const Sidebar = ({
                                 <button
                                     onClick={async () => {
                                         if (confirm('Sign out?')) {
+                                            // Call signOut which clears session and shows the auth modal
                                             await window.supabaseAuth?.signOut();
-                                            window.location.reload();
+                                            // Update sidebar state immediately so UI reflects signed-out state
+                                            try { setCurrentUser(null); } catch (e) { /* ignore */ }
                                         }
                                     }}
                                     className="text-xs text-red-400 hover:text-red-300 underline"
