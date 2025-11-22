@@ -15,7 +15,7 @@ const modalHTML = `
 #authModal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.7); z-index: 99999 !important; backdrop-filter: blur(8px); animation: fadeIn 0.2s ease; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-#authBox { background: white; padding: 24px; width: 90%; max-width: 380px; border-radius: 16px; box-shadow: 0 24px 48px rgba(0,0,0,0.2); font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; position: relative; z-index: 100000 !important; max-height: 85vh; overflow-y: auto; animation: slideUp 0.3s ease; }
+#authBox { background: white; padding: 24px; width: 90%; max-width: 420px; border-radius: 16px; box-shadow: 0 24px 48px rgba(0,0,0,0.2); font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; position: relative; z-index: 100000 !important; max-height: 85vh; overflow-y: auto; animation: slideUp 0.3s ease; }
 #authBox * { position: relative; z-index: 100001 !important; }
 #authBox img { display: block; margin: 0 auto 16px; height: 48px; border-radius: 12px; filter: none !important; }
 #authBox h2 { margin: 0 0 6px; font-size: 20px; font-weight: 700; text-align: center; color: #1a1a1a; letter-spacing: -0.5px; }
@@ -41,8 +41,8 @@ const modalHTML = `
 #authMessage.success { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
 .auth-link { color: #4f46e5; cursor: pointer; text-decoration: none; font-size: 14px; text-align: center; display: block; margin-top: 16px; font-weight: 500; transition: color 0.2s; }
 .auth-link:hover { color: #4338ca; text-decoration: underline; }
-#otpInputs { display: flex; gap: 8px; justify-content: center; margin: 16px 0; }
-#otpInputs input { width: 44px; height: 52px; text-align: center; font-size: 22px; font-weight: 700; margin: 0; border: 2px solid #e5e7eb; border-radius: 10px; background: #fafafa; transition: all 0.2s; }
+#otpInputs { display: flex; gap: 6px; justify-content: center; margin: 16px 0; }
+#otpInputs input { width: 40px; height: 50px; text-align: center; font-size: 20px; font-weight: 700; margin: 0; border: 2px solid #e5e7eb; border-radius: 10px; background: #fafafa; transition: all 0.2s; }
 #otpInputs input:focus { border-color: #4f46e5; background: white; box-shadow: 0 0 0 3px rgba(79,70,229,0.1); }
 #otpTimer { text-align: center; font-size: 13px; color: #6b7280; margin: 12px 0; font-weight: 500; }
 #otpTimer.expired { color: #dc2626; }
@@ -304,7 +304,7 @@ otpInputs.forEach((input, index) => {
     if (val.length > 1) {
       e.target.value = val.charAt(0);
     }
-    if (e.target.value && index < otpInputs.length - 1) {
+    if (val && index < otpInputs.length - 1) {
       otpInputs[index + 1].focus();
     }
   });
