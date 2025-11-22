@@ -156,34 +156,21 @@ const ensureQuotaRow = async (userId) => {
   }
 })();
 
-// OAuth Sign In
-googleBtn.addEventListener('click', async () => {
-  const { error } = await supabase.auth.signInWithOAuth({
-    provider: 'google',
-    options: { redirectTo: window.location.origin + window.location.pathname }
+// OAuth Sign In - Google only
+if (googleBtn) {
+  googleBtn.style.display = 'flex'; // Ensure visible
+  googleBtn.addEventListener('click', async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: window.location.origin + window.location.pathname }
+    });
+    if (error) showMessage(error.message);
   });
-  if (error) showMessage(error.message);
-});
+}
 
-// Facebook OAuth disabled - too complex to set up
-// facebookBtn.addEventListener('click', async () => {
-//   const { error } = await supabase.auth.signInWithOAuth({
-//     provider: 'facebook',
-//     options: { redirectTo: window.location.origin + window.location.pathname }
-//   });
-//   if (error) showMessage(error.message);
-// });
-facebookBtn.style.display = 'none'; // Hide Facebook button
-
-// Twitter OAuth disabled - uncomment when configured
-// twitterBtn.addEventListener('click', async () => {
-//   const { error } = await supabase.auth.signInWithOAuth({
-//     provider: 'twitter',
-//     options: { redirectTo: window.location.origin + window.location.pathname }
-//   });
-//   if (error) showMessage(error.message);
-// });
-twitterBtn.style.display = 'none'; // Hide Twitter button until configured
+// Hide Facebook and Twitter buttons
+if (facebookBtn) facebookBtn.remove();
+if (twitterBtn) twitterBtn.remove();
 
 // Sign Up
 signUpBtn.addEventListener('click', async () => {
