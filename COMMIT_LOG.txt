@@ -1,6 +1,33 @@
 CBC AI Tool - Commit Log
 ========================
 
+[2025-01-23 03:25 EAT] security: remove exposed API keys from repository
+
+CRITICAL SECURITY FIX:
+- ai-suite-assets/myAPIkeys.txt: REMOVED from repository (contained 6 exposed API keys)
+- .gitignore: added myAPIkeys.txt to prevent future commits
+- SECURITY_INCIDENT.md: created incident report with mitigation steps
+- GAS_DEPLOYMENT_INSTRUCTIONS.md: created deployment guide
+
+INCIDENT:
+- 6 Google AI Studio keys were committed to public GitHub repo
+- Keys were auto-deleted by Google's security scanner or reported
+- All keys have been regenerated and stored securely in GAS Script Properties
+
+MITIGATION:
+- File removed from git tracking and deleted
+- Added to .gitignore
+- New keys created and stored in GAS Script Properties (secure)
+- Keys still exist in GitHub history (optional: use BFG to remove)
+
+PREVENTION:
+- Never commit API keys to version control
+- Use GAS Script Properties for secure storage
+- Use .gitignore for sensitive files
+- Store personal keys in password manager or Google Drive private folder
+
+---
+
 [2025-01-23 03:15 EAT] fix(quota): add real-time sync and fix model selection
 
 CHANGES:
