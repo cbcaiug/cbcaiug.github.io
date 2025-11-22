@@ -161,14 +161,12 @@ const ensureQuotaRow = async (userId) => {
 (async () => {
   const { data: { user } } = await supabase.auth.getUser();
   if (user) {
-    const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', user.id).maybeSingle();
-    if (quota?.accepted_terms) {
-      hideModal();
-      return;
-    }
     await ensureQuotaRow(user.id);
+    const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', user.id).maybeSingle();
     hideModal();
-    window.showConsentModal?.();
+    if (!quota?.accepted_terms) {
+      window.showConsentModal?.();
+    }
   } else {
     showModal();
   }
@@ -207,6 +205,10 @@ signUpBtn.addEventListener('click', async () => {
   if (error) return showMessage(error.message);
   if (data?.user) {
     await ensureQuotaRow(data.user.id);
+    // Manually trigger sidebar update
+    if (window.__updateSidebarUser) {
+      window.__updateSidebarUser(data.user);
+    }
     hideModal();
     window.showConsentModal?.();
   }
@@ -236,6 +238,10 @@ signInBtn.addEventListener('click', async () => {
   if (data?.user) {
     await ensureQuotaRow(data.user.id);
     const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', data.user.id).single();
+    // Manually trigger sidebar update
+    if (window.__updateSidebarUser) {
+      window.__updateSidebarUser(data.user);
+    }
     hideModal();
     if (!quota?.accepted_terms) {
       window.showConsentModal?.();
@@ -409,6 +415,12 @@ window.supabaseAuth = {
   },
   async signOut() {
     await supabase.auth.signOut();
+    // Force clear all storage
+    localStorage.removeItem('supabase.auth.token');
+    sessionStorage.clear();
+    if (window.__updateSidebarUser) {
+      window.__updateSidebarUser(null);
+    }
     showModal();
   },
   async acceptTerms() {
