@@ -1,0 +1,219 @@
+// Backup of js/components/App.js taken 2025-11-22T00:00Z
+
+/**
+ * js/components/App.js
+ *
+ * This is the main root component for the entire application.
+ * It manages the overall state, such as settings, chat history,
+ * and communication between different child components.
+ */
+
+const { useState, useEffect, useRef, useCallback } = React;
+// --- HELPERS ---
+const formatBytes = (bytes, decimals = 2) => {
+		if (!+bytes) return '0 Bytes';
+		const k = 1024;
+		const dm = decimals < 0 ? 0 : decimals;
+		const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+		const i = Math.floor(Math.log(bytes) / Math.log(k));
+		return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+};
+// MODIFIED: 21/08/2025 8:30 PM EAT - Session ID now persists in sessionStorage for the browser tab.
+const generateReadableId = () => {
+		// Word lists for creating memorable IDs.
+		const adjectives = ["Agile", "Bright", "Clever", "Daring", "Eager", "Fast", "Gifted", "Honest", "Jolly", "Keen", "Loyal", "Mighty"];
+		const nouns = ["Lion", "Eagle", "River", "Star", "Flame", "Shield", "Quest", "Spark", "Vision", "Peak", "Core", "Nexus"];
+    
+		const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+		const noun = nouns[Math.floor(Math.random() * nouns.length)];
+    
+		const minute = new Date().getMinutes();
+		const randomNum = Math.floor(Math.random() * 100);
+
+		return `${adj}-${noun}-${minute}${randomNum}`;
+};
+
+// This function ensures the Session ID is consistent for the entire browser tab session.
+const getSessionId = () => {
+		// Try to get an existing ID from sessionStorage.
+		let sessionId = sessionStorage.getItem('cbcAiToolSessionId');
+    
+		// If no ID exists, create a new one and save it for future reloads in this tab.
+		if (!sessionId) {
+				sessionId = generateReadableId();
+				sessionStorage.setItem('cbcAiToolSessionId', sessionId);
+		}
+    
+		return sessionId;
+};
+const SESSION_ID = getSessionId();
+// END OF MODIFICATION
+
+// The number of free uses before a user must provide their own key.
+const TRIAL_GENERATION_LIMIT = 50;
+
+// --- MAIN APP COMPONENT ---
+const App = ({ onMount }) => {
+	// --- STATE MANAGEMENT ---
+  
+	// Call onMount when component is ready
+	useEffect(() => {
+		// Small delay to ensure all initial data is loaded
+		const timer = setTimeout(() => {
+			onMount?.();
+		}, 100);
+		return () => clearTimeout(timer);
+	}, [onMount]);
+
+	const [apiKeys, setApiKeys] = useState({});
+	const [apiKeyStatus, setApiKeyStatus] = useState({});
+	const [sidebarWidth, setSidebarWidth] = useState(320);
+	const [selectedProviderKey, setSelectedProviderKey] = useState('google');
+	const [selectedModelName, setSelectedModelName] = useState('gemini-2.5-pro');
+	const [autoDeleteHours, setAutoDeleteHours] = useState('2');
+	const [chatHistory, setChatHistory] = useState([]);
+	// UPDATED: State to hold an array of pending files for multi-file upload.
+		const [pendingFiles, setPendingFiles] = useState([]);;
+	const [userInput, setUserInput] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
+	const [error, setError] = useState('');
+	const [customPromptContent, setCustomPromptContent] = useState('');
+	// The initial assistant is now read from the URL once, and then managed by the app's state.
+const [activePromptKey, setActivePromptKey] = useState(() => {
+		const assistant = new URLSearchParams(window.location.search).get('assistant') || 'Coteacher';
+		// Set initial meta tags immediately
+		const assistantDescriptions = {
+				'Prompt Assistant': 'AI-powered prompt engineering and optimization tool for educational content creation.',
+				'Item Writer': 'Generate scenario-based assessment items with structured scoring guides for Uganda\'s CBC curriculum.',
+				'Lesson Plans (NCDC)': 'Create detailed lesson plans following the official NCDC template for Ugandan educators.',
+				'Lesson Plans (with Biblical Integration)': 'Create NCDC lesson plans with integrated biblical values and Christian worldview perspectives.',
+				'UACE SoW NCDC': 'Develop comprehensive schemes of work specifically for Uganda Advanced Certificate of Education (UACE) level.',
+				'Scheme of Work NCDC': 'Develop structured schemes of work based on Uganda\'s CBC syllabus requirements.',
+				'Scheme of Work (with Biblical Integration)': 'Create CBC schemes of work incorporating biblical principles and Christian educational values.',
+				'Lesson Notes Generator': 'Produce comprehensive and well-structured lecture notes for any educational topic.',
+				'UCE Project Assistant': 'Guide students through Uganda Certificate of Education (UCE) project planning and execution.',
+				'AI in Education Coach': 'Get guidance on integrating AI tools effectively into your classroom teaching.',
+				'Essay Grading Assistant': 'Efficiently grade student essays using specified rubrics and assessment criteria.',
+				'Coteacher': 'Your all-purpose AI teaching assistant for questions, brainstorming, and classroom support.',
+				'Data & Document Analyst': 'Analyze educational data, documents, and research materials with AI-powered insights.',
+				'UCE BIO Item Writer': 'Generate biology assessment items specifically designed for Uganda Certificate of Education (UCE) level.'
+		};
+		const title = `${assistant} | AI Educational Assistant`;
+		const description = assistantDescriptions[assistant] || 'AI-powered educational tool for Uganda\'s CBC curriculum.';
+    
+		document.title = title;
+		if (document.getElementById('page-description')) document.getElementById('page-description').content = description;
+		if (document.getElementById('og-title')) document.getElementById('og-title').content = title;
+		if (document.getElementById('og-description')) document.getElementById('og-description').content = description;
+		if (document.getElementById('twitter-title')) document.getElementById('twitter-title').content = title;
+		if (document.getElementById('twitter-description')) document.getElementById('twitter-description').content = description;
+    
+		return assistant;
+});
+	const [isMenuOpen, setIsMenuOpen] = useState(window.innerWidth >= 1024);
+	const [isPromptMissing, setIsPromptMissing] = useState(false);
+	const [availableAssistants, setAvailableAssistants] = useState([]);
+	const [isLoadingAssistants, setIsLoadingAssistants] = useState(true);
+	const [navigationMenu, setNavigationMenu] = useState({});
+	const [showCopyToast, setShowCopyToast] = useState(false);
+	const [apiKeyToast, setApiKeyToast] = useState('');
+	const [generationCount, setGenerationCount] = useState(0);
+	const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState(false);
+	const [showResetConfirm, setShowResetConfirm] = useState(false);
+	const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+	const [notifications, setNotifications] = useState([]);
+	const [hasNewNotification, setHasNewNotification] = useState(false);
+	const [showUpdateBanner, setShowUpdateBanner] = useState(false);
+	const [isTakingLong, setIsTakingLong] = useState(false);
+		// History enabled flag (opt-in). Default false unless localStorage key is '1'
+		const [historyEnabled, setHistoryEnabled] = useState(() => localStorage.getItem('cbc_chat_history_autosave') === '1');
+	// NEW: This function handles switching assistants without a page reload.
+const handleAssistantChange = (newAssistantKey) => {
+		if (newAssistantKey === activePromptKey) return; // Do nothing if the same assistant is selected
+
+		// Update the app's state to the new assistant
+		setActivePromptKey(newAssistantKey);
+		setIsPromptMissing(false);
+		setError('');
+
+		// Update the browser's URL bar without reloading the page
+		const url = new URL(window.location);
+		url.searchParams.set('assistant', newAssistantKey);
+		window.history.pushState({}, '', url);
+
+		// Clear the current chat and load the initial message for the new assistant
+		setChatHistory([]); // Clear existing messages
+		loadInitialMessage(newAssistantKey); // Load the welcome message for the new assistant
+};
+
+	// Load history chat
+	const handleLoadHistoryChat = useCallback((item) => {
+			if (!item || !item.messages) return;
+			setActivePromptKey(item.assistantKey);
+			setChatHistory(item.messages);
+			setIsPromptMissing(false);
+			setError('');
+	}, []);
+	const [showConsentModal, setShowConsentModal] = useState(false);
+	// NEW: State for the Google Doc success and download modal
+const [isDocModalOpen, setIsDocModalOpen] = useState(false);
+const [createdDocInfo, setCreatedDocInfo] = useState(null);
+	const [isHelpMenuOpen, setIsHelpMenuOpen] = useState(false);
+		// NEW: State for the Google Search (grounding) toggle
+const [isGroundingEnabled, setIsGroundingEnabled] = useState(false);
+	// NEW: State for Save/Copy usage counter (20 free uses)
+const [usageCount, setUsageCount] = useState(() => {
+		const saved = localStorage.getItem('saveUsageCount');
+		return saved ? parseInt(saved, 10) : 20;
+});
+const [isLimitModalOpen, setIsLimitModalOpen] = useState(false);
+const [pendingAction, setPendingAction] = useState(null);
+const [cartItems, setCartItems] = useState(() => JSON.parse(localStorage.getItem('cart') || '[]'));
+const [isCartOpen, setIsCartOpen] = useState(false);
+const [paymentFormUrl, setPaymentFormUrl] = useState('https://docs.google.com/forms/d/e/1FAIpQLSfo92FKmdwzdbXLIqbm5GRrjxRLFwEH2b8AGsBBAdcB4mccZw/viewform');
+const [currentCartId, setCurrentCartId] = useState(() => localStorage.getItem('currentCartId') || null);
+	// NEW: State to manage whether the user wants to use the shared (trial) API key.
+		const [useSharedApiKey, setUseSharedApiKey] = useState(true);
+
+	// This new handler ensures that when the shared key is enabled,
+	// the provider is always reset to Google Gemini.
+	const handleSharedKeyToggle = (isEnabled) => {
+		setUseSharedApiKey(isEnabled);
+		if (isEnabled) {
+			setSelectedProviderKey('google');
+			setSelectedModelName('gemini-2.5-pro'); // Reset to a default Gemini model
+		}
+	};
+	// NEW: State to hold the "sticky" trial key for the current session to reduce backend calls.
+	const [activeTrialApiKey, setActiveTrialApiKey] = useState(null);
+		// NEW: Friendly label for the currently active shared/trial key (e.g., "Key #3")
+		const [activeSharedKeyLabel, setActiveSharedKeyLabel] = useState('');
+	// NEW: Add state to track remaining trial generations.
+	const [trialGenerations, setTrialGenerations] = useState(TRIAL_GENERATION_LIMIT);
+
+	// --- REFS ---
+	const chatContainerRef = useRef(null);
+	const chatEndRef = useRef(null);
+		// Ref to measure header height for mobile padding adjustment
+		const headerRef = useRef(null);
+	const userInputRef = useRef(null);
+	const validationTimeoutRef = useRef(null);
+	const apiKeyToastTimeoutRef = useRef(null);
+	const abortControllerRef = useRef(null);
+	const longResponseTimerRef = useRef(null);
+		// History save throttling
+		const lastSavedAtRef = useRef(0);
+
+	// --- CONSTANTS & DERIVED STATE ---
+	const FEEDBACK_TRIGGER_COUNT = 5;
+	const LONG_RESPONSE_TIMEOUT = 10000; // 10 seconds
+	const selectedProvider = AI_PROVIDERS.find(p => p.key === selectedProviderKey);
+	const selectedModel = selectedProvider?.models.find(m => m.name === selectedModelName);
+	const isFileUploadDisabled = !selectedModel?.vision;
+	const MAX_TOTAL_UPLOAD_SIZE = 10 * 1024 * 1024; // 10 MB in bytes
+
+	// --- API & STREAMING LOGIC ---
+	const fetchAndStreamResponse = async ({ historyForApi, systemPrompt, apiKey, onUpdate, onComplete, onError }) => {
+      
+*** End Patch
+

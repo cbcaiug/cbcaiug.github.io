@@ -179,7 +179,7 @@ const [currentCartId, setCurrentCartId] = useState(() => localStorage.getItem('c
     setUseSharedApiKey(isEnabled);
     if (isEnabled) {
       setSelectedProviderKey('google');
-      setSelectedModelName('gemini-2.5-pro'); // Reset to a default Gemini model
+      // Don't force model change - let user keep their selected Gemini model
     }
   };
   // NEW: State to hold the "sticky" trial key for the current session to reduce backend calls.
@@ -576,12 +576,23 @@ const handleDocxDownload = async (markdownContent) => {
         return;
     }
     
-    // Check usage limit
-    if (usageCount <= 0) {
-        setPendingAction({ type: 'save', content: markdownContent, inCart: false });
-        setIsLimitModalOpen(true);
-        return;
-    }
+        // Check Supabase quota first, fall back to local usageCount
+        try {
+            const quota = await window.supabaseAuth.getQuota();
+            if (quota && quota.free_downloads_remaining <= 0) {
+                setPendingAction({ type: 'save', content: markdownContent, inCart: false });
+                setIsLimitModalOpen(true);
+                return;
+            }
+        } catch (err) {
+            console.warn('Supabase quota check failed:', err);
+            // Fall back to local count
+            if (usageCount <= 0) {
+                setPendingAction({ type: 'save', content: markdownContent, inCart: false });
+                setIsLimitModalOpen(true);
+                return;
+            }
+        }
 
     // Use the error state to provide feedback to the user that the process has started.
     setError('Creating your Google Doc, please wait...');
@@ -613,25 +624,36 @@ const handleDocxDownload = async (markdownContent) => {
         const data = await response.json();
 
         // Check if we received the URL and the new ID.
-        if (data.success && data.url && data.id) {
-            // Decrement usage count
-            const newCount = usageCount - 1;
-            setUsageCount(newCount);
-            localStorage.setItem('saveUsageCount', newCount.toString());
-            
-            // Log the doc creation
-            trackEvent('google_doc_created', activePromptKey, {
-                sessionId: SESSION_ID,
-                url: data.url,
-                model: selectedModelName
-            });
-            
-            // Store the document info (URL and ID) in our new state.
-            setCreatedDocInfo({ url: data.url, downloadUrl: data.downloadUrl, id: data.id });
-            // Open our new modal instead of a new tab.
-            setIsDocModalOpen(true);
-            setError(''); // Clear the "Creating..." message.
-        } else {
+                if (data.success && data.url && data.id) {
+                        // Track in both systems (Supabase + GAS). Fall back to local decrement on error.
+                        try {
+                            await window.supabaseAuth.consume('download');
+                            const quota = await window.supabaseAuth.getQuota();
+                            if (quota) {
+                                setUsageCount(quota.free_downloads_remaining);
+                            }
+                            await fetch(`${GAS_WEB_APP_URL}?action=logDownload&sessionId=${SESSION_ID}`);
+                        } catch (err) {
+                            console.warn('Tracking failed:', err);
+                            // Fall back to local tracking
+                            const newCount = usageCount - 1;
+                            setUsageCount(newCount);
+                            localStorage.setItem('saveUsageCount', newCount.toString());
+                        }
+
+                        // Log the doc creation (analytics)
+                        trackEvent('google_doc_created', activePromptKey, {
+                                sessionId: SESSION_ID,
+                                url: data.url,
+                                model: selectedModelName
+                        });
+
+                        // Store the document info (URL and ID) in our new state.
+                        setCreatedDocInfo({ url: data.url, downloadUrl: data.downloadUrl, id: data.id });
+                        // Open our new modal instead of a new tab.
+                        setIsDocModalOpen(true);
+                        setError(''); // Clear the "Creating..." message.
+                } else {
             // If the server reported an error, throw it so our catch block can handle it.
             throw new Error(data.error || 'The server did not return the required document information.');
         }
@@ -744,6 +766,19 @@ const handleDocxDownload = async (markdownContent) => {
           return;
       }
 
+      // Check Supabase quota before attempting generation (falls back to GAS/local if check fails)
+      try {
+        const quota = await window.supabaseAuth.getQuota();
+        if (quota && quota.free_generations_remaining <= 0) {
+          setError('Free generations exhausted. Add your own API key or sign in with a different account.');
+          setIsLoading(false);
+          return;
+        }
+      } catch (err) {
+        console.warn('Supabase quota check failed:', err);
+        // Continue anyway - GAS will track
+      }
+
       await fetchAndStreamResponse({
           historyForApi: newHistory.slice(0, -1),
           systemPrompt,
@@ -770,14 +805,28 @@ const handleDocxDownload = async (markdownContent) => {
                   const finalKeyLabel = keyLabelForLogging || (isTrial ? 'SHARED KEY' : 'PERSONAL KEY');
 
                   if (isTrial) {
-                      const newCount = trialGenerations - 1;
-                      setTrialGenerations(newCount);
-                      localStorage.setItem('trialGenerationsCount', newCount.toString());
                       trackEvent('trial_generation', activePromptKey, { sessionId: SESSION_ID, apiKeyUsed: finalKeyLabel });
                   } else {
                       trackEvent('generation', activePromptKey, { sessionId: SESSION_ID, apiKeyUsed: finalKeyLabel });
                   }
                   setGenerationCount(prevCount => prevCount + 1);
+
+                  // Track generation in Supabase and GAS, then sync state immediately
+                  window.supabaseAuth.consume('generation')
+                    .then(() => window.supabaseAuth.getQuota())
+                    .then(quota => {
+                      if (quota) {
+                        setTrialGenerations(quota.free_generations_remaining);
+                      }
+                      return fetch(`${GAS_WEB_APP_URL}?action=logGeneration&sessionId=${SESSION_ID}`);
+                    })
+                    .catch(err => {
+                      console.warn('Tracking failed:', err);
+                      // Fall back to local tracking
+                      const newCount = trialGenerations - 1;
+                      setTrialGenerations(newCount);
+                      localStorage.setItem('trialGenerationsCount', newCount.toString());
+                    });
               }
               abortControllerRef.current = null;
           },
@@ -1047,21 +1096,41 @@ const handleHelpButtonClick = () => {};
           const savedCount = parseInt(localStorage.getItem('generationCount') || '0', 10);
           setGenerationCount(savedCount);
 
-          // NEW: Smartly reset trial generations when the policy changes.
-          const TRIAL_POLICY_VERSION = 'v2'; // Increment this to reset everyone's trial count in the future.
-          const savedPolicyVersion = localStorage.getItem('trialPolicyVersion');
-          let trialCount;
-
-          if (savedPolicyVersion !== TRIAL_POLICY_VERSION) {
-            // If the user is on an old version, give them the new full amount of trials.
-            trialCount = TRIAL_GENERATION_LIMIT;
-            localStorage.setItem('trialGenerationsCount', trialCount.toString());
-            localStorage.setItem('trialPolicyVersion', TRIAL_POLICY_VERSION); // Save the new version.
-          } else {
-            // Otherwise, load their saved count as usual.
-            trialCount = parseInt(localStorage.getItem('trialGenerationsCount') || TRIAL_GENERATION_LIMIT, 10);
+          // Load quotas from Supabase FIRST (before setting any local values)
+          try {
+              const quota = await window.supabaseAuth.getQuota();
+              if (quota) {
+                  setTrialGenerations(quota.free_generations_remaining);
+                  setUsageCount(quota.free_downloads_remaining);
+              } else {
+                  // Supabase returned null, use local counts as fallback
+                  const TRIAL_POLICY_VERSION = 'v2';
+                  const savedPolicyVersion = localStorage.getItem('trialPolicyVersion');
+                  let trialCount;
+                  if (savedPolicyVersion !== TRIAL_POLICY_VERSION) {
+                      trialCount = TRIAL_GENERATION_LIMIT;
+                      localStorage.setItem('trialGenerationsCount', trialCount.toString());
+                      localStorage.setItem('trialPolicyVersion', TRIAL_POLICY_VERSION);
+                  } else {
+                      trialCount = parseInt(localStorage.getItem('trialGenerationsCount') || TRIAL_GENERATION_LIMIT, 10);
+                  }
+                  setTrialGenerations(trialCount);
+              }
+          } catch (err) {
+              console.warn('Failed to load Supabase quotas:', err);
+              // Use local counts as fallback
+              const TRIAL_POLICY_VERSION = 'v2';
+              const savedPolicyVersion = localStorage.getItem('trialPolicyVersion');
+              let trialCount;
+              if (savedPolicyVersion !== TRIAL_POLICY_VERSION) {
+                  trialCount = TRIAL_GENERATION_LIMIT;
+                  localStorage.setItem('trialGenerationsCount', trialCount.toString());
+                  localStorage.setItem('trialPolicyVersion', TRIAL_POLICY_VERSION);
+              } else {
+                  trialCount = parseInt(localStorage.getItem('trialGenerationsCount') || TRIAL_GENERATION_LIMIT, 10);
+              }
+              setTrialGenerations(trialCount);
           }
-          setTrialGenerations(trialCount);
 
           setIsLoadingAssistants(true);
           const [assistants, fetchedNotifications] = await Promise.all([
@@ -1431,10 +1500,22 @@ const handleHelpButtonClick = () => {};
 </div>
                                           )}
                                           <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
-                                          <MessageMenu msg={msg} index={index} usageCount={usageCount} onCopy={(content) => {
-                                              const newCount = usageCount - 1;
-                                              setUsageCount(newCount);
-                                              localStorage.setItem('saveUsageCount', newCount.toString());
+                                          <MessageMenu msg={msg} index={index} usageCount={usageCount} onCopy={async (content) => {
+                                              // Track in both systems (Supabase + GAS). Fall back to local decrement on error.
+                                              try {
+                                                  await window.supabaseAuth.consume('download');
+                                                  const quota = await window.supabaseAuth.getQuota();
+                                                  if (quota) {
+                                                      setUsageCount(quota.free_downloads_remaining);
+                                                  }
+                                                  await fetch(`${GAS_WEB_APP_URL}?action=logDownload&sessionId=${SESSION_ID}`);
+                                              } catch (err) {
+                                                  console.warn('Copy tracking failed:', err);
+                                                  // Fall back to local tracking
+                                                  const newCount = usageCount - 1;
+                                                  setUsageCount(newCount);
+                                                  localStorage.setItem('saveUsageCount', newCount.toString());
+                                              }
                                               handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError);
                                           }} onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))} onRegenerate={handleRegenerate} onDocxDownload={handleDocxDownload} />
                                       </div>

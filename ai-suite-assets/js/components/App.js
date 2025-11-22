@@ -576,12 +576,23 @@ const handleDocxDownload = async (markdownContent) => {
         return;
     }
     
-    // Check usage limit
-    if (usageCount <= 0) {
-        setPendingAction({ type: 'save', content: markdownContent, inCart: false });
-        setIsLimitModalOpen(true);
-        return;
-    }
+        // Check Supabase quota first, fall back to local usageCount
+        try {
+            const quota = await window.supabaseAuth.getQuota();
+            if (quota && quota.free_downloads_remaining <= 0) {
+                setPendingAction({ type: 'save', content: markdownContent, inCart: false });
+                setIsLimitModalOpen(true);
+                return;
+            }
+        } catch (err) {
+            console.warn('Supabase quota check failed:', err);
+            // Fall back to local count
+            if (usageCount <= 0) {
+                setPendingAction({ type: 'save', content: markdownContent, inCart: false });
+                setIsLimitModalOpen(true);
+                return;
+            }
+        }
 
     // Use the error state to provide feedback to the user that the process has started.
     setError('Creating your Google Doc, please wait...');
@@ -613,25 +624,36 @@ const handleDocxDownload = async (markdownContent) => {
         const data = await response.json();
 
         // Check if we received the URL and the new ID.
-        if (data.success && data.url && data.id) {
-            // Decrement usage count
-            const newCount = usageCount - 1;
-            setUsageCount(newCount);
-            localStorage.setItem('saveUsageCount', newCount.toString());
+                if (data.success && data.url && data.id) {
+                        // Track in both systems (Supabase + GAS). Fall back to local decrement on error.
+                        try {
+                            await window.supabaseAuth.consume('download');
+                            const quota = await window.supabaseAuth.getQuota();
+                            if (quota) {
+                                setUsageCount(quota.free_downloads_remaining);
+                            }
+                            await fetch(`${GAS_WEB_APP_URL}?action=logDownload&sessionId=${SESSION_ID}`);
+                        } catch (err) {
+                            console.warn('Tracking failed:', err);
+                            // Fall back to local tracking
+                            const newCount = usageCount - 1;
+                            setUsageCount(newCount);
+                            localStorage.setItem('saveUsageCount', newCount.toString());
+                        }
+
+                        // Log the doc creation
+                        trackEvent('google_doc_created', activePromptKey, {
+                                sessionId: SESSION_ID,
+                                url: data.url,
+                                model: selectedModelName
+                        });
             
-            // Log the doc creation
-            trackEvent('google_doc_created', activePromptKey, {
-                sessionId: SESSION_ID,
-                url: data.url,
-                model: selectedModelName
-            });
-            
-            // Store the document info (URL and ID) in our new state.
-            setCreatedDocInfo({ url: data.url, downloadUrl: data.downloadUrl, id: data.id });
-            // Open our new modal instead of a new tab.
-            setIsDocModalOpen(true);
-            setError(''); // Clear the "Creating..." message.
-        } else {
+                        // Store the document info (URL and ID) in our new state.
+                        setCreatedDocInfo({ url: data.url, downloadUrl: data.downloadUrl, id: data.id });
+                        // Open our new modal instead of a new tab.
+                        setIsDocModalOpen(true);
+                        setError(''); // Clear the "Creating..." message.
+                } else {
             // If the server reported an error, throw it so our catch block can handle it.
             throw new Error(data.error || 'The server did not return the required document information.');
         }
@@ -744,6 +766,19 @@ const handleDocxDownload = async (markdownContent) => {
           return;
       }
 
+      // Check Supabase quota before attempting generation (falls back to GAS/local if check fails)
+      try {
+        const quota = await window.supabaseAuth.getQuota();
+        if (quota && quota.free_generations_remaining <= 0) {
+          setError('Free generations exhausted. Add your own API key or sign in with a different account.');
+          setIsLoading(false);
+          return;
+        }
+      } catch (err) {
+        console.warn('Supabase quota check failed:', err);
+        // Continue anyway - GAS will track
+      }
+
       await fetchAndStreamResponse({
           historyForApi: newHistory.slice(0, -1),
           systemPrompt,
@@ -778,6 +813,16 @@ const handleDocxDownload = async (markdownContent) => {
                       trackEvent('generation', activePromptKey, { sessionId: SESSION_ID, apiKeyUsed: finalKeyLabel });
                   }
                   setGenerationCount(prevCount => prevCount + 1);
+
+                  // Best-effort tracking: Supabase + GAS
+                  (async () => {
+                    try {
+                      await window.supabaseAuth.consume('generation');
+                      await fetch(`${GAS_WEB_APP_URL}?action=logGeneration&sessionId=${SESSION_ID}`);
+                    } catch (err) {
+                      console.warn('Tracking failed:', err);
+                    }
+                  })();
               }
               abortControllerRef.current = null;
           },
@@ -1058,6 +1103,18 @@ const handleHelpButtonClick = () => {};
             trialCount = parseInt(localStorage.getItem('trialGenerationsCount') || TRIAL_GENERATION_LIMIT, 10);
           }
           setTrialGenerations(trialCount);
+
+                    // Load quotas from Supabase if available (override local counts)
+                    try {
+                        const quota = await window.supabaseAuth.getQuota();
+                        if (quota) {
+                            setTrialGenerations(quota.free_generations_remaining);
+                            setUsageCount(quota.free_downloads_remaining);
+                        }
+                    } catch (err) {
+                        console.warn('Failed to load Supabase quotas:', err);
+                        // Use local counts as fallback
+                    }
 
           setIsLoadingAssistants(true);
           const [assistants, fetchedNotifications] = await Promise.all([

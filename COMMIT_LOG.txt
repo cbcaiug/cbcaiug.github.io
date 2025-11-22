@@ -1,6 +1,46 @@
 CBC AI Tool - Commit Log
 ========================
 
+[2025-01-23 02:45 EAT] fix(quota): fix state sync and copy integration with Supabase
+
+CHANGES:
+- js/components/App.js: fixed copy button to consume Supabase quota
+- js/components/App.js: fixed generation tracking to update browser state immediately
+- js/components/App.js: fixed initializeApp to load Supabase quotas FIRST before local fallback
+- js/components/App.js: removed forced model reset when enabling shared API keys
+
+FIXES:
+1. Copy button now properly consumes Supabase download quota and syncs state
+2. Generation count now updates in browser immediately after completion (no reload needed)
+3. Logout/login now shows correct Supabase counts immediately (no more showing 50/20)
+4. Users can now switch between any Gemini model while using shared API keys
+5. State sync uses Promise chains instead of async IIFE for reliable React updates
+
+BEFORE:
+- Copy only decremented local state, not Supabase
+- Generation count required page reload to update
+- Logout/login showed max counts (50/20) until reload
+- Shared API key forced model to gemini-2.5-pro
+- Async tracking in detached context caused state update issues
+
+AFTER:
+- Copy and Save both consume same Supabase quota (free_downloads_remaining)
+- Generation count updates immediately in browser
+- Logout/login shows correct Supabase counts instantly
+- Users can select any Gemini model with shared keys
+- State updates happen in main execution context via Promise chains
+
+TESTING RESULTS:
+✅ Copy reduces both browser and Supabase counts
+✅ Save reduces both browser and Supabase counts
+✅ Generations update browser count immediately
+✅ Logout/login persists correct counts from Supabase
+✅ Model switching works with shared API keys
+✅ Private tabs show same counts (Supabase persistence)
+✅ Browser clear preserves counts (Supabase persistence)
+
+---
+
 [2025-01-XX XX:XX] feat(auth): add Supabase username/email authentication
 
 CHANGES:
@@ -36,8 +76,10 @@ REMOVED:
 - Resend code functionality
 
 NEXT STEPS:
-- Integrate Supabase quota tracking with existing GAS system
+- Integrate Supabase quota tracking with existing GAS system (see SUPABASE_INTEGRATION_PLAN.md)
 - Send generation/download events to both Supabase and GAS for redundancy
+- Test: Clear browser data → quotas persist
+- Test: Private tabs → same quota counts
 - Add OAuth providers (Google, Microsoft, Facebook) - optional
 
 ---
@@ -50,3 +92,4 @@ feat(auth): add Supabase authentication with username/email
 - Display active user in sidebar with sign out
 - Session persists across page reloads
 - Remove unused email verification code
+- RPC functions ready for quota integration (see SUPABASE_INTEGRATION_PLAN.md)
