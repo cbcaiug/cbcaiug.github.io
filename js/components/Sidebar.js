@@ -71,22 +71,33 @@ const Sidebar = ({
         
         loadUser();
         
-        // Listen for auth state changes
+        // Listen for auth state changes from Supabase
         let authListener = null;
-        if (window.supabaseAuth?.supabase) {
-            const { data } = window.supabaseAuth.supabase.auth.onAuthStateChange((event, session) => {
-                setCurrentUser(session?.user || null);
-            });
-            authListener = data;
-        }
+        const setupListener = () => {
+            if (window.supabaseAuth?.supabase) {
+                const { data } = window.supabaseAuth.supabase.auth.onAuthStateChange((event, session) => {
+                    console.log('Auth state changed:', event, session?.user?.email);
+                    setCurrentUser(session?.user || null);
+                });
+                authListener = data;
+            }
+        };
         
-        // Also listen for custom event
-        const handleAuthChange = () => loadUser();
-        window.addEventListener('authStateChanged', handleAuthChange);
+        // Setup listener immediately or wait for supabaseAuth to be ready
+        if (window.supabaseAuth?.supabase) {
+            setupListener();
+        } else {
+            const checkInterval = setInterval(() => {
+                if (window.supabaseAuth?.supabase) {
+                    setupListener();
+                    clearInterval(checkInterval);
+                }
+            }, 100);
+            setTimeout(() => clearInterval(checkInterval), 5000);
+        }
         
         return () => {
             authListener?.subscription?.unsubscribe();
-            window.removeEventListener('authStateChanged', handleAuthChange);
         };
     }, []);
 

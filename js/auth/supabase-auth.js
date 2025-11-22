@@ -208,7 +208,7 @@ signUpBtn.addEventListener('click', async () => {
   if (data?.user) {
     await ensureQuotaRow(data.user.id);
     hideModal();
-    window.location.reload();
+    window.showConsentModal?.();
   }
 });
 
@@ -239,8 +239,6 @@ signInBtn.addEventListener('click', async () => {
     hideModal();
     if (!quota?.accepted_terms) {
       window.showConsentModal?.();
-    } else {
-      window.location.reload();
     }
   }
 });
