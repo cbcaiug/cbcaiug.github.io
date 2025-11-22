@@ -410,8 +410,12 @@ window.supabaseAuth = {
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) throw new Error('Not signed in');
     const rpc = action === 'generation' ? 'consume_generation' : 'consume_download';
-    const { error } = await supabase.rpc(rpc, { p_user_id: user.id });
+    const { data: rpcData, error: rpcError } = await supabase.rpc(rpc, { p_user_id: user.id });
+    if (rpcError) throw rpcError;
+    // After RPC, return the latest usage_quotas row for convenience
+    const { data, error } = await supabase.from('usage_quotas').select('*').eq('user_id', user.id).single();
     if (error) throw error;
+    return data;
   },
   async signOut() {
     await supabase.auth.signOut();
@@ -426,21 +430,24 @@ window.supabaseAuth = {
       await supabase.from('usage_quotas').upsert({ user_id: user.id, accepted_terms: true }, { onConflict: 'user_id' });
     }
   },
-  subscribeToQuotaUpdates(callback) {
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      if (!user) return;
-      const channel = supabase.channel('quota-changes')
-        .on('postgres_changes', {
-          event: 'UPDATE',
-          schema: 'public',
-          table: 'usage_quotas',
-          filter: `user_id=eq.${user.id}`
-        }, (payload) => {
-          callback(payload.new);
-        })
-        .subscribe();
-      return () => supabase.removeChannel(channel);
-    });
+  async subscribeToQuotaUpdates(callback) {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return () => {};
+    const channel = supabase.channel('quota-changes')
+      .on('postgres_changes', {
+        event: 'UPDATE',
+        schema: 'public',
+        table: 'usage_quotas',
+        filter: `user_id=eq.${user.id}`
+      }, (payload) => {
+        try { callback(payload.new); } catch (e) { console.error('quota callback error', e); }
+      });
+
+    // subscribe and return an unsubscribe function
+    await channel.subscribe();
+    return () => {
+      try { supabase.removeChannel(channel); } catch (e) { console.warn('removeChannel failed', e); }
+    };
   }
 };
 

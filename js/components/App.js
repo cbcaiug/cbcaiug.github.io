@@ -1087,13 +1087,23 @@ const handleHelpButtonClick = () => {};
       const handleShowConsent = () => setShowConsentModal(true);
       window.addEventListener('showConsent', handleShowConsent);
       
-      // Subscribe to real-time quota updates from Supabase
-      const unsubscribe = window.supabaseAuth?.subscribeToQuotaUpdates?.((quota) => {
-          if (quota) {
-              setTrialGenerations(quota.free_generations_remaining);
-              setUsageCount(quota.free_downloads_remaining);
-          }
-      });
+            // Subscribe to real-time quota updates from Supabase
+            let unsubscribe = null;
+            try {
+                const sub = window.supabaseAuth?.subscribeToQuotaUpdates?.((quota) => {
+                    if (quota) {
+                        setTrialGenerations(quota.free_generations_remaining);
+                        setUsageCount(quota.free_downloads_remaining);
+                    }
+                });
+                if (sub && typeof sub.then === 'function') {
+                    sub.then(u => { unsubscribe = u; }).catch(err => console.warn('subscribeToQuotaUpdates failed', err));
+                } else {
+                    unsubscribe = sub;
+                }
+            } catch (err) {
+                console.warn('Failed to subscribe to quota updates:', err);
+            }
       
       // Initialize the app on first load
       const initializeApp = async () => {
@@ -1181,12 +1191,15 @@ const handleHelpButtonClick = () => {};
       };
       initializeApp();
 
-      // Add paste event listener
-      document.addEventListener('paste', handlePaste);
-      return () => {
-          document.removeEventListener('paste', handlePaste);
-          window.removeEventListener('showConsent', handleShowConsent);
-      };
+            // Add paste event listener
+            document.addEventListener('paste', handlePaste);
+            return () => {
+                    document.removeEventListener('paste', handlePaste);
+                    window.removeEventListener('showConsent', handleShowConsent);
+                    if (typeof unsubscribe === 'function') {
+                        try { unsubscribe(); } catch (e) { console.warn('Error unsubscribing quota updates', e); }
+                    }
+            };
   }, []);
 
 
