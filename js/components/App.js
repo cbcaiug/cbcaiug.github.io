@@ -1034,6 +1034,10 @@ const handleHelpButtonClick = () => {};
 
   // --- EFFECTS ---
   useEffect(() => {
+      // Listen for consent modal trigger from auth
+      const handleShowConsent = () => setShowConsentModal(true);
+      window.addEventListener('showConsent', handleShowConsent);
+      
       // Initialize the app on first load
       const initializeApp = async () => {
           if (!localStorage.getItem('userConsentV1')) {
@@ -1102,7 +1106,10 @@ const handleHelpButtonClick = () => {};
 
       // Add paste event listener
       document.addEventListener('paste', handlePaste);
-      return () => document.removeEventListener('paste', handlePaste);
+      return () => {
+          document.removeEventListener('paste', handlePaste);
+          window.removeEventListener('showConsent', handleShowConsent);
+      };
   }, []);
 
 
@@ -1290,9 +1297,10 @@ const handleHelpButtonClick = () => {};
 
   return (
       <div className="h-screen w-screen overflow-hidden flex bg-white">
-          {showConsentModal && <ConsentModal onAccept={() => {
+          {showConsentModal && <ConsentModal onAccept={async () => {
               localStorage.setItem('userConsentV1', 'true');
               setShowConsentModal(false);
+              await window.supabaseAuth?.acceptTerms();
           }} />}
           
                     <Sidebar

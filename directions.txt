@@ -1,0 +1,895 @@
+Me: Had to check under legacy API keys! here it is, the anon public!
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFya29kd2poeHJjcnZzZ2tmZWVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM2ODA2OTIsImV4cCI6MjA3OTI1NjY5Mn0.dPf7TvcS-NmteJbg2QUt-ZVwrvNF2Bfw0Y3zgb9FtvQ
+
+Provide clear detailed step by step, what to copy, where to paste, what to run, from where, how, give ready code, etc
+
+
+
+From GPT-5-mini in Supabase website
+Reasoned
+
+Reasoned
+Step‑by‑step: add Supabase Auth to your app (copy‑paste everything)
+I’ll give exact steps, what to copy, where to paste, and what to run. I’ll assume:
+
+SUPABASE_URL = https://qrkodwjhxrcrvsgkfeeo.supabase.co
+SUPABASE_ANON_KEY = (you pasted the anon key) — I will use a placeholder in the snippets; paste your anon key where indicated.
+Do NOT share your anon key publicly. Use it only in your code. I will not keep it.
+
+Overview of what we'll do now (minimal, non-destructive):
+
+Create the usage_quotas table in Supabase (one SQL statement you paste into Supabase SQL editor).
+Add the Supabase client to your app.html and create a simple Sign In / Sign Up modal (email/password) plus "Accept Terms" persistence and quota initialization.
+Test sign up / sign in in your app.html and verify the quota row exists.
+Follow each numbered step exactly.
+
+Step 1 — Create usage_quotas table in Supabase
+
+Open your project at https://app.supabase.com and select the project (qrkodwjhxrcrvsgkfeeo).
+In the left sidebar click "SQL Editor".
+Click "New query".
+Copy the SQL below into the editor exactly as shown, then press "Run".
+SQL to copy:
+
+SQL Query
+
+
+
+-- Create usage_quotas table to track free generations and downloads per user
+CREATE TABLE IF NOT EXISTS usage_quotas (
+  user_id uuid PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+  free_generations_remaining integer NOT NULL DEFAULT 50,
+  free_downloads_remaining integer NOT NULL DEFAULT 20,
+  accepted_terms boolean NOT NULL DEFAULT FALSE,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+-- Trigger to auto-update updated_at
+CREATE OR REPLACE FUNCTION trg_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = now();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS usage_quotas_updated_at ON usage_quotas;
+CREATE TRIGGER usage_quotas_updated_at
+BEFORE UPDATE ON usage_quotas
+FOR EACH ROW EXECUTE FUNCTION trg_updated_at();
+
+Validation:
+
+After running, go to "Table Editor" in the left sidebar and confirm a table named usage_quotas exists with columns above.
+If any error appears when running SQL, paste the error message here and I’ll help fix it.
+Step 2 — Add Supabase client + auth UI to your app.html We will add a lightweight script to app.html that:
+
+Initializes Supabase client
+Shows a simple modal offering Sign In / Sign Up (email/password) and "Accept terms"
+On first sign-in, creates the usage_quotas row for the user with defaults
+Persists accepted_terms so the modal won’t show again for that user
+Important: Replace placeholders SUPABASE_URL and SUPABASE_ANON_KEY with your values.
+
+Where to put it:
+
+Edit your file cbcaiug.github.io/app.html (the main chat page). Insert the code near the top or just before the closing tag. I’ll give the full snippet to paste.
+Script snippet to copy into app.html (paste near end of file, before ):
+
+<!-- Supabase Auth + minimal UI: paste
+into
+ app.html before </body> -->
+<script type=
+"module"
+>
+
+// Replace these with your project values
+
+
+const
+ SUPABASE_URL =
+"https://qrkodwjhxrcrvsgkfeeo.supabase.co"
+;
+
+const
+ SUPABASE_ANON_KEY =
+"PASTE_YOUR_ANON_KEY_HERE"
+;
+
+// Load Supabase Client from CDN (latest stable)
+
+  import { createClient }
+from
+
+"https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm"
+;
+
+const
+ supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// --- Simple modal HTML (injected) ---
+
+
+const
+ modalHtml = `
+  <style>
+
+#authModal { position: fixed; inset:0; display:flex; align-items:center; justify-content:center;
+
+      background: rgba(
+0
+,
+0
+,
+0
+,
+0.4
+); z-index:
+9999
+; }
+
+#authBox { background:#fff; padding:20px; width:320px; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.2); }
+
+
+#authBox input { width:100%; padding:8px; margin:6px 0; }
+
+
+#authBox button{ padding:8px 12px; margin:6px 6px 0 0;}
+
+
+#authFooter { margin-top:10px; font-size:12px; color:#666; }
+
+  </style>
+  <div id=
+"authModal"
+ style=
+"display:none"
+>
+    <div id=
+"authBox"
+>
+      <div style=
+"text-align:center"
+><img src=
+"/logo.png"
+ alt=
+"Logo"
+ style=
+"height:48px;margin-bottom:8px"
+/></div>
+      <div id=
+"authForms"
+>
+        <input id=
+"emailInput"
+ type=
+"email"
+ placeholder=
+"Email"
+ />
+        <input id=
+"passwordInput"
+ type=
+"password"
+ placeholder=
+"Password"
+ />
+        <div>
+          <button id=
+"signInBtn"
+>Sign
+in
+</button>
+          <button id=
+"signUpBtn"
+>Sign up</button>
+        </div>
+        <div style=
+"margin-top:8px"
+>
+          <label><input type=
+"checkbox"
+ id=
+"termsCheckbox"
+ /> I accept the Terms</label>
+        </div>
+        <div id=
+"authMessage"
+ style=
+"color:red; margin-top:8px; min-height:18px;"
+></div>
+      </div>
+      <div id=
+"authFooter"
+>
+
+Or
+continue
+
+as
+
+guest
+ (
+limited
+). If you already accepted terms
+on
+
+this
+ account, you won't see
+this
+ again.
+      </div>
+    </div>
+  </div>
+  `
+;
+  document.body.insertAdjacentHTML(
+'beforeend'
+, modalHtml);
+
+const
+ authModal = document.getElementById(
+'authModal'
+);
+
+const
+ signInBtn = document.getElementById(
+'signInBtn'
+);
+
+const
+ signUpBtn = document.getElementById(
+'signUpBtn'
+);
+
+const
+ emailInput = document.getElementById(
+'emailInput'
+);
+
+const
+ passwordInput = document.getElementById(
+'passwordInput'
+);
+
+const
+ termsCheckbox = document.getElementById(
+'termsCheckbox'
+);
+
+const
+ authMessage = document.getElementById(
+'authMessage'
+);
+
+// Helper: show/hide modal
+
+
+function
+showModal
+(
+)
+ { authModal.style.display =
+'flex'
+; }
+
+function
+hideModal
+(
+)
+ { authModal.style.display =
+'none'
+; }
+
+// On load: check local session; if logged in, fetch quotas and hide modal if accepted_terms true
+
+  (
+async
+ function
+initAuth
+(
+)
+ {
+
+const
+ { data: { user } } =
+await
+ supabase.auth.getUser();
+// checks existing session
+
+
+if
+ (user) {
+
+// fetch quota row
+
+
+const
+ { data: quota } =
+await
+ supabase
+        .
+from
+(
+'usage_quotas'
+)
+        .
+select
+(
+'accepted_terms, free_generations_remaining, free_downloads_remaining'
+)
+        .eq(
+'user_id'
+, user.id)
+        .single()
+        .maybeSingle();
+
+if
+ (quota && quota.accepted_terms) {
+        hideModal();
+      }
+else
+ {
+
+// create quota row if missing, then show modal
+
+
+await
+ ensureQuotaRow(user.id);
+        showModal();
+      }
+    }
+else
+ {
+
+// no session — show modal (we want user to sign up / sign in)
+
+      showModal();
+    }
+  })();
+
+// Ensure usage_quotas row exists
+
+
+async
+ function
+ensureQuotaRow
+(
+user_id
+)
+ {
+
+const
+ { data, error } =
+await
+ supabase
+      .
+from
+(
+'usage_quotas'
+)
+      .
+select
+(
+'user_id'
+)
+      .eq(
+'user_id'
+, user_id)
+      .maybeSingle();
+
+if
+ (error) {
+      console.error(
+'Error reading usage_quotas:'
+, error);
+    }
+
+if
+ (!data) {
+
+const
+ { error: insErr } =
+await
+ supabase
+        .
+from
+(
+'usage_quotas'
+)
+        .insert([{ user_id, free_generations_remaining:
+50
+, free_downloads_remaining:
+20
+, accepted_terms:
+false
+ }]);
+
+if
+ (insErr) console.error(
+'Error creating usage_quotas:'
+, insErr);
+    }
+  }
+
+// Sign up handler (email/password)
+
+  signUpBtn.addEventListener(
+'click'
+,
+async
+ () => {
+    authMessage.textContent =
+''
+;
+
+const
+ email = emailInput.
+value
+.trim();
+
+const
+ password = passwordInput.
+value
+;
+
+const
+ accepted = termsCheckbox.checked;
+
+if
+ (!email || !password) { authMessage.textContent =
+'Enter email and password.'
+;
+return
+; }
+
+if
+ (!accepted) { authMessage.textContent =
+'Please accept the Terms.'
+;
+return
+; }
+
+// Sign up using Supabase
+
+
+const
+ { data, error } =
+await
+ supabase.auth.signUp({ email, password });
+
+if
+ (error) { authMessage.textContent = error.message ||
+'Sign up error'
+;
+return
+; }
+
+// If the user is created immediately (no email confirmation flow), create quota row
+
+
+// SignUp usually triggers an email confirmation; we still create a placeholder
+
+
+if
+ (data?.user) {
+
+await
+ ensureQuotaRow(data.user.id);
+
+// set accepted_terms true
+
+
+await
+ supabase.
+from
+(
+'usage_quotas'
+).upsert({ user_id: data.user.id, accepted_terms:
+true
+ }, { onConflict:
+'user_id'
+ });
+      hideModal();
+    }
+else
+ {
+      authMessage.textContent =
+'Check your email to confirm your account, then sign in.'
+;
+    }
+  });
+
+// Sign in handler
+
+  signInBtn.addEventListener(
+'click'
+,
+async
+ () => {
+    authMessage.textContent =
+''
+;
+
+const
+ email = emailInput.
+value
+.trim();
+
+const
+ password = passwordInput.
+value
+;
+
+const
+ accepted = termsCheckbox.checked;
+
+if
+ (!email || !password) { authMessage.textContent =
+'Enter email and password.'
+;
+return
+; }
+
+if
+ (!accepted) { authMessage.textContent =
+'Please accept the Terms.'
+;
+return
+; }
+
+const
+ { data, error } =
+await
+ supabase.auth.signInWithPassword({ email, password });
+
+if
+ (error) { authMessage.textContent = error.message ||
+'Sign in error'
+;
+return
+; }
+
+if
+ (data?.user) {
+
+await
+ ensureQuotaRow(data.user.id);
+
+// mark accepted_terms true
+
+
+await
+ supabase.
+from
+(
+'usage_quotas'
+).upsert({ user_id: data.user.id, accepted_terms:
+true
+ }, { onConflict:
+'user_id'
+ });
+      hideModal();
+    }
+  });
+
+// Expose helper to other app code: check and decrement quotas before generation/download
+
+  window.supabaseAuth = {
+    supabase,
+
+async
+
+getQuota
+(
+)
+ {
+
+const
+ { data: { user } } =
+await
+ supabase.auth.getUser();
+
+if
+ (!user)
+return
+
+null
+;
+
+const
+ { data: quota } =
+await
+ supabase.
+from
+(
+'usage_quotas'
+).
+select
+(
+'*'
+).eq(
+'user_id'
+, user.id).single();
+
+return
+ quota;
+    },
+
+// decrement a counter: 'generation' or 'download'
+
+
+async
+
+consume
+(
+action
+)
+ {
+
+const
+ { data: { user } } =
+await
+ supabase.auth.getUser();
+
+if
+ (!user)
+throw
+
+new
+ Error(
+'Not signed in'
+);
+
+if
+ (![
+'generation'
+,
+'download'
+].includes(action))
+throw
+
+new
+ Error(
+'Invalid action'
+);
+
+// Use RPC-like safe update: check >0 then decrement
+
+
+if
+ (action ===
+'generation'
+) {
+
+const
+ { error } =
+await
+ supabase.rpc(
+'consume_generation'
+, { p_user_id: user.id });
+
+if
+ (error)
+throw
+ error;
+      }
+else
+ {
+
+const
+ { error } =
+await
+ supabase.rpc(
+'consume_download'
+, { p_user_id: user.id });
+
+if
+ (error)
+throw
+ error;
+      }
+    }
+  };
+
+// OPTIONAL: sign out helper
+
+  window.signOutSupabase =
+async
+ () => {
+
+await
+ supabase.auth.signOut();
+
+// show modal again
+
+    showModal();
+  };
+
+// Create the two RPC functions (if not already present) by calling the SQL endpoint.
+
+
+// We use REST to run SQL via the public API key: we can call the SQL editor but it's safer to create them here by calling the SQL API isn't allowed.
+
+
+// Instead, instruct the next step (below) to add two small SQL functions in the SQL editor.
+
+  console.info(
+'Supabase auth module loaded. Call window.supabaseAuth.getQuota() or .consume("generation") from your app code.'
+);
+</script>
+
+Notes about the snippet:
+
+Replace PASTE_YOUR_ANON_KEY_HERE with your anon key (the long JWT string you showed).
+It imports the supabase-js client from jsdelivr, which is okay for GitHub Pages.
+It injects a minimal modal. You can style it or replace the logo path (/logo.png) as needed.
+For simplicity we mark accepted_terms true right away when signing in/up.
+The snippet exposes window.supabaseAuth.getQuota() and .consume(action) so your existing generation/download code can call them before proceeding.
+Step 3 — Add server-side RPC functions for safe decrement (one-time SQL) We want safe, atomic decrements so two simultaneous requests don't let a user go negative. Add the following SQL to Supabase SQL editor (New query → Run).
+
+SQL to copy:
+
+SQL Query
+
+
+
+-- RPC to safely consume a generation
+CREATE OR REPLACE FUNCTION consume_generation(p_user_id uuid)
+RETURNS void LANGUAGE plpgsql AS $$
+BEGIN
+  UPDATE usage_quotas
+  SET free_generations_remaining = free_generations_remaining - 1
+  WHERE user_id = p_user_id AND free_generations_remaining > 0;
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'No generations remaining';
+  END IF;
+END;
+$$;
+
+-- RPC to safely consume a download
+CREATE OR REPLACE FUNCTION consume_download(p_user_id uuid)
+RETURNS void LANGUAGE plpgsql AS $$
+BEGIN
+  UPDATE usage_quotas
+  SET free_downloads_remaining = free_downloads_remaining - 1
+  WHERE user_id = p_user_id AND free_downloads_remaining > 0;
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'No downloads remaining';
+  END IF;
+END;
+$$;
+
+Validation:
+
+After running, go to "Database" → "Functions" in Supabase dashboard and ensure consume_generation and consume_download exist.
+If errors occur, paste the error and I’ll help.
+Step 4 — How to integrate quota checks into your generation/download flows (client-side) Wherever your web app triggers a generation or a download, do the following BEFORE calling your GAS API or using local keys:
+
+Example (small JS pseudocode to paste in your generation function):
+
+async
+
+function
+
+tryGenerate
+(
+)
+{
+
+try
+ {
+
+const
+ quota =
+await
+
+window
+.supabaseAuth.getQuota();
+
+if
+ (!quota) { alert(
+'Please sign in to use free generations.'
+);
+return
+; }
+
+if
+ (quota.free_generations_remaining <=
+0
+) {
+      alert(
+'Free generations exhausted. Please provide your own API key.'
+);
+
+return
+;
+    }
+
+// Atomically consume one generation on the server
+
+
+try
+ {
+
+await
+
+window
+.supabaseAuth.consume(
+'generation'
+);
+    }
+catch
+ (err) {
+      alert(
+'Could not consume generation: '
+ + (err.message || err));
+
+return
+;
+    }
+
+// Proceed to call your GAS generation endpoint or local generation logic
+
+
+// Example: await callYourGASGeneration(...);
+
+    alert(
+'Generation allowed — proceeding.'
+);
+  }
+catch
+ (err) {
+
+console
+.error(err);
+    alert(
+'Error checking quota. Please sign in.'
+);
+  }
+}
+
+For downloads, call window.supabaseAuth.consume('download') the same way.
+
+Important: This client-side enforcement is good for now. If you want to prevent direct calls to your GAS endpoint bypassing the client, we’ll later add server-side checks in GAS to validate JWT and enforce quotas.
+
+Step 5 — Testing (simple checklist)
+
+Edit app.html: paste the script from Step 2 and replace the anon key placeholder.
+Open https://cbcaiug.github.io/app.html in a browser (use one tab).
+The modal should show. Try signing up with an email you control.
+If Supabase requires email confirmation, follow its email confirmation flow then sign in.
+After sign in, open Supabase dashboard → Table Editor → usage_quotas. You should see a row with your user_id and defaults (50/20).
+From browser console, run window.supabaseAuth.getQuota().then(q => console.log(q))
+You should see the row.
+From console test: window.supabaseAuth.consume('generation').then(()=>console.log('consumed')).catch(e=>console.error(e))
+Then check the usage_quotas row decreased by 1.
+If anything fails in these tests, copy the browser console error or the SQL error message and paste here; I’ll help fix it.
+
+Step 6 — Optional: Accept Terms for guest users and not show again
+
+The code sets accepted_terms to true when a user signs in or signs up with the checkbox checked.
+If you want non-logged-in guests to accept terms and persist that locally without login:
+Add localStorage flag in your site (but that won’t persist across devices).
+The server persistence we added requires login (which is what you want).
+Extra: Add OAuth providers (Google, Microsoft, Phone) — brief notes (we can do step-by-step later)
+
+Google / Microsoft: you must create OAuth credentials in Google Cloud Console and Microsoft Azure portal and then paste client IDs/secrets in Supabase Auth → Providers. I’ll guide this step when you want it.
+Phone (SMS): Supabase needs a 3rd-party Twilio (or other) SMS provider configured — a bit more setup; we can postpone.
+What I will do next if you say "Do it now"
+
+If you want, I can produce a smaller, copy‑paste patch of your exact app.html if you paste its current contents here (or the section around your current sign-in UI). I will edit it and return the full updated file.
+Or, if you prefer to do it yourself, follow Steps 1–5 above and tell me the step where you get stuck.
+I recommend you:
+
+Run Step 1 SQL now in the SQL Editor (create the table).
+Run Step 3 SQL (create RPCs).
+Paste the Step 2 script into app.html (replace anon key).
+Test using checklist in Step 5.
+Tell me when you’ve run Step 1 and Step 3 (or if you want me to provide the exact patch for your app.html). If you paste your app.html contents I’ll produce the ready-to-drop-in full file.
+
+
+

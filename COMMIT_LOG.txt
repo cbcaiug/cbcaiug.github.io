@@ -1,0 +1,52 @@
+CBC AI Tool - Commit Log
+========================
+
+[2025-01-XX XX:XX] feat(auth): add Supabase username/email authentication
+
+CHANGES:
+- js/auth/supabase-auth.js: minimal auth module with username or email support
+- js/components/App.js: integrated consent modal trigger for new users
+- js/components/Sidebar.js: display active username/email with sign out button
+- app.html: integrated Supabase auth script
+
+FEATURES:
+- Users sign up with username (auto-appends @local.app) or email + password
+- No email confirmation required (disabled in Supabase dashboard)
+- Consent modal shows after first sign up/sign in for terms acceptance
+- Session persists across assistants and page reloads
+- Active account shown in sidebar (username without @local.app suffix)
+- Sign Out button clears Supabase session
+- Auth state listener updates username immediately after sign in
+
+DATABASE:
+- Supabase table: usage_quotas (user_id, free_generations_remaining: 50, free_downloads_remaining: 20, accepted_terms)
+- RPC functions: consume_generation(), consume_download()
+- Row Level Security (RLS) policies enabled
+
+CONFIGURATION NEEDED:
+1. Supabase dashboard → Authentication → Providers → Email → Confirm email: OFF
+2. Supabase dashboard → Authentication → URL Configuration:
+   - Site URL: https://cbcaiug.github.io/cbcaiug.github.io/app.html
+3. Run SQL in Supabase SQL Editor (see directions.txt for full SQL)
+
+REMOVED:
+- auth-confirm.html (email confirmation handler - no longer needed)
+- OTP/token verification code
+- Email countdown timers
+- Resend code functionality
+
+NEXT STEPS:
+- Integrate Supabase quota tracking with existing GAS system
+- Send generation/download events to both Supabase and GAS for redundancy
+- Add OAuth providers (Google, Microsoft, Facebook) - optional
+
+---
+COMMIT MESSAGE:
+
+feat(auth): add Supabase authentication with username/email
+
+- Add minimal auth system without email confirmation
+- Integrate consent modal for new users
+- Display active user in sidebar with sign out
+- Session persists across page reloads
+- Remove unused email verification code

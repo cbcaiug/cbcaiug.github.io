@@ -39,6 +39,7 @@ const Sidebar = ({
     const [activeTab, setActiveTab] = useState('ai');
     const [showPersonalKey, setShowPersonalKey] = useState(!useSharedApiKey);
     const [keyModeToast, setKeyModeToast] = useState('');
+    const [currentUser, setCurrentUser] = useState(null);
         const [assistantSearch, setAssistantSearch] = useState('');
         const [assistantSelectorOpen, setAssistantSelectorOpen] = useState(false);
         const assistantInputRef = useRef(null);
@@ -58,6 +59,27 @@ const Sidebar = ({
         const modelToggleRef = useRef(null);
     
     const selectedProvider = AI_PROVIDERS.find(p => p.key === selectedProviderKey);
+
+    // Get current user from Supabase
+    useEffect(() => {
+        const loadUser = async () => {
+            if (window.supabaseAuth?.supabase) {
+                const { data: { user } } = await window.supabaseAuth.supabase.auth.getUser();
+                setCurrentUser(user);
+            }
+        };
+        
+        loadUser();
+        
+        // Listen for auth state changes
+        const authListener = window.supabaseAuth?.supabase?.auth.onAuthStateChange((event, session) => {
+            setCurrentUser(session?.user || null);
+        });
+        
+        return () => {
+            authListener?.data?.subscription?.unsubscribe();
+        };
+    }, []);
 
     // Handle personal key toggle
     const handlePersonalKeyToggle = (enabled) => {
@@ -705,7 +727,28 @@ const Sidebar = ({
             <div className="flex-1 flex flex-col min-h-0">
                 {/* Header with integrated close button */}
                 <div className="flex justify-between items-center p-4 flex-shrink-0 border-b border-slate-700">
-                    <h1 className="text-xl font-bold">Settings</h1>
+                    <div className="flex-1 min-w-0">
+                        <h1 className="text-xl font-bold">Settings</h1>
+                        {currentUser && (
+                            <div className="flex items-center gap-2 mt-1">
+                                <p className="text-xs text-slate-400 truncate">
+                                    {currentUser.email?.replace('@local.app', '') || 'User'}
+                                </p>
+                                <button
+                                    onClick={async () => {
+                                        if (confirm('Sign out?')) {
+                                            await window.supabaseAuth?.signOut();
+                                            window.location.reload();
+                                        }
+                                    }}
+                                    className="text-xs text-red-400 hover:text-red-300 underline"
+                                    title="Sign out"
+                                >
+                                    Sign Out
+                                </button>
+                            </div>
+                        )}
+                    </div>
                     <button 
                         onClick={onClose} 
                         className="p-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg"
