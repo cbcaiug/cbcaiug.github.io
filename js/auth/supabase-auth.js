@@ -183,18 +183,16 @@ signUpBtn.addEventListener('click', async () => {
   if (!email || !password) return showMessage('Enter email and password');
   if (!email.includes('@')) return showMessage('Please enter a valid email');
   
-  const { data, error } = await supabase.auth.signUp({ email, password });
+  const { error } = await supabase.auth.signInWithOtp({ email, options: { shouldCreateUser: true } });
   if (error) return showMessage(error.message);
   
-  if (data?.user && !data.user.confirmed_at) {
-    pendingEmail = email;
-    authScreen.style.display = 'none';
-    otpScreen.style.display = 'block';
-    document.getElementById('otpEmailDisplay').innerHTML = `Enter the 6-digit code sent to<br><strong>${email}</strong>`;
-    startOtpTimer();
-    otpInputs[0].focus();
-    showMessage('');
-  }
+  pendingEmail = email;
+  authScreen.style.display = 'none';
+  otpScreen.style.display = 'block';
+  document.getElementById('otpEmailDisplay').innerHTML = `Enter the 8-digit code sent to<br><strong>${email}</strong>`;
+  startOtpTimer();
+  otpInputs[0].focus();
+  showMessage('');
 });
 
 // Sign In
@@ -225,7 +223,7 @@ verifyOtpBtn.addEventListener('click', async () => {
   const { data, error } = await supabase.auth.verifyOtp({
     email: pendingEmail,
     token: otp,
-    type: 'signup'
+    type: 'email'
   });
   
   if (error) return showOtpMessage(error.message, 'error');
@@ -241,7 +239,7 @@ resendOtpLink.addEventListener('click', async () => {
   if (!pendingEmail) return;
   resendOtpLink.style.pointerEvents = 'none';
   resendOtpLink.style.opacity = '0.5';
-  const { error } = await supabase.auth.resend({ type: 'signup', email: pendingEmail });
+  const { error } = await supabase.auth.signInWithOtp({ email: pendingEmail });
   if (error) {
     resendOtpLink.style.pointerEvents = '';
     resendOtpLink.style.opacity = '';
