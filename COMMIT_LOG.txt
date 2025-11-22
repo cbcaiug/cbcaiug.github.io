@@ -1,6 +1,33 @@
 CBC AI Tool - Commit Log
 ========================
 
+[2025-01-23 03:15 EAT] fix(quota): add real-time sync and fix model selection
+
+CHANGES:
+- js/auth/supabase-auth.js: added subscribeToQuotaUpdates() for real-time sync
+- js/components/App.js: added real-time quota listener to update counts across devices
+- js/components/App.js: fixed onModelChange to accept both event and direct model name
+
+FIXES:
+1. Real-time quota sync across devices (phone/PC updates immediately)
+2. Model selection now works with shared API keys (can select any Gemini model)
+3. Browser counts update automatically when other device consumes quota
+
+BEFORE:
+- Browser required reload to see quota changes from other devices
+- Model selection stuck on gemini-2.5-pro with shared keys
+- Sidebar passed model name but App.js expected event object
+
+AFTER:
+- Supabase real-time subscription updates browser counts instantly
+- Users can select any Gemini model while using shared keys
+- Model selection works from both dropdown and direct calls
+
+NOTE: Shared API keys not working is a backend (GAS) issue, not frontend.
+Recommendation: Check GAS script for key rotation logic and add fresh keys.
+
+---
+
 [2025-01-23 02:45 EAT] fix(quota): fix state sync and copy integration with Supabase
 
 CHANGES:

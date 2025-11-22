@@ -147,6 +147,22 @@ window.supabaseAuth = {
     if (user) {
       await supabase.from('usage_quotas').upsert({ user_id: user.id, accepted_terms: true }, { onConflict: 'user_id' });
     }
+  },
+  subscribeToQuotaUpdates(callback) {
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (!user) return;
+      const channel = supabase.channel('quota-changes')
+        .on('postgres_changes', {
+          event: 'UPDATE',
+          schema: 'public',
+          table: 'usage_quotas',
+          filter: `user_id=eq.${user.id}`
+        }, (payload) => {
+          callback(payload.new);
+        })
+        .subscribe();
+      return () => supabase.removeChannel(channel);
+    });
   }
 };
 

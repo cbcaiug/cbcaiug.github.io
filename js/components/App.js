@@ -1087,6 +1087,14 @@ const handleHelpButtonClick = () => {};
       const handleShowConsent = () => setShowConsentModal(true);
       window.addEventListener('showConsent', handleShowConsent);
       
+      // Subscribe to real-time quota updates from Supabase
+      const unsubscribe = window.supabaseAuth?.subscribeToQuotaUpdates?.((quota) => {
+          if (quota) {
+              setTrialGenerations(quota.free_generations_remaining);
+              setUsageCount(quota.free_downloads_remaining);
+          }
+      });
+      
       // Initialize the app on first load
       const initializeApp = async () => {
           if (!localStorage.getItem('userConsentV1')) {
@@ -1407,7 +1415,11 @@ const handleHelpButtonClick = () => {};
                   const provider = AI_PROVIDERS.find(p => p.key === newProviderKey);
                   setSelectedModelName(provider.key === 'google' ? 'gemini-2.5-pro' : provider.models[0].name);
               }}
-              onModelChange={(e) => setSelectedModelName(e.target.value)}
+              onModelChange={(modelNameOrEvent) => {
+                  // Handle both event object and direct model name
+                  const modelName = typeof modelNameOrEvent === 'string' ? modelNameOrEvent : modelNameOrEvent.target.value;
+                  setSelectedModelName(modelName);
+              }}
               onApiKeyChange={handleApiKeyChange}
               onAutoDeleteChange={(e) => setAutoDeleteHours(e.target.value)}
               onResetSettings={resetSettings}
