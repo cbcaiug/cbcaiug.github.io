@@ -415,9 +415,6 @@ window.supabaseAuth = {
   },
   async signOut() {
     await supabase.auth.signOut();
-    // Force clear all storage
-    localStorage.removeItem('supabase.auth.token');
-    sessionStorage.clear();
     if (window.__updateSidebarUser) {
       window.__updateSidebarUser(null);
     }
@@ -452,3 +449,20 @@ window.showConsentModal = () => {
   const event = new CustomEvent('showConsent');
   window.dispatchEvent(event);
 };
+
+// Ensure modal follows Supabase auth state changes (defensive)
+if (supabase && supabase.auth && typeof showModal === 'function' && typeof hideModal === 'function') {
+  supabase.auth.onAuthStateChange((event, session) => {
+    try {
+      if (!session || !session.user) {
+        // no user: show login modal and notify sidebar
+        try { window.__updateSidebarUser && window.__updateSidebarUser(null); } catch(_) {}
+        showModal();
+      } else {
+        // user signed in: hide modal and update sidebar
+        try { window.__updateSidebarUser && window.__updateSidebarUser(session.user); } catch(_) {}
+        hideModal();
+      }
+    } catch (e) { console.debug('auth state handler error', e); }
+  });
+}

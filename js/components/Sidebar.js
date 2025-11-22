@@ -745,8 +745,10 @@ const Sidebar = ({
                                 <button
                                     onClick={async () => {
                                         if (confirm('Sign out?')) {
+                                            // Call signOut which clears session and shows the auth modal
                                             await window.supabaseAuth?.signOut();
-                                            setTimeout(() => window.location.reload(), 100);
+                                            // Update sidebar state immediately so UI reflects signed-out state
+                                            try { setCurrentUser(null); } catch (e) { /* ignore */ }
                                         }
                                     }}
                                     className="text-xs text-red-400 hover:text-red-300 underline"
