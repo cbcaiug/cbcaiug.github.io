@@ -417,6 +417,9 @@ window.supabaseAuth = {
   },
   async signOut() {
     await supabase.auth.signOut();
+    if (window.__updateSidebarUser) {
+      window.__updateSidebarUser(null);
+    }
     showModal();
   },
   async acceptTerms() {
