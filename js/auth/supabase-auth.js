@@ -17,7 +17,7 @@ const modalHTML = `
 @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 #authBox { background: white; padding: 24px; width: 90%; max-width: 380px; border-radius: 16px; box-shadow: 0 24px 48px rgba(0,0,0,0.2); font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; position: relative; z-index: 100000 !important; max-height: 85vh; overflow-y: auto; animation: slideUp 0.3s ease; }
 #authBox * { position: relative; z-index: 100001 !important; }
-#authBox img { display: block; margin: 0 auto 16px; height: 48px; border-radius: 12px; }
+#authBox img { display: block; margin: 0 auto 16px; height: 48px; border-radius: 12px; filter: none !important; }
 #authBox h2 { margin: 0 0 6px; font-size: 20px; font-weight: 700; text-align: center; color: #1a1a1a; letter-spacing: -0.5px; }
 #authBox p { margin: 0 0 16px; font-size: 13px; color: #666; text-align: center; line-height: 1.4; }
 #authBox input { width: 100%; padding: 12px 14px; margin-bottom: 10px; border: 2px solid #e5e7eb; border-radius: 12px; font-size: 14px; box-sizing: border-box; background: #fafafa !important; color: #1a1a1a !important; transition: all 0.2s; }
