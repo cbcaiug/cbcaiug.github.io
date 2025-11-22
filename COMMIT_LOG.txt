@@ -1,6 +1,39 @@
 CBC AI Tool - Commit Log
 ========================
 
+[2025-01-23 04:00 EAT] feat(auth): add OAuth and OTP verification to auth modal
+
+CHANGES:
+- js/auth/supabase-auth.js: complete auth modal redesign
+- Added Google OAuth button with official branding
+- Added OTP verification screen with 6-digit input
+- Disabled Facebook/Twitter OAuth (too complex to configure)
+- Removed username support (email only)
+- Added auto-focus and keyboard navigation for OTP inputs
+- Added resend OTP functionality
+- Better error handling and user feedback
+
+FEATURES:
+- ✅ Google OAuth (one-click sign in)
+- ✅ Email/Password authentication
+- ✅ OTP email verification (6-digit code)
+- ✅ Resend OTP code
+- ✅ Professional UI with proper icons
+- ✅ Mobile-responsive design
+
+REMOVED:
+- ❌ Username-only accounts (@local.app)
+- ❌ Facebook OAuth (disabled)
+- ❌ Twitter OAuth (disabled)
+
+NEXT STEPS:
+- Update Supabase email template (remove links, OTP only)
+- Update Site URL in Supabase settings
+- Test OTP verification flow
+- Disable Facebook/Twitter in Supabase dashboard
+
+---
+
 [2025-01-23 03:25 EAT] security: remove exposed API keys from repository
 
 CRITICAL SECURITY FIX:
