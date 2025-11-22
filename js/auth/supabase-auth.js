@@ -207,9 +207,8 @@ signUpBtn.addEventListener('click', async () => {
   if (error) return showMessage(error.message);
   if (data?.user) {
     await ensureQuotaRow(data.user.id);
-    setTimeout(() => window.dispatchEvent(new CustomEvent('authStateChanged')), 100);
     hideModal();
-    window.showConsentModal?.();
+    window.location.reload();
   }
 });
 
@@ -237,10 +236,11 @@ signInBtn.addEventListener('click', async () => {
   if (data?.user) {
     await ensureQuotaRow(data.user.id);
     const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', data.user.id).single();
-    setTimeout(() => window.dispatchEvent(new CustomEvent('authStateChanged')), 100);
     hideModal();
     if (!quota?.accepted_terms) {
       window.showConsentModal?.();
+    } else {
+      window.location.reload();
     }
   }
 });
