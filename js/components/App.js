@@ -1086,6 +1086,25 @@ const handleHelpButtonClick = () => {};
       // Listen for consent modal trigger from auth
       const handleShowConsent = () => setShowConsentModal(true);
       window.addEventListener('showConsent', handleShowConsent);
+      // Listen for quota updates dispatched by auth module (priority: Supabase)
+      const handleQuotaUpdated = (e) => {
+          try {
+              const q = e?.detail;
+              if (!q) return;
+              // Prefer Supabase values and persist them locally so different browsers sync
+              if (typeof q.free_generations_remaining === 'number') {
+                  setTrialGenerations(q.free_generations_remaining);
+                  localStorage.setItem('trialGenerationsCount', String(q.free_generations_remaining));
+              }
+              if (typeof q.free_downloads_remaining === 'number') {
+                  setUsageCount(q.free_downloads_remaining);
+                  localStorage.setItem('saveUsageCount', String(q.free_downloads_remaining));
+              }
+          } catch (err) {
+              console.error('Error handling quotaUpdated event', err);
+          }
+      };
+      window.addEventListener('quotaUpdated', handleQuotaUpdated);
       
       // Subscribe to real-time quota updates from Supabase
       const unsubscribe = window.supabaseAuth?.subscribeToQuotaUpdates?.((quota) => {
@@ -1108,8 +1127,13 @@ const handleHelpButtonClick = () => {};
           try {
               const quota = await window.supabaseAuth.getQuota();
               if (quota) {
+                  // Prioritize Supabase values and persist locally so browsers stay in sync
                   setTrialGenerations(quota.free_generations_remaining);
                   setUsageCount(quota.free_downloads_remaining);
+                  try {
+                      localStorage.setItem('trialGenerationsCount', String(quota.free_generations_remaining));
+                      localStorage.setItem('saveUsageCount', String(quota.free_downloads_remaining));
+                  } catch (e) { /* ignore localStorage errors */ }
               } else {
                   // Supabase returned null, use local counts as fallback
                   const TRIAL_POLICY_VERSION = 'v2';
@@ -1141,11 +1165,27 @@ const handleHelpButtonClick = () => {};
           }
 
           setIsLoadingAssistants(true);
-          const [assistants, fetchedNotifications] = await Promise.all([
-              PromptManager.getAvailableAssistants(),
-              fetchNotifications()
-          ]);
-          
+          let assistants = [];
+          let fetchedNotifications = [];
+          try {
+              const results = await Promise.all([
+                  PromptManager.getAvailableAssistants(),
+                  fetchNotifications()
+              ]);
+              assistants = results[0] || [];
+              fetchedNotifications = results[1] || [];
+          } catch (fetchErr) {
+              console.error('Failed to load assistants or notifications:', fetchErr);
+              // Fallback to built-in assistant list handled by PromptManager
+              try {
+                  assistants = await PromptManager.getAvailableAssistants();
+              } catch (fallbackErr) {
+                  console.error('Fallback to built-in assistants failed:', fallbackErr);
+                  assistants = ['Coteacher','Item Writer','Lesson Plans (NCDC)','Scheme of Work NCDC'];
+              }
+              fetchedNotifications = [];
+          }
+
           setAvailableAssistants(assistants);
           const menu = {};
           assistants.forEach(assistant => {
@@ -1186,6 +1226,7 @@ const handleHelpButtonClick = () => {};
       return () => {
           document.removeEventListener('paste', handlePaste);
           window.removeEventListener('showConsent', handleShowConsent);
+          window.removeEventListener('quotaUpdated', handleQuotaUpdated);
       };
   }, []);
 

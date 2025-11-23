@@ -124,6 +124,14 @@
       </div>
     </div>
 
+    <script>
+      // Early initialization to ensure OAuth callback handling works smoothly
+      // This runs before any async auth module loads, so the loading screen stays visible
+      window.authInitPromise = new Promise((resolve) => {
+        window.authInitComplete = resolve;
+      });
+    </script>
+
     <!-- Application Scripts (Order is important) -->
 <!-- Supabase Auth (loads first) -->
 <script type="module" src="js/auth/supabase-auth.js"></script>

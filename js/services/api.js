@@ -87,16 +87,36 @@ const PromptManager = {
   availableAssistants: [],
   async getAvailableAssistants() {
     try {
-      const response = await fetch(`${GAS_WEB_APP_URL}?action=getAssistants`);
-      const data = await response.json();
-      if (data.success) {
-        this.availableAssistants = data.assistants;
-        return data.assistants;
+      // Add a 5-second timeout to prevent indefinite hanging if GAS backend is slow
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
+      
+      try {
+        const response = await fetch(`${GAS_WEB_APP_URL}?action=getAssistants`, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        
+        const data = await response.json();
+        if (data.success) {
+          this.availableAssistants = data.assistants;
+          return data.assistants;
+        }
+        throw new Error(data.error || 'Failed to fetch assistants');
+      } catch (fetchError) {
+        clearTimeout(timeoutId);
+        throw fetchError;
       }
-      throw new Error(data.error || 'Failed to fetch assistants');
     } catch (error) {
-      console.error('Error fetching assistants:', error);
-      return [ "Item Writer", "Lesson Notes Generator" ]; // Fallback
+      console.error('Error fetching assistants (using fallback):', error);
+      // Return a comprehensive fallback list instead of just two assistants
+      return [
+        'Coteacher',
+        'Item Writer',
+        'Lesson Plans (NCDC)',
+        'Scheme of Work NCDC',
+        'Lesson Notes Generator',
+        'Essay Grading Assistant',
+        'AI in Education Coach'
+      ];
     }
   },
   async getPromptContent(assistantName) {
@@ -123,14 +143,24 @@ const PromptManager = {
  */
 const fetchNotifications = async () => {
     try {
-        const response = await fetch(`${GAS_WEB_APP_URL}?action=getUpdates`);
-        const data = await response.json();
-        if (data.success && data.updates) {
-            return data.updates;
+        // Add a 3-second timeout to prevent indefinite hanging
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
+        
+        try {
+            const response = await fetch(`${GAS_WEB_APP_URL}?action=getUpdates`, { signal: controller.signal });
+            clearTimeout(timeoutId);
+            const data = await response.json();
+            if (data.success && data.updates) {
+                return data.updates;
+            }
+            return [];
+        } catch (fetchError) {
+            clearTimeout(timeoutId);
+            throw fetchError;
         }
-        return [];
     } catch (error) {
-        console.error("Failed to fetch notifications:", error);
+        console.error("Failed to fetch notifications (continuing with empty):", error);
         return [];
     }
 };
