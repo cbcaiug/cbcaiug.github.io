@@ -1105,6 +1105,23 @@ const handleHelpButtonClick = () => {};
           }
       };
       window.addEventListener('quotaUpdated', handleQuotaUpdated);
+      // Listen for localStorage changes from other tabs (near-real-time sync)
+      const handleStorage = (e) => {
+          try {
+              if (!e.key) return;
+              if (e.key === 'trialGenerationsCount') {
+                  const v = parseInt(e.newValue || '0', 10);
+                  if (!Number.isNaN(v)) setTrialGenerations(v);
+              }
+              if (e.key === 'saveUsageCount') {
+                  const v = parseInt(e.newValue || '0', 10);
+                  if (!Number.isNaN(v)) setUsageCount(v);
+              }
+          } catch (err) {
+              console.error('storage event handler error', err);
+          }
+      };
+      window.addEventListener('storage', handleStorage);
       
       // Subscribe to real-time quota updates from Supabase
       const unsubscribe = window.supabaseAuth?.subscribeToQuotaUpdates?.((quota) => {
@@ -1227,6 +1244,7 @@ const handleHelpButtonClick = () => {};
           document.removeEventListener('paste', handlePaste);
           window.removeEventListener('showConsent', handleShowConsent);
           window.removeEventListener('quotaUpdated', handleQuotaUpdated);
+          window.removeEventListener('storage', handleStorage);
       };
   }, []);
 

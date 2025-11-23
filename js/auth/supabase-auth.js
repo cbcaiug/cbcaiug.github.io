@@ -355,9 +355,12 @@ window.supabaseAuth = {
     }
   },
   subscribeToQuotaUpdates(callback) {
+    // Create a channel when the user is available. Return an unsubscribe function
+    // synchronously so callers can remove the listener in cleanups.
+    let channelRef = null;
     supabase.auth.getUser().then(({ data: { user } }) => {
       if (!user) return;
-      const channel = supabase.channel('quota-changes')
+      channelRef = supabase.channel('quota-changes')
         .on('postgres_changes', {
           event: 'UPDATE',
           schema: 'public',
@@ -367,8 +370,24 @@ window.supabaseAuth = {
           callback(payload.new);
         })
         .subscribe();
-      return () => supabase.removeChannel(channel);
-    });
+    }).catch(err => console.warn('subscribeToQuotaUpdates getUser failed', err));
+
+    // Return an unsubscribe function immediately. If channel isn't ready yet,
+    // attempt to remove it later when available.
+    return () => {
+      if (channelRef) {
+        try { supabase.removeChannel(channelRef); } catch (e) { console.warn('removeChannel failed', e); }
+        channelRef = null;
+      } else {
+        // Channel not yet created; attempt to remove after a short delay
+        setTimeout(() => {
+          if (channelRef) {
+            try { supabase.removeChannel(channelRef); } catch (e) { console.warn('removeChannel failed', e); }
+            channelRef = null;
+          }
+        }, 1000);
+      }
+    };
   }
 };
 
