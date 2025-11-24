@@ -735,11 +735,11 @@ const Sidebar = ({
                                     {currentUser.email?.replace('@local.app', '') || 'User'}
                                 </p>
                                 <button
-                                    onClick={async () => {
-                                        if (confirm('Sign out?')) {
-                                            await window.supabaseAuth?.signOut();
-                                            window.location.reload();
-                                        }
+                                    onClick={() => {
+                                        // Use the app's sign-out flow which shows the single
+                                        // confirmation modal and clears local data. Avoid
+                                        // native confirm() and avoid forcing a reload here.
+                                        window.supabaseAuth?.signOut();
                                     }}
                                     className="text-xs text-red-400 hover:text-red-300 underline"
                                     title="Sign out"

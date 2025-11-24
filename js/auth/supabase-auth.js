@@ -160,6 +160,12 @@ if (togglePasswordBtn) {
 }
 
 const showModal = () => {
+  // Don't flash the auth modal immediately after a signin event; allow
+  // a short suppression window set by signin handlers.
+  try {
+    const suppressUntil = window.__suppressAuthModalUntil || 0;
+    if (Date.now() < suppressUntil) return;
+  } catch (e) { /* ignore */ }
   if (modal) {
     modal.style.display = 'flex';
     modal.style.pointerEvents = 'auto';
@@ -201,6 +207,8 @@ const ensureQuotaRow = async (userId) => {
 const handleAuthStateChange = async (event, session) => {
   if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
     if (session?.user) {
+      // Suppress modal briefly while the app reinitializes to avoid flashes
+      try { window.__suppressAuthModalUntil = Date.now() + 1500; } catch (e) {}
       const userId = session.user.id;
       // Ensure quota row exists for this user (covers OAuth sign-ups too)
       await ensureQuotaRow(userId);
@@ -312,6 +320,9 @@ signInBtn.addEventListener('click', async () => {
     console.log('Calling hideModal immediately');
     hideModal();
     console.log('Modal should be hidden now');
+
+    // Suppress any immediate modal re-showing from racey auth events
+    try { window.__suppressAuthModalUntil = Date.now() + 2000; } catch (e) {}
 
     // Notify app that a user has signed in so it can reinitialize state
     try {
