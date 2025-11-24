@@ -149,7 +149,6 @@ const App = ({ onMount }) => {
         setIsPromptMissing(false);
         setError('');
     }, []);
-    const [showConsentModal, setShowConsentModal] = useState(false);
     // NEW: State for the Google Doc success and download modal
     const [isDocModalOpen, setIsDocModalOpen] = useState(false);
     const [createdDocInfo, setCreatedDocInfo] = useState(null);
@@ -547,25 +546,12 @@ const App = ({ onMount }) => {
         };
     }, [handleLoadHistoryChat]);
 
-    // When a user signs in elsewhere (OAuth redirect or sign-in), check terms and reinitialize
+    // When a user signs in, load the assistant message
+    // Terms are now handled in the login modal, not here
     useEffect(() => {
         const onUserSignedIn = async (e) => {
             try {
-                // Clear any stale UI state
-                setChatHistory([]);
-                setIsPromptMissing(false);
-                // Check Supabase to see if user has accepted terms (first-time users only)
-                try {
-                    const quota = await window.supabaseAuth?.getQuota();
-                    if (quota && !quota.accepted_terms) {
-                        // First-time user - show consent modal
-                        setShowConsentModal(true);
-                        return;
-                    }
-                } catch (err) {
-                    console.warn('Failed to check terms status:', err);
-                }
-                // Returning user or error - load assistant welcome message
+                // Just load the assistant - terms already handled in login modal
                 loadInitialMessage(activePromptKey);
             } catch (err) {
                 console.warn('userSignedIn handler failed', err);
@@ -593,7 +579,6 @@ const App = ({ onMount }) => {
     useEffect(() => {
         const onTermsAccepted = () => {
             try {
-                setShowConsentModal(false);
                 // Load the assistant welcome message now that terms are accepted
                 loadInitialMessage(activePromptKey);
             } catch (err) { console.warn('termsAccepted handler failed', err); }
@@ -1177,9 +1162,6 @@ const App = ({ onMount }) => {
 
     // --- EFFECTS ---
     useEffect(() => {
-        // Listen for consent modal trigger from auth
-        const handleShowConsent = () => setShowConsentModal(true);
-        window.addEventListener('showConsent', handleShowConsent);
         // Listen for quota updates dispatched by auth module (priority: Supabase)
         const handleQuotaUpdated = (e) => {
             try {
@@ -1245,10 +1227,6 @@ const App = ({ onMount }) => {
 
         // Initialize the app on first load
         const initializeApp = async () => {
-            if (!localStorage.getItem('userConsentV1')) {
-                setShowConsentModal(true);
-            }
-
             const savedCount = parseInt(localStorage.getItem('generationCount') || '0', 10);
             setGenerationCount(savedCount);
 
@@ -1349,7 +1327,6 @@ const App = ({ onMount }) => {
         document.addEventListener('paste', handlePaste);
         return () => {
             document.removeEventListener('paste', handlePaste);
-            window.removeEventListener('showConsent', handleShowConsent);
             window.removeEventListener('quotaUpdated', handleQuotaUpdated);
             window.removeEventListener('storage', handleStorage);
             window.removeEventListener('userSignedOut', handleUserSignedOut);
@@ -1371,7 +1348,7 @@ const App = ({ onMount }) => {
             }
         }
         */
-    }, [isLoadingAssistants, showConsentModal]);
+    }, [isLoadingAssistants]);
 
     useEffect(() => {
         // Save state to local storage on change
@@ -1811,13 +1788,6 @@ const App = ({ onMount }) => {
             {/* --- TOASTS & MODALS --- */}
             {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
             {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5" /> : <CheckCircleIcon className="w-5 h-5" />}<span>{apiKeyToast}</span></div>}
-            {/* Consent modal for first-time users */}
-            <ConsentModal
-                isOpen={showConsentModal}
-                onAccept={() => {
-                    window.supabaseAuth?.acceptTerms();
-                }}
-            />
             <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={(feedbackData) => handleFeedbackSubmit({ ...feedbackData, sessionId: SESSION_ID })} assistantName={activePromptKey} />
             <CartModal
                 isOpen={isCartOpen}

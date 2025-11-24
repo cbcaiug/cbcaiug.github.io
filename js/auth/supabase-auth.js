@@ -117,6 +117,16 @@ const modalHTML = `
     </div>
     <div id="passwordValidation">Password must be at least 6 characters</div>
 
+    <!-- Terms acceptance checkbox - shown only for first-time users -->
+    <div id="termsCheckboxContainer" style="display:none; margin-top:10px; margin-bottom:10px; background:rgba(99,102,241,0.05); border:1px solid rgba(99,102,241,0.2); border-radius:6px; padding:10px;">
+      <label style="display:flex; align-items:start; gap:8px; cursor:pointer; margin:0;">
+        <input id="termsCheckbox" type="checkbox" style="margin-top:2px; width:auto !important; flex-shrink:0; cursor:pointer;" />
+        <span style="font-size:12px; color:var(--auth-subtext, #94a3b8); line-height:1.5; flex:1;">
+          I agree to the <a href="/terms.html" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:underline; font-weight:600;">Terms of Service</a> and <a href="/privacy.html" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:underline; font-weight:600;">Privacy Policy</a>
+        </span>
+      </label>
+    </div>
+
     <div id="authFooter">
       <div style="flex:1">
         <button id="signInBtn">Sign In</button>
@@ -138,12 +148,16 @@ const modalHTML = `
 
 document.body.insertAdjacentHTML('beforeend', modalHTML);
 
+// Get references to modal elements
 const modal = document.getElementById('authModal');
 const usernameInput = document.getElementById('usernameInput');
 const passwordInput = document.getElementById('passwordInput');
 const authMessage = document.getElementById('authMessage');
 const signInBtn = document.getElementById('signInBtn');
 const signUpBtn = document.getElementById('signUpBtn');
+const googleBtn = document.getElementById('googleBtn');
+const termsCheckboxContainer = document.getElementById('termsCheckboxContainer');
+const termsCheckbox = document.getElementById('termsCheckbox');
 
 // Password visibility toggle
 const togglePasswordBtn = document.getElementById('togglePassword');
@@ -178,6 +192,9 @@ const showModal = () => {
   if (modal) {
     modal.style.display = 'flex';
     modal.style.pointerEvents = 'auto';
+
+    // Check if we need to show terms checkbox
+    checkAndShowTermsCheckbox();
   }
 };
 const hideModal = () => {
@@ -188,6 +205,77 @@ const hideModal = () => {
     modal.style.pointerEvents = 'none';
   }
 };
+
+// --- Terms Checkbox Helper Functions ---
+// Show the terms checkbox for first-time users
+const showTermsCheckbox = () => {
+  if (termsCheckboxContainer) {
+    termsCheckboxContainer.style.display = 'block';
+    if (termsCheckbox) {
+      termsCheckbox.checked = false;
+    }
+    updateButtonStates();
+  }
+};
+
+// Hide the terms checkbox for returning users
+const hideTermsCheckbox = () => {
+  if (termsCheckboxContainer) {
+    termsCheckboxContainer.style.display = 'none';
+    if (termsCheckbox) {
+      termsCheckbox.checked = true; // Set to true so buttons are enabled
+    }
+    updateButtonStates();
+  }
+};
+
+// Update button states based on checkbox status
+const updateButtonStates = () => {
+  const checkboxVisible = termsCheckboxContainer &&
+    termsCheckboxContainer.style.display !== 'none';
+  const isChecked = termsCheckbox?.checked || false;
+  const shouldDisable = checkboxVisible && !isChecked;
+
+  // Disable all auth buttons if checkbox is required but not checked
+  if (signInBtn) signInBtn.disabled = shouldDisable;
+  if (signUpBtn) signUpBtn.disabled = shouldDisable;
+  if (googleBtn) googleBtn.disabled = shouldDisable;
+};
+
+// Check if user needs to see terms checkbox and show/hide accordingly
+const checkAndShowTermsCheckbox = async () => {
+  try {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (user) {
+      // User is signed in - check if they've accepted terms
+      const { data: quota } = await supabase.from('usage_quotas')
+        .select('accepted_terms')
+        .eq('user_id', user.id)
+        .maybeSingle();
+
+      if (!quota || !quota.accepted_terms) {
+        // Show checkbox for first-time users
+        showTermsCheckbox();
+      } else {
+        // Hide checkbox for returning users
+        hideTermsCheckbox();
+      }
+    } else {
+      // No user signed in - show checkbox (assume new user)
+      showTermsCheckbox();
+    }
+  } catch (err) {
+    console.warn('Failed to check terms status:', err);
+    // On error, show checkbox to be safe
+    showTermsCheckbox();
+  }
+};
+
+// Listen to checkbox changes to update button states
+if (termsCheckbox) {
+  termsCheckbox.addEventListener('change', updateButtonStates);
+}
+
 
 const showMessage = (msg, type = 'error') => {
   if (!authMessage) return;
@@ -247,8 +335,24 @@ const handleAuthStateChange = async (event, session) => {
         window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId } }));
       } catch (e) { console.warn('userSignedIn dispatch failed', e); }
 
-      // Always hide auth modal; React app checks accepted_terms
-      // and shows consent modal only if needed (via userSignedIn event)
+      // For Google OAuth, auto-accept terms on first sign-in
+      if (window.__autoAcceptTermsForOAuth) {
+        try {
+          const { data: quota } = await supabase.from('usage_quotas')
+            .select('accepted_terms')
+            .eq('user_id', userId)
+            .maybeSingle();
+
+          if (!quota || !quota.accepted_terms) {
+            await window.supabaseAuth.acceptTerms();
+          }
+        } catch (err) {
+          console.warn('Failed to auto-accept terms for OAuth:', err);
+        }
+        window.__autoAcceptTermsForOAuth = false; // Clear flag
+      }
+
+      // Always hide auth modal; App now just loads assistant (no ConsentModal)
       hideModal();
     }
   } else if (event === 'SIGNED_OUT') {
@@ -370,20 +474,24 @@ signInBtn.addEventListener('click', async () => {
     // Ensure quota row exists
     await ensureQuotaRow(data.user.id);
 
+    // If checkbox was shown and checked, save terms acceptance
+    const checkboxVisible = termsCheckboxContainer?.style.display !== 'none';
+    if (checkboxVisible && termsCheckbox?.checked) {
+      await window.supabaseAuth.acceptTerms();
+    }
+
     // Notify app that a user has signed in - this triggers the App.js listener
-    // which will check accepted_terms and show consent modal if needed
     try {
       window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: data.user.id } }));
     } catch (e) { console.warn('userSignedIn dispatch failed', e); }
   }
 });
 
-// --- NEW: Google sign-in button handler ---
+// --- Google sign-in button handler ---
 // Note: The Supabase console must have the correct redirect URIs configured:
 // - https://cbcaiug.github.io/app.html
 // - https://qrkodwjhxrcrvsgkfeeo.supabase.co/auth/v1/callback
 // The Google prompt showing "qrkodwjhxrcrvsgkfeeo.supabase.co" is normal OAuth flow.
-const googleBtn = document.getElementById('googleBtn');
 if (googleBtn) {
   googleBtn.addEventListener('click', async () => {
     showMessage('Redirecting to Google...', '');
@@ -391,6 +499,10 @@ if (googleBtn) {
       // Build the redirect URL to ensure user returns to the app after OAuth callback
       const baseUrl = window.location.origin;
       const redirectTo = `${baseUrl}/app.html`;
+
+      // For Google OAuth, we auto-accept terms on first sign-in
+      // This is set in handleAuthStateChange when OAuth user signs in
+      window.__autoAcceptTermsForOAuth = true;
 
       // Initiate Google OAuth flow with proper redirect
       await supabase.auth.signInWithOAuth({
@@ -406,6 +518,7 @@ if (googleBtn) {
     } catch (err) {
       console.error('Google sign-in error', err);
       showMessage('Google sign-in failed. Try again later.');
+      window.__autoAcceptTermsForOAuth = false;
     }
   });
 }
@@ -512,6 +625,11 @@ signUpBtn.addEventListener('click', async () => {
 
     // Ensure quota row exists
     await ensureQuotaRow(data.user.id);
+
+    // New users must have checkbox checked - save terms acceptance
+    if (termsCheckbox?.checked) {
+      await window.supabaseAuth.acceptTerms();
+    }
 
     // Notify app that a user has signed in - this triggers the App.js listener
     // which will check accepted_terms and show consent modal for first-time users
