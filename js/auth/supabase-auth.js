@@ -391,11 +391,27 @@ window.supabaseAuth = {
   },
   async signOut() {
     await supabase.auth.signOut();
-    // Do not force a full page reload or forcibly show the modal here.
-    // Rely on the auth state change handler to show the auth modal.
+    // Clear session-related localStorage to avoid leaking previous chat when a new user signs in
     try {
-      window.dispatchEvent(new CustomEvent('userSignedOut'));
-    } catch (e) { console.warn('userSignedOut dispatch failed', e); }
+      const keys = Object.keys(localStorage || {});
+      keys.forEach(k => {
+        if (k && (k.startsWith('chatHistory_') || k === 'cbc_chat_history' || k === 'aiAssistantState' || k === 'trialGenerationsCount' || k === 'saveUsageCount' || k === 'generationCount' || k === 'trialPolicyVersion' || k === 'userConsentV1' || k === 'cbc_chat_history_autosave')) {
+          try { localStorage.removeItem(k); } catch (e) { /* ignore */ }
+        }
+      });
+    } catch (e) { console.warn('Failed to clear session localStorage on signOut', e); }
+
+    // Notify other listeners/tabs and then reload to ensure no in-memory state persists
+    try { window.dispatchEvent(new CustomEvent('userSignedOut')); } catch (e) { console.warn('userSignedOut dispatch failed', e); }
+
+    try {
+      // Force a reload so the app restarts in an unauthenticated state
+      location.reload();
+    } catch (e) {
+      // Fallback: show the auth modal if reload isn't permitted
+      console.warn('Reload after signOut failed', e);
+      showModal();
+    }
   },
   async acceptTerms() {
     const { data: { user } } = await supabase.auth.getUser();
