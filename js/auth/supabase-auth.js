@@ -215,6 +215,11 @@ const handleAuthStateChange = async (event, session) => {
         console.warn('Could not dispatch quotaUpdated event', e);
       }
 
+      // Also notify the app that a user signed in so it can refresh UI/state
+      try {
+        window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId } }));
+      } catch (e) { console.warn('userSignedIn dispatch failed', e); }
+
       if (quota?.accepted_terms) {
         // User has accepted terms, hide auth modal
         hideModal();
@@ -307,6 +312,11 @@ signInBtn.addEventListener('click', async () => {
     console.log('Calling hideModal immediately');
     hideModal();
     console.log('Modal should be hidden now');
+
+    // Notify app that a user has signed in so it can reinitialize state
+    try {
+      window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: data.user.id } }));
+    } catch (e) { console.warn('userSignedIn dispatch failed', e); }
 
     // Process user setup in background
     try {
