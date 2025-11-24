@@ -311,48 +311,24 @@ const handleAuthStateChange = async (event, session) => {
 // Subscribe to auth state changes (includes OAuth callbacks)
 const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
 
-// SECURITY: Aggressive auth reset on every page reload
-// Clears ALL client-side storage to ensure clean state
+// SECURITY: Force sign-out on every page reload
+// This ensures users must re-authenticate and prevents showing cached user data
 (async () => {
   try {
-    // Step 1: Clear ALL Supabase auth-related storage
-    const keysToRemove = [];
+    // Check if there's an active session
+    const { data: { session } } = await supabase.auth.getSession();
 
-    // Find all localStorage keys related to Supabase auth
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key && (
-        key.includes('supabase') ||
-        key.includes('sb-') ||
-        key.includes('auth') ||
-        key.includes('session')
-      )) {
-        keysToRemove.push(key);
-      }
+    if (session) {
+      // Sign out any existing session on page load
+      await supabase.auth.signOut();
+
+      // Clear all form fields
+      if (usernameInput) usernameInput.value = '';
+      if (passwordInput) passwordInput.value = '';
+      showMessage('');
     }
 
-    // Remove all Supabase auth keys
-    keysToRemove.forEach(key => localStorage.removeItem(key));
-
-    // Clear sessionStorage
-    sessionStorage.clear();
-
-    // Step 2: Force sign-out via Supabase (clears cookies)
-    await supabase.auth.signOut();
-
-    // Step 3: Clear form fields
-    if (usernameInput) usernameInput.value = '';
-    if (passwordInput) passwordInput.value = '';
-    showMessage('');
-
-    // Step 4: Dispatch event to App.js to clear chat history
-    try {
-      window.dispatchEvent(new CustomEvent('clearAllData'));
-    } catch (e) {
-      console.warn('Failed to dispatch clearAllData event', e);
-    }
-
-    // Step 5: ALWAYS show login modal (clean slate)
+    // Always show modal on page load (clean state)
     showModal();
 
     // Signal auth initialization complete
@@ -360,12 +336,8 @@ const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
       window.authInitComplete();
     }
   } catch (err) {
-    console.error('Error during auth reset:', err);
-    // Even on error, show modal
+    console.error('Error during forced sign-out:', err);
     showModal();
-    if (window.authInitComplete) {
-      window.authInitComplete();
-    }
   }
 })();
 
