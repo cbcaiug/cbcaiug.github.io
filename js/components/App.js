@@ -1541,12 +1541,6 @@ const App = ({ onMount }) => {
 
     return (
         <div className="h-screen w-screen overflow-hidden flex bg-white">
-            {showConsentModal && <ConsentModal onAccept={async () => {
-                localStorage.setItem('userConsentV1', 'true');
-                setShowConsentModal(false);
-                await window.supabaseAuth?.acceptTerms();
-            }} />}
-
             <Sidebar
                 isMenuOpen={isMenuOpen}
                 sidebarWidth={sidebarWidth}
@@ -1818,8 +1812,8 @@ const App = ({ onMount }) => {
             {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
             {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5" /> : <CheckCircleIcon className="w-5 h-5" />}<span>{apiKeyToast}</span></div>}
             {/* Consent modal for first-time users */}
-            <ConsentModal 
-                isOpen={showConsentModal} 
+            <ConsentModal
+                isOpen={showConsentModal}
                 onAccept={() => {
                     window.supabaseAuth?.acceptTerms();
                 }}

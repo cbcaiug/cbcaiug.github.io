@@ -167,7 +167,7 @@ const showModal = () => {
     if (Date.now() < suppressUntil) return;
   } catch (e) { /* ignore */ }
   // Clear any previous messages (for example a lingering "Login successful")
-  try { showMessage(''); } catch (e) {}
+  try { showMessage(''); } catch (e) { }
   if (modal) {
     modal.style.display = 'flex';
     modal.style.pointerEvents = 'auto';
@@ -210,7 +210,7 @@ const handleAuthStateChange = async (event, session) => {
   if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
     if (session?.user) {
       // Suppress modal briefly while the app reinitializes to avoid flashes
-      try { window.__suppressAuthModalUntil = Date.now() + 1500; } catch (e) {}
+      try { window.__suppressAuthModalUntil = Date.now() + 1500; } catch (e) { }
       const userId = session.user.id;
       // Ensure quota row exists for this user (covers OAuth sign-ups too)
       await ensureQuotaRow(userId);
@@ -235,7 +235,13 @@ const handleAuthStateChange = async (event, session) => {
       hideModal();
     }
   } else if (event === 'SIGNED_OUT') {
-    // User signed out - show modal after brief delay to prevent race condition
+    // User signed out - clear form fields and show modal
+    try {
+      if (usernameInput) usernameInput.value = '';
+      if (passwordInput) passwordInput.value = '';
+      showMessage(''); // Clear any messages
+    } catch (e) { console.warn('Failed to clear form fields', e); }
+
     setTimeout(() => {
       showModal();
       // Ensure auth initialization completes so loader can be dismissed
@@ -302,21 +308,17 @@ const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
 
 // Sign In
 signInBtn.addEventListener('click', async () => {
-  console.log('Sign In button clicked');
   showMessage('');
   const username = usernameInput.value.trim();
   const password = passwordInput.value;
   if (!username || !password) {
-    console.warn('Missing username or password');
     return showMessage('Enter username/email and password');
   }
 
   const email = username.includes('@') ? username : `${username}@local.app`;
-  console.log('Attempting sign-in with email:', email);
 
   const { data, error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) {
-    console.error('Sign-in error:', error);
     // Provide clearer messages while keeping Supabase error text
     if (/invalid login credentials|Invalid login credentials/i.test(error.message)) {
       return showMessage('Invalid username or password');
@@ -324,34 +326,20 @@ signInBtn.addEventListener('click', async () => {
     return showMessage(error.message);
   }
   if (data?.user) {
-    console.log('Sign-in successful, user:', data.user.id);
-    showMessage('Login successful!', 'success');
+    // Suppress modal briefly to prevent flashing
+    try { window.__suppressAuthModalUntil = Date.now() + 2000; } catch (e) { }
 
-    // Hide modal immediately, don't wait
-    console.log('Calling hideModal immediately');
+    // Hide modal immediately
     hideModal();
-    console.log('Modal should be hidden now');
 
-    // Suppress any immediate modal re-showing from racey auth events
-    try { window.__suppressAuthModalUntil = Date.now() + 2000; } catch (e) {}
+    // Ensure quota row exists
+    await ensureQuotaRow(data.user.id);
 
-    // Notify app that a user has signed in so it can reinitialize state
+    // Notify app that a user has signed in - this triggers the App.js listener
+    // which will check accepted_terms and show consent modal if needed
     try {
       window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: data.user.id } }));
     } catch (e) { console.warn('userSignedIn dispatch failed', e); }
-
-    // Process user setup in background
-    try {
-      await ensureQuotaRow(data.user.id);
-      const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', data.user.id).single();
-
-      if (!quota?.accepted_terms) {
-        // If terms not accepted, show consent modal
-        window.showConsentModal?.();
-      }
-    } catch (err) {
-      console.error('Error during post-login setup:', err);
-    }
   }
 });
 
@@ -481,9 +469,20 @@ signUpBtn.addEventListener('click', async () => {
     return showMessage(msg);
   }
   if (data?.user) {
-    await ensureQuotaRow(data.user.id);
+    // Suppress modal briefly to prevent flashing
+    try { window.__suppressAuthModalUntil = Date.now() + 2000; } catch (e) { }
+
+    // Hide modal immediately
     hideModal();
-    window.showConsentModal?.();
+
+    // Ensure quota row exists
+    await ensureQuotaRow(data.user.id);
+
+    // Notify app that a user has signed in - this triggers the App.js listener
+    // which will check accepted_terms and show consent modal for first-time users
+    try {
+      window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: data.user.id } }));
+    } catch (e) { console.warn('userSignedIn dispatch failed', e); }
   }
 });
 
@@ -513,7 +512,7 @@ window.supabaseAuth = {
     if (user) {
       await supabase.from('usage_quotas').upsert({ user_id: user.id, accepted_terms: true }, { onConflict: 'user_id' });
       // Dispatch event so app can close consent modal and load assistant
-      try { window.dispatchEvent(new CustomEvent('termsAccepted', { detail: { userId: user.id } })); } catch (e) {}
+      try { window.dispatchEvent(new CustomEvent('termsAccepted', { detail: { userId: user.id } })); } catch (e) { }
     }
   },
   subscribeToQuotaUpdates(callback) {
