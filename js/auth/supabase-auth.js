@@ -117,16 +117,6 @@ const modalHTML = `
     </div>
     <div id="passwordValidation">Password must be at least 6 characters</div>
 
-    <!-- Terms acceptance checkbox - shown only for first-time users -->
-    <div id="termsCheckboxContainer" style="display:none; margin-top:10px; margin-bottom:10px; background:rgba(99,102,241,0.05); border:1px solid rgba(99,102,241,0.2); border-radius:6px; padding:10px;">
-      <label style="display:flex; align-items:start; gap:8px; cursor:pointer; margin:0;">
-        <input id="termsCheckbox" type="checkbox" style="margin-top:2px; width:auto !important; flex-shrink:0; cursor:pointer;" />
-        <span style="font-size:12px; color:var(--auth-subtext, #94a3b8); line-height:1.5; flex:1;">
-          I agree to the <a href="/terms.html" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:underline; font-weight:600;">Terms of Service</a> and <a href="/privacy.html" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:underline; font-weight:600;">Privacy Policy</a>
-        </span>
-      </label>
-    </div>
-
     <div id="authFooter">
       <div style="flex:1">
         <button id="signInBtn">Sign In</button>
@@ -156,8 +146,6 @@ const authMessage = document.getElementById('authMessage');
 const signInBtn = document.getElementById('signInBtn');
 const signUpBtn = document.getElementById('signUpBtn');
 const googleBtn = document.getElementById('googleBtn');
-const termsCheckboxContainer = document.getElementById('termsCheckboxContainer');
-const termsCheckbox = document.getElementById('termsCheckbox');
 
 // Password visibility toggle
 const togglePasswordBtn = document.getElementById('togglePassword');
@@ -192,9 +180,6 @@ const showModal = () => {
   if (modal) {
     modal.style.display = 'flex';
     modal.style.pointerEvents = 'auto';
-
-    // Check if we need to show terms checkbox
-    checkAndShowTermsCheckbox();
   }
 };
 const hideModal = () => {
@@ -205,76 +190,6 @@ const hideModal = () => {
     modal.style.pointerEvents = 'none';
   }
 };
-
-// --- Terms Checkbox Helper Functions ---
-// Show the terms checkbox for first-time users
-const showTermsCheckbox = () => {
-  if (termsCheckboxContainer) {
-    termsCheckboxContainer.style.display = 'block';
-    if (termsCheckbox) {
-      termsCheckbox.checked = false;
-    }
-    updateButtonStates();
-  }
-};
-
-// Hide the terms checkbox for returning users
-const hideTermsCheckbox = () => {
-  if (termsCheckboxContainer) {
-    termsCheckboxContainer.style.display = 'none';
-    if (termsCheckbox) {
-      termsCheckbox.checked = true; // Set to true so buttons are enabled
-    }
-    updateButtonStates();
-  }
-};
-
-// Update button states based on checkbox status
-const updateButtonStates = () => {
-  const checkboxVisible = termsCheckboxContainer &&
-    termsCheckboxContainer.style.display !== 'none';
-  const isChecked = termsCheckbox?.checked || false;
-  const shouldDisable = checkboxVisible && !isChecked;
-
-  // Disable all auth buttons if checkbox is required but not checked
-  if (signInBtn) signInBtn.disabled = shouldDisable;
-  if (signUpBtn) signUpBtn.disabled = shouldDisable;
-  if (googleBtn) googleBtn.disabled = shouldDisable;
-};
-
-// Check if user needs to see terms checkbox and show/hide accordingly
-const checkAndShowTermsCheckbox = async () => {
-  try {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (user) {
-      // User is signed in - check if they've accepted terms
-      const { data: quota } = await supabase.from('usage_quotas')
-        .select('accepted_terms')
-        .eq('user_id', user.id)
-        .maybeSingle();
-
-      if (!quota || !quota.accepted_terms) {
-        // Show checkbox for first-time users
-        showTermsCheckbox();
-      } else {
-        // Hide checkbox for returning users
-        hideTermsCheckbox();
-      }
-    } else {
-      // No user signed in - show checkbox (assume new user)
-      showTermsCheckbox();
-    }
-  } catch (err) {
-    console.warn('Failed to check terms status:', err);
-    // On error, show checkbox to be safe
-    showTermsCheckbox();
-  }
-};
-
-// Listen to checkbox changes to update button states
-if (termsCheckbox) {
-  termsCheckbox.addEventListener('change', updateButtonStates);
-}
 
 
 const showMessage = (msg, type = 'error') => {
@@ -384,65 +299,35 @@ const handleAuthStateChange = async (event, session) => {
 // Subscribe to auth state changes (includes OAuth callbacks)
 const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
 
-// Check initial session on page load (handles OAuth callbacks and session recovery)
+// SECURITY: Force sign-out on every page reload
+// This ensures users must re-authenticate and prevents showing cached user data
 (async () => {
-  // Add timeout to prevent infinite hanging
-  const timeoutPromise = new Promise((_, reject) =>
-    setTimeout(() => reject(new Error('Auth check timeout')), 5000)
-  );
-
   try {
-    // First, attempt to parse an OAuth callback in the URL (handles Google redirects)
-    let user = null;
-    let isOAuthCallback = false;
-    try {
-      const sessionFromUrl = await supabase.auth.getSessionFromUrl().catch(() => null);
-      if (sessionFromUrl && sessionFromUrl.data && sessionFromUrl.data.session && sessionFromUrl.data.session.user) {
-        user = sessionFromUrl.data.session.user;
-        isOAuthCallback = true;
-        // Suppress modal during OAuth callback to prevent flashing
-        try { window.__suppressAuthModalUntil = Date.now() + 3000; } catch (e) { }
-      }
-    } catch (e) {
-      // ignore - not all supabase client versions expose getSessionFromUrl
+    // Check if there's an active session
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (session) {
+      // Sign out any existing session on page load
+      await supabase.auth.signOut();
+
+      // Clear all form fields
+      if (usernameInput) usernameInput.value = '';
+      if (passwordInput) passwordInput.value = '';
+      showMessage('');
     }
 
-    if (!user) {
-      const authCheck = supabase.auth.getUser();
-      const { data: { user: userFromGet } } = await Promise.race([authCheck, timeoutPromise]);
-      user = userFromGet;
-    }
-
-    if (user) {
-      // Ensure quota row exists FIRST (critical for OAuth users)
-      await ensureQuotaRow(user.id);
-
-      const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', user.id).maybeSingle();
-
-      // Hide modal immediately
-      hideModal();
-
-      // For OAuth callbacks, DO NOT dispatch here - let handleAuthStateChange do it
-      // to avoid double-dispatch. For page reloads (non-OAuth), dispatch immediately.
-      if (!isOAuthCallback) {
-        try {
-          window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: user.id } }));
-        } catch (e) { console.warn('userSignedIn dispatch failed', e); }
-      }
-    } else {
-      showModal();
-    }
-  } catch (err) {
-    console.error('Error checking initial session:', err);
+    // Always show modal on page load (clean state)
     showModal();
-  } finally {
-    // ALWAYS signal completion regardless of success/failure
+
+    // Signal auth initialization complete
     if (window.authInitComplete) {
       window.authInitComplete();
     }
+  } catch (err) {
+    console.error('Error during forced sign-out:', err);
+    showModal();
   }
 })();
-
 
 
 // Sign In
@@ -454,33 +339,34 @@ signInBtn.addEventListener('click', async () => {
     return showMessage('Enter username/email and password');
   }
 
+  // Visual feedback: green button with checkmark
+  const originalHTML = signInBtn.innerHTML;
+  signInBtn.innerHTML = '<span style="display:flex;align-items:center;gap:4px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Signing In...</span>';
+  signInBtn.style.background = '#10b981';
+  signInBtn.disabled = true;
+
   const email = username.includes('@') ? username : `${username}@local.app`;
 
   const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+  // Restore button
+  signInBtn.innerHTML = originalHTML;
+  signInBtn.style.background = '';
+  signInBtn.disabled = false;
+
   if (error) {
-    // Provide clearer messages while keeping Supabase error text
+    // Provide clearer messages
     if (/invalid login credentials|Invalid login credentials/i.test(error.message)) {
       return showMessage('Invalid username or password');
     }
     return showMessage(error.message);
   }
   if (data?.user) {
-    // Suppress modal briefly to prevent flashing
+    // Suppress modal briefly
     try { window.__suppressAuthModalUntil = Date.now() + 2000; } catch (e) { }
-
-    // Hide modal immediately
     hideModal();
-
-    // Ensure quota row exists
     await ensureQuotaRow(data.user.id);
-
-    // If checkbox was shown and checked, save terms acceptance
-    const checkboxVisible = termsCheckboxContainer?.style.display !== 'none';
-    if (checkboxVisible && termsCheckbox?.checked) {
-      await window.supabaseAuth.acceptTerms();
-    }
-
-    // Notify app that a user has signed in - this triggers the App.js listener
+    // Notify app
     try {
       window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: data.user.id } }));
     } catch (e) { console.warn('userSignedIn dispatch failed', e); }
@@ -606,8 +492,21 @@ signUpBtn.addEventListener('click', async () => {
   const password = passwordInput.value;
   if (!username || !password) return showMessage('Enter username/email and password');
   if (password.length < 6) return showMessage('Password must be at least 6 characters');
+
+  // Visual feedback: green button with checkmark
+  const originalHTML = signUpBtn.innerHTML;
+  signUpBtn.innerHTML = '<span style="display:flex;align-items:center;gap:4px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Signing Up...</span>';
+  signUpBtn.style.background = '#10b981';
+  signUpBtn.disabled = true;
+
   const email = username.includes('@') ? username : `${username}@local.app`;
   const { data, error } = await supabase.auth.signUp({ email, password });
+
+  // Restore button
+  signUpBtn.innerHTML = originalHTML;
+  signUpBtn.style.background = '';
+  signUpBtn.disabled = false;
+
   if (error) {
     // Try to provide clearer messaging
     const msg = error.message || '';
@@ -625,11 +524,6 @@ signUpBtn.addEventListener('click', async () => {
 
     // Ensure quota row exists
     await ensureQuotaRow(data.user.id);
-
-    // New users must have checkbox checked - save terms acceptance
-    if (termsCheckbox?.checked) {
-      await window.supabaseAuth.acceptTerms();
-    }
 
     // Notify app that a user has signed in - this triggers the App.js listener
     // which will check accepted_terms and show consent modal for first-time users
