@@ -547,6 +547,36 @@ const App = ({ onMount }) => {
         };
     }, [handleLoadHistoryChat]);
 
+    // When a user signs in elsewhere (OAuth redirect or sign-in), reinitialize assistant
+    useEffect(() => {
+        const onUserSignedIn = (e) => {
+            try {
+                // Clear any stale UI state and load the assistant welcome message
+                setChatHistory([]);
+                setIsPromptMissing(false);
+                // Ensure the initial assistant message appears for the active prompt
+                loadInitialMessage(activePromptKey);
+            } catch (err) {
+                console.warn('userSignedIn handler failed', err);
+            }
+        };
+        window.addEventListener('userSignedIn', onUserSignedIn);
+        return () => window.removeEventListener('userSignedIn', onUserSignedIn);
+    }, [activePromptKey, loadInitialMessage]);
+
+    // When a user signs out, abort any in-progress streams and clear chat state
+    useEffect(() => {
+        const onUserSignedOut = () => {
+            try {
+                stopStreaming();
+                setChatHistory([]);
+                setIsPromptMissing(false);
+            } catch (err) { console.warn('userSignedOut handler failed', err); }
+        };
+        window.addEventListener('userSignedOut', onUserSignedOut);
+        return () => window.removeEventListener('userSignedOut', onUserSignedOut);
+    }, [stopStreaming]);
+
     const validateApiKey = useCallback(async (provider, key) => {
         if (!key) {
             setApiKeyStatus(prev => ({ ...prev, [provider.key]: 'unchecked' }));
