@@ -562,6 +562,28 @@ const App = ({ onMount }) => {
         return () => window.removeEventListener('userSignedIn', onUserSignedIn);
     }, [activePromptKey, loadInitialMessage]);
 
+    // Listen for clearAllData event from auth (page reload)
+    useEffect(() => {
+        const onClearAllData = () => {
+            try {
+                // Clear all chat history
+                setChatHistory([]);
+                setIsPromptMissing(false);
+
+                // Reset quotas to placeholders
+                setFreeGenerationsRemaining(null);
+                setFreeDownloadsRemaining(null);
+
+                // Set username to unknown
+                setUserDisplayName('Unknown');
+            } catch (err) {
+                console.warn('clearAllData handler failed', err);
+            }
+        };
+        window.addEventListener('clearAllData', onClearAllData);
+        return () => window.removeEventListener('clearAllData', onClearAllData);
+    }, []);
+
     // When a user signs out, abort any in-progress streams and clear chat state
     useEffect(() => {
         const onUserSignedOut = () => {
@@ -1161,7 +1183,24 @@ const App = ({ onMount }) => {
     }, [isFileUploadDisabled, MAX_TOTAL_UPLOAD_SIZE]);
 
     // --- EFFECTS ---
-    useEffect(() => {
+    const handleSend = useCallback(async (e) => {
+        e?.preventDefault();
+
+        // Check if user is signed in before allowing message send
+        try {
+            const { data: { session } } = await window.supabaseAuth?.supabase?.auth?.getSession();
+            if (!session) {
+                setError('Please sign in to use AI Assistants. Click the profile icon in the top right to sign in.');
+                return;
+            }
+        } catch (err) {
+            console.warn('Failed to check auth status:', err);
+            setError('Please sign in to use AI Assistants.');
+            return;
+        }
+
+        const trimmedInput = userInput.trim();
+        if (!trimmedInput) return;
         // Listen for quota updates dispatched by auth module (priority: Supabase)
         const handleQuotaUpdated = (e) => {
             try {
@@ -1227,6 +1266,9 @@ const App = ({ onMount }) => {
 
         // Initialize the app on first load
         const initializeApp = async () => {
+            // Clear chat history on mount (fresh start)
+            setChatHistory([]);
+
             const savedCount = parseInt(localStorage.getItem('generationCount') || '0', 10);
             setGenerationCount(savedCount);
 
