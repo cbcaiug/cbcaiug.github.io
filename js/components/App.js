@@ -1227,12 +1227,26 @@ const App = ({ onMount }) => {
 
         // Initialize the app on first load
         const initializeApp = async () => {
+            // IMMEDIATE AUTH CHECK
+            const currentUser = await window.supabaseAuth?.getCurrentUser();
+            if (!currentUser) {
+                console.warn('No active session found on app load. Forcing login modal.');
+                setTrialGenerations(0);
+                setUsageCount(0);
+                if (window.supabaseAuth?.showLoginModal) {
+                    window.supabaseAuth.showLoginModal();
+                }
+                // Continue initialization but with restricted state
+            }
+
             const savedCount = parseInt(localStorage.getItem('generationCount') || '0', 10);
             setGenerationCount(savedCount);
 
             // Use cached values immediately to avoid blocking UI
-            const cachedTrialCount = parseInt(localStorage.getItem('trialGenerationsCount') || TRIAL_GENERATION_LIMIT, 10);
-            const cachedUsageCount = parseInt(localStorage.getItem('saveUsageCount') || '20', 10);
+            // Only use cache if we have a user, otherwise 0
+            const cachedTrialCount = currentUser ? parseInt(localStorage.getItem('trialGenerationsCount') || TRIAL_GENERATION_LIMIT, 10) : 0;
+            const cachedUsageCount = currentUser ? parseInt(localStorage.getItem('saveUsageCount') || '20', 10) : 0;
+            
             setTrialGenerations(cachedTrialCount);
             setUsageCount(cachedUsageCount);
 
