@@ -269,11 +269,23 @@ const handleAuthStateChange = async (event, session) => {
 
       // Always hide auth modal; App now just loads assistant (no ConsentModal)
       hideModal();
+
+      // Add page reload warning when user is signed in
+      window.onbeforeunload = function (e) {
+        // Modern browsers ignore custom messages and show generic warning
+        // But we still need to return a value to trigger the confirmation
+        e.preventDefault();
+        e.returnValue = ''; // Chrome requires returnValue to be set
+        return ''; // Some browsers use return value
+      };
     }
   } else if (event === 'SIGNED_OUT') {
     // User signed out - clear form fields, validation, and show modal
     window.__authModalShouldBeHidden = false;  // Clear persistent flag
     window.__lastProcessedSignIn = null;        // Reset sign-in tracking
+
+    // Remove page reload warning when user signs out
+    window.onbeforeunload = null;
 
     try {
       if (usernameInput) usernameInput.value = '';
