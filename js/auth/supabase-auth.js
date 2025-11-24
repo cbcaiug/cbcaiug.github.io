@@ -230,14 +230,9 @@ const handleAuthStateChange = async (event, session) => {
         window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId } }));
       } catch (e) { console.warn('userSignedIn dispatch failed', e); }
 
-      if (quota?.accepted_terms) {
-        // User has accepted terms, hide auth modal
-        hideModal();
-      } else {
-        // User needs to accept terms
-        hideModal();
-        window.showConsentModal?.();
-      }
+      // Always hide auth modal; React app checks accepted_terms
+      // and shows consent modal only if needed (via userSignedIn event)
+      hideModal();
     }
   } else if (event === 'SIGNED_OUT') {
     // User signed out - show modal after brief delay to prevent race condition
@@ -288,7 +283,7 @@ const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
       // Ensure quota row exists
       await ensureQuotaRow(user.id);
       hideModal();
-      window.showConsentModal?.();
+      // App will handle consent via React (checking Supabase accepted_terms flag)
     } else {
       showModal();
     }
@@ -517,6 +512,8 @@ window.supabaseAuth = {
     const { data: { user } } = await supabase.auth.getUser();
     if (user) {
       await supabase.from('usage_quotas').upsert({ user_id: user.id, accepted_terms: true }, { onConflict: 'user_id' });
+      // Dispatch event so app can close consent modal and load assistant
+      try { window.dispatchEvent(new CustomEvent('termsAccepted', { detail: { userId: user.id } })); } catch (e) {}
     }
   },
   subscribeToQuotaUpdates(callback) {

@@ -547,17 +547,29 @@ const App = ({ onMount }) => {
         };
     }, [handleLoadHistoryChat]);
 
-    // When a user signs in elsewhere (OAuth redirect or sign-in), reinitialize assistant
+    // When a user signs in elsewhere (OAuth redirect or sign-in), check terms and reinitialize
     useEffect(() => {
-        const onUserSignedIn = (e) => {
+        const onUserSignedIn = async (e) => {
             try {
-                // Clear any stale UI state and load the assistant welcome message
+                // Clear any stale UI state
                 setChatHistory([]);
                 setIsPromptMissing(false);
-                // Ensure the initial assistant message appears for the active prompt
+                // Check Supabase to see if user has accepted terms (first-time users only)
+                try {
+                    const quota = await window.supabaseAuth?.getQuota();
+                    if (quota && !quota.accepted_terms) {
+                        // First-time user - show consent modal
+                        setShowConsentModal(true);
+                        return;
+                    }
+                } catch (err) {
+                    console.warn('Failed to check terms status:', err);
+                }
+                // Returning user or error - load assistant welcome message
                 loadInitialMessage(activePromptKey);
             } catch (err) {
                 console.warn('userSignedIn handler failed', err);
+                loadInitialMessage(activePromptKey);
             }
         };
         window.addEventListener('userSignedIn', onUserSignedIn);
@@ -576,6 +588,19 @@ const App = ({ onMount }) => {
         window.addEventListener('userSignedOut', onUserSignedOut);
         return () => window.removeEventListener('userSignedOut', onUserSignedOut);
     }, [stopStreaming]);
+
+    // When a user accepts terms from the consent modal
+    useEffect(() => {
+        const onTermsAccepted = () => {
+            try {
+                setShowConsentModal(false);
+                // Load the assistant welcome message now that terms are accepted
+                loadInitialMessage(activePromptKey);
+            } catch (err) { console.warn('termsAccepted handler failed', err); }
+        };
+        window.addEventListener('termsAccepted', onTermsAccepted);
+        return () => window.removeEventListener('termsAccepted', onTermsAccepted);
+    }, [activePromptKey, loadInitialMessage]);
 
     const validateApiKey = useCallback(async (provider, key) => {
         if (!key) {
@@ -1792,6 +1817,13 @@ const App = ({ onMount }) => {
             {/* --- TOASTS & MODALS --- */}
             {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
             {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5" /> : <CheckCircleIcon className="w-5 h-5" />}<span>{apiKeyToast}</span></div>}
+            {/* Consent modal for first-time users */}
+            <ConsentModal 
+                isOpen={showConsentModal} 
+                onAccept={() => {
+                    window.supabaseAuth?.acceptTerms();
+                }}
+            />
             <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={(feedbackData) => handleFeedbackSubmit({ ...feedbackData, sessionId: SESSION_ID })} assistantName={activePromptKey} />
             <CartModal
                 isOpen={isCartOpen}
