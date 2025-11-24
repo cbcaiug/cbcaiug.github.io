@@ -20,6 +20,8 @@ const modalHTML = `
 #authBox p { margin: 0 0 12px; font-size: 13px; color: var(--auth-subtext, #94a3b8); text-align: center; }
 #authBox input { width: 100%; padding: 11px 12px; margin-bottom: 8px; border: 1px solid var(--auth-input-border, #1f2937); border-radius: 8px; font-size: 14px; box-sizing: border-box; background: var(--auth-input-bg, rgba(15,23,36,0.6)) !important; color: var(--auth-text, #e6eef8) !important; }
 #authBox input:focus { outline: 2px solid #4f46e5; border-color: #4f46e5; background: var(--auth-input-bg, rgba(15,23,36,0.8)) !important; }
+#authBox input:active { outline: 2px solid #4f46e5; background: var(--auth-input-bg, rgba(15,23,36,0.8)) !important; }
+#authBox input:-webkit-autofill { -webkit-box-shadow: 0 0 0 1000px rgba(15,23,36,0.8) inset !important; -webkit-text-fill-color: #e6eef8 !important; }
 #authBox input::placeholder { color: #64748b; }
 #authBox button { width: 100%; padding: 11px; margin-bottom: 6px; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.12s; }
 #authBox button:hover { transform: translateY(-1px); }
@@ -35,6 +37,19 @@ const modalHTML = `
 #authFooter { display:flex; justify-content:space-between; gap:8px; align-items:center; margin-top: 4px; }
 #forgotLink { font-size:12px; color:#6366f1; cursor:pointer; text-decoration:underline; }
 
+/* Sign-out confirmation modal */
+#signOutConfirmModal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.7); z-index: 10051; backdrop-filter: blur(4px); padding: 16px; }
+#signOutConfirmBox { background: var(--auth-bg, #0b1220); padding: 24px 20px; width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 18px 50px rgba(2,6,23,0.85); font-family: Inter, sans-serif; }
+#signOutConfirmBox h3 { margin: 0 0 8px; font-size: 16px; font-weight: 600; color: var(--auth-text, #e6eef8); text-align: center; }
+#signOutConfirmBox p { margin: 0 0 16px; font-size: 13px; color: var(--auth-subtext, #94a3b8); text-align: center; line-height: 1.4; }
+#signOutConfirmBox .warning-box { background: rgba(239,68,68,0.1); border: 1px solid #dc2626; border-radius: 6px; padding: 8px 12px; margin-bottom: 16px; font-size: 12px; color: #fca5a5; }
+#signOutConfirmFooter { display: flex; gap: 8px; }
+#signOutConfirmFooter button { flex: 1; padding: 10px; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.12s; }
+#confirmSignOutBtn { background: #dc2626; color: white; }
+#confirmSignOutBtn:hover { background: #b91c1c; }
+#cancelSignOutBtn { background: #374151; color: var(--auth-text, #e6eef8); }
+#cancelSignOutBtn:hover { background: #4b5563; }
+
 /* Light mode override */
 @media (prefers-color-scheme: light) {
   :root { --auth-bg: white; --auth-text: #0f172a; --auth-subtext: #475569; --auth-input-bg: #f8fafc; --auth-input-border: #e2e8f0; --google-bg: #ffffff; }
@@ -45,9 +60,26 @@ const modalHTML = `
   #authMessage.error { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
   #authMessage.success { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
   #forgotLink { color: #4f46e5; }
+  #signOutConfirmBox { background: white; box-shadow: 0 18px 50px rgba(2,6,23,0.45); }
+  #signOutConfirmBox h3 { color: #0f172a; }
+  #signOutConfirmBox p { color: #475569; }
+  #signOutConfirmBox .warning-box { background: rgba(239,68,68,0.05); color: #991b1b; border-color: #fca5a5; }
+  #cancelSignOutBtn { background: #e5e7eb; color: #0f172a; }
+  #cancelSignOutBtn:hover { background: #d1d5db; }
 }
 
 </style>
+<div id="signOutConfirmModal" style="display:none">
+  <div id="signOutConfirmBox">
+    <h3>Sign Out?</h3>
+    <p>You will be signed out of your account.</p>
+    <div class="warning-box">⚠️ All local chats, API keys, and settings will be cleared.</div>
+    <div id="signOutConfirmFooter">
+      <button id="cancelSignOutBtn" type="button">Cancel</button>
+      <button id="confirmSignOutBtn" type="button">Sign Out</button>
+    </div>
+  </div>
+</div>
 <div id="authModal" style="display:none">
   <div id="authBox">
     <img src="https://cbcaiug.github.io/images/cbc-ai-tool-logo.jpeg" alt="CBC AI Tool">
@@ -348,6 +380,45 @@ if (forgotLink) {
   });
 }
 
+// --- Sign-out confirmation modal handlers (Commit 2) ---
+const signOutConfirmModal = document.getElementById('signOutConfirmModal');
+const confirmSignOutBtn = document.getElementById('confirmSignOutBtn');
+const cancelSignOutBtn = document.getElementById('cancelSignOutBtn');
+
+const hideSignOutConfirmModal = () => {
+  if (signOutConfirmModal) signOutConfirmModal.style.display = 'none';
+};
+
+const performSignOut = async () => {
+  hideSignOutConfirmModal();
+  try {
+    await supabase.auth.signOut();
+    // Clear session-related localStorage to avoid leaking previous chat when a new user signs in
+    try {
+      const keys = Object.keys(localStorage || {});
+      keys.forEach(k => {
+        if (k && (k.startsWith('chatHistory_') || k === 'cbc_chat_history' || k === 'aiAssistantState' || k === 'trialGenerationsCount' || k === 'saveUsageCount' || k === 'generationCount' || k === 'trialPolicyVersion' || k === 'userConsentV1' || k === 'cbc_chat_history_autosave')) {
+          try { localStorage.removeItem(k); } catch (e) { /* ignore */ }
+        }
+      });
+    } catch (e) { console.warn('Failed to clear session localStorage on signOut', e); }
+
+    // Notify app and tabs about sign-out; rely on auth state handler to show modal
+    try { window.dispatchEvent(new CustomEvent('userSignedOut')); } catch (e) { console.warn('userSignedOut dispatch failed', e); }
+  } catch (err) {
+    console.error('Sign-out error', err);
+    showMessage('Sign-out failed. Please try again.');
+  }
+};
+
+if (confirmSignOutBtn) {
+  confirmSignOutBtn.addEventListener('click', performSignOut);
+}
+
+if (cancelSignOutBtn) {
+  cancelSignOutBtn.addEventListener('click', hideSignOutConfirmModal);
+}
+
 // --- Enhance Sign Up error handling to indicate existing accounts ---
 // Sign Up (wrap original handler to improve messages)
 signUpBtn.addEventListener('click', async () => {
@@ -390,28 +461,9 @@ window.supabaseAuth = {
     if (error) throw error;
   },
   async signOut() {
-    await supabase.auth.signOut();
-    // Clear session-related localStorage to avoid leaking previous chat when a new user signs in
-    try {
-      const keys = Object.keys(localStorage || {});
-      keys.forEach(k => {
-        if (k && (k.startsWith('chatHistory_') || k === 'cbc_chat_history' || k === 'aiAssistantState' || k === 'trialGenerationsCount' || k === 'saveUsageCount' || k === 'generationCount' || k === 'trialPolicyVersion' || k === 'userConsentV1' || k === 'cbc_chat_history_autosave')) {
-          try { localStorage.removeItem(k); } catch (e) { /* ignore */ }
-        }
-      });
-    } catch (e) { console.warn('Failed to clear session localStorage on signOut', e); }
-
-    // Notify other listeners/tabs and then reload to ensure no in-memory state persists
-    try { window.dispatchEvent(new CustomEvent('userSignedOut')); } catch (e) { console.warn('userSignedOut dispatch failed', e); }
-
-    try {
-      // Force a reload so the app restarts in an unauthenticated state
-      location.reload();
-    } catch (e) {
-      // Fallback: show the auth modal if reload isn't permitted
-      console.warn('Reload after signOut failed', e);
-      showModal();
-    }
+    // Show confirmation modal instead of reloading immediately
+    const confirmModal = document.getElementById('signOutConfirmModal');
+    if (confirmModal) confirmModal.style.display = 'flex';
   },
   async acceptTerms() {
     const { data: { user } } = await supabase.auth.getUser();
