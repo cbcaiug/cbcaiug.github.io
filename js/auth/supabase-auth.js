@@ -782,6 +782,14 @@ window.supabaseAuth = {
         }, 1000);
       }
     };
+  },
+  async getCurrentUser() {
+    if (!supabase) return null;
+    const { data: { session } } = await supabase.auth.getSession();
+    return session?.user || null;
+  },
+  showLoginModal() {
+    showModal();
   }
 };
 

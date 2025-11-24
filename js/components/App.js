@@ -122,6 +122,7 @@ const App = ({ onMount }) => {
     const [isTakingLong, setIsTakingLong] = useState(false);
     // History enabled flag (opt-in). Default false unless localStorage key is '1'
     const [historyEnabled, setHistoryEnabled] = useState(() => localStorage.getItem('cbc_chat_history_autosave') === '1');
+    const [currentUser, setCurrentUser] = useState(null);
     // NEW: This function handles switching assistants without a page reload.
     const handleAssistantChange = (newAssistantKey) => {
         if (newAssistantKey === activePromptKey) return; // Do nothing if the same assistant is selected
@@ -1207,16 +1208,28 @@ const App = ({ onMount }) => {
             }
         });
 
+        // Listen for sign-in events to update currentUser
+        const handleUserSignedIn = async () => {
+            try {
+                const user = await window.supabaseAuth?.getCurrentUser();
+                setCurrentUser(user);
+            } catch (e) {
+                console.warn('userSignedIn: getCurrentUser failed', e);
+            }
+        };
+        window.addEventListener('userSignedIn', handleUserSignedIn);
+
         // Listen for sign-out events to reset client-only state and allow in-page account switching
         const handleUserSignedOut = () => {
             try {
                 if (typeof stopStreaming === 'function') stopStreaming();
             } catch (e) { console.warn('userSignedOut: stopStreaming failed', e); }
 
+            try { setCurrentUser(null); } catch (e) { /* ignore */ }
             try { setChatHistory([]); } catch (e) { /* ignore */ }
             try { setUserInput(''); } catch (e) { /* ignore */ }
             try { setIsLoading(false); } catch (e) { /* ignore */ }
-            try { setIsTakingLong(false); } catch (e) { /* ignore */ }
+            try { setIsTakingLong(false); } catch (e) {  /* ignore */ }
             try { setActiveTrialApiKey(null); } catch (e) { /* ignore */ }
             try { setActiveSharedKeyLabel(''); } catch (e) { /* ignore */ }
             try { setTrialGenerations(TRIAL_GENERATION_LIMIT); } catch (e) { /* ignore */ }
@@ -1228,8 +1241,9 @@ const App = ({ onMount }) => {
         // Initialize the app on first load
         const initializeApp = async () => {
             // IMMEDIATE AUTH CHECK
-            const currentUser = await window.supabaseAuth?.getCurrentUser();
-            if (!currentUser) {
+            const user = await window.supabaseAuth?.getCurrentUser();
+            setCurrentUser(user);
+            if (!user) {
                 console.warn('No active session found on app load. Forcing login modal.');
                 setTrialGenerations(0);
                 setUsageCount(0);
@@ -1244,8 +1258,8 @@ const App = ({ onMount }) => {
 
             // Use cached values immediately to avoid blocking UI
             // Only use cache if we have a user, otherwise 0
-            const cachedTrialCount = currentUser ? parseInt(localStorage.getItem('trialGenerationsCount') || TRIAL_GENERATION_LIMIT, 10) : 0;
-            const cachedUsageCount = currentUser ? parseInt(localStorage.getItem('saveUsageCount') || '20', 10) : 0;
+            const cachedTrialCount = user ? parseInt(localStorage.getItem('trialGenerationsCount') || TRIAL_GENERATION_LIMIT, 10) : 0;
+            const cachedUsageCount = user ? parseInt(localStorage.getItem('saveUsageCount') || '20', 10) : 0;
 
             setTrialGenerations(cachedTrialCount);
             setUsageCount(cachedUsageCount);
@@ -1285,8 +1299,8 @@ const App = ({ onMount }) => {
             let fetchedNotifications = [];
             try {
                 const results = await Promise.all([
-                    PromptManager.getAvailableAssistants(),
-                    fetchNotifications()
+                    window.PromptManager.getAvailableAssistants(),
+                    window.fetchNotifications()
                 ]);
                 assistants = results[0] || [];
                 fetchedNotifications = results[1] || [];
@@ -1294,7 +1308,7 @@ const App = ({ onMount }) => {
                 console.error('Failed to load assistants or notifications:', fetchErr);
                 // Fallback to built-in assistant list handled by PromptManager
                 try {
-                    assistants = await PromptManager.getAvailableAssistants();
+                    assistants = await window.PromptManager.getAvailableAssistants();
                 } catch (fallbackErr) {
                     console.error('Fallback to built-in assistants failed:', fallbackErr);
                     assistants = ['Coteacher', 'Item Writer', 'Lesson Plans (NCDC)', 'Scheme of Work NCDC'];
@@ -1355,6 +1369,7 @@ const App = ({ onMount }) => {
             document.removeEventListener('paste', handlePaste);
             window.removeEventListener('quotaUpdated', handleQuotaUpdated);
             window.removeEventListener('storage', handleStorage);
+            window.removeEventListener('userSignedIn', handleUserSignedIn);
             window.removeEventListener('userSignedOut', handleUserSignedOut);
         };
     }, []);
@@ -1766,23 +1781,26 @@ const App = ({ onMount }) => {
 
                                     {/* Horizontal list of attached files */}
                                     <div className="flex flex-wrap gap-2">
-                                        {pendingFiles.map(f => (
-                                            <div key={f.id} className="flex items-center gap-2 bg-white p-2 rounded-md text-sm">
-                                                {f.previewUrl ?
-                                                    <img src={f.previewUrl} alt="Preview" className="w-10 h-10 object-cover rounded-md shrink-0" /> :
-                                                    <FileIcon className="w-10 h-10 text-slate-500 shrink-0 p-1" />
-                                                }
-                                                <div className="flex-grow overflow-hidden max-w-[100px]">
-                                                    <p className="font-medium text-slate-800 truncate text-xs">{f.file.name}</p>
-                                                    <p className="text-xs text-slate-500">{formatBytes(f.file.size)}</p>
-                                                </div>
-                                                <button onClick={() => handleRemoveFile(f.id)} className="p-1 rounded-full hover:bg-slate-200 text-slate-500 shrink-0">
+                                        {pendingFiles.map((file, index) => (
+                                            <div key={index} className="bg-white px-3 py-1 rounded-full text-xs text-slate-600 border border-amber-300 flex items-center gap-2">
+                                                <span>{file.name}</span>
+                                                <button
+                                                    onClick={() => setPendingFiles(prev => prev.filter((_, i) => i !== index))}
+                                                    className="text-slate-400 hover:text-slate-600"
+                                                    title="Remove file"
+                                                >
                                                     <XIcon className="w-3 h-3" />
                                                 </button>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
+                            </div>
+                        )}
+                        {!currentUser && (
+                            <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-3 mb-2 flex items-center gap-2">
+                                <AlertCircleIcon className="w-5 h-5 text-indigo-600" />
+                                <span className="text-sm text-indigo-900">Sign in or create an account to use the assistants.</span>
                             </div>
                         )}
                         <div className="flex items-end gap-2 sm:gap-4">
@@ -1796,7 +1814,7 @@ const App = ({ onMount }) => {
                             <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); } }} placeholder="Type here..." className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48" rows="1" />
                             {/* UPDATED: Wrap the send button and add the trial counter text */}
                             <div className="flex flex-col items-center">
-                                <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
+                                <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!currentUser || (!isLoading && !userInput.trim() && pendingFiles.length === 0)} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
                                     {isLoading ? (<><StopIcon className="w-5 h-5" /><span>Stop</span></>) : (<><SendIcon className="w-5 h-5" /><span>Send</span></>)}
                                 </button>
                                 {/* The trial counter now only appears when the shared key mode is active. */}
@@ -1809,91 +1827,91 @@ const App = ({ onMount }) => {
                         </div>
                     </div>
                 </footer>
+
+                {/* --- TOASTS & MODALS --- */}
+                {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
+                {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5" /> : <CheckCircleIcon className="w-5 h-5" />}<span>{apiKeyToast}</span></div>}
+                <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={(feedbackData) => handleFeedbackSubmit({ ...feedbackData, sessionId: SESSION_ID })} assistantName={activePromptKey} />
+                <CartModal
+                    isOpen={isCartOpen}
+                    onClose={() => setIsCartOpen(false)}
+                    cartItems={cartItems}
+                    onRemoveItem={(itemId) => {
+                        const updatedCart = cartItems.filter(item => item.id !== itemId);
+                        setCartItems(updatedCart);
+                        localStorage.setItem('cart', JSON.stringify(updatedCart));
+                        // Clear CartID if cart is empty
+                        if (updatedCart.length === 0) {
+                            setCurrentCartId(null);
+                            localStorage.removeItem('currentCartId');
+                        }
+                    }}
+                    onCheckout={() => {
+                        if (!paymentFormUrl) {
+                            alert('Payment form is loading, please try again.');
+                            return;
+                        }
+                        const itemsList = cartItems.map((item, i) => `${i + 1}. ${item.assistantName} (${new Date(item.timestamp).toLocaleString()})`).join('\n');
+                        const total = cartItems.length * 1000;
+
+                        const params = new URLSearchParams({
+                            'entry.1510315924': SESSION_ID,
+                            'entry.153116271': itemsList,
+                            'entry.1062442954': total.toString(),
+                            'entry.322933472': currentCartId || 'N/A'
+                        });
+
+                        window.open(`${paymentFormUrl}?${params.toString()}`, '_blank');
+
+                        // Clear cart and CartID after checkout
+                        setCartItems([]);
+                        localStorage.removeItem('cart');
+                        setCurrentCartId(null);
+                        localStorage.removeItem('currentCartId');
+                        setIsCartOpen(false);
+                    }}
+                />
+                <LimitReachedModal
+                    isOpen={isLimitModalOpen}
+                    onClose={() => setIsLimitModalOpen(false)}
+                    itemType={pendingAction?.type || 'download'}
+                    inCart={pendingAction?.inCart}
+                    onAddToCart={() => {
+                        const newItem = {
+                            id: Date.now(),
+                            type: pendingAction.type,
+                            assistantName: activePromptKey,
+                            sessionId: SESSION_ID,
+                            timestamp: new Date().toISOString(),
+                            price: 1000,
+                            content: pendingAction.content
+                        };
+                        const updatedCart = [...cartItems, newItem];
+                        setCartItems(updatedCart);
+                        localStorage.setItem('cart', JSON.stringify(updatedCart));
+                        setIsLimitModalOpen(false);
+                        setShowCopyToast(true);
+                        setTimeout(() => setShowCopyToast(false), 3000);
+                    }}
+                    onRemoveFromCart={() => {
+                        const updatedCart = cartItems.filter(item => item.content !== pendingAction.content);
+                        setCartItems(updatedCart);
+                        localStorage.setItem('cart', JSON.stringify(updatedCart));
+                        // Clear CartID if cart is empty
+                        if (updatedCart.length === 0) {
+                            setCurrentCartId(null);
+                            localStorage.removeItem('currentCartId');
+                        }
+                        setIsLimitModalOpen(false);
+                    }}
+                />
+                {/* NEW: Add the Google Doc success modal to the UI */}
+                <DocSuccessModal
+                    isOpen={isDocModalOpen}
+                    onClose={() => setIsDocModalOpen(false)}
+                    docInfo={createdDocInfo}
+                />
             </div>
-
-            {/* --- TOASTS & MODALS --- */}
-            {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
-            {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5" /> : <CheckCircleIcon className="w-5 h-5" />}<span>{apiKeyToast}</span></div>}
-            <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={(feedbackData) => handleFeedbackSubmit({ ...feedbackData, sessionId: SESSION_ID })} assistantName={activePromptKey} />
-            <CartModal
-                isOpen={isCartOpen}
-                onClose={() => setIsCartOpen(false)}
-                cartItems={cartItems}
-                onRemoveItem={(itemId) => {
-                    const updatedCart = cartItems.filter(item => item.id !== itemId);
-                    setCartItems(updatedCart);
-                    localStorage.setItem('cart', JSON.stringify(updatedCart));
-                    // Clear CartID if cart is empty
-                    if (updatedCart.length === 0) {
-                        setCurrentCartId(null);
-                        localStorage.removeItem('currentCartId');
-                    }
-                }}
-                onCheckout={() => {
-                    if (!paymentFormUrl) {
-                        alert('Payment form is loading, please try again.');
-                        return;
-                    }
-                    const itemsList = cartItems.map((item, i) => `${i + 1}. ${item.assistantName} (${new Date(item.timestamp).toLocaleString()})`).join('\n');
-                    const total = cartItems.length * 1000;
-
-                    const params = new URLSearchParams({
-                        'entry.1510315924': SESSION_ID,
-                        'entry.153116271': itemsList,
-                        'entry.1062442954': total.toString(),
-                        'entry.322933472': currentCartId || 'N/A'
-                    });
-
-                    window.open(`${paymentFormUrl}?${params.toString()}`, '_blank');
-
-                    // Clear cart and CartID after checkout
-                    setCartItems([]);
-                    localStorage.removeItem('cart');
-                    setCurrentCartId(null);
-                    localStorage.removeItem('currentCartId');
-                    setIsCartOpen(false);
-                }}
-            />
-            <LimitReachedModal
-                isOpen={isLimitModalOpen}
-                onClose={() => setIsLimitModalOpen(false)}
-                itemType={pendingAction?.type || 'download'}
-                inCart={pendingAction?.inCart}
-                onAddToCart={() => {
-                    const newItem = {
-                        id: Date.now(),
-                        type: pendingAction.type,
-                        assistantName: activePromptKey,
-                        sessionId: SESSION_ID,
-                        timestamp: new Date().toISOString(),
-                        price: 1000,
-                        content: pendingAction.content
-                    };
-                    const updatedCart = [...cartItems, newItem];
-                    setCartItems(updatedCart);
-                    localStorage.setItem('cart', JSON.stringify(updatedCart));
-                    setIsLimitModalOpen(false);
-                    setShowCopyToast(true);
-                    setTimeout(() => setShowCopyToast(false), 3000);
-                }}
-                onRemoveFromCart={() => {
-                    const updatedCart = cartItems.filter(item => item.content !== pendingAction.content);
-                    setCartItems(updatedCart);
-                    localStorage.setItem('cart', JSON.stringify(updatedCart));
-                    // Clear CartID if cart is empty
-                    if (updatedCart.length === 0) {
-                        setCurrentCartId(null);
-                        localStorage.removeItem('currentCartId');
-                    }
-                    setIsLimitModalOpen(false);
-                }}
-            />
-            {/* NEW: Add the Google Doc success modal to the UI */}
-            <DocSuccessModal
-                isOpen={isDocModalOpen}
-                onClose={() => setIsDocModalOpen(false)}
-                docInfo={createdDocInfo}
-            />
         </div>
     );
 }
