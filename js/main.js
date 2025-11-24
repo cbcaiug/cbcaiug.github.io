@@ -60,7 +60,7 @@ try {
     fadeOutLoader(staticLoader);
 }
 
-// Safety net: if React hasn't called onMount within 6 seconds, remove the loader
+// Safety net: if React hasn't called onMount within 3 seconds, remove the loader
 // and reveal the app container so users aren't stuck on the static loader.
 setTimeout(() => {
     if (staticLoader && document.body.contains(staticLoader)) {
@@ -68,4 +68,4 @@ setTimeout(() => {
         fadeOutLoader(staticLoader);
         appContainer.style.opacity = '1';
     }
-}, 6000);
+}, 3000);

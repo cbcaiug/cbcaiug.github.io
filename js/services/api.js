@@ -10,31 +10,43 @@
 const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzyTIlqww6YUE6aL61WoU7Lgg2SyV7nMFYbjFfOP-PqUMS6AKRXqmnddqhEpngEnK2v/exec';
 
 const AI_PROVIDERS = [
-  { key: 'google', label: 'Google Gemini', apiKeyName: 'googleApiKey', apiKeyUrl: 'https://aistudio.google.com/app/apikey', apiHost: 'https://generativelanguage.googleapis.com', models: [
+  {
+    key: 'google', label: 'Google Gemini', apiKeyName: 'googleApiKey', apiKeyUrl: 'https://aistudio.google.com/app/apikey', apiHost: 'https://generativelanguage.googleapis.com', models: [
       { name: 'gemini-3.0-pro-preview', vision: true },
       { name: 'gemini-3.0-flash-preview', vision: true },
-      { name: 'gemini-2.5-pro', vision: true }, 
+      { name: 'gemini-2.5-pro', vision: true },
       { name: 'gemini-2.5-flash', vision: true },
       { name: 'gemini-2.0-pro', vision: true },
       { name: 'gemini-2.0-flash', vision: true },
-      { name: 'gemini-1.5-pro-latest', vision: true }, 
+      { name: 'gemini-1.5-pro-latest', vision: true },
       { name: 'gemini-1.5-flash-latest', vision: true }
-  ]},
-  { key: 'openai', label: 'OpenAI GPT', apiKeyName: 'openaiApiKey', apiKeyUrl: 'https://platform.openai.com/api-keys', apiHost: 'https://api.openai.com', models: [
+    ]
+  },
+  {
+    key: 'openai', label: 'OpenAI GPT', apiKeyName: 'openaiApiKey', apiKeyUrl: 'https://platform.openai.com/api-keys', apiHost: 'https://api.openai.com', models: [
       { name: 'gpt-4o', vision: true }, { name: 'gpt-4-turbo', vision: true }, { name: 'gpt-3.5-turbo', vision: false }
-  ]},
-  { key: 'anthropic', label: 'Anthropic Claude', apiKeyName: 'anthropicApiKey', apiKeyUrl: 'https://console.anthropic.com/settings/keys', apiHost: 'https://api.anthropic.com', models: [
+    ]
+  },
+  {
+    key: 'anthropic', label: 'Anthropic Claude', apiKeyName: 'anthropicApiKey', apiKeyUrl: 'https://console.anthropic.com/settings/keys', apiHost: 'https://api.anthropic.com', models: [
       { name: 'claude-3-opus-20240229', vision: true }, { name: 'claude-3-sonnet-20240229', vision: true }, { name: 'claude-3-haiku-20240307', vision: true }
-  ]},
-  { key: 'groq', label: 'Llama 3 (via Groq)', apiKeyName: 'groqApiKey', apiKeyUrl: 'https://console.groq.com/keys', apiHost: 'https://api.groq.com/openai', models: [
+    ]
+  },
+  {
+    key: 'groq', label: 'Llama 3 (via Groq)', apiKeyName: 'groqApiKey', apiKeyUrl: 'https://console.groq.com/keys', apiHost: 'https://api.groq.com/openai', models: [
       { name: 'llama3-8b-8192', vision: false }, { name: 'llama3-70b-8192', vision: false }
-  ]},
-  { key: 'deepseek', label: 'Deepseek (Free Tier)', apiKeyName: 'deepseekApiKey', apiKeyUrl: 'https://platform.deepseek.com/api_keys', apiHost: 'https://api.deepseek.com', models: [
+    ]
+  },
+  {
+    key: 'deepseek', label: 'Deepseek (Free Tier)', apiKeyName: 'deepseekApiKey', apiKeyUrl: 'https://platform.deepseek.com/api_keys', apiHost: 'https://api.deepseek.com', models: [
       { name: 'deepseek-chat', vision: false }, { name: 'deepseek-coder', vision: false }
-  ]},
-  { key: 'qwen', label: 'Qwen (Free Tier)', apiKeyName: 'qwenApiKey', apiKeyUrl: 'https://openrouter.ai/keys', apiHost: 'https://openrouter.ai/api', models: [
+    ]
+  },
+  {
+    key: 'qwen', label: 'Qwen (Free Tier)', apiKeyName: 'qwenApiKey', apiKeyUrl: 'https://openrouter.ai/keys', apiHost: 'https://openrouter.ai/api', models: [
       { name: 'qwen/qwen-2-72b-instruct', vision: false }, { name: 'qwen/qwen-2-7b-instruct', vision: false }
-  ]},
+    ]
+  },
 ];
 
 // --- EVENT TRACKING & FEEDBACK ---
@@ -46,29 +58,29 @@ const AI_PROVIDERS = [
  * @param {object} details - Additional details about the event.
  */
 const trackEvent = (eventType, assistantName, details = {}) => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const isAdmin = urlParams.get('admin') === 'true';
+  const urlParams = new URLSearchParams(window.location.search);
+  const isAdmin = urlParams.get('admin') === 'true';
 
-    // NEW: 21/08/2025 5:05 PM - Add browser and OS info to the details payload.
-    // The navigator.userAgent string contains all this information.
-    details.browserOs = navigator.userAgent;
+  // NEW: 21/08/2025 5:05 PM - Add browser and OS info to the details payload.
+  // The navigator.userAgent string contains all this information.
+  details.browserOs = navigator.userAgent;
 
-    const payload = {
-        action: 'logEvent',
-        event: {
-            type: eventType,
-            assistant: assistantName,
-            details: details,
-            userType: isAdmin ? 'Admin' : 'User'
-        }
-    };
-    
-    fetch(GAS_WEB_APP_URL, {
-        method: 'POST',
-        mode: 'no-cors', // Use no-cors for simple, one-way data sending.
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload)
-    }).catch(error => console.error('Event tracking failed:', error));
+  const payload = {
+    action: 'logEvent',
+    event: {
+      type: eventType,
+      assistant: assistantName,
+      details: details,
+      userType: isAdmin ? 'Admin' : 'User'
+    }
+  };
+
+  fetch(GAS_WEB_APP_URL, {
+    method: 'POST',
+    mode: 'no-cors', // Use no-cors for simple, one-way data sending.
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload)
+  }).catch(error => console.error('Event tracking failed:', error));
 };
 
 /**
@@ -76,7 +88,7 @@ const trackEvent = (eventType, assistantName, details = {}) => {
  * @param {object} submissionData - The data from the feedback form.
  */
 const handleFeedbackSubmit = async (submissionData) => {
-    trackEvent('feedback_submitted', submissionData.assistantName, submissionData);
+  trackEvent('feedback_submitted', submissionData.assistantName, submissionData);
 };
 
 
@@ -90,11 +102,11 @@ const PromptManager = {
       // Add a 5-second timeout to prevent indefinite hanging if GAS backend is slow
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 5000);
-      
+
       try {
         const response = await fetch(`${GAS_WEB_APP_URL}?action=getAssistants`, { signal: controller.signal });
         clearTimeout(timeoutId);
-        
+
         const data = await response.json();
         if (data.success) {
           this.availableAssistants = data.assistants;
@@ -142,27 +154,27 @@ const PromptManager = {
  * @returns {Promise<Array>} A promise that resolves to an array of update objects.
  */
 const fetchNotifications = async () => {
+  try {
+    // Add a 3-second timeout to prevent indefinite hanging
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3000);
+
     try {
-        // Add a 3-second timeout to prevent indefinite hanging
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 3000);
-        
-        try {
-            const response = await fetch(`${GAS_WEB_APP_URL}?action=getUpdates`, { signal: controller.signal });
-            clearTimeout(timeoutId);
-            const data = await response.json();
-            if (data.success && data.updates) {
-                return data.updates;
-            }
-            return [];
-        } catch (fetchError) {
-            clearTimeout(timeoutId);
-            throw fetchError;
-        }
-    } catch (error) {
-        console.error("Failed to fetch notifications (continuing with empty):", error);
-        return [];
+      const response = await fetch(`${GAS_WEB_APP_URL}?action=getUpdates`, { signal: controller.signal });
+      clearTimeout(timeoutId);
+      const data = await response.json();
+      if (data.success && data.updates) {
+        return data.updates;
+      }
+      return [];
+    } catch (fetchError) {
+      clearTimeout(timeoutId);
+      throw fetchError;
     }
+  } catch (error) {
+    console.error("Failed to fetch notifications (continuing with empty):", error);
+    return [];
+  }
 };
 
 /**
@@ -170,17 +182,17 @@ const fetchNotifications = async () => {
  * @returns {Promise<Array>} A promise that resolves to an array of review objects.
  */
 const fetchReviews = async () => {
-    try {
-        const response = await fetch(`${GAS_WEB_APP_URL}?action=getReviews`);
-        const data = await response.json();
-        if (data.success && data.reviews) {
-            return data.reviews;
-        }
-        return [];
-    } catch (error) {
-        console.error("Failed to fetch reviews:", error);
-        return [];
+  try {
+    const response = await fetch(`${GAS_WEB_APP_URL}?action=getReviews`);
+    const data = await response.json();
+    if (data.success && data.reviews) {
+      return data.reviews;
     }
+    return [];
+  } catch (error) {
+    console.error("Failed to fetch reviews:", error);
+    return [];
+  }
 };
 
 // --- FILE & DATA PROCESSING ---
@@ -191,13 +203,13 @@ const fetchReviews = async () => {
  * @returns {Promise<object>} A promise that resolves to an object with mime_type and base64 data.
  */
 const processFileForApi = (file) => {
-    return new Promise((resolve, reject) => {
-        if (!file) reject("No file provided");
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve({ mime_type: file.type, data: reader.result.split(',')[1] });
-        reader.onerror = (error) => reject(error);
-    });
+  return new Promise((resolve, reject) => {
+    if (!file) reject("No file provided");
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve({ mime_type: file.type, data: reader.result.split(',')[1] });
+    reader.onerror = (error) => reject(error);
+  });
 };
 
 // Note: The main `fetchAndStreamResponse` function will be moved into the App.js component

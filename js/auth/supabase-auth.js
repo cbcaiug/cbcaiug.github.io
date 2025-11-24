@@ -12,40 +12,40 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 const modalHTML = `
 <style>
-/* Modal base - mobile-first responsive */
-#authModal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.6); z-index: 99999 !important; backdrop-filter: blur(4px); padding: 16px; }
-#authBox { background: var(--auth-bg, white); padding: 20px; width: 100%; max-width: 420px; border-radius: 12px; box-shadow: 0 18px 50px rgba(2,6,23,0.45); font-family: Inter, sans-serif; position: relative; z-index: 100000 !important; }
-#authBox * { position: relative; z-index: 100001 !important; }
-#authBox img { display: block; margin: 0 auto 12px; height: 56px; border-radius: 8px; }
-#authBox h2 { margin: 0 0 6px; font-size: 20px; font-weight: 600; text-align: center; color: var(--auth-text, #0f172a); }
-#authBox p { margin: 0 0 14px; font-size: 13px; color: var(--auth-subtext, #475569); text-align: center; }
-#authBox input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #e6e7eb; border-radius: 8px; font-size: 14px; box-sizing: border-box; background: var(--auth-input-bg, white) !important; color: var(--auth-text, #0f172a) !important; }
-#authBox input:focus { outline: 2px solid #4f46e5; border-color: #4f46e5; }
-#authBox button { width: 100%; padding: 12px; margin-bottom: 8px; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.12s; }
+/* Modal base - mobile-first responsive, compact design */
+#authModal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.7); z-index: 10050; backdrop-filter: blur(4px); padding: 16px; pointer-events: auto; }
+#authBox { background: var(--auth-bg, #0b1220); padding: 24px 20px 20px; width: 100%; max-width: 400px; border-radius: 12px; box-shadow: 0 18px 50px rgba(2,6,23,0.85); font-family: Inter, sans-serif; position: relative; max-height: 90vh; overflow-y: auto; pointer-events: auto; }
+#authBox img { display: block; margin: 0 auto 10px; height: 48px; border-radius: 8px; }
+#authBox h2 { margin: 0 0 4px; font-size: 19px; font-weight: 600; text-align: center; color: var(--auth-text, #e6eef8); }
+#authBox p { margin: 0 0 12px; font-size: 13px; color: var(--auth-subtext, #94a3b8); text-align: center; }
+#authBox input { width: 100%; padding: 11px 12px; margin-bottom: 8px; border: 1px solid var(--auth-input-border, #1f2937); border-radius: 8px; font-size: 14px; box-sizing: border-box; background: var(--auth-input-bg, rgba(15,23,36,0.6)) !important; color: var(--auth-text, #e6eef8) !important; }
+#authBox input:focus { outline: 2px solid #4f46e5; border-color: #4f46e5; background: var(--auth-input-bg, rgba(15,23,36,0.8)) !important; }
+#authBox input::placeholder { color: #64748b; }
+#authBox button { width: 100%; padding: 11px; margin-bottom: 6px; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.12s; }
 #authBox button:hover { transform: translateY(-1px); }
 #signInBtn { background: #4f46e5; color: white; }
-#signUpBtn { background: transparent; color: var(--auth-text, #0f172a); border: 1px solid #e6e7eb; }
-#googleBtn { background: var(--google-bg, #ffffff); color: var(--auth-text, #0f172a); display:flex; align-items:center; gap:10px; justify-content:center; padding:10px; border-radius:8px; border:1px solid #e6e7eb; font-weight:600; }
+#signUpBtn { background: transparent; color: var(--auth-text, #e6eef8); border: 1px solid #374151; }
+#googleBtn { background: var(--google-bg, #111827); color: var(--auth-text, #e6eef8); display:flex; align-items:center; gap:10px; justify-content:center; padding:10px; border-radius:8px; border:1px solid #374151; font-weight:600; }
 #googleBtn img, #googleBtn svg { height:18px; width:18px; }
-#authMessage { min-height: 20px; font-size: 13px; margin-top: 8px; padding: 8px; border-radius: 6px; }
-#authMessage.error { background: #fee; color: #c00; }
-#authMessage.success { background: #e6ffed; color: #04660a; }
-#passwordValidation { font-size:12px; color:#94a3b8; margin-top:-6px; margin-bottom:8px; }
-#usernameExists { font-size:12px; color:#94a3b8; margin-top:-6px; margin-bottom:8px; }
-#authFooter { display:flex; justify-content:space-between; gap:8px; align-items:center; }
-#forgotLink { font-size:13px; color:#4f46e5; cursor:pointer; text-decoration:underline; }
-#forgotFlow { display:none; margin-top:8px; }
+#authMessage { margin-top: 12px; padding: 10px 12px; border-radius: 6px; font-weight: 500; text-align: center; line-height: 1.4; }
+#authMessage.error { background: #b91c1c; color: #ffffff; border: 1px solid #7f1d1d; }
+#authMessage.success { background: #059669; color: #ffffff; border: 1px solid #047857; }
+#passwordValidation { font-size:11px; color:#64748b; margin-top:-4px; margin-bottom:6px; }
+#usernameExists { font-size:11px; color:#64748b; margin-top:-4px; margin-bottom:6px; }
+#authFooter { display:flex; justify-content:space-between; gap:8px; align-items:center; margin-top: 4px; }
+#forgotLink { font-size:12px; color:#6366f1; cursor:pointer; text-decoration:underline; }
 
-/* Dark mode tweaks */
-@media (prefers-color-scheme: dark) {
-  :root { --auth-bg: #0b1220; --auth-text: #e6eef8; --auth-subtext: #94a3b8; --auth-input-bg: #0f1724; --google-bg: #111827; }
-  #authBox { box-shadow: 0 18px 50px rgba(2,6,23,0.75); }
-  #authBox input { border-color: #1f2937; }
-  #signUpBtn { border-color: #1f2937; }
+/* Light mode override */
+@media (prefers-color-scheme: light) {
+  :root { --auth-bg: white; --auth-text: #0f172a; --auth-subtext: #475569; --auth-input-bg: #f8fafc; --auth-input-border: #e2e8f0; --google-bg: #ffffff; }
+  #authBox { box-shadow: 0 18px 50px rgba(2,6,23,0.45); }
+  #authBox input { border-color: #e2e8f0; }
+  #signUpBtn { border-color: #e2e8f0; color: #0f172a; }
+  #googleBtn { border-color: #e2e8f0; color: #0f172a; background: white; }
+  #authMessage.error { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+  #authMessage.success { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
+  #forgotLink { color: #4f46e5; }
 }
-
-/* Keep modal centered and avoid overflow */
-#authBox { max-height: calc(100vh - 64px); overflow-y: auto; }
 
 </style>
 <div id="authModal" style="display:none">
@@ -70,29 +70,33 @@ const modalHTML = `
 
     <input id="usernameInput" type="text" placeholder="Username or Email" autocomplete="username">
     <div id="usernameExists"></div>
-    <input id="passwordInput" type="password" placeholder="Password" autocomplete="current-password">
+    <div style="position: relative;">
+      <input id="passwordInput" type="password" placeholder="Password" autocomplete="current-password" style="padding-right: 42px;">
+      <button id="togglePassword" type="button" style="position: absolute; right: 4px; top: 50%; transform: translateY(-50%); width: auto !important; margin: 0; background: none; border: none; cursor: pointer; padding: 6px; display: flex; align-items: center; justify-content: center; z-index: 10;" title="Show/Hide Password" aria-label="Toggle password visibility">
+        <svg id="eyeOffIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #64748b;">
+          <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+          <line x1="1" y1="1" x2="23" y2="23"></line>
+        </svg>
+        <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #64748b; display: none;">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </button>
+    </div>
     <div id="passwordValidation">Password must be at least 6 characters</div>
 
     <div id="authFooter">
       <div style="flex:1">
         <button id="signInBtn">Sign In</button>
       </div>
-      <div style="width:8px"></div>
+      <div style="width:6px"></div>
       <div style="flex:1">
         <button id="signUpBtn">Create Account</button>
       </div>
     </div>
 
-    <div style="margin-top:6px; display:flex; justify-content:center;">
+    <div style="margin-top:4px; display:flex; justify-content:center;">
       <span id="forgotLink">Forgot password?</span>
-    </div>
-
-    <!-- Staged forgot-password flow (hidden by default to avoid breaking current auth) -->
-    <div id="forgotFlow">
-      <p style="font-size:13px; color:var(--auth-subtext); margin-bottom:8px;">Enter the email where we should send a recovery code (feature staged)</p>
-      <input id="forgotEmailInput" type="email" placeholder="your.email@example.com">
-      <button id="sendRecoveryBtn" style="margin-top:8px;">Request recovery code</button>
-      <div id="forgotMessage" style="margin-top:8px; font-size:13px;"></div>
     </div>
 
     <div id="authMessage"></div>
@@ -109,12 +113,43 @@ const authMessage = document.getElementById('authMessage');
 const signInBtn = document.getElementById('signInBtn');
 const signUpBtn = document.getElementById('signUpBtn');
 
-const showModal = () => modal.style.display = 'flex';
-const hideModal = () => modal.style.display = 'none';
+// Password visibility toggle
+const togglePasswordBtn = document.getElementById('togglePassword');
+const eyeIcon = document.getElementById('eyeIcon');
+const eyeOffIcon = document.getElementById('eyeOffIcon');
+if (togglePasswordBtn) {
+  togglePasswordBtn.addEventListener('click', () => {
+    const isPassword = passwordInput.type === 'password';
+    passwordInput.type = isPassword ? 'text' : 'password';
+    // eyeOffIcon (crossed) shows when password is HIDDEN, eyeIcon shows when password is VISIBLE
+    eyeOffIcon.style.display = isPassword ? 'none' : 'block';
+    eyeIcon.style.display = isPassword ? 'block' : 'none';
+  });
+}
+
+const showModal = () => {
+  if (modal) modal.style.display = 'flex';
+};
+const hideModal = () => {
+  if (modal) modal.style.display = 'none';
+};
 
 const showMessage = (msg, type = 'error') => {
+  if (!authMessage) return;
+
+  if (!msg) {
+    authMessage.style.display = 'none';
+    authMessage.textContent = '';
+    authMessage.className = '';
+    return;
+  }
+
+  authMessage.style.display = 'block';
   authMessage.textContent = msg;
   authMessage.className = type;
+  // Ensure message is visible by scrolling to bottom of authBox if needed
+  const box = document.getElementById('authBox');
+  if (box) box.scrollTop = box.scrollHeight;
 };
 
 const ensureQuotaRow = async (userId) => {
@@ -131,7 +166,7 @@ const handleAuthStateChange = async (event, session) => {
       const userId = session.user.id;
       // Ensure quota row exists for this user (covers OAuth sign-ups too)
       await ensureQuotaRow(userId);
-      
+
       const { data: quota } = await supabase.from('usage_quotas').select('*').eq('user_id', userId).maybeSingle();
       // Broadcast the latest quota to the app so all open tabs/browsers update UI
       try {
@@ -141,7 +176,7 @@ const handleAuthStateChange = async (event, session) => {
       } catch (e) {
         console.warn('Could not dispatch quotaUpdated event', e);
       }
-      
+
       if (quota?.accepted_terms) {
         // User has accepted terms, hide auth modal
         hideModal();
@@ -152,8 +187,14 @@ const handleAuthStateChange = async (event, session) => {
       }
     }
   } else if (event === 'SIGNED_OUT') {
-    // User signed out
-    showModal();
+    // User signed out - show modal after brief delay to prevent race condition
+    setTimeout(() => {
+      showModal();
+      // Ensure auth initialization completes so loader can be dismissed
+      if (window.authInitComplete) {
+        window.authInitComplete();
+      }
+    }, 100);
   }
 };
 
@@ -162,8 +203,15 @@ const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
 
 // Check initial session on page load (handles OAuth callbacks and session recovery)
 (async () => {
+  // Add timeout to prevent infinite hanging
+  const timeoutPromise = new Promise((_, reject) =>
+    setTimeout(() => reject(new Error('Auth check timeout')), 5000)
+  );
+
   try {
-    const { data: { user } } = await supabase.auth.getUser();
+    const authCheck = supabase.auth.getUser();
+    const { data: { user } } = await Promise.race([authCheck, timeoutPromise]);
+
     if (user) {
       const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', user.id).maybeSingle();
       if (quota?.accepted_terms) {
@@ -180,6 +228,11 @@ const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
   } catch (err) {
     console.error('Error checking initial session:', err);
     showModal();
+  } finally {
+    // ALWAYS signal completion regardless of success/failure
+    if (window.authInitComplete) {
+      window.authInitComplete();
+    }
   }
 })();
 
@@ -191,9 +244,9 @@ signInBtn.addEventListener('click', async () => {
   const username = usernameInput.value.trim();
   const password = passwordInput.value;
   if (!username || !password) return showMessage('Enter username/email and password');
-  
+
   const email = username.includes('@') ? username : `${username}@local.app`;
-  
+
   const { data, error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) {
     // Provide clearer messages while keeping Supabase error text
@@ -203,11 +256,26 @@ signInBtn.addEventListener('click', async () => {
     return showMessage(error.message);
   }
   if (data?.user) {
-    await ensureQuotaRow(data.user.id);
-    const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', data.user.id).single();
-    hideModal();
-    if (!quota?.accepted_terms) {
-      window.showConsentModal?.();
+    showMessage('Login successful!', 'success');
+
+    // Hide modal regardless of background tasks
+    setTimeout(() => {
+      hideModal();
+      console.log('Auth modal hidden (timeout)');
+    }, 600);
+
+    // Process user setup in background
+    try {
+      await ensureQuotaRow(data.user.id);
+      const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', data.user.id).single();
+
+      if (!quota?.accepted_terms) {
+        // If terms not accepted, we might need to show consent modal
+        // But the auth modal is already hidden by the timeout above
+        window.showConsentModal?.();
+      }
+    } catch (err) {
+      console.error('Error during post-login setup:', err);
     }
   }
 });
@@ -220,14 +288,14 @@ signInBtn.addEventListener('click', async () => {
 const googleBtn = document.getElementById('googleBtn');
 if (googleBtn) {
   googleBtn.addEventListener('click', async () => {
-    showMessage('Redirecting to Google...','');
+    showMessage('Redirecting to Google...', '');
     try {
       // Build the redirect URL to ensure user returns to the app after OAuth callback
       const baseUrl = window.location.origin;
       const redirectTo = `${baseUrl}/app.html`;
-      
+
       // Initiate Google OAuth flow with proper redirect
-      await supabase.auth.signInWithOAuth({ 
+      await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
           redirectTo: redirectTo,
@@ -272,34 +340,11 @@ usernameInput.addEventListener('input', () => {
   }
 });
 
-// --- NEW: Forgot password UI (staged) ---
+// --- Forgot password link handler ---
 const forgotLink = document.getElementById('forgotLink');
-const forgotFlow = document.getElementById('forgotFlow');
-const sendRecoveryBtn = document.getElementById('sendRecoveryBtn');
-const forgotEmailInput = document.getElementById('forgotEmailInput');
-const forgotMessage = document.getElementById('forgotMessage');
-if (forgotLink && forgotFlow) {
+if (forgotLink) {
   forgotLink.addEventListener('click', () => {
-    // Toggle the staged recovery UI. The actual sending is staged to avoid breaking auth.
-    forgotFlow.style.display = forgotFlow.style.display === 'block' ? 'none' : 'block';
-  });
-}
-
-if (sendRecoveryBtn) {
-  sendRecoveryBtn.addEventListener('click', async () => {
-    const email = (forgotEmailInput.value || '').trim();
-    if (!email) return (forgotMessage.textContent = 'Enter a valid email');
-    forgotMessage.textContent = '';
-    // Feature is staged: do not call reset endpoints automatically in production without backend verification.
-    // You can replace the block below with a call to `supabase.auth.resetPasswordForEmail(email)` or a secure server endpoint.
-    try {
-      forgotMessage.textContent = 'Recovery feature is staged. An implementation will send a code/link here.';
-      forgotMessage.style.color = '#4f46e5';
-    } catch (err) {
-      console.error(err);
-      forgotMessage.textContent = 'Unable to request recovery at this time.';
-      forgotMessage.style.color = '#c00';
-    }
+    alert('Password recovery feature coming soon! Please contact support at support@cbcaiug.com for assistance.');
   });
 }
 
@@ -346,7 +391,11 @@ window.supabaseAuth = {
   },
   async signOut() {
     await supabase.auth.signOut();
-    showModal();
+    // Do not force a full page reload or forcibly show the modal here.
+    // Rely on the auth state change handler to show the auth modal.
+    try {
+      window.dispatchEvent(new CustomEvent('userSignedOut'));
+    } catch (e) { console.warn('userSignedOut dispatch failed', e); }
   },
   async acceptTerms() {
     const { data: { user } } = await supabase.auth.getUser();

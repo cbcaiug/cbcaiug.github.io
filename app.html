@@ -1,59 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
     <!-- Dynamic Meta Tags -->
     <title id="page-title">CBC AI Tool - Educational Assistant</title>
-    <meta name="description" content="Free AI-powered educational tools for Ugandan teachers. Generate lesson plans, assessments, and schemes of work." id="page-description">
-    
+    <meta name="description"
+        content="Free AI-powered educational tools for Ugandan teachers. Generate lesson plans, assessments, and schemes of work."
+        id="page-description">
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="CBC AI Tool - Educational Assistant" id="og-title">
-    <meta property="og:description" content="Free AI-powered educational tools for Ugandan teachers. Generate lesson plans, assessments, and schemes of work." id="og-description">
+    <meta property="og:description"
+        content="Free AI-powered educational tools for Ugandan teachers. Generate lesson plans, assessments, and schemes of work."
+        id="og-description">
     <meta property="og:image" content="https://cbcaiug.github.io/images/cbc-ai-tool-logo.jpeg" id="og-image">
     <meta property="og:url" content="https://cbcaiug.github.io/app.html" id="og-url">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CBC AI Tool">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CBC AI Tool - Educational Assistant" id="twitter-title">
-    <meta name="twitter:description" content="Free AI-powered educational tools for Ugandan teachers. Generate lesson plans, assessments, and schemes of work." id="twitter-description">
+    <meta name="twitter:description"
+        content="Free AI-powered educational tools for Ugandan teachers. Generate lesson plans, assessments, and schemes of work."
+        id="twitter-description">
     <meta name="twitter:image" content="https://cbcaiug.github.io/images/cbc-ai-tool-logo.jpeg" id="twitter-image">
-    
+
     <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3466164217437074" crossorigin="anonymous"></script>
-    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3466164217437074"
+        crossorigin="anonymous"></script>
+
     <!-- Google Funding Choices (Consent Management) -->
-    <script async src="https://fundingchoicesmessages.google.com/i/pub-3466164217437074?ers=1" nonce="NONCE_VALUE"></script>
-    <script nonce="NONCE_VALUE">(function(){function signalGooglefcPresent(){if(!window.frames['googlefcPresent']){if(document.body){const iframe=document.createElement('iframe');iframe.style='width:0;height:0;border:none;z-index:-1000;left:-1000px;top:-1000px;';iframe.style.display='none';iframe.name='googlefcPresent';document.body.appendChild(iframe);}else{setTimeout(signalGooglefcPresent,0);}}}signalGooglefcPresent();})();</script>
-    
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-3466164217437074?ers=1"
+        nonce="NONCE_VALUE"></script>
+    <script
+        nonce="NONCE_VALUE">(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width:0;height:0;border:none;z-index:-1000;left:-1000px;top:-1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
+
     <link rel="icon" href="https://cbcaiug.github.io/images/cbc-ai-tool-logo.jpeg">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCTLDP04EJ"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YCTLDP04EJ');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YCTLDP04EJ');
     </script>
 
-       <!-- External Dependencies -->
+    <!-- External Dependencies -->
     <script src="https://cdn.tailwindcss.com" defer></script>
-    <script src="https://unpkg.com/react@18/umd/react.development.js" defer></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" defer></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" defer></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" defer></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
-    <script src="https://unpkg.com/docx@8.5.0/build/index.js" defer></script>
-    <script src="https://unpkg.com/intro.js/intro.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" async></script>
+    <script src="https://unpkg.com/docx@8.5.0/build/index.js" async></script>
+    <script src="https://unpkg.com/intro.js/intro.js" async></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Performance: Preconnect to external resources -->
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://qrkodwjhxrcrvsgkfeeo.supabase.co">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Application Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
     <style>
@@ -61,45 +75,50 @@
         body {
             /* No padding-top on body; header is fixed and main content has pt-24 */
         }
-        
+
         @supports (padding: env(safe-area-inset-top)) {
             body {
                 padding-bottom: env(safe-area-inset-bottom);
             }
         }
-        
+
         @media (min-width: 1024px) {
             body {
-                padding-top: 0; /* Ensure no padding-top on desktop */
+                padding-top: 0;
+                /* Ensure no padding-top on desktop */
             }
         }
-        
+
         /* Enhanced scrollbar styling */
         .enhanced-scrollbar::-webkit-scrollbar {
             width: 14px;
         }
+
         .enhanced-scrollbar::-webkit-scrollbar-track {
             background: #374151;
             border-radius: 7px;
         }
+
         .enhanced-scrollbar::-webkit-scrollbar-thumb {
             background: #6b7280;
             border-radius: 7px;
             border: 2px solid #374151;
         }
+
         .enhanced-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #9ca3af;
         }
-        
+
         /* Tab navigation */
         .settings-tab {
             transition: all 0.2s ease;
         }
+
         .settings-tab.active {
             background: #4f46e5;
             color: white;
         }
-        
+
         /* Keyboard navigation focus */
         .settings-input:focus {
             outline: 2px solid #4f46e5;
@@ -113,115 +132,120 @@
     <link rel="stylesheet" href="css/tutorial.css">
 
 </head>
+
 <body>
-      <!-- Single smooth loader that stays until React is ready -->
+    <!-- Single smooth loader that stays until React is ready -->
     <div id="root">
-      <div class="loading-screen-container">
-        <div class="loading-logo-wrapper">
-          <img src="https://cbcaiug.github.io/images/cbc-ai-tool-logo.jpeg" alt="CBC AI Tool Logo" class="loading-logo-img" />
+        <div class="loading-screen-container">
+            <div class="loading-logo-wrapper">
+                <img src="https://cbcaiug.github.io/images/cbc-ai-tool-logo.jpeg" alt="CBC AI Tool Logo"
+                    class="loading-logo-img" />
+            </div>
+            <p class="loading-screen-text">Initializing AI Assistant...</p>
+            <p class="loading-screen-text" style="font-size: 0.875rem; color: #94a3b8; margin-top: 0.5rem;">This may
+                take a moment. If stuck, try refreshing.</p>
         </div>
-        <p class="loading-screen-text">Initializing AI Assistant...</p>
-      </div>
     </div>
 
     <script>
-      // Early initialization to ensure OAuth callback handling works smoothly
-      // This runs before any async auth module loads, so the loading screen stays visible
-      window.authInitPromise = new Promise((resolve) => {
-        window.authInitComplete = resolve;
-      });
+        // Early initialization to ensure OAuth callback handling works smoothly
+        // This runs before any async auth module loads, so the loading screen stays visible
+        window.authInitPromise = new Promise((resolve) => {
+            window.authInitComplete = resolve;
+        });
     </script>
 
     <!-- Application Scripts (Order is important) -->
-<!-- Supabase Auth (loads first) -->
-<script type="module" src="js/auth/supabase-auth.js"></script>
+    <!-- Supabase Auth (loads first) -->
+    <script type="module" src="js/auth/supabase-auth.js"></script>
 
-<!-- Libraries & Services -->
-<script type="text/babel" src="js/services/api.js" defer></script>
-<script type="text/babel" src="js/utils/helpers.js" defer></script>
+    <!-- Libraries & Services -->
+    <script type="text/babel" src="js/services/api.js" defer></script>
+    <script type="text/babel" src="js/utils/helpers.js" defer></script>
 
-<!-- UI Components -->
-<script type="text/babel" src="js/components/Icons.js" defer></script>
-<script type="text/babel" src="js/components/Modals.js" defer></script>
-<script type="text/babel" src="js/components/Chat.js" defer></script>
-<script type="text/babel" src="js/components/Sidebar.js" defer></script>
+    <!-- UI Components -->
+    <script type="text/babel" src="js/components/Icons.js" defer></script>
+    <script type="text/babel" src="js/components/Modals.js" defer></script>
+    <script type="text/babel" src="js/components/Chat.js" defer></script>
+    <script type="text/babel" src="js/components/Sidebar.js" defer></script>
 
-<!-- Main App Component -->
-<script type="text/babel" src="js/components/App.js" defer></script>
+    <!-- Main App Component -->
+    <script type="text/babel" src="js/components/App.js" defer></script>
 
-<!-- Entry Point -->
-<script type="text/babel" src="js/main.js" defer></script>
+    <!-- Entry Point -->
+    <script type="text/babel" src="js/main.js" defer></script>
 
-<!-- Dynamic Meta Tag Updates -->
-<script>
-    // Assistant definitions for dynamic meta tags
-    const assistantMeta = {
-        'Item Writer': {
-            title: 'Item Writer - CBC AI Tool',
-            description: 'Generate scenario-based assessment items with structured scoring guides for Uganda\'s CBC curriculum.',
-            icon: '✏️'
-        },
-        'Lesson Plans (NCDC)': {
-            title: 'Lesson Plan Generator - CBC AI Tool', 
-            description: 'Create detailed lesson plans following the official NCDC template for Uganda\'s curriculum.',
-            icon: '📋'
-        },
-        'Scheme of Work(NCDC)': {
-            title: 'Scheme of Work Creator - CBC AI Tool',
-            description: 'Develop structured schemes of work based on Uganda\'s CBC syllabus requirements.',
-            icon: '📅'
-        },
-        'Lesson Notes Generator': {
-            title: 'Lesson Notes Generator - CBC AI Tool',
-            description: 'Produce comprehensive and well-structured lecture notes for any topic.',
-            icon: '📖'
-        },
-        'Coteacher': {
-            title: 'Coteacher - CBC AI Tool',
-            description: 'Your all-purpose teaching assistant for questions and brainstorming about Uganda\'s CBC.',
-            icon: '👥'
-        },
-        'AI in Education Coach': {
-            title: 'AI in Education Coach - CBC AI Tool',
-            description: 'Get guidance on integrating AI tools effectively in your classroom.',
-            icon: '🌐'
-        },
-        'Essay Grading Assistant': {
-            title: 'Essay Grading Assistant - CBC AI Tool',
-            description: 'Grade student essays efficiently using specified rubrics and criteria.',
-            icon: '✅'
+    <!-- Dynamic Meta Tag Updates -->
+    <script>
+        // Assistant definitions for dynamic meta tags
+        const assistantMeta = {
+            'Item Writer': {
+                title: 'Item Writer - CBC AI Tool',
+                description: 'Generate scenario-based assessment items with structured scoring guides for Uganda\'s CBC curriculum.',
+                icon: '✏️'
+            },
+            'Lesson Plans (NCDC)': {
+                title: 'Lesson Plan Generator - CBC AI Tool',
+                description: 'Create detailed lesson plans following the official NCDC template for Uganda\'s curriculum.',
+                icon: '📋'
+            },
+            'Scheme of Work(NCDC)': {
+                title: 'Scheme of Work Creator - CBC AI Tool',
+                description: 'Develop structured schemes of work based on Uganda\'s CBC syllabus requirements.',
+                icon: '📅'
+            },
+            'Lesson Notes Generator': {
+                title: 'Lesson Notes Generator - CBC AI Tool',
+                description: 'Produce comprehensive and well-structured lecture notes for any topic.',
+                icon: '📖'
+            },
+            'Coteacher': {
+                title: 'Coteacher - CBC AI Tool',
+                description: 'Your all-purpose teaching assistant for questions and brainstorming about Uganda\'s CBC.',
+                icon: '👥'
+            },
+            'AI in Education Coach': {
+                title: 'AI in Education Coach - CBC AI Tool',
+                description: 'Get guidance on integrating AI tools effectively in your classroom.',
+                icon: '🌐'
+            },
+            'Essay Grading Assistant': {
+                title: 'Essay Grading Assistant - CBC AI Tool',
+                description: 'Grade student essays efficiently using specified rubrics and criteria.',
+                icon: '✅'
+            }
+        };
+
+        // Update meta tags based on URL parameter
+        function updateMetaTags() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const assistant = urlParams.get('assistant');
+
+            if (assistant && assistantMeta[assistant]) {
+                const meta = assistantMeta[assistant];
+                const baseUrl = 'https://cbcaiug.github.io/app.html?assistant=' + encodeURIComponent(assistant);
+
+                // Update title and description
+                document.getElementById('page-title').textContent = meta.title;
+                document.getElementById('page-description').setAttribute('content', meta.description);
+
+                // Update Open Graph tags
+                document.getElementById('og-title').setAttribute('content', meta.title);
+                document.getElementById('og-description').setAttribute('content', meta.description);
+                document.getElementById('og-url').setAttribute('content', baseUrl);
+
+                // Update Twitter tags
+                document.getElementById('twitter-title').setAttribute('content', meta.title);
+                document.getElementById('twitter-description').setAttribute('content', meta.description);
+
+                // Update page title in browser
+                document.title = meta.title;
+            }
         }
-    };
-    
-    // Update meta tags based on URL parameter
-    function updateMetaTags() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const assistant = urlParams.get('assistant');
-        
-        if (assistant && assistantMeta[assistant]) {
-            const meta = assistantMeta[assistant];
-            const baseUrl = 'https://cbcaiug.github.io/app.html?assistant=' + encodeURIComponent(assistant);
-            
-            // Update title and description
-            document.getElementById('page-title').textContent = meta.title;
-            document.getElementById('page-description').setAttribute('content', meta.description);
-            
-            // Update Open Graph tags
-            document.getElementById('og-title').setAttribute('content', meta.title);
-            document.getElementById('og-description').setAttribute('content', meta.description);
-            document.getElementById('og-url').setAttribute('content', baseUrl);
-            
-            // Update Twitter tags
-            document.getElementById('twitter-title').setAttribute('content', meta.title);
-            document.getElementById('twitter-description').setAttribute('content', meta.description);
-            
-            // Update page title in browser
-            document.title = meta.title;
-        }
-    }
-    
-    // Run on page load
-    updateMetaTags();
-</script>
+
+        // Run on page load
+        updateMetaTags();
+    </script>
 </body>
+
 </html>
