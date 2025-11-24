@@ -166,6 +166,8 @@ const showModal = () => {
     const suppressUntil = window.__suppressAuthModalUntil || 0;
     if (Date.now() < suppressUntil) return;
   } catch (e) { /* ignore */ }
+  // Clear any previous messages (for example a lingering "Login successful")
+  try { showMessage(''); } catch (e) {}
   if (modal) {
     modal.style.display = 'flex';
     modal.style.pointerEvents = 'auto';
@@ -260,8 +262,22 @@ const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
   );
 
   try {
-    const authCheck = supabase.auth.getUser();
-    const { data: { user } } = await Promise.race([authCheck, timeoutPromise]);
+    // First, attempt to parse an OAuth callback in the URL (handles Google redirects)
+    let user = null;
+    try {
+      const sessionFromUrl = await supabase.auth.getSessionFromUrl().catch(() => null);
+      if (sessionFromUrl && sessionFromUrl.data && sessionFromUrl.data.session && sessionFromUrl.data.session.user) {
+        user = sessionFromUrl.data.session.user;
+      }
+    } catch (e) {
+      // ignore - not all supabase client versions expose getSessionFromUrl
+    }
+
+    if (!user) {
+      const authCheck = supabase.auth.getUser();
+      const { data: { user: userFromGet } } = await Promise.race([authCheck, timeoutPromise]);
+      user = userFromGet;
+    }
 
     if (user) {
       const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', user.id).maybeSingle();
