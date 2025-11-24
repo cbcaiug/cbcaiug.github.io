@@ -160,10 +160,16 @@ if (togglePasswordBtn) {
 }
 
 const showModal = () => {
-  if (modal) modal.style.display = 'flex';
+  if (modal) {
+    modal.style.display = 'flex';
+    modal.style.pointerEvents = 'auto';
+  }
 };
 const hideModal = () => {
-  if (modal) modal.style.display = 'none';
+  if (modal) {
+    modal.style.display = 'none';
+    modal.style.pointerEvents = 'none';
+  }
 };
 
 const showMessage = (msg, type = 'error') => {
@@ -272,15 +278,21 @@ const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
 
 // Sign In
 signInBtn.addEventListener('click', async () => {
+  console.log('Sign In button clicked');
   showMessage('');
   const username = usernameInput.value.trim();
   const password = passwordInput.value;
-  if (!username || !password) return showMessage('Enter username/email and password');
+  if (!username || !password) {
+    console.warn('Missing username or password');
+    return showMessage('Enter username/email and password');
+  }
 
   const email = username.includes('@') ? username : `${username}@local.app`;
+  console.log('Attempting sign-in with email:', email);
 
   const { data, error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) {
+    console.error('Sign-in error:', error);
     // Provide clearer messages while keeping Supabase error text
     if (/invalid login credentials|Invalid login credentials/i.test(error.message)) {
       return showMessage('Invalid username or password');
@@ -288,13 +300,13 @@ signInBtn.addEventListener('click', async () => {
     return showMessage(error.message);
   }
   if (data?.user) {
+    console.log('Sign-in successful, user:', data.user.id);
     showMessage('Login successful!', 'success');
 
-    // Hide modal regardless of background tasks
-    setTimeout(() => {
-      hideModal();
-      console.log('Auth modal hidden (timeout)');
-    }, 600);
+    // Hide modal immediately, don't wait
+    console.log('Calling hideModal immediately');
+    hideModal();
+    console.log('Modal should be hidden now');
 
     // Process user setup in background
     try {
@@ -302,8 +314,7 @@ signInBtn.addEventListener('click', async () => {
       const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', data.user.id).single();
 
       if (!quota?.accepted_terms) {
-        // If terms not accepted, we might need to show consent modal
-        // But the auth modal is already hidden by the timeout above
+        // If terms not accepted, show consent modal
         window.showConsentModal?.();
       }
     } catch (err) {
