@@ -134,6 +134,48 @@ const modalHTML = `
     <div id="authMessage"></div>
   </div>
 </div>
+
+<!-- Re-Authentication Modal (shown on page reload when session expired) -->
+<div id="reAuthModal" style="display:none; position:fixed; inset:0; z-index:10000; font-family:Inter,system-ui,-apple-system,sans-serif;">
+  <!-- Lightly blurred backdrop -->
+  <div style="position:absolute; inset:0; backdrop-filter:blur(8px); background:rgba(0,0,0,0.4);"></div>
+  
+  <!-- Modal content -->
+  <div style="position:relative; display:flex; align-items:center; justify-content:center; min-height:100vh; padding:20px;">
+    <div id="reAuthBox" style="background:white; border-radius:16px; padding:40px 32px; max-width:400px; width:100%; box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+      <div style="text-align:center; margin-bottom:24px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px;">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <h2 style="margin:0; font-size:24px; font-weight:700; color:#1e293b;">Session Expired</h2>
+        <p style="margin:8px 0 0; font-size:14px; color:#64748b;">Enter your password to continue</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block; font-size:13px; font-weight:600; color:#475569; margin-bottom:6px;">Username</label>
+        <div id="reAuthUsername" style="background:#f1f5f9; padding:12px 16px; border-radius:8px; font-size:15px; color:#1e293b; font-weight:500;"></div>
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <label for="reAuthPassword" style="display:block; font-size:13px; font-weight:600; color:#475569; margin-bottom:6px;">Password</label>
+        <input id="reAuthPassword" type="password" placeholder="Enter your password" autocomplete="current-password" style="width:100%; padding:12px 16px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:15px; transition:all 0.2s;" />
+      </div>
+
+      <div id="reAuthMessage" style="display:none; padding:12px; border-radius:8px; margin-bottom:16px; font-size:14px;"></div>
+
+      <button id="reAuthContinueBtn" style="width:100%; padding:14px; background:#6366f1; color:white; border:none; border-radius:8px; font-size:15px; font-weight:600; cursor:pointer; transition:all 0.2s; margin-bottom:12px;">
+        Continue
+      </button>
+
+      <div style="text-align:center;">
+        <a id="reAuthDifferentAccount" href="#" style="color:#6366f1; font-size:13px; text-decoration:none; font-weight:500; transition:color 0.2s;">
+          Sign in as different account
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 document.body.insertAdjacentHTML('beforeend', modalHTML);
@@ -146,6 +188,14 @@ const authMessage = document.getElementById('authMessage');
 const signInBtn = document.getElementById('signInBtn');
 const signUpBtn = document.getElementById('signUpBtn');
 const googleBtn = document.getElementById('googleBtn');
+
+// Re-authentication modal elements
+const reAuthModal = document.getElementById('reAuthModal');
+const reAuthUsername = document.getElementById('reAuthUsername');
+const reAuthPassword = document.getElementById('reAuthPassword');
+const reAuthContinueBtn = document.getElementById('reAuthContinueBtn');
+const reAuthDifferentAccount = document.getElementById('reAuthDifferentAccount');
+const reAuthMessage = document.getElementById('reAuthMessage');
 
 // Password visibility toggle
 const togglePasswordBtn = document.getElementById('togglePassword');
@@ -190,6 +240,38 @@ const hideModal = () => {
     modal.style.pointerEvents = 'none';
   }
 };
+
+// --- Re-Authentication Modal Functions ---
+const showReAuthModal = (username) => {
+  if (reAuthModal && reAuthUsername && reAuthPassword) {
+    reAuthUsername.textContent = username;
+    reAuthPassword.value = '';
+    reAuthModal.style.display = 'block';
+    // Focus password field after a short delay
+    setTimeout(() => reAuthPassword.focus(), 100);
+  }
+};
+
+const hideReAuthModal = () => {
+  if (reAuthModal) {
+    reAuthModal.style.display = 'none';
+  }
+};
+
+const showReAuthMessage = (msg, type = 'error') => {
+  if (!reAuthMessage) return;
+
+  if (!msg) {
+    reAuthMessage.style.display = 'none';
+    return;
+  }
+
+  reAuthMessage.style.display = 'block';
+  reAuthMessage.textContent = msg;
+  reAuthMessage.style.background = type === 'error' ? '#fee2e2' : '#d1fae5';
+  reAuthMessage.style.color = type === 'error' ? '#991b1b' : '#065f46';
+};
+
 
 
 const showMessage = (msg, type = 'error') => {
@@ -287,6 +369,9 @@ const handleAuthStateChange = async (event, session) => {
     // Remove page reload warning when user signs out
     window.onbeforeunload = null;
 
+    // Clear stored username for re-auth
+    localStorage.removeItem('lastSessionUser');
+
     try {
       if (usernameInput) usernameInput.value = '';
       if (passwordInput) passwordInput.value = '';
@@ -311,33 +396,39 @@ const handleAuthStateChange = async (event, session) => {
 // Subscribe to auth state changes (includes OAuth callbacks)
 const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
 
-// SECURITY: Force sign-out on every page reload
-// This ensures users must re-authenticate and prevents showing cached user data
+// Check for previous session on page load
+// If user was signed in before reload, show re-auth modal
 (async () => {
   try {
-    // Check if there's an active session
+    // Check if there was a previous session
+    const lastSessionUser = localStorage.getItem('lastSessionUser');
+
+    // Check current Supabase session
     const { data: { session } } = await supabase.auth.getSession();
 
-    if (session) {
-      // Sign out any existing session on page load
-      await supabase.auth.signOut();
-
-      // Clear all form fields
-      if (usernameInput) usernameInput.value = '';
-      if (passwordInput) passwordInput.value = '';
-      showMessage('');
+    if (lastSessionUser && !session) {
+      // User was signed in before but session expired
+      // Show re-auth modal instead of login modal
+      showReAuthModal(lastSessionUser);
+    } else if (session) {
+      // Valid session exists - continue normally
+      hideModal();
+      // App.js will handle loading the chat
+    } else {
+      // No previous session - show normal login
+      showModal();
     }
-
-    // Always show modal on page load (clean state)
-    showModal();
 
     // Signal auth initialization complete
     if (window.authInitComplete) {
       window.authInitComplete();
     }
   } catch (err) {
-    console.error('Error during forced sign-out:', err);
+    console.error('Error checking session:', err);
     showModal();
+    if (window.authInitComplete) {
+      window.authInitComplete();
+    }
   }
 })();
 
@@ -378,6 +469,10 @@ signInBtn.addEventListener('click', async () => {
     try { window.__suppressAuthModalUntil = Date.now() + 2000; } catch (e) { }
     hideModal();
     await ensureQuotaRow(data.user.id);
+
+    // Store username for re-auth modal on next reload
+    localStorage.setItem('lastSessionUser', username);
+
     // Notify app
     try {
       window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: data.user.id } }));
@@ -448,6 +543,82 @@ usernameInput.addEventListener('input', () => {
     usernameExistsNode.textContent = 'Will be used as your username';
   }
 });
+
+// --- Re-Authentication Modal Event Listeners ---
+
+// Continue button - verify password and sign in
+if (reAuthContinueBtn) {
+  reAuthContinueBtn.addEventListener('click', async () => {
+    showReAuthMessage('');
+    const password = reAuthPassword.value;
+    const username = localStorage.getItem('lastSessionUser');
+
+    if (!password) {
+      return showReAuthMessage('Please enter your password');
+    }
+
+    // Visual feedback
+    const originalHTML = reAuthContinueBtn.innerHTML;
+    reAuthContinueBtn.innerHTML = 'Signing In...';
+    reAuthContinueBtn.disabled = true;
+
+    // Attempt sign-in
+    const email = username.includes('@') ? username : `${username}@local.app`;
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+    // Restore button
+    reAuthContinueBtn.innerHTML = originalHTML;
+    reAuthContinueBtn.disabled = false;
+
+    if (error) {
+      if (/invalid login credentials/i.test(error.message)) {
+        return showReAuthMessage('Incorrect password');
+      }
+      return showReAuthMessage(error.message);
+    }
+
+    if (data?.user) {
+      // Success - close modal and continue
+      hideReAuthModal();
+      await ensureQuotaRow(data.user.id);
+      // Notify app to load (chat history already in browser)
+      try {
+        window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: data.user.id } }));
+      } catch (e) { console.warn('userSignedIn dispatch failed', e); }
+    }
+  });
+}
+
+// Enter key in password field
+if (reAuthPassword) {
+  reAuthPassword.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      reAuthContinueBtn?.click();
+    }
+  });
+}
+
+// Different account link
+if (reAuthDifferentAccount) {
+  reAuthDifferentAccount.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Clear stored username
+    localStorage.removeItem('lastSessionUser');
+
+    // Hide re-auth modal
+    hideReAuthModal();
+
+    // Clear chat history (dispatch event for App.js to handle)
+    try {
+      window.dispatchEvent(new CustomEvent('clearChatOnAccountSwitch'));
+    } catch (err) { console.warn('Failed to dispatch clearChatOnAccountSwitch', err); }
+
+    // Show normal login modal
+    showModal();
+  });
+}
+
 
 // --- Forgot password link handler ---
 const forgotLink = document.getElementById('forgotLink');
