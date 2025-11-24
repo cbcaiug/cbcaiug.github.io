@@ -212,6 +212,19 @@ const processFileForApi = (file) => {
   });
 };
 
+// --- EXPORT TO WINDOW ---
+// Since this script is loaded via Babel standalone, top-level variables might not be global.
+// We explicitly attach them to window to ensure accessibility.
+
+window.GAS_WEB_APP_URL = GAS_WEB_APP_URL;
+window.AI_PROVIDERS = AI_PROVIDERS;
+window.trackEvent = trackEvent;
+window.handleFeedbackSubmit = handleFeedbackSubmit;
+window.PromptManager = PromptManager;
+window.fetchNotifications = fetchNotifications;
+window.fetchReviews = fetchReviews;
+window.processFileForApi = processFileForApi;
+
 // Note: The main `fetchAndStreamResponse` function will be moved into the App.js component
 // in a later step, as it is tightly coupled with the application's state management.
 // This file is for standalone services that do not directly manage React state.

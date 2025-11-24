@@ -1246,7 +1246,7 @@ const App = ({ onMount }) => {
             // Only use cache if we have a user, otherwise 0
             const cachedTrialCount = currentUser ? parseInt(localStorage.getItem('trialGenerationsCount') || TRIAL_GENERATION_LIMIT, 10) : 0;
             const cachedUsageCount = currentUser ? parseInt(localStorage.getItem('saveUsageCount') || '20', 10) : 0;
-            
+
             setTrialGenerations(cachedTrialCount);
             setUsageCount(cachedUsageCount);
 
@@ -1337,9 +1337,21 @@ const App = ({ onMount }) => {
         };
         initializeApp();
 
+        // Safety timeout: Force loading to finish after 8s if something hangs
+        const safetyTimeout = setTimeout(() => {
+            setIsLoadingAssistants(prev => {
+                if (prev) {
+                    console.warn('App initialization timed out. Forcing load completion.');
+                    return false;
+                }
+                return prev;
+            });
+        }, 8000);
+
         // Add paste event listener
         document.addEventListener('paste', handlePaste);
         return () => {
+            clearTimeout(safetyTimeout);
             document.removeEventListener('paste', handlePaste);
             window.removeEventListener('quotaUpdated', handleQuotaUpdated);
             window.removeEventListener('storage', handleStorage);
