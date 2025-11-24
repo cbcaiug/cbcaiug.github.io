@@ -265,10 +265,14 @@ const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
   try {
     // First, attempt to parse an OAuth callback in the URL (handles Google redirects)
     let user = null;
+    let isOAuthCallback = false;
     try {
       const sessionFromUrl = await supabase.auth.getSessionFromUrl().catch(() => null);
       if (sessionFromUrl && sessionFromUrl.data && sessionFromUrl.data.session && sessionFromUrl.data.session.user) {
         user = sessionFromUrl.data.session.user;
+        isOAuthCallback = true;
+        // Suppress modal during OAuth callback to prevent flashing
+        try { window.__suppressAuthModalUntil = Date.now() + 3000; } catch (e) { }
       }
     } catch (e) {
       // ignore - not all supabase client versions expose getSessionFromUrl
@@ -281,15 +285,26 @@ const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
     }
 
     if (user) {
+      // Ensure quota row exists FIRST (critical for OAuth users)
+      await ensureQuotaRow(user.id);
+
       const { data: quota } = await supabase.from('usage_quotas').select('accepted_terms').eq('user_id', user.id).maybeSingle();
-      if (quota?.accepted_terms) {
-        hideModal();
+
+      // Hide modal immediately
+      hideModal();
+
+      // For OAuth callbacks, dispatch userSignedIn event so App.js can handle consent modal properly
+      if (isOAuthCallback) {
+        try {
+          window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: user.id } }));
+        } catch (e) { console.warn('userSignedIn dispatch failed', e); }
+      }
+
+      // If user already accepted terms and NOT an OAuth callback, load assistant
+      if (quota?.accepted_terms && !isOAuthCallback) {
+        // The page is already loaded, this is just a refresh/return visit
         return;
       }
-      // Ensure quota row exists
-      await ensureQuotaRow(user.id);
-      hideModal();
-      // App will handle consent via React (checking Supabase accepted_terms flag)
     } else {
       showModal();
     }

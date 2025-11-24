@@ -359,44 +359,52 @@ const DocSuccessModal = ({ isOpen, onClose, docInfo }) => {
     );
 };
 
-// NEW: Consent Modal for first-time users (Terms & Conditions acceptance)
+// Consent Modal for first-time users (Terms & Conditions acceptance)
 const ConsentModal = ({ isOpen, onAccept }) => {
+    const [termsAccepted, setTermsAccepted] = useState(false);
+    const [privacyAccepted, setPrivacyAccepted] = useState(false);
+
+    const canProceed = termsAccepted && privacyAccepted;
+
     if (!isOpen) return null;
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full transform transition-all scale-100 opacity-100 max-h-[90vh] overflow-y-auto">
-                <div className="text-center mb-6">
-                    <h2 className="text-2xl font-bold text-slate-800">Welcome to CBC AI Tool!</h2>
-                    <p className="text-slate-600 mt-2">Please review and accept the terms to continue.</p>
+                <div className="flex items-center gap-3 mb-4">
+                    <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Logo" className="h-12 w-12 rounded-lg" />
+                    <h2 className="text-2xl font-bold text-slate-800">Welcome!</h2>
                 </div>
+                <p className="text-slate-600 mb-4 text-sm">Before you begin, please review and agree to our terms of use.</p>
 
-                <div className="bg-slate-50 rounded-lg p-4 mb-6 text-sm text-slate-700 max-h-64 overflow-y-auto space-y-3">
-                    <p><strong>Terms of Service:</strong></p>
-                    <ul className="list-disc pl-5 space-y-2 text-xs">
-                        <li>This tool is provided for educational purposes within Uganda's CBC curriculum framework.</li>
-                        <li>Users agree to use the tool responsibly and in accordance with applicable laws and regulations.</li>
-                        <li>The CBC AI Tool team is not responsible for any content generated or decisions made based on the tool's output.</li>
-                        <li>User data is stored securely and will not be shared with third parties without consent.</li>
-                        <li>Free trial users receive 50 free generations and 20 free downloads per account.</li>
-                        <li>By using this tool, you accept these terms and our privacy policy.</li>
-                    </ul>
+                <div className="bg-slate-50 p-3 rounded-md mb-4">
+                    <p className="text-xs text-slate-500">
+                        This site uses your browser's local storage to save chat history and settings. We also use analytics to improve the service. By continuing, you acknowledge this.
+                    </p>
                 </div>
 
                 <div className="space-y-3">
-                    <button
-                        onClick={onAccept}
-                        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors"
-                    >
-                        <CheckCircleIcon className="w-5 h-5" />
-                        <span>I Accept & Continue</span>
-                    </button>
-                    <p className="text-xs text-slate-500 text-center">
-                        <a href="/terms.html" target="_blank" className="text-indigo-600 hover:underline">Full Terms of Service</a>
-                        {' | '}
-                        <a href="/privacy.html" target="_blank" className="text-indigo-600 hover:underline">Privacy Policy</a>
-                    </p>
+                    <label className="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" checked={termsAccepted} onChange={() => setTermsAccepted(!termsAccepted)} className="mt-1 h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                        <span className="text-sm text-slate-700">
+                            I have read and agree to the <a href="terms.html" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-semibold hover:underline">Terms of Service</a>.
+                        </span>
+                    </label>
+                    <label className="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" checked={privacyAccepted} onChange={() => setPrivacyAccepted(!privacyAccepted)} className="mt-1 h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                        <span className="text-sm text-slate-700">
+                            I acknowledge the <a href="privacy.html" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-semibold hover:underline">Privacy Policy</a>.
+                        </span>
+                    </label>
                 </div>
+
+                <button
+                    onClick={onAccept}
+                    disabled={!canProceed}
+                    className="w-full mt-6 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors disabled:bg-indigo-300 disabled:cursor-not-allowed"
+                >
+                    Proceed to App
+                </button>
             </div>
         </div>
     );
