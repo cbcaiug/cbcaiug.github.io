@@ -293,18 +293,11 @@ const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
       // Hide modal immediately
       hideModal();
 
-      // For OAuth callbacks, dispatch userSignedIn event so App.js can handle consent modal properly
-      if (isOAuthCallback) {
-        try {
-          window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: user.id } }));
-        } catch (e) { console.warn('userSignedIn dispatch failed', e); }
-      }
-
-      // If user already accepted terms and NOT an OAuth callback, load assistant
-      if (quota?.accepted_terms && !isOAuthCallback) {
-        // The page is already loaded, this is just a refresh/return visit
-        return;
-      }
+      // ALWAYS dispatch userSignedIn event so App.js can load the assistant
+      // This is needed for both OAuth callbacks AND page reloads
+      try {
+        window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: user.id } }));
+      } catch (e) { console.warn('userSignedIn dispatch failed', e); }
     } else {
       showModal();
     }
