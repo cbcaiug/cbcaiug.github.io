@@ -160,12 +160,19 @@ if (togglePasswordBtn) {
 }
 
 const showModal = () => {
+  // Check persistent flag first - prevents modal from reappearing after hideModal
+  if (window.__authModalShouldBeHidden) return;
+
   // Don't flash the auth modal immediately after a signin event; allow
   // a short suppression window set by signin handlers.
   try {
     const suppressUntil = window.__suppressAuthModalUntil || 0;
     if (Date.now() < suppressUntil) return;
   } catch (e) { /* ignore */ }
+
+  // Clear flag when explicitly showing modal
+  window.__authModalShouldBeHidden = false;
+
   // Clear any previous messages (for example a lingering "Login successful")
   try { showMessage(''); } catch (e) { }
   if (modal) {
@@ -174,6 +181,8 @@ const showModal = () => {
   }
 };
 const hideModal = () => {
+  // Set persistent flag to prevent modal from reappearing
+  window.__authModalShouldBeHidden = true;
   if (modal) {
     modal.style.display = 'none';
     modal.style.pointerEvents = 'none';
@@ -209,9 +218,17 @@ const ensureQuotaRow = async (userId) => {
 const handleAuthStateChange = async (event, session) => {
   if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
     if (session?.user) {
-      // Suppress modal briefly while the app reinitializes to avoid flashes
-      try { window.__suppressAuthModalUntil = Date.now() + 1500; } catch (e) { }
       const userId = session.user.id;
+
+      // Prevent double-processing the same sign-in event
+      if (window.__lastProcessedSignIn === userId) {
+        return;  // Already processed this sign-in
+      }
+      window.__lastProcessedSignIn = userId;
+
+      // Suppress modal with longer window to cover OAuth callbacks
+      try { window.__suppressAuthModalUntil = Date.now() + 3500; } catch (e) { }
+
       // Ensure quota row exists for this user (covers OAuth sign-ups too)
       await ensureQuotaRow(userId);
 
@@ -225,7 +242,7 @@ const handleAuthStateChange = async (event, session) => {
         console.warn('Could not dispatch quotaUpdated event', e);
       }
 
-      // Also notify the app that a user signed in so it can refresh UI/state
+      // Notify the app that a user signed in so it can refresh UI/state
       try {
         window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId } }));
       } catch (e) { console.warn('userSignedIn dispatch failed', e); }
@@ -235,10 +252,18 @@ const handleAuthStateChange = async (event, session) => {
       hideModal();
     }
   } else if (event === 'SIGNED_OUT') {
-    // User signed out - clear form fields and show modal
+    // User signed out - clear form fields, validation, and show modal
+    window.__authModalShouldBeHidden = false;  // Clear persistent flag
+    window.__lastProcessedSignIn = null;        // Reset sign-in tracking
+
     try {
       if (usernameInput) usernameInput.value = '';
       if (passwordInput) passwordInput.value = '';
+      // Clear password validation message
+      if (passwordValidation) {
+        passwordValidation.textContent = 'Password must be at least 6 characters';
+        passwordValidation.style.color = '';
+      }
       showMessage(''); // Clear any messages
     } catch (e) { console.warn('Failed to clear form fields', e); }
 
@@ -293,11 +318,13 @@ const authSubscription = supabase.auth.onAuthStateChange(handleAuthStateChange);
       // Hide modal immediately
       hideModal();
 
-      // ALWAYS dispatch userSignedIn event so App.js can load the assistant
-      // This is needed for both OAuth callbacks AND page reloads
-      try {
-        window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: user.id } }));
-      } catch (e) { console.warn('userSignedIn dispatch failed', e); }
+      // For OAuth callbacks, DO NOT dispatch here - let handleAuthStateChange do it
+      // to avoid double-dispatch. For page reloads (non-OAuth), dispatch immediately.
+      if (!isOAuthCallback) {
+        try {
+          window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: user.id } }));
+        } catch (e) { console.warn('userSignedIn dispatch failed', e); }
+      }
     } else {
       showModal();
     }
@@ -518,7 +545,10 @@ window.supabaseAuth = {
   async acceptTerms() {
     const { data: { user } } = await supabase.auth.getUser();
     if (user) {
-      await supabase.from('usage_quotas').upsert({ user_id: user.id, accepted_terms: true }, { onConflict: 'user_id' });
+      // Use update instead of upsert to avoid resetting other columns
+      await supabase.from('usage_quotas')
+        .update({ accepted_terms: true })
+        .eq('user_id', user.id);
       // Dispatch event so app can close consent modal and load assistant
       try { window.dispatchEvent(new CustomEvent('termsAccepted', { detail: { userId: user.id } })); } catch (e) { }
     }
