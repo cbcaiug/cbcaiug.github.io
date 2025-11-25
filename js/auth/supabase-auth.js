@@ -477,6 +477,11 @@ signInBtn.addEventListener('click', async () => {
     try {
       window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: data.user.id } }));
     } catch (e) { console.warn('userSignedIn dispatch failed', e); }
+
+    // Reload page to ensure fresh state with new user
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   }
 });
 
@@ -713,6 +718,11 @@ signUpBtn.addEventListener('click', async () => {
     try {
       window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: data.user.id } }));
     } catch (e) { console.warn('userSignedIn dispatch failed', e); }
+
+    // Reload page to ensure fresh state with new user
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   }
 });
 
