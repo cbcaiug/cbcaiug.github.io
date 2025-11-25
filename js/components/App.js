@@ -1240,15 +1240,33 @@ const App = ({ onMount }) => {
 
         // Initialize the app on first load
         const initializeApp = async () => {
+            // Wait for auth module to be fully ready
+            if (window.authInitPromise) {
+                await window.authInitPromise;
+            }
+
             // IMMEDIATE AUTH CHECK
-            const user = await window.supabaseAuth?.getCurrentUser();
+            let user = null;
+            try {
+                user = await window.supabaseAuth?.getCurrentUser();
+                console.log('App.js: Initial user check result:', user);
+            } catch (err) {
+                console.error('App.js: Failed to get current user:', err);
+            }
+
             setCurrentUser(user);
+
             if (!user) {
-                console.warn('No active session found on app load. Forcing login modal.');
-                setTrialGenerations(0);
-                setUsageCount(0);
-                if (window.supabaseAuth?.showLoginModal) {
-                    window.supabaseAuth.showLoginModal();
+                const lastSessionUser = localStorage.getItem('lastSessionUser');
+                if (!lastSessionUser) {
+                    console.warn('No active session found on app load. Forcing login modal.');
+                    setTrialGenerations(0);
+                    setUsageCount(0);
+                    if (window.supabaseAuth?.showLoginModal) {
+                        window.supabaseAuth.showLoginModal();
+                    }
+                } else {
+                    console.log('Session expired - re-auth modal handled by auth module');
                 }
                 // Continue initialization but with restricted state
             }
@@ -1805,13 +1823,13 @@ const App = ({ onMount }) => {
                                 </div>
                                 <div className="flex gap-2">
                                     <button
-                                        onClick={() => window.open(window.location.href.split('?')[0], '_blank')}
+                                        onClick={() => window.supabaseAuth?.showLoginModal?.()}
                                         className="px-4 py-2 bg-indigo-600 text-white text-sm rounded-md hover:bg-indigo-700 transition-colors font-medium"
                                     >
                                         Sign In
                                     </button>
                                     <button
-                                        onClick={() => window.open(window.location.href.split('?')[0], '_blank')}
+                                        onClick={() => window.supabaseAuth?.showLoginModal?.()}
                                         className="px-4 py-2 bg-white border border-indigo-600 text-indigo-600 text-sm rounded-md hover:bg-indigo-50 transition-colors font-medium"
                                     >
                                         Sign Up

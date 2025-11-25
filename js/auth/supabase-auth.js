@@ -353,7 +353,15 @@ const handleAuthStateChange = async (event, session) => {
       hideModal();
 
       // Add page reload warning when user is signed in
+      // Set flag to allow clean navigation during sign-in/sign-out
+      window.isAppNavigating = false;
+      window.__allowNavigation = () => { window.isAppNavigating = true; };
+      window.__blockNavigation = () => { window.isAppNavigating = false; };
+
       window.onbeforeunload = function (e) {
+        // Don't block if app is navigating programmatically
+        if (window.isAppNavigating) return;
+
         // Modern browsers ignore custom messages and show generic warning
         // But we still need to return a value to trigger the confirmation
         e.preventDefault();
@@ -480,6 +488,7 @@ signInBtn.addEventListener('click', async () => {
 
     // Reload page to ensure fresh state with new user
     setTimeout(() => {
+      if (window.__allowNavigation) window.__allowNavigation();
       window.location.reload();
     }, 500);
   }
@@ -585,11 +594,18 @@ if (reAuthContinueBtn) {
     if (data?.user) {
       // Success - close modal and continue
       hideReAuthModal();
+      if (window.__allowNavigation) window.__allowNavigation();
       await ensureQuotaRow(data.user.id);
       // Notify app to load (chat history already in browser)
       try {
         window.dispatchEvent(new CustomEvent('userSignedIn', { detail: { userId: data.user.id } }));
       } catch (e) { console.warn('userSignedIn dispatch failed', e); }
+
+      // Reload page to restore full app state
+      setTimeout(() => {
+        if (window.__allowNavigation) window.__allowNavigation();
+        window.location.reload();
+      }, 300);
     }
   });
 }
@@ -644,6 +660,8 @@ const hideSignOutConfirmModal = () => {
 
 const performSignOut = async () => {
   hideSignOutConfirmModal();
+  if (window.__allowNavigation) window.__allowNavigation();
+  window.onbeforeunload = null;
   try {
     await supabase.auth.signOut();
     // Clear session-related localStorage to avoid leaking previous chat when a new user signs in
@@ -721,6 +739,7 @@ signUpBtn.addEventListener('click', async () => {
 
     // Reload page to ensure fresh state with new user
     setTimeout(() => {
+      if (window.__allowNavigation) window.__allowNavigation();
       window.location.reload();
     }, 500);
   }
@@ -795,8 +814,13 @@ window.supabaseAuth = {
   },
   async getCurrentUser() {
     if (!supabase) return null;
+    // Try session first (fast)
     const { data: { session } } = await supabase.auth.getSession();
-    return session?.user || null;
+    if (session?.user) return session.user;
+
+    // Fallback to getUser (more reliable, checks server)
+    const { data: { user } } = await supabase.auth.getUser();
+    return user;
   },
   showLoginModal() {
     showModal();

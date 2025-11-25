@@ -175,3 +175,6 @@ refactor(structure): organize project files
 5. **Consolidated commit message** (MANDATORY - use format above)
 6. **Deploy instructions** if needed
 7. **File organization suggestions** if project structure changes
+
+---
+**Usage**: Copy this prompt to start any coding conversation for consistent, efficient responses focused on minimal working solutions.
