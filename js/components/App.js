@@ -211,7 +211,47 @@ const App = ({ onMount }) => {
     const MAX_TOTAL_UPLOAD_SIZE = 10 * 1024 * 1024; // 10 MB in bytes
 
     // --- API & STREAMING LOGIC ---
+
+    // Stop ongoing AI response and clean up properly
+    const stopStreaming = useCallback(() => {
+        if (abortControllerRef.current) {
+            try {
+                console.debug('stopStreaming: aborting current request');
+                abortControllerRef.current.abort();
+            } catch (e) { console.warn('stopStreaming abort failed', e); }
+        }
+
+        if (longResponseTimerRef.current) {
+            clearTimeout(longResponseTimerRef.current);
+            longResponseTimerRef.current = null;
+        }
+
+        // Reset UI flags that indicate an in-progress/long operation
+        try { setIsTakingLong(false); } catch (e) { /* ignore in unmounted */ }
+        try { setIsLoading(false); } catch (e) { /* ignore in unmounted */ }
+
+        // Clear controller reference to avoid accidental reuse
+        try { abortControllerRef.current = null; } catch (e) { /* ignore */ }
+
+        // Ensure the assistant placeholder stops showing a spinner and mark response as stopped
+        try {
+            setChatHistory(prev => {
+                if (!prev || prev.length === 0) return prev;
+                const updated = [...prev];
+                const last = updated[updated.length - 1];
+                if (last && last.role === 'assistant' && last.isLoading) {
+                    last.isLoading = false;
+                    const stopNote = '\n\n*Response stopped by user.*';
+                    if (!last.content || last.content.trim() === '') last.content = stopNote;
+                    else last.content = last.content + stopNote;
+                }
+                return updated;
+            });
+        } catch (e) { console.warn('stopStreaming: failed to update chat history', e); }
+    }, []);
+
     const fetchAndStreamResponse = async ({ historyForApi, systemPrompt, apiKey, onUpdate, onComplete, onError }) => {
+
 
 
         abortControllerRef.current = new AbortController();
@@ -1535,7 +1575,7 @@ const App = ({ onMount }) => {
                             <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); } }} placeholder="Type here..." className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48" rows="1" />
                             {/* UPDATED: Wrap the send button and add the trial counter text */}
                             <div className="flex flex-col items-center">
-                                <button id="send-button" onClick={isLoading ? () => { if (abortControllerRef.current) abortControllerRef.current.abort(); if (longResponseTimerRef.current) clearTimeout(longResponseTimerRef.current); setIsTakingLong(false); } : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
+                                <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
                                     {isLoading ? (<><StopIcon className="w-5 h-5" /><span>Stop</span></>) : (<><SendIcon className="w-5 h-5" /><span>Send</span></>)}
                                 </button>
                                 {/* The trial counter now only appears when the shared key mode is active. */}
