@@ -20,22 +20,20 @@ Adding Firebase Authentication to replace localStorage-based quota tracking. Thi
 - ✅ Created this tracking file `CHANGES.md`
 
 ### Phase 2: Firebase Console Setup (Manual Steps)
-- [ ] Create Firebase project
-- [ ] Enable Authentication providers
-- [ ] Create Firestore database
-- [ ] Configure security rules
-- [ ] Get Firebase config credentials
+- ✅ Create Firebase project (cbcaiug-auth)
+- ✅ Enable Authentication providers (Email, Google, Anonymous)
+- ✅ Create Firestore database (europe-west1)
+- ✅ Configure security rules
+- ✅ Get Firebase config credentials
 
 ### Phase 3: Code Changes
-**Files to be modified:**
-- `app.html` - Add Firebase SDK scripts
-- `js/services/api.js` - Add Firebase config and auth functions
-- `js/components/App.js` - Replace localStorage quota logic with Firestore
-- `js/components/auth.js` (NEW) - Firebase authentication UI and logic
+**Files modified:**
+- ✅ `app.html` - Added Firebase SDK scripts (lines 108-110)
+- ✅ `js/components/App.js` - Replaced localStorage with Firestore quotas
 
-**Files to be created:**
-- `js/services/firebase.js` (NEW) - Firebase initialization and helpers
-- `js/components/AuthModal.js` (NEW) - Sign-in/Sign-up UI component
+**Files created:**
+- ✅ `js/services/firebase.js` - Firebase initialization and quota functions
+- ✅ `js/components/AuthModal.js` - Sign-in/Sign-up UI component
 
 ### Phase 4: Testing
 - [ ] Test on PC browser (localhost)
@@ -69,36 +67,42 @@ Your original code will be untouched on the `main` branch.
 ## Detailed File Changes
 
 ### 1. app.html
-**Lines to add** (before closing `</body>`):
+**Lines added** (line 108, before application scripts):
 ```html
-<!-- Firebase SDK -->
+<!-- Firebase SDK (compat version) -->
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<!-- New service and component -->
+<script type="text/babel" src="js/services/firebase.js" defer></script>
+<script type="text/babel" src="js/components/AuthModal.js" defer></script>
 ```
 
-### 2. js/services/firebase.js (NEW FILE)
+### 2. js/services/firebase.js (NEW FILE) ✅
 **Purpose**: Initialize Firebase and provide auth/firestore helpers
 **Key functions**:
-- `initializeFirebase(config)` - Setup Firebase
-- `getCurrentUser()` - Get current auth user
-- `getUserQuotas(uid)` - Fetch user quotas from Firestore
-- `decrementQuota(uid, type)` - Decrement download/message count
+- `firebase.initializeApp(config)` - Setup Firebase with user's config
+- `getUserQuotas(uid)` - Fetch user quotas from Firestore (creates if new user)
+- `decrementQuota(uid, type)` - Decrement download/message count (transaction-safe)
+**Exports**: `window.FirebaseService` for use in App.js
 
-### 3. js/components/AuthModal.js (NEW FILE)
+### 3. js/components/AuthModal.js (NEW FILE) ✅
 **Purpose**: Sign-in/Sign-up UI
 **Features**:
-- Email/password form
-- Google sign-in button
-- Anonymous sign-in option
-- Upgrade anonymous to email
+- Email/password form with validation
+- Google sign-in button (one-click)
+- Anonymous sign-in option (guest mode)
+- Toggle between sign-in and sign-up modes
+- Error handling and loading states
 
-### 4. js/components/App.js
-**Changes**:
-- Replace `usageCount` state with Firestore-backed quota
-- Add auth state listener
-- Check quotas before downloads/messages
-- Show AuthModal when user not signed in
+### 4. js/components/App.js ✅
+**Changes made**:
+- Added Firebase auth state listener (line ~500)
+- Added `user`, `quotas`, `showAuthModal` state variables
+- Modified `handleDocxDownload` to check Firebase auth and quotas
+- Replaced localStorage quota decrement with Firestore transaction
+- Added AuthModal component to render tree
 
 ---
 

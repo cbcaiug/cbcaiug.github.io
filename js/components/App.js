@@ -172,6 +172,10 @@ const App = ({ onMount }) => {
     const [currentCartId, setCurrentCartId] = useState(() => localStorage.getItem('currentCartId') || null);
     // NEW: State to manage whether the user wants to use the shared (trial) API key.
     const [useSharedApiKey, setUseSharedApiKey] = useState(true);
+    // Firebase auth state
+    const [user, setUser] = useState(null);
+    const [quotas, setQuotas] = useState({ downloadsLeft: 20, messagesLeft: 50 });
+    const [showAuthModal, setShowAuthModal] = useState(false);
 
     // This new handler ensures that when the shared key is enabled,
     // the provider is always reset to Google Gemini.
@@ -609,6 +613,12 @@ const App = ({ onMount }) => {
 
     // UPDATED: This function now receives the doc ID and opens our new modal.
     const handleDocxDownload = async (markdownContent) => {
+        // Check if user is authenticated
+        if (!user) {
+            setShowAuthModal(true);
+            return;
+        }
+
         // Check if already in cart
         if (isInCart(markdownContent)) {
             setPendingAction({ type: 'save', content: markdownContent, inCart: true });
@@ -616,10 +626,9 @@ const App = ({ onMount }) => {
             return;
         }
 
-        // Check usage limit
-        if (usageCount <= 0) {
-            setPendingAction({ type: 'save', content: markdownContent, inCart: false });
-            setIsLimitModalOpen(true);
+        // Check Firestore quota
+        if (quotas.downloadsLeft <= 0) {
+            setError('Download quota exceeded. You have used all 20 free downloads.');
             return;
         }
 
@@ -654,10 +663,13 @@ const App = ({ onMount }) => {
 
             // Check if we received the URL and the new ID.
             if (data.success && data.url && data.id) {
-                // Decrement usage count
-                const newCount = usageCount - 1;
-                setUsageCount(newCount);
-                localStorage.setItem('saveUsageCount', newCount.toString());
+                // Decrement Firestore quota
+                try {
+                    const newCount = await FirebaseService.decrementQuota(user.uid, 'download');
+                    setQuotas(prev => ({ ...prev, downloadsLeft: newCount }));
+                } catch (quotaError) {
+                    console.error('Quota decrement failed:', quotaError);
+                }
 
                 // Log the doc creation
                 trackEvent('google_doc_created', activePromptKey, {
@@ -1074,6 +1086,22 @@ const App = ({ onMount }) => {
 
     // --- EFFECTS ---
     useEffect(() => {
+        // Firebase auth listener
+        const unsubscribe = FirebaseService.auth.onAuthStateChanged(async (firebaseUser) => {
+            setUser(firebaseUser);
+            if (firebaseUser) {
+                try {
+                    const userQuotas = await FirebaseService.getUserQuotas(firebaseUser.uid);
+                    setQuotas(userQuotas);
+                } catch (error) {
+                    console.error('Error loading quotas:', error);
+                }
+            }
+        });
+        return () => unsubscribe();
+    }, []);
+
+    useEffect(() => {
         // Initialize the app on first load
         const initializeApp = async () => {
             if (!localStorage.getItem('userConsentV1')) {
@@ -1334,6 +1362,17 @@ const App = ({ onMount }) => {
                 localStorage.setItem('userConsentV1', 'true');
                 setShowConsentModal(false);
             }} />}
+
+            {showAuthModal && (
+                <AuthModal
+                    isOpen={showAuthModal}
+                    onClose={() => setShowAuthModal(false)}
+                    onAuthSuccess={() => {
+                        setShowAuthModal(false);
+                        setError('');
+                    }}
+                />
+            )}
 
             <Sidebar
                 isMenuOpen={isMenuOpen}
