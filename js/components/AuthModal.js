@@ -26,7 +26,20 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
       onAuthSuccess();
       onClose();
     } catch (err) {
-      setError(err.message);
+      // User-friendly error messages
+      let errorMsg = err.message;
+      if (err.code === 'auth/user-not-found') {
+        errorMsg = 'No account found with this email. Please sign up first.';
+      } else if (err.code === 'auth/wrong-password') {
+        errorMsg = 'Incorrect password. Please try again.';
+      } else if (err.code === 'auth/email-already-in-use') {
+        errorMsg = 'This email is already registered. Please sign in instead.';
+      } else if (err.code === 'auth/weak-password') {
+        errorMsg = 'Password should be at least 6 characters.';
+      } else if (err.code === 'auth/invalid-email') {
+        errorMsg = 'Invalid email address.';
+      }
+      setError(errorMsg);
     }
     setLoading(false);
   };
@@ -70,11 +83,13 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
       <div className="relative bg-gradient-to-br from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-xl rounded-2xl p-8 max-w-md w-full border border-white/10 shadow-2xl">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <img 
-            src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" 
-            alt="CBC AI Tool" 
-            className="w-20 h-20 rounded-full border-2 border-white/20 shadow-lg"
-          />
+          <div className="w-24 h-24 rounded-full bg-white/10 border-2 border-white/20 shadow-lg flex items-center justify-center overflow-hidden">
+            <img 
+              src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" 
+              alt="CBC AI Tool" 
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
         
         <div className="flex justify-between items-center mb-6">

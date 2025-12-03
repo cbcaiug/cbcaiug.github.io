@@ -176,6 +176,7 @@ const App = ({ onMount }) => {
     const [user, setUser] = useState(null);
     const [quotas, setQuotas] = useState({ downloadsLeft: 20, messagesLeft: 50 });
     const [showAuthModal, setShowAuthModal] = useState(false);
+    const [freeMessageCount, setFreeMessageCount] = useState(0);
 
     // This new handler ensures that when the shared key is enabled,
     // the provider is always reset to Google Gemini.
@@ -698,6 +699,16 @@ const App = ({ onMount }) => {
         // First, check if there's any input or if the app is already busy.
         if ((!userInput.trim() && pendingFiles.length === 0) || isLoading) return;
 
+        // Check if user needs to authenticate (after 10 free messages)
+        if (!user) {
+            if (freeMessageCount >= 10) {
+                setShowAuthModal(true);
+                setError('Please sign in to continue. You\'ve used your 10 free messages.');
+                return;
+            }
+            setFreeMessageCount(prev => prev + 1);
+        }
+
         let apiKey = apiKeys[selectedProvider.apiKeyName];
         let isTrial = false;
         // NEW: Create a variable to hold the key label for this specific message's log.
@@ -1090,6 +1101,7 @@ const App = ({ onMount }) => {
         let quotaUnsubscribe = null;
         
         const authUnsubscribe = FirebaseService.auth.onAuthStateChanged(async (firebaseUser) => {
+            const previousUser = user;
             setUser(firebaseUser);
             
             // Clean up previous quota listener
@@ -1100,6 +1112,20 @@ const App = ({ onMount }) => {
             
             if (firebaseUser) {
                 try {
+                    // Check if user upgraded from anonymous to registered
+                    const wasAnonymous = previousUser?.isAnonymous;
+                    const isNowRegistered = !firebaseUser.isAnonymous;
+                    
+                    if (wasAnonymous && isNowRegistered) {
+                        // Upgrade quotas to full (20/50)
+                        await FirebaseService.db.collection('users').doc(firebaseUser.uid).set({
+                            downloadsLeft: 20,
+                            messagesLeft: 50,
+                            isGuest: false,
+                            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                        });
+                    }
+                    
                     // Initial quota load
                     const userQuotas = await FirebaseService.getUserQuotas(firebaseUser.uid);
                     setQuotas(userQuotas);
@@ -1112,8 +1138,11 @@ const App = ({ onMount }) => {
                     console.error('Error loading quotas:', error);
                 }
             } else {
-                // User signed out, reset quotas
+                // User signed out - clear chat and reset state
+                setChatHistory([]);
+                setFreeMessageCount(0);
                 setQuotas({ downloadsLeft: 20, messagesLeft: 50 });
+                loadInitialMessage(activePromptKey);
             }
         });
         
@@ -1121,7 +1150,7 @@ const App = ({ onMount }) => {
             authUnsubscribe();
             if (quotaUnsubscribe) quotaUnsubscribe();
         };
-    }, []);
+    }, [user, activePromptKey, loadInitialMessage]);
 
     useEffect(() => {
         // Initialize the app on first load

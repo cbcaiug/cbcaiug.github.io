@@ -712,11 +712,11 @@ const Sidebar = ({
                         {user && (
                             <div className="mt-2 space-y-1">
                                 <p className="text-sm text-slate-300 truncate">
-                                    {user.isAnonymous ? '👤 Guest User' : `👤 ${user.email || user.displayName || 'User'}`}
+                                    {user.isAnonymous ? '👤 Guest User (Limited)' : `👤 ${user.email || user.displayName || 'User'}`}
                                 </p>
                                 {quotas && (
                                     <p className="text-xs text-slate-400">
-                                        {quotas.downloadsLeft || 0} downloads • {quotas.messagesLeft || 0} messages
+                                        📥 {quotas.downloadsLeft || 0}/{quotas.isGuest ? 5 : 20} downloads • 💬 {quotas.messagesLeft || 0}/{quotas.isGuest ? 5 : 50} messages
                                     </p>
                                 )}
                                 <button
