@@ -709,7 +709,7 @@ const Sidebar = ({
                 <div className="flex justify-between items-center p-4 flex-shrink-0 border-b border-slate-700">
                     <div className="flex-1 min-w-0">
                         <h1 className="text-xl font-bold">Settings</h1>
-                        {user && (
+                        {user ? (
                             <div className="mt-2 space-y-1">
                                 <p className="text-sm text-slate-300 truncate">
                                     {user.isAnonymous ? '👤 Guest User (Limited)' : `👤 ${user.email || user.displayName || 'User'}`}
@@ -729,6 +729,15 @@ const Sidebar = ({
                                 >
                                     Sign Out
                                 </button>
+                            </div>
+                        ) : (
+                            <div className="mt-2 space-y-1">
+                                <p className="text-sm text-slate-300">
+                                    👤 Not signed in
+                                </p>
+                                <p className="text-xs text-slate-400">
+                                    📥 0 downloads • 💬 {quotas?.messagesLeft || 10} free messages
+                                </p>
                             </div>
                         )}
                     </div>

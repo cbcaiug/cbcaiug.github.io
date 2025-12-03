@@ -174,7 +174,7 @@ const App = ({ onMount }) => {
     const [useSharedApiKey, setUseSharedApiKey] = useState(true);
     // Firebase auth state
     const [user, setUser] = useState(null);
-    const [quotas, setQuotas] = useState({ downloadsLeft: 20, messagesLeft: 50 });
+    const [quotas, setQuotas] = useState({ downloadsLeft: 0, messagesLeft: 10 });
     const [showAuthModal, setShowAuthModal] = useState(false);
     const [freeMessageCount, setFreeMessageCount] = useState(0);
 
@@ -1141,7 +1141,7 @@ const App = ({ onMount }) => {
                 // User signed out - clear chat and reset state
                 setChatHistory([]);
                 setFreeMessageCount(0);
-                setQuotas({ downloadsLeft: 20, messagesLeft: 50 });
+                setQuotas({ downloadsLeft: 0, messagesLeft: 10 });
                 loadInitialMessage(activePromptKey);
             }
         });
