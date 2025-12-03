@@ -24,20 +24,32 @@ const getUserQuotas = async (uid) => {
   try {
     const doc = await db.collection('users').doc(uid).get();
     if (!doc.exists) {
-      // Create new user with default quotas
+      // Create new user with default quotas (20/50 for regular, 5/5 for guest)
       const defaultQuotas = {
         downloadsLeft: 20,
         messagesLeft: 50,
+        isGuest: false,
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
       };
       await db.collection('users').doc(uid).set(defaultQuotas);
-      return { downloadsLeft: 20, messagesLeft: 50 };
+      return { downloadsLeft: 20, messagesLeft: 50, isGuest: false };
     }
     return doc.data();
   } catch (error) {
     console.error('Error getting quotas:', error);
     throw error;
   }
+};
+
+// Real-time listener for quota changes (syncs across devices)
+const subscribeToQuotas = (uid, callback) => {
+  return db.collection('users').doc(uid).onSnapshot((doc) => {
+    if (doc.exists) {
+      callback(doc.data());
+    }
+  }, (error) => {
+    console.error('Error listening to quotas:', error);
+  });
 };
 
 // Decrement quota (safe transaction to prevent race conditions)
@@ -64,4 +76,4 @@ const decrementQuota = async (uid, type) => {
 };
 
 // Export for use in other components
-window.FirebaseService = { auth, db, getUserQuotas, decrementQuota };
+window.FirebaseService = { auth, db, getUserQuotas, decrementQuota, subscribeToQuotas };

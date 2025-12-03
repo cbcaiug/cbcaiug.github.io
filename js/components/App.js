@@ -1086,19 +1086,41 @@ const App = ({ onMount }) => {
 
     // --- EFFECTS ---
     useEffect(() => {
-        // Firebase auth listener
-        const unsubscribe = FirebaseService.auth.onAuthStateChanged(async (firebaseUser) => {
+        // Firebase auth listener with real-time quota sync
+        let quotaUnsubscribe = null;
+        
+        const authUnsubscribe = FirebaseService.auth.onAuthStateChanged(async (firebaseUser) => {
             setUser(firebaseUser);
+            
+            // Clean up previous quota listener
+            if (quotaUnsubscribe) {
+                quotaUnsubscribe();
+                quotaUnsubscribe = null;
+            }
+            
             if (firebaseUser) {
                 try {
+                    // Initial quota load
                     const userQuotas = await FirebaseService.getUserQuotas(firebaseUser.uid);
                     setQuotas(userQuotas);
+                    
+                    // Set up real-time listener for quota changes (syncs across devices)
+                    quotaUnsubscribe = FirebaseService.subscribeToQuotas(firebaseUser.uid, (updatedQuotas) => {
+                        setQuotas(updatedQuotas);
+                    });
                 } catch (error) {
                     console.error('Error loading quotas:', error);
                 }
+            } else {
+                // User signed out, reset quotas
+                setQuotas({ downloadsLeft: 20, messagesLeft: 50 });
             }
         });
-        return () => unsubscribe();
+        
+        return () => {
+            authUnsubscribe();
+            if (quotaUnsubscribe) quotaUnsubscribe();
+        };
     }, []);
 
     useEffect(() => {
@@ -1389,6 +1411,8 @@ const App = ({ onMount }) => {
                 useSharedApiKey={useSharedApiKey}
                 onUseSharedApiKeyChange={handleSharedKeyToggle}
                 activeSharedKeyLabel={activeSharedKeyLabel}
+                user={user}
+                quotas={quotas}
                 onGroundingChange={setIsGroundingEnabled}
                 onClose={() => setIsMenuOpen(false)}
                 onAssistantChange={handleAssistantChange} // <-- MODIFIED: Using the new handler

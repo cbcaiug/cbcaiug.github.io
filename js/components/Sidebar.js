@@ -21,6 +21,8 @@ const Sidebar = ({
     isGroundingEnabled,
     useSharedApiKey,
     activeSharedKeyLabel,
+    user,
+    quotas,
 
     // Handler props
     onClose,
@@ -705,10 +707,34 @@ const Sidebar = ({
             <div className="flex-1 flex flex-col min-h-0">
                 {/* Header with integrated close button */}
                 <div className="flex justify-between items-center p-4 flex-shrink-0 border-b border-slate-700">
-                    <h1 className="text-xl font-bold">Settings</h1>
+                    <div className="flex-1 min-w-0">
+                        <h1 className="text-xl font-bold">Settings</h1>
+                        {user && (
+                            <div className="mt-2 space-y-1">
+                                <p className="text-sm text-slate-300 truncate">
+                                    {user.isAnonymous ? '👤 Guest User' : `👤 ${user.email || user.displayName || 'User'}`}
+                                </p>
+                                {quotas && (
+                                    <p className="text-xs text-slate-400">
+                                        {quotas.downloadsLeft || 0} downloads • {quotas.messagesLeft || 0} messages
+                                    </p>
+                                )}
+                                <button
+                                    onClick={() => {
+                                        if (confirm('Sign out?')) {
+                                            FirebaseService.auth.signOut();
+                                        }
+                                    }}
+                                    className="text-xs text-red-400 hover:text-red-300 hover:underline"
+                                >
+                                    Sign Out
+                                </button>
+                            </div>
+                        )}
+                    </div>
                     <button 
                         onClick={onClose} 
-                        className="p-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg"
+                        className="p-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg flex-shrink-0 ml-2"
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
