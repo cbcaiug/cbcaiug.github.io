@@ -1,133 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support the Creator - AI Educational Assistant</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/jpeg"
+        href="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/glass-theme.css">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .card-shadow { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        body {
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        .content-prose {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content-prose h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .content-prose h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-prose p {
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: var(--primary-glow);
+        }
+
+        .header-nav {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Gift page specific styles */
+        .payment-card {
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .icon-red {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        .icon-green {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+
+        .payment-detail {
+            background: rgba(139, 92, 246, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copy-btn {
+            color: var(--primary);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.875rem;
+            background: none;
+            border: none;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.8;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-section {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(168, 85, 247, 0.2));
+            border-radius: 16px;
+            margin-bottom: 2rem;
+        }
+
+        .impact-section {
+            margin-top: 2rem;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 12px;
+        }
+
+        .impact-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .thank-you {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.1));
+            border-radius: 16px;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
-<body class="bg-gray-50">
+
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-glow">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
 
     <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Logo" class="h-10 w-10 rounded-lg">
-                <span class="text-xl font-bold text-gray-800">AI Educational Assistant</span>
+    <header class="header-nav">
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg"
+                    alt="Logo" class="logo-medium">
+                <span>AI Educational Assistant</span>
             </a>
-            <a href="app.html" class="text-base font-medium text-gray-600 hover:text-indigo-600 transition-colors">
-                &larr; Back to App
+            <a href="index.html" class="back-link">
+                &larr; Back to Home
             </a>
-        </nav>
+        </div>
     </header>
 
     <!-- Main Content -->
-    <main class="py-12 sm:py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- Hero Section -->
-            <div class="text-center mb-12">
-                <div class="gradient-bg p-8 rounded-2xl text-white mb-8">
-                    <h1 class="text-4xl font-bold mb-4">💝 Support the Creator</h1>
-                    <p class="text-xl opacity-90 max-w-2xl mx-auto">
+    <main>
+        <div class="container">
+            <div class="content-card content-prose">
+                <div class="hero-section">
+                    <h1>💝 Support the Creator</h1>
+                    <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto;">
                         Help keep this tool free for all educators by supporting its development and maintenance.
                     </p>
                 </div>
-            </div>
 
-            <!-- Creator Profile -->
-            <div class="bg-white rounded-2xl card-shadow p-8 mb-8">
-                <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="flex-shrink-0">
-                        <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/231359b0ce57b0f7e00fe49d7f81db1203d4e0ba/me.jpg" alt="Derrick Musamali" class="w-32 h-32 rounded-full object-cover shadow-lg">
-                    </div>
-                    <div class="text-center md:text-left">
-                        <h2 class="text-3xl font-bold text-gray-800 mb-2">Derrick Musamali</h2>
-                        <p class="text-lg text-gray-600 mb-4">Secondary School Teacher & Tech Enthusiast</p>
-                        <p class="text-gray-700 leading-relaxed">
-                            I'm a passionate educator who created this AI Educational Assistant to help fellow teachers 
-                            in Uganda adapt to the Competency-Based Curriculum. As a Biology and Chemistry teacher, 
-                            I understand the challenges we face and built this tool to give us back our most valuable resource: time.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Payment Options -->
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
-                
-                <!-- Mobile Money Card -->
-                <div class="bg-white rounded-2xl card-shadow p-8">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                            </svg>
+                <div class="content-card" style="margin-bottom: 2rem;">
+                    <div class="profile-section">
+                        <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/231359b0ce57b0f7e00fe49d7f81db1203d4e0ba/me.jpg"
+                            alt="Derrick Musamali" class="profile-img">
+                        <div style="flex: 1;">
+                            <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem; margin-top: 0;">
+                                Derrick Musamali</h2>
+                            <p style="color: var(--text-muted); font-size: 1.125rem; margin-bottom: 1rem;">Secondary
+                                School Teacher & Tech Enthusiast</p>
+                            <p style="line-height: 1.6;">
+                                I'm a passionate educator who created this AI Educational Assistant to help fellow
+                                teachers
+                                in Uganda adapt to the Competency-Based Curriculum. As a Biology and Chemistry teacher,
+                                I understand the challenges we face and built this tool to give us back our most
+                                valuable resource: time.
+                            </p>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Airtel Money</h3>
-                        <p class="text-gray-600">Send directly to my mobile money account</p>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <label class="text-sm font-medium text-gray-700">Phone Number</label>
-                            <div class="flex items-center justify-between mt-1">
-                                <span class="text-lg font-mono text-gray-800">0750470234</span>
-                                <button onclick="copyToClipboard('0750470234')" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
-                                    Copy
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <label class="text-sm font-medium text-gray-700">Registered Name</label>
-                            <div class="flex items-center justify-between mt-1">
-                                <span class="text-lg font-mono text-gray-800">Derrick Musamali</span>
-                                <button onclick="copyToClipboard('Derrick Musamali')" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
-                                    Copy
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
-                        <p class="text-sm text-blue-800">
-                            <strong>How to send:</strong> Dial *185# → Send Money → Enter the number above → Enter amount → Confirm
-                        </p>
                     </div>
                 </div>
 
-                <!-- WhatsApp Contact Card -->
-                <div class="bg-white rounded-2xl card-shadow p-8">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
-                            </svg>
+                <div class="grid-2">
+                    <div class="content-card payment-card">
+                        <div style="text-align: center; margin-bottom: 1.5rem;">
+                            <div class="payment-icon icon-red">
+                                <svg style="width: 32px; height: 32px;" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                                </svg>
+                            </div>
+                            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">Airtel Money</h3>
+                            <p style="color: var(--text-muted);">Send directly to my mobile money account</p>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">WhatsApp Me</h3>
-                        <p class="text-gray-600">Send a message before or after your gift</p>
+
+                        <div class="payment-detail">
+                            <div>
+                                <label style="font-size: 0.875rem; color: var(--text-muted); display: block;">Phone
+                                    Number</label>
+                                <span style="font-size: 1.125rem; font-family: monospace;">0750470234</span>
+                            </div>
+                            <button onclick="copyToClipboard('0750470234')" class="copy-btn">Copy</button>
+                        </div>
+
+                        <div class="payment-detail">
+                            <div>
+                                <label style="font-size: 0.875rem; color: var(--text-muted); display: block;">Registered
+                                    Name</label>
+                                <span style="font-size: 1.125rem; font-family: monospace;">Derrick Musamali</span>
+                            </div>
+                            <button onclick="copyToClipboard('Derrick Musamali')" class="copy-btn">Copy</button>
+                        </div>
+
+                        <div
+                            style="margin-top: 1.5rem; padding: 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 8px;">
+                            <p style="font-size: 0.875rem;">
+                                <strong>How to send:</strong> Dial *185# → Send Money → Enter the number above → Enter
+                                amount → Confirm
+                            </p>
+                        </div>
                     </div>
-                    
-                    <div class="space-y-4">
-                        <a href="https://wa.me/256750470234?text=Hi%20Derrick!%20I%20love%20the%20AI%20Educational%20Assistant%20and%20want%20to%20support%20your%20work." 
-                           target="_blank" 
-                           class="block w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-lg transition-colors text-center">
+
+                    <div class="content-card payment-card">
+                        <div style="text-align: center; margin-bottom: 1.5rem;">
+                            <div class="payment-icon icon-green">
+                                <svg style="width: 32px; height: 32px;" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516" />
+                                </svg>
+                            </div>
+                            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">WhatsApp Me</h3>
+                            <p style="color: var(--text-muted);">Send a message before or after your gift</p>
+                        </div>
+
+                        <a href="https://wa.me/256750470234?text=Hi%20Derrick!%20I%20love%20the%20AI%20Educational%20Assistant%20and%20want%20to%20support%20your%20work."
+                            target="_blank" class="btn-secondary"
+                            style="display: block; text-align: center; padding: 1rem; margin-bottom: 1rem; text-decoration: none;">
                             💬 Chat on WhatsApp
                         </a>
-                        
-                        <div class="text-center text-sm text-gray-600">
+
+                        <div style="text-align: center; font-size: 0.875rem; color: var(--text-muted);">
                             <p>Feel free to reach out with:</p>
-                            <ul class="mt-2 space-y-1">
+                            <ul style="margin-top: 0.5rem; list-style: none; padding: 0;">
                                 <li>• Feature requests</li>
                                 <li>• Bug reports</li>
                                 <li>• Just to say hi! 👋</li>
@@ -135,49 +324,60 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Impact Section -->
-            <div class="bg-white rounded-2xl card-shadow p-8 mb-8">
-                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Your Support Makes a Difference</h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
+                <!-- Impact Section -->
+                <div class="impact-section">
+                    <h2 style="text-align: center;">Your Support Makes a Difference</h2>
+                    <div class="impact-grid">
+                        <div class="impact-item">
+                            <div class="impact-icon" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6;">
+                                <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h4 style="font-weight: 600; margin-bottom: 0.5rem;">Server Costs</h4>
+                            <p style="font-size: 0.875rem; color: var(--text-muted);">Keep the app running smoothly for
+                                all users</p>
                         </div>
-                        <h4 class="font-semibold text-gray-800 mb-2">Server Costs</h4>
-                        <p class="text-sm text-gray-600">Keep the app running smoothly for all users</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
+                        <div class="impact-item">
+                            <div class="impact-icon" style="background: rgba(34, 197, 94, 0.2); color: #22c55e;">
+                                <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <h4 style="font-weight: 600; margin-bottom: 0.5rem;">New Features</h4>
+                            <p style="font-size: 0.875rem; color: var(--text-muted);">Fund development of new AI
+                                assistants</p>
                         </div>
-                        <h4 class="font-semibold text-gray-800 mb-2">New Features</h4>
-                        <p class="text-sm text-gray-600">Fund development of new AI assistants</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                            </svg>
+                        <div class="impact-item">
+                            <div class="impact-icon"
+                                style="background: rgba(139, 92, 246, 0.2); color: var(--primary);">
+                                <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </div>
+                            <h4 style="font-weight: 600; margin-bottom: 0.5rem;">Free for All</h4>
+                            <p style="font-size: 0.875rem; color: var(--text-muted);">Keep the tool accessible to every
+                                teacher</p>
                         </div>
-                        <h4 class="font-semibold text-gray-800 mb-2">Free for All</h4>
-                        <p class="text-sm text-gray-600">Keep the tool accessible to every teacher</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Thank You Message -->
-            <div class="text-center bg-gradient-to-r from-indigo-50 to-purple-50 p-8 rounded-2xl">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">Thank You! 🙏</h3>
-                <p class="text-gray-700 max-w-2xl mx-auto">
-                    Every contribution, no matter the size, helps me continue improving this tool for educators across Uganda. 
-                    Your support means the world to me and to all the teachers who benefit from this work.
-                </p>
+                <!-- Thank You Message -->
+                <div class="thank-you">
+                    <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">Thank You! 🙏</h3>
+                    <p style="max-width: 600px; margin: 0 auto;">
+                        Every contribution, no matter the size, helps me continue improving this tool for educators
+                        across Uganda.
+                        Your support means the world to me and to all the teachers who benefit from this work.
+                    </p>
+                </div>
             </div>
         </div>
     </main>
@@ -186,21 +386,19 @@
         function copyToClipboard(text) {
             const button = event.target;
             const originalText = button.textContent;
-            
-            // Try modern clipboard API first
+
             if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(text).then(function() {
+                navigator.clipboard.writeText(text).then(function () {
                     showCopySuccess(button, originalText);
-                }).catch(function(err) {
+                }).catch(function (err) {
                     fallbackCopy(text, button, originalText);
                 });
             } else {
                 fallbackCopy(text, button, originalText);
             }
         }
-        
+
         function fallbackCopy(text, button, originalText) {
-            // Create a temporary textarea element
             const textArea = document.createElement('textarea');
             textArea.value = text;
             textArea.style.position = 'fixed';
@@ -209,7 +407,7 @@
             document.body.appendChild(textArea);
             textArea.focus();
             textArea.select();
-            
+
             try {
                 document.execCommand('copy');
                 showCopySuccess(button, originalText);
@@ -220,17 +418,18 @@
                 document.body.removeChild(textArea);
             }
         }
-        
+
         function showCopySuccess(button, originalText) {
             button.textContent = 'Copied!';
-            button.classList.add('text-green-600');
-            
+            button.style.color = '#22c55e';
+
             setTimeout(() => {
                 button.textContent = originalText;
-                button.classList.remove('text-green-600');
+                button.style.color = '';
             }, 2000);
         }
     </script>
 
 </body>
+
 </html>

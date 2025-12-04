@@ -1,0 +1,200 @@
+/* =========================================
+   MODERN GLASS THEME - Extracted from index.html
+   ========================================= */
+
+/* 1. CSS Variables */
+:root {
+    /* Brand Colors */
+    --primary: #3b82f6;
+    --primary-glow: #60a5fa;
+    --secondary: #8b5cf6;
+    --accent: #f472b6;
+    
+    /* Dark Glass Theme Palette */
+    --bg-deep: #030712;
+    --bg-surface: #0f172a;
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(17, 25, 40, 0.75);
+    --glass-highlight: rgba(255, 255, 255, 0.05);
+    
+    /* Text */
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    
+    /* Spacing */
+    --nav-height: 80px;
+}
+
+/* 2. Base Styles */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body { 
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--bg-deep); 
+    color: var(--text-main); 
+    margin: 0; 
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08), transparent 25%);
+    background-attachment: fixed;
+}
+
+/* 3. Ambient Background Blobs */
+.ambient-glow {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.blob {
+    position: absolute;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: floatBlob 20s infinite alternate;
+}
+
+.blob-1 { 
+    top: -10%; left: -10%; 
+    width: 50vw; height: 50vw; 
+    background: var(--primary); 
+    animation-delay: 0s; 
+}
+
+.blob-2 { 
+    bottom: -10%; right: -10%; 
+    width: 60vw; height: 60vw; 
+    background: var(--secondary); 
+    animation-delay: -5s; 
+}
+
+@keyframes floatBlob {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, 20px) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+/* 4. Glass Panel Utility */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+}
+
+/* 5. Container */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* 6. Content Card */
+.content-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 2rem auto;
+    max-width: 900px;
+}
+
+/* 7. Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-main);
+    margin-top: 0;
+}
+
+p { color: var(--text-muted); }
+
+a {
+    color: var(--primary-glow);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover { color: var(--primary); }
+
+.gradient-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 8. Section Titles */
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+    font-size: 1.1rem;
+}
+
+/* 9. Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.btn-glass {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.btn-glass:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* 10. Logo Sizing */
+.logo-small { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+.logo-medium { width: 48px; height: 48px; border-radius: 12px; object-fit: cover; }
+.logo-large { width: 80px; height: 80px; border-radius: 16px; object-fit: cover; }
+
+/* 11. Responsive */
+@media (max-width: 768px) {
+    .content-card { padding: 2rem 1.5rem; }
+    .container { padding: 0 1rem; }
+}
