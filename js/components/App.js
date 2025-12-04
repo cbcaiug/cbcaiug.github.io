@@ -1146,9 +1146,16 @@ const App = ({ onMount }) => {
                         });
                     }
                     
-                    // Initial quota load
+                    // Initial quota load and ensure email is stored
                     const userQuotas = await FirebaseService.getUserQuotas(firebaseUser.uid);
                     setQuotas(userQuotas);
+                    
+                    // Update email if missing (for old users)
+                    if (!userQuotas.email && firebaseUser.email) {
+                        await FirebaseService.db.collection('users').doc(firebaseUser.uid).update({
+                            email: firebaseUser.email
+                        });
+                    }
                     
                     // Load greeting message for new users
                     if (chatHistory.length === 0) {

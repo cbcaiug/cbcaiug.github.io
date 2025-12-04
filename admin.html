@@ -82,6 +82,13 @@
                 </button>
             </div>
             <div id="search-result" class="mt-4"></div>
+            <button 
+                id="clear-search-btn"
+                onclick="clearSearch()"
+                class="hidden mt-2 bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg text-sm"
+            >
+                Clear Results
+            </button>
         </div>
 
         <!-- All Users Table -->
@@ -244,16 +251,25 @@
             });
         }
 
+        function clearSearch() {
+            document.getElementById('search-email').value = '';
+            document.getElementById('search-result').innerHTML = '';
+            document.getElementById('clear-search-btn').classList.add('hidden');
+        }
+
         async function searchUser() {
             const searchTerm = document.getElementById('search-email').value.trim();
             const resultDiv = document.getElementById('search-result');
+            const clearBtn = document.getElementById('clear-search-btn');
 
             if (!searchTerm) {
-                resultDiv.innerHTML = '<p class="text-red-400">Please enter an email or UID</p>';
+                resultDiv.innerHTML = '<p class="text-red-400">Please enter an email</p>';
+                clearBtn.classList.add('hidden');
                 return;
             }
 
             resultDiv.innerHTML = '<p class="text-slate-400">Searching...</p>';
+            clearBtn.classList.remove('hidden');
 
             try {
                 // Try direct UID lookup first
@@ -281,7 +297,7 @@
                 if (found) {
                     resultDiv.innerHTML = `
                         <div class="bg-slate-700 p-4 rounded-lg">
-                            <p class="mb-2"><strong>Email:</strong> ${found.email || 'N/A'}</p>
+                            <p class="mb-2"><strong>Email:</strong> ${found.email || 'No email'}</p>
                             <p class="mb-2"><strong>Downloads:</strong> ${found.downloadsLeft || 0}/20</p>
                             <p class="mb-2"><strong>Messages:</strong> ${found.messagesLeft || 0}/50</p>
                             <p class="mb-2"><strong>Created:</strong> ${toEAT(found.createdAt)}</p>
@@ -296,6 +312,7 @@
                     `;
                 } else {
                     resultDiv.innerHTML = '<p class="text-red-400">User not found</p>';
+                    clearBtn.classList.remove('hidden');
                 }
             } catch (error) {
                 console.error('Error searching user:', error);
