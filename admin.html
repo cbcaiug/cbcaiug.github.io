@@ -150,17 +150,23 @@
             tbody.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-slate-400">Loading...</td></tr>';
 
             try {
+                console.log('Firebase initialized:', !!firebase.apps.length);
+                console.log('Firestore instance:', !!db);
+                
                 const snapshot = await db.collection('users').get();
+                console.log('Users found:', snapshot.size);
+                
                 document.getElementById('total-users').textContent = snapshot.size;
 
                 if (snapshot.empty) {
-                    tbody.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-slate-400">No users found</td></tr>';
+                    tbody.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-amber-400">⚠️ No users yet. Sign in to app.html first to create user data.</td></tr>';
                     return;
                 }
 
                 let html = '';
                 snapshot.forEach(doc => {
                     const data = doc.data();
+                    console.log('User doc:', doc.id, data);
                     const email = data.email || 'UID: ' + doc.id.substring(0, 8) + '...'; // Show email or truncated UID
                     const created = data.createdAt ? new Date(data.createdAt.toDate()).toLocaleDateString() : 'N/A';
                     
@@ -188,7 +194,9 @@
                 tbody.innerHTML = html;
             } catch (error) {
                 console.error('Error loading users:', error);
-                tbody.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-red-400">Error loading users</td></tr>';
+                console.error('Error code:', error.code);
+                console.error('Error message:', error.message);
+                tbody.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-red-400">Error: ${error.message}<br><small>Check console for details</small></td></tr>`;
             }
         }
 

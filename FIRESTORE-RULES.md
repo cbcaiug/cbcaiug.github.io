@@ -1,5 +1,15 @@
 # Firestore Security Rules for Admin Dashboard
 
+## IMPORTANT: No Users Yet?
+
+If you see "No users found" in admin dashboard:
+1. **Sign in to the main app first**: https://cbcaiug.github.io/app.html
+2. Create an account (Email/Password or Google)
+3. This creates the first user in Firestore
+4. Then refresh admin dashboard
+
+---
+
 ## Current Problem
 Admin dashboard can't read users because Firestore rules block it.
 
