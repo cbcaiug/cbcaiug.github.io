@@ -35,12 +35,20 @@
     </div>
 
     <div id="admin-panel" class="hidden p-6 max-w-7xl mx-auto">
-        <header class="mb-8 flex items-center gap-4">
-            <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="CBC AI Tool" class="w-16 h-16 rounded-lg">
-            <div>
-                <h1 class="text-3xl font-bold mb-2">🎛️ Admin Dashboard</h1>
-                <p class="text-slate-400">Manage user quotas and view statistics</p>
+        <header class="mb-8 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="CBC AI Tool" class="w-16 h-16 rounded-lg">
+                <div>
+                    <h1 class="text-3xl font-bold mb-2">🎛️ Admin Dashboard</h1>
+                    <p class="text-slate-400">Manage user quotas and view statistics</p>
+                </div>
             </div>
+            <button 
+                onclick="logout()"
+                class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-semibold transition-colors"
+            >
+                Sign Out
+            </button>
         </header>
 
         <!-- Quick Actions -->
@@ -379,6 +387,20 @@
         document.getElementById('search-email').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') searchUser();
         });
+
+        function logout() {
+            if (!confirm('Sign out of admin dashboard?')) return;
+            
+            // Sign out from Firebase
+            firebase.auth().signOut();
+            
+            // Clear all site data
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            // Reload page to show login screen
+            window.location.reload();
+        }
     </script>
 </body>
 </html>
