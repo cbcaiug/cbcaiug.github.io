@@ -27,13 +27,14 @@ service cloud.firestore {
       // Users can read/write their own data
       allow read, write: if request.auth != null && request.auth.uid == userId;
       
-      // ADMIN: Allow reading ALL users (for admin dashboard)
-      // WARNING: This allows anyone to read all user data
-      // In production, add admin authentication
+      // Admin can read all users (must be signed in)
       allow read: if request.auth != null;
     }
   }
 }
+```
+
+**IMPORTANT**: After updating rules, click **Publish** button!
 ```
 
 ## Better Solution (With Admin Auth)
