@@ -1555,7 +1555,7 @@ const App = ({ onMount }) => {
                     </div>
                 </header>
 
-                <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-32 sm:pt-28 pb-48">
+                <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-36 sm:pt-32 pb-48">
                     <div className="px-1 p-2 sm:p-6 space-y-4">
                         {chatHistory.map((msg, index) => {
                             // For system messages, we render a simple, centered div.
