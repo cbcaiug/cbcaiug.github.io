@@ -156,7 +156,18 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
 
 
 
-        <p className="mt-6 text-center text-sm text-gray-400">
+        <p className="mt-4 text-center text-xs text-gray-400">
+          By {mode === 'signin' ? 'signing in' : 'creating an account'} you agree to the{' '}
+          <a href="terms.html" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 underline">
+            Terms of Service
+          </a>
+          {' '}and{' '}
+          <a href="privacy.html" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 underline">
+            Privacy Policy
+          </a>
+        </p>
+
+        <p className="mt-4 text-center text-sm text-gray-400">
           {mode === 'signin' ? "Don't have an account? " : "Already have an account? "}
           <button
             onClick={() => setMode(mode === 'signin' ? 'signup' : 'signin')}

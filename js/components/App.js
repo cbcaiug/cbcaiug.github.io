@@ -152,7 +152,7 @@ const App = ({ onMount }) => {
         setIsPromptMissing(false);
         setError('');
     }, []);
-    const [showConsentModal, setShowConsentModal] = useState(false);
+    // Consent modal removed - terms/privacy links in sidebar
     // NEW: State for the Google Doc success and download modal
     const [isDocModalOpen, setIsDocModalOpen] = useState(false);
     const [createdDocInfo, setCreatedDocInfo] = useState(null);
@@ -1191,9 +1191,7 @@ const App = ({ onMount }) => {
     useEffect(() => {
         // Initialize the app on first load
         const initializeApp = async () => {
-            if (!localStorage.getItem('userConsentV1')) {
-                setShowConsentModal(true);
-            }
+            // Consent modal removed
 
             const savedCount = parseInt(localStorage.getItem('generationCount') || '0', 10);
             setGenerationCount(savedCount);
@@ -1275,7 +1273,7 @@ const App = ({ onMount }) => {
             }
         }
         */
-    }, [isLoadingAssistants, showConsentModal]);
+    }, [isLoadingAssistants]);
 
     useEffect(() => {
         // Save state to local storage on change
@@ -1461,10 +1459,7 @@ const App = ({ onMount }) => {
 
     return (
         <div className="h-screen w-screen overflow-hidden flex bg-white">
-            {showConsentModal && <ConsentModal onAccept={() => {
-                localStorage.setItem('userConsentV1', 'true');
-                setShowConsentModal(false);
-            }} />}
+            {/* Consent modal removed - terms/privacy in sidebar */}
 
 
 
