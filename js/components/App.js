@@ -809,7 +809,7 @@ const App = ({ onMount }) => {
                     return updatedHistory;
                 });
             },
-            onComplete: () => {
+            onComplete: async () => {
                 setIsLoading(false);
                 setChatHistory(prev => {
                     const updatedHistory = [...prev];
@@ -1128,6 +1128,11 @@ const App = ({ onMount }) => {
                     const userQuotas = await FirebaseService.getUserQuotas(firebaseUser.uid);
                     setQuotas(userQuotas);
                     
+                    // Load greeting message for new users
+                    if (chatHistory.length === 0) {
+                        loadInitialMessage(activePromptKey);
+                    }
+                    
                     // Set up real-time listener for quota changes (syncs across devices)
                     quotaUnsubscribe = FirebaseService.subscribeToQuotas(firebaseUser.uid, (updatedQuotas) => {
                         setQuotas(updatedQuotas);
@@ -1136,11 +1141,12 @@ const App = ({ onMount }) => {
                     console.error('Error loading quotas:', error);
                 }
             } else {
-                // User signed out - show auth modal, clear chat
+                // User signed out - reset to default assistant with greeting
                 setShowAuthModal(true);
                 setIsAuthenticating(false);
                 setChatHistory([]);
                 setQuotas({ downloadsLeft: 20, messagesLeft: 50 });
+                setActivePromptKey('Coteacher');
             }
             
             // Hide loading state after auth check
@@ -1567,12 +1573,7 @@ const App = ({ onMount }) => {
                                                 </div>
                                             )}
                                             <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
-                                            <MessageMenu msg={msg} index={index} usageCount={usageCount} onCopy={(content) => {
-                                                const newCount = usageCount - 1;
-                                                setUsageCount(newCount);
-                                                localStorage.setItem('saveUsageCount', newCount.toString());
-                                                handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError);
-                                            }} onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))} onRegenerate={handleRegenerate} onDocxDownload={handleDocxDownload} />
+                                            <MessageMenu msg={msg} index={index} downloadsLeft={quotas.downloadsLeft} onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))} onRegenerate={handleRegenerate} onDocxDownload={handleDocxDownload} />
                                         </div>
                                     </div>
                                 </div>
@@ -1673,9 +1674,16 @@ const App = ({ onMount }) => {
                             </div>
                             <input id="file-upload" type="file" className="hidden" onChange={handleFileChange} disabled={isFileUploadDisabled} />
                             <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); } }} placeholder="Type here..." className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48" rows="1" />
-                            <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
-                                {isLoading ? (<><StopIcon className="w-5 h-5" /><span>Stop</span></>) : (<><SendIcon className="w-5 h-5" /><span>Send</span></>)}
-                            </button>
+                            <div className="flex flex-col items-center gap-1">
+                                <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 flex items-center gap-2 font-semibold">
+                                    {isLoading ? (<><StopIcon className="w-5 h-5" /><span>Stop</span></>) : (<><SendIcon className="w-5 h-5" /><span>Send</span></>)}
+                                </button>
+                                {quotas.messagesLeft <= 0 ? (
+                                    <span className="text-xs text-red-600 font-semibold">0/50 - Use own key</span>
+                                ) : (
+                                    <span className="text-xs text-slate-500">{quotas.messagesLeft}/50</span>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </footer>

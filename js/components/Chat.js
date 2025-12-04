@@ -49,38 +49,25 @@ const MarkdownRenderer = ({ htmlContent, isLoading, isTakingLong }) => {
     return <div ref={contentRef} className="markdown-content p-4" dangerouslySetInnerHTML={{ __html: finalHtml }} />;
 };
 
-const MessageMenu = ({ msg, index, onCopy, onShare, onDelete, onRegenerate, onDocxDownload, usageCount }) => {
+const MessageMenu = ({ msg, index, onShare, onDelete, onRegenerate, onDocxDownload, downloadsLeft }) => {
   // Don't render the menu for a message that is still loading
   if (msg.isLoading) return null;
 
-  const isLimitReached = usageCount <= 0;
-  const copyButtonClass = isLimitReached 
-    ? "flex items-center gap-1 px-2 py-1 text-xs text-slate-400 cursor-not-allowed rounded"
-    : "flex items-center gap-1 px-2 py-1 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors";
+  const isLimitReached = downloadsLeft <= 0;
   const saveButtonClass = isLimitReached
     ? "flex items-center gap-1 px-2 py-1 text-xs text-red-600 hover:text-red-800 hover:bg-red-50 rounded transition-colors"
     : "flex items-center gap-1 px-2 py-1 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition-colors";
 
   return (
       <div className="flex flex-wrap items-center justify-end gap-1 mt-2 px-2 sm:px-4 pb-2" id={`message-options-menu-${index}`}>
-          <button
-              onClick={() => !isLimitReached && onCopy(msg.content)}
-              className={copyButtonClass}
-              disabled={isLimitReached}
-              title={isLimitReached ? "Free uses exhausted" : "Copy Message"}
-          >
-              <CopyIcon className="w-3 h-3" />
-              <span>Copy {usageCount}/20</span>
-          </button>
-          
           {msg.role === 'assistant' && (
               <button
                   onClick={() => onDocxDownload(msg.content)}
                   className={saveButtonClass}
-                  title={isLimitReached ? "Free uses exhausted - Add to cart" : "Save as Google Doc"}
+                  title={isLimitReached ? "Download quota exhausted" : "Save as Google Doc"}
               >
                   <FileTextIcon className="w-3 h-3" />
-                  <span>Save {usageCount}/20</span>
+                  <span>Save {downloadsLeft}/20</span>
               </button>
           )}
           

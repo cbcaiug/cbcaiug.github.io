@@ -27,11 +27,9 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
       onClose();
     } catch (err) {
       // User-friendly error messages
-      let errorMsg = err.message;
-      if (err.code === 'auth/user-not-found') {
-        errorMsg = 'No account found with this email. Please sign up first.';
-      } else if (err.code === 'auth/wrong-password') {
-        errorMsg = 'Incorrect password. Please try again.';
+      let errorMsg = 'Incorrect email or password';
+      if (err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
+        errorMsg = 'Incorrect email or password';
       } else if (err.code === 'auth/email-already-in-use') {
         errorMsg = 'This email is already registered. Please sign in instead.';
       } else if (err.code === 'auth/weak-password') {
@@ -74,16 +72,9 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
           </div>
         </div>
         
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-white">
-            {mode === 'signin' ? 'Welcome Back' : 'Create Account'}
-          </h2>
-          <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
+        <h2 className="text-2xl font-bold text-white text-center mb-6">
+          {mode === 'signin' ? 'Sign In' : 'Create Account'}
+        </h2>
 
         {error && (
           <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-3 rounded-lg mb-4 text-sm backdrop-blur-sm">
