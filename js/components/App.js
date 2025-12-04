@@ -819,6 +819,14 @@ const App = ({ onMount }) => {
                 });
 
                 if (!abortControllerRef.current.signal.aborted) {
+                    // Decrement message quota in Firestore
+                    try {
+                        const newCount = await FirebaseService.decrementQuota(user.uid, 'message');
+                        setQuotas(prev => ({ ...prev, messagesLeft: newCount }));
+                    } catch (quotaError) {
+                        console.error('Message quota decrement failed:', quotaError);
+                    }
+                    
                     // Use our new local variable for logging.
                     const finalKeyLabel = keyLabelForLogging || (isTrial ? 'SHARED KEY' : 'PERSONAL KEY');
 
@@ -1665,18 +1673,9 @@ const App = ({ onMount }) => {
                             </div>
                             <input id="file-upload" type="file" className="hidden" onChange={handleFileChange} disabled={isFileUploadDisabled} />
                             <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); } }} placeholder="Type here..." className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48" rows="1" />
-                            {/* UPDATED: Wrap the send button and add the trial counter text */}
-                            <div className="flex flex-col items-center">
-                                <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
-                                    {isLoading ? (<><StopIcon className="w-5 h-5" /><span>Stop</span></>) : (<><SendIcon className="w-5 h-5" /><span>Send</span></>)}
-                                </button>
-                                {/* Show Firestore quotas */}
-                                {user && quotas && (
-                                    <p className="text-xs text-slate-500 mt-1 text-center">
-                                        📥 {quotas.downloadsLeft}/20 downloads • 💬 {quotas.messagesLeft}/50 messages
-                                    </p>
-                                )}
-                            </div>
+                            <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
+                                {isLoading ? (<><StopIcon className="w-5 h-5" /><span>Stop</span></>) : (<><SendIcon className="w-5 h-5" /><span>Send</span></>)}
+                            </button>
                         </div>
                     </div>
                 </footer>

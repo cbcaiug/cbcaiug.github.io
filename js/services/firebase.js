@@ -60,7 +60,8 @@ const decrementQuota = async (uid, type) => {
       const doc = await transaction.get(userRef);
       if (!doc.exists) throw new Error('User not found');
       
-      const field = type === 'download' ? 'downloadsLeft' : 'messagesLeft';
+      // Map type to field name
+      const field = (type === 'download' || type === 'save' || type === 'copy') ? 'downloadsLeft' : 'messagesLeft';
       const current = doc.data()[field] || 0;
       
       if (current <= 0) throw new Error('Quota exceeded');
