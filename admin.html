@@ -220,8 +220,14 @@
 
                 if (snapshot.empty) {
                     tbody.innerHTML = '<tr><td colspan="6" class="p-4 text-center text-amber-400">⚠️ No users yet</td></tr>';
+                    document.getElementById('active-today').textContent = '0';
                     return;
                 }
+
+                // Count active today (last active within 24 hours)
+                const now = Date.now();
+                const oneDayAgo = now - (24 * 60 * 60 * 1000);
+                let activeToday = 0;
 
                 let html = '';
                 snapshot.forEach(doc => {
@@ -229,6 +235,14 @@
                     const email = data.email || 'No email';
                     const created = toEAT(data.createdAt);
                     const lastActive = toEAT(data.lastActive);
+                    
+                    // Check if active today
+                    if (data.lastActive) {
+                        const lastActiveTime = data.lastActive.toDate ? data.lastActive.toDate().getTime() : new Date(data.lastActive).getTime();
+                        if (lastActiveTime >= oneDayAgo) {
+                            activeToday++;
+                        }
+                    }
                     
                     html += `
                         <tr class="hover:bg-slate-700">
@@ -252,6 +266,8 @@
                         </tr>
                     `;
                 });
+                
+                document.getElementById('active-today').textContent = activeToday;
                 tbody.innerHTML = html;
             }, (error) => {
                 console.error('Error loading users:', error);
