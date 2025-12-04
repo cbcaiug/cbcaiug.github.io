@@ -103,12 +103,13 @@
                             <th class="p-3">Downloads</th>
                             <th class="p-3">Messages</th>
                             <th class="p-3">Created</th>
+                            <th class="p-3">Last Active</th>
                             <th class="p-3">Actions</th>
                         </tr>
                     </thead>
                     <tbody id="users-table" class="divide-y divide-slate-700">
                         <tr>
-                            <td colspan="5" class="p-4 text-center text-slate-400">Loading...</td>
+                            <td colspan="6" class="p-4 text-center text-slate-400">Loading...</td>
                         </tr>
                     </tbody>
                 </table>
@@ -132,9 +133,23 @@
         const db = firebase.firestore();
 
         // Admin credentials
-        const ADMIN_EMAIL = "admin@cbcaiug.com";
+        const ADMIN_EMAIL = "cbcaitool@gmail.com";
         const ADMIN_PASSWORD = "cbcaiug2025";
         let adminUser = null;
+        let unsubscribe = null;
+
+        function toEAT(timestamp) {
+            if (!timestamp) return 'Never';
+            const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+            return date.toLocaleString('en-US', { 
+                timeZone: 'Africa/Nairobi',
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
 
         async function login() {
             const password = document.getElementById('admin-password').value;
@@ -181,28 +196,24 @@
 
         async function loadAllUsers() {
             const tbody = document.getElementById('users-table');
-            tbody.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-slate-400">Loading...</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="6" class="p-4 text-center text-slate-400">Loading...</td></tr>';
 
-            try {
-                console.log('Firebase initialized:', !!firebase.apps.length);
-                console.log('Firestore instance:', !!db);
-                
-                const snapshot = await db.collection('users').get();
-                console.log('Users found:', snapshot.size);
-                
+            if (unsubscribe) unsubscribe();
+
+            unsubscribe = db.collection('users').onSnapshot((snapshot) => {
                 document.getElementById('total-users').textContent = snapshot.size;
 
                 if (snapshot.empty) {
-                    tbody.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-amber-400">⚠️ No users yet. Sign in to app.html first to create user data.</td></tr>';
+                    tbody.innerHTML = '<tr><td colspan="6" class="p-4 text-center text-amber-400">⚠️ No users yet</td></tr>';
                     return;
                 }
 
                 let html = '';
                 snapshot.forEach(doc => {
                     const data = doc.data();
-                    console.log('User doc:', doc.id, data);
-                    const email = data.email || 'UID: ' + doc.id.substring(0, 8) + '...'; // Show email or truncated UID
-                    const created = data.createdAt ? new Date(data.createdAt.toDate()).toLocaleDateString() : 'N/A';
+                    const email = data.email || 'No email';
+                    const created = toEAT(data.createdAt);
+                    const lastActive = toEAT(data.lastActive);
                     
                     html += `
                         <tr class="hover:bg-slate-700">
@@ -213,7 +224,8 @@
                             <td class="p-3">
                                 <span class="px-2 py-1 bg-green-600 rounded">${data.messagesLeft || 0}/50</span>
                             </td>
-                            <td class="p-3 text-slate-400">${created}</td>
+                            <td class="p-3 text-slate-400 text-xs">${created}</td>
+                            <td class="p-3 text-slate-400 text-xs">${lastActive}</td>
                             <td class="p-3">
                                 <button 
                                     onclick="resetUserQuota('${doc.id}')"
@@ -226,12 +238,10 @@
                     `;
                 });
                 tbody.innerHTML = html;
-            } catch (error) {
+            }, (error) => {
                 console.error('Error loading users:', error);
-                console.error('Error code:', error.code);
-                console.error('Error message:', error.message);
-                tbody.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-red-400">Error: ${error.message}<br><small>Check console for details</small></td></tr>`;
-            }
+                tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-red-400">❌ Error: ${error.message}</td></tr>`;
+            });
         }
 
         async function searchUser() {
@@ -271,10 +281,11 @@
                 if (found) {
                     resultDiv.innerHTML = `
                         <div class="bg-slate-700 p-4 rounded-lg">
-                            <p class="mb-2"><strong>UID:</strong> <span class="text-xs text-slate-400">${found.id}</span></p>
                             <p class="mb-2"><strong>Email:</strong> ${found.email || 'N/A'}</p>
                             <p class="mb-2"><strong>Downloads:</strong> ${found.downloadsLeft || 0}/20</p>
                             <p class="mb-2"><strong>Messages:</strong> ${found.messagesLeft || 0}/50</p>
+                            <p class="mb-2"><strong>Created:</strong> ${toEAT(found.createdAt)}</p>
+                            <p class="mb-2"><strong>Last Active:</strong> ${toEAT(found.lastActive)}</p>
                             <button 
                                 onclick="resetUserQuota('${found.id}')"
                                 class="mt-3 bg-yellow-600 hover:bg-yellow-700 px-4 py-2 rounded font-semibold"
@@ -298,10 +309,10 @@
             try {
                 await db.collection('users').doc(userId).update({
                     downloadsLeft: 20,
-                    messagesLeft: 50
+                    messagesLeft: 50,
+                    lastActive: firebase.firestore.FieldValue.serverTimestamp()
                 });
-                alert('✅ Quotas reset successfully! User will see changes instantly.');
-                loadAllUsers();
+                alert('✅ Quotas reset successfully!');
             } catch (error) {
                 console.error('Error resetting quota:', error);
                 alert('❌ Error resetting quota: ' + error.message);
@@ -319,13 +330,13 @@
                 snapshot.forEach(doc => {
                     batch.update(doc.ref, {
                         downloadsLeft: 20,
-                        messagesLeft: 50
+                        messagesLeft: 50,
+                        lastActive: firebase.firestore.FieldValue.serverTimestamp()
                     });
                 });
 
                 await batch.commit();
-                alert(`✅ Reset quotas for ${snapshot.size} users! All users will see changes instantly.`);
-                loadAllUsers();
+                alert(`✅ Reset quotas for ${snapshot.size} users!`);
             } catch (error) {
                 console.error('Error resetting all quotas:', error);
                 alert('❌ Error: ' + error.message);
