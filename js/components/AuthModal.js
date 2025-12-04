@@ -52,7 +52,10 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
       onAuthSuccess();
       onClose();
     } catch (err) {
-      setError(err.message);
+      // Ignore popup closed by user
+      if (err.code !== 'auth/popup-closed-by-user' && err.code !== 'auth/cancelled-popup-request') {
+        setError('Google sign-in failed. Please try again.');
+      }
     }
     setLoading(false);
   };

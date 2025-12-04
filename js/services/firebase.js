@@ -24,12 +24,15 @@ const getUserQuotas = async (uid) => {
   try {
     const doc = await db.collection('users').doc(uid).get();
     if (!doc.exists) {
-      // Create new user with default quotas (20/50 for regular, 5/5 for guest)
+      // Create new user with default quotas
+      const user = auth.currentUser;
       const defaultQuotas = {
+        email: user?.email || 'unknown',
         downloadsLeft: 20,
         messagesLeft: 50,
         isGuest: false,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        lastActive: firebase.firestore.FieldValue.serverTimestamp()
       };
       await db.collection('users').doc(uid).set(defaultQuotas);
       return { downloadsLeft: 20, messagesLeft: 50, isGuest: false };
@@ -67,7 +70,10 @@ const decrementQuota = async (uid, type) => {
       if (current <= 0) return 0;
       
       const newValue = current - 1;
-      transaction.update(userRef, { [field]: newValue });
+      transaction.update(userRef, { 
+        [field]: newValue,
+        lastActive: firebase.firestore.FieldValue.serverTimestamp()
+      });
       return newValue;
     });
   } catch (error) {
