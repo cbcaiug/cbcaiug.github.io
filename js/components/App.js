@@ -1141,12 +1141,16 @@ const App = ({ onMount }) => {
                     console.error('Error loading quotas:', error);
                 }
             } else {
-                // User signed out - reset to default assistant with greeting
+                // User signed out - clear ALL user data from device
+                localStorage.clear();
+                sessionStorage.clear();
                 setShowAuthModal(true);
                 setIsAuthenticating(false);
                 setChatHistory([]);
                 setQuotas({ downloadsLeft: 20, messagesLeft: 50 });
                 setActivePromptKey('Coteacher');
+                setApiKeys({});
+                setApiKeyStatus({});
             }
             
             // Hide loading state after auth check
@@ -1573,7 +1577,16 @@ const App = ({ onMount }) => {
                                                 </div>
                                             )}
                                             <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
-                                            <MessageMenu msg={msg} index={index} downloadsLeft={quotas.downloadsLeft} onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))} onRegenerate={handleRegenerate} onDocxDownload={handleDocxDownload} />
+                                            <MessageMenu msg={msg} index={index} downloadsLeft={quotas.downloadsLeft} onCopy={async (content) => {
+                                                if (quotas.downloadsLeft <= 0) return;
+                                                try {
+                                                    const newCount = await FirebaseService.decrementQuota(user.uid, 'copy');
+                                                    setQuotas(prev => ({ ...prev, downloadsLeft: newCount }));
+                                                    handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError);
+                                                } catch (err) {
+                                                    console.error('Copy quota decrement failed:', err);
+                                                }
+                                            }} onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))} onRegenerate={handleRegenerate} onDocxDownload={handleDocxDownload} />
                                         </div>
                                     </div>
                                 </div>

@@ -64,7 +64,7 @@ const decrementQuota = async (uid, type) => {
       const field = (type === 'download' || type === 'save' || type === 'copy') ? 'downloadsLeft' : 'messagesLeft';
       const current = doc.data()[field] || 0;
       
-      if (current <= 0) throw new Error('Quota exceeded');
+      if (current <= 0) return 0;
       
       const newValue = current - 1;
       transaction.update(userRef, { [field]: newValue });
