@@ -149,7 +149,6 @@
 
         // Admin credentials
         const ADMIN_EMAIL = "cbcaitool@gmail.com";
-        const ADMIN_PASSWORD = "cbcaiug2025";
         let adminUser = null;
         let unsubscribe = null;
 
@@ -170,8 +169,8 @@
             const password = document.getElementById('admin-password').value;
             const error = document.getElementById('login-error');
             
-            if (password !== ADMIN_PASSWORD) {
-                error.textContent = 'Incorrect password';
+            if (!password) {
+                error.textContent = 'Please enter password';
                 error.classList.remove('hidden');
                 return;
             }
@@ -182,7 +181,7 @@
                 error.classList.remove('hidden');
                 error.style.color = '#60a5fa';
                 
-                const userCredential = await firebase.auth().signInWithEmailAndPassword(ADMIN_EMAIL, ADMIN_PASSWORD);
+                const userCredential = await firebase.auth().signInWithEmailAndPassword(ADMIN_EMAIL, password);
                 adminUser = userCredential.user;
                 
                 document.getElementById('login-screen').classList.add('hidden');
@@ -192,20 +191,8 @@
                 console.error('Auth error:', authError);
                 error.style.color = '#ef4444';
                 
-                if (authError.code === 'auth/user-not-found') {
-                    error.textContent = 'Admin account not created yet. Creating...';
-                    try {
-                        const newUser = await firebase.auth().createUserWithEmailAndPassword(ADMIN_EMAIL, ADMIN_PASSWORD);
-                        adminUser = newUser.user;
-                        document.getElementById('login-screen').classList.add('hidden');
-                        document.getElementById('admin-panel').classList.remove('hidden');
-                        loadAllUsers();
-                    } catch (createError) {
-                        error.textContent = 'Failed to create admin: ' + createError.message;
-                    }
-                } else {
-                    error.textContent = 'Login failed: ' + authError.message;
-                }
+                error.textContent = 'Incorrect email or password';
+                error.style.color = '#ef4444';
             }
         }
 
