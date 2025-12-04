@@ -281,6 +281,28 @@ const Sidebar = ({
         if (modelSelectorOpen) setTimeout(()=>modelInputRef.current?.focus(), 50);
     }, [modelSelectorOpen]);
 
+    // Arrow key navigation for selectors
+    useEffect(() => {
+        const handleArrowKeys = (e) => {
+            if (assistantSelectorOpen || modelSelectorOpen) {
+                if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    const container = assistantSelectorOpen ? assistantContainerRef.current : modelContainerRef.current;
+                    if (!container) return;
+                    const buttons = container.querySelectorAll('button:not([disabled])');
+                    if (buttons.length === 0) return;
+                    const focused = document.activeElement;
+                    let index = Array.from(buttons).indexOf(focused);
+                    if (e.key === 'ArrowDown') index = (index + 1) % buttons.length;
+                    else index = (index - 1 + buttons.length) % buttons.length;
+                    buttons[index]?.focus();
+                }
+            }
+        };
+        document.addEventListener('keydown', handleArrowKeys);
+        return () => document.removeEventListener('keydown', handleArrowKeys);
+    }, [assistantSelectorOpen, modelSelectorOpen]);
+
     const AISettingsTab = () => (
         <div className="space-y-4">
             {/* History Preview (collapsible, closed by default) */}
