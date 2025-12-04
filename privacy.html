@@ -68,7 +68,7 @@
             <div class="card content-prose">
                 <a href="index.html" class="back-link">&larr; Back to Home</a>
                 <h1>Privacy Policy</h1>
-                <p class="last-updated">Last Updated: August 24, 2025</p>
+                <p class="last-updated">Last Updated: December 4, 2025</p>
 
                 <h2>📋 Table of Contents</h2>
                 <ul>
@@ -82,48 +82,58 @@
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
 
-                <!-- <h2 id="summary-changes">📝 Summary of Changes</h2>
-                <p><strong>Latest Updates:</strong></p>
+                <h2 id="summary-changes">📝 Summary of Changes</h2>
+                <p><strong>December 4, 2025 Updates:</strong></p>
                 <ul>
-                    <li>Added table of contents for easier navigation</li>
-                    <li>Added summary of changes section to track updates</li>
+                    <li>Added Firebase Authentication data collection policy</li>
+                    <li>Added Cloud Firestore user data storage (email, quotas, last active timestamp)</li>
+                    <li>Updated to reflect mandatory user accounts (no longer anonymous)</li>
+                    <li>Added real-time quota sync across devices</li>
                     <li>Previous update (24/08/2025): Added policy for handling generated documents</li>
-                </ul> -->
+                </ul>
 
                 <p>Thank you for using the AI Educational Assistant ("the Service"). Your privacy is critically important to us. This Privacy Policy explains what information is handled by our Service and why.</p>
 
                 <h2 id="local-storage">1. Information Stored On Your Device (Local Storage)</h2>
-                <p>The Service is designed to keep your most sensitive data on your own computer. Your browser's <strong>local storage</strong> is used to save the following:</p>
+                <p>Your browser's <strong>local storage</strong> is used to save the following:</p>
                 <ul>
-                    <li><strong>API Keys:</strong> Your personal keys from third-party AI providers are stored only in your browser. They are never sent to our servers.</li>
+                    <li><strong>API Keys (Optional):</strong> If you provide your own API keys from third-party AI providers, they are stored only in your browser. They are never sent to our servers.</li>
                     <li><strong>Chat History:</strong> Your conversations are saved in your browser so you can continue your work between sessions.</li>
                     <li><strong>Application Settings:</strong> Your preferences, such as the selected AI model, are saved for your convenience.</li>
                 </ul>
 
-                <h2 id="server-processing">2. Information Processed By Our Server</h2>
+                <h2 id="server-processing">2. Information Stored in Cloud Firestore</h2>
+                <p>We use Firebase Authentication and Cloud Firestore to manage user accounts and quotas:</p>
+                <ul>
+                    <li><strong>User Authentication:</strong> When you sign up, Firebase stores your email address and authentication credentials securely.</li>
+                    <li><strong>User Quotas:</strong> We store your download quota (20 free), message quota (50 free), and last active timestamp in Cloud Firestore. This data syncs across all your devices in real-time.</li>
+                    <li><strong>Activity Tracking:</strong> We track when you last used the service (timestamp only) to monitor active users. No chat content or personal messages are stored in Firestore.</li>
+                </ul>
+                
+                <h2 id="server-processing-docs">3. Information Processed By Our Server</h2>
                 <p>Certain features require processing data on our backend server (a secure Google Apps Script).</p>
                 <ul>
                     <li><strong>Generated Document Handling:</strong> When you use the "Save as Google Doc" feature, the AI-generated text is sent to our server to create a Google Document. <strong>These documents are stored in our private Google Drive folder.</strong> We may review these documents to analyze how the AI is performing and to improve the quality of our prompts and assistants. No personal information is attached to these documents.</li>
                     <li><strong>Analytics:</strong> We collect anonymous usage data (like which assistant is used and your browser type) through Google Analytics to understand how the Service is being used and how to improve it. This data is aggregated and cannot be used to personally identify you.</li>
                 </ul>
 
-                <h2 id="third-party">3. Third-Party Services</h2>
+                <h2 id="third-party">4. Third-Party Services</h2>
                 <p>Our Service integrates with third-party services whose own privacy policies apply:</p>
                 <ul>
                     <li><strong>AI Providers (e.g., Google, OpenAI):</strong> When you send a message, your prompt and API key are sent directly from your browser to the AI service you have selected.</li>
                     <li><strong>Google Drive/Docs:</strong> The "Save as Google Doc" feature uses the Google Drive API to create and store documents as described in Section 2.</li>
                 </ul>
 
-                <h2 id="data-security">4. Data Security</h2>
-                <p>Because your most sensitive data (API keys and chat history) is stored locally on your device, you are in control. We recommend clearing your browser's cache and local storage if you are using a shared or public computer.</p>
+                <h2 id="data-security">5. Data Security</h2>
+                <p>Your chat history and optional API keys are stored locally on your device. Your account data (email, quotas) is stored securely in Cloud Firestore with access restricted by Firebase Security Rules. We recommend signing out if you are using a shared or public computer.</p>
 
-                <h2 id="children-privacy">5. Children's Privacy</h2>
+                <h2 id="children-privacy">6. Children's Privacy</h2>
                 <p>This Service is intended for educators and is not directed at children under the age of 13. We do not knowingly collect any personally identifiable information from children.</p>
 
-                <h2 id="policy-changes">6. Changes to This Privacy Policy</h2>
+                <h2 id="policy-changes">7. Changes to This Privacy Policy</h2>
                 <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
 
-                <h2 id="contact">7. Contact Us</h2>
+                <h2 id="contact">8. Contact Us</h2>
                 <p>If you have any questions about this Privacy Policy, you can contact us at: <a href="mailto:cbcaitool@gmail.com">cbcaitool@gmail.com</a>.</p>
             </div>
         </div>
