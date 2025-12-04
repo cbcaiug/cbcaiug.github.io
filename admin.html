@@ -20,7 +20,9 @@
                 id="admin-password" 
                 placeholder="Enter admin password"
                 class="w-full p-3 bg-slate-700 border border-slate-600 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                autocomplete="current-password"
             />
+            <p class="text-xs text-slate-400 mb-4">Admin email: admin@cbcaiug.com</p>
             <button 
                 onclick="login()"
                 class="w-full bg-indigo-600 hover:bg-indigo-700 p-3 rounded-lg font-semibold"
@@ -128,20 +130,51 @@
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
-        // Admin password
+        // Admin credentials
+        const ADMIN_EMAIL = "admin@cbcaiug.com";
         const ADMIN_PASSWORD = "cbcaiug2025";
+        let adminUser = null;
 
-        function login() {
+        async function login() {
             const password = document.getElementById('admin-password').value;
             const error = document.getElementById('login-error');
             
-            if (password === ADMIN_PASSWORD) {
+            if (password !== ADMIN_PASSWORD) {
+                error.textContent = 'Incorrect password';
+                error.classList.remove('hidden');
+                return;
+            }
+
+            // Sign in to Firebase as admin
+            try {
+                error.textContent = 'Signing in...';
+                error.classList.remove('hidden');
+                error.style.color = '#60a5fa';
+                
+                const userCredential = await firebase.auth().signInWithEmailAndPassword(ADMIN_EMAIL, ADMIN_PASSWORD);
+                adminUser = userCredential.user;
+                
                 document.getElementById('login-screen').classList.add('hidden');
                 document.getElementById('admin-panel').classList.remove('hidden');
                 loadAllUsers();
-            } else {
-                error.textContent = 'Incorrect password';
-                error.classList.remove('hidden');
+            } catch (authError) {
+                console.error('Auth error:', authError);
+                error.style.color = '#ef4444';
+                
+                if (authError.code === 'auth/user-not-found') {
+                    error.textContent = 'Admin account not created yet. Creating...';
+                    try {
+                        const newUser = await firebase.auth().createUserWithEmailAndPassword(ADMIN_EMAIL, ADMIN_PASSWORD);
+                        adminUser = newUser.user;
+                        document.getElementById('login-screen').classList.add('hidden');
+                        document.getElementById('admin-panel').classList.remove('hidden');
+                        loadAllUsers();
+                    } catch (createError) {
+                        error.textContent = 'Failed to create admin: ' + createError.message;
+                    }
+                } else {
+                    error.textContent = 'Login failed: ' + authError.message;
+                }
             }
         }
 
@@ -301,6 +334,16 @@
         // Allow Enter key to login
         document.getElementById('admin-password').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') login();
+        });
+
+        // Check if already signed in
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user && user.email === ADMIN_EMAIL) {
+                adminUser = user;
+                document.getElementById('login-screen').classList.add('hidden');
+                document.getElementById('admin-panel').classList.remove('hidden');
+                loadAllUsers();
+            }
         });
 
         // Allow Enter key to search
