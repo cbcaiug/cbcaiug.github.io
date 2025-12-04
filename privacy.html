@@ -5,38 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - AI Educational Assistant</title>
     <link rel="icon" href="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg">
-    <link rel="stylesheet" href="landing-style.css">
-    <link rel="stylesheet" href="css/dark-theme.css">
+    <link rel="stylesheet" href="css/glass-theme.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Offset the fixed header */
-        body { padding-top: 76px; }
-
-        /* Back link shown above content */
-        .back-link {
-            display: inline-block;
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .back-link:hover { color: var(--primary-color); }
-
-        /* Last updated text */
-        .last-updated {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            margin-bottom: 2rem;
-        }
+        body { padding-top: 2rem; padding-bottom: 4rem; }
+        .content-prose { max-width: 900px; margin: 0 auto; }
+        .content-prose h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .content-prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem; }
+        .content-prose p { line-height: 1.75; margin-bottom: 1rem; }
+        .content-prose ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        .content-prose li { margin-bottom: 0.5rem; color: var(--text-muted); }
+        .back-link { display: inline-block; color: var(--text-muted); margin-bottom: 2rem; font-weight: 600; }
+        .back-link:hover { color: var(--primary-glow); }
+        .last-updated { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 2rem; }
+        .header-nav { background: var(--glass-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border); padding: 1rem 0; margin-bottom: 2rem; }
+        .header-content { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo-link { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-main); font-weight: 700; font-size: 1.1rem; }
+        .main-header, .main-nav, .nav-links, .nav-toggle { display: none !important; }
     </style>
 </head>
 <body>
+    <!-- Ambient Background -->
+    <div class="ambient-glow">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
 
-    <!-- ======== HEADER / NAVIGATION ======== -->
-    <header class="main-header">
+    <!-- Simple Header -->
+    <header class="header-nav">
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Logo" class="logo-medium">
+                <span>AI Educational Assistant</span>
+            </a>
+            <a href="index.html" class="back-link">
+                &larr; Back to Home
+            </a>
+        </div>
+    </header>
+
+    <!-- OLD HEADER HIDDEN -->
+    <header class="main-header" style="display:none;">
         <nav class="main-nav">
             <a href="index.html" class="logo">
                 <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="CBC AI Tool Logo">
@@ -63,10 +74,9 @@
     </header>
 
     <!-- Main Content -->
-    <main class="py-12 sm:py-16">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="card content-prose">
-                <a href="index.html" class="back-link">&larr; Back to Home</a>
+    <main>
+        <div class="container">
+            <div class="content-card content-prose">
                 <h1>Privacy Policy</h1>
                 <p class="last-updated">Last Updated: December 4, 2025</p>
 

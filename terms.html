@@ -5,39 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - AI Educational Assistant</title>
     <link rel="icon" href="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/glass-theme.css">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .content-prose h1 { font-size: 2.25rem; font-weight: 800; margin-bottom: 1rem; }
-        .content-prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.5rem; }
-        .content-prose p { color: #4b5563; line-height: 1.75; }
-        .content-prose strong { color: #111827; }
-        .content-prose a { color: #4f46e5; text-decoration: none; }
-        .content-prose a:hover { text-decoration: underline; }
+        body { padding-top: 2rem; padding-bottom: 4rem; }
+        .content-prose { max-width: 900px; margin: 0 auto; }
+        .content-prose h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .content-prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem; }
+        .content-prose p { line-height: 1.75; margin-bottom: 1rem; }
+        .content-prose ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        .content-prose li { margin-bottom: 0.5rem; color: var(--text-muted); }
+        .back-link { display: inline-block; color: var(--text-muted); margin-bottom: 2rem; font-weight: 600; }
+        .back-link:hover { color: var(--primary-glow); }
+        .header-nav { background: var(--glass-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border); padding: 1rem 0; margin-bottom: 2rem; }
+        .header-content { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo-link { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-main); font-weight: 700; font-size: 1.1rem; }
     </style>
 </head>
-<body class="bg-gray-50">
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-glow">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
 
     <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Logo" class="h-10 w-10 rounded-lg">
-                <span class="text-xl font-bold text-gray-800">AI Educational Assistant</span>
+    <header class="header-nav">
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Logo" class="logo-medium">
+                <span>AI Educational Assistant</span>
             </a>
-            <a href="index.html" class="text-base font-medium text-gray-600 hover:text-indigo-600 transition-colors">
+            <a href="index.html" class="back-link">
                 &larr; Back to Home
             </a>
-        </nav>
+        </div>
     </header>
 
     <!-- Main Content -->
-    <main class="py-12 sm:py-16">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white p-8 sm:p-12 rounded-xl shadow-lg content-prose">
+    <main>
+        <div class="container">
+            <div class="content-card content-prose">
                 <!-- MODIFIED: 24/08/2025 - Added terms related to document storage. -->
                 <h1>Terms of Service</h1>
                 <p class="text-sm text-gray-500">Last Updated: December 4, 2025</p>
