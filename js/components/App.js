@@ -174,9 +174,9 @@ const App = ({ onMount }) => {
     const [useSharedApiKey, setUseSharedApiKey] = useState(true);
     // Firebase auth state
     const [user, setUser] = useState(null);
-    const [quotas, setQuotas] = useState({ downloadsLeft: 0, messagesLeft: 10 });
-    const [showAuthModal, setShowAuthModal] = useState(false);
-    const [freeMessageCount, setFreeMessageCount] = useState(0);
+    const [quotas, setQuotas] = useState({ downloadsLeft: 20, messagesLeft: 50 });
+    const [showAuthModal, setShowAuthModal] = useState(true); // Show auth modal immediately
+    const [isAuthenticating, setIsAuthenticating] = useState(true); // Loading state
 
     // This new handler ensures that when the shared key is enabled,
     // the provider is always reset to Google Gemini.
@@ -620,13 +620,6 @@ const App = ({ onMount }) => {
             return;
         }
 
-        // Check if already in cart
-        if (isInCart(markdownContent)) {
-            setPendingAction({ type: 'save', content: markdownContent, inCart: true });
-            setIsLimitModalOpen(true);
-            return;
-        }
-
         // Check Firestore quota
         if (quotas.downloadsLeft <= 0) {
             setError('Download quota exceeded. You have used all 20 free downloads.');
@@ -699,14 +692,11 @@ const App = ({ onMount }) => {
         // First, check if there's any input or if the app is already busy.
         if ((!userInput.trim() && pendingFiles.length === 0) || isLoading) return;
 
-        // Check if user needs to authenticate (after 10 free messages)
+        // Require authentication
         if (!user) {
-            if (freeMessageCount >= 10) {
-                setShowAuthModal(true);
-                setError('Please sign in to continue. You\'ve used your 10 free messages.');
-                return;
-            }
-            setFreeMessageCount(prev => prev + 1);
+            setShowAuthModal(true);
+            setError('Please sign in to continue.');
+            return;
         }
 
         let apiKey = apiKeys[selectedProvider.apiKeyName];
@@ -1138,12 +1128,15 @@ const App = ({ onMount }) => {
                     console.error('Error loading quotas:', error);
                 }
             } else {
-                // User signed out - clear chat and reset state
+                // User signed out - show auth modal, clear chat
+                setShowAuthModal(true);
+                setIsAuthenticating(false);
                 setChatHistory([]);
-                setFreeMessageCount(0);
-                setQuotas({ downloadsLeft: 0, messagesLeft: 10 });
-                loadInitialMessage(activePromptKey);
+                setQuotas({ downloadsLeft: 20, messagesLeft: 50 });
             }
+            
+            // Hide loading state after auth check
+            setIsAuthenticating(false);
         });
         
         return () => {
@@ -1384,10 +1377,26 @@ const App = ({ onMount }) => {
 
 
     // --- RENDER ---
-    if (isLoadingAssistants) {
+    if (isLoadingAssistants || isAuthenticating) {
         return (
             <div className="h-screen w-screen flex items-center justify-center loading-screen-overlay">
-                <LoadingScreen text="Getting AI Assistants ready for you..." />
+                <LoadingScreen text={isAuthenticating ? "Checking authentication..." : "Getting AI Assistants ready for you..."} />
+            </div>
+        );
+    }
+    
+    // Show auth modal if not authenticated
+    if (!user) {
+        return (
+            <div className="h-screen w-screen flex items-center justify-center bg-slate-900">
+                <AuthModal
+                    isOpen={true}
+                    onClose={() => {}} // Can't close without auth
+                    onAuthSuccess={() => {
+                        setShowAuthModal(false);
+                        setError('');
+                    }}
+                />
             </div>
         );
     }
@@ -1414,16 +1423,7 @@ const App = ({ onMount }) => {
                 setShowConsentModal(false);
             }} />}
 
-            {showAuthModal && (
-                <AuthModal
-                    isOpen={showAuthModal}
-                    onClose={() => setShowAuthModal(false)}
-                    onAuthSuccess={() => {
-                        setShowAuthModal(false);
-                        setError('');
-                    }}
-                />
-            )}
+
 
             <Sidebar
                 isMenuOpen={isMenuOpen}
@@ -1670,10 +1670,10 @@ const App = ({ onMount }) => {
                                 <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
                                     {isLoading ? (<><StopIcon className="w-5 h-5" /><span>Stop</span></>) : (<><SendIcon className="w-5 h-5" /><span>Send</span></>)}
                                 </button>
-                                {/* The trial counter now only appears when the shared key mode is active. */}
-                                {useSharedApiKey && (
+                                {/* Show Firestore quotas */}
+                                {user && quotas && (
                                     <p className="text-xs text-slate-500 mt-1 text-center">
-                                        {trialGenerations > 0 ? `${trialGenerations} free uses remaining.` : 'Add API key to continue.'}
+                                        📥 {quotas.downloadsLeft}/20 downloads • 💬 {quotas.messagesLeft}/50 messages
                                     </p>
                                 )}
                             </div>

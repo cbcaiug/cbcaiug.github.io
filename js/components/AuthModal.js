@@ -58,36 +58,18 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
     setLoading(false);
   };
 
-  const handleAnonymousSignIn = async () => {
-    setLoading(true);
-    setError('');
-    try {
-      const result = await FirebaseService.auth.signInAnonymously();
-      // Set guest quotas (5 downloads, 5 messages)
-      await FirebaseService.db.collection('users').doc(result.user.uid).set({
-        downloadsLeft: 5,
-        messagesLeft: 5,
-        isGuest: true,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp()
-      });
-      onAuthSuccess();
-      onClose();
-    } catch (err) {
-      setError(err.message);
-    }
-    setLoading(false);
-  };
+
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
       <div className="relative bg-gradient-to-br from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-xl rounded-2xl p-8 max-w-md w-full border border-white/10 shadow-2xl">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <div className="w-24 h-24 rounded-full bg-white/10 border-2 border-white/20 shadow-lg flex items-center justify-center overflow-hidden">
+          <div className="w-24 h-24 rounded-lg bg-white/10 border-2 border-white/20 shadow-lg flex items-center justify-center overflow-hidden">
             <img 
               src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" 
               alt="CBC AI Tool" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
@@ -161,13 +143,7 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
           <span className="text-white font-semibold">Continue with Google</span>
         </button>
 
-        <button
-          onClick={handleAnonymousSignIn}
-          disabled={loading}
-          className="w-full bg-white/5 border border-white/10 text-gray-300 p-3 rounded-lg hover:bg-white/10 font-semibold disabled:opacity-50 transition-all backdrop-blur-sm"
-        >
-          Continue as Guest (5 free uses)
-        </button>
+
 
         <p className="mt-6 text-center text-sm text-gray-400">
           {mode === 'signin' ? "Don't have an account? " : "Already have an account? "}

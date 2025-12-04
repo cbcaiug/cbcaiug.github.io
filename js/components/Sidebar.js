@@ -709,19 +709,19 @@ const Sidebar = ({
                 <div className="flex justify-between items-center p-4 flex-shrink-0 border-b border-slate-700">
                     <div className="flex-1 min-w-0">
                         <h1 className="text-xl font-bold">Settings</h1>
-                        {user ? (
+                        {user && (
                             <div className="mt-2 space-y-1">
                                 <p className="text-sm text-slate-300 truncate">
-                                    {user.isAnonymous ? '👤 Guest User (Limited)' : `👤 ${user.email || user.displayName || 'User'}`}
+                                    👤 {user.email || user.displayName || 'User'}
                                 </p>
                                 {quotas && (
                                     <p className="text-xs text-slate-400">
-                                        📥 {quotas.downloadsLeft || 0}/{quotas.isGuest ? 5 : 20} downloads • 💬 {quotas.messagesLeft || 0}/{quotas.isGuest ? 5 : 50} messages
+                                        📥 {quotas.downloadsLeft || 0}/20 downloads • 💬 {quotas.messagesLeft || 0}/50 messages
                                     </p>
                                 )}
                                 <button
                                     onClick={() => {
-                                        if (confirm('Sign out?')) {
+                                        if (confirm('Sign out? You will need to sign in again.')) {
                                             FirebaseService.auth.signOut();
                                         }
                                     }}
@@ -729,15 +729,6 @@ const Sidebar = ({
                                 >
                                     Sign Out
                                 </button>
-                            </div>
-                        ) : (
-                            <div className="mt-2 space-y-1">
-                                <p className="text-sm text-slate-300">
-                                    👤 Not signed in
-                                </p>
-                                <p className="text-xs text-slate-400">
-                                    📥 0 downloads • 💬 {quotas?.messagesLeft || 10} free messages
-                                </p>
                             </div>
                         )}
                     </div>
