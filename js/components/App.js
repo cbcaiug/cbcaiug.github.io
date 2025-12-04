@@ -658,6 +658,12 @@ const App = ({ onMount }) => {
 
             // Check if we received the URL and the new ID.
             if (data.success && data.url && data.id) {
+                // Log successful doc creation to GAS
+                trackEvent('google_doc_created', activePromptKey, {
+                    sessionId: SESSION_ID,
+                    docId: data.id,
+                    model: selectedModelName
+                });
                 // Decrement Firestore quota
                 try {
                     const newCount = await FirebaseService.decrementQuota(user.uid, 'download');
@@ -665,13 +671,6 @@ const App = ({ onMount }) => {
                 } catch (quotaError) {
                     console.error('Quota decrement failed:', quotaError);
                 }
-
-                // Log the doc creation
-                trackEvent('google_doc_created', activePromptKey, {
-                    sessionId: SESSION_ID,
-                    url: data.url,
-                    model: selectedModelName
-                });
 
                 // Store the document info (URL and ID) in our new state.
                 setCreatedDocInfo({ url: data.url, downloadUrl: data.downloadUrl, id: data.id });
@@ -685,7 +684,22 @@ const App = ({ onMount }) => {
 
         } catch (error) {
             console.error("Error creating Google Doc:", error);
-            setError('Unable to create document right now. Please try again in a moment.');
+            
+            // Log the error to GAS for debugging
+            trackEvent('google_doc_error', activePromptKey, {
+                sessionId: SESSION_ID,
+                error: error.message,
+                model: selectedModelName
+            });
+            
+            // User-friendly error message
+            if (error.message.includes('fetch') || error.message.includes('network')) {
+                setError('Network error. Check your connection and try again.');
+            } else if (error.message.includes('timeout')) {
+                setError('Request timed out. The document may have been created. Check your Google Drive.');
+            } else {
+                setError('Unable to create document. This may be a temporary Google Docs issue. Try again in a moment.');
+            }
         }
     };
 
