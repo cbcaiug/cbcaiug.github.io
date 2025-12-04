@@ -720,11 +720,7 @@ const Sidebar = ({
                                     </p>
                                 )}
                                 <button
-                                    onClick={() => {
-                                        if (confirm('Sign out? You will need to sign in again.')) {
-                                            FirebaseService.auth.signOut();
-                                        }
-                                    }}
+                                    onClick={() => window.dispatchEvent(new CustomEvent('requestSignOut'))}
                                     className="text-xs text-red-400 hover:text-red-300 hover:underline"
                                 >
                                     Sign Out

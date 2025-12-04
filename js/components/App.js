@@ -177,6 +177,7 @@ const App = ({ onMount }) => {
     const [quotas, setQuotas] = useState({ downloadsLeft: 20, messagesLeft: 50 });
     const [showAuthModal, setShowAuthModal] = useState(true); // Show auth modal immediately
     const [isAuthenticating, setIsAuthenticating] = useState(true); // Loading state
+    const [showSignOutModal, setShowSignOutModal] = useState(false);
 
     // This new handler ensures that when the shared key is enabled,
     // the provider is always reset to Google Gemini.
@@ -1095,6 +1096,13 @@ const App = ({ onMount }) => {
 
     // --- EFFECTS ---
     useEffect(() => {
+        // Listen for sign out request
+        const handleSignOutRequest = () => setShowSignOutModal(true);
+        window.addEventListener('requestSignOut', handleSignOutRequest);
+        return () => window.removeEventListener('requestSignOut', handleSignOutRequest);
+    }, []);
+
+    useEffect(() => {
         // Firebase auth listener with real-time quota sync
         let quotaUnsubscribe = null;
         
@@ -1141,7 +1149,7 @@ const App = ({ onMount }) => {
                     console.error('Error loading quotas:', error);
                 }
             } else {
-                // User signed out - clear ALL user data from device
+                // User signed out - clear ALL user data and reset to defaults
                 localStorage.clear();
                 sessionStorage.clear();
                 setShowAuthModal(true);
@@ -1151,6 +1159,9 @@ const App = ({ onMount }) => {
                 setActivePromptKey('Coteacher');
                 setApiKeys({});
                 setApiKeyStatus({});
+                setSelectedProviderKey('google');
+                setSelectedModelName('gemini-2.5-pro');
+                setUseSharedApiKey(true);
             }
             
             // Hide loading state after auth check
@@ -1705,6 +1716,36 @@ const App = ({ onMount }) => {
             {/* --- TOASTS & MODALS --- */}
             {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
             {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5" /> : <CheckCircleIcon className="w-5 h-5" />}<span>{apiKeyToast}</span></div>}
+            
+            {/* Sign Out Confirmation Modal */}
+            {showSignOutModal && (
+                <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+                    <div className="bg-slate-800 rounded-2xl p-6 max-w-md w-full border border-slate-700 shadow-2xl">
+                        <h3 className="text-xl font-bold text-white mb-3">Sign Out?</h3>
+                        <p className="text-slate-300 mb-6">
+                            Signing out will clear all chats, API keys, and settings from this browser. Your quotas are saved to your account.
+                        </p>
+                        <div className="flex gap-3">
+                            <button
+                                onClick={() => setShowSignOutModal(false)}
+                                className="flex-1 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors font-semibold"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                onClick={() => {
+                                    setShowSignOutModal(false);
+                                    FirebaseService.auth.signOut();
+                                }}
+                                className="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-semibold"
+                            >
+                                Sign Out
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+            
             <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={(feedbackData) => handleFeedbackSubmit({ ...feedbackData, sessionId: SESSION_ID })} assistantName={activePromptKey} />
             <CartModal
                 isOpen={isCartOpen}
