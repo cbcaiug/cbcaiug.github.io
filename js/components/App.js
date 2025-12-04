@@ -152,7 +152,7 @@ const App = ({ onMount }) => {
         setIsPromptMissing(false);
         setError('');
     }, []);
-    const [showConsentModal, setShowConsentModal] = useState(false);
+    // Consent modal removed - terms/privacy links in sidebar
     // NEW: State for the Google Doc success and download modal
     const [isDocModalOpen, setIsDocModalOpen] = useState(false);
     const [createdDocInfo, setCreatedDocInfo] = useState(null);
@@ -172,6 +172,12 @@ const App = ({ onMount }) => {
     const [currentCartId, setCurrentCartId] = useState(() => localStorage.getItem('currentCartId') || null);
     // NEW: State to manage whether the user wants to use the shared (trial) API key.
     const [useSharedApiKey, setUseSharedApiKey] = useState(true);
+    // Firebase auth state
+    const [user, setUser] = useState(null);
+    const [quotas, setQuotas] = useState({ downloadsLeft: 20, messagesLeft: 50 });
+    const [showAuthModal, setShowAuthModal] = useState(true); // Show auth modal immediately
+    const [isAuthenticating, setIsAuthenticating] = useState(true); // Loading state
+    const [showSignOutModal, setShowSignOutModal] = useState(false);
 
     // This new handler ensures that when the shared key is enabled,
     // the provider is always reset to Google Gemini.
@@ -609,17 +615,15 @@ const App = ({ onMount }) => {
 
     // UPDATED: This function now receives the doc ID and opens our new modal.
     const handleDocxDownload = async (markdownContent) => {
-        // Check if already in cart
-        if (isInCart(markdownContent)) {
-            setPendingAction({ type: 'save', content: markdownContent, inCart: true });
-            setIsLimitModalOpen(true);
+        // Check if user is authenticated
+        if (!user) {
+            setShowAuthModal(true);
             return;
         }
 
-        // Check usage limit
-        if (usageCount <= 0) {
-            setPendingAction({ type: 'save', content: markdownContent, inCart: false });
-            setIsLimitModalOpen(true);
+        // Check Firestore quota
+        if (quotas.downloadsLeft <= 0) {
+            setError('Download quota exceeded. You have used all 20 free downloads.');
             return;
         }
 
@@ -654,17 +658,19 @@ const App = ({ onMount }) => {
 
             // Check if we received the URL and the new ID.
             if (data.success && data.url && data.id) {
-                // Decrement usage count
-                const newCount = usageCount - 1;
-                setUsageCount(newCount);
-                localStorage.setItem('saveUsageCount', newCount.toString());
-
-                // Log the doc creation
+                // Log successful doc creation to GAS
                 trackEvent('google_doc_created', activePromptKey, {
                     sessionId: SESSION_ID,
-                    url: data.url,
+                    docId: data.id,
                     model: selectedModelName
                 });
+                // Decrement Firestore quota
+                try {
+                    const newCount = await FirebaseService.decrementQuota(user.uid, 'download');
+                    setQuotas(prev => ({ ...prev, downloadsLeft: newCount }));
+                } catch (quotaError) {
+                    console.error('Quota decrement failed:', quotaError);
+                }
 
                 // Store the document info (URL and ID) in our new state.
                 setCreatedDocInfo({ url: data.url, downloadUrl: data.downloadUrl, id: data.id });
@@ -678,13 +684,35 @@ const App = ({ onMount }) => {
 
         } catch (error) {
             console.error("Error creating Google Doc:", error);
-            setError('Unable to create document right now. Please try again in a moment.');
+            
+            // Log the error to GAS for debugging
+            trackEvent('google_doc_error', activePromptKey, {
+                sessionId: SESSION_ID,
+                error: error.message,
+                model: selectedModelName
+            });
+            
+            // User-friendly error message
+            if (error.message.includes('fetch') || error.message.includes('network')) {
+                setError('Network error. Check your connection and try again.');
+            } else if (error.message.includes('timeout')) {
+                setError('Request timed out. The document may have been created. Check your Google Drive.');
+            } else {
+                setError('Unable to create document. This may be a temporary Google Docs issue. Try again in a moment.');
+            }
         }
     };
 
     const handleSendMessage = async () => {
         // First, check if there's any input or if the app is already busy.
         if ((!userInput.trim() && pendingFiles.length === 0) || isLoading) return;
+
+        // Require authentication
+        if (!user) {
+            setShowAuthModal(true);
+            setError('Please sign in to continue.');
+            return;
+        }
 
         let apiKey = apiKeys[selectedProvider.apiKeyName];
         let isTrial = false;
@@ -796,7 +824,7 @@ const App = ({ onMount }) => {
                     return updatedHistory;
                 });
             },
-            onComplete: () => {
+            onComplete: async () => {
                 setIsLoading(false);
                 setChatHistory(prev => {
                     const updatedHistory = [...prev];
@@ -806,6 +834,14 @@ const App = ({ onMount }) => {
                 });
 
                 if (!abortControllerRef.current.signal.aborted) {
+                    // Decrement message quota in Firestore
+                    try {
+                        const newCount = await FirebaseService.decrementQuota(user.uid, 'message');
+                        setQuotas(prev => ({ ...prev, messagesLeft: newCount }));
+                    } catch (quotaError) {
+                        console.error('Message quota decrement failed:', quotaError);
+                    }
+                    
                     // Use our new local variable for logging.
                     const finalKeyLabel = keyLabelForLogging || (isTrial ? 'SHARED KEY' : 'PERSONAL KEY');
 
@@ -1074,11 +1110,88 @@ const App = ({ onMount }) => {
 
     // --- EFFECTS ---
     useEffect(() => {
+        // Listen for sign out request
+        const handleSignOutRequest = () => setShowSignOutModal(true);
+        window.addEventListener('requestSignOut', handleSignOutRequest);
+        return () => window.removeEventListener('requestSignOut', handleSignOutRequest);
+    }, []);
+
+    useEffect(() => {
+        // Firebase auth listener with real-time quota sync
+        let quotaUnsubscribe = null;
+        
+        const authUnsubscribe = FirebaseService.auth.onAuthStateChanged(async (firebaseUser) => {
+            const previousUser = user;
+            setUser(firebaseUser);
+            
+            // Clean up previous quota listener
+            if (quotaUnsubscribe) {
+                quotaUnsubscribe();
+                quotaUnsubscribe = null;
+            }
+            
+            if (firebaseUser) {
+                try {
+                    // Check if user upgraded from anonymous to registered
+                    const wasAnonymous = previousUser?.isAnonymous;
+                    const isNowRegistered = !firebaseUser.isAnonymous;
+                    
+                    if (wasAnonymous && isNowRegistered) {
+                        // Upgrade quotas to full (20/50)
+                        await FirebaseService.db.collection('users').doc(firebaseUser.uid).set({
+                            downloadsLeft: 20,
+                            messagesLeft: 50,
+                            isGuest: false,
+                            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                        });
+                    }
+                    
+                    // Initial quota load
+                    const userQuotas = await FirebaseService.getUserQuotas(firebaseUser.uid);
+                    setQuotas(userQuotas);
+                    
+                    // Load greeting message for new users
+                    if (chatHistory.length === 0) {
+                        loadInitialMessage(activePromptKey);
+                    }
+                    
+                    // Set up real-time listener for quota changes (syncs across devices)
+                    quotaUnsubscribe = FirebaseService.subscribeToQuotas(firebaseUser.uid, (updatedQuotas) => {
+                        setQuotas(updatedQuotas);
+                    });
+                } catch (error) {
+                    console.error('Error loading quotas:', error);
+                }
+            } else {
+                // User signed out - clear ALL user data and reset to defaults
+                localStorage.clear();
+                sessionStorage.clear();
+                setShowAuthModal(true);
+                setIsAuthenticating(false);
+                setChatHistory([]);
+                setQuotas({ downloadsLeft: 20, messagesLeft: 50 });
+                setActivePromptKey('Coteacher');
+                setApiKeys({});
+                setApiKeyStatus({});
+                setSelectedProviderKey('google');
+                setSelectedModelName('gemini-2.5-pro');
+                setUseSharedApiKey(true);
+            }
+            
+            // Hide loading state after auth check
+            setIsAuthenticating(false);
+        });
+        
+        return () => {
+            authUnsubscribe();
+            if (quotaUnsubscribe) quotaUnsubscribe();
+        };
+    }, [user, activePromptKey, loadInitialMessage]);
+
+    useEffect(() => {
         // Initialize the app on first load
         const initializeApp = async () => {
-            if (!localStorage.getItem('userConsentV1')) {
-                setShowConsentModal(true);
-            }
+            // Consent modal removed
 
             const savedCount = parseInt(localStorage.getItem('generationCount') || '0', 10);
             setGenerationCount(savedCount);
@@ -1160,7 +1273,7 @@ const App = ({ onMount }) => {
             }
         }
         */
-    }, [isLoadingAssistants, showConsentModal]);
+    }, [isLoadingAssistants]);
 
     useEffect(() => {
         // Save state to local storage on change
@@ -1305,10 +1418,26 @@ const App = ({ onMount }) => {
 
 
     // --- RENDER ---
-    if (isLoadingAssistants) {
+    if (isLoadingAssistants || isAuthenticating) {
         return (
             <div className="h-screen w-screen flex items-center justify-center loading-screen-overlay">
-                <LoadingScreen text="Getting AI Assistants ready for you..." />
+                <LoadingScreen text={isAuthenticating ? "Checking authentication..." : "Getting AI Assistants ready for you..."} />
+            </div>
+        );
+    }
+    
+    // Show auth modal if not authenticated
+    if (!user) {
+        return (
+            <div className="h-screen w-screen flex items-center justify-center bg-slate-900">
+                <AuthModal
+                    isOpen={true}
+                    onClose={() => {}} // Can't close without auth
+                    onAuthSuccess={() => {
+                        setShowAuthModal(false);
+                        setError('');
+                    }}
+                />
             </div>
         );
     }
@@ -1330,10 +1459,9 @@ const App = ({ onMount }) => {
 
     return (
         <div className="h-screen w-screen overflow-hidden flex bg-white">
-            {showConsentModal && <ConsentModal onAccept={() => {
-                localStorage.setItem('userConsentV1', 'true');
-                setShowConsentModal(false);
-            }} />}
+            {/* Consent modal removed - terms/privacy in sidebar */}
+
+
 
             <Sidebar
                 isMenuOpen={isMenuOpen}
@@ -1350,6 +1478,8 @@ const App = ({ onMount }) => {
                 useSharedApiKey={useSharedApiKey}
                 onUseSharedApiKeyChange={handleSharedKeyToggle}
                 activeSharedKeyLabel={activeSharedKeyLabel}
+                user={user}
+                quotas={quotas}
                 onGroundingChange={setIsGroundingEnabled}
                 onClose={() => setIsMenuOpen(false)}
                 onAssistantChange={handleAssistantChange} // <-- MODIFIED: Using the new handler
@@ -1417,7 +1547,7 @@ const App = ({ onMount }) => {
                                         <StarIcon className="w-4 h-4" />
                                         Send Feedback
                                     </button>
-                                    <a href="https://wa.me/256726654714" target="_blank" rel="noopener noreferrer" onClick={() => setIsHelpMenuOpen(false)} className="w-full text-left px-4 py-2 hover:bg-slate-50 flex items-center gap-2 text-slate-700 no-underline">
+                                    <a href="https://wa.me/256750470234" target="_blank" rel="noopener noreferrer" onClick={() => setIsHelpMenuOpen(false)} className="w-full text-left px-4 py-2 hover:bg-slate-50 flex items-center gap-2 text-slate-700 no-underline">
                                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" /></svg>
                                         WhatsApp Support
                                     </a>
@@ -1434,7 +1564,7 @@ const App = ({ onMount }) => {
                     </div>
                 </header>
 
-                <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-32 sm:pt-28 pb-48">
+                <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-36 sm:pt-32 pb-48">
                     <div className="px-1 p-2 sm:p-6 space-y-4">
                         {chatHistory.map((msg, index) => {
                             // For system messages, we render a simple, centered div.
@@ -1467,11 +1597,15 @@ const App = ({ onMount }) => {
                                                 </div>
                                             )}
                                             <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
-                                            <MessageMenu msg={msg} index={index} usageCount={usageCount} onCopy={(content) => {
-                                                const newCount = usageCount - 1;
-                                                setUsageCount(newCount);
-                                                localStorage.setItem('saveUsageCount', newCount.toString());
-                                                handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError);
+                                            <MessageMenu msg={msg} index={index} downloadsLeft={quotas.downloadsLeft} onCopy={async (content) => {
+                                                if (quotas.downloadsLeft <= 0) return;
+                                                try {
+                                                    const newCount = await FirebaseService.decrementQuota(user.uid, 'copy');
+                                                    setQuotas(prev => ({ ...prev, downloadsLeft: newCount }));
+                                                    handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError);
+                                                } catch (err) {
+                                                    console.error('Copy quota decrement failed:', err);
+                                                }
                                             }} onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))} onRegenerate={handleRegenerate} onDocxDownload={handleDocxDownload} />
                                         </div>
                                     </div>
@@ -1573,16 +1707,14 @@ const App = ({ onMount }) => {
                             </div>
                             <input id="file-upload" type="file" className="hidden" onChange={handleFileChange} disabled={isFileUploadDisabled} />
                             <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); } }} placeholder="Type here..." className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48" rows="1" />
-                            {/* UPDATED: Wrap the send button and add the trial counter text */}
-                            <div className="flex flex-col items-center">
-                                <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 self-end flex items-center gap-2 font-semibold">
+                            <div className="flex flex-col items-center gap-1">
+                                <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 flex items-center gap-2 font-semibold">
                                     {isLoading ? (<><StopIcon className="w-5 h-5" /><span>Stop</span></>) : (<><SendIcon className="w-5 h-5" /><span>Send</span></>)}
                                 </button>
-                                {/* The trial counter now only appears when the shared key mode is active. */}
-                                {useSharedApiKey && (
-                                    <p className="text-xs text-slate-500 mt-1 text-center">
-                                        {trialGenerations > 0 ? `${trialGenerations} free uses remaining.` : 'Add API key to continue.'}
-                                    </p>
+                                {quotas.messagesLeft <= 0 ? (
+                                    <span className="text-xs text-red-600 font-semibold">0/50 - Use own key</span>
+                                ) : (
+                                    <span className="text-xs text-slate-500">{quotas.messagesLeft}/50</span>
                                 )}
                             </div>
                         </div>
@@ -1593,6 +1725,36 @@ const App = ({ onMount }) => {
             {/* --- TOASTS & MODALS --- */}
             {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
             {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5" /> : <CheckCircleIcon className="w-5 h-5" />}<span>{apiKeyToast}</span></div>}
+            
+            {/* Sign Out Confirmation Modal */}
+            {showSignOutModal && (
+                <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+                    <div className="bg-slate-800 rounded-2xl p-6 max-w-md w-full border border-slate-700 shadow-2xl">
+                        <h3 className="text-xl font-bold text-white mb-3">Sign Out?</h3>
+                        <p className="text-slate-300 mb-6">
+                            Signing out will clear all chats, API keys, and settings from this browser. Your quotas are saved to your account.
+                        </p>
+                        <div className="flex gap-3">
+                            <button
+                                onClick={() => setShowSignOutModal(false)}
+                                className="flex-1 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors font-semibold"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                onClick={() => {
+                                    setShowSignOutModal(false);
+                                    FirebaseService.auth.signOut();
+                                }}
+                                className="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-semibold"
+                            >
+                                Sign Out
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+            
             <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={(feedbackData) => handleFeedbackSubmit({ ...feedbackData, sessionId: SESSION_ID })} assistantName={activePromptKey} />
             <CartModal
                 isOpen={isCartOpen}

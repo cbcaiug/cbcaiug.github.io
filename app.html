@@ -106,14 +106,21 @@
       </div>
     </div>
 
+    <!-- Firebase SDK (compat version) -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
     <!-- Application Scripts (Order is important) -->
 <!-- Libraries & Services -->
 <script type="text/babel" src="js/services/api.js" defer></script>
+<script type="text/babel" src="js/services/firebase.js" defer></script>
 <script type="text/babel" src="js/utils/helpers.js" defer></script>
 
 <!-- UI Components -->
 <script type="text/babel" src="js/components/Icons.js" defer></script>
 <script type="text/babel" src="js/components/Modals.js" defer></script>
+<script type="text/babel" src="js/components/AuthModal.js" defer></script>
 <script type="text/babel" src="js/components/Chat.js" defer></script>
 <script type="text/babel" src="js/components/Sidebar.js" defer></script>
 

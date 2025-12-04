@@ -21,6 +21,8 @@ const Sidebar = ({
     isGroundingEnabled,
     useSharedApiKey,
     activeSharedKeyLabel,
+    user,
+    quotas,
 
     // Handler props
     onClose,
@@ -278,6 +280,28 @@ const Sidebar = ({
     useEffect(() => {
         if (modelSelectorOpen) setTimeout(()=>modelInputRef.current?.focus(), 50);
     }, [modelSelectorOpen]);
+
+    // Arrow key navigation for selectors
+    useEffect(() => {
+        const handleArrowKeys = (e) => {
+            if (assistantSelectorOpen || modelSelectorOpen) {
+                if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    const container = assistantSelectorOpen ? assistantContainerRef.current : modelContainerRef.current;
+                    if (!container) return;
+                    const buttons = container.querySelectorAll('button:not([disabled])');
+                    if (buttons.length === 0) return;
+                    const focused = document.activeElement;
+                    let index = Array.from(buttons).indexOf(focused);
+                    if (e.key === 'ArrowDown') index = (index + 1) % buttons.length;
+                    else index = (index - 1 + buttons.length) % buttons.length;
+                    buttons[index]?.focus();
+                }
+            }
+        };
+        document.addEventListener('keydown', handleArrowKeys);
+        return () => document.removeEventListener('keydown', handleArrowKeys);
+    }, [assistantSelectorOpen, modelSelectorOpen]);
 
     const AISettingsTab = () => (
         <div className="space-y-4">
@@ -595,9 +619,9 @@ const Sidebar = ({
                         <FooterEmailIcon />
                         <span className="text-sm">cbcaitool@gmail.com</span>
                     </a>
-                    <a href="https://wa.me/256726654714" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded-md hover:bg-slate-700 transition-colors text-slate-300 hover:text-white">
+                    <a href="https://wa.me/256750470234" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded-md hover:bg-slate-700 transition-colors text-slate-300 hover:text-white">
                         <FooterWhatsAppIcon />
-                        <span className="text-sm">+256726654714</span>
+                        <span className="text-sm">+256750470234</span>
                     </a>
                 </div>
             </div>
@@ -705,10 +729,30 @@ const Sidebar = ({
             <div className="flex-1 flex flex-col min-h-0">
                 {/* Header with integrated close button */}
                 <div className="flex justify-between items-center p-4 flex-shrink-0 border-b border-slate-700">
-                    <h1 className="text-xl font-bold">Settings</h1>
+                    <div className="flex-1 min-w-0">
+                        <h1 className="text-xl font-bold">Settings</h1>
+                        {user && (
+                            <div className="mt-2 space-y-1">
+                                <p className="text-sm text-slate-300 truncate">
+                                    👤 {user.email || user.displayName || 'User'}
+                                </p>
+                                {quotas && (
+                                    <p className="text-xs text-slate-400">
+                                        📥 {quotas.downloadsLeft || 0}/20 downloads • 💬 {quotas.messagesLeft || 0}/50 messages
+                                    </p>
+                                )}
+                                <button
+                                    onClick={() => window.dispatchEvent(new CustomEvent('requestSignOut'))}
+                                    className="text-xs text-red-400 hover:text-red-300 hover:underline"
+                                >
+                                    Sign Out
+                                </button>
+                            </div>
+                        )}
+                    </div>
                     <button 
                         onClick={onClose} 
-                        className="p-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg"
+                        className="p-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg flex-shrink-0 ml-2"
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
