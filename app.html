@@ -27,6 +27,16 @@
         gtag('config', 'G-YCTLDP04EJ');
     </script>
 
+    <!-- PWA Install Prompt Capture (must be early before React) -->
+    <script>
+        window.deferredInstallPrompt = null;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            window.deferredInstallPrompt = e;
+            console.log('PWA: Install prompt captured and stored');
+        });
+    </script>
+
     <!-- External Dependencies -->
     <script src="https://cdn.tailwindcss.com" defer></script>
     <script src="https://unpkg.com/react@18/umd/react.development.js" defer></script>
