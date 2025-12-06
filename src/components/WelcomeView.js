@@ -52,7 +52,7 @@ const WelcomeView = () => {
             </div>
 
             {/* Main Card - Sized like auth modal */}
-            <div className="relative z-10 bg-white rounded-2xl border border-gray-100 shadow-lg p-5 w-full max-w-md">
+            <div className="relative bg-white rounded-2xl border border-gray-100 shadow-lg p-5 w-full max-w-md">
 
                 {/* Logo */}
                 <div className="flex justify-center mb-4">
