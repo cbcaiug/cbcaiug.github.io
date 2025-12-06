@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>App Welcome Design Final</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Strict no-scroll policy */
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; height: 100vh; width: 100vw; overflow: hidden; }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center h-full w-full overflow-hidden">
+
+    <!-- START OF DEFAULT WELCOME CONTAINER -->
+    <!-- Copy this block into your App.html middle section (Chat Container) -->
+    
+    <div class="w-full h-full flex flex-col items-center justify-center p-4 bg-white overflow-hidden relative select-none">
+        
+        <!-- Ambient Background Decoration -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+            <div class="absolute top-[-10%] left-[-10%] w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-60"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-64 h-64 bg-purple-50 rounded-full blur-3xl opacity-60"></div>
+        </div>
+
+        <!-- Main Content Wrapper -->
+        <div class="z-10 flex flex-col items-center justify-center w-full max-w-5xl space-y-6 md:space-y-8">
+            
+            <!-- Circular Logo Section -->
+            <div class="relative group">
+                <div class="absolute inset-0 bg-blue-100 rounded-full blur-lg opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
+                <img src="https://github.com/cbcaiug/cbcaiug.github.io/blob/968296ac78f5009dda57de96f6491dd4ed0e9fb5/images/cbc-ai-tool-logo%20FOR%20SOCIAL%20MEDIA%20FORMAT.jpeg?raw=true" 
+                     alt="CBC AI Logo" 
+                     class="relative w-20 h-20 md:w-28 md:h-28 rounded-full shadow-lg object-cover border-4 border-white">
+            </div>
+
+            <!-- Welcome Text -->
+            <div class="text-center space-y-2 px-4">
+                <h1 class="text-2xl md:text-4xl font-bold text-gray-900 tracking-tight">
+                    Welcome to CBC AI
+                </h1>
+                <p class="text-xs md:text-base text-gray-500 max-w-md mx-auto leading-relaxed hidden md:block">
+                    Your specialized AI partner for the new curriculum. Streamline your workflow in three steps.
+                </p>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5 w-full max-w-4xl px-2">
+                
+                <!-- Card 1 -->
+                <div class="flex flex-row md:flex-col items-center md:items-start p-3 md:p-5 rounded-xl border border-gray-100 bg-gray-50/50 hover:bg-white hover:shadow-md transition-all duration-200 cursor-default">
+                    <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mr-3 md:mr-0 md:mb-3">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-sm md:text-lg font-semibold text-gray-900">1. Select Tool</h3>
+                        <p class="text-xs text-gray-500 hidden md:block mt-1">Choose an assistant from the sidebar menu.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 (Updated Text) -->
+                <div class="flex flex-row md:flex-col items-center md:items-start p-3 md:p-5 rounded-xl border border-gray-100 bg-gray-50/50 hover:bg-white hover:shadow-md transition-all duration-200 cursor-default">
+                    <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mr-3 md:mr-0 md:mb-3">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-sm md:text-lg font-semibold text-gray-900">2. Input Details</h3>
+                        <p class="text-xs text-gray-500 hidden md:block mt-1">Attach documents, type specifics about what you want, and hit 'Send'.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="flex flex-row md:flex-col items-center md:items-start p-3 md:p-5 rounded-xl border border-gray-100 bg-gray-50/50 hover:bg-white hover:shadow-md transition-all duration-200 cursor-default">
+                    <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mr-3 md:mr-0 md:mb-3">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-sm md:text-lg font-semibold text-gray-900">3. Generate</h3>
+                        <p class="text-xs text-gray-500 hidden md:block mt-1">Get instant NCDC-aligned results.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Action Links (New) -->
+            <div class="flex flex-wrap items-center justify-center gap-4 mt-4 pt-2 border-t border-gray-100 w-full max-w-lg">
+                
+                <!-- Video Tutorials Link -->
+                <a href="https://youtu.be/YXsOnmAD1Lg" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 bg-white border border-gray-200 rounded-full hover:bg-gray-50 hover:text-red-600 hover:border-red-200 transition-colors">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    Video Tutorials
+                </a>
+
+                <!-- WhatsApp Link -->
+                <a href="https://wa.me/256750470234" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 bg-white border border-gray-200 rounded-full hover:bg-gray-50 hover:text-green-600 hover:border-green-200 transition-colors">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.992 3.655 4.735-1.018zm11.397-13.601c.297.029.588.04.872.057l-.372 1.353c-.279-.017-.565-.028-.857-.057l.357-1.353z"/></svg>
+                    WhatsApp Help
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <!-- END OF DEFAULT WELCOME CONTAINER -->
+
+</body>
+</html>

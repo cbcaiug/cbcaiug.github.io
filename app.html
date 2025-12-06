@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -8,21 +9,24 @@
     <title id="page-title">AI Educational Assistant</title>
     <meta name="description" content="A suite of specialized AI-powered tools for educators." id="page-description">
     <meta property="og:title" content="AI Educational Assistant" id="og-title">
-    <meta property="og:description" content="A suite of specialized AI-powered tools for educators." id="og-description">
+    <meta property="og:description" content="A suite of specialized AI-powered tools for educators."
+        id="og-description">
     <meta property="twitter:title" content="AI Educational Assistant" id="twitter-title">
-    <meta property="twitter:description" content="A suite of specialized AI-powered tools for educators." id="twitter-description">
-    <link rel="icon" href="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg">
+    <meta property="twitter:description" content="A suite of specialized AI-powered tools for educators."
+        id="twitter-description">
+    <link rel="icon"
+        href="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCTLDP04EJ"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YCTLDP04EJ');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YCTLDP04EJ');
     </script>
 
-       <!-- External Dependencies -->
+    <!-- External Dependencies -->
     <script src="https://cdn.tailwindcss.com" defer></script>
     <script src="https://unpkg.com/react@18/umd/react.development.js" defer></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" defer></script>
@@ -35,7 +39,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Application Stylesheets -->
     <link rel="stylesheet" href="assets/css/main.css">
     <style>
@@ -43,45 +47,50 @@
         body {
             /* No padding-top on body; header is fixed and main content has pt-24 */
         }
-        
+
         @supports (padding: env(safe-area-inset-top)) {
             body {
                 padding-bottom: env(safe-area-inset-bottom);
             }
         }
-        
+
         @media (min-width: 1024px) {
             body {
-                padding-top: 0; /* Ensure no padding-top on desktop */
+                padding-top: 0;
+                /* Ensure no padding-top on desktop */
             }
         }
-        
+
         /* Enhanced scrollbar styling */
         .enhanced-scrollbar::-webkit-scrollbar {
             width: 14px;
         }
+
         .enhanced-scrollbar::-webkit-scrollbar-track {
             background: #374151;
             border-radius: 7px;
         }
+
         .enhanced-scrollbar::-webkit-scrollbar-thumb {
             background: #6b7280;
             border-radius: 7px;
             border: 2px solid #374151;
         }
+
         .enhanced-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #9ca3af;
         }
-        
+
         /* Tab navigation */
         .settings-tab {
             transition: all 0.2s ease;
         }
+
         .settings-tab.active {
             background: #4f46e5;
             color: white;
         }
-        
+
         /* Keyboard navigation focus */
         .settings-input:focus {
             outline: 2px solid #4f46e5;
@@ -95,39 +104,43 @@
     <link rel="stylesheet" href="assets/css/tutorial.css">
 
 </head>
+
 <body>
-      <!-- Single smooth loader that stays until React is ready -->
+    <!-- Single smooth loader that stays until React is ready -->
     <div id="root">
-      <div class="loading-screen-container">
-        <div class="loading-logo-wrapper">
-          <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg" alt="Loading Logo" class="loading-logo-img" />
+        <div class="loading-screen-container">
+            <div class="loading-logo-wrapper">
+                <img src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg"
+                    alt="Loading Logo" class="loading-logo-img" />
+            </div>
+            <p class="loading-screen-text">Initializing AI Assistant...</p>
         </div>
-        <p class="loading-screen-text">Initializing AI Assistant...</p>
-      </div>
     </div>
 
     <!-- Firebase SDK (compat version) -->
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 
     <!-- Application Scripts (Order is important) -->
-<!-- Libraries & Services -->
-<script type="text/babel" src="src/services/api.js" defer></script>
-<script type="text/babel" src="src/services/firebase.js" defer></script>
-<script type="text/babel" src="src/utils/helpers.js" defer></script>
+    <!-- Libraries & Services -->
+    <script type="text/babel" src="src/services/api.js" defer></script>
+    <script type="text/babel" src="src/services/firebase.js" defer></script>
+    <script type="text/babel" src="src/utils/helpers.js" defer></script>
 
-<!-- UI Components -->
-<script type="text/babel" src="src/components/Icons.js" defer></script>
-<script type="text/babel" src="src/components/Modals.js" defer></script>
-<script type="text/babel" src="src/components/AuthModal.js" defer></script>
-<script type="text/babel" src="src/components/Chat.js" defer></script>
-<script type="text/babel" src="src/components/Sidebar.js" defer></script>
+    <!-- UI Components -->
+    <script type="text/babel" src="src/components/Icons.js" defer></script>
+    <script type="text/babel" src="src/components/Modals.js" defer></script>
+    <script type="text/babel" src="src/components/AuthModal.js" defer></script>
+    <script type="text/babel" src="src/components/Chat.js" defer></script>
+    <script type="text/babel" src="src/components/Sidebar.js" defer></script>
 
-<!-- Main App Component -->
-<script type="text/babel" src="src/components/App.js" defer></script>
+    <!-- Main App Component -->
+    <script type="text/babel" src="src/components/WelcomeView.js" defer></script>
+    <script type="text/babel" src="src/components/App.js" defer></script>
 
-<!-- Entry Point -->
-<script type="text/babel" src="src/main.js" defer></script>
+    <!-- Entry Point -->
+    <script type="text/babel" src="src/main.js" defer></script>
 </body>
+
 </html>
