@@ -7,14 +7,15 @@
  */
 
 /* Markdown content styling for AI responses */
+/* Markdown content styling for AI responses */
 .markdown-content {
-    color: #1e293b; /* slate-800 - dark text for readability */
+    color: #e2e8f0; /* slate-200 - light text for dark theme */
 }
 .markdown-content h1, .markdown-content h2, .markdown-content h3 {
     font-weight: 600;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
-    color: #0f172a; /* slate-900 - darker for headings */
+    color: #f8fafc; /* slate-50 - white for headings */
 }
 .markdown-content h1 { font-size: 1.5em; }
 .markdown-content h2 { font-size: 1.25em; }
@@ -37,22 +38,24 @@
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 .markdown-content th, .markdown-content td {
-    border: 1px solid #d1d5db; /* gray-300 */
+    border: 1px solid #475569; /* slate-600 */
     padding: 0.5rem 0.75rem;
 }
 .markdown-content th {
-    background-color: #f3f4f6; /* gray-100 */
+    background-color: #334155; /* slate-700 */
+    color: #f8fafc; /* slate-50 */
     font-weight: 600;
 }
 
 .markdown-content blockquote {
-    border-left: 4px solid #d1d5db; /* gray-300 */
+    border-left: 4px solid #475569; /* slate-600 */
     padding-left: 1rem;
     margin-left: 0;
-    color: #4b5563; /* gray-600 */
+    color: #94a3b8; /* slate-400 */
 }
 .markdown-content code {
-    background-color: #e5e7eb; /* gray-200 */
+    background-color: #334155; /* slate-700 */
+    color: #e2e8f0; /* slate-200 */
     padding: 0.125rem 0.25rem;
     border-radius: 0.25rem;
     font-family: monospace;
@@ -61,6 +64,9 @@
     display: block;
     padding: 0.75rem;
     white-space: pre-wrap;
+    background-color: #1e293b; /* slate-800 */
+    border: 1px solid #334155; /* slate-700 */
+    border-radius: 0.5rem;
 }
 
 /* Streaming indicator for AI responses */
@@ -68,8 +74,8 @@
     display: inline-block;
     width: 18px;
     height: 18px;
-    border: 3px solid #94a3b8; /* slate-400 */
-    border-top: 3px solid var(--app-primary);
+    border: 3px solid #475569; /* slate-600 */
+    border-top: 3px solid #3b82f6; /* blue-500 */
     border-radius: 50%;
     animation: spin 1s linear infinite;
     vertical-align: -4px;
@@ -81,8 +87,8 @@
     display: inline-block;
     width: 16px;
     height: 16px;
-    border: 2px solid #e5e7eb; /* gray-200 */
-    border-top: 2px solid var(--app-primary);
+    border: 2px solid #475569; /* slate-600 */
+    border-top: 2px solid #3b82f6; /* blue-500 */
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -96,8 +102,10 @@
 textarea#chat-input {
     min-height: 48px;
     height: 48px;
-    color: #1e293b; /* slate-800 - dark text for readability */
+    color: #f8fafc; /* slate-50 - white text */
+    background-color: #1e1e1e; /* Match AI/user message background */
+    border-color: #333;
 }
 textarea#chat-input::placeholder {
-    color: #94a3b8; /* slate-400 - lighter placeholder text */
+    color: #64748b; /* slate-500 - placeholder text */
 }

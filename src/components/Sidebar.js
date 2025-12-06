@@ -102,7 +102,7 @@ const Sidebar = ({
     const TabButton = ({ id, label, shortcut, isActive, onClick }) => (
         <button
             onClick={onClick}
-            className={`settings-tab flex-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${isActive ? 'active' : 'text-slate-300 hover:text-white hover:bg-slate-700'
+            className={`settings-tab flex-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${isActive ? 'bg-[#444] text-white' : 'text-slate-400 hover:text-white hover:bg-[#333]'
                 }`}
             title={`${label} (Ctrl+${shortcut})`}
         >
@@ -305,7 +305,7 @@ const Sidebar = ({
     const AISettingsTab = () => (
         <div className="space-y-4">
             {/* History Preview (collapsible, closed by default) */}
-            <div className="p-2 bg-slate-800 border border-slate-700 rounded-md">
+            <div className="p-2 bg-[#1e1e1e] border border-slate-700 rounded-md">
                 <HistoryPreview />
             </div>
 
@@ -318,7 +318,7 @@ const Sidebar = ({
                         ref={assistantToggleRef}
                         type="button"
                         onClick={(e) => { e.stopPropagation(); setAssistantSelectorOpen(s => !s); }}
-                        className="w-full text-left p-2 bg-slate-700 border border-slate-600 rounded-md flex items-center justify-between focus:outline-none"
+                        className="w-full text-left p-2 bg-[#1e1e1e] border border-slate-700 rounded-md flex items-center justify-between focus:outline-none text-white"
                     >
                         <span className="truncate">{activePromptKey}</span>
                         <svg className={`w-4 h-4 ml-2 transition-transform ${assistantSelectorOpen ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -327,7 +327,7 @@ const Sidebar = ({
                     </button>
 
                     {assistantSelectorOpen && (
-                        <div ref={assistantContainerRef} onClick={(e) => e.stopPropagation()} className="mt-2 bg-slate-800 border border-slate-700 rounded-md shadow-lg">
+                        <div ref={assistantContainerRef} onClick={(e) => e.stopPropagation()} className="mt-2 bg-[#1e1e1e] border border-slate-700 rounded-md shadow-lg">
                             <div className="p-2">
                                 <input
                                     ref={assistantInputRef}
@@ -336,7 +336,7 @@ const Sidebar = ({
                                     placeholder="Search assistants"
                                     value={assistantSearch}
                                     onChange={(e) => setAssistantSearch(e.target.value)}
-                                    className="w-full p-2 rounded-md bg-slate-700 text-sm border border-slate-600"
+                                    className="w-full p-2 rounded-md bg-[#1a1a1a] text-sm border border-slate-700 text-white placeholder-slate-500"
                                 />
                             </div>
                             <div className="max-h-64 overflow-y-auto enhanced-scrollbar">
@@ -380,7 +380,7 @@ const Sidebar = ({
                                                                 try { const url = new URL(window.location); url.searchParams.set('assistant', v.key); window.history.pushState({}, '', url); } catch (_) { }
                                                                 try { window.dispatchEvent(new CustomEvent('assistantChanged', { detail: { key: v.key } })); } catch (_) { }
                                                             }}
-                                                            className="w-full text-left px-3 py-2 hover:bg-slate-700 rounded-md flex items-center justify-between"
+                                                            className="w-full text-left px-3 py-2 hover:bg-[#333] rounded-md flex items-center justify-between text-white"
                                                         >
                                                             <span className="truncate">{(v.label || '').replace(/[()]/g, '')}</span>
                                                             <svg className="w-4 h-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
@@ -396,19 +396,19 @@ const Sidebar = ({
                     )}
                 </div>
 
-                <label htmlFor="custom-prompt-upload" className="mt-2 text-sm text-indigo-400 hover:text-indigo-300 cursor-pointer block text-center py-2 border border-dashed border-slate-600 rounded-md hover:border-indigo-500 transition-colors">
+                <label htmlFor="custom-prompt-upload" className="mt-2 text-sm text-white hover:text-slate-200 cursor-pointer block text-center py-2 border border-dashed border-slate-600 rounded-md hover:border-white transition-colors">
                     Upload Custom Prompt
                 </label>
                 <input id="custom-prompt-upload" type="file" className="hidden" accept=".txt,.json" onChange={onCustomPromptUpload} />
             </div>
 
             {/* Shared API Key Toggle */}
-            <div className="bg-slate-700 p-3 rounded-lg">
+            <div className="bg-[#1e1e1e] p-3 rounded-lg border border-slate-700">
                 <div className="flex items-center justify-between">
                     <div>
                         <label htmlFor="shared-key-toggle" className="font-semibold text-white">Use Shared API Key</label>
                         <p className="text-xs text-slate-400">Recommended for new users</p>
-                        {activeSharedKeyLabel && <p className="text-xs text-indigo-300 mt-1">Active: <strong>{activeSharedKeyLabel}</strong></p>}
+                        {activeSharedKeyLabel && <p className="text-xs text-white mt-1">Active: <strong>{activeSharedKeyLabel}</strong></p>}
                     </div>
                     <label htmlFor="shared-key-toggle" className="relative inline-flex items-center cursor-pointer">
                         <input
@@ -418,7 +418,7 @@ const Sidebar = ({
                             id="shared-key-toggle"
                             className="sr-only peer"
                         />
-                        <div className="w-11 h-6 bg-slate-600 rounded-full peer peer-focus:ring-2 peer-focus:ring-indigo-500 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                        <div className="w-11 h-6 bg-[#333] rounded-full peer peer-focus:ring-2 peer-focus:ring-slate-500 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#555]"></div>
                     </label>
                 </div>
             </div>
@@ -433,7 +433,7 @@ const Sidebar = ({
                             type="button"
                             onClick={(e) => { e.stopPropagation(); if (!useSharedApiKey) setProviderSelectorOpen(s => !s); }}
                             disabled={useSharedApiKey}
-                            className={`settings-input w-full p-2 bg-slate-700 border border-slate-600 rounded-md text-left ${useSharedApiKey ? 'opacity-60 cursor-not-allowed' : ''}`}
+                            className={`settings-input w-full p-2 bg-[#1e1e1e] border border-slate-700 rounded-md text-left text-white ${useSharedApiKey ? 'opacity-60 cursor-not-allowed' : ''}`}
                         >
                             <div className="flex items-center justify-between">
                                 <span>{(AI_PROVIDERS.find(p => p.key === selectedProviderKey)?.label) || selectedProviderKey}</span>
@@ -442,13 +442,13 @@ const Sidebar = ({
                         </button>
 
                         {providerSelectorOpen && (
-                            <div ref={providerContainerRef} onClick={(e) => e.stopPropagation()} className="mt-2 bg-slate-800 border border-slate-700 rounded-md shadow-lg">
+                            <div ref={providerContainerRef} onClick={(e) => e.stopPropagation()} className="mt-2 bg-[#1e1e1e] border border-slate-700 rounded-md shadow-lg">
                                 <div className="p-2">
-                                    <input ref={providerInputRef} autoFocus type="search" placeholder="Search providers" value={providerSearch} onChange={(e) => setProviderSearch(e.target.value)} className="w-full p-2 rounded-md bg-slate-700 text-sm border border-slate-600" />
+                                    <input ref={providerInputRef} autoFocus type="search" placeholder="Search providers" value={providerSearch} onChange={(e) => setProviderSearch(e.target.value)} className="w-full p-2 rounded-md bg-[#1a1a1a] text-sm border border-slate-700 text-white placeholder-slate-500" />
                                 </div>
                                 <div className="max-h-48 overflow-y-auto enhanced-scrollbar">
                                     {AI_PROVIDERS.slice().sort((a, b) => a.label.localeCompare(b.label)).filter(p => p.label.toLowerCase().includes(providerSearch.toLowerCase())).map(p => (
-                                        <button key={p.key} onClick={() => { setProviderSelectorOpen(false); onProviderChange(p.key); try { const url = new URL(window.location); url.searchParams.set('provider', p.key); window.history.pushState({}, '', url); } catch (_) { } }} className="w-full text-left px-3 py-2 hover:bg-slate-700 rounded-md">
+                                        <button key={p.key} onClick={() => { setProviderSelectorOpen(false); onProviderChange(p.key); try { const url = new URL(window.location); url.searchParams.set('provider', p.key); window.history.pushState({}, '', url); } catch (_) { } }} className="w-full text-left px-3 py-2 hover:bg-[#333] rounded-md text-white">
                                             {p.label}
                                         </button>
                                     ))}
@@ -463,7 +463,7 @@ const Sidebar = ({
                 <div>
                     <label className="text-sm text-slate-400">AI Model</label>
                     <div className="mt-1 relative">
-                        <button ref={modelToggleRef} type="button" onClick={(e) => { e.stopPropagation(); setModelSelectorOpen(s => !s); }} className="settings-input w-full p-2 bg-slate-700 border border-slate-600 rounded-md text-left">
+                        <button ref={modelToggleRef} type="button" onClick={(e) => { e.stopPropagation(); setModelSelectorOpen(s => !s); }} className="settings-input w-full p-2 bg-[#1e1e1e] border border-slate-700 rounded-md text-left text-white">
                             <div className="flex items-center justify-between">
                                 <span>{selectedModelName}</span>
                                 <svg className={`w-4 h-4 ml-2 transition-transform ${modelSelectorOpen ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
@@ -471,13 +471,13 @@ const Sidebar = ({
                         </button>
 
                         {modelSelectorOpen && (
-                            <div ref={modelContainerRef} onClick={(e) => e.stopPropagation()} className="mt-2 bg-slate-800 border border-slate-700 rounded-md shadow-lg">
+                            <div ref={modelContainerRef} onClick={(e) => e.stopPropagation()} className="mt-2 bg-[#1e1e1e] border border-slate-700 rounded-md shadow-lg">
                                 <div className="p-2">
-                                    <input ref={modelInputRef} autoFocus type="search" placeholder="Search models" value={modelSearch} onChange={(e) => setModelSearch(e.target.value)} className="w-full p-2 rounded-md bg-slate-700 text-sm border border-slate-600" />
+                                    <input ref={modelInputRef} autoFocus type="search" placeholder="Search models" value={modelSearch} onChange={(e) => setModelSearch(e.target.value)} className="w-full p-2 rounded-md bg-[#1a1a1a] text-sm border border-slate-700 text-white placeholder-slate-500" />
                                 </div>
                                 <div className="max-h-48 overflow-y-auto enhanced-scrollbar">
                                     {(selectedProvider?.models || []).slice().sort((a, b) => a.name.localeCompare(b.name)).filter(m => m.name.toLowerCase().includes(modelSearch.toLowerCase())).map(m => (
-                                        <button key={m.name} onClick={() => { setModelSelectorOpen(false); onModelChange(m.name); try { const url = new URL(window.location); url.searchParams.set('model', m.name); window.history.pushState({}, '', url); } catch (_) { } }} className="w-full text-left px-3 py-2 hover:bg-slate-700 rounded-md">
+                                        <button key={m.name} onClick={() => { setModelSelectorOpen(false); onModelChange(m.name); try { const url = new URL(window.location); url.searchParams.set('model', m.name); window.history.pushState({}, '', url); } catch (_) { } }} className="w-full text-left px-3 py-2 hover:bg-[#333] rounded-md text-white">
                                             {m.name}
                                         </button>
                                     ))}
@@ -503,7 +503,7 @@ const Sidebar = ({
                                 onChange={(e) => handlePersonalKeyToggle(e.target.checked)}
                                 className="sr-only peer"
                             />
-                            <div className="w-8 h-4 bg-slate-600 rounded-full peer peer-focus:ring-1 peer-focus:ring-indigo-500 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[1px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-indigo-600"></div>
+                            <div className="w-8 h-4 bg-[#333] rounded-full peer peer-focus:ring-1 peer-focus:ring-slate-500 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[1px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-[#555]"></div>
                         </label>
                         <svg className={`w-4 h-4 transition-transform ${showPersonalKey ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -512,7 +512,7 @@ const Sidebar = ({
                 </button>
 
                 {showPersonalKey && (
-                    <div className="mt-3 p-3 bg-slate-700 rounded-lg">
+                    <div className="mt-3 p-3 bg-[#1e1e1e] border border-slate-700 rounded-lg">
                         <div>
                             <label className="text-sm text-slate-400">{selectedProvider?.label} API Key</label>
                             <div className="relative">
@@ -521,7 +521,7 @@ const Sidebar = ({
                                     value={apiKeys[selectedProvider?.apiKeyName] || ''}
                                     onChange={(e) => onApiKeyChange(selectedProvider.apiKeyName, selectedProvider, e.target.value)}
                                     placeholder={`Paste your ${selectedProvider?.label} key here`}
-                                    className="settings-input w-full mt-1 p-2 pr-8 bg-slate-600 border border-slate-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                    className="settings-input w-full mt-1 p-2 pr-8 bg-[#1a1a1a] border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500 text-white placeholder-slate-500"
                                 />
                                 <div className="absolute inset-y-0 right-0 flex items-center pr-2">
                                     {apiKeyStatus[selectedProvider.key] === 'checking' && <div className="loading-spinner"></div>}
@@ -529,14 +529,14 @@ const Sidebar = ({
                                     {apiKeyStatus[selectedProvider.key] === 'invalid' && <AlertCircleIcon className="w-5 h-5 text-red-500" />}
                                 </div>
                             </div>
-                            <a href={selectedProvider?.apiKeyUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-indigo-400 hover:underline mt-1 block">
+                            <a href={selectedProvider?.apiKeyUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-white hover:underline mt-1 block">
                                 Get your key here &raquo;
                             </a>
                         </div>
                     </div>
                 )}
             </div>
-        </div>
+        </div >
     );
 
     const AppSettingsTab = () => (
@@ -547,7 +547,7 @@ const Sidebar = ({
                 <select
                     value={autoDeleteHours}
                     onChange={onAutoDeleteChange}
-                    className="settings-input w-full mt-1 p-2 bg-slate-700 border border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="settings-input w-full mt-1 p-2 bg-[#1e1e1e] border border-slate-700 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500 text-white"
                 >
                     <option value="1">After 1 Hour</option>
                     <option value="2">After 2 Hours</option>
@@ -557,7 +557,7 @@ const Sidebar = ({
             </div>
 
             {/* Save Chat History Toggle */}
-            <div className="bg-slate-700 p-3 rounded-lg">
+            <div className="bg-[#1e1e1e] p-3 rounded-lg border border-slate-700">
                 <div className="flex items-center justify-between gap-3">
                     <div className="flex-1">
                         <label htmlFor="history-toggle" className="font-semibold text-white cursor-pointer">Save Chat History</label>
@@ -575,7 +575,7 @@ const Sidebar = ({
                             id="history-toggle"
                             className="sr-only peer"
                         />
-                        <div className="w-11 h-6 bg-slate-600 rounded-full peer peer-focus:ring-2 peer-focus:ring-indigo-500 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                        <div className="w-11 h-6 bg-[#333] rounded-full peer peer-focus:ring-2 peer-focus:ring-slate-500 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#555]"></div>
                     </label>
                 </div>
             </div>
@@ -587,7 +587,7 @@ const Sidebar = ({
                     <div className="mt-1 p-3 bg-red-900/50 border border-red-500 rounded-md">
                         <p className="text-sm mb-2 text-white">This will clear API keys and chat history only. Usage tracking will remain.</p>
                         <div className="flex gap-2">
-                            <button onClick={() => onShowResetConfirm(false)} className="flex-1 text-xs py-2 bg-slate-600 hover:bg-slate-500 rounded transition-colors">
+                            <button onClick={() => onShowResetConfirm(false)} className="flex-1 text-xs py-2 bg-[#333] hover:bg-[#444] rounded transition-colors text-white">
                                 Cancel
                             </button>
                             <button onClick={onResetSettings} className="flex-1 text-xs py-2 bg-red-600 hover:bg-red-500 rounded transition-colors">
@@ -598,7 +598,7 @@ const Sidebar = ({
                 ) : (
                     <button
                         onClick={() => onShowResetConfirm(true)}
-                        className="w-full mt-1 p-2 bg-red-800 hover:bg-red-700 text-white rounded-md transition-colors flex items-center justify-center gap-2"
+                        className="w-full mt-1 p-2 bg-[#333] hover:bg-[#444] text-white rounded-md transition-colors flex items-center justify-center gap-2"
                     >
                         <SettingsIcon className="w-4 h-4" />
                         <span>Reset App Settings</span>
@@ -614,11 +614,11 @@ const Sidebar = ({
             <div>
                 <label className="text-sm text-slate-400 mb-2 block">Contact Information</label>
                 <div className="space-y-2">
-                    <a href="mailto:cbcaitool@gmail.com" className="flex items-center gap-2 p-2 rounded-md hover:bg-slate-700 transition-colors text-slate-300 hover:text-white">
+                    <a href="mailto:cbcaitool@gmail.com" className="flex items-center gap-2 p-2 rounded-md hover:bg-[#333] transition-colors text-slate-300 hover:text-white">
                         <FooterEmailIcon />
                         <span className="text-sm">cbcaitool@gmail.com</span>
                     </a>
-                    <a href="https://wa.me/256750470234" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded-md hover:bg-slate-700 transition-colors text-slate-300 hover:text-white">
+                    <a href="https://wa.me/256750470234" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded-md hover:bg-[#333] transition-colors text-slate-300 hover:text-white">
                         <FooterWhatsAppIcon />
                         <span className="text-sm">+256750470234</span>
                     </a>
@@ -645,7 +645,7 @@ const Sidebar = ({
             </div>
 
             {/* Return to Home */}
-            <a href="/" className="flex items-center justify-center gap-2 w-full py-2 bg-slate-700 hover:bg-slate-600 rounded-md transition-colors text-white">
+            <a href="/" className="flex items-center justify-center gap-2 w-full py-2 bg-[#333] hover:bg-[#444] rounded-md transition-colors text-white">
                 <HomeIcon className="w-4 h-4" />
                 <span>Return to Home</span>
             </a>
@@ -662,7 +662,7 @@ const Sidebar = ({
         );
         return (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-2 sm:p-4">
-                <div className="w-full max-w-2xl bg-slate-800 border border-slate-700 rounded-md flex flex-col max-h-[90vh] sm:max-h-[80vh]">
+                <div className="w-full max-w-2xl bg-[#1a1a1a] border border-slate-700 rounded-md flex flex-col max-h-[90vh] sm:max-h-[80vh]">
                     <div className="flex justify-between items-center p-3 sm:p-4 border-b border-slate-700 flex-shrink-0">
                         <h3 className="text-base sm:text-lg font-semibold truncate">All Chat History</h3>
                         <button onClick={() => { setShowAllHistoryModal(false); setHistorySearch(''); }} className="p-2 hover:bg-slate-700 rounded flex-shrink-0 ml-2">✕</button>
@@ -673,7 +673,7 @@ const Sidebar = ({
                             placeholder="Search history..."
                             value={historySearch}
                             onChange={(e) => setHistorySearch(e.target.value)}
-                            className="w-full p-2 rounded-md bg-slate-700 text-sm border border-slate-600 mb-2"
+                            className="w-full p-2 rounded-md bg-[#1e1e1e] text-sm border border-slate-700 mb-2 text-white placeholder-slate-500"
                         />
                         {historyItems.length > 0 && (
                             <button onClick={handleDeleteAllHistory} className="w-full py-2 bg-red-800 hover:bg-red-700 rounded text-xs sm:text-sm">
@@ -685,7 +685,7 @@ const Sidebar = ({
                         <div className="space-y-2">
                             {filteredHistory.length === 0 && <div className="text-sm text-slate-400 text-center py-8">{historySearch ? 'No matching chats.' : 'No saved chats.'}</div>}
                             {filteredHistory.map(it => (
-                                <div key={it.id} className="p-2 sm:p-3 bg-slate-900 rounded-md flex items-start gap-2 relative group">
+                                <div key={it.id} className="p-2 sm:p-3 bg-[#1e1e1e] rounded-md flex items-start gap-2 relative group border border-slate-800">
                                     <button onClick={() => { onSelectHistoryItem(it); setShowAllHistoryModal(false); setHistoryMenuOpen(null); }} className="flex-1 text-left min-w-0">
                                         <div className="font-medium text-sm truncate">{it.title || it.assistantKey}</div>
                                         <div className="text-xs text-slate-400 line-clamp-2 break-words">{it.excerpt}</div>
@@ -703,7 +703,7 @@ const Sidebar = ({
                                             </svg>
                                         </button>
                                         {historyMenuOpen === it.id && (
-                                            <div className="absolute right-0 top-full mt-1 bg-slate-900 border border-slate-700 rounded shadow-lg z-50 min-w-[120px]">
+                                            <div className="absolute right-0 top-full mt-1 bg-[#1a1a1a] border border-slate-700 rounded shadow-lg z-50 min-w-[120px]">
                                                 <button
                                                     onClick={(e) => handleDeleteHistory(it.id, e)}
                                                     className="w-full text-left px-3 py-2 text-sm hover:bg-slate-700 text-red-400 whitespace-nowrap"
@@ -726,7 +726,7 @@ const Sidebar = ({
         <>
             <div
                 style={{ width: `${sidebarWidth}px`, maxWidth: '100vw' }}
-                className={`fixed lg:static top-0 left-0 h-full bg-slate-800 text-white flex flex-col z-40 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+                className={`fixed lg:static top-0 left-0 h-full bg-[#1a1a1a] text-white flex flex-col z-40 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
             >
                 <div className="flex-1 flex flex-col min-h-0">
                     {/* Header with integrated close button */}
@@ -745,7 +745,7 @@ const Sidebar = ({
                                     )}
                                     <button
                                         onClick={() => window.dispatchEvent(new CustomEvent('requestSignOut'))}
-                                        className="text-xs text-red-400 hover:text-red-300 hover:underline"
+                                        className="text-xs text-white hover:text-slate-300 hover:underline"
                                     >
                                         Sign Out
                                     </button>
@@ -754,7 +754,7 @@ const Sidebar = ({
                         </div>
                         <button
                             onClick={onClose}
-                            className="p-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg flex-shrink-0 ml-2"
+                            className="p-2 bg-[#333] hover:bg-[#444] text-white rounded-lg flex-shrink-0 ml-2"
                         >
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -764,7 +764,7 @@ const Sidebar = ({
 
                     {/* Tab Navigation */}
                     <div className="px-4 pt-4 flex-shrink-0">
-                        <div className="flex bg-slate-700 rounded-lg p-1 gap-1">
+                        <div className="flex bg-[#1e1e1e] rounded-lg p-1 gap-1 border border-slate-700">
                             <TabButton
                                 id="ai"
                                 label="AI"
@@ -799,7 +799,7 @@ const Sidebar = ({
 
                 {/* Toast Notification */}
                 {keyModeToast && (
-                    <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2">
+                    <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#1e1e1e] border border-[#333] text-white px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2">
                         <CheckCircleIcon className="w-5 h-5" />
                         <span>{keyModeToast}</span>
                     </div>

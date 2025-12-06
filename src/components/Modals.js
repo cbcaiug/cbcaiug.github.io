@@ -72,18 +72,18 @@ const FeedbackModal = ({ isOpen, onClose, onSubmit, assistantName }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full transform transition-all scale-100 opacity-100">
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+            <div className="bg-[#1a1a1a] border border-slate-700 rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full transform transition-all scale-100 opacity-100">
                 {submitStatus === 'success' ? (
                     <div className="text-center py-8">
                         <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                        <h2 className="text-2xl font-bold text-slate-800">Thank You!</h2>
-                        <p className="text-slate-600 mt-2">Your submission has been received.</p>
+                        <h2 className="text-2xl font-bold text-white">Thank You!</h2>
+                        <p className="text-slate-400 mt-2">Your submission has been received.</p>
                     </div>
                 ) : (
                     <>
-                        <h2 className="text-2xl font-bold text-slate-800 text-center">Enjoying the App?</h2>
-                        <p className="text-slate-600 text-center mt-2 mb-6">Your feedback helps improve this tool. Please rate your experience or sign up for updates.</p>
+                        <h2 className="text-2xl font-bold text-white text-center">Enjoying the App?</h2>
+                        <p className="text-slate-400 text-center mt-2 mb-6">Your feedback helps improve this tool. Please rate your experience or sign up for updates.</p>
 
                         <div className="flex justify-center items-center mb-6 star-rating" onMouseLeave={() => setHoverRating(0)}>
                             {[1, 2, 3, 4, 5].map(star => (
@@ -97,12 +97,12 @@ const FeedbackModal = ({ isOpen, onClose, onSubmit, assistantName }) => {
                             value={feedbackText}
                             onChange={(e) => setFeedbackText(e.target.value)}
                             placeholder="Optional: Tell me more about your experience..."
-                            className="w-full mt-1 p-3 bg-slate-100 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+                            className="w-full mt-1 p-3 bg-[#2a2a2a] border border-slate-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-slate-500"
                             rows="3"
                         />
 
                         <div className="mt-4">
-                            <label htmlFor="email-signup" className="text-sm font-medium text-slate-700">Get notified about future updates</label>
+                            <label htmlFor="email-signup" className="text-sm font-medium text-slate-300">Get notified about future updates</label>
                             <div className="relative mt-1">
                                 <input
                                     id="email-signup"
@@ -110,7 +110,7 @@ const FeedbackModal = ({ isOpen, onClose, onSubmit, assistantName }) => {
                                     value={email}
                                     onChange={handleEmailChange}
                                     placeholder="your.email@example.com"
-                                    className={`w-full p-3 pr-10 bg-slate-100 border rounded-md focus:outline-none focus:ring-2 transition ${isEmailValid === true ? 'border-green-500 focus:ring-green-500' : isEmailValid === false ? 'border-red-500 focus:ring-red-500' : 'border-slate-300 focus:ring-indigo-500'}`}
+                                    className={`w-full p-3 pr-10 bg-[#2a2a2a] border text-white rounded-md focus:outline-none focus:ring-2 transition placeholder-slate-500 ${isEmailValid === true ? 'border-green-500 focus:ring-green-500' : isEmailValid === false ? 'border-red-500 focus:ring-red-500' : 'border-slate-600 focus:ring-blue-500'}`}
                                 />
                                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                                     {isEmailValid === true && <CheckCircleIcon className="w-5 h-5 text-green-500" />}
@@ -122,10 +122,10 @@ const FeedbackModal = ({ isOpen, onClose, onSubmit, assistantName }) => {
                         {submitStatus === 'error' && <p className="text-red-600 text-sm mt-2 text-center">Sorry, something went wrong. Please try again.</p>}
 
                         <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                            <button onClick={handleClose} className="w-full px-6 py-3 bg-slate-200 text-slate-800 font-semibold rounded-lg hover:bg-slate-300 transition-colors">
+                            <button onClick={handleClose} className="w-full px-6 py-3 bg-[#333] text-white font-semibold rounded-lg hover:bg-[#444] transition-colors">
                                 Not Now
                             </button>
-                            <button onClick={handleSubmit} disabled={(rating === 0 && !isEmailValid) || isSubmitting} className="w-full px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors disabled:bg-indigo-300 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                            <button onClick={handleSubmit} disabled={(rating === 0 && !isEmailValid) || isSubmitting} className="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors disabled:bg-slate-700 disabled:text-slate-500 disabled:cursor-not-allowed flex items-center justify-center gap-2">
                                 {isSubmitting && <div className="loading-spinner !border-white !border-t-transparent"></div>}
                                 Submit
                             </button>
@@ -168,27 +168,27 @@ const ConsentModal = ({ onAccept }) => {
             <div className="consent-modal-content">
                 <div className="flex items-center gap-3 mb-4">
                     <img src="https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/main/assets/images/cbc-ai-tool-logo.jpeg" alt="Logo" className="h-12 w-12 rounded-lg" />
-                    <h2 className="text-2xl font-bold text-slate-800">Welcome!</h2>
+                    <h2 className="text-2xl font-bold text-white">Welcome!</h2>
                 </div>
-                <p className="text-slate-600 mb-4 text-sm">Before you begin, please review and agree to our terms of use.</p>
+                <p className="text-slate-400 mb-4 text-sm">Before you begin, please review and agree to our terms of use.</p>
 
-                <div className="bg-slate-50 p-3 rounded-md mb-4">
-                    <p className="text-xs text-slate-500">
+                <div className="bg-[#2a2a2a] p-3 rounded-md mb-4 border border-slate-600">
+                    <p className="text-xs text-slate-400">
                         This site uses your browser's local storage to save chat history and settings. We also use analytics to improve the service. By continuing, you acknowledge this.
                     </p>
                 </div>
 
                 <div className="space-y-3">
                     <label className="flex items-start gap-3 cursor-pointer">
-                        <input type="checkbox" checked={termsAccepted} onChange={() => setTermsAccepted(!termsAccepted)} className="mt-1 h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
-                        <span className="text-sm text-slate-700">
-                            I have read and agree to the <a href="terms.html" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-semibold hover:underline">Terms of Service</a>.
+                        <input type="checkbox" checked={termsAccepted} onChange={() => setTermsAccepted(!termsAccepted)} className="mt-1 h-5 w-5 rounded border-slate-600 bg-[#2a2a2a] text-blue-600 focus:ring-blue-500" />
+                        <span className="text-sm text-slate-300">
+                            I have read and agree to the <a href="terms.html" target="_blank" rel="noopener noreferrer" className="text-blue-400 font-semibold hover:underline">Terms of Service</a>.
                         </span>
                     </label>
                     <label className="flex items-start gap-3 cursor-pointer">
-                        <input type="checkbox" checked={privacyAccepted} onChange={() => setPrivacyAccepted(!privacyAccepted)} className="mt-1 h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
-                        <span className="text-sm text-slate-700">
-                            I acknowledge the <a href="privacy.html" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-semibold hover:underline">Privacy Policy</a>.
+                        <input type="checkbox" checked={privacyAccepted} onChange={() => setPrivacyAccepted(!privacyAccepted)} className="mt-1 h-5 w-5 rounded border-slate-600 bg-[#2a2a2a] text-blue-600 focus:ring-blue-500" />
+                        <span className="text-sm text-slate-300">
+                            I acknowledge the <a href="privacy.html" target="_blank" rel="noopener noreferrer" className="text-blue-400 font-semibold hover:underline">Privacy Policy</a>.
                         </span>
                     </label>
                 </div>
@@ -196,7 +196,7 @@ const ConsentModal = ({ onAccept }) => {
                 <button
                     onClick={onAccept}
                     disabled={!canProceed}
-                    className="w-full mt-6 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors disabled:bg-indigo-300 disabled:cursor-not-allowed"
+                    className="w-full mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors disabled:bg-slate-700 disabled:text-slate-500 disabled:cursor-not-allowed"
                 >
                     Proceed to App
                 </button>
@@ -209,19 +209,19 @@ const LimitReachedModal = ({ isOpen, onClose, onAddToCart, onRemoveFromCart, ite
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full">
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+            <div className="bg-[#1a1a1a] border border-slate-700 rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full">
                 {inCart ? (
                     <div className="text-center">
                         <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                        <h2 className="text-2xl font-bold text-slate-800">Already in Cart</h2>
-                        <p className="text-slate-600 mt-2">This item is already in your cart. Remove it?</p>
+                        <h2 className="text-2xl font-bold text-white">Already in Cart</h2>
+                        <p className="text-slate-400 mt-2">This item is already in your cart. Remove it?</p>
                     </div>
                 ) : (
                     <div className="text-center">
                         <AlertCircleIcon className="w-16 h-16 text-amber-500 mx-auto mb-4" />
-                        <h2 className="text-2xl font-bold text-slate-800">Free Uses Exhausted</h2>
-                        <p className="text-slate-600 mt-2">You've used all 5 free {itemType}s. Add this item to your cart to continue.</p>
+                        <h2 className="text-2xl font-bold text-white">Free Uses Exhausted</h2>
+                        <p className="text-slate-400 mt-2">You've used all 5 free {itemType}s. Add this item to your cart to continue.</p>
                         <p className="text-sm text-slate-500 mt-2">Price: 1,000 UGX per item</p>
                     </div>
                 )}
@@ -246,7 +246,7 @@ const LimitReachedModal = ({ isOpen, onClose, onAddToCart, onRemoveFromCart, ite
                     )}
                     <button
                         onClick={onClose}
-                        className="w-full px-6 py-2 bg-slate-200 text-slate-800 font-semibold rounded-lg hover:bg-slate-300 transition-colors"
+                        className="w-full px-6 py-2 bg-[#333] text-white font-semibold rounded-lg hover:bg-[#444] transition-colors"
                     >
                         Cancel
                     </button>
@@ -263,12 +263,12 @@ const CartModal = ({ isOpen, onClose, cartItems, onRemoveItem, onCheckout }) => 
     const total = cartItems.length * 1000;
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-lg shadow-2xl max-w-lg w-full max-h-[90vh] flex flex-col">
-                <div className="p-6 border-b border-slate-200 flex justify-between items-center">
-                    <h2 className="text-2xl font-bold text-slate-800">Your Cart</h2>
-                    <button onClick={onClose} className="p-2 rounded-full hover:bg-slate-100">
-                        <XIcon className="w-6 h-6 text-slate-600" />
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+            <div className="bg-[#1a1a1a] border border-slate-700 rounded-lg shadow-2xl max-w-lg w-full max-h-[90vh] flex flex-col">
+                <div className="p-6 border-b border-slate-700 flex justify-between items-center">
+                    <h2 className="text-2xl font-bold text-white">Your Cart</h2>
+                    <button onClick={onClose} className="p-2 rounded-full hover:bg-[#333]">
+                        <XIcon className="w-6 h-6 text-slate-400" />
                     </button>
                 </div>
 
@@ -281,15 +281,15 @@ const CartModal = ({ isOpen, onClose, cartItems, onRemoveItem, onCheckout }) => 
                     ) : (
                         <div className="space-y-3">
                             {cartItems.map((item, index) => (
-                                <div key={item.id} className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                                <div key={item.id} className="bg-[#2a2a2a] p-4 rounded-lg border border-slate-600">
                                     <div className="flex justify-between items-start">
                                         <div className="flex-1">
-                                            <p className="font-semibold text-slate-800">Item #{index + 1}</p>
-                                            <p className="text-sm text-slate-600">{item.assistantName}</p>
+                                            <p className="font-semibold text-white">Item #{index + 1}</p>
+                                            <p className="text-sm text-slate-400">{item.assistantName}</p>
                                             <p className="text-xs text-slate-500 mt-1">{new Date(item.timestamp).toLocaleString()}</p>
                                         </div>
                                         <div className="text-right">
-                                            <p className="font-bold text-slate-800">1,000 UGX</p>
+                                            <p className="font-bold text-white">1,000 UGX</p>
                                             <button
                                                 onClick={() => onRemoveItem(item.id)}
                                                 className="mt-2 text-xs text-red-600 hover:text-red-800 flex items-center gap-1"
@@ -306,10 +306,10 @@ const CartModal = ({ isOpen, onClose, cartItems, onRemoveItem, onCheckout }) => 
                 </div>
 
                 {cartItems.length > 0 && (
-                    <div className="p-6 border-t border-slate-200 bg-slate-50">
+                    <div className="p-6 border-t border-slate-700 bg-[#2a2a2a]">
                         <div className="flex justify-between items-center mb-4">
-                            <span className="text-lg font-semibold text-slate-800">Total:</span>
-                            <span className="text-2xl font-bold text-indigo-600">{total.toLocaleString()} UGX</span>
+                            <span className="text-lg font-semibold text-white">Total:</span>
+                            <span className="text-2xl font-bold text-blue-500">{total.toLocaleString()} UGX</span>
                         </div>
                         <div className="space-y-2">
                             <button
@@ -324,7 +324,7 @@ const CartModal = ({ isOpen, onClose, cartItems, onRemoveItem, onCheckout }) => 
                                         cartItems.forEach(item => onRemoveItem(item.id));
                                     }
                                 }}
-                                className="w-full flex items-center justify-center gap-2 px-6 py-2 bg-slate-200 text-slate-700 font-semibold rounded-lg hover:bg-slate-300 transition-colors"
+                                className="w-full flex items-center justify-center gap-2 px-6 py-2 bg-[#333] text-white font-semibold rounded-lg hover:bg-[#444] transition-colors"
                             >
                                 <TrashIcon className="w-4 h-4" />
                                 Clear Cart
@@ -357,12 +357,12 @@ const DocSuccessModal = ({ isOpen, onClose, docInfo }) => {
     };
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full transform transition-all scale-100 opacity-100">
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+            <div className="bg-[#1a1a1a] border border-slate-700 rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full transform transition-all scale-100 opacity-100">
                 <div className="text-center">
                     <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                    <h2 className="text-2xl font-bold text-slate-800">Document Created!</h2>
-                    <p className="text-slate-600 mt-2">Your document is ready. You can now view it online or download it directly.</p>
+                    <h2 className="text-2xl font-bold text-white">Document Created!</h2>
+                    <p className="text-slate-400 mt-2">Your document is ready. You can now view it online or download it directly.</p>
                 </div>
 
                 <div className="mt-6 space-y-3">
@@ -397,7 +397,7 @@ const DocSuccessModal = ({ isOpen, onClose, docInfo }) => {
                 </div>
 
                 <div className="mt-6 text-center">
-                    <button onClick={onClose} className="w-full sm:w-auto px-6 py-2 bg-slate-200 text-slate-800 font-semibold rounded-lg hover:bg-slate-300 transition-colors">
+                    <button onClick={onClose} className="w-full sm:w-auto px-6 py-2 bg-[#333] text-white font-semibold rounded-lg hover:bg-[#444] transition-colors">
                         Close
                     </button>
                 </div>

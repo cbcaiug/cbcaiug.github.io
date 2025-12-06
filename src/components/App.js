@@ -1473,20 +1473,20 @@ const App = ({ onMount }) => {
     if (isPromptMissing) {
         // Render an error screen if the assistant prompt is missing
         return (
-            <div className="flex items-center justify-center h-screen bg-slate-100 p-4">
-                <div className="text-center bg-white p-8 rounded-lg shadow-lg max-w-lg">
+            <div className="flex items-center justify-center h-screen bg-[#0f0f0f] p-4">
+                <div className="text-center bg-[#1a1a1a] p-8 rounded-lg shadow-lg max-w-lg border border-[#333]">
                     <AlertTriangleIcon className="w-16 h-16 text-amber-500 mx-auto mb-4" />
-                    <h2 className="text-2xl font-bold text-slate-800 mb-2">Assistant Not Configured</h2>
-                    <p className="text-slate-600 mb-4">The "{activePromptKey}" assistant is not yet availabe.</p>
-                    <p className="text-slate-600 mb-6">Please contact the administrator or select another assistant.</p>
-                    <a href="/" className="mt-6 inline-flex items-center justify-center gap-2 text-slate-600 hover:text-slate-900 font-semibold"><HomeIcon className="w-5 h-5" />Return to Home</a>
+                    <h2 className="text-2xl font-bold text-white mb-2">Assistant Not Configured</h2>
+                    <p className="text-slate-400 mb-4">The "{activePromptKey}" assistant is not yet availabe.</p>
+                    <p className="text-slate-400 mb-6">Please contact the administrator or select another assistant.</p>
+                    <a href="/" className="mt-6 inline-flex items-center justify-center gap-2 text-slate-400 hover:text-white font-semibold"><HomeIcon className="w-5 h-5" />Return to Home</a>
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="h-screen w-screen overflow-hidden flex bg-white">
+        <div className="h-screen w-screen overflow-hidden flex bg-[#0f0f0f]">
             {/* Consent modal removed - terms/privacy in sidebar */}
 
 
@@ -1540,70 +1540,76 @@ const App = ({ onMount }) => {
                 onStartResizing={startResizing}
             />
 
-            <div className="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
+            <div className="flex-1 flex flex-col h-full overflow-hidden bg-[#0f0f0f]">
 
-                <header ref={headerRef} className="fixed top-0 left-0 right-0 p-2 lg:p-4 border-b border-slate-200 flex flex-col items-center gap-2 flex-shrink-0 bg-white z-10" style={{ marginLeft: isMenuOpen && window.innerWidth >= 1024 ? sidebarWidth : 0 }}>
-                    <h2 className="text-lg lg:text-xl font-semibold text-slate-800 text-center w-full">{activePromptKey ? `${activePromptKey} Assistant` : 'Welcome'}</h2>
-                    <div className="flex flex-wrap items-center justify-center gap-1 lg:gap-2">
-                        {!isMenuOpen && (
-                            <button onClick={() => setIsMenuOpen(true)} className="p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors" title="Open Settings">
-                                <SettingsIcon className="w-5 h-5" />
-                            </button>
-                        )}
-                        {/* Cart Icon - Grayed out and disabled for now */}
-                        <button
-                            onClick={() => usageCount === 0 ? setIsCartOpen(true) : null}
-                            className="relative p-2 rounded-lg transition-colors opacity-30 cursor-not-allowed"
-                            title="Cart (Coming Soon)"
-                            disabled
-                        >
-                            <ShoppingCartIcon className="w-6 h-6 text-slate-400" />
-                            {cartItems.length > 0 && (
-                                <span className="absolute -top-1 -right-1 bg-slate-400 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                                    {cartItems.length}
-                                </span>
+                <header ref={headerRef} className="fixed top-0 left-0 right-0 p-2 lg:p-4 border-b border-[#333] flex flex-col items-center gap-2 flex-shrink-0 bg-[#1a1a1a] z-10" style={{ marginLeft: isMenuOpen && window.innerWidth >= 1024 ? sidebarWidth : 0 }}>
+                    <div className="w-full max-w-4xl flex flex-col items-center gap-2">
+                        <h2 className="text-lg lg:text-xl font-semibold text-white text-center">{activePromptKey ? `${activePromptKey} Assistant` : 'Welcome'}</h2>
+                        <div className="flex items-center gap-2">
+                            {!isMenuOpen && (
+                                <button onClick={() => setIsMenuOpen(true)} className="p-2 rounded-lg hover:bg-[#333] text-white transition-colors" title="Open Settings">
+                                    <SettingsIcon className="w-5 h-5" />
+                                </button>
                             )}
-                        </button>
-                        {/* Help dropdown menu */}
-                        <div className="relative">
-                            <button onClick={() => setIsHelpMenuOpen(!isHelpMenuOpen)} id="help-button" title="Help & Feedback" className="p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors">
-                                <HelpCircleIcon className="w-5 h-5" />
+                            {/* Cart Icon - Grayed out and disabled for now */}
+                            <button
+                                onClick={() => usageCount === 0 ? setIsCartOpen(true) : null}
+                                className="relative p-2 rounded-lg transition-colors opacity-30 cursor-not-allowed"
+                                title="Cart (Coming Soon)"
+                                disabled
+                            >
+                                <ShoppingCartIcon className="w-6 h-6 text-slate-500" />
+                                {cartItems.length > 0 && (
+                                    <span className="absolute -top-1 -right-1 bg-slate-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                                        {cartItems.length}
+                                    </span>
+                                )}
                             </button>
-                            {isHelpMenuOpen && (
-                                <div className="absolute left-0 top-full mt-1 w-48 bg-white border border-slate-200 rounded-lg shadow-lg z-[100]">
-                                    <button onClick={() => { setIsFeedbackModalOpen(true); setIsHelpMenuOpen(false); }} className="w-full text-left px-4 py-2 hover:bg-slate-50 flex items-center gap-2 text-slate-700">
-                                        <StarIcon className="w-4 h-4" />
-                                        Send Feedback
-                                    </button>
-                                    <a href="https://wa.me/256750470234" target="_blank" rel="noopener noreferrer" onClick={() => setIsHelpMenuOpen(false)} className="w-full text-left px-4 py-2 hover:bg-slate-50 flex items-center gap-2 text-slate-700 no-underline">
-                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" /></svg>
-                                        WhatsApp Support
-                                    </a>
-                                    <a href="faq.html" target="_blank" rel="noopener noreferrer" onClick={() => setIsHelpMenuOpen(false)} className="w-full text-left px-4 py-2 hover:bg-slate-50 flex items-center gap-2 text-slate-700 no-underline border-t border-slate-100">
-                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                        FAQ
-                                    </a>
-                                </div>
-                            )}
+                            {/* Help dropdown menu */}
+                            <div className="relative">
+                                <button onClick={() => setIsHelpMenuOpen(!isHelpMenuOpen)} id="help-button" title="Help & Feedback" className="p-2 rounded-lg hover:bg-[#333] text-white transition-colors">
+                                    <HelpCircleIcon className="w-5 h-5" />
+                                </button>
+                                {isHelpMenuOpen && (
+                                    <div className="absolute left-0 top-full mt-1 w-48 bg-[#2a2a2a] border border-[#333] rounded-lg shadow-lg z-[100]">
+                                        <button onClick={() => { setIsFeedbackModalOpen(true); setIsHelpMenuOpen(false); }} className="w-full text-left px-4 py-2 hover:bg-[#333] flex items-center gap-2 text-white rounded-t-lg">
+                                            <StarIcon className="w-4 h-4" />
+                                            Send Feedback
+                                        </button>
+                                        <button onClick={() => { setIsHelpMenuOpen(false); setShowTutorial(true); }} className="w-full text-left px-4 py-2 hover:bg-[#333] flex items-center gap-2 text-white">
+                                            <HelpCircleIcon className="w-4 h-4" />
+                                            <span>Show Tutorial</span>
+                                        </button>
+                                        <a href="https://wa.me/256750470234" target="_blank" rel="noopener noreferrer" onClick={() => setIsHelpMenuOpen(false)} className="w-full text-left px-4 py-2 hover:bg-[#333] flex items-center gap-2 text-white no-underline">
+                                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" /></svg>
+                                            WhatsApp Support
+                                        </a>
+                                        <a href="faq.html" target="_blank" rel="noopener noreferrer" onClick={() => setIsHelpMenuOpen(false)} className="w-full text-left px-4 py-2 hover:bg-[#333] flex items-center gap-2 text-white no-underline border-t border-[#333] rounded-b-lg">
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                            FAQ
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
+                            {isHelpMenuOpen && <div onClick={() => setIsHelpMenuOpen(false)} className="fixed inset-0 z-[90]"></div>}
+                            <a href="gift.html" target="_blank" rel="noopener noreferrer" id="gift-button" title="Support the Creator" className="p-2 rounded-lg hover:bg-amber-900/30 text-amber-500 transition-colors no-underline">
+                                <span className="text-lg">🎁</span>
+                            </a>
+                            <button id="notifications-button" onClick={() => setIsNotificationsOpen(true)} title="Notifications" className="relative p-2 rounded-lg hover:bg-[#333] text-white transition-colors"><BellIcon className="w-5 h-5" />{hasNewNotification && <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>}</button>
+                            <button id="share-app-button" onClick={() => handleShare({ title: 'AI Educational Assistant', text: 'Check out this suite of AI-powered tools for educators!', url: window.location.href }, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} title="Share this app" className="p-2 rounded-full hover:bg-[#333]"><Share2Icon className="w-5 h-5 text-white" /></button>
+                            <button id="clear-chat-button" onClick={clearChat} title="Clear chat messages" className="p-2 rounded-lg hover:bg-[#333] text-white transition-colors"><TrashIcon className="w-5 h-5" /></button>
                         </div>
-                        {isHelpMenuOpen && <div onClick={() => setIsHelpMenuOpen(false)} className="fixed inset-0 z-[90]"></div>}
-                        <a href="gift.html" target="_blank" rel="noopener noreferrer" id="gift-button" title="Support the Creator" className="p-2 rounded-lg hover:bg-amber-50 text-amber-600 transition-colors no-underline">
-                            <span className="text-lg">🎁</span>
-                        </a>
-                        <button id="notifications-button" onClick={() => setIsNotificationsOpen(true)} title="Notifications" className="relative p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors"><BellIcon className="w-5 h-5" />{hasNewNotification && <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>}</button>
-                        <button id="share-app-button" onClick={() => handleShare({ title: 'AI Educational Assistant', text: 'Check out this suite of AI-powered tools for educators!', url: window.location.href }, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} title="Share this app" className="p-2 rounded-full hover:bg-slate-200"><Share2Icon className="w-5 h-5 text-slate-500" /></button>
-                        <button id="clear-chat-button" onClick={clearChat} title="Clear chat messages" className="p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors"><TrashIcon className="w-5 h-5" /></button>
                     </div>
                 </header>
 
-                <main ref={chatContainerRef} className={`flex-1 overflow-y-auto custom-scrollbar relative pt-36 sm:pt-32 ${activePromptKey ? 'pb-48' : 'pb-4'}`}>
+                <main ref={chatContainerRef} className={`flex-1 overflow-y-auto custom-scrollbar relative pt-36 sm:pt-32 bg-[#0f0f0f] ${activePromptKey ? 'pb-48' : 'pb-4'}`}>
                     {activePromptKey ? (
-                        <div className="px-1 p-2 sm:p-6 space-y-4">
+                        <div className="px-1 p-2 sm:p-6 space-y-6">
                             {chatHistory.map((msg, index) => {
                                 // For system messages, we render a simple, centered div.
                                 if (msg.role === 'system') {
                                     return (
-                                        <div key={msg.id || index} className="text-center text-xs text-slate-500 italic my-2">
+                                        <div key={msg.id || index} className="text-center text-xs text-slate-400 italic my-2">
                                             🤖 {msg.content}
                                         </div>
                                     );
@@ -1611,48 +1617,49 @@ const App = ({ onMount }) => {
 
                                 // For user and assistant messages, we render the full chat bubble.
                                 return (
-                                    <div key={msg.id || index} className={`flex w-full items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
-                                        <div className={`flex flex-col w-full max-w-full ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
-                                            <div className={`rounded-lg w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
-                                                {msg.files && msg.files.length > 0 && (
-                                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2 bg-indigo-500/80">
-                                                        {msg.files.map((file, idx) => (
-                                                            <div key={idx} className="relative group">
-                                                                {file.previewUrl ?
-                                                                    <img src={file.previewUrl} alt={file.name} className="w-full h-24 object-cover rounded-md" /> :
-                                                                    <div className="w-full h-24 bg-indigo-400 rounded-md flex flex-col items-center justify-center text-white p-1">
-                                                                        <FileIcon className="w-8 h-8" />
-                                                                        <span className="text-xs text-center truncate w-full mt-1">{file.name}</span>
-                                                                    </div>
-                                                                }
-                                                                <button onClick={() => handleRemoveFile(file.id)} className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity" title="Remove file">
-                                                                    <XIcon className="w-3 h-3" />
-                                                                </button>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                )}
+                                    <div key={msg.id || index} className="w-full">
+                                        {/* Role Label - AI Studio Style */}
+                                        <div className="text-xs font-medium text-slate-400 mb-1 px-1">
+                                            {msg.role === 'user' ? 'User' : 'Model'}
+                                        </div>
+                                        <div className={`w-full ${msg.role === 'user' ? 'bg-[#1a1a1a]' : 'bg-[#1e1e1e]'} rounded-lg border border-[#333]`}>
+                                            {msg.files && msg.files.length > 0 && (
+                                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-3 border-b border-[#333]">
+                                                    {msg.files.map((file, idx) => (
+                                                        <div key={idx} className="relative group">
+                                                            {file.previewUrl ?
+                                                                <img src={file.previewUrl} alt={file.name} className="w-full h-24 object-cover rounded-md border border-[#333]" /> :
+                                                                <div className="w-full h-24 bg-[#333] rounded-md flex flex-col items-center justify-center text-[#888] p-1">
+                                                                    <FileIcon className="w-8 h-8" />
+                                                                    <span className="text-xs text-center truncate w-full mt-1">{file.name}</span>
+                                                                </div>
+                                                            }
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+                                            <div className="text-white">
                                                 <MarkdownRenderer htmlContent={msg.role === 'user' ? msg.content.replace(/\n/g, '<br/>') : marked.parse(msg.content)} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
-                                                <MessageMenu
-                                                    msg={msg}
-                                                    index={index}
-                                                    onCopy={async (content) => {
-                                                        if (quotas.downloadsLeft <= 0) return;
-                                                        try {
-                                                            const newCount = await FirebaseService.decrementQuota(user.uid, 'copy');
-                                                            setQuotas(prev => ({ ...prev, downloadsLeft: newCount }));
-                                                            handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError);
-                                                        } catch (err) {
-                                                            console.error('Copy quota decrement failed:', err);
-                                                        }
-                                                    }}
-                                                    onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })}
-                                                    onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))}
-                                                    onRegenerate={handleRegenerate}
-                                                    onDocxDownload={handleDocxDownload}
-                                                    downloadsLeft={quotas.downloadsLeft}
-                                                />
                                             </div>
+                                            <MessageMenu
+                                                msg={msg}
+                                                index={index}
+                                                onCopy={async (content) => {
+                                                    if (quotas.downloadsLeft <= 0) return;
+                                                    try {
+                                                        const newCount = await FirebaseService.decrementQuota(user.uid, 'copy');
+                                                        setQuotas(prev => ({ ...prev, downloadsLeft: newCount }));
+                                                        handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError);
+                                                    } catch (err) {
+                                                        console.error('Copy quota decrement failed:', err);
+                                                    }
+                                                }}
+                                                onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })}
+                                                onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))}
+                                                onRegenerate={handleRegenerate}
+                                                onDocxDownload={handleDocxDownload}
+                                                downloadsLeft={quotas.downloadsLeft}
+                                            />
                                         </div>
                                     </div>
                                 );
@@ -1665,13 +1672,13 @@ const App = ({ onMount }) => {
                 </main>
 
                 {/* --- NOTIFICATIONS PANEL --- */}
-                <div className={`fixed top-0 right-0 h-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${isNotificationsOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ width: 'min(400px, 100vw)' }}>
+                <div className={`fixed top-0 right-0 h-full bg-[#1a1a1a] shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${isNotificationsOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ width: 'min(400px, 100vw)' }}>
                     <div className="flex flex-col h-full">
-                        <header className="p-4 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
-                            <h3 className="text-xl font-semibold text-slate-800">Notifications</h3>
+                        <header className="p-4 border-b border-slate-700 flex justify-between items-center flex-shrink-0">
+                            <h3 className="text-xl font-semibold text-white">Notifications</h3>
                             <button
                                 onClick={() => setIsNotificationsOpen(false)}
-                                className="p-2 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg"
+                                className="p-2 bg-[#333] hover:bg-[#444] text-white rounded-lg"
                             >
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -1682,12 +1689,12 @@ const App = ({ onMount }) => {
                             {notifications.length > 0 ? (
                                 <div className="space-y-4 p-4">
                                     {notifications.map((note, index) => (
-                                        <div key={index} className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                                            <p className="font-semibold text-slate-800">{note.message}</p>
-                                            <p className="text-xs text-slate-500 mt-2">
+                                        <div key={index} className="bg-[#2a2a2a] p-4 rounded-lg border border-[#333]">
+                                            <p className="font-semibold text-white">{note.message}</p>
+                                            <p className="text-xs text-slate-400 mt-2">
                                                 {new Date(note.timestamp).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                                             </p>
-                                            {note.url && <a href={note.url} target="_blank" rel="noopener noreferrer" className="text-sm text-indigo-600 hover:underline mt-2 inline-block">Learn More &raquo;</a>}
+                                            {note.url && <a href={note.url} target="_blank" rel="noopener noreferrer" className="text-sm text-white hover:underline mt-2 inline-block">Learn More &raquo;</a>}
                                         </div>
                                     ))}
                                 </div>
@@ -1706,105 +1713,111 @@ const App = ({ onMount }) => {
 
 
                 {/* Footer Input Area */}
-                {activePromptKey && (
-                    <footer id="chat-input-area" className="fixed bottom-0 left-0 right-0 p-4 pb-safe border-t border-slate-200 bg-white flex-shrink-0" style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))', marginLeft: isMenuOpen && window.innerWidth >= 1024 ? sidebarWidth : 0 }}>
-                        <div className="relative mx-auto max-w-4xl">
-                            {error && <div className={`p-4 border-t flex-shrink-0 ${error.includes('Creating your Google Doc') || error.includes('Getting shared API key') ? 'bg-green-100 text-green-700 border-green-200' : 'bg-red-100 text-red-700 border-red-200'}`}>{error}</div>}
-                            {/* NEW: Attachment Manager UI */}
-                            {pendingFiles.length > 0 && (
-                                <div className="absolute bottom-full left-0 mb-2 w-full max-w-2xl p-2">
-                                    <div className="bg-slate-200 rounded-lg p-3 shadow-md max-h-40 overflow-y-auto">
-                                        {/* Header with total size */}
-                                        <div className="flex justify-between items-center mb-2">
-                                            <h4 className="text-sm font-semibold text-slate-800">Attachments ({pendingFiles.length})</h4>
-                                            <div className="flex items-center gap-2">
-                                                <span className={`text-xs font-medium ${pendingFiles.reduce((sum, f) => sum + f.file.size, 0) > MAX_TOTAL_UPLOAD_SIZE * 0.9 ? 'text-red-600 font-bold' : 'text-slate-600'}`}>
-                                                    {formatBytes(pendingFiles.reduce((sum, f) => sum + f.file.size, 0))} / {formatBytes(MAX_TOTAL_UPLOAD_SIZE)}
-                                                </span>
-                                                <button onClick={() => setPendingFiles([])} className="text-xs text-red-600 hover:text-red-800 font-medium" title="Clear all attachments">
-                                                    Clear All
-                                                </button>
-                                            </div>
-                                        </div>
-
-                                        {/* Horizontal list of attached files */}
-                                        <div className="flex flex-wrap gap-2">
-                                            {pendingFiles.map(f => (
-                                                <div key={f.id} className="flex items-center gap-2 bg-white p-2 rounded-md text-sm">
-                                                    {f.previewUrl ?
-                                                        <img src={f.previewUrl} alt="Preview" className="w-10 h-10 object-cover rounded-md shrink-0" /> :
-                                                        <FileIcon className="w-10 h-10 text-slate-500 shrink-0 p-1" />
-                                                    }
-                                                    <div className="flex-grow overflow-hidden max-w-[100px]">
-                                                        <p className="font-medium text-slate-800 truncate text-xs">{f.file.name}</p>
-                                                        <p className="text-xs text-slate-500">{formatBytes(f.file.size)}</p>
-                                                    </div>
-                                                    <button onClick={() => handleRemoveFile(f.id)} className="p-1 rounded-full hover:bg-slate-200 text-slate-500 shrink-0">
-                                                        <XIcon className="w-3 h-3" />
+                {
+                    activePromptKey && (
+                        <footer id="chat-input-area" className="fixed bottom-0 left-0 right-0 p-4 pb-safe border-t border-[#333] bg-[#1a1a1a] flex-shrink-0" style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))', marginLeft: isMenuOpen && window.innerWidth >= 1024 ? sidebarWidth : 0 }}>
+                            <div className="relative mx-auto max-w-4xl">
+                                {error && <div className={`p-4 border-t flex-shrink-0 ${error.includes('Creating your Google Doc') || error.includes('Getting shared API key') || error.includes('Getting Google Docs Ready') ? 'bg-[#1e1e1e] text-white border-[#333]' : 'bg-[#1a1a1a] text-red-400 border-red-900'}`}>{error}</div>}
+                                {/* NEW: Attachment Manager UI */}
+                                {pendingFiles.length > 0 && (
+                                    <div className="absolute bottom-full left-0 mb-2 w-full max-w-2xl p-2">
+                                        <div className="bg-[#2a2a2a] rounded-lg p-3 shadow-md max-h-40 overflow-y-auto border border-[#333]">
+                                            {/* Header with total size */}
+                                            <div className="flex justify-between items-center mb-2">
+                                                <h4 className="text-sm font-semibold text-white">Attachments ({pendingFiles.length})</h4>
+                                                <div className="flex items-center gap-2">
+                                                    <span className={`text-xs font-medium ${pendingFiles.reduce((sum, f) => sum + f.file.size, 0) > MAX_TOTAL_UPLOAD_SIZE * 0.9 ? 'text-red-400 font-bold' : 'text-slate-400'}`}>
+                                                        {formatBytes(pendingFiles.reduce((sum, f) => sum + f.file.size, 0))} / {formatBytes(MAX_TOTAL_UPLOAD_SIZE)}
+                                                    </span>
+                                                    <button onClick={() => setPendingFiles([])} className="text-xs text-red-400 hover:text-red-300 font-medium" title="Clear all attachments">
+                                                        Clear All
                                                     </button>
                                                 </div>
-                                            ))}
+                                            </div>
+
+                                            {/* Horizontal list of attached files */}
+                                            <div className="flex flex-wrap gap-2">
+                                                {pendingFiles.map(f => (
+                                                    <div key={f.id} className="flex items-center gap-2 bg-[#333] p-2 rounded-md text-sm border border-[#444]">
+                                                        {f.previewUrl ?
+                                                            <img src={f.previewUrl} alt="Preview" className="w-10 h-10 object-cover rounded-md shrink-0" /> :
+                                                            <div className="p-1 bg-[#222] rounded">
+                                                                <FileTextIcon className="w-4 h-4 text-white" />
+                                                            </div>
+                                                        }
+                                                        <div className="flex-1 min-w-0">
+                                                            <div className="truncate text-white font-medium">{f.file.name}</div>
+                                                            <div className="text-xs text-[#888]">{formatBytes(f.file.size)}</div>
+                                                        </div>
+                                                        <button onClick={() => handleRemoveFile(f.id)} className="p-1 rounded-full hover:bg-[#444] text-[#888] hover:text-white shrink-0">
+                                                            <XIcon className="w-3 h-3" />
+                                                        </button>
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            )}
-                            <div className="flex items-end gap-2 sm:gap-4">
-                                <div id="file-attach-button" className="flex flex-col items-center self-end">
-                                    <label htmlFor="file-upload" title={isFileUploadDisabled ? "File upload not supported by this model" : "Attach File"} className={`p-3 rounded-full hover:bg-slate-100 ${isFileUploadDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}>
-                                        <PlusCircleIcon className="w-6 h-6 text-slate-600" />
-                                    </label>
-                                    <span className="text-xs text-slate-400 hidden sm:inline">Attach</span>
-                                </div>
-                                <input id="file-upload" type="file" className="hidden" onChange={handleFileChange} disabled={isFileUploadDisabled} />
-                                <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); } }} placeholder="Type here..." className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48" rows="1" />
-                                <div className="flex flex-col items-center gap-1">
-                                    <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 flex items-center gap-2 font-semibold">
-                                        {isLoading ? (<><StopIcon className="w-5 h-5" /><span>Stop</span></>) : (<><SendIcon className="w-5 h-5" /><span>Send</span></>)}
-                                    </button>
-                                    {quotas.messagesLeft <= 0 ? (
-                                        <span className="text-xs text-red-600 font-semibold">0/50 - Use own key</span>
-                                    ) : (
-                                        <span className="text-xs text-slate-500">{quotas.messagesLeft}/50</span>
-                                    )}
+                                )}
+                                <div className="flex items-end gap-2 sm:gap-4">
+                                    <div id="file-attach-button" className="flex flex-col items-center self-end">
+                                        <label htmlFor="file-upload" title={isFileUploadDisabled ? "File upload not supported by this model" : "Attach File"} className={`p-3 rounded-full hover:bg-[#333] ${isFileUploadDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}>
+                                            <PlusCircleIcon className="w-6 h-6 text-white" />
+                                        </label>
+                                        <span className="text-xs text-white hidden sm:inline">Attach</span>
+                                    </div>
+                                    <input id="file-upload" type="file" className="hidden" onChange={handleFileChange} disabled={isFileUploadDisabled} />
+                                    <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); } }} placeholder="Type here..." className="flex-1 p-3 border border-[#333] bg-[#1e1e1e] text-white rounded-lg focus:outline-none focus:border-[#444] resize-none overflow-y-auto max-h-48 placeholder-slate-500" rows="1" />
+                                    <div className="flex flex-col items-center gap-1">
+                                        <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-[#333] text-white disabled:bg-[#222] disabled:text-slate-600 transition-colors hover:bg-[#444] flex items-center gap-2 font-semibold">
+                                            {isLoading ? (<><StopIcon className="w-5 h-5" /><span>Stop</span></>) : (<><SendIcon className="w-5 h-5" /><span>Send</span></>)}
+                                        </button>
+                                        {quotas.messagesLeft <= 0 ? (
+                                            <span className="text-xs text-red-500 font-semibold">0/50 - Use own key</span>
+                                        ) : (
+                                            <span className="text-xs text-slate-500">{quotas.messagesLeft}/50</span>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </footer>
-                )}
-            </div>
+                        </footer>
+                    )
+                }
+            </div >
 
             {/* --- TOASTS & MODALS --- */}
-            {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
-            {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5" /> : <CheckCircleIcon className="w-5 h-5" />}<span>{apiKeyToast}</span></div>}
+            {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-[#1e1e1e] border border-[#333] text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
+            {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 border border-[#333] ${apiKeyToast.includes('Invalid') ? 'bg-[#1e1e1e] text-red-400' : 'bg-[#1e1e1e] text-white'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5" /> : <CheckCircleIcon className="w-5 h-5" />}<span>{apiKeyToast}</span></div>}
 
             {/* Sign Out Confirmation Modal */}
-            {showSignOutModal && (
-                <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-                    <div className="bg-slate-800 rounded-2xl p-6 max-w-md w-full border border-slate-700 shadow-2xl">
-                        <h3 className="text-xl font-bold text-white mb-3">Sign Out?</h3>
-                        <p className="text-slate-300 mb-6">
-                            Signing out will clear all chats, API keys, and settings from this browser. Your quotas are saved to your account.
-                        </p>
-                        <div className="flex gap-3">
-                            <button
-                                onClick={() => setShowSignOutModal(false)}
-                                className="flex-1 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors font-semibold"
-                            >
-                                Cancel
-                            </button>
-                            <button
-                                onClick={() => {
-                                    setShowSignOutModal(false);
-                                    FirebaseService.auth.signOut();
-                                }}
-                                className="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-semibold"
-                            >
-                                Sign Out
-                            </button>
+            {
+                showSignOutModal && (
+                    <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+                        <div className="bg-[#2a2a2a] rounded-2xl p-6 max-w-md w-full border border-[#333] shadow-2xl">
+                            <h3 className="text-xl font-bold text-white mb-3">Sign Out?</h3>
+                            <p className="text-slate-300 mb-6">
+                                Signing out will clear all chats, API keys, and settings from this browser. Your quotas are saved to your account.
+                            </p>
+                            <div className="flex gap-3">
+                                <button
+                                    onClick={() => setShowSignOutModal(false)}
+                                    className="flex-1 px-4 py-2 bg-[#333] hover:bg-[#444] text-white rounded-lg transition-colors font-semibold"
+                                >
+                                    Cancel
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        setShowSignOutModal(false);
+                                        FirebaseService.auth.signOut();
+                                    }}
+                                    className="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-semibold"
+                                >
+                                    Sign Out
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
+                )
+            }
 
             <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={(feedbackData) => handleFeedbackSubmit({ ...feedbackData, sessionId: SESSION_ID })} assistantName={activePromptKey} />
             <CartModal
@@ -1886,6 +1899,6 @@ const App = ({ onMount }) => {
                 onClose={() => setIsDocModalOpen(false)}
                 docInfo={createdDocInfo}
             />
-        </div>
+        </div >
     );
 }
