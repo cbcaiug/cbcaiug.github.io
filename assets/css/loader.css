@@ -71,7 +71,7 @@ html, body, #root {
 
 @keyframes logo-spin {
     0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    100% { transform: rotate(-360deg); }
 }
 
 .loading-screen-text {
@@ -91,7 +91,7 @@ html, body, #root {
 
 .progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, #0ea5ff, #4f46e5);
+    background: linear-gradient(90deg, #ff6b9d, #c084fc, #60a5fa);
     border-radius: 2px;
     animation: progress 1.5s ease-in-out infinite;
 }
