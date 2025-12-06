@@ -57,7 +57,7 @@ const WelcomeView = () => {
                 {/* Logo */}
                 <div className="flex justify-center mb-4">
                     <img
-                        src="https://github.com/cbcaiug/cbcaiug.github.io/blob/968296ac78f5009dda57de96f6491dd4ed0e9fb5/images/cbc-ai-tool-logo%20FOR%20SOCIAL%20MEDIA%20FORMAT.jpeg?raw=true"
+                        src="https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/911bba708eb130fd4e7c6524b8d3d864a3ef5fdf/assets/images/swirl-dbg.jpg"
                         alt="CBC AI Logo"
                         className="w-14 h-14 rounded-full shadow-md object-cover border-2 border-slate-600"
                     />
