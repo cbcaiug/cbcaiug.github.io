@@ -224,6 +224,20 @@
         let allUsers = [];
         let currentFilter = 'all';
 
+        // Helper: Format timestamp to EAT (East Africa Time)
+        function toEAT(timestamp) {
+            if (!timestamp) return 'Never';
+            const date = new Date(timestamp.seconds * 1000);
+            return date.toLocaleString('en-US', {
+                timeZone: 'Africa/Nairobi',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+            });
+        }
+
         // --- 2. AUTH LOGIC ---
         auth.onAuthStateChanged(user => {
             if (user) {
@@ -361,7 +375,7 @@
             }
 
             container.innerHTML = filtered.map(user => {
-                const lastActive = user.lastActive ? new Date(user.lastActive.seconds * 1000).toLocaleDateString() : 'Never';
+                const lastActive = toEAT(user.lastActive);
                 const dlClass = user.downloadsLeft < 5 ? 'badge-red' : 'badge-green';
                 const msgClass = user.messagesLeft < 10 ? 'badge-red' : 'badge-green';
 
