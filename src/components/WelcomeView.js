@@ -43,7 +43,7 @@ const WelcomeView = () => {
     };
 
     return (
-        <div className="w-full h-full flex items-center justify-center bg-white relative overflow-hidden font-sans p-4">
+        <div className="w-full h-full flex items-start sm:items-center justify-center bg-white relative overflow-hidden font-sans p-4 pt-8 sm:pt-4">
 
             {/* Ambient Background Decoration */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
