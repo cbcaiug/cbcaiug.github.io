@@ -3,9 +3,38 @@
  *
  * A compact, light-themed welcome screen sized like the auth modal.
  * Fits within the available viewport without scrolling on both phone and PC.
+ * Includes PWA install prompt.
  */
 
 const WelcomeView = () => {
+    const [installPrompt, setInstallPrompt] = React.useState(null);
+
+    React.useEffect(() => {
+        const handleBeforeInstallPrompt = (e) => {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            // Stash the event so it can be triggered later.
+            setInstallPrompt(e);
+        };
+
+        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+        return () => {
+            window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        };
+    }, []);
+
+    const handleInstallClick = async () => {
+        if (!installPrompt) return;
+        // Show the install prompt
+        installPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        const { outcome } = await installPrompt.userChoice;
+        console.log(`User response to the install prompt: ${outcome}`);
+        // We've used the prompt, and can't use it again, discard it
+        setInstallPrompt(null);
+    };
+
     return (
         <div className="w-full h-full flex items-center justify-center bg-white relative overflow-hidden font-sans p-4">
 
@@ -61,6 +90,17 @@ const WelcomeView = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Install Button (Only visible if supported) */}
+                {installPrompt && (
+                    <button
+                        onClick={handleInstallClick}
+                        className="w-full mb-3 flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all shadow-md"
+                    >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Install App
+                    </button>
+                )}
 
                 {/* Footer Links */}
                 <div className="flex justify-center gap-3 pt-3 border-t border-gray-100">
