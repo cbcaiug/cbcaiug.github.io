@@ -69,7 +69,7 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
         <div className="flex justify-center mb-6">
           <div className="w-24 h-24 rounded-lg bg-white/10 border-2 border-white/20 shadow-lg flex items-center justify-center overflow-hidden">
             <img
-              src="https://raw.githubusercontent.com/derikmusa/derikmusa.github.io/a8d098a0d2e51d472cf4291b37e02d4f26f7d642/cbc-ai-tool-logo.jpeg"
+              src="https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/main/assets/images/cbc-ai-tool-logo.jpeg"
               alt="CBC AI Tool"
               className="w-full h-full object-contain"
             />
