@@ -78,7 +78,10 @@ const App = ({ onMount }) => {
     const [customPromptContent, setCustomPromptContent] = useState('');
     // The initial assistant is now read from the URL once, and then managed by the app's state.
     const [activePromptKey, setActivePromptKey] = useState(() => {
-        const assistant = new URLSearchParams(window.location.search).get('assistant') || 'Coteacher';
+        const assistant = new URLSearchParams(window.location.search).get('assistant');
+
+        if (!assistant) return null;
+
         // Set initial meta tags immediately
         const assistantDescriptions = {
             'Prompt Assistant': 'AI-powered prompt engineering and optimization tool for educational content creation.',
@@ -418,6 +421,11 @@ const App = ({ onMount }) => {
 
     // --- HANDLERS & LOGIC ---
     const loadInitialMessage = useCallback(async (promptKey) => {
+        if (!promptKey) {
+            setChatHistory([]);
+            return;
+        }
+
         const chatKey = `chatHistory_${promptKey}`;
         const savedChat = JSON.parse(localStorage.getItem(chatKey));
         const hours = parseFloat(autoDeleteHours || '2');
@@ -684,14 +692,14 @@ const App = ({ onMount }) => {
 
         } catch (error) {
             console.error("Error creating Google Doc:", error);
-            
+
             // Log the error to GAS for debugging
             trackEvent('google_doc_error', activePromptKey, {
                 sessionId: SESSION_ID,
                 error: error.message,
                 model: selectedModelName
             });
-            
+
             // User-friendly error message
             if (error.message.includes('fetch') || error.message.includes('network')) {
                 setError('Network error. Check your connection and try again.');
@@ -841,7 +849,7 @@ const App = ({ onMount }) => {
                     } catch (quotaError) {
                         console.error('Message quota decrement failed:', quotaError);
                     }
-                    
+
                     // Use our new local variable for logging.
                     const finalKeyLabel = keyLabelForLogging || (isTrial ? 'SHARED KEY' : 'PERSONAL KEY');
 
@@ -1052,7 +1060,13 @@ const App = ({ onMount }) => {
         setApiKeys({});
         setApiKeyStatus({});
 
-        loadInitialMessage(activePromptKey);
+        // Reset to Welcome View
+        setActivePromptKey(null);
+        const url = new URL(window.location);
+        url.searchParams.delete('assistant');
+        window.history.pushState({}, '', url);
+
+        setChatHistory([]);
         window.dispatchEvent(new CustomEvent('historyUpdated'));
     };
 
@@ -1119,23 +1133,23 @@ const App = ({ onMount }) => {
     useEffect(() => {
         // Firebase auth listener with real-time quota sync
         let quotaUnsubscribe = null;
-        
+
         const authUnsubscribe = FirebaseService.auth.onAuthStateChanged(async (firebaseUser) => {
             const previousUser = user;
             setUser(firebaseUser);
-            
+
             // Clean up previous quota listener
             if (quotaUnsubscribe) {
                 quotaUnsubscribe();
                 quotaUnsubscribe = null;
             }
-            
+
             if (firebaseUser) {
                 try {
                     // Check if user upgraded from anonymous to registered
                     const wasAnonymous = previousUser?.isAnonymous;
                     const isNowRegistered = !firebaseUser.isAnonymous;
-                    
+
                     if (wasAnonymous && isNowRegistered) {
                         // Upgrade quotas to full (20/50)
                         await FirebaseService.db.collection('users').doc(firebaseUser.uid).set({
@@ -1145,23 +1159,23 @@ const App = ({ onMount }) => {
                             createdAt: firebase.firestore.FieldValue.serverTimestamp()
                         });
                     }
-                    
+
                     // Initial quota load and ensure email is stored
                     const userQuotas = await FirebaseService.getUserQuotas(firebaseUser.uid);
                     setQuotas(userQuotas);
-                    
+
                     // Update email if missing (for old users)
                     if (!userQuotas.email && firebaseUser.email) {
                         await FirebaseService.db.collection('users').doc(firebaseUser.uid).update({
                             email: firebaseUser.email
                         });
                     }
-                    
+
                     // Load greeting message for new users
                     if (chatHistory.length === 0) {
                         loadInitialMessage(activePromptKey);
                     }
-                    
+
                     // Set up real-time listener for quota changes (syncs across devices)
                     quotaUnsubscribe = FirebaseService.subscribeToQuotas(firebaseUser.uid, (updatedQuotas) => {
                         setQuotas(updatedQuotas);
@@ -1177,18 +1191,20 @@ const App = ({ onMount }) => {
                 setIsAuthenticating(false);
                 setChatHistory([]);
                 setQuotas({ downloadsLeft: 20, messagesLeft: 50 });
-                setActivePromptKey('Coteacher');
+                setChatHistory([]);
+                setQuotas({ downloadsLeft: 20, messagesLeft: 50 });
+                setActivePromptKey(null); // Reset to Welcome View
                 setApiKeys({});
                 setApiKeyStatus({});
                 setSelectedProviderKey('google');
                 setSelectedModelName('gemini-2.5-pro');
                 setUseSharedApiKey(true);
             }
-            
+
             // Hide loading state after auth check
             setIsAuthenticating(false);
         });
-        
+
         return () => {
             authUnsubscribe();
             if (quotaUnsubscribe) quotaUnsubscribe();
@@ -1296,6 +1312,11 @@ const App = ({ onMount }) => {
     }, [chatHistory, activePromptKey]);
     // This effect updates the page title and meta tags whenever the active assistant changes.
     useEffect(() => {
+        if (!activePromptKey) {
+            document.title = 'CBC AI TOOL | AI Educational Assistant';
+            return;
+        }
+
         const assistantDescriptions = {
             'Prompt Assistant': 'AI-powered prompt engineering and optimization tool for educational content creation.',
             'Item Writer': 'Generate scenario-based assessment items with structured scoring guides for Uganda\'s CBC curriculum.',
@@ -1317,11 +1338,11 @@ const App = ({ onMount }) => {
         const description = assistantDescriptions[activePromptKey] || 'AI-powered educational tool for Uganda\'s CBC curriculum.';
 
         document.title = title;
-        document.getElementById('page-description').content = description;
-        document.getElementById('og-title').content = title;
-        document.getElementById('og-description').content = description;
-        document.getElementById('twitter-title').content = title;
-        document.getElementById('twitter-description').content = description;
+        if (document.getElementById('page-description')) document.getElementById('page-description').content = description;
+        if (document.getElementById('og-title')) document.getElementById('og-title').content = title;
+        if (document.getElementById('og-description')) document.getElementById('og-description').content = description;
+        if (document.getElementById('twitter-title')) document.getElementById('twitter-title').content = title;
+        if (document.getElementById('twitter-description')) document.getElementById('twitter-description').content = description;
     }, [activePromptKey]);
     // NEW: This effect runs whenever the selected model changes.
     useEffect(() => {
@@ -1432,14 +1453,14 @@ const App = ({ onMount }) => {
             </div>
         );
     }
-    
+
     // Show auth modal if not authenticated
     if (!user) {
         return (
             <div className="h-screen w-screen flex items-center justify-center bg-slate-900">
                 <AuthModal
                     isOpen={true}
-                    onClose={() => {}} // Can't close without auth
+                    onClose={() => { }} // Can't close without auth
                     onAuthSuccess={() => {
                         setShowAuthModal(false);
                         setError('');
@@ -1522,7 +1543,7 @@ const App = ({ onMount }) => {
             <div className="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
 
                 <header ref={headerRef} className="fixed top-0 left-0 right-0 p-2 lg:p-4 border-b border-slate-200 flex flex-col items-center gap-2 flex-shrink-0 bg-white z-10" style={{ marginLeft: isMenuOpen && window.innerWidth >= 1024 ? sidebarWidth : 0 }}>
-                    <h2 className="text-lg lg:text-xl font-semibold text-slate-800 text-center w-full">{activePromptKey} Assistant</h2>
+                    <h2 className="text-lg lg:text-xl font-semibold text-slate-800 text-center w-full">{activePromptKey ? `${activePromptKey} Assistant` : 'Welcome'}</h2>
                     <div className="flex flex-wrap items-center justify-center gap-1 lg:gap-2">
                         {!isMenuOpen && (
                             <button onClick={() => setIsMenuOpen(true)} className="p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors" title="Open Settings">
@@ -1571,56 +1592,72 @@ const App = ({ onMount }) => {
                     </div>
                 </header>
 
-                <main ref={chatContainerRef} className="flex-1 overflow-y-auto custom-scrollbar relative pt-36 sm:pt-32 pb-48">
-                    <div className="px-1 p-2 sm:p-6 space-y-4">
-                        {chatHistory.map((msg, index) => {
-                            // For system messages, we render a simple, centered div.
-                            if (msg.role === 'system') {
-                                return (
-                                    <div key={msg.id || index} className="text-center text-xs text-slate-500 italic my-2">
-                                        🤖 {msg.content}
-                                    </div>
-                                );
-                            }
+                <main ref={chatContainerRef} className={`flex-1 overflow-y-auto custom-scrollbar relative pt-36 sm:pt-32 ${activePromptKey ? 'pb-48' : 'pb-4'}`}>
+                    {activePromptKey ? (
+                        <div className="px-1 p-2 sm:p-6 space-y-4">
+                            {chatHistory.map((msg, index) => {
+                                // For system messages, we render a simple, centered div.
+                                if (msg.role === 'system') {
+                                    return (
+                                        <div key={msg.id || index} className="text-center text-xs text-slate-500 italic my-2">
+                                            🤖 {msg.content}
+                                        </div>
+                                    );
+                                }
 
-                            // For user and assistant messages, we render the full chat bubble.
-                            return (
-                                <div key={msg.id || index} className={`flex w-full items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
-                                    <div className={`flex flex-col w-full max-w-full ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
-                                        <div className={`rounded-lg w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
-                                            {msg.files && msg.files.length > 0 && (
-                                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2 bg-indigo-500/80">
-                                                    {msg.files.map((file, idx) => (
-                                                        <div key={idx} className="relative group">
-                                                            {file.previewUrl ?
-                                                                <img src={file.previewUrl} alt={file.name} className="w-full h-24 object-cover rounded-md" /> :
-                                                                <div className="w-full h-24 bg-indigo-400 rounded-md flex flex-col items-center justify-center text-white p-1">
-                                                                    <FileIcon className="w-8 h-8" />
-                                                                    <span className="text-xs text-center truncate w-full mt-1">{file.name}</span>
-                                                                </div>
-                                                            }
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            )}
-                                            <MarkdownRenderer htmlContent={marked.parse(msg.content || '')} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
-                                            <MessageMenu msg={msg} index={index} downloadsLeft={quotas.downloadsLeft} onCopy={async (content) => {
-                                                if (quotas.downloadsLeft <= 0) return;
-                                                try {
-                                                    const newCount = await FirebaseService.decrementQuota(user.uid, 'copy');
-                                                    setQuotas(prev => ({ ...prev, downloadsLeft: newCount }));
-                                                    handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError);
-                                                } catch (err) {
-                                                    console.error('Copy quota decrement failed:', err);
-                                                }
-                                            }} onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })} onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))} onRegenerate={handleRegenerate} onDocxDownload={handleDocxDownload} />
+                                // For user and assistant messages, we render the full chat bubble.
+                                return (
+                                    <div key={msg.id || index} className={`flex w-full items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
+                                        <div className={`flex flex-col w-full max-w-full ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
+                                            <div className={`rounded-lg w-full overflow-hidden flex flex-col ${msg.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white border border-slate-200'}`}>
+                                                {msg.files && msg.files.length > 0 && (
+                                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2 bg-indigo-500/80">
+                                                        {msg.files.map((file, idx) => (
+                                                            <div key={idx} className="relative group">
+                                                                {file.previewUrl ?
+                                                                    <img src={file.previewUrl} alt={file.name} className="w-full h-24 object-cover rounded-md" /> :
+                                                                    <div className="w-full h-24 bg-indigo-400 rounded-md flex flex-col items-center justify-center text-white p-1">
+                                                                        <FileIcon className="w-8 h-8" />
+                                                                        <span className="text-xs text-center truncate w-full mt-1">{file.name}</span>
+                                                                    </div>
+                                                                }
+                                                                <button onClick={() => handleRemoveFile(file.id)} className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity" title="Remove file">
+                                                                    <XIcon className="w-3 h-3" />
+                                                                </button>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                                <MarkdownRenderer htmlContent={msg.role === 'user' ? msg.content.replace(/\n/g, '<br/>') : marked.parse(msg.content)} isLoading={msg.isLoading} isTakingLong={isTakingLong} />
+                                                <MessageMenu
+                                                    msg={msg}
+                                                    index={index}
+                                                    onCopy={async (content) => {
+                                                        if (quotas.downloadsLeft <= 0) return;
+                                                        try {
+                                                            const newCount = await FirebaseService.decrementQuota(user.uid, 'copy');
+                                                            setQuotas(prev => ({ ...prev, downloadsLeft: newCount }));
+                                                            handleCopyToClipboard(content, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); }, setError);
+                                                        } catch (err) {
+                                                            console.error('Copy quota decrement failed:', err);
+                                                        }
+                                                    }}
+                                                    onShare={(data) => handleShare(data, () => { setShowCopyToast(true); setTimeout(() => setShowCopyToast(false), 3000); })}
+                                                    onDelete={(idx) => setChatHistory(prev => prev.filter((_, i) => i !== idx))}
+                                                    onRegenerate={handleRegenerate}
+                                                    onDocxDownload={handleDocxDownload}
+                                                    downloadsLeft={quotas.downloadsLeft}
+                                                />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            );
-                        })}
-                        <div ref={chatEndRef} />
-                    </div>
+                                );
+                            })}
+                            <div ref={chatEndRef} />
+                        </div>
+                    ) : (
+                        <WelcomeView />
+                    )}
                 </main>
 
                 {/* --- NOTIFICATIONS PANEL --- */}
@@ -1664,75 +1701,78 @@ const App = ({ onMount }) => {
 
 
 
-                <footer id="chat-input-area" className="fixed bottom-0 left-0 right-0 p-4 pb-safe border-t border-slate-200 bg-white flex-shrink-0" style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))', marginLeft: isMenuOpen && window.innerWidth >= 1024 ? sidebarWidth : 0 }}>
-                    <div className="relative mx-auto max-w-4xl">
-                        {error && <div className={`p-4 border-t flex-shrink-0 ${error.includes('Creating your Google Doc') || error.includes('Getting shared API key') ? 'bg-green-100 text-green-700 border-green-200' : 'bg-red-100 text-red-700 border-red-200'}`}>{error}</div>}
-                        {/* NEW: Attachment Manager UI */}
-                        {pendingFiles.length > 0 && (
-                            <div className="absolute bottom-full left-0 mb-2 w-full max-w-2xl p-2">
-                                <div className="bg-slate-200 rounded-lg p-3 shadow-md max-h-40 overflow-y-auto">
-                                    {/* Header with total size */}
-                                    <div className="flex justify-between items-center mb-2">
-                                        <h4 className="text-sm font-semibold text-slate-800">Attachments ({pendingFiles.length})</h4>
-                                        <div className="flex items-center gap-2">
-                                            <span className={`text-xs font-medium ${pendingFiles.reduce((sum, f) => sum + f.file.size, 0) > MAX_TOTAL_UPLOAD_SIZE * 0.9 ? 'text-red-600 font-bold' : 'text-slate-600'}`}>
-                                                {formatBytes(pendingFiles.reduce((sum, f) => sum + f.file.size, 0))} / {formatBytes(MAX_TOTAL_UPLOAD_SIZE)}
-                                            </span>
-                                            <button onClick={() => setPendingFiles([])} className="text-xs text-red-600 hover:text-red-800 font-medium" title="Clear all attachments">
-                                                Clear All
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    {/* Horizontal list of attached files */}
-                                    <div className="flex flex-wrap gap-2">
-                                        {pendingFiles.map(f => (
-                                            <div key={f.id} className="flex items-center gap-2 bg-white p-2 rounded-md text-sm">
-                                                {f.previewUrl ?
-                                                    <img src={f.previewUrl} alt="Preview" className="w-10 h-10 object-cover rounded-md shrink-0" /> :
-                                                    <FileIcon className="w-10 h-10 text-slate-500 shrink-0 p-1" />
-                                                }
-                                                <div className="flex-grow overflow-hidden max-w-[100px]">
-                                                    <p className="font-medium text-slate-800 truncate text-xs">{f.file.name}</p>
-                                                    <p className="text-xs text-slate-500">{formatBytes(f.file.size)}</p>
-                                                </div>
-                                                <button onClick={() => handleRemoveFile(f.id)} className="p-1 rounded-full hover:bg-slate-200 text-slate-500 shrink-0">
-                                                    <XIcon className="w-3 h-3" />
+                {/* Footer Input Area */}
+                {activePromptKey && (
+                    <footer id="chat-input-area" className="fixed bottom-0 left-0 right-0 p-4 pb-safe border-t border-slate-200 bg-white flex-shrink-0" style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))', marginLeft: isMenuOpen && window.innerWidth >= 1024 ? sidebarWidth : 0 }}>
+                        <div className="relative mx-auto max-w-4xl">
+                            {error && <div className={`p-4 border-t flex-shrink-0 ${error.includes('Creating your Google Doc') || error.includes('Getting shared API key') ? 'bg-green-100 text-green-700 border-green-200' : 'bg-red-100 text-red-700 border-red-200'}`}>{error}</div>}
+                            {/* NEW: Attachment Manager UI */}
+                            {pendingFiles.length > 0 && (
+                                <div className="absolute bottom-full left-0 mb-2 w-full max-w-2xl p-2">
+                                    <div className="bg-slate-200 rounded-lg p-3 shadow-md max-h-40 overflow-y-auto">
+                                        {/* Header with total size */}
+                                        <div className="flex justify-between items-center mb-2">
+                                            <h4 className="text-sm font-semibold text-slate-800">Attachments ({pendingFiles.length})</h4>
+                                            <div className="flex items-center gap-2">
+                                                <span className={`text-xs font-medium ${pendingFiles.reduce((sum, f) => sum + f.file.size, 0) > MAX_TOTAL_UPLOAD_SIZE * 0.9 ? 'text-red-600 font-bold' : 'text-slate-600'}`}>
+                                                    {formatBytes(pendingFiles.reduce((sum, f) => sum + f.file.size, 0))} / {formatBytes(MAX_TOTAL_UPLOAD_SIZE)}
+                                                </span>
+                                                <button onClick={() => setPendingFiles([])} className="text-xs text-red-600 hover:text-red-800 font-medium" title="Clear all attachments">
+                                                    Clear All
                                                 </button>
                                             </div>
-                                        ))}
+                                        </div>
+
+                                        {/* Horizontal list of attached files */}
+                                        <div className="flex flex-wrap gap-2">
+                                            {pendingFiles.map(f => (
+                                                <div key={f.id} className="flex items-center gap-2 bg-white p-2 rounded-md text-sm">
+                                                    {f.previewUrl ?
+                                                        <img src={f.previewUrl} alt="Preview" className="w-10 h-10 object-cover rounded-md shrink-0" /> :
+                                                        <FileIcon className="w-10 h-10 text-slate-500 shrink-0 p-1" />
+                                                    }
+                                                    <div className="flex-grow overflow-hidden max-w-[100px]">
+                                                        <p className="font-medium text-slate-800 truncate text-xs">{f.file.name}</p>
+                                                        <p className="text-xs text-slate-500">{formatBytes(f.file.size)}</p>
+                                                    </div>
+                                                    <button onClick={() => handleRemoveFile(f.id)} className="p-1 rounded-full hover:bg-slate-200 text-slate-500 shrink-0">
+                                                        <XIcon className="w-3 h-3" />
+                                                    </button>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        )}
-                        <div className="flex items-end gap-2 sm:gap-4">
-                            <div id="file-attach-button" className="flex flex-col items-center self-end">
-                                <label htmlFor="file-upload" title={isFileUploadDisabled ? "File upload not supported by this model" : "Attach File"} className={`p-3 rounded-full hover:bg-slate-100 ${isFileUploadDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}>
-                                    <PlusCircleIcon className="w-6 h-6 text-slate-600" />
-                                </label>
-                                <span className="text-xs text-slate-400 hidden sm:inline">Attach</span>
-                            </div>
-                            <input id="file-upload" type="file" className="hidden" onChange={handleFileChange} disabled={isFileUploadDisabled} />
-                            <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); } }} placeholder="Type here..." className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48" rows="1" />
-                            <div className="flex flex-col items-center gap-1">
-                                <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 flex items-center gap-2 font-semibold">
-                                    {isLoading ? (<><StopIcon className="w-5 h-5" /><span>Stop</span></>) : (<><SendIcon className="w-5 h-5" /><span>Send</span></>)}
-                                </button>
-                                {quotas.messagesLeft <= 0 ? (
-                                    <span className="text-xs text-red-600 font-semibold">0/50 - Use own key</span>
-                                ) : (
-                                    <span className="text-xs text-slate-500">{quotas.messagesLeft}/50</span>
-                                )}
+                            )}
+                            <div className="flex items-end gap-2 sm:gap-4">
+                                <div id="file-attach-button" className="flex flex-col items-center self-end">
+                                    <label htmlFor="file-upload" title={isFileUploadDisabled ? "File upload not supported by this model" : "Attach File"} className={`p-3 rounded-full hover:bg-slate-100 ${isFileUploadDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}>
+                                        <PlusCircleIcon className="w-6 h-6 text-slate-600" />
+                                    </label>
+                                    <span className="text-xs text-slate-400 hidden sm:inline">Attach</span>
+                                </div>
+                                <input id="file-upload" type="file" className="hidden" onChange={handleFileChange} disabled={isFileUploadDisabled} />
+                                <textarea ref={userInputRef} id="chat-input" value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); } }} placeholder="Type here..." className="flex-1 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none overflow-y-auto max-h-48" rows="1" />
+                                <div className="flex flex-col items-center gap-1">
+                                    <button id="send-button" onClick={isLoading ? stopStreaming : handleSendMessage} disabled={!isLoading && !userInput.trim() && pendingFiles.length === 0} className="px-4 py-3 rounded-lg bg-indigo-600 text-white disabled:bg-slate-300 transition-colors hover:bg-indigo-700 flex items-center gap-2 font-semibold">
+                                        {isLoading ? (<><StopIcon className="w-5 h-5" /><span>Stop</span></>) : (<><SendIcon className="w-5 h-5" /><span>Send</span></>)}
+                                    </button>
+                                    {quotas.messagesLeft <= 0 ? (
+                                        <span className="text-xs text-red-600 font-semibold">0/50 - Use own key</span>
+                                    ) : (
+                                        <span className="text-xs text-slate-500">{quotas.messagesLeft}/50</span>
+                                    )}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </footer>
+                    </footer>
+                )}
             </div>
 
             {/* --- TOASTS & MODALS --- */}
             {showCopyToast && <div className="fixed bottom-24 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full shadow-lg z-50">Copied to clipboard!</div>}
             {apiKeyToast && <div className={`fixed top-5 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg z-50 flex items-center gap-2 text-white ${apiKeyToast.includes('Invalid') ? 'bg-red-600' : 'bg-green-600'}`}>{apiKeyToast.includes('Invalid') ? <AlertCircleIcon className="w-5 h-5" /> : <CheckCircleIcon className="w-5 h-5" />}<span>{apiKeyToast}</span></div>}
-            
+
             {/* Sign Out Confirmation Modal */}
             {showSignOutModal && (
                 <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
@@ -1761,7 +1801,7 @@ const App = ({ onMount }) => {
                     </div>
                 </div>
             )}
-            
+
             <FeedbackModal isOpen={isFeedbackModalOpen} onClose={() => setIsFeedbackModalOpen(false)} onSubmit={(feedbackData) => handleFeedbackSubmit({ ...feedbackData, sessionId: SESSION_ID })} assistantName={activePromptKey} />
             <CartModal
                 isOpen={isCartOpen}
