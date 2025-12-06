@@ -7,21 +7,29 @@
  */
 
 :root {
-    --app-primary: #14b8a6;       /* Teal-500 for buttons and highlights */
-    --app-primary-dark: #0f766e;  /* Teal-700 for dark backgrounds */
-    --app-primary-soft: #f0fdfa;  /* Teal-50, for soft backgrounds */
-    --app-primary-text: #0d9488;  /* Teal-600 for text */
-    --app-user-bubble: #4338ca;   /* Indigo for the user's chat bubble */
+    --app-primary: #14b8a6;
+    /* Teal-500 for buttons and highlights */
+    --app-primary-dark: #0f766e;
+    /* Teal-700 for dark backgrounds */
+    --app-primary-soft: #f0fdfa;
+    /* Teal-50, for soft backgrounds */
+    --app-primary-text: #0d9488;
+    /* Teal-600 for text */
+    --app-user-bubble: #4338ca;
+    /* Indigo for the user's chat bubble */
 }
 
 /* Base styles for layout and font */
-html, body, #root {
+html,
+body,
+#root {
     height: 100%;
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    overflow: hidden; /* Prevents the main body from scrolling */
+    overflow: hidden;
+    /* Prevents the main body from scrolling */
 }
 
 #root {
@@ -31,15 +39,21 @@ body {
 
 /* Custom scrollbar for a cleaner look */
 .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 14px;
+    height: 14px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
-    background: #f1f5f9; /* slate-100 */
+    background: #374151;
+    border-radius: 7px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #94a3b8; /* slate-400 */
-    border-radius: 3px;
+    background: #6b7280;
+    border-radius: 7px;
+    border: 2px solid #374151;
 }
 
-
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
