@@ -12,7 +12,7 @@ const { useState } = React;
 const LoadingScreen = ({ text }) => (
     <div className="loading-screen-container">
         <div className="loading-logo-wrapper">
-            <img src="https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/911bba708eb130fd4e7c6524b8d3d864a3ef5fdf/assets/images/swirl-dbg.jpg" alt="Loading Logo" className="loading-logo-img" />
+            <img src="https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/65124b5651bb92d0dc21b7211f547b5dbcba1892/assets/images/new_swirl_logo_logo2.jpeg" alt="Loading Logo" className="loading-logo-img" />
         </div>
         <p className="loading-screen-text">{text}</p>
         <div className="progress-bar-container">
