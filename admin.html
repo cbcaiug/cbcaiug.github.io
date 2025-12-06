@@ -271,13 +271,35 @@
 
         function handleLogout() {
             if (confirm("Log out of Admin Panel?")) {
+                // Unsubscribe from Firestore listener first
+                if (unsubscribeListener) {
+                    unsubscribeListener();
+                    unsubscribeListener = null;
+                }
+                // Clear form fields
+                document.getElementById('admin-email').value = '';
+                document.getElementById('admin-password').value = '';
+                // Reset button state
+                document.getElementById('btn-text').classList.remove('hidden');
+                document.getElementById('btn-loader').classList.add('hidden');
+                document.getElementById('login-error').classList.add('hidden');
+                // Clear user data
+                allUsers = [];
+                // Sign out
                 auth.signOut();
             }
         }
 
         // --- 3. DATA LOGIC ---
+        let unsubscribeListener = null;
+
         function initRealtimeListener() {
-            db.collection('users').onSnapshot((snapshot) => {
+            // Unsubscribe from previous listener if exists
+            if (unsubscribeListener) {
+                unsubscribeListener();
+            }
+
+            unsubscribeListener = db.collection('users').onSnapshot((snapshot) => {
                 allUsers = [];
                 snapshot.forEach(doc => {
                     allUsers.push({ id: doc.id, ...doc.data() });
@@ -287,7 +309,10 @@
                 renderUsers();
             }, (error) => {
                 console.error("Firestore Error:", error);
-                alert("Error fetching data. Check your internet or permissions.");
+                // Only show error if user is still logged in
+                if (auth.currentUser) {
+                    alert("Error fetching data. Check your internet or permissions.");
+                }
             });
         }
 
