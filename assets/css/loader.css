@@ -45,7 +45,7 @@ html, body, #root {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #071022;
+    background: #000000;
     z-index: 9999;
     gap: 1.5rem;
 }
