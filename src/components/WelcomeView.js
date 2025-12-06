@@ -10,11 +10,18 @@ const WelcomeView = () => {
     const [installPrompt, setInstallPrompt] = React.useState(null);
 
     React.useEffect(() => {
+        // Check if prompt was already captured globally before React loaded
+        if (window.deferredInstallPrompt) {
+            setInstallPrompt(window.deferredInstallPrompt);
+            console.log('PWA: Using pre-captured install prompt');
+        }
+
+        // Also listen for future events (in case it hasn't fired yet)
         const handleBeforeInstallPrompt = (e) => {
-            // Prevent the mini-infobar from appearing on mobile
             e.preventDefault();
-            // Stash the event so it can be triggered later.
             setInstallPrompt(e);
+            window.deferredInstallPrompt = e;
+            console.log('PWA: Install prompt captured in React');
         };
 
         window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
