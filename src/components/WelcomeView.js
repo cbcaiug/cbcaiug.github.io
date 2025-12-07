@@ -59,7 +59,7 @@ const WelcomeView = () => {
                     <img
                         src="https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/90c773e3d0d5d330ab0b2e285243c52cb7e62c78/assets/images/1024%20swirl%20logo.png"
                         alt="CBC AI Logo"
-                        className="w-14 h-14 rounded-full shadow-md object-cover border-2 border-slate-600"
+                        className="w-14 h-14 object-contain"
                     />
                 </div>
 
