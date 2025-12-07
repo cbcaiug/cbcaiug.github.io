@@ -170,7 +170,7 @@ const ConsentModal = ({ onAccept }) => {
         <div className="consent-modal-overlay">
             <div className="consent-modal-content">
                 <div className="flex items-center gap-3 mb-4">
-                    <img src="https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/main/assets/images/cbc-ai-tool-logo.jpeg" alt="Logo" className="h-12 w-12 rounded-lg" />
+                    <img src="https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/172f95ec1be377804e03de74a7b85131938a0ce5/assets/images/color-swirl-new-logo.png" alt="Logo" className="h-12 w-12 rounded-lg" />
                     <h2 className="text-2xl font-bold text-white">Welcome!</h2>
                 </div>
                 <p className="text-slate-400 mb-4 text-sm">Before you begin, please review and agree to our terms of use.</p>

@@ -67,13 +67,11 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
       <div className="relative bg-gradient-to-br from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-xl rounded-2xl p-8 max-w-md w-full border border-white/10 shadow-2xl">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <div className="w-24 h-24 rounded-lg bg-white/10 border-2 border-white/20 shadow-lg flex items-center justify-center overflow-hidden">
-            <img
-              src="https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/911bba708eb130fd4e7c6524b8d3d864a3ef5fdf/assets/images/swirl-dbg.jpg"
-              alt="CBC AI Tool"
-              className="w-full h-full object-contain"
-            />
-          </div>
+          <img
+            src="assets/images/1024 swirl logo.png"
+            alt="CBC AI Tool"
+            className="w-24 h-24 object-contain"
+          />
         </div>
 
         <h2 className="text-2xl font-bold text-white text-center mb-6">
