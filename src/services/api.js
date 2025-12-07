@@ -7,7 +7,7 @@
  */
 
 // --- CONFIGURATION CONSTANTS ---
-const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzyTIlqww6YUE6aL61WoU7Lgg2SyV7nMFYbjFfOP-PqUMS6AKRXqmnddqhEpngEnK2v/exec';
+const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz_b_LYkR5OvK90eVKZnbRPXsPjnDZK6S3kKqIwjmVr_s0tj28cSnEGsx-oqBuRxIcL/exec';
 
 const AI_PROVIDERS = [
     {

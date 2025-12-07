@@ -4,6 +4,8 @@
  * Authentication modal for sign-in/sign-up with dark glass theme
  */
 
+const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz_b_LYkR5OvK90eVKZnbRPXsPjnDZK6S3kKqIwjmVr_s0tj28cSnEGsx-oqBuRxIcL/exec';
+
 const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
   const [mode, setMode] = React.useState('signin');
   const [email, setEmail] = React.useState('');
@@ -11,6 +13,24 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
   const [error, setError] = React.useState('');
   const [loading, setLoading] = React.useState(false);
   const [showPassword, setShowPassword] = React.useState(false);
+
+  // Notify admin of new signups via GAS
+  const notifySignup = async (userEmail, method) => {
+    try {
+      await fetch(GAS_WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'user_signup',
+          details: { email: userEmail, method: method }
+        })
+      });
+    } catch (error) {
+      console.error('Failed to notify signup:', error);
+      // Don't block user flow if notification fails
+    }
+  };
 
   if (!isOpen) return null;
 
@@ -21,6 +41,8 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
     try {
       if (mode === 'signup') {
         await FirebaseService.auth.createUserWithEmailAndPassword(email, password);
+        // Notify admin of new signup
+        notifySignup(email, 'Email/Password');
       } else {
         await FirebaseService.auth.signInWithEmailAndPassword(email, password);
       }
@@ -48,7 +70,11 @@ const AuthModal = ({ isOpen, onClose, onAuthSuccess }) => {
     setError('');
     try {
       const provider = new firebase.auth.GoogleAuthProvider();
-      await FirebaseService.auth.signInWithPopup(provider);
+      const result = await FirebaseService.auth.signInWithPopup(provider);
+      // Check if this is a new user (signup)
+      if (result.additionalUserInfo && result.additionalUserInfo.isNewUser) {
+        notifySignup(result.user.email, 'Google');
+      }
       onAuthSuccess();
       onClose();
     } catch (err) {
