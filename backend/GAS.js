@@ -821,7 +821,7 @@ function sendSignupNotificationEmail(details) {
         timeStyle: 'short'
     });
 
-    const subject = '🎉 New User Signup - TeachDeeper';
+    const subject = '🎉 New User Signup - The CBC AI Assistant';
     const htmlBody = `
         <div style="font-family: Arial, sans-serif; max-width: 600px;">
             <h2 style="color: #10b981;">New User Signup!</h2>
@@ -854,7 +854,7 @@ function sendSignupNotificationEmail(details) {
         to: YOUR_EMAIL_ADDRESS,
         subject: subject,
         htmlBody: htmlBody,
-        name: "TeachDeeper Signup Bot"
+        name: "CBC AI Assistant Signup Bot"
     });
 }
 
