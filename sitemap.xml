@@ -16,7 +16,13 @@
     <loc>https://cbcaiug.github.io/about.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cbcaiug.github.io/aboutMe.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://cbcaiug.github.io/faq.html</loc>
