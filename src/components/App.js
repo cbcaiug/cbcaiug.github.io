@@ -191,6 +191,26 @@ const App = ({ onMount }) => {
             setSelectedModelName('gemini-2.5-pro'); // Reset to a default Gemini model
         }
     };
+    
+    // Manually refresh shared API key
+    const handleRefreshSharedKey = async () => {
+        setActiveTrialApiKey(null);
+        setActiveSharedKeyLabel('');
+        setError('Fetching new shared API key...');
+        try {
+            const response = await fetch(`${GAS_WEB_APP_URL}?action=getTrialApiKey`);
+            const data = await response.json();
+            if (data.success && data.apiKey) {
+                setActiveTrialApiKey(data.apiKey);
+                if (data.keyLabel) setActiveSharedKeyLabel(data.keyLabel);
+                setError('');
+            } else {
+                throw new Error(data.error || 'Failed to fetch key');
+            }
+        } catch (err) {
+            setError(`Could not fetch key: ${err.message}`);
+        }
+    };
     // NEW: State to hold the "sticky" trial key for the current session to reduce backend calls.
     const [activeTrialApiKey, setActiveTrialApiKey] = useState(null);
     // NEW: Friendly label for the currently active shared/trial key (e.g., "Key #3")
@@ -1505,6 +1525,7 @@ const App = ({ onMount }) => {
                 isGroundingEnabled={isGroundingEnabled}
                 useSharedApiKey={useSharedApiKey}
                 onUseSharedApiKeyChange={handleSharedKeyToggle}
+                onRefreshSharedKey={handleRefreshSharedKey}
                 activeSharedKeyLabel={activeSharedKeyLabel}
                 user={user}
                 quotas={quotas}
@@ -1717,7 +1738,16 @@ const App = ({ onMount }) => {
                     activePromptKey && (
                         <footer id="chat-input-area" className="fixed bottom-0 left-0 right-0 p-4 pb-safe border-t border-[#333] bg-[#1a1a1a] flex-shrink-0" style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))', marginLeft: isMenuOpen && window.innerWidth >= 1024 ? sidebarWidth : 0 }}>
                             <div className="relative mx-auto max-w-4xl">
-                                {error && <div className={`p-4 border-t flex-shrink-0 ${error.includes('Creating your Google Doc') || error.includes('Getting shared API key') || error.includes('Getting Google Docs Ready') ? 'bg-[#1e1e1e] text-white border-[#333]' : 'bg-[#1a1a1a] text-red-400 border-red-900'}`}>{error}</div>}
+                                {error && (
+                                    <div className={`p-4 border-t flex-shrink-0 flex items-center justify-between gap-2 ${error.includes('Creating your Google Doc') || error.includes('Getting shared API key') || error.includes('Getting Google Docs Ready') ? 'bg-[#1e1e1e] text-white border-[#333]' : 'bg-[#1a1a1a] text-red-400 border-red-900'}`}>
+                                        <span className="flex-1">{error}</span>
+                                        <button onClick={() => setError('')} className="p-1 hover:bg-white/10 rounded transition-colors flex-shrink-0" title="Close">
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                )}
                                 {/* NEW: Attachment Manager UI */}
                                 {pendingFiles.length > 0 && (
                                     <div className="absolute bottom-full left-0 mb-2 w-full max-w-2xl p-2">

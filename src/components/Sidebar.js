@@ -26,6 +26,7 @@ const Sidebar = ({
 
     // Handler props
     onClose,
+    onRefreshSharedKey,
     onAssistantChange,
     onCustomPromptUpload,
     onProviderChange,
@@ -410,7 +411,13 @@ const Sidebar = ({
                         <p className="text-xs text-slate-400">Recommended for new users</p>
                         {activeSharedKeyLabel && <p className="text-xs text-white mt-1">Active: <strong>{activeSharedKeyLabel}</strong></p>}
                     </div>
-                    <label htmlFor="shared-key-toggle" className="relative inline-flex items-center cursor-pointer">
+                    <div className="flex items-center gap-2">
+                        {useSharedApiKey && onRefreshSharedKey && (
+                            <button onClick={onRefreshSharedKey} className="px-2 py-1 text-xs bg-indigo-600 hover:bg-indigo-700 text-white rounded transition-colors" title="Get new shared key">
+                                🔄 Refresh
+                            </button>
+                        )}
+                        <label htmlFor="shared-key-toggle" className="relative inline-flex items-center cursor-pointer">
                         <input
                             type="checkbox"
                             checked={useSharedApiKey}
