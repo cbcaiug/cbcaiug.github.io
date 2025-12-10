@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+        // This is the only way to do a "Wildcard" redirect on GitHub Pages
+        var path = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+        
+        // Send them to the new domain with the exact same path
+        window.location.replace("https://teachwithai.vercel.app" + path + search + hash);
+    </script>
+    <style>body { background: #0f0f0f; color: white; font-family: sans-serif; text-align: center; padding-top: 50px; }</style>
+</head>
+<body>
+    <h1>We've Moved!</h1>
+    <p>Redirecting you to our new home...</p>
+</body>
+</html>
