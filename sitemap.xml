@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Main landing page -->
+  <url>
+    <loc>https://cbcaiug.github.io/</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://cbcaiug.github.io/android-chrome-512x512.png</image:loc>
+      <image:title>The CBC AI Tool Logo</image:title>
+      <image:caption>AI Educational Assistant for Uganda's Competency-Based Curriculum</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Actual app location (alternate URL) -->
+  <url>
+    <loc>https://teachwithai.vercel.app/</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+```
+
+### **5. KEEP `404.html` AS IS** ✅
+
+Your current 404.html is perfect for wildcard redirects.
+
+### **6. KEEP `_redirects.txt` AS IS** ✅
+
+Your redirect file is correct.
+
+### **7. KEEP `google62667515b3837382.html` AS IS** ✅
+
+Google verification file - don't touch.
+
+## 📤 Upload the 7 Favicon Files
+
+Upload these files from your favicon.io download to the **root** of the `cbcaiug.github.io` repo:
+
+1. `android-chrome-192x192.png`
+2. `android-chrome-512x512.png`
+3. `apple-touch-icon.png`
+4. `favicon-16x16.png`
+5. `favicon-32x32.png`
+6. `favicon.ico`
+7. ~~`site.webmanifest`~~ (DON'T upload - we created custom manifest.json)
+
+## 🚀 Step-by-Step Deployment via GitHub Web
+
+### **Step 1: Upload Favicon Files**
+
+1. Go to https://github.com/cbcaiug/cbcaiug.github.io
+2. Click **"Add file"** → **"Upload files"**
+3. Drag and drop the 6 favicon PNG/ICO files
+4. Commit message: `Add favicon package for SEO`
+5. Click **"Commit changes"**
+
+### **Step 2: Replace index.html**
+
+1. Click on `index.html` in the repo
+2. Click the **pencil icon** (Edit this file)
+3. **Delete all existing content**
+4. **Paste the entire new index.html** from above
+5. Commit message: `Update index.html with SEO metadata`
+6. Click **"Commit changes"**
+
+### **Step 3: Create manifest.json**
+
+1. Click **"Add file"** → **"Create new file"**
+2. Name: `manifest.json`
+3. Paste the manifest.json content from above
+4. Commit message: `Add PWA manifest`
+5. Click **"Commit changes"**
+
+### **Step 4: Create robots.txt**
+
+1. Click **"Add file"** → **"Create new file"**
+2. Name: `robots.txt`
+3. Paste the robots.txt content from above
+4. Commit message: `Add robots.txt for SEO`
+5. Click **"Commit changes"**
+
+### **Step 5: Create sitemap.xml**
+
+1. Click **"Add file"** → **"Create new file"**
+2. Name: `sitemap.xml`
+3. Paste the sitemap.xml content from above
+4. Commit message: `Add sitemap for search engines`
+5. Click **"Commit changes"**
+
+## ✅ Verification After Deployment
+
+Wait **5 minutes** for GitHub Pages to rebuild, then test:
+
+### **1. Favicon Tests**
+```
+✅ https://cbcaiug.github.io/favicon.ico
+✅ https://cbcaiug.github.io/favicon-32x32.png
+✅ https://cbcaiug.github.io/android-chrome-192x192.png
+✅ https://cbcaiug.github.io/apple-touch-icon.png
+```
+
+### **2. SEO Files**
+```
+✅ https://cbcaiug.github.io/manifest.json
+✅ https://cbcaiug.github.io/robots.txt
+✅ https://cbcaiug.github.io/sitemap.xml
+```
+
+### **3. Visual Test**
+1. Open https://cbcaiug.github.io in **incognito mode**
+2. You should see:
+   - ✅ Your swirl logo
+   - ✅ "The CBC AI Tool" title
+   - ✅ Professional loading animation
+   - ✅ Redirect after 1 second
+
+### **4. Google Tools**
+
+**Rich Results Test:**
+```
+https://search.google.com/test/rich-results
+Enter: https://cbcaiug.github.io
+```
+Should show:
+- ✅ WebApplication schema detected
+- ✅ Logo image found
+- ✅ Name: "The CBC AI Tool"
+- ✅ Description visible
+
+**Mobile-Friendly Test:**
+```
+https://search.google.com/test/mobile-friendly
+Enter: https://cbcaiug.github.io
