@@ -1,0 +1,12 @@
+# Allow all search engines to crawl
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://cbcaiug.github.io/sitemap.xml
+
+# Crawl delay (give time for metadata to load before redirect)
+Crawl-delay: 1
+
+# Prevent indexing of verification files
+Disallow: /google62667515b3837382.html
