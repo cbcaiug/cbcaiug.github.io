@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<!-- THIS is the viewport tag that actually governs mobile rendering — see
+     the note in register.html for why the one inside the Apps Script page
+     itself gets ignored on phones. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Register My Payment — AI in Education Training</title>
+<link rel="icon" type="image/x-icon" href="https://cbcaiug.github.io/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="https://cbcaiug.github.io/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="https://cbcaiug.github.io/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="https://cbcaiug.github.io/apple-touch-icon.png"/>
+<style>
+  html, body { margin: 0; padding: 0; width: 100%; height: 100%; background: #eef2f7; overflow: hidden; }
+  iframe { display: block; width: 100%; height: 100%; border: 0; }
+</style>
+</head>
+<body>
+  <!--
+    This URL is what should go into MarzPay's redirect_url field on every
+    payment link — NOT the raw script.google.com/.../exec URL. Same
+    "Deploy > New version keeps the URL the same" note as register.html.
+  -->
+  <iframe
+    src="https://script.google.com/macros/s/AKfycbxG_bKtSrAMXHPGejN9q53i581_Ln9CjQPR8MjfNYJqD4bQbKcrobbsPAUu-6t7Ho4prw/exec"
+    title="Register My Payment"
+    allow="clipboard-write"
+  ></iframe>
+</body>
+</html>
