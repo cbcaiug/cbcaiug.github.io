@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Console — The CBC AI Projects</title>
+  <meta name="description" content="Administrative console for managing links, project showcase, and configuration for The CBC AI Projects.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Admin Specific Styling */
+    html, body {
+      background-color: var(--bg-primary, #0a0e14);
+      color: var(--text-primary, #f1f5f9);
+      overflow-x: clip;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    .admin-nav {
+      background: var(--bg-surface, rgba(14, 21, 31, 0.96));
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .admin-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 54px;
+      gap: 8px;
+      padding: 6px 0;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .admin-brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      min-height: 30px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .admin-brand-title {
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.92rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .admin-title-badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: var(--accent-amber-glow);
+      color: var(--accent-amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      flex-shrink: 0;
+    }
+
+    .admin-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .btn-header-link {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-header-logout {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      color: #f87171 !important;
+      border: 1px solid rgba(239, 68, 68, 0.35) !important;
+      background: rgba(239, 68, 68, 0.08) !important;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-header-logout:hover {
+      background: rgba(239, 68, 68, 0.2) !important;
+      border-color: #ef4444 !important;
+      color: #fff !important;
+    }
+
+    /* Admin Container */
+    .admin-container {
+      max-width: 1080px;
+      width: 100%;
+      margin: 24px auto 60px;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+
+    /* Auth Gate Screen (Compact & Tight, No Vertical Scroll) */
+    .auth-gate-wrap {
+      min-height: calc(100vh - 54px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .auth-card {
+      max-width: 360px;
+      width: 100%;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 16px 20px 18px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .auth-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      margin-bottom: 6px;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .auth-title {
+      font-size: 1.12rem;
+      margin-bottom: 2px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .auth-subtitle {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 9px;
+      width: 100%;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 3px;
+    }
+
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      padding: 8px 11px;
+      border-radius: 7px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-medium);
+      color: #ffffff;
+      font-size: 0.84rem;
+      font-family: inherit;
+      transition: all var(--transition-fast);
+    }
+
+    .password-input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .password-input-wrap .form-input {
+      padding-right: 38px;
+    }
+
+    .btn-password-toggle {
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      border-radius: 6px;
+      transition: color var(--transition-fast);
+    }
+
+    .btn-password-toggle:hover {
+      color: #ffffff;
+    }
+
+    .btn-password-toggle svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .auth-submit-btn {
+      width: 100%;
+      padding: 8px 14px;
+      font-size: 0.84rem;
+      border-radius: 7px;
+      margin-bottom: 0;
+    }
+
+    .auth-divider {
+      position: relative;
+      margin: 9px 0;
+      text-align: center;
+    }
+
+    .auth-google-btn {
+      width: 100%;
+      padding: 7px 12px;
+      font-size: 0.8rem;
+      border-radius: 7px;
+    }
+
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .admin-tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 24px;
+      width: 100%;
+      max-width: 100%;
+      padding-bottom: 2px;
+    }
+
+    .tab-btn {
+      padding: 10px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .tab-btn:hover {
+      color: #ffffff;
+    }
+
+    .tab-btn.active {
+      color: var(--accent-primary);
+      border-bottom-color: var(--accent-primary);
+    }
+
+    /* Editor Sections */
+    .editor-section {
+      display: none;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .editor-section.active {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    /* Editable Item Card */
+    .editable-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 18px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      transition: border-color var(--transition-fast);
+    }
+
+    .editable-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .editable-card.disabled-item {
+      opacity: 0.6;
+      border-style: dashed;
+    }
+
+    .card-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .card-item-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      word-break: break-word;
+    }
+
+    .card-top-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .toggle-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .switch-input {
+      appearance: none;
+      width: 36px;
+      height: 20px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-medium);
+      border-radius: 9999px;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      transition: background var(--transition-fast);
+      flex-shrink: 0;
+    }
+
+    .switch-input::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      transition: transform var(--transition-fast), background var(--transition-fast);
+    }
+
+    .switch-input:checked {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+    }
+
+    .switch-input:checked::after {
+      transform: translateX(16px);
+      background: #ffffff;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      width: 100%;
+    }
+
+    .url-input-wrap {
+      position: relative;
+      display: flex;
+      gap: 8px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .url-input-wrap .form-input {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      flex: 1 1 200px;
+      min-width: 0;
+    }
+
+    .btn-test {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-medium);
+      color: var(--accent-primary);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-test:hover {
+      background: var(--accent-primary);
+      color: #0b0f14;
+    }
+
+    .actions-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-medium);
+      border-radius: 12px;
+      padding: 14px 18px;
+      position: sticky;
+      bottom: 16px;
+      z-index: 90;
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+    }
+
+    .status-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-top-color: var(--accent-primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 680px) {
+      .admin-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        border-bottom: none;
+        margin-bottom: 20px;
+      }
+      .tab-btn {
+        justify-content: center;
+        padding: 10px 8px;
+        font-size: 0.82rem;
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: 8px;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+      .tab-btn.active {
+        background: rgba(16, 185, 129, 0.12);
+        border-color: var(--accent-primary);
+        color: var(--accent-primary);
+        border-bottom-color: var(--accent-primary);
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .actions-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .actions-bar > div:last-child {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+      }
+      .actions-bar > div:last-child .btn {
+        flex: 1;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .admin-brand-title {
+        display: none;
+      }
+      .admin-container {
+        padding: 0 12px;
+        margin: 16px auto 50px;
+      }
+      .btn-header-link, .btn-header-logout {
+        padding: 5px 9px;
+        font-size: 0.76rem;
+      }
+      .auth-card {
+        padding: 20px 16px;
+        margin: 20px auto;
+        border-radius: 12px;
+      }
+      .editable-card {
+        padding: 14px;
+      }
+    }
+
+    /* Card Reorder Buttons */
+    .card-reorder-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .btn-reorder {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-medium);
+      color: var(--text-secondary);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 6px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      line-height: 1;
+    }
+
+    .btn-reorder:hover:not(:disabled) {
+      background: var(--accent);
+      color: #0b0f14;
+      border-color: var(--accent);
+    }
+
+    .btn-reorder:disabled {
+      opacity: 0.25;
+      cursor: not-allowed;
+    }
+
+    /* Native App In-Page Modal */
+    .app-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      animation: fadeIn 0.15s ease;
+    }
+
+    .app-modal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: 14px;
+      padding: 22px 20px 20px;
+      max-width: 380px;
+      width: 100%;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .app-modal-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+    }
+
+    .app-modal-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .app-modal-message {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      margin-bottom: 18px;
+    }
+
+    .app-modal-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .app-modal-actions .btn {
+      flex: 1;
+      padding: 8px 14px;
+      font-size: 0.84rem;
+    }
+  </style>
+
+  <!-- Firebase App & Auth SDKs for Admin Verification -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+  <script src="js/config-defaults.js"></script>
+</head>
+<body>
+
+  <!-- Admin Header -->
+  <header class="admin-nav">
+    <div class="container">
+      <div class="admin-nav-inner">
+        <div class="admin-brand-wrap">
+          <a href="index.html" class="brand-group" title="Back to Home">
+            <img src="android-chrome-192x192.png" alt="Logo" class="brand-logo" width="30" height="30">
+            <span class="admin-brand-title">CBC AI Projects</span>
+          </a>
+          <span class="admin-title-badge">Admin</span>
+        </div>
+
+        <div class="admin-nav-actions">
+          <a href="index.html?fresh=1" class="btn btn-secondary btn-header-link" title="Back to Landing Page (Fresh View)">
+            ← Site
+          </a>
+          <button id="authLogoutBtn" class="btn btn-header-logout" style="display:none;" title="Sign out of Admin Console">
+            Sign Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Auth Gate Screen (Shown when logged out) -->
+  <div id="authGate" class="auth-gate-wrap">
+    <div class="auth-card">
+      <img src="android-chrome-192x192.png" alt="Logo" class="auth-logo">
+      <h2 class="auth-title">Admin Console</h2>
+      <p class="auth-subtitle">Sign in to manage projects & links.</p>
+
+      <form id="firebaseLoginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Admin Email</label>
+          <input type="email" id="loginEmail" class="form-input" placeholder="admin@example.com" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password</label>
+          <div class="password-input-wrap">
+            <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required autocomplete="current-password">
+            <button type="button" id="togglePasswordBtn" class="btn-password-toggle" aria-label="Show password" title="Show or hide password">
+              <svg id="eyeIconOpen" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg id="eyeIconClosed" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+            </button>
+          </div>
+        </div>
+        <button type="submit" id="loginBtn" class="btn btn-primary auth-submit-btn">
+          Sign In
+        </button>
+      </form>
+
+      <div class="auth-divider">
+        <hr style="border:none; border-top:1px solid var(--border-subtle);">
+        <span style="position:absolute; top:-9px; left:50%; transform:translateX(-50%); background:var(--bg-card); padding:0 8px; font-size:0.72rem; color:var(--text-muted);">OR</span>
+      </div>
+
+      <button type="button" id="googleLoginBtn" class="btn btn-secondary auth-google-btn">
+        <svg style="width:14px; height:14px;" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.8C6.5 7.1 9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.7-.2-2.3H12v4.6h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.9z"/><path fill="#FBBC05" d="M5.6 14.9c-.2-.7-.4-1.4-.4-2.2s.2-1.5.4-2.2L1.9 7.7C.7 10.1 0 12.7 0 15.5s.7 5.4 1.9 7.8l3.7-2.8z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.1-6.4-5.1L1.9 17C3.7 20.7 7.5 24 12 24z"/></svg>
+        Sign In with Google
+      </button>
+
+      <div id="authErrorMsg" style="display:none; color:#ef4444; font-size:0.78rem; margin-top:8px;"></div>
+    </div>
+  </div>
+
+  <!-- Admin Main Dashboard (Shown when logged in) -->
+  <main id="adminDashboard" class="admin-container" style="display:none;">
+    
+    <!-- Tabs Header -->
+    <nav class="admin-tabs" aria-label="Admin Sections">
+      <button class="tab-btn active" data-tab="tabProjects">
+        <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        Projects
+      </button>
+      <button class="tab-btn" data-tab="tabContacts">
+        <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Contacts & Links
+      </button>
+      <button class="tab-btn" data-tab="tabAnnouncement">
+        <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 11 18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+        Announcements
+      </button>
+      <button class="tab-btn" data-tab="tabBackup">
+        <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Backup
+      </button>
+    </nav>
+
+    <!-- SECTION 1: PROJECTS & URLS -->
+    <section id="tabProjects" class="editor-section active">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:12px;">
+        <div>
+          <h2 style="font-size:1.35rem; font-weight:700;">CBC AI Projects Showcase</h2>
+          <p style="font-size:0.86rem; color:var(--text-muted);">Change project URLs, edit descriptions, or temporarily hide cards.</p>
+        </div>
+        <button type="button" id="addNewProjectBtn" class="btn btn-secondary" style="font-size:0.84rem;">
+          + Add New Project
+        </button>
+      </div>
+
+      <div id="projectsListWrap">
+        <!-- Rendered by admin.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 2: CONTACTS & SOCIAL CHANNELS -->
+    <section id="tabContacts" class="editor-section">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:12px;">
+        <div>
+          <h2 style="font-size:1.35rem; font-weight:700;">Contacts & Social Channels</h2>
+          <p style="font-size:0.86rem; color:var(--text-muted);">Manage your WhatsApp links, phones, emails, social profiles, and add ANY custom link buttons.</p>
+        </div>
+        <button type="button" id="addNewContactBtn" class="btn btn-secondary" style="font-size:0.84rem;">
+          + Add Any Custom Link
+        </button>
+      </div>
+
+      <div id="contactsListWrap">
+        <!-- Rendered by admin.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 3: ANNOUNCEMENT BANNER -->
+    <section id="tabAnnouncement" class="editor-section">
+      <div class="editable-card">
+        <div class="card-top-bar">
+          <span class="card-item-title">Announcement Bar</span>
+          <label class="toggle-switch">
+            <span>Enabled</span>
+            <input type="checkbox" id="announcementEnabled" class="switch-input">
+          </label>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label" for="announcementBadge">Badge Label</label>
+            <input type="text" id="announcementBadge" class="form-input" placeholder="e.g. NEW UPDATE">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="announcementUrl">Target URL (Optional)</label>
+            <input type="text" id="announcementUrl" class="form-input" placeholder="https://... or #projects">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="announcementText">Message Text</label>
+          <textarea id="announcementText" class="form-textarea" placeholder="Enter message to display at top of the page..."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: BACKUP & RESTORE -->
+    <section id="tabBackup" class="editor-section">
+      <div class="editable-card">
+        <h3 style="font-size:1.15rem; margin-bottom:8px;">Configuration Export & Import</h3>
+        <p style="font-size:0.86rem; color:var(--text-muted); margin-bottom:20px;">
+          Download a full JSON snapshot of your current site links, or restore from a previously saved JSON file.
+        </p>
+
+        <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:24px;">
+          <button type="button" id="exportJsonBtn" class="btn btn-secondary">
+            <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export Config (JSON)
+          </button>
+          
+          <label class="btn btn-secondary" style="cursor:pointer;">
+            <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Import Config (JSON)
+            <input type="file" id="importJsonFile" accept=".json" style="display:none;">
+          </label>
+
+          <button type="button" id="resetDefaultsBtn" class="btn btn-admin" style="color:#ef4444; border-color:rgba(239,68,68,0.3);">
+            Reset to Defaults
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Active Cloud Sync Collection</label>
+          <input type="text" class="form-input" value="settings/app_links (cbcaiug-auth)" readonly style="font-family:var(--font-mono); opacity:0.75;">
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Actions Bar (Sticky) -->
+    <div class="actions-bar">
+      <div class="status-text">
+        <span id="syncStatusIndicator" class="status-dot"></span>
+        <span id="syncStatusText">Ready. Changes pending publish.</span>
+      </div>
+
+      <div style="display:flex; gap:12px;">
+        <button type="button" id="saveLocalBtn" class="btn btn-secondary" style="font-size:0.86rem;">
+          Save Locally
+        </button>
+        <button type="button" id="publishCloudBtn" class="btn btn-primary" style="font-size:0.86rem;">
+          <span>Publish to Cloud</span>
+          <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- In-App Custom Confirm Modal (Replaces native browser popups) -->
+  <div id="customConfirmModal" class="app-modal-backdrop" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="app-modal-card">
+      <div class="app-modal-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <h3 class="app-modal-title" id="modalTitle">Confirm Action</h3>
+      <p class="app-modal-message" id="modalMessage">Are you sure you want to proceed?</p>
+      <div class="app-modal-actions">
+        <button type="button" class="btn btn-secondary" id="modalCancelBtn">Cancel</button>
+        <button type="button" class="btn btn-primary" id="modalConfirmBtn" style="background:#ef4444; border-color:#dc2626;">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

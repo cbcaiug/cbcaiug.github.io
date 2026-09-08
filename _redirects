@@ -1,1 +1,7 @@
-/* https://teachwithai.vercel.app/:splat 301!
+# CBC AI Projects URL Routing
+# Legacy routes redirect to apps as needed, but the main landing page and admin portal are served locally.
+/index.html   /index.html   200
+/admin        /admin.html   200
+/admin.html   /admin.html   200
+/register     /register.html 200
+/register.html /register.html 200
