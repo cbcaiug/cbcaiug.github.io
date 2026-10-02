@@ -15,9 +15,11 @@
   button:disabled { background: #2a2f38; border-color: #2a2f38; color: #6b7280; }
   .status { font-size: 13px; color: #9aa3ad; margin-top: 12px; }
   .error { color: #f87171; }
-  .summary { margin-top: 20px; padding: 12px; border-radius: 8px; background: #171a21; font-size: 13px; white-space: pre-wrap; max-height: 400px; overflow: auto; }
+  .summary { margin-top: 20px; padding: 12px; border-radius: 8px; background: #171a21; font-size: 13px; max-height: 400px; overflow: auto; }
   .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #2a2f38; font-size: 11px; margin-right: 4px; }
   code { background: #2a2f38; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+  .debug { margin-top: 20px; font-size: 12px; color: #6b7280; }
+  .debug pre { background: #171a21; padding: 8px; border-radius: 6px; max-height: 200px; overflow: auto; font-size: 11px; }
 </style>
 </head>
 <body>
@@ -30,11 +32,11 @@
 <label>Curriculum</label>
 <select id="curriculum" disabled></select>
 
-<label id="levelLabel" style="display:none">Level</label>
-<select id="level" style="display:none" disabled></select>
-
 <label>Subject</label>
 <select id="subject" disabled></select>
+
+<label id="levelLabel" style="display:none">Level</label>
+<select id="level" style="display:none" disabled></select>
 
 <label>Class</label>
 <select id="classLevel" disabled></select>
@@ -43,6 +45,11 @@
 
 <div class="status" id="status"></div>
 <div class="summary" id="summary" style="display:none"></div>
+
+<details class="debug">
+  <summary style="cursor:pointer">Debug — parsed files</summary>
+  <pre id="debug"></pre>
+</details>
 
 <script>
 const BASE = "https://cbcaiug.cbcaitool.workers.dev";
@@ -54,15 +61,12 @@ function parsePath(path) {
   const parts = path.split("/");
   const file = parts[parts.length - 1];
   const name = file.replace(/\.json$/, "");
-  // subject folder is always parts[2]; if length is 5, parts[3] is level (uce/uace)
-  const level = parts.length === 5 ? parts[3] : null;
-  const classMatch = name.match(/^([a-z]+\d+|\d+|[a-z]+)/i);
-  const classVal = name.split("_")[0]; // e.g. "s1" from "s1_biology"
+  const classVal = name.split("_")[0];
   return {
     country: parts[0],
     curriculum: parts[1],
     subject: parts[2],
-    level: level,
+    level: parts.length === 5 ? parts[3] : null,
     classVal: classVal,
     file: file,
     path: path,
@@ -81,9 +85,7 @@ async function init() {
       )
       .map(f => ({ ...parsePath(f.path), size: f.size_bytes }));
 
-    // Sanity: show what we discovered
-    console.log(`Discovered ${allFiles.length} syllabus files`);
-    console.log("Sample:", allFiles.slice(0, 3));
+    $("debug").textContent = JSON.stringify(allFiles.slice(0, 8), null, 2);
 
     populateCountries();
     setStatus(`Manifest loaded — ${allFiles.length} syllabus files`);
@@ -93,84 +95,6 @@ async function init() {
 }
 
 function unique(arr) { return [...new Set(arr)].sort(); }
-
-function populateCountries() {
-  fill($("country"), unique(allFiles.map(f => f.country)));
-  $("country").disabled = false;
-  $("country").onchange = populateCurricula;
-}
-
-function populateCurricula() {
-  const c = $("country").value;
-  fill($("curriculum"), unique(allFiles.filter(f => f.country === c).map(f => f.curriculum)));
-  $("curriculum").disabled = false;
-  $("curriculum").onchange = populateLevels;
-  resetBelow("curriculum");
-}
-
-function populateLevels() {
-  const c = $("country").value, cur = $("curriculum").value;
-  const pool = allFiles.filter(f => f.country === c && f.curriculum === cur);
-  const levels = unique(pool.filter(f => f.level).map(f => f.level));
-
-  if (levels.length > 0) {
-    $("levelLabel").style.display = "";
-    $("level").style.display = "";
-    fill($("level"), levels);
-    $("level").disabled = false;
-    $("level").onchange = populateSubjects;
-    // auto-select first level and populate subjects
-    populateSubjects();
-  } else {
-    $("levelLabel").style.display = "none";
-    $("level").style.display = "none";
-    $("level").disabled = true;
-    populateSubjects();
-  }
-  resetBelow("level");
-}
-
-function populateSubjects() {
-  const c = $("country").value, cur = $("curriculum").value;
-  const lvl = $("level").style.display !== "none" ? $("level").value : null;
-  const pool = allFiles.filter(f =>
-    f.country === c &&
-    f.curriculum === cur &&
-    (lvl ? f.level === lvl : true)
-  );
-  fill($("subject"), unique(pool.map(f => f.subject)));
-  $("subject").disabled = false;
-  $("subject").onchange = populateClasses;
-  resetBelow("subject");
-}
-
-function populateClasses() {
-  const c = $("country").value, cur = $("curriculum").value, sub = $("subject").value;
-  const lvl = $("level").style.display !== "none" ? $("level").value : null;
-  const pool = allFiles.filter(f =>
-    f.country === c &&
-    f.curriculum === cur &&
-    f.subject === sub &&
-    (lvl ? f.level === lvl : true)
-  );
-  fill($("classLevel"), unique(pool.map(f => f.classVal)));
-  $("classLevel").disabled = false;
-  $("classLevel").onchange = () => { $("load").disabled = false; };
-  resetBelow("classLevel");
-}
-
-function resetBelow(which) {
-  const order = ["country", "curriculum", "level", "subject", "classLevel"];
-  const idx = order.indexOf(which);
-  for (let i = idx + 1; i < order.length; i++) {
-    const el = $(order[i]);
-    if (el && el.tagName === "SELECT") {
-      el.disabled = true;
-    }
-  }
-  $("load").disabled = true;
-  $("summary").style.display = "none";
-}
 
 function fill(select, options) {
   select.innerHTML = "";
@@ -182,21 +106,69 @@ function fill(select, options) {
   }
 }
 
-async function loadSyllabus() {
+function populateCountries() {
+  fill($("country"), unique(allFiles.map(f => f.country)));
+  $("country").disabled = false;
+  $("country").onchange = populateCurricula;
+  populateCurricula();
+}
+
+function populateCurricula() {
   const c = $("country").value;
-  const cur = $("curriculum").value;
-  const sub = $("subject").value;
+  fill($("curriculum"), unique(allFiles.filter(f => f.country === c).map(f => f.curriculum)));
+  $("curriculum").disabled = false;
+  $("curriculum").onchange = populateSubjects;
+  populateSubjects();
+}
+
+function populateSubjects() {
+  const c = $("country").value, cur = $("curriculum").value;
+  fill($("subject"), unique(allFiles.filter(f => f.country === c && f.curriculum === cur).map(f => f.subject)));
+  $("subject").disabled = false;
+  $("subject").onchange = populateLevels;
+  populateLevels();
+}
+
+function populateLevels() {
+  const c = $("country").value, cur = $("curriculum").value, sub = $("subject").value;
+  const pool = allFiles.filter(f => f.country === c && f.curriculum === cur && f.subject === sub);
+  const levels = unique(pool.filter(f => f.level).map(f => f.level));
+
+  if (levels.length > 0) {
+    $("levelLabel").style.display = "";
+    $("level").style.display = "";
+    fill($("level"), levels);
+    $("level").disabled = false;
+    $("level").onchange = populateClasses;
+    populateClasses();
+  } else {
+    $("levelLabel").style.display = "none";
+    $("level").style.display = "none";
+    $("level").disabled = true;
+    populateClasses();
+  }
+}
+
+function populateClasses() {
+  const c = $("country").value, cur = $("curriculum").value, sub = $("subject").value;
+  const lvl = $("level").style.display !== "none" ? $("level").value : null;
+  const pool = allFiles.filter(f =>
+    f.country === c && f.curriculum === cur && f.subject === sub && (lvl ? f.level === lvl : true)
+  );
+  fill($("classLevel"), unique(pool.map(f => f.classVal)));
+  $("classLevel").disabled = false;
+  $("classLevel").onchange = () => { $("load").disabled = false; };
+  $("load").disabled = false;
+  $("summary").style.display = "none";
+}
+
+async function loadSyllabus() {
+  const c = $("country").value, cur = $("curriculum").value, sub = $("subject").value;
   const cls = $("classLevel").value;
   const lvl = $("level").style.display !== "none" ? $("level").value : null;
-
   const match = allFiles.find(f =>
-    f.country === c &&
-    f.curriculum === cur &&
-    f.subject === sub &&
-    f.classVal === cls &&
-    (lvl ? f.level === lvl : true)
+    f.country === c && f.curriculum === cur && f.subject === sub && f.classVal === cls && (lvl ? f.level === lvl : true)
   );
-
   if (!match) { setStatus("No matching file found", true); return; }
 
   setStatus(`Fetching ${match.path} (${(match.size/1024).toFixed(1)} KB)…`);
