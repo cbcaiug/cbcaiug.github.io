@@ -1,0 +1,1195 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Advanced Secondary Curriculum",
+        "subject": "Subsidiary ICT",
+        "level": "A-level",
+        "class_group": "Senior Five",
+        "year": "2025",
+        "version": "1.0",
+        "source_document": "Subsidiary ICT Syllabus 2025"
+    },
+    "global_framework": {
+        "competencies": [
+            "Digital Literacy and Productivity Tools",
+            "Multimedia and Digital Content Creation",
+            "Cybersecurity and Ethical Computing",
+            "Data Management and Computational Thinking"
+        ],
+        "generic_skills": [
+            "Critical thinking and problem-solving",
+            "Co-operation and Self-Directed Learning",
+            "Creativity and Innovation",
+            "Communication",
+            "Mathematical Computation",
+            "Information and Communication Technology (ICT) Proficiency",
+            "Diversity and Multicultural Skills"
+        ],
+        "values": [
+            "Respect for humanity and the environment",
+            "Honesty, always uphold and defend the truth",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity, moral uprightness, and sound character",
+            "Creativity and innovation",
+            "Social responsibility",
+            "Social harmony",
+            "National unity",
+            "National consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Five",
+            "class_code": "S5",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Introduction to ICTs",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-A-S5-T1-0001",
+                                        "topic_title": "Introduction to ICTs",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 28
+                                    },
+                                    "core_competency": "The learner operates a variety of ICTs to perform tasks in day-to-day life.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "a) explore the utilisation of various ICT tools in day-to-day life. (k, u, a, gs)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "b) use digital tools to solve day-to-day life challenges. (k, s, v, gs)",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "c) create directories and use them to manage electronic files. (k, u, s)",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "a) In pairs, learners identify and discuss how ICT tools are used in different fields."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "b) Learners make plenary presentations by role-playing how ICTs are used in those fields."
+                                        },
+                                        {
+                                            "activity_type": "Field Visit",
+                                            "description": "c) Learners take a tour around the school to explore how ICT tools are used within the school system."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "a) In groups, learners collaborate to explore how different ICT components can be connected to form a working system."
+                                        },
+                                        {
+                                            "activity_type": "Research/Creation",
+                                            "description": "b) In small groups, learners research and create a detailed flowchart that explains the booting process in various operating systems (e.g., Windows, MacOS, Linux)."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "c) In groups, learners present their flowchart, explaining the process to the class using a multimedia presentation (e.g., animations or step-by-step videos)."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "d) In small groups, learners practise starting and shutting down various ICT devices, such as computers, smartphones, printers, and routers, under different scenarios (e.g., proper shutdown, forced shutdown, unexpected power loss)."
+                                        },
+                                        {
+                                            "activity_type": "Scenario-based",
+                                            "description": "e) Learners demonstrate scenarios where they must solve typical start-up and shutdown issues."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "f) In groups, learners present how they managed the challenges and document best practices for everyday troubleshooting tasks."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "g) Learners make a write-up about the significance of observing proper start-up and shutdown of ICT devices."
+                                        },
+                                        {
+                                            "activity_type": "Practical/Collaboration",
+                                            "description": "a) Learners work together to create and organise files into folders and subfolders based on a given task (e.g., creating a project directory for schoolwork or a business)."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "b) Learners collaborate to save files on various storage media, such as USB drives, external hard drives, and others."
+                                        },
+                                        {
+                                            "activity_type": "Simulation",
+                                            "description": "c) Learners collaborate to simulate a real-world scenario (e.g., storing a client’s information for a project) by creating a file structure and saving files in the appropriate locations."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "d) Individually, learners save documents in specified formats (e.g. ,.docx ,.pdf ,.txt) and designated folders."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe pair interactions to assess collaboration and engagement in the discussion focusing on the use of ICT in different fields."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "b) Observe as learners tour the school, identifying ICT tools. Note interactions with ICT tools and peers—accuracy in identifying tools, participation, and teamwork."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "c) Converse with learners about the suitability, limitations, and alternatives of ICT tools, asking probing questions to clarify misconceptions."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "d) Assess learners’ presentations and written work for clarity, coherence and critical evaluation of ICT tools and their application."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe learners as they identify, explain, and connect ICT components, focusing on accuracy and teamwork."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "b) Engage learners in a dialogue about the steps of the booting process, using probing questions to assess their depth of understanding."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "c) Assess learners' flowcharts and group presentations for clarity, accuracy, and logical reasoning in explaining how components and processes work together."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe learners as they create, organise, retrieve, and save files and folders, focusing on proper structure and collaboration."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "b) Engage learners in discussions about the rationale for their file organisation and saving practices, using probing questions to assess clarity and decision-making."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "c) Assess how well learners organise their folders, files, and presentations to ensure they are clear, logical, and fit the given task."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 28,
+                                        "unit": "periods",
+                                        "source_page": "20"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "(For learners with visual and hearing impairment, an audio-visual tour with captions should be recorded to supplement this activity)",
+                                            "note_type": "constraint",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "text_verbatim": "(Recognise the efforts of learners with disabilities for inclusion purposes)",
+                                            "note_type": "examiner_hint",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "text_verbatim": "(Recognise the efforts of learners with disabilities for inclusion purposes)",
+                                            "note_type": "examiner_hint",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "text_verbatim": "(learners with disabilities shouldn't be in their groups)",
+                                            "note_type": "constraint",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "text_verbatim": "(Recognise the efforts of learners with disabilities for inclusion purposes)",
+                                            "note_type": "examiner_hint",
+                                            "source_page": "21"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-A-S5-T1-0002",
+                                        "topic_title": "Electronic Presentation",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 32
+                                    },
+                                    "core_competency": "The learner creates and delivers visually appealing and interactive electronic presentations to communicate ideas effectively.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "a) create electronic presentations and use them to communicate ideas. (k, u, s, a)",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "b) format presentations to make them visually appealing and engaging to the audience. (u, s, v)",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "c) collaborate with others to develop and deliver a presentation using online and offline tools. (k, u, s, v, gs)",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "a) Learners conduct research in groups to compare different presentation software (e.g., PowerPoint, Google Slides, Canva, Prezi)."
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "b) In groups, learners explore various template designs and layouts provided by the identified presentation software. They select which layouts are most effective for presenting specific types of content (e.g., graphs for data and images for storytelling)."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "c) In groups, learners create a presentation on a predetermined topic, applying the template designs and layouts they selected earlier."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "d) In groups, learners demonstrate a presentation with a strict time limit (e.g.,30–40 minutes), focusing on applying suitable templates and layouts efficiently."
+                                        },
+                                        {
+                                            "activity_type": "Customisation",
+                                            "description": "e) In pairs, learners work together to customise the theme of their presentation, adjusting elements like background colours, fonts, and slide layouts to ensure visual consistency and alignment with the chosen topic."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "f) Learners present their work using the appropriate features of the presentation software, like speaker notes, slideshow mode, and other interactive tools (e.g., animations, transitions). They practise public speaking skills and use these tools to support and enhance their delivery."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "a) Learners create individual slides within a group project, applying text formatting, bullet points, word art, and smart art to enhance visual appeal."
+                                        },
+                                        {
+                                            "activity_type": "Collaboration",
+                                            "description": "b) Learners collaborate to incorporate multimedia elements (e.g., images, videos, animations, audio) into their presentations to make them more engaging."
+                                        },
+                                        {
+                                            "activity_type": "Demonstration",
+                                            "description": "c) In pairs, learners demonstrate slide transitions and animations, applying them to their presentation while discussing when and how to use them effectively"
+                                        },
+                                        {
+                                            "activity_type": "Collaboration",
+                                            "description": "d) Learners work together to format a presentation that tells a compelling story, focusing on how design elements can guide the audience through the narrative."
+                                        },
+                                        {
+                                            "activity_type": "Design",
+                                            "description": "e) Learners collaborate to design a professional presentation for a simulated event (e.g., product launch or educational seminar), ensuring it is visually appealing and tailored to the audience."
+                                        },
+                                        {
+                                            "activity_type": "Collaboration",
+                                            "description": "a) In small groups, learners collaboratively design and develop a presentation using cloud-based tools (e.g., Google Slides, Microsoft PowerPoint Online, or Canva)."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "b) Individually, learners prepare and deliver a 5-minute presentation on a topic of their choice, incorporating at least one relevant visual aid to support their presentations."
+                                        },
+                                        {
+                                            "activity_type": "Simulation",
+                                            "description": "c) Using video conferencing tools (e.g., Zoom, Microsoft Teams, Google Meet), learners schedule and participate in virtual rehearsal sessions, presenting their slides to peers for feedback. In these virtual sessions, they take on the roles of both presenters and active audience members, providing constructive feedback on each other's slides, delivery, and overall presentation design."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "a) Converse with learners as they research, focusing on the uniqueness of different software tools."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "b) Observe learners explore various template designs and layouts focussing on their ability to work in groups."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "c) Observe learners as they make presentations about the choice of the layouts focusing on their ability to speak confidently and explain ideas."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "d) Converse with the learners as they create a presentation on a predetermined topic, focusing on the number of slides, slide titles, etc."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "e) Assess the learner's presentation, focusing on both the content and the visual appeal. Ensure that the slides are clear and engaging and effectively communicate the key ideas."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe learners as they design and enhance slides, focusing on the application of formatting, multimedia, and design principles to improve visual appeal and readability."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "b) Converse with learners as they discuss their choice of transitions, animations, and design elements, assessing their understanding of effective presentation techniques."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "c) Assess learners’ presentations for visual hierarchy, alignment, use of multimedia, and storytelling effectiveness in meeting the given task or scenario."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe learners as they collaborate online in real-time, focusing on their ability to effectively use cloud-based tools and coordinate their contributions and their ability to interact effectively with others."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "b) Observe learners as they deliver their presentation, focusing on their engagement with the audience through eye contact, audience interaction, and ability to maintain attentiveness."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "c) Assess the final presentation for quality, including the use of nonverbal communication, appropriate tone and pitch, and overall professionalism."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "d) Assess the final shared presentation for cohesiveness, quality of individual contributions, and the effective integration of collaborative efforts."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 32,
+                                        "unit": "periods",
+                                        "source_page": "22"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "N.B: (This topic may not be suitable for learners with visual impairment as it involves a lot of graphics)",
+                                            "note_type": "constraint",
+                                            "source_page": "23"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Computer Hardware",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-A-S5-T2-0001",
+                                        "topic_title": "Computer Hardware",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 28
+                                    },
+                                    "core_competency": "The learner performs routine service on computer hardware to ensure its optimal functionality and performance.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "a) classify hardware components, explaining their functions. (k, u, a)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "b) assemble a computer system ensuring correct connections and configurations. (u, s, v, gs)",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "c) demonstrate safe handling of computer hardware and perform routine maintenance for optimal performance. (s, v, a, gs)",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Identification",
+                                            "description": "a) In small groups, learners identify and label various hardware components."
+                                        },
+                                        {
+                                            "activity_type": "Reflection",
+                                            "description": "b) In a think-pair-share session, learners reflect on the importance of each hardware tool and their contribution to the overall functionality of a computer."
+                                        },
+                                        {
+                                            "activity_type": "Classification",
+                                            "description": "c) Learners work in groups to classify hardware devices, including input devices, output devices, storage devices, communication devices, and processing tools."
+                                        },
+                                        {
+                                            "activity_type": "Game",
+                                            "description": "d) Learners engage in a fun and interactive game, either using physical flashcards or an online tool, to match hardware device names with their categories (input, output, storage, etc.) and functions."
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "e) In groups, learners explore modern devices (e.g., touchscreens) that can function as both input and output devices and report their findings to the class."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "a) Learners safely work with standard external hardware components (mouse, keyboard, projector, monitor, cables, etc.) connecting them to the system unit."
+                                        },
+                                        {
+                                            "activity_type": "Simulation",
+                                            "description": "b) Learners collaborate using computer assembly simulation software or an interactive online tool to assemble and connect a computer system virtually."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "c) Learners safely connect internal components (motherboard, processor, RAM chips, hard drive, power supply unit, expansion cards, etc.), and correctly installing them within the system unit."
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "d) In pairs, learners collaborate to use system diagnostic tools (e.g., Task Manager, System Information, or third-party software) to analyse system specifications and match each component to its identified purpose."
+                                        },
+                                        {
+                                            "activity_type": "Research/Demonstration",
+                                            "description": "a) In small groups, learners research and demonstrate proper handling techniques of different hardware components."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "b) In pairs, learners discuss safety measures, such as turning off power before assembling components."
+                                        },
+                                        {
+                                            "activity_type": "Troubleshooting",
+                                            "description": "c) Learners troubleshoot and resolve hardware issues of a nonfunctional computer collaboratively."
+                                        },
+                                        {
+                                            "activity_type": "Maintenance",
+                                            "description": "d) In groups, learners clean internal and external components, such as removing dust from fans, heat sinks, and power supplies."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe learners as they identify and label hardware components in small group activities, noting collaboration."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "b) Converse with the learners as they identify the different hardware components focusing on the accuracy of the names of the components, their importances and classifications."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "c) Assess group reports and presentations on dual-function devices focusing on circumstances under which it can be used as an input device and output device."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe learners as they assemble or simulate computer systems, focusing on accuracy and adherence to instructions."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "b) Converse with learners as they discuss about the purpose and functionality of each hardware component."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "c) Assess learners' assembled hardware components and make diagnostic analyses for accuracy, completeness, and proper identification of system components and their purposes."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe learners as they handle hardware components and safety tools, focusing on proper handling techniques, adherence to safety protocols, and teamwork during troubleshooting tasks."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "b) Converse with learners as they discuss about safety measures and troubleshooting strategies, assessing their understanding of when and why these steps are necessary."
+                                        },
+                                        {
+                                            "assessment_type": "Observation/Product",
+                                            "description": "c) Assess learners’ ability to effectively, accurately, and safely demonstrate troubleshooting process and essential hardware cleaning activities."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 28,
+                                        "unit": "periods",
+                                        "source_page": "24"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "(For learners with visual and hearing impairment, an audio-visual video clip with captions should be availed for full participation)",
+                                            "note_type": "constraint",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "text_verbatim": "(Recognise the efforts of learners with disabilities for inclusion purposes)",
+                                            "note_type": "examiner_hint",
+                                            "source_page": "24"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-A-S5-T2-0002",
+                                        "topic_title": "Computer Software",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 30
+                                    },
+                                    "core_competency": "The learner installs and maintains computer software to ensure optimal functionality and performance.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "a) evaluate software options based on user requirements and system capabilities. (k, s, a, gs)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "b) install operating systems and software applications for optimal performance. (u, s, a, gs)",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "c) troubleshoot common software problems and implement effective solutions. (u, s, v, gs)",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "a) In pairs or small groups, learners explore the different software on their devices. They also describe the primary purpose of each software type in managing or enhancing computer functionality."
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "b) In small groups, learners analyse user requirements (e.g., for a business, school, or personal use), and compare different software options, considering system capabilities. Each group presents their recommendations and explains their reasoning behind the choices."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "c) In a lab environment, learners collaborate to explore and utilise multiple software applications (e.g., antivirus programs, office suites, or system optimisers). They assess the performance, user interface, and compatibility with the provided hardware and system."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "d) Learners role play as either clients or IT consultants. The client team presents requirements for software solutions (e.g., document management systems, customer relationship management tools, or system maintenance). The consultant conducts an analysis, and recommends appropriate software or system solutions. The consultant team must clearly explain how their recommendations align with the client’s specific needs and the technical capabilities of the proposed solutions."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "e) Learners discuss which type of software (system, application, or utility) is most critical for various scenarios, such as managing a business, maintaining a personal computer, or running a school system."
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "a) In groups, learners analyse hardware specifications and identify suitable operating systems and applications, presenting their findings and justifications to the class."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "b) Learners work together, following provided manuals and step-by-step guides to install an operating system and a software application on a computer."
+                                        },
+                                        {
+                                            "activity_type": "Configuration",
+                                            "description": "c) Working individually or in pairs, learners configure advanced software settings, such as user preferences, network options, and security protocols, based on specific real-world scenarios."
+                                        },
+                                        {
+                                            "activity_type": "Troubleshooting",
+                                            "description": "a) In pairs, learners work with computers or virtual environments pre-configured with common software issues (e.g., crashes, errors, or compatibility problems). They use diagnostic tools (e.g., Event Viewer, Task Manager) to identify and resolve them systematically, documenting the steps taken and the tools used to restore functionality."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "b) In small groups, learners explore and practise using various diagnostic tools like system logs, compatibility checkers, and antivirus programs. Each group member takes turns applying the tools to troubleshoot specific software malfunctions, documenting their findings and the effectiveness of each tool in solving the issue."
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "c) Learners analyse real-world case studies of software malfunctions (e.g., an office application experiencing crashes). They identify the root causes, propose effective solutions, and discuss how their strategies minimise downtime, enhance system reliability, and prevent recurring issues."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "d) In groups, learners take turns playing the roles of IT technicians and clients. The \"client\" describes a software issue, while the \"technician\" systematically identifies the problem using diagnostic strategies. The technician then proposes a solution, explaining the reasoning behind their choices."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "e) Learners individually present to the class their process of installing and configuring software. They highlight the key steps, potential challenges, and troubleshooting strategies used during the process. Feedback from peers is encouraged to help refine their skills and enhance understanding."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe learners as they classify software types and engage in role-playing activities, focusing on accuracy, clarity of explanations."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "b) Observe the learners as they present, focusing on their ability to use a range of media to communicate ideas."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "c) Converse with learners during discussions and debates about the software options and their suitability for specific user needs, assessing their ability to justify choices based on system capabilities."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "d) Assess learners' case study analyses, recommendations, and group presentations for logical reasoning, clear communication, and a deep understanding of software functionality and its alignment with user requirements."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a. Observe learners as they analyse hardware specifications and configure software settings, focusing on accuracy, attention to detail, and the ability to troubleshoot compatibility issues."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "b. Engage learners in discussions about their choices of operating systems, applications, and configurations, probing their reasoning behind decisions to ensure they understand compatibility and real-world application."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "c. Assess learners' presentations, installation processes, and configuration tasks for clarity, correctness, and how well they apply the instructions and handle software settings based on given scenarios."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe learners as they use diagnostic tools to identify and resolve software issues, focusing on their systematic approach, problem-solving skills, and teamwork."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "b) Engage learners in discussions about their diagnostic strategies, asking probing questions to evaluate their understanding of the root causes of software malfunctions and how to address them effectively."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "c) Assess learners’ documentation of troubleshooting processes, case study analyses, role-playing scenarios, and individual presentations for clarity, accuracy, and depth of their problem-solving approaches."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 30,
+                                        "unit": "periods",
+                                        "source_page": "26"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "(Assistive software for disability awareness could be discussed to support inclusion)",
+                                            "note_type": "ict",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "text_verbatim": "(For learners with visual and hearing impairment, an audio visual video clip with captions should be availed for full participation)",
+                                            "note_type": "constraint",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "text_verbatim": "(Recognise the efforts of learners with disabilities for inclusion purposes)",
+                                            "note_type": "examiner_hint",
+                                            "source_page": "28"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Electronic Word Processing",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-A-S5-T3-0001",
+                                        "topic_title": "Electronic Word Processing",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 30
+                                    },
+                                    "core_competency": "The learner creates professional Word documents for effective communication.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "a) format and edit a Word document. (k, u, s, gs)",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "b) apply document objects to enhance a Word document. (u, s, v, gs)",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "c) use document referencing features. (u, s, v, gs)",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "a) Learners explore different word processing software (e.g., Microsoft Word, Google Docs, LibreOffice Writer), and practise opening and creating a new document."
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "b) In groups, learners analyse key features such as menus, toolbars, and document templates."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "c) In small groups, learners create a document by arranging elements such as margins, page orientation, and spacing."
+                                        },
+                                        {
+                                            "activity_type": "Collaboration",
+                                            "description": "d) Learners collaborate to edit and review a document, utilising a range of tools and features available in word processing software."
+                                        },
+                                        {
+                                            "activity_type": "Formatting",
+                                            "description": "e) Learners collaborate online to apply various formatting tools in a Word document, including font styles, paragraph alignment, page setup, and heading styles, to enhance the document's presentation."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "f) In small groups, learners practise importing external data such as tables from Excel, or images from the web into a document."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "g) Learners work in small groups to adjust the size and format of imported elements, ensuring they integrate smoothly with the document layout."
+                                        },
+                                        {
+                                            "activity_type": "Collaboration",
+                                            "description": "h) Learners collaborate in small groups to practise saving documents in different formats (e.g., .docx, .pdf) and exporting them for printing or sharing."
+                                        },
+                                        {
+                                            "activity_type": "Collaboration",
+                                            "description": "i) Learners collaborate in groups, exchanging documents with peers for review and providing constructive feedback on formatting, layout, and content organisation."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "a) Learners collaborate in groups to discuss how various objects can enhance document presentation, sharing ideas on their most effective uses."
+                                        },
+                                        {
+                                            "activity_type": "Peer Review",
+                                            "description": "b) Learners collaborate in groups, exchanging documents with peers for review and offering constructive feedback on formatting, layout, and content organisation."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "c) Learners collaborate in pairs to create a table for organising data within a document."
+                                        },
+                                        {
+                                            "activity_type": "Formatting",
+                                            "description": "d) In pairs, learners apply different formatting styles, such as borders, shading, and font adjustments, to enhance the table appearance and readability."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "e) Learners collaborate in groups to apply SmartArt based on provided data."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "f) In pairs, learners collaborate to insert and manipulate various shapes (e.g., rectangles, arrows, circles) in a document, creating simple diagrams."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "g) Learners collaborate online in pairs to apply WordArt for creating stylised headings and emphasised text. They will experiment with various styles, colours, and effects to enhance the visibility and impact of the text."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "h) Learners collaborate in groups to search for and insert appropriate clip art or images into a document. They practice resizing, positioning, and formatting the visuals to enhance and support the document's content."
+                                        },
+                                        {
+                                            "activity_type": "Peer Review",
+                                            "description": "i) Learners collaborate in pairs, exchanging documents and providing feedback on the use of visual elements."
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "j) Learners collaborate in groups to explore mail merging."
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "a) Learners collaborate in groups to explore the advanced features of Word processing software, such as referencing tools (e.g., citations, footnotes, endnotes)."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "b) Learners collaborate in groups to create a research document that includes citations and a bibliography using referencing tools. They apply various citation styles (e.g., APA, MLA) and generate a reference list automatically."
+                                        },
+                                        {
+                                            "activity_type": "Collaboration",
+                                            "description": "c) Learners collaborate in pairs or small groups using cloud-based Word processing software (e.g., Google Docs or Microsoft Word Online) to create a shared document. They work in real-time, leveraging key features such as comments, track changes, and suggestions. Each learner contributes to different sections of the document, and they actively provide feedback to refine and improve the document."
+                                        },
+                                        {
+                                            "activity_type": "Feedback",
+                                            "description": "d) Individually, learners share their documents with peers via cloud storage or email and request feedback. They review the feedback, make necessary changes, and apply advanced features like automated formatting or indexing to finalise the document."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "e) Individually or in groups, learners create a comprehensive document (e.g., research paper, newsletter, or blog articles that incorporates referencing tools, mail merging, and collaborative features. They apply automation for efficient content management and finalise the document for sharing."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe learners as they explore and create documents, focusing on their ability to navigate software tools, apply layout features, and use formatting options effectively."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "b) Engage learners in discussions about the document creation and editing process, assessing their understanding of the features they use and how they enhance document presentation."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "c) Assess Word documents for proper use of formatting tools, content organisation, integration of external elements, and overall presentation quality. Additionally, evaluate their ability to provide constructive feedback on peer documents."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "d) Observe learners as they format imported focusing on their ability to try out innovative alternatives."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "a) Engage learners in discussions about the purpose and best uses of each visual element, probing their understanding of how these tools contribute to document clarity, readability, and design."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "b) Observe learners as they explore and apply different Word processor objects (e.g., tables, charts, shapes, WordArt, etc.), focusing on their ability to use these elements creatively and effectively to enhance document presentation."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "c) Assess the final documents for proper integration and formatting of objects like tables, shapes, and images, evaluating how well they support the document's content and overall presentation. Also, evaluate the quality of peer feedback regarding the use of visual elements."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "d) Assess learners’ documents focusing on how well the tables, charts, and other objects enhance the document’s overall structure and readability."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe learners as they use advanced Word processing features (e.g., referencing tools, mail merge, cloud collaboration), focusing on their ability to apply these tools effectively and accurately in real-world tasks."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "b) Converse with learners as they use advanced word processing features like citations, mail merging, and real-time collaboration, probing their understanding of how these tools enhance document creation and management."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "c) Assess the final documents for the correct and consistent use of advanced features, such as referencing styles, citation lists, personalised mail merge, and collaborative edits, ensuring they are well organised, formatted, and meet the intended purpose."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 30,
+                                        "unit": "periods",
+                                        "source_page": "29"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Electronic Spreadsheet",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-A-S5-T3-0002",
+                                        "topic_title": "Electronic Spreadsheet",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 30
+                                    },
+                                    "core_competency": "The learner organises, manipulates, and visualises data to draw insights for data-driven decision-making.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "a) collect and organise data. (k, u, s)",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "b) manipulate and analyse data to gain insights. (s, v, gs)",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "c) create visual objects (charts, graphs) to present data. (s, v, gs)",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "a) In groups, learners explore spreadsheet programs (e.g., Microsoft Excel or Google Sheets) and analyse their essential functions."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "b) In groups, learners create a new worksheet, navigate through cells, rows, and columns, and enter data."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "c) In pairs, learners create a simple budget worksheet. They enter data (e.g., expenses and income) and apply formatting for better readability."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "d) In small groups, learners practise sorting based on different criteria (e.g., alphabetical, numerical, date) on a dataset."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "e) In groups, learners use filters to display only relevant data based on specified conditions (e.g., filtering by date range or category)."
+                                        },
+                                        {
+                                            "activity_type": "Data Collection",
+                                            "description": "f) In pairs, learners choose a given subject area in their combination and collect relevant data (e.g., survey results, measurements, or statistics) and organise it in spreadsheet software."
+                                        },
+                                        {
+                                            "activity_type": "Data Collection",
+                                            "description": "g) In pairs, learners choose a subject area from their course combination, collect relevant data using online tools (e.g. Google Forms, etc), and organise it in spreadsheet software."
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "a) Learners apply formulas to manipulate and analyse data."
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "b) Learners apply statistical, mathematical, and date/time functions in spreadsheet software, such as the SUM, SUMIF, RANK, AVERAGE, AVERAGEIF, MIN, MAX, COUNT, COUNTIF, etc., to perform simple calculations and manipulation on a sample dataset."
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "c) In groups, learners apply logical functions such as IF, VLOOKUP, or HLOOKUP functions to retrieve insights from a large dataset."
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "d) Learners work together to consolidate data from multiple worksheets into a single worksheet using functions and pivot tables."
+                                        },
+                                        {
+                                            "activity_type": "Peer Review",
+                                            "description": "e) Learners review (peer review) each other's spreadsheets, checking data organisation, formats, and formulas, and suggest improvements for clarity and efficiency."
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "a) Learners explore the different visualisation objects available in spreadsheet software (e.g., bar charts, line graphs, maps, pie charts)."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "b) Learners present different forms of data using appropriate visualisation objects."
+                                        },
+                                        {
+                                            "activity_type": "Customisation",
+                                            "description": "c) Learners collaboratively customise the chart by modifying elements such as the title, axis labels, legends, data labels, and colours to improve clarity and presentation."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "d) Learners create a combo chart (e.g., a bar and line chart together) to compare two different data types in one visualisation."
+                                        },
+                                        {
+                                            "activity_type": "Analysis/Visualisation",
+                                            "description": "e) Learners collaborate online to analyse and visualise a dataset (e.g., customer feedback, survey results) using appropriate spreadsheet tools."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe learners as they organise data in a worksheet by entering information, formatting cells (e.g., text size, colours, borders), sorting data, and adjusting column widths."
+                                        },
+                                        {
+                                            "assessment_type": "Discussion",
+                                            "description": "b) Engage learners in a discussion to assess their understanding of the process and the reasoning behind their choices. Ask them to explain why they chose specific formatting options (e.g., font size, colour schemes, cell styles)."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "c) Assess the worksheet to ensure data is accurate, well-organized, professionally formatted with consistent fonts, readable text, and optimized for printing with proper margins, headers, and footers."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe learners as they apply formulas and functions within the spreadsheet, such as SUM, AVERAGE, COUNT, and MAX/MIN."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "b) Assess learners’ worksheets for correct formulas, proper function syntax, and logical application in the task context."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "c) Engage a learner in a dialogue, evaluating their thought process behind applying formulas and functions."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe how learners use chart formatting tools to enhance data communication, focusing on their ability to choose the correct chart type for the data, customise the chart for readability and clarity, and ensure the chart aligns with the intended analysis."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "b) Conduct a discussion with learners to understand their reasoning behind the chart creation and customisation choices."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "c) Evaluate the chart’s visual clarity, accuracy, and effectiveness in communicating the intended message, ensuring that the chart helps to analyse the data and provides clear insights for the intended audience."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 30,
+                                        "unit": "periods",
+                                        "source_page": "32"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "(Recognise the efforts of learners with disabilities for inclusion purposes)",
+                                            "note_type": "examiner_hint",
+                                            "source_page": "33"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

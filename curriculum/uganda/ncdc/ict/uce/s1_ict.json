@@ -1,0 +1,671 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — Populated from Information & Communications Technology Syllabus (NCDC, 2019).",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Information & Communications Technology",
+        "level": "Lower Secondary",
+        "class_group": "Senior One",
+        "year": "2019",
+        "version": "1.0",
+        "source_document": "Information & Communications Technology Syllabus"
+    },
+    "global_framework": {
+        "competencies": [
+            {
+                "text_verbatim": "Self-assured individuals who: demonstrate self- motivation, self-management andself esteem; know their own preferences, strengths andlimitations; adjust their behaviour and language appropriatelyto different social situations; relate well to a range of personality types.",
+                "source_page": "9"
+            },
+            {
+                "text_verbatim": "Responsible and patriotic citizens who: cherish the values promoted in the curriculum; promote the development of indigenous culturesand languages and appreciate diversity and equity; apply environmental and health awareness when making decisions for themselves and their communities; are positive in their own identity as individualsand global citizens; are motivated to contribute to the well-beingof themselves, their community and the nation.",
+                "source_page": "9"
+            },
+            {
+                "text_verbatim": "Lifelong learners who: can plan, reflect and direct their own learning; actively seek lifelong learning opportunities forpersonal and professional development.",
+                "source_page": "9"
+            },
+            {
+                "text_verbatim": "Positive contributors to society who: have acquired and can apply the Generic Skills; demonstrate knowledge and understanding of the emerging needs of society and the economy; understand how to design, make and critically evaluate products and processes to address needs; appreciate the physical, biological and technological world and make informed decisions about sustainable development and its impact on people and the environment.",
+                "source_page": "9"
+            }
+        ],
+        "generic_skills": [
+            {
+                "skill_category": "Communication",
+                "skills": [
+                    "Listen attentively and with comprehension",
+                    "Talk confidently and explain ideas/opinions clearly",
+                    "Read accurately and fluently",
+                    "Write and present coherently",
+                    "Use a range of media to communicate ideas"
+                ],
+                "source_page": "10"
+            },
+            {
+                "skill_category": "Critical thinking and problem-solving",
+                "skills": [
+                    "Plan and carry out investigations",
+                    "Sort and analyse information",
+                    "Identify problems and ways forward",
+                    "Predict outcomes and make reasoned decisions",
+                    "Evaluate different solutions"
+                ],
+                "source_page": "10"
+            },
+            {
+                "skill_category": "Creativity and innovation",
+                "skills": [
+                    "Use imaginations to explore possibilities",
+                    "Work with others to generate ideas",
+                    "Suggest and develop new solutions",
+                    "Try out innovative alternatives",
+                    "Look for patterns and make generalisations"
+                ],
+                "source_page": "10"
+            },
+            {
+                "skill_category": "Co-operation and Self-Directed Learning",
+                "skills": [
+                    "Work effectively in diverse teams",
+                    "Interact effectively with others",
+                    "Take responsibility for own learning",
+                    "Work independently with persistence",
+                    "Manage goals and time"
+                ],
+                "source_page": "10"
+            },
+            {
+                "skill_category": "Mathematical Computations and ICT Proficiency",
+                "skills": [
+                    "Use numbers and measurementsaccurately",
+                    "Interpret and interrogate mathematicaldata",
+                    "Use mathematics to justify and support decisions",
+                    "Use technology to create, manipulate andprocess information",
+                    "Use technology to collaborate, communicate and refine work"
+                ],
+                "source_page": "10"
+            }
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and Patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior One",
+            "class_code": "S1",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "COMPUTER SYSTEMS",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-O-S1-T1-0001",
+                                        "topic_title": "INTRODUCTION TO ICT",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 24,
+                                        "keywords": [
+                                            "ict concepts",
+                                            "safety precautions",
+                                            "information processing cycle",
+                                            "computer threats",
+                                            "laboratory rules",
+                                            "ict tools"
+                                        ]
+                                    },
+                                    "core_competency": "The learner understands the concept of ICT and the related terminologies, its benefits and the required safety precautions.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Explain the concept of “ICT” and the related terminologies. (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "know the common ICT tools and their use in various fields. (k, u, v)",
+                                            "domain": "Knowledge, Understanding, Values"
+                                        },
+                                        {
+                                            "outcome_text": "use various ICT tools. (s, v)",
+                                            "domain": "Skills, Values"
+                                        },
+                                        {
+                                            "outcome_text": "appreciate the Safety precautions for the different ICT tools. (u, v)",
+                                            "domain": "Understanding, Values"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "Guide learners to: brainstorm the term “ICT”."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Guide learners to: name the ICT Technologies they know of and how they are used in the everyday life."
+                                        },
+                                        {
+                                            "activity_type": "Identification/Description",
+                                            "description": "Use ICT equipment, and in pairs or in groups, ask them to: identify and name each of the ICT tools, and describe how they are used."
+                                        },
+                                        {
+                                            "activity_type": "Research/Group Discussion",
+                                            "description": "Use ICT equipment, and in pairs or in groups, ask them to: research on specialised applicationsof ICTs in various fields; health, industry, transport, banks, communication, education, security and allow them to discuss in groups."
+                                        },
+                                        {
+                                            "activity_type": "Study/Presentation",
+                                            "description": "Use ICT equipment, and in pairs or in groups, ask them to: work in pairs to study user manuals for a variety of ICT tools, summarise and present the safety precautions in awhole class discussion."
+                                        },
+                                        {
+                                            "activity_type": "Practical Operation",
+                                            "description": "Use ICT equipment, and in pairs or in groups, ask them to: operate available ICT tools to producea product i.e. taking a photograph using a camera, typing a text, texting…project using a projector."
+                                        },
+                                        {
+                                            "activity_type": "Discovery Session",
+                                            "description": "Use ICT equipment, and in pairs or in groups, ask them to: describe, in a discovery session, the information processing cycle using a simple diagram to illustrate how data is processed into information and stored for future use."
+                                        },
+                                        {
+                                            "activity_type": "Guided Discussion",
+                                            "description": "Use ICT equipment, and in pairs or in groups, ask them to: identify, in a guided discussion, possible threats to computers"
+                                        },
+                                        {
+                                            "activity_type": "Group Work/Presentation",
+                                            "description": "Use ICT equipment, and in pairs or in groups, ask them to: prepare, in groups, and present rules to govern the use of the computer laboratory."
+                                        },
+                                        {
+                                            "activity_type": "Tutoring Session",
+                                            "description": "Use ICT equipment, and in pairs or in groups, ask them to: in a tutoring session in class or computer laboratory to identify some security and safety concerns of ICT tools"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation/Listening",
+                                            "description": "Listen and ensure that learners interact with, name and state the use(s) of ICT tools, including those shown in the images below;"
+                                        },
+                                        {
+                                            "assessment_type": "Listening",
+                                            "description": "Listen as learners’ state the necessary safety precautions they would take while using each of the tools above."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners’ use or describe the use of various ICT tools."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "16"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "COMPUTER SYSTEMS",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-O-S1-T2-0001",
+                                        "topic_title": "COMPUTER HARDWARE AND SYSTEM STARTUP",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "hardware devices",
+                                            "computer assembly",
+                                            "system startup",
+                                            "peripheral tools",
+                                            "input output",
+                                            "storage media"
+                                        ]
+                                    },
+                                    "core_competency": "The learner understands the importance of the physical devices of a computer system and uses them in everyday life.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "know the physical devices of a computer system and how each operates. (k, s, u, v)",
+                                            "domain": "Knowledge, Skills, Understanding, Values"
+                                        },
+                                        {
+                                            "outcome_text": "assemble a computer system. (s, v)",
+                                            "domain": "Skills, Values"
+                                        },
+                                        {
+                                            "outcome_text": "safely start and shut down a computer system. (s, v)",
+                                            "domain": "Skills, Values"
+                                        },
+                                        {
+                                            "outcome_text": "use computer peripheral tools. (k, u, s, v)",
+                                            "domain": "Knowledge, Understanding, Skills, Values"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classification",
+                                            "description": "Guide learners to: classify in pairs, a list of hardware devices as Input, output, storage, communication and processing tools into their respective categories."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming/Think Pair Share",
+                                            "description": "Guide learners to: brainstorm, in a think pair session, and report on the importance of each of the hardware tools."
+                                        },
+                                        {
+                                            "activity_type": "Identification",
+                                            "description": "Guide learners to: identify by name and use, the physical devices of a computer system (not assembled)."
+                                        },
+                                        {
+                                            "activity_type": "Practical Operation",
+                                            "description": "Guide learners to: work in pairs, to follow a given step-by- step procedure to connect parts of a computer, power,start and shut down a computer system."
+                                        },
+                                        {
+                                            "activity_type": "Practical/Individual Work",
+                                            "description": "Guide learners to: individually prepare texts, take picture and use peripheral tools such as printer, scanner and projector to get anoutput."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they, assemble the different parts into a working computer system."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they connect and use peripheral tools such as printer, scanner and projector appropriately."
+                                        },
+                                        {
+                                            "assessment_type": "Discussion/Listening",
+                                            "description": "Listen as learners discuss and explain the importance of each of these hardware tools: Mouse, Keyboard, Monitor, Speakers."
+                                        },
+                                        {
+                                            "assessment_type": "Evaluation",
+                                            "description": "Evaluate the connected set of peripherals and confirm whether the connections are proper."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Computer Assembly and Operation",
+                                                "description_verbatim": "work in pairs, to follow a given step-by- step procedure to connect parts of a computer, power,start and shut down a computer system.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "17"
+                                            },
+                                            {
+                                                "title": "Using Peripherals",
+                                                "description_verbatim": "individually prepare texts, take picture and use peripheral tools such as printer, scanner and projector to get anoutput.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [
+                                                    "printer",
+                                                    "scanner",
+                                                    "projector"
+                                                ],
+                                                "source_page": "17"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "17"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "DATA MANAGEMENT AND SHARING",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-O-S1-T2-0002",
+                                        "topic_title": "FILE AND FOLDER MANAGEMENT",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "storage media",
+                                            "file management",
+                                            "folder management",
+                                            "data conversion",
+                                            "transfer files",
+                                            "save files"
+                                        ]
+                                    },
+                                    "core_competency": "The learner understands the different types of storage media to store information following the structure of files, folders and directories.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "use the different types of storage media to create, save and transfer files. (u, s,v).",
+                                            "domain": "Understanding, Skills, Values"
+                                        },
+                                        {
+                                            "outcome_text": "convert units for data storage. (k, u)",
+                                            "domain": "Knowledge, Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Discussion/Identification",
+                                            "description": "Guide learners to: discuss and Identify different types of storage media."
+                                        },
+                                        {
+                                            "activity_type": "Practical Operation",
+                                            "description": "Guide learners to: create and save a simple file."
+                                        },
+                                        {
+                                            "activity_type": "Practical Operation",
+                                            "description": "Guide learners to: transfer files between different storage media."
+                                        },
+                                        {
+                                            "activity_type": "Practical/Pair Work",
+                                            "description": "Guide learners to: work in pairs and use a simple program (e.g. paint, WordPad) to add some information on a file (e.g. shapes, simple drawings)"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Pair Work",
+                                            "description": "Guide learners to: work in pairs and create, name and rename folders/files on a variety ofstorage media."
+                                        },
+                                        {
+                                            "activity_type": "Matching Exercise",
+                                            "description": "Guide learners to: match different storage devices to their respective names and storage capacities."
+                                        },
+                                        {
+                                            "activity_type": "Practical/Group Work",
+                                            "description": "Guide learners to: work in pairs or in groups, and: save files on a variety of storagemedia."
+                                        },
+                                        {
+                                            "activity_type": "Practical/Group Work",
+                                            "description": "Guide learners to: work in pairs or in groups, and: store files/folders in a desiredlocation (file path); online/offline."
+                                        },
+                                        {
+                                            "activity_type": "Calculation/Classification",
+                                            "description": "Guide learners to: work in pairs or in groups, and: convert from one storage measurement unit to another (B, KB,MB, etc.). In pairs, learners classify physical storage media according to methods of storage and move files/ folders from one storage device to another."
+                                        },
+                                        {
+                                            "activity_type": "Comparison/Pair Work",
+                                            "description": "Guide learners to: work in pairs, to compare the different types of storage media in terms ofspeed of access, portability, storage capacity and method."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners identifying different storage media types and transferring files."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners’ drawings andtheir accuracy in using paint."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they create and transfer files and folders from one location to another."
+                                        },
+                                        {
+                                            "assessment_type": "Discussion",
+                                            "description": "Discuss with learners as they make conversions of data storageunits."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "18"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "DATA MANAGEMENT AND SHARING",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-O-S1-T3-0001",
+                                        "topic_title": "WORD PROCESSING I",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 24,
+                                        "keywords": [
+                                            "word processing",
+                                            "document formatting",
+                                            "document editing",
+                                            "printing",
+                                            "page orientation",
+                                            "insert objects"
+                                        ]
+                                    },
+                                    "core_competency": "The learner uses a Word processing software (e.g. MS Word) to create, edit and print documents.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "use the word processor interface. (k, u, s, v)",
+                                            "domain": "Knowledge, Understanding, Skills, Values"
+                                        },
+                                        {
+                                            "outcome_text": "use a word processing software to create, format, edit and print a document. (k, u, s, v)",
+                                            "domain": "Knowledge, Understanding, Skills, Values"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Working individually or in pairs, learners: open a word processing Application software."
+                                        },
+                                        {
+                                            "activity_type": "Observation/Study",
+                                            "description": "Working individually or in pairs, learners: study the word processor interface and take note of the various features andtheir effects on text."
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "Working individually or in pairs, learners: study a hard copy document (prepared by the teacher) and identifying therange of formats used."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Working individually or in pairs, learners: use tools and features of a word processor to format and edit documents(s)."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Working individually or in pairs, learners: format a Word document (page orientation, margins, size, fonts, paragraphing, etc.)."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Working individually or in pairs, learners: insert objects in a word document(tables, images, shapes, header and footer)."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Working individually or in pairs, learners: print part or the whole document."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe as learners open and interact with the word processingapplication."
+                                        },
+                                        {
+                                            "assessment_type": "Observation/Peer Review",
+                                            "description": "Observe learners making a peer review of each other’s work"
+                                        },
+                                        {
+                                            "assessment_type": "Evaluation",
+                                            "description": "Evaluate learners printed work in line with the specifications given."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "19"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

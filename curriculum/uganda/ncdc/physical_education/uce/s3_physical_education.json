@@ -1,0 +1,2400 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — VERBATIM EXTRACTION FOR SENIOR THREE PHYSICAL EDUCATION",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "Physical Education",
+    "level": "O-Level",
+    "class_group": "Senior Three",
+    "year": "S3",
+    "version": "2019",
+    "source_document": "PHYSICAL EDUCATION SYLLABUS"
+  },
+  "global_framework": {
+    "competencies":[
+      "Self-assured individuals",
+      "Responsible and patriotic citizens",
+      "Lifelong learners",
+      "Positive contributors to society"
+    ],
+    "generic_skills":[
+      "Communication",
+      "Critical thinking and problem-solving",
+      "Creativity and innovation",
+      "Mathematical computation and ICT proficiency",
+      "Co-operation and Self-Directed Learning"
+    ],
+    "values":[
+      "Respect for humanity and environment",
+      "Honesty; uphold and defend the truth at all times",
+      "Justice and fairness in dealing with others",
+      "Hard work for self-reliance",
+      "Integrity; moral uprightness and sound character",
+      "Creativity and innovativeness",
+      "Social Responsibility",
+      "Social Harmony",
+      "National Unity",
+      "National Consciousness and patriotism"
+    ],
+    "attitudes": [],
+    "cross_cutting_issues":[
+      "Environmental awareness",
+      "Health awareness",
+      "Life skills",
+      "Mixed abilities and involvement",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+  "authority_model": {
+    "precedence_order":[
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "classes":[
+    {
+      "class_name": "Senior Three",
+      "class_code": "S3",
+      "terms":[
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes":[
+            {
+              "theme_title": "Theory and practice of physical education",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T1-0001",
+                    "topic_title": "THE BODY AND PHYSICAL ACTIVITIES",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner understands the functions of the body systems in relation to performance of physical activities and knows how motivation can influence one’s performance in physical activities.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "analyse the role of the various body systems in effective performance of physical activities, understanding abilities and limitations regarding fitness. (k, u)",
+                      "domain": "Knowledge/Understanding"
+                    },
+                    {
+                      "outcome_text": "interpret the changes on the body in response to physical activities and relate them to the various body systems. (u,gs)",
+                      "domain": "Understanding/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "understand ways that prevent non-communicable diseases. (u,a)",
+                      "domain": "Understanding/Attitudes"
+                    },
+                    {
+                      "outcome_text": "understand the meaning and types of motivation. (k, u)",
+                      "domain": "Knowledge/Understanding"
+                    },
+                    {
+                      "outcome_text": "understand how performance is affected by encouragement and the physiological responses. (u,a)",
+                      "domain": "Understanding/Attitudes"
+                    },
+                    {
+                      "outcome_text": "analyse the relevance of goal setting in performance. (gs)",
+                      "domain": "Generic Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment":[],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners, in groups, are guided to discuss the role of the various body systems in performance of physical activities such as; skeletal, muscular, circulatory and nervous system. They should discuss what they know about the effects of a balanced diet on healthy living."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are guided to participate in various exercises so as to observe the changes on their body."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners relate the body changes experienced to the various body systems and describe how the system works in relation to physical performance."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Individually, learners carry out some research and write up their findings to describe the need to be healthy in order to participate in physical activities."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Are engaged in discussion on ways to prevent non-communicable diseases."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Search on the causes and effects of non-communicable diseases and suggest physical activities that one can engage in to prevent non-communicable diseases"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In a classroom situation, the teacher asks one learner to clap their hands, and then the next learner claps their hands and so on around the room. Tell the group that the time from the start to the last clap will be timed. Take note of the times down. Then provide some incentive or reward to speed up the clapping. Discuss how activities such as this can motivate participation and engagement. Ask learners to compose their own ideas and games."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners discuss the meaning of motivation and create a charter to describe how they will motivate each other."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners suggest other ways of motivating colleagues in a practical situation."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are guided into physical activities with an emphasis on the various methods of motivation and then in groups they analyse how their performance is affected by encouragement and the physiological responses."
+                    },
+                    {
+                      "activity_type": "Planning",
+                      "description": "Learners are guided to set personal goals and take record of them in their diaries so as to work hard towards achieving them."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Written",
+                      "description": "Task learners to make a write up describing the roles of selected body systems in performance of physical activities."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners and note the generic skills of teamwork, creativity critical thinking. Engage learners in discussion on the suggestions given to ascertain their understanding of the concepts in the task."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Product should be a write up developed by the students with illustrations and reasons."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "37"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses":[],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Athletics",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T1-0002",
+                    "topic_title": "DEVELOPMENT OF RUNNING SKILLS",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner applies Running skills and techniques during performance as well as in other physical activities in daily life.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "apply the rules and regulations that govern running events in Athletics.(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "execute the different baton exchange techniques within the rules of play. (s,gs)",
+                      "domain": "Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "perform the whole sequence for the sprint hurdles. (s)",
+                      "domain": "Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "In pairs learners interpret the rules and regulations that govern running events using trials for the particular events."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups of four, learners practice the non-visual baton exchange techniques; Upsweep; Down sweep using various drills: seated, standing, walking, jogging and running."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are guided on how to use checkmarks and exchange zones during nonvisual baton exchanges."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners practice relay sprints using the nonvisual baton exchange while observing the rule of working within the exchange zone."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Individually, learners observe and practice hurdle clearance using the lead leg and trail leg movement drills in a safe environment."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners practice the combination of hurdle clearance and the three-stride rhythm using three hurdles."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners practice sprints, sprint relays and sprint hurdles while observing safety and the rules that govern the events."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Task learners to demonstrate hurdle clearance over 5 hurdle flights while observing the three-stride rhythm run between hurdles. Observe learner’s performance with focus on: - proper hurdle clearance (body posture during clearance) - three-stride rhythm between hurdles."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Product should be a record of the learner’s performance using rubrics or video coverage where possible."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "38"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Games",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T1-0003",
+                    "topic_title": "BASIC SKILLS IN BASKETBALL",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner creates improvised equipment for Basketball, performs basic skills and applies the acquired skills in a game situation.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "make improvised equipment for Basketball using local materials.(s, gs,v,a)",
+                      "domain": "Skills/Generic Skills/Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "execute basic skills used in Basketball with application of the safety precautions. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "understand the skills, safety precautions and rules considered in the game of Basketball. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "apply the basic skills of Basketball in mini-game situations. (s,a)",
+                      "domain": "Skills/Attitudes"
+                    },
+                    {
+                      "outcome_text": "display aspects of teamwork, companionship, leadership, decision-making and judgment in relation to the game of Basketball. (gs,s,v,a)",
+                      "domain": "Generic Skills/Skills/Values/Attitudes"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment":[],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small groups, learners are guided to collect local materials and make improvised equipment for Basketball (balls) which can be used for practice."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In manageable groups, learners observe and practice the following skills; Ball handling - throwing/catching - bouncing Passing and catching - chest pass - bounce pass - overhead pass - underarm pass - shoulder pass Dribbling: high/low dribble Footwork in relation to passing, dribbling, dodging, pivoting, and shooting. Shooting - jump shot - set-shot - free throw Basic rebounding"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In set groups, learners employ the basic skills in mini-basketball games and correct mistakes of one another."
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "In small groups, using their prior interface with Basketball, learners are guided after a discussion to make a presentation to describe the basic rules of Basketball and safety measures to be considered for the game."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups learners form teams and are given a chance to use the acquired skills and techniques in game situations under the supervision of the teacher."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: demonstration of the different basic skills of Basketball by the learner; application of safety precautions; application of the rules that govern Basketball; generic skills exhibited by learners during a game situation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation: ascertain the impact of learners’ input in relation to the final output as they perform the skill; ask learners to describe the measures put in place to ensure a safe environment for play."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper execution of basic skills in hockey. [sic - copied verbatim from PDF] Application of rules and regulations of Basketball during a game situation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "39"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[
+                    {
+                      "text_verbatim": "Games choice: Game 1 and Game 2 chosen from Rugby, Hockey, Basketball, Cricket, Badminton, Table tennis (Total 24 periods for two games).",
+                      "note_type": "clarification",
+                      "source_page": "15"
+                    }
+                  ],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T1-0004",
+                    "topic_title": "BASIC SKILLS IN RUGBY",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner creates improvised equipment for Rugby, performs basic skills and applies the acquired skills in a game situation.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "make improvised equipment for Rugby using local materials. (s, gs,v,a)",
+                      "domain": "Skills/Generic Skills/Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "execute basic skills used in Rugby with application of the safety precautions.(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "understand the skills, safety precautions and rules considered in the game of Rugby. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "apply the basic skills of Rugby in mini-game situations. (s,a)",
+                      "domain": "Skills/Attitudes"
+                    },
+                    {
+                      "outcome_text": "display aspects of teamwork, companionship, leadership, decision-making and judgment in relation to the game of Rugby. (gs,s,v,a)",
+                      "domain": "Generic Skills/Skills/Values/Attitudes"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small groups, learners are guided to collect local materials and make improvised equipment for Rugby (balls) which can be used for practice."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups of 4-6, learners are guided to practice the following basic skills used in Rugby - variations of throwing and catching - passing and its variations - line out and its variation - tackling and its variation - kicking and its variation"
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "In small groups, using their prior interface with Rugby, learners are guided to discuss and make a presentation to describe the basic rules of Rugby and safety measures to be considered for the game."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups learners form teams and are given a chance to use the acquired skills and techniques in game situations under the supervision of the teacher."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: demonstration of the different basic skills of Rugby by the learner; application of safety precautions; application of the rules that govern Rugby; generic skills exhibited by learners during a game situation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation: ascertain the impact of learners’ input in relation to the final output as they perform the skill; ask learners to describe the measures put in place to ensure a safe environment for play."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper execution of basic skills in Rugby. Application of rules and regulations of Rugby during a game situation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "40"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses":[],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T1-0005",
+                    "topic_title": "BASIC SKILLS IN HOCKEY",
+                    "sequence_order": 5,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner creates improvised equipment for Hockey, performs basic skills and applies the acquired skills in a game situation.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "make improvised equipment for Hockey using local materials. (s,gs,v,a)",
+                      "domain": "Skills/Generic Skills/Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "execute basic skills used in Hockey with application of the safety precautions.(s,)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "understand the skills, safety precautions and rules considered in the game of Hockey. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "apply the basic skills of Hockey in mini-game situations. (s, a)",
+                      "domain": "Skills/Attitudes"
+                    },
+                    {
+                      "outcome_text": "display aspects of teamwork, companionship, leadership, decision-making and judgment in relation to the game of Hockey. (gs, s)",
+                      "domain": "Generic Skills/Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small groups, learners are guided to collect local materials and make improvised equipment for Hockey (balls, sticks, goal posts) which can be used for practice."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In pairs, learners are guided to practice the following basic skills in Hockey: - stance, - grips, - position of ball, - left and right hand lunge, - front or straight tackle, - circular tackle, - triangular tackle, - scoop, flick and push. - passing: pushing, hitting"
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "In small groups, using their prior interface with Hockey, learners are guided to discuss and make a presentation to describe the basic rules of Hockey and safety measures to be considered for the game."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups learners form teams and are given a chance to use the acquired skills and techniques in game situations under the supervision of the teacher. They should reflect on their progress as they develop better skills."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: demonstration of the different basic skills of hockey by the learner; application of safety precautions; application of the rules that govern hockey; generic skills exhibited by learners during a game situation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation: ascertain the impact of learners’ input in relation to the final output as they perform the skill; ask learners to describe the measures put in place to ensure a safe environment for play."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper execution of basic skills in hockey. Application of rules and regulations of hockey during a game situation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "41"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T1-0006",
+                    "topic_title": "BASIC SKILLS IN CRICKET",
+                    "sequence_order": 6,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner creates improvised equipment for Cricket, performs basic skills and applies the acquired skills in a game situation.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "make improvised equipment for Cricket using local materials. (s,gs,v,a)",
+                      "domain": "Skills/Generic Skills/Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "execute basic skills used in Cricket with application of the safety precautions.(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "understand the skills, safety precautions and rules considered in the game of Cricket. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "apply the basic skills of Cricket in mini-game situations. (s,a)",
+                      "domain": "Skills/Attitudes"
+                    },
+                    {
+                      "outcome_text": "display aspects of teamwork, companionship, leadership, decision-making and judgment in relation to the game of Cricket. (gs,s,a,v)",
+                      "domain": "Generic Skills/Skills/Attitudes/Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small groups, learners are guided to collect local materials and make improvised equipment for Cricket (balls, bats, guards) which can be used for practice."
+                    },
+                    {
+                      "activity_type": "Tour",
+                      "description": "As a class, learners take a guided tour around a Cricket facility if possible and make a close study of the equipment used in cricket."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In manageable groups, learners practice the following basic skills and techniques in cricket: - batting - bowling: underarm action - wicket keeping"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "Under the teacher’s guidance, learners learn about and then display etiquette and rehearse terminologies used in cricket."
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "In small groups, using their prior interface with Cricket, learners are guided to discuss and make a presentation to describe the basic rules of Cricket and safety measures to be considered for the game."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups learners form teams and are given a chance to use the acquired skills and techniques in game situations under the supervision of the teacher. They should watch each other play, using critical judgement to suggest improvements in performance."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: demonstration of the different basic skills of Cricket by the learner; application of safety precautions; application of the rules that govern Cricket; generic skills exhibited by learners during a game situation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation: ascertain the impact of learners’ input in relation to the final output as they perform the skill; ask learners to describe the measures put in place to ensure a safe environment for play."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper execution of basic skills in Cricket. Application of rules and regulations of Cricket during a game situation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "42"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T1-0007",
+                    "topic_title": "BASIC SKILLS IN BADMINTON",
+                    "sequence_order": 7,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner creates improvised equipment for Badminton, performs basic skills and applies the acquired skills in a game situation.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "make improvised equipment for Badminton using local materials. (s, gs,v,a)",
+                      "domain": "Skills/Generic Skills/Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "execute basic skills used in Badminton with application of the safety precautions. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "understand the skills, safety precautions and rules considered in the game of Badminton. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "apply the basic skills of Badminton in mini-game situations. (s,a)",
+                      "domain": "Skills/Attitudes"
+                    },
+                    {
+                      "outcome_text": "display aspects of teamwork, companionship, leadership, decision-making and judgment in relation to the game of Badminton. (gs,s,,v,a)",
+                      "domain": "Generic Skills/Skills/Values/Attitudes"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small groups, learners are guided to collect local materials and make improvised equipment for Badminton (shuttle cocks, nets) which can be used for practice."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In manageable groups, learners undertake a task of setting up a badminton court using improvised materials."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In manageable groups learners observe and practice the basics of shuttle cock and racket handling, racket grips for forehand and backhand."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In pairs, learners observe and practice the following basic skills of Badminton: - sweeps: forward sweep, backward sweep - serve: low, forearm, backhand, flick, drive - net play/net shots: hair pin"
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "In small groups, using their prior interface with Badminton, learners are guided to discuss and make a presentation to describe the basic rules of Badminton and safety measures to be considered for the game."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups learners form teams and are given a chance to use the acquired skills and techniques in game situations under the supervision of the teacher. They should notice and discuss how badminton compares to other sports."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: demonstration of the different basic skills of Badminton by the learner; application of safety precautions; application of the rules that govern Badminton; generic skills exhibited by learners during a game situation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation: ascertain the impact of learners’ input in relation to the final output as they perform the skill; ask learners to describe the measures put in place to ensure a safe environment for play"
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper execution of basic skills in Badminton. Application of rules and regulations of Badminton during a game situation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "43"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T1-0008",
+                    "topic_title": "BASIC SKILLS OF TABLE TENNIS",
+                    "sequence_order": 8,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner creates improvised equipment for Table tennis, performs basic skills and applies the acquired skills in a game situation.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "make improvised equipment for Table tennis using local materials. (s, v,gs,a)",
+                      "domain": "Skills/Values/Generic Skills/Attitudes"
+                    },
+                    {
+                      "outcome_text": "execute basic skills used in Table tennis with application of the safety precautions. (s, v)",
+                      "domain": "Skills/Values"
+                    },
+                    {
+                      "outcome_text": "understand the skills, safety precautions and rules considered in the game of Table tennis. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "apply the basic skills of Table tennis in mini-game situations. (s, a)",
+                      "domain": "Skills/Attitudes"
+                    },
+                    {
+                      "outcome_text": "display aspects of teamwork, companionship, leadership, decision-making and judgment in relation to the game of Table tennis. (gs, a, v s)",
+                      "domain": "Generic Skills/Attitudes/Values/Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment":[],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small groups, learners are guided to collect local materials and make improvised equipment for Table tennis (balls, bats, nets) which can be used for practice."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In manageable groups, learners undertake a task of setting up a Table for playing the game using improvised material within the school."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In manageable groups, learners observe and practice the basics of ball and bat handling, bat grips for forehand and backhand."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In pairs, learners practice the following basic skills used in Table tennis: - service - reception - forward and backward sweep - net play"
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "In small groups, using their prior interface with Table tennis, learners are guided to discussion and make a presentation to describe the basic rules of Table tennis and safety measures to be considered for the game."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners form teams and are given a chance to use the acquired skills and techniques in game situations under the supervision of the teacher. They should discuss the difference and challenges of playing individually and in a pair."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: demonstration of the different basic skills of Table tennis by the learner; application of safety precautions; application of the rules that govern Table tennis; generic skills exhibited by learners during a game situation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation: ascertain the impact of learners’ input in relation to the final output as they perform the skill; ask learners to describe the measures put in place to ensure a safe environment for play."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper execution of basic skills in Table tennis. Application of rules and regulations of Table tennis during a game situation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "44"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2",
+          "term_number": 2,
+          "themes":[
+            {
+              "theme_title": "Theory and Practice of Physical Education",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T2-0009",
+                    "topic_title": "MEDIA AND SPORTS",
+                    "sequence_order": 9,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner understands the relationship between sports and media so as to make analyses of contemporary issues in sports.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "know the various types of media presentation. (k, u)",
+                      "domain": "Knowledge/Understanding"
+                    },
+                    {
+                      "outcome_text": "understand the positive influences and the drawbacks of media coverage on sports.(u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "assess the impact of television on sport.(u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "analyse the contemporary issues affecting sports. (u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners are guided to discuss various types of media presentation such as: television, films, radio, newspapers, magazines and telecommunication."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Through discussion groups, learners are guided to expand on the following positive influences of media coverage on sports; - Media promotes sports. - More people can see and read about sports. - The media creates sports stars who have both positive and negative influence on youngsters. - Media can influence sports in a variety of ways such as:- attracting sponsorship, improving facilities, training and equipment."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners in their groups carry out a discussion and write up their ideas, focusing on the following drawback of media coverage on sports: - The effect that pressure has on managers and teams to do well in sports. - The effect on players who adopt a win at all cost attitude, rather than play or enjoyment, which might involve cheating and the use of drugs. - The criticality of media on referees/ official decisions."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners carry out a search on the impact of television on sport in relation to for example; - the impact of sports analysis. - the different means the TV companies uses to add interest for the viewers."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In small groups, learners explore how contemporary issues such as AIDS and climate change affect sports and identify other contemporary issues in sports."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Task",
+                      "description": "Task learners to choose a sport of their interest and design the different media presentations that can be used to broadcast it."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: generic skills; teamwork, tolerance, respect, collective responsibility, confidence and self- esteem; focus of the discussion on the task; active participation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation probe learners to check: response given by the learner from their brainstorming; relevancy of the questions and responses raised by the learners"
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "A presentation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "45"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Aesthetics",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T2-0010",
+                    "topic_title": "BASIC STEPS OF AEROBICS",
+                    "sequence_order": 10,
+                    "recommended_duration_periods": 20
+                  },
+                  "core_competency": "The learner performs basic Aerobics skills and appreciates its the importance as a form of exercise that keeps the body active and healthy.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand the concept of aerobics and appreciate the value of aerobics for healthy living and the importance of developing such skills. (u, k)",
+                      "domain": "Understanding/Knowledge"
+                    },
+                    {
+                      "outcome_text": "perform aerobics exercises in an aerobics class. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "identify the benefits of performing aerobics with awareness of safe practices. (u,a)",
+                      "domain": "Understanding/Attitudes"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners are introduced to the meaning of aerobics through various descriptions and examples. They should relate it to other physical activities that they know."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners are guided to discuss to what constitutes Aerobics and the benefits of engaging in aerobic activities."
+                    },
+                    {
+                      "activity_type": "Listing",
+                      "description": "Individual learners are asked to outline the equipment and costumes that they would use to ensure safe and enjoyable participation in aerobics classes."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups learners are guided to execute the following basic steps of aerobics; - match thin, match wide, side step single and double, heel tap - 4 count steps: A-step, Basic left, Basic right, Charleston, Diagonal, Grapevine, Hop Turn, Jumping Jack, Mambo cha-cha-cha, Reverse Turn, Reverse V-step, Tap Up, Turn-step, V-step."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners practice the basic skills with simple musical melodies."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are guided to execute the following arm movements in aerobics individually and in small groups; Alternating Bicep Curls, Arm Circles, Bicep Curls, Double Side Out, Frontal Pull, Frontal Raise, Hammer Curls, Lateral Raise."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Leaners practice combining arm and leg movements using simple musical melodies."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners practice following rhythm as they use various arm and leg movements. They should critically consider their own performances in order to ascertain their progress."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Task the learners to 1. illustrate any two basic steps of aerobics. 2. demonstrate a combination of any two steps with any appropriate hand movement. Observe: performance of the different basic steps; coordination of the arms and legs; transition between different basic steps; matching the activity with rhythm."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation ask learners about the changes in their body during aerobics."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Well-coordinated performance of floor aerobics which can be recorded in a video."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 20,
+                    "unit": "periods",
+                    "source_page": "46"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[
+                    {
+                      "text_verbatim": "Aesthetics choice made; (Aerobics, Swimming)",
+                      "note_type": "constraint",
+                      "source_page": "15"
+                    }
+                  ],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T2-0011",
+                    "topic_title": "WATER SAFETY AND BASIC SWIMMING SKILLS",
+                    "sequence_order": 11,
+                    "recommended_duration_periods": 20
+                  },
+                  "core_competency": "The learner performs water safety and basic swimming skills that can be used for one’s wellbeing.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand the concept water safety and swimming. (u, k)",
+                      "domain": "Understanding/Knowledge"
+                    },
+                    {
+                      "outcome_text": "perform various skills in building confidence in water. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "perform various floatation techniques while in water. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "observe the safety measures and rules governing swimming pools. (s, gs)",
+                      "domain": "Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "appreciate the relevance of water safety and swimming. (a)",
+                      "domain": "Attitudes"
+                    },
+                    {
+                      "outcome_text": "apply the learnt skills in mini swimming games. (s, gs)",
+                      "domain": "Skills/Generic Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Tour",
+                      "description": "Learners are introduced to the concept of water safety through various descriptions and are guided in a tour to the swimming pool if possible to familiarize themselves with pool layout, personal hygiene, pool hygiene, safety measures and rules governing swimming pools."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Under the close observation of the teacher, the learners are taken through and given time to practice the water confidence activities; - entry and exit procedures, - walking, - ducking, - breathing, - opening eyes."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Under the close observation of the teacher, the learners are taken through and given time to practice the following floatation techniques: - mushroom float, - frontal float, - back float, - support float, - dog paddle, - frontal and back glides."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners are engaged in a discussion to brainstorm the relevance of water safety and swimming to an individual."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small groups, learners participate in a set of mini swimming games set by the teacher."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Task learners to: illustrate the skills involved in building confidence in water; demonstrate any two floatation skills that they are confident with. Observe: learner’s confidence in water; the body alignment while performing the skills; consciousness for safety."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper execution of the floatation skills with confidence in water which can be recorded in a video where possible."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 20,
+                    "unit": "periods",
+                    "source_page": "47"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Athletics",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T2-0012",
+                    "topic_title": "DEVELOPMENT OF JUMPING SKILLS",
+                    "sequence_order": 12,
+                    "recommended_duration_periods": 16
+                  },
+                  "core_competency": "The learner applies jumping skills and techniques to perform at events in athletics as well as in other physical activities in daily life.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "set up the jumping area for horizontal and vertical jumps using improvised material. (s, gs,s,v,a)",
+                      "domain": "Skills/Generic Skills/Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "make jumping tools and equipment using improvised materials. (gs, s)",
+                      "domain": "Generic Skills/Skills"
+                    },
+                    {
+                      "outcome_text": "interpret the rules that govern vertical and horizontal jumping events in Athletics.(u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "perform the techniques used in horizontal jumping events. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "perform the techniques used in vertical jumping events. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "observe safety while performing the jumping events. (s,v)",
+                      "domain": "Skills/Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment":[],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners use previous knowledge to make jumping materials to set up the areas for performing horizontal and vertical jumps."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners are guided through the rules that govern horizontal and vertical jumps."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are guided to set starting marks and practice the approach phase, takeoff and landing phase as used in horizontal jumps."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners observe and practice the following flight techniques used in long jump while observing safety. - hang - hitch-kick"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners develop their ability to complete a long jump using a flight technique of their choice while observing safety and the rules."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners observe and practice the ‘hop’ - ‘step’ - ‘jump’ sequence as used in Triple jump while observing safety and rhythm."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners perform with increasing accuracy a complete triple jump following the sequence, safety and rules."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are guided to set starting marks and practice the approach phase and take off phase as used in vertical jumps."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are taken through drills to practice bar clearance and landing using the Fosbury flop flight technique."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners practice and demonstrate a complete high jump using the Fosbury flop flight technique while observing safety and the rules."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are guided to practice the following basics of performing pole vault: - grip - running approach - takeoff - basic flight - landing on feet"
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Task learners to 1. demonstrate the hitch-kick technique in long jump. 2. illustrate the Fosbury-flop technique in high jump. 3. illustrate pole handling and take off as used in pole vault. Observe learners’ performance taking note of the following: phases of the jumps; proper take off; proper landing; appropriate flight; grip of the pole"
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Product of the performance should be recorded. Make use of rubric to grade the learners accordingly."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 16,
+                    "unit": "periods",
+                    "source_page": "48"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 3",
+          "term_number": 3,
+          "themes":[
+            {
+              "theme_title": "Theory and Practice of Physical Education",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T3-0013",
+                    "topic_title": "PE AND SPORTS AT NATIONAL AND INTERNATIONAL LEVEL",
+                    "sequence_order": 13,
+                    "recommended_duration_periods": 10
+                  },
+                  "core_competency": "The learner understands the historical trend, development and organization of Physical Education and sports at national and international level.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand the role of sports in educational institutions. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "know the competitions that are organized at school levels, national and international level",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "understand the value of community participation and courtesy in the community. (k)",
+                      "domain": "Knowledge/Understanding"
+                    },
+                    {
+                      "outcome_text": "articulate the value of continental competitions. (u, gs,a)",
+                      "domain": "Understanding/Generic Skills/Attitudes"
+                    },
+                    {
+                      "outcome_text": "appreciate the role of international competitions in fostering world peace. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "understand the origin and importance of Olympic Games.(u)",
+                      "domain": "Understanding"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Presentation",
+                      "description": "With guidance from the teacher learners prepare presentations illustrating the value of school’s sports to the student, school, and society."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners are guided to carry out some research to develop a chart showing competitions organized at different levels of education, national and international level."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups learners discuss sports competitions that are organized in Africa under headings such as sports involved, timing, venue, how to enter, etc. Include regional competitions."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners are supported to trace the origin of the Commonwealth Games to the former British Empire."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Support students to identify world competitions other than the Olympic Games and enumerate the conditions under which these competitions are held."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Learners form groups and debate the value of international competitions."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Through research learners are guided to briefly trace the origin of the modern Olympic Games, describing differences and similarities between ancient and modern Games."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Written",
+                      "description": "Task the learners to: write a letter to primary pupils’ parents/ guardians explaining why they should allow their children to take part in PE lessons and school sports competitions; write an essay on how international sports competitions can be used to identify regions without peace."
+                    },
+                    {
+                      "assessment_type": "Debate",
+                      "description": "prepare and organize a class debate on the Unit “Organizing Continental competitions is a waste of resources”; form groups and debate on the Unit: “Should Olympic Games be abolished”."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: generic skills; teamwork, communication, presentation respect, collective responsibility, confidence and self-esteem; focus of the discussions and debates on the task; active participation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a Conversation probe learners to check: response given by the learner from their brainstorming; relevancy of the questions and responses raised by the learners"
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Presentations, debate write ups."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "49"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T3-0014",
+                    "topic_title": "FITNESS TESTING AND TRAINING",
+                    "sequence_order": 14,
+                    "recommended_duration_periods": 14
+                  },
+                  "core_competency": "The learner performs fitness activities and understands how to test and train for ones’ wellbeing.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "perform training exercises for various specific components of fitness. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "understand the principles of training. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "design a program that can be used to improve performance using the basic principles of training. (u, s)",
+                      "domain": "Understanding/Skills"
+                    },
+                    {
+                      "outcome_text": "carry out tests for both health related and skill related fitness. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "perform exercises that test health of the back, health related and skill related fitness. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "appreciate the value of maintaining body hygiene (a,v)",
+                      "domain": "Attitudes/Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners observe and practice exercises that can be used to improve the specific components of physical fitness: - health related: cardio respiratory, flexibility, muscular strength, muscular endurance, body composition. - skill related: speed, power agility, coordination, balance, reaction time"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners are guided to discuss the meaning of fitness training and to describe the principles of training that are mainly used to improve performance."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "In groups, learners carry out some research in order to explore how to improve performance based on the basic principles of training and make a presentation of their findings in class."
+                    },
+                    {
+                      "activity_type": "Design",
+                      "description": "Learners in their groups are guided to design a fitness training program based on what they have learnt and prepare a presentation for the rest of the class."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners observe and are given time to practice the various exercises that can be used to test one’s health related and skill related fitness."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups learners are guided to measure each other’s Body Mass Index (BMI) in relation to personal fitness and in a discussion suggest ways in which personal fitness can be maintained"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners test their fitness levels, keeping records of findings and devise ways of maintaining their fitness for lifelong wellbeing."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Practical",
+                      "description": "Task the learners to choose one component of skill-related physical fitness and: a) demonstrate exercises that can be used to improve it. b) illustrate how that component can be tested for fitness."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners active participation accuracy of exercises generic skill used."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation probe learner to ascertain their understanding and choices made."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Product should be a demo of the correct exercise and test which should be recorded"
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 14,
+                    "unit": "periods",
+                    "source_page": "50"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Games",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T3-0015",
+                    "topic_title": "INTERMEDIATE SKILLS IN RUGBY",
+                    "sequence_order": 15,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner performs intermediate skills in Rugby, designs simple training sessions and applies the skills acquired in a game situation.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "apply basic skills and tactics in game situation in Rugby.(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "perform and develop intermediate Rugby skills and integrate them in game situations, recognizing the sense of belonging gained from participation in games. (s,a)",
+                      "domain": "Skills/Attitudes"
+                    },
+                    {
+                      "outcome_text": "develop body conditioning through various training drills. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "design a suitable program for a Rugby training session. (gs, s,u)",
+                      "domain": "Generic Skills/Skills/Understanding"
+                    },
+                    {
+                      "outcome_text": "understand how to prevent and deal with injuries in Rugby game situations. (u, s)",
+                      "domain": "Understanding/Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small teams, learners practice the basic skills used in Rugby."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are guided to practice the following intermediate skills in rugby - rucking and its variation - mauling and its variation - the Scrum and its variation"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In small groups, learners are guided to identify the playing positions and players roles in the respective playing positions."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In manageable groups, learners practice suitable activities to enhance their physical fitness to play Rugby."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In a guided discussion, learners interpret the rules and regulations of the game."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners design training sessions and practice them with colleagues."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups learners use the knowledge of first aid and demonstrate how to deal with injuries that are common in Rugby."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: demonstration of the different intermediate skills of Rugby by the learner; application of safety precautions; application of the rules that govern Rugby; generic skills exhibited by learners during a game situation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation: ascertain the impact of learners’ input in relation to the final output as they perform the skills; ask learners to describe the measures put in place to ensure a safe environment for play."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper execution of Intermediate skills in Rugby. Application of rules and regulations of Rugby during a game situation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "51"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T3-0016",
+                    "topic_title": "INTERMEDIATE SKILLS IN HOCKEY",
+                    "sequence_order": 16,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner performs intermediate skills in Hockey, designs simple training sessions and applies the skills acquired in a game situation.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "perform intermediate Hockey skills and integrate them in game situations. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "develop body conditioning through various training drills. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "design a suitable program for a Hockey training session. (gs, s,u)",
+                      "domain": "Generic Skills/Skills/Understanding"
+                    },
+                    {
+                      "outcome_text": "apply basic skills and tactics in game situation in Hockey. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "understand how to prevent and deal with injuries in Hockey game situations. (u, s)",
+                      "domain": "Understanding/Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learner are guided to practice the following intermediate skills in Hockey: Ball control: - dribbling, - use of both stick and reverse stick, - side stick and reverse stick. Dodging and tackling: - scoop dodge, - right dodge, - left dodge, - square dodge; Scoring and goal keeping"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In manageable groups, learners practice suitable activities to enhance their physical fitness to play Hockey."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are guided to practice the principles of play in defense and attack in game situations."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small set teams, learners practice the learnt skills using mini games; using small sided conditioned games in teams of 6 and 9, learners practice mini hockey for 6 Vs 6, 9 Vs 9 while others take turns in officiating roles."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In a guided discussion, learners interpret the rules and regulations of the game."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners design training sessions and practice them with colleagues, evaluating as they go along, their effectiveness."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups learners use the knowledge of first aid and demonstrate how to deal with injuries that are common in Hockey."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: demonstration of the different intermediate skills of Hockey by the learner; application of safety precautions; application of the rules that govern Hockey; generic skills exhibited by learners during a game situation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation: ascertain the impact of learners’ input in relation to the final output as they perform the skills; ask learners to describe the measures put in place to ensure a safe environment for play."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper execution of Intermediate skills in Hockey. Application of rules and regulations of Hockey during a game situation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "52"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T3-0017",
+                    "topic_title": "INTERMEDIATE SKILLS IN CRICKET",
+                    "sequence_order": 17,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner performs intermediate skills in Cricket, designs simple training sessions and applies the skills acquired in a game situation.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "apply basic skills rules and tactics in game situation in Cricket. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "perform intermediate Cricket skills and integrates them in game situations. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "develop body conditioning through various training drills. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "design a suitable program for a Cricket training session. (gs, s,u)",
+                      "domain": "Generic Skills/Skills/Understanding"
+                    },
+                    {
+                      "outcome_text": "understand how to prevent and deal with injuries in Cricket game situations. (u, s)",
+                      "domain": "Understanding/Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small teams, learners are given a chance to practice the skills in mini cricket games while the other group members take officiating roles: umpiring applying rules and signals; clerks scoring and keeping records."
+                    },
+                    {
+                      "activity_type": "Assessment",
+                      "description": "As a class, learners assess the ground, set the play area for cricket game and identify areas that may need special care and maintenance."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners practice the following intermediate skills and techniques in Cricket: - batting - fielding - bowling: over arm action - wicket keeping"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In manageable groups, learners practice suitable activities to enhance their physical fitness to play Cricket."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Under the teacher’s guidance, learners explore different ways of applying scientific principles in skill development such as spins: top, side, down spins."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners design training session and practice them with colleagues, evaluating the effectiveness of their programs as they go along."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups learners use the knowledge of first aid and demonstrate how to deal with injuries that are common in Cricket."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: demonstration of the different intermediate skills of Cricket by the learner; application of safety precautions; application of the rules that govern Cricket; generic skills exhibited by learners during a game situation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation: ascertain the impact of learners’ input in relation to the final output as they perform the skills; ask learners to describe the measures put in place to ensure a safe environment for play."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper execution of Intermediate skills in Cricket. Application of rules and regulations of Cricket during a game situation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "53"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T3-0018",
+                    "topic_title": "INTERMEDIATE SKILLS IN BASKETBALL",
+                    "sequence_order": 18,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner performs intermediate skills in Basketball, designs simple training sessions and applies the skills acquired in a game situation.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "apply basic skills rules and tactics in game situation in Basketball. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "perform intermediate Basketball skills and integrates them in game situations. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "develop body conditioning through various training drills. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "design a suitable program for a Basketball training session. (gs, s,u)",
+                      "domain": "Generic Skills/Skills/Understanding"
+                    },
+                    {
+                      "outcome_text": "understand how to prevent and deal with injuries in Basketball game situations. (u,s)",
+                      "domain": "Understanding/Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small groups, learners are given time to practice the basic skills used in basketball following the rules of the game."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are guided to practice the following intermediate skills: Ball control - types of dribble passing special attention to stance, footwork, ball position, heights, arms. - feinting/dodging. Shooting - jump shot, hook shot - lay-up shot, set-shot and free throw/ jump shot. Rebounding - under the teacher’s guidance, learners practice drills for skill development aimed at mastery of the intermediate skills."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "as a class, learners go through a set of conditioning and physical fitness development activities. - learners are guided through set drills for developing accurate shooting under defense and in free throw. - in manageable groups, learners practice suitable activities to enhance their physical fitness to play Basketball."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "in groups, learners design training session and practice them with colleagues. - in groups learners use the knowledge of first aid and demonstrate how to deal with injuries that are common in Basketball."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: demonstration of the different intermediate skills of Basketball by the learner; application of safety precautions; application of the rules that govern Basketball; generic skills exhibited by learners during a game situation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation: ascertain the impact of learners’ input in relation to the final output as they perform the skills; ask learners to describe the measures put in place to ensure a safe environment for play."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper execution of Intermediate skills in Basketball. Application of rules and regulations of Basketball during a game situation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "54"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T3-0019",
+                    "topic_title": "INTERMEDIATE SKILLS IN BADMINTON",
+                    "sequence_order": 19,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner performs intermediate skills in Badminton, designs simple training sessions and applies the skills acquired in a game situation.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "apply basic skills rules and tactics in game situation in Badminton. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "perform intermediate Badminton skills and integrates them in game situations. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "develop body conditioning through various training drills. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "design a suitable program for a Badminton training session. (gs, s,u)",
+                      "domain": "Generic Skills/Skills/Understanding"
+                    },
+                    {
+                      "outcome_text": "understand how to prevent and deal with injuries in Badminton game situations. (u, s)",
+                      "domain": "Understanding/Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners play mini games to apply the basic skills and rules of the game."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are paired and on a mini defined court, practice proper footwork on court in preparation for a service and in action during play."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In pairs learners observe and practice the following intermediate skills in Badminton: - smash: forehand, backhand, around. - clears: overhead, underarm, attacking clear, defensive clear. - drop shots: slow, fast, forearm, backhand, around the head. - drive: forehand, backhand. - Net play/net shots: net kill, net lift."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "On mini set courts, players are introduced to game play for singles and doubles with emphasis on the display of the skills as well as following rules during play."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In pairs, learners take roles in officiating the games in the mini competitions."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In manageable groups, learners practice suitable activities to enhance their physical fitness to play Badminton."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners design training session and practice them with colleagues, consider the impact of their designs on performance."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups learners use the knowledge of first aid and demonstrate how to deal with injuries that are common in Badminton."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: demonstration of the different intermediate skills of Badminton by the learner; application of safety precautions; application of the rules that govern Badminton; generic skills exhibited by learners during a game situation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation: ascertain the impact of learners’ input in relation to the final output as they perform the skills; ask learners to describe the measures put in place to ensure a safe environment for play."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper execution of Intermediate skills in Badminton. Application of rules and regulations of Badminton during a game situation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "55"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S3-T3-0020",
+                    "topic_title": "INTERMEDIATE SKILLS IN TABLE TENNIS",
+                    "sequence_order": 20,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner performs intermediate skills in Table tennis, designs simple training sessions and applies the skills acquired in a game situation.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "apply basic skills rules and tactics in game situation in Table tennis. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "perform intermediate Table tennis skills and integrate them in game situations.(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "develop body conditioning through various training drills. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "design a suitable program for a Table tennis training session. (gs,s,u)",
+                      "domain": "Generic Skills/Skills/Understanding"
+                    },
+                    {
+                      "outcome_text": "understand how to prevent and deal with injuries in Table tennis game situations. (u, s)",
+                      "domain": "Understanding/Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are paired and on a mini table, practice proper footwork around the table in preparation for a service and in action during play."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "On mini tables, players are introduced to game play. Emphasis is put on the display of the skills as well as following rules during play."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In pairs learners observe and practice the following intermediate skills in Table tennis - spins - smash - shots: near net, wings, far - net play"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners form teams, organize and run mini tournaments."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Different learners take roles in officiating the games in the tournament."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In manageable groups, learners practice suitable activities to enhance their physical fitness to play Table tennis."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners design training sessions and practice them with colleagues, considering the effectiveness of their sessions on performance in games."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups learners use their knowledge of first aid to demonstrate how to deal with injuries that are common in Table tennis."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe: demonstration of the different intermediate skills of Table tennis by the learner; application of safety precautions; application of the rules that govern Table tennis; generic skills exhibited by learners during a game situation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation: ascertain the impact of learners’ input in relation to the final output as they perform the skills; ask learners to describe the measures put in place to ensure a safe environment for play."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper execution of Intermediate skills in Table tennis. Application of rules and regulations of Table tennis during a game situation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "56"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1847 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "English Language",
+    "level": "Lower Secondary",
+    "class_group": "Senior Two",
+    "year": "2019",
+    "version": "1.0",
+    "source_document": "ENGLISH LANGUAGE SYLLABUS"
+  },
+  "global_framework": {
+    "competencies": [
+      "self – assured individuals",
+      "Responsible and patriotic citizens",
+      "Lifelong learners",
+      "Positive contributors to society"
+    ],
+    "generic_skills": [
+      "Critical thinking and problem-solving",
+      "Creativity and innovation",
+      "Communication",
+      "Co-operation and Self-Directed Learning",
+      "Mathematical Computation and ICT Proficiency"
+    ],
+    "values": [
+      "Respect for humanity and environment",
+      "Honesty; uphold and defend the truth at all times",
+      "Justice and fairness in dealing with others",
+      "Hard work for self-reliance",
+      "Integrity; moral uprightness and sound character",
+      "Creativity and innovativeness",
+      "Social Responsibility",
+      "Social Harmony",
+      "National Unity",
+      "National Consciousness and patriotism"
+    ],
+    "attitudes": [],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Life skills",
+      "Mixed abilities and involvement",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "classes": [
+    {
+      "class_name": "Senior Two",
+      "class_code": "S2",
+      "terms": [
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "PUBLIC/ EDUCATIONAL",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S2-T1-0001",
+                    "topic_title": "MODERN COMMUNICATION TECHNOLOGY",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 32,
+                    "keywords": [
+                      "communication",
+                      "technology",
+                      "telephone",
+                      "internet",
+                      "email",
+                      "sms",
+                      "gadgets"
+                    ]
+                  },
+                  "core_competency": "The learner communicates using telephones and other electronic methods of communication and shares own experiences of modern technology.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know modern methods of communication and their use (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "compare and contrast communication methods (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "use adjectives and modifiers (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "describe their experience of using various forms of communication(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "use the ‘wh’ questions(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use auxiliary/helping verbs (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "know the pros and cons of modern communication (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "apply the etiquette of using this technology (k, s)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "use negatives(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "understand the language registers used in different telephone communications (u, v)",
+                      "domain": "Understanding/Values"
+                    },
+                    {
+                      "outcome_text": "use interrogative clauses(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "know the language forms used in SMS messages/emails (k, gs)",
+                      "domain": "Knowledge/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "understand features/functions/ applications on gadgets(u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "understand instructions in manuals and brochures(u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "understand terminologies related to communication (u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "use vocabulary related to communication technology(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "distinguish between: ‘used to…’(habitual past tense) and ‘I am used to…’(plus the present participle of the verb) (k, s)",
+                      "domain": "Knowledge/Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Discussion/Sharing",
+                      "description": "in groups, share their knowledge of communication methods and devices, e.g. Skype and mobile phones"
+                    },
+                    {
+                      "activity_type": "Oral Discussion",
+                      "description": "talk about examples of modern technology around them, e.g. computers, laptops, tablets and smartphones"
+                    },
+                    {
+                      "activity_type": "Listing",
+                      "description": "create a class list of communication methods and devices"
+                    },
+                    {
+                      "activity_type": "Explanation",
+                      "description": "explain the similarities and differences between the function of landlines, mobile phones, smartphones, etc."
+                    },
+                    {
+                      "activity_type": "Description",
+                      "description": "describe the different types and uses of telephones, tablets and computers for communication purposes"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write the advantages and disadvantages of the internet to learners, using adjectives and modifiers"
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "in groups, discuss the advantages and disadvantages of online communication, such as chat rooms, texting, Facebook and Instagram"
+                    },
+                    {
+                      "activity_type": "Survey",
+                      "description": "in groups, carry out a survey of learners’ experience of communication devices, using the ‘wh’ questions"
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "show the results of the survey graphically and numerically"
+                    },
+                    {
+                      "activity_type": "Explanation",
+                      "description": "explain orally how to perform activities, such as sending email messages, downloading ringtones/music, using auxiliary/helping verbs"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "discuss the advantages and disadvantages of having/not having a telephone, television, computers, DVD player"
+                    },
+                    {
+                      "activity_type": "Listing",
+                      "description": "list the pros and cons of modern technology"
+                    },
+                    {
+                      "activity_type": "Response",
+                      "description": "respond to the views expressed in other learners’ lists of pros and cons, articulating their own opinions"
+                    },
+                    {
+                      "activity_type": "Listing",
+                      "description": "draw up a list of rules for telephone use with a focus on the ‘dos’ and ‘don’ts’"
+                    },
+                    {
+                      "activity_type": "Reasoning",
+                      "description": "give reasons for agreeing or disagreeing with the rules of other learners, using negatives where necessary"
+                    },
+                    {
+                      "activity_type": "Role Play/Dialogue",
+                      "description": "write and perform a dialogue/role-play about making a telephone call in different registers, e.g. calling a friend, phoning a business to place an order, a telephone interview for a job, using formal or informal language appropriate to the situation and interrogative clauses"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "listen to each other’s dialogues and comment on the language used"
+                    },
+                    {
+                      "activity_type": "Reading/Analysis",
+                      "description": "read examples of SMS messages and emails and identify the language styles used"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write messages to be sent from telephones and computers using the appropriate language/register on a variety of topics and to a range of recipients"
+                    },
+                    {
+                      "activity_type": "Peer Review",
+                      "description": "read another learners’ email or SMS message and comment on the forms used, such as abbreviations, slang and colloquial language"
+                    },
+                    {
+                      "activity_type": "Skimming/Reading",
+                      "description": "skim through manuals and brochures for information about a device, e.g. to compare devices before deciding which one to purchase"
+                    },
+                    {
+                      "activity_type": "Reading/Explanation",
+                      "description": "read specific information in order to explain one feature, one function and one application of a device using appropriate technical vocabulary"
+                    },
+                    {
+                      "activity_type": "Practical Application",
+                      "description": "execute a function on a supplied device correctly based on instructions in the manual"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "research a particular aspect of communication technology"
+                    },
+                    {
+                      "activity_type": "Summarising",
+                      "description": "summarise their findings using the specialist vocabulary learned during their research, e.g. mast, signal, network, cable and bandwidth"
+                    },
+                    {
+                      "activity_type": "Writing/Speaking",
+                      "description": "write or talk about a communication device they would like to own, explaining their choice using specialist vocabulary related to the device"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write sentences about outdated forms of communication using the habitual past tense"
+                    },
+                    {
+                      "activity_type": "Group Writing",
+                      "description": "in groups, write sentences about their regular use of favorite communication methods starting with: [learner’s name] is ‘used to…’[plus present participle, e.g. X is used to looking at their phone as soon as they wakeup.]"
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ ability to share their knowledge and opinions about communication technology, as well as describe the operation of devices. Note their critical thinking when debating the pros and cons and evaluate role-plays."
+                    },
+                    {
+                      "assessment_type": "Written Activity Assessment",
+                      "description": "In written activities, check for the correct use of the grammar for this topic and assess learners’ ability to identify and employ the different language styles and forms used in SMS, email, and telephone communications for different purposes."
+                    },
+                    {
+                      "assessment_type": "Vocabulary Assessment",
+                      "description": "Note learners’ ability to learn and use vocabulary related to communication"
+                    },
+                    {
+                      "assessment_type": "Reading/Practical Assessment",
+                      "description": "When skimming manuals and brochures, assess learners’ ability to find the required information, summarise it and employ it to use a device."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 32,
+                    "unit": "periods",
+                    "source_page": "38"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use the internet to obtain information about communication methods",
+                      "use communication devices to practice the use of their functions based on their manuals",
+                      "use a word processor to prepare activities and assignments when required."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "PERSONAL/ PUBLIC",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S2-T1-0002",
+                    "topic_title": "CELEBRATIONS",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 25,
+                    "keywords": [
+                      "celebration",
+                      "party",
+                      "invitation",
+                      "wedding",
+                      "birthday",
+                      "speech",
+                      "etiquette"
+                    ]
+                  },
+                  "core_competency": "The learner talks and writes about the different types of celebrations and writes plans, invitations and accounts.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know different celebrations (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "plan celebrations and understand the plans of other people (k, s)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "use polite language to express preference (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "use future present simple tense(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "know the informal and formal language and register used in invitations(k, gs)",
+                      "domain": "Knowledge/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "use the passive voice of verbs(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "understand the speeches made at celebrations (u, s, gs)",
+                      "domain": "Understanding/Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "use the present participle (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use appropriate intonation(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "distinguish between the use of past simple and present perfect tenses(k, s)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "understand written extracts about different types of celebrations(u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "use possessive adjectives, adverbs and pronouns correctly (k, s)",
+                      "domain": "Knowledge/Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Identification",
+                      "description": "in groups, identify different types of celebrations, e.g. weddings, birthdays and graduations"
+                    },
+                    {
+                      "activity_type": "Explanation",
+                      "description": "explain the purposes of the named celebrations and when they usually take place"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "listen to a group of people planning an unidentified celebration to determine what kind of occasion it is by their use of keywords"
+                    },
+                    {
+                      "activity_type": "Discussion/Viewing",
+                      "description": "talk about/watch video clips on what is done during preparations for big celebrations"
+                    },
+                    {
+                      "activity_type": "Flowchart Creation",
+                      "description": "in pairs, complete a flowchart showing the usual stages of preparation for a big celebration"
+                    },
+                    {
+                      "activity_type": "Planning/Role Play",
+                      "description": "in groups, plan a chosen celebration and assign roles to each group member using polite language to express preference; divide the responsibilities and ensure that everything is completed on time"
+                    },
+                    {
+                      "activity_type": "Explanation",
+                      "description": "explain to the class the division of tasks for the celebration using the future tense"
+                    },
+                    {
+                      "activity_type": "Writing/Design",
+                      "description": "after studying relevant materials, write and design publicity for a celebration in poster form, and write and design personal informal and/or formal invitations using the passive voice"
+                    },
+                    {
+                      "activity_type": "Display/Feedback",
+                      "description": "display posters and invitations for the class to comment on"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "listen to audio speeches for different occasions and identify any special language, intonation or register used for the particular occasion"
+                    },
+                    {
+                      "activity_type": "Writing/Speech Delivery",
+                      "description": "write and practice delivering speeches for celebrations using appropriate language, intonation and register, e.g. formal greetings to guests, proposing toasts, thanking hosts, reflecting on the life or career of someone being honoured"
+                    },
+                    {
+                      "activity_type": "Grammar Practice",
+                      "description": "use the past simple to describe actions at specific times in the past, and present perfect for actions at unspecified times"
+                    },
+                    {
+                      "activity_type": "Reading/Evaluation",
+                      "description": "read and evaluate the stories written by other learners and share the best ones with the whole class"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write an account of a celebration describing who is involved, what the day means to them, all the preparations and what happened on the day. In this account, identify any items used in the celebration and state to whom they belong/who uses them in the course of the celebration, using the correct form of the possessive pronoun and/or adjective."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Discussion Assessment",
+                      "description": "In discussions, assess the merit of learners’ contributions as they share information about celebrations, work co-operatively to assign celebration job roles or complete a flowchart, and explain their work to the class."
+                    },
+                    {
+                      "assessment_type": "Poster Assessment",
+                      "description": "Assess learners’ work on posters based on whether they have clearly communicated the essential facts."
+                    },
+                    {
+                      "assessment_type": "Invitation Assessment",
+                      "description": "Assess learners’ work on invitations based on whether they have used the correct formal or informal language."
+                    },
+                    {
+                      "assessment_type": "Speech Assessment",
+                      "description": "When writing and delivering celebration speeches, note learners’ correct use of language, tone and tense to match the occasion."
+                    },
+                    {
+                      "assessment_type": "Written Account Assessment",
+                      "description": "In learners’ written accounts of a celebration, look for creativity, drama and/ or humor in how the story is told, as well as the correct use of grammar."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 25,
+                    "unit": "periods",
+                    "source_page": "41"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use recorded audio/video scenes to guide them on the correct use of language and to provide examples of speeches and celebration planning",
+                      "use a word processor and publishing software to prepare posters and invitations."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "PERSONAL",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S2-T1-0003",
+                    "topic_title": "PARENTS AND CHILDREN",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 21,
+                    "keywords": [
+                      "parents",
+                      "children",
+                      "relationships",
+                      "conflict",
+                      "apology",
+                      "emotions",
+                      "advice"
+                    ]
+                  },
+                  "core_competency": "The learner understands parent-child relationships and discusses how to relate with own parents, and understands the language and body language of apology.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "form opinions based on oral and written information (u, s)",
+                      "domain": "Understanding/Skills"
+                    },
+                    {
+                      "outcome_text": "use emotive words/words of preference (k, v, gs)",
+                      "domain": "Knowledge/Values/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "survey the opinions of others (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "use the passive voice(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "take part in debates(s, v)",
+                      "domain": "Skills/Values"
+                    },
+                    {
+                      "outcome_text": "use the active voice(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "understand a variety of textual formats(u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "write in a specific format(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "use appropriate language and non-verbal communication for apologies (k, s, gs)",
+                      "domain": "Knowledge/Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "use the imperative voice and shades of tones of adjectives (k, s, v)",
+                      "domain": "Knowledge/Skills/Values"
+                    },
+                    {
+                      "outcome_text": "use appropriate polite language(k, gs)",
+                      "domain": "Knowledge/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "use result clauses(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use conditional phrases (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use modals (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "record reported speech (k, s)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "use relative/interrogative pronouns(k)",
+                      "domain": "Knowledge"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Listening/Reading",
+                      "description": "listen to audio and video stories and read extracts about parent-child relationships; form opinions on them, e.g. the responsibilities of children at home and the parental expectations of their children, and share their opinions with the class"
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "in groups, discuss the responsibilities of both boys and girls at home and in the community; use words of preference to indicate the desired situation for parents or children"
+                    },
+                    {
+                      "activity_type": "Writing Questions",
+                      "description": "write discussion questions on the responsibilities of parents and children using words that are emotive in this context, such as duty, love, respect, fairness, equality and sharing"
+                    },
+                    {
+                      "activity_type": "Discussion/Summary",
+                      "description": "in groups, choose one of these questions to discuss and then individually write a summary of the discussion"
+                    },
+                    {
+                      "activity_type": "Survey Design",
+                      "description": "develop and word process questionnaires to survey the opinions of classmates on what makes good parent-child relations; use the passive voice in formulating questions"
+                    },
+                    {
+                      "activity_type": "Data Presentation",
+                      "description": "present the data in writing and graphically, showing the relative sizes of sub-groups that share particular opinions"
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "debate on how to resolve conflicts between parents and adolescent children; each side to express opinions, using the active voice, that demonstrate sensitivity and problem-solving skills"
+                    },
+                    {
+                      "activity_type": "Reading/Discussion",
+                      "description": "read and discuss articles/stories/poems about parent-child relations"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "discuss the differences in language and effect achieved by various types of writing"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "choose a text and write a response in the same format as the author of the chosen text; include their own personal views on the subject"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "listen to conversations where a child is apologising, state what the child is apologising for and how the apology is accepted by the parent"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "note and discuss the tone of voice used and express how the participants are feeling"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "discuss how the imperative voice and the tone of adjectives can shape how an apology is given and received"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "in role-plays, practice apologising and accepting apologies using the associated body language"
+                    },
+                    {
+                      "activity_type": "Performance/Evaluation",
+                      "description": "perform the role-plays for group/class evaluation; use the appropriate polite language and register"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write examples of a parent giving advice to a child on his/her behavior in various situations"
+                    },
+                    {
+                      "activity_type": "Grammar Practice",
+                      "description": "use result clauses: so as to, in order to, so that; conditional phrases: would/would like, should/should not; and modals: have to/don’t have to, must/must not"
+                    },
+                    {
+                      "activity_type": "Reporting",
+                      "description": "report in writing what was said in recorded conversations/role-plays using reported speech and the correct use of commas and quotation marks"
+                    },
+                    {
+                      "activity_type": "Commentary",
+                      "description": "comment on what was said using relative/interrogative pronouns, e.g. who, whom, which."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "In discussions, observe learners’ ability to form and express opinions. In debates, note learners’ critical thinking on a topic and their problem-solving skills when suggesting ways of resolving parent-child conflicts."
+                    },
+                    {
+                      "assessment_type": "Survey Assessment",
+                      "description": "In learners’ survey reports, look for their ICT and calculation skills in the presentation of results."
+                    },
+                    {
+                      "assessment_type": "Writing Assessment",
+                      "description": "When writing in a particular format, check their work uses the correct language conventions."
+                    },
+                    {
+                      "assessment_type": "Role-Play Assessment",
+                      "description": "In role-plays featuring apologies, looks for learners’ imagination and creativity, and use of the correct tone of voice and body language."
+                    },
+                    {
+                      "assessment_type": "Written Exercises Assessment",
+                      "description": "In written exercises involving parental advice and reported speech, note their correct use of the punctuation and grammar required."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 21,
+                    "unit": "periods",
+                    "source_page": "43"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use a spreadsheet to record data from a survey",
+                      "use the internet to source stories/poems/articles about parent-child relations."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "PUBLIC",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S2-T2-0004",
+                    "topic_title": "ANTI-CORRUPTION",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 23,
+                    "keywords": [
+                      "corruption",
+                      "integrity",
+                      "honesty",
+                      "survey",
+                      "manifesto",
+                      "report"
+                    ]
+                  },
+                  "core_competency": "The learner identifies different types of corruption and talks about its dangers.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know different forms of corruption(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use the appropriate vocabulary related to corruption (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "form personal opinions based on media accounts (u, s, v)",
+                      "domain": "Understanding/Skills/Values"
+                    },
+                    {
+                      "outcome_text": "use connective clauses(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use interrogative clauses(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "carry out an attitudinal survey (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "use modal verbs(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use direct and indirect speech(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "appreciate a manifest (u, v)",
+                      "domain": "Understanding/Values"
+                    },
+                    {
+                      "outcome_text": "use the future tense (will, shall) (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "construct and use a template(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "write a formal report (k, s, u, gs)",
+                      "domain": "Knowledge/Skills/Understanding/Generic Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "in groups, brainstorm ideas on what corruption is and make a list of its causes and effects"
+                    },
+                    {
+                      "activity_type": "Listening/Viewing",
+                      "description": "listen to a video/audio/audio-visual presentation on corruption"
+                    },
+                    {
+                      "activity_type": "Group Work",
+                      "description": "amend their group’s list after the presentation, add any new vocabulary that has been learned and share their new list with the class"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write their own opinions on the topic using the new vocabulary"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "read newspaper stories or magazine/website articles on corruption, e.g. about a person who was imprisoned because of being found guilty of corruption/embezzlement of public funds"
+                    },
+                    {
+                      "activity_type": "Discussion/Reaction",
+                      "description": "react/respond to these media articles and state their own views in a class discussion using connective clauses"
+                    },
+                    {
+                      "activity_type": "Questioning",
+                      "description": "question the opinions of other learners using interrogative clauses and differ with their views politely, as necessary"
+                    },
+                    {
+                      "activity_type": "Survey",
+                      "description": "seek opinions through a survey on how corruption can be eradicated in the community and the country"
+                    },
+                    {
+                      "activity_type": "Questionnaire Design",
+                      "description": "in the questions devised for the survey, use modal verbs to help elicit a response"
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "in groups, discuss the outcome of the survey using direct and indirect speech to report particular opinions of those surveyed"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "reflecting on the survey and discussion, produce a piece of writing that suggests the best ways of eradicating corruption"
+                    },
+                    {
+                      "activity_type": "Reading/Analysis",
+                      "description": "read examples of manifestos written by political parties/candidates for the different posts in school/the local community/the nation"
+                    },
+                    {
+                      "activity_type": "Listing",
+                      "description": "make a list of the political issues covered (education, health, taxes, etc.) and the promises made, that are common in the manifesto examples found"
+                    },
+                    {
+                      "activity_type": "Grammar Observation",
+                      "description": "note the use of the future tense for what the candidate/party will do if elected"
+                    },
+                    {
+                      "activity_type": "Template Creation",
+                      "description": "create a template with topic headings and sub-headings that could be used to create a new manifesto"
+                    },
+                    {
+                      "activity_type": "Creative Writing",
+                      "description": "imagine being a candidate for a chosen post and write a manifesto using this template; ensure that an anti-corruption pledge is included in it"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "read a formal report on the alleged corrupt practices of a politician"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "using the example as a model, write a formal report about a fictional school officer that is accused of corruption in their role; include three pieces of documentary evidence and the reported words of several witnesses"
+                    },
+                    {
+                      "activity_type": "Conclusion Writing",
+                      "description": "in the conclusion, weigh up all the evidence and state how strongly it points to guilt or innocence."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Discussion Assessment",
+                      "description": "In discussions on corruption, observe learners’ ability to think critically, incorporate new learning into their opinions, and use new vocabulary and the grammar required for this topic in their speech."
+                    },
+                    {
+                      "assessment_type": "Survey Assessment",
+                      "description": "When devising a survey, look for learners’ ability to devise relevant and stimulating questions."
+                    },
+                    {
+                      "assessment_type": "Manifesto Assessment",
+                      "description": "In their work on manifestos, assess learners’ ability to identify the similarities in the examples they have found and their innovation in translating these common elements into a template."
+                    },
+                    {
+                      "assessment_type": "Report Assessment",
+                      "description": "In their formal report, assess learners’ use of the correct language and format, their creativity in devising a corruption allegation and the evidence supporting it, and their critical thinking when weighing up this evidence in their conclusion."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 23,
+                    "unit": "periods",
+                    "source_page": "45"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use recorded audio/video reports/scenes/pictures to guide class discussions on corruption",
+                      "use a word processor to prepare activities and assignments when required."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S2-T2-0005",
+                    "topic_title": "HUMAN RIGHTS, GENDER AND RESPONSIBILITIES",
+                    "sequence_order": 5,
+                    "recommended_duration_periods": 25,
+                    "keywords": [
+                      "rights",
+                      "gender",
+                      "responsibilities",
+                      "equality",
+                      "debate",
+                      "opinion"
+                    ]
+                  },
+                  "core_competency": "The learner talks and writes about human rights and gender, listens to speeches and debate related topics.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand a lecture delivered orally or a recorded speech (u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "know the rights of different groups of people (k, v)",
+                      "domain": "Knowledge/Values"
+                    },
+                    {
+                      "outcome_text": "understand opinions on human rights and gender (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "use opinion words and the active voice(k, gs)",
+                      "domain": "Knowledge/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "debate/discuss formally sensitive/ contentious topics(s, gs)",
+                      "domain": "Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "know gender sensitive language/ vocabulary (k, u, v)",
+                      "domain": "Knowledge/Understanding/Values"
+                    },
+                    {
+                      "outcome_text": "use the 3rd person pronoun",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "understand formats used in different media (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "use past perfect and past simple tenses (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "use modals in different tenses (k, s)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "use simple present, present perfect and present continuous tenses (k, s)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "use indirect speech(s)",
+                      "domain": "Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Listening/Response",
+                      "description": "respond to speeches: oral, recorded, guest speakers, e.g. a guest speaker on human rights and/or gender issues, by asking questions for clarification and/or raising discussion points"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "conduct research into what are considered universal human rights using reference books/websites and note key points"
+                    },
+                    {
+                      "activity_type": "Identification",
+                      "description": "identify human rights that are frequently abused"
+                    },
+                    {
+                      "activity_type": "Listing",
+                      "description": "list the rights of boys and girls that are normally abused"
+                    },
+                    {
+                      "activity_type": "Reading/Discussion",
+                      "description": "read and discuss texts about the roles, rights and responsibilities of various people, including national documents and international texts such as the UN Declaration of Human Rights, the Convention on the Rights of the Child, and the Convention on the Elimination of All Forms of Discrimination Against Women"
+                    },
+                    {
+                      "activity_type": "Table Creation",
+                      "description": "in groups, create a table of human rights, civil rights, employment rights, etc. and match them to different groups of people, e.g. teachers, parents and children, minority groups"
+                    },
+                    {
+                      "activity_type": "Reading/Listening/Viewing",
+                      "description": "read/listen to/view media accounts of human rights abuses and retell them in summaries"
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "in group discussions, express personal opinions on the rights and responsibilities of girls, boys and children, giving personal views sensitively and without offending others, and using opinion words and the active voice"
+                    },
+                    {
+                      "activity_type": "Role Play/Group Discussion",
+                      "description": "use role-plays and/or group discussion to suggest and share solutions to various human rights and gender issues"
+                    },
+                    {
+                      "activity_type": "Identification",
+                      "description": "identify gender sensitive terminology and vocabulary in texts and explain the thinking behind it"
+                    },
+                    {
+                      "activity_type": "Debate/Discussion",
+                      "description": "formally debate/discuss topics on human rights/gender inequality, applying gender sensitive language and vocabulary learned, and using 3rd person pronouns"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write about the rights and responsibilities of different groups in different media: posters, short essays, stories, poems and newspaper articles, using the correct format for each"
+                    },
+                    {
+                      "activity_type": "Reporting",
+                      "description": "when reporting on an incident involving a human rights violation, sequence events using past perfect and past simple tenses"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "apply knowledge of modal tenses to their writing in the different media, e.g. must…, ought not to…, should not have…/ought to have…"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "talk about changes in attitudes/legislation, etc. that result in a fairer society using the present tense correctly"
+                    },
+                    {
+                      "activity_type": "Speech Practice",
+                      "description": "restate, in indirect speech, opinions stated in direct speech in selected media articles."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Discussion/Debate Assessment",
+                      "description": "During discussion and debate on sensitive issues, observe learners’ ability to contribute using appropriate vocabulary and understanding. Note the clarity with which they express personal opinion and the understanding they demonstrate of the rights of people different from them. Assess their critical thinking on emotional and complex issues."
+                    },
+                    {
+                      "assessment_type": "Role-Play Assessment",
+                      "description": "In role-plays, assess their creativity and problem-solving skills as they act out solutions to human rights and gender issues."
+                    },
+                    {
+                      "assessment_type": "Written Product Assessment",
+                      "description": "In learners’ various written products: posters, articles, stories, etc., check that they use the correct language and format for each, assess their creativity and check their use of the grammar required for this activity."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 25,
+                    "unit": "periods",
+                    "source_page": "47"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use recorded audio/video documentaries/interviews/lectures/films/pictures to guide class discussions on human rights",
+                      "use a word processor to prepare activities and assignments when required."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S2-T2-0006",
+                    "topic_title": "TOURISM, MAPS AND GIVING DIRECTIONS",
+                    "sequence_order": 6,
+                    "recommended_duration_periods": 36,
+                    "keywords": [
+                      "tourism",
+                      "directions",
+                      "maps",
+                      "travel",
+                      "brochure",
+                      "planning",
+                      "role-play"
+                    ]
+                  },
+                  "core_competency": "The learner gives and follows directions to a given tourist site; research, read and talk about a visit; and understand the importance of tourism.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand brochures, guidebooks and other publicity materials and information in digital format about tourism(u, gs, v)",
+                      "domain": "Understanding/Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "use descriptive words(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use compound words(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "understand texts, keys and scale on maps and other materials related to tourism (u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "understand the language for giving directions(u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "use action words(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use appropriate prepositions(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use language to promote tourism/a tourist site (k, s)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "use adjectives(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use prepositions(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "plan a visit (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "use relative clauses(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use the present and future tenses(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use prepositions(k)",
+                      "domain": "Knowledge"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Reading/Analysis",
+                      "description": "read and analyse local and national tourist websites, guidebooks for travelers/ walkers and advertisements for holidays"
+                    },
+                    {
+                      "activity_type": "Note Taking",
+                      "description": "make a note of the types of information provided to tourists for different types of holidays: general sightseeing, sun and sand, specialist interests (wine, architecture, music, art, history), sport, walking/hiking, etc."
+                    },
+                    {
+                      "activity_type": "Description",
+                      "description": "describe an ideal holiday and the special information required to choose it, using descriptive and compound words."
+                    },
+                    {
+                      "activity_type": "Map Interpretation",
+                      "description": "interpret the maps and plans in tourist materials to calculate distances and identify natural features, such as forests, lakes, rivers and waterfalls, as well as historical, cultural and leisure activity sites"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "role play being a travel agent and helping tourists decide where to go on holiday by describing the location and hotel facilities and giving other relevant information at their request"
+                    },
+                    {
+                      "activity_type": "Identification",
+                      "description": "from tourist guidebooks, identify the language used for giving directions"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "in role-plays, give and follow verbal directions as a visitor and as a resident of a tourist location"
+                    },
+                    {
+                      "activity_type": "Writing/Display",
+                      "description": "write and display real directions to actual tourist sites using action words and prepositions"
+                    },
+                    {
+                      "activity_type": "Writing/Promotion",
+                      "description": "choose a region or specific place of interest to tourists anywhere in the world and write publicity materials (leaflets, posters, advertisements) that include captioned photos of notable natural and man-made features"
+                    },
+                    {
+                      "activity_type": "Creation",
+                      "description": "produce a poster/leaflet to encourage foreign visitors to visit Uganda, or to encourage Ugandans to visit places of natural/historic interest in their own country"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "use colorful adjectives to enhance the desirability of visiting these locations and the correct prepositions"
+                    },
+                    {
+                      "activity_type": "Planning",
+                      "description": "plan a visit to a nearby tourist site by gathering all the information necessary to ensure the trip proceeds smoothly; investigate mode of travel, costs and timings for the journey there and back, accommodation, food, opening times for places of interest, entry fees and other costs"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write up the steps that should be taken to prepare for the trip and the things to remember while on the trip, using the present and future tenses"
+                    },
+                    {
+                      "activity_type": "Field Visit/Role Play",
+                      "description": "visit the site or role-play a visit with other learners who will introduce some unexpected circumstances"
+                    },
+                    {
+                      "activity_type": "Essay Writing",
+                      "description": "write a short essay to compare and contrast how the trip should have gone with what actually, including the use of relative clauses"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "use prepositions in the essay to describe position and directions, e.g. across the river, over, behind and ahead of."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Reading/Research Assessment",
+                      "description": "When reading and researching tourist websites, assess learners’ ability to find relevant and specific information, interpret map symbols and identify the language used for directions."
+                    },
+                    {
+                      "assessment_type": "Role-Play Assessment",
+                      "description": "In role-plays, note learners’ creativity and problem-solving skills as they give and follow directions and overcome differences between their planned and actual trip."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "In learners’ tourist publicity products, look for creativity, accurate use of facts, ability to describe and use of the grammar for this topic."
+                    },
+                    {
+                      "assessment_type": "Problem-Solving Assessment",
+                      "description": "Assess learners’ problem-solving skills as they plan a trip and try to foresee what could go wrong."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 36,
+                    "unit": "periods",
+                    "source_page": "49"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use the internet as a source of key information needed by tourists",
+                      "use an online Geographical Information System (GIS) to locate tourist attraction sites, their distance and directions to these sites."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "SENIOR 2: TERM 2/3",
+                      "note_type": "clarification",
+                      "source_page": "49"
+                    }
+                  ],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 3",
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "PERSONAL/EDUCATIONAL",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S2-T3-0007",
+                    "topic_title": "LEISURE",
+                    "sequence_order": 7,
+                    "recommended_duration_periods": 27,
+                    "keywords": [
+                      "leisure",
+                      "hobbies",
+                      "time",
+                      "activities",
+                      "advice",
+                      "summary"
+                    ]
+                  },
+                  "core_competency": "The learner reads and talks about leisure and discusses how to use their free time profitably.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the importance of leisure (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "use ‘wh’ questions(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use personal pronouns(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use prepositions and adverbs of time(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "understand articles/extracts about leisure pursuits (u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "pronounce sounds l/r(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "know the general principles of summary writing (k, gs)",
+                      "domain": "Knowledge/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "know the difference between instruction and advice (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "know the language for giving advice(kgs, v)",
+                      "domain": "Knowledge/Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "keep to a time limit in speaking (s, gs)",
+                      "domain": "Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "use phrases that express obligation and permission (k, s)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "use possessive and reflexive pronouns(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use noun-phrase modifiers (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "respond to negative questions/ statements politely(s, gs, v)",
+                      "domain": "Skills/Generic Skills/Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "in groups, discuss the importance of leisure time"
+                    },
+                    {
+                      "activity_type": "Oral Discussion",
+                      "description": "talk about how they spend leisure time"
+                    },
+                    {
+                      "activity_type": "Questioning",
+                      "description": "ask and answer questions from other learners about how they spend their leisure time using personal pronouns, stating likes/dislikes, asking ‘wh’ questions to clarify details, open-ended questions to seek opinion"
+                    },
+                    {
+                      "activity_type": "Grammar Practice",
+                      "description": "use prepositions and adverbs of time when asking and answering questions"
+                    },
+                    {
+                      "activity_type": "Reading/Research",
+                      "description": "read information about leisure activities for the gist and specific detail; find activities that are new to them"
+                    },
+                    {
+                      "activity_type": "Listing",
+                      "description": "list 10 different ways of spending leisure time, including activities that are new to them"
+                    },
+                    {
+                      "activity_type": "Comparison",
+                      "description": "compare and contrast hobbies using their own criteria"
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "in small groups, discuss the merits of different leisure activities"
+                    },
+                    {
+                      "activity_type": "Reporting",
+                      "description": "report verbally on their reading and discussion to the class"
+                    },
+                    {
+                      "activity_type": "Article Writing",
+                      "description": "write an article for the media about how they spend leisure time profitably without getting involved in risky/anti-social behaviour and read it to the class"
+                    },
+                    {
+                      "activity_type": "Listening/Response",
+                      "description": "listen and respond to another learner’s article"
+                    },
+                    {
+                      "activity_type": "Pronunciation Practice",
+                      "description": "when reporting or speaking to the class, ensure they pronounce the consonants ‘l’ and ‘r’ correctly; politely correct other learners if they mispronounce them"
+                    },
+                    {
+                      "activity_type": "Summarising",
+                      "description": "verbally summarise an article read by another learner in the previous activity; allow the author to advise whether any important points are missed"
+                    },
+                    {
+                      "activity_type": "Summary Writing",
+                      "description": "write a summary, ensuring to add all the key points, using summary guidelines supplied by the teacher"
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "in groups and with teacher guidance, discuss the differences between giving someone an instruction and giving them advice"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "role play giving instructions and advice about leisure activities and make notes on the key words and phrases used for each"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write notes/letters/emails offering advice to friends about how to spend their spare time"
+                    },
+                    {
+                      "activity_type": "Reading/Response",
+                      "description": "read and respond in writing to a friend’s advice"
+                    },
+                    {
+                      "activity_type": "Speech Practice",
+                      "description": "plan and practice a speech on the good and bad aspects of a particular leisure activity so that it can be completed within a given time limit; add or subtract points to achieve the time limit"
+                    },
+                    {
+                      "activity_type": "Speech Delivery",
+                      "description": "give the speech to the class or a group, stopping strictly at the end of the time limit"
+                    },
+                    {
+                      "activity_type": "Questioning",
+                      "description": "class/group to ask ‘wh’ questions and open-ended questions to clarify details"
+                    },
+                    {
+                      "activity_type": "Summarising",
+                      "description": "summarise in writing what they heard from other learners"
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "as a class, brainstorm phrases of obligation and permission, and review possessive and reflexive pronouns, noun-phrase modifiers and how to respond to negative questions/statements politely"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "in pairs, conduct role-plays concerning a child asking a parent for permission to go out with a friend that employs as many of the above language and grammar points as possible; when the parent refuses on the basis that the child has schoolwork to do, role-play to explore phrases of obligation/permission and how to respond to negative questions/ statements politely"
+                    },
+                    {
+                      "activity_type": "Observation",
+                      "description": "observe each of the role-plays, note the language/grammar employed and decide which pair produced the best dialogue with the greatest use of the required language and grammar."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Language Assessment",
+                      "description": "Assess learners’ use of the language and grammar for this topic in both their verbal and written work."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "In group or paired discussion, observe learners’ communication skills, and how they co-operate with others by listening carefully and responding respectfully and politely."
+                    },
+                    {
+                      "assessment_type": "Comprehension/Summary Assessment",
+                      "description": "After reading, note learners’ overall comprehension, ability to find specific facts and the accuracy of any summary report, either verbal or written."
+                    },
+                    {
+                      "assessment_type": "Written Work Assessment",
+                      "description": "In written work, assess learners ‘creativity and use of the language skills for this topic (giving instructions vs. giving advice)."
+                    },
+                    {
+                      "assessment_type": "Role-Play Assessment",
+                      "description": "In role-plays, note the creativity of learners’ dialogue while at the same time employing the required grammar."
+                    },
+                    {
+                      "assessment_type": "Speech Assessment",
+                      "description": "In timed speeches, assess learners’ skills in calculating how long their speech will take and making any adjustments so it fits within a time limit."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 27,
+                    "unit": "periods",
+                    "source_page": "51"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use a word processor to prepare activities and assignments",
+                      "use the internet to research leisure activities",
+                      "use on online translator/dictionary, audio or audio-visual recordings to develop vocabulary and pronunciation."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "PERSONAL",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S2-T3-0008",
+                    "topic_title": "APPEARANCE AND GROOMING",
+                    "sequence_order": 8,
+                    "recommended_duration_periods": 26,
+                    "keywords": [
+                      "appearance",
+                      "grooming",
+                      "clothing",
+                      "fashion",
+                      "advice",
+                      "politeness"
+                    ]
+                  },
+                  "core_competency": "The learner gives and follows directions to a given tourist site; research, read and talk about a visit; and understand the importance of tourism.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "describe clothing/styles of dress (k, s, v)",
+                      "domain": "Knowledge/Skills/Values"
+                    },
+                    {
+                      "outcome_text": "use adjectives, compound words and comparatives(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "understand anecdotes/articles/extracts on grooming(u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "use the appropriate vocabulary related to grooming(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use adverbs of degree(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use correct verb forms and language registers for various writing purposes(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "know the casual register in speech(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use descriptive language(k, gs)",
+                      "domain": "Knowledge/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "understand recorded/media presentations (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "appreciate their own and their friend’s appearance (u, gs, v)",
+                      "domain": "Understanding/Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "criticize other people’s mode of dress tactfully/sensitively(k, v, gs)",
+                      "domain": "Knowledge/Values/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "use prepositions in verbal and adjectival expressions(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use appropriate adjectives and adjectival phrases (k)",
+                      "domain": "Knowledge"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Reading/Vocabulary",
+                      "description": "read descriptions of outfits shown in advertisements/catalogues/fashion magazines, etc. and note the specialist vocabulary used"
+                    },
+                    {
+                      "activity_type": "Description Writing",
+                      "description": "for given fashion photos without text, write detailed descriptions of the clothes and their style using the vocabulary learned, plus adjectives, compound words and comparatives"
+                    },
+                    {
+                      "activity_type": "Reading/Vocabulary",
+                      "description": "read articles/extracts/anecdotes on grooming and note the specialist vocabulary used"
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "in groups, give opinions based on what they have read, e.g. what constitutes sensible/decent/bad grooming/dressing and how it helps attract/repel people around them, using specialist vocabulary learned and adverbs of degree"
+                    },
+                    {
+                      "activity_type": "Reading/Analysis",
+                      "description": "read advice columns in newspapers or online and note style and content"
+                    },
+                    {
+                      "activity_type": "Creative Writing",
+                      "description": "write a fictional letter to an advice column about a friend or family member with bad grooming habits using casual, descriptive language"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write a more formal reply as the columnist about the benefits of good grooming and how to help someone improve their habits"
+                    },
+                    {
+                      "activity_type": "Grammar Practice",
+                      "description": "use the correct verb forms in their writing"
+                    },
+                    {
+                      "activity_type": "Listening/Viewing",
+                      "description": "listen to or watch a recorded media presentation about appearance and grooming"
+                    },
+                    {
+                      "activity_type": "Analysis/Evaluation",
+                      "description": "analyse and evaluate the content and issues arising from the presentation"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "discuss how the presentation has or hasn’t changed ideas and attitudes towards grooming and dressing appropriately, giving reasons why"
+                    },
+                    {
+                      "activity_type": "Pair Work",
+                      "description": "in pairs, learners describe both each other’s appearance and their own, mentioning what they consider to be good, and what could be improved, about their own and their partner’s grooming and dress sense"
+                    },
+                    {
+                      "activity_type": "Description",
+                      "description": "in all descriptions, include adjectives and adjectival phrases, and prepositions in verbal and adjectival expressions, such as: dressed in, dressed up, wear out, put on, take off, etc."
+                    },
+                    {
+                      "activity_type": "Sensitivity Practice",
+                      "description": "ensure that any criticism is tactful, sensitive, polite and constructive"
+                    },
+                    {
+                      "activity_type": "Peer Feedback",
+                      "description": "swap their description with their partner and respond politely to each other’s descriptions and criticism."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Written Work Assessment",
+                      "description": "In learners’ written work describing fashions, and other learners’ grooming and dress sense, assess their ability to write descriptively, use the grammar and language required, the correct register and specialist fashion/grooming vocabulary."
+                    },
+                    {
+                      "assessment_type": "Discussion Assessment",
+                      "description": "In discussions, note learners’ understanding and analysis of their reading, and their ability to communicate facts and opinions clearly."
+                    },
+                    {
+                      "assessment_type": "Advice Column Assessment",
+                      "description": "In learners’ written work to and from an advice column, assess their creativity in the portrayal of the problem, response to the problem and use of different registers."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "When describing and sharing descriptions and criticisms of another learners’ grooming and dress sense, assess learners’ descriptive ability, sense of co-operation in a sensitive exercise and the tactfulness of their observations."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 26,
+                    "unit": "periods",
+                    "source_page": "53"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use a word processor to prepare activities and assignments",
+                      "use audio, video or audio-visual recordings for learners to assess",
+                      "use the internet to find fashion articles and advice columns."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "Competency: The learner gives and follows directions to a given tourist site; research, read and talk about a visit; and understand the importance of tourism.",
+                      "note_type": "examiner_hint",
+                      "source_page": "53"
+                    }
+                  ],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

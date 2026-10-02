@@ -1,0 +1,867 @@
+{
+  "_comment": "MASTER SYLLABUS FILE - Biology Senior Four. Based on NCDC Lower Secondary Curriculum 2019.",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "Biology",
+    "class_group": "Senior Four",
+    "year": "2019",
+    "version": "1.0",
+    "source_document": "Biology Syllabus.pdf"
+  },
+  "global_framework": {
+    "_comment": "Inherits from global framework defined in S1/Master context.",
+    "competencies": [],
+    "generic_skills": [],
+    "values": [],
+    "attitudes": [],
+    "cross_cutting_issues": []
+  },
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "terms": [
+    {
+      "term_name": "Term 1",
+      "term_number": 1,
+      "themes": [
+        {
+          "theme_title": "Reproduction in organisms",
+          "theme_description": "Asexual and sexual reproduction in plants and humans.",
+          "topics": [
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S4-T1-01",
+                "topic_title": "ASEXUAL REPRODUCTION IN PLANTS (VEGETATIVE REPRODUCTION)",
+                "recommended_duration_periods": "10",
+                "sequence_order": 1
+              },
+              "core_competency": "The learner appreciates that some parts of a plant can develop into new independent plants.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "know the meaning of asexual reproduction",
+                  "domain": "k"
+                },
+                {
+                  "outcome_text": "understand how plants reproduce asexually",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "understand that asexual reproduction in plants has important commercial applications",
+                  "domain": "k, u"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Meaning of asexual reproduction",
+                  "Vegetative propagation methods (natural and artificial)",
+                  "Commercial applications"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": []
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Field Study",
+                  "description": "Learners carry out a field study to observe plants, identifying possible parts that have been or could be used to get new plants of the same kind. Learners report findings in a table with drawings as appropriate"
+                },
+                {
+                  "activity_type": "Research/Report",
+                  "description": "In groups, learners research on and discuss the crops in Uganda that are grown by vegetative reproduction on a large scale, and produce a report"
+                },
+                {
+                  "activity_type": "Group Project",
+                  "description": "Grow plants in school by, for example, layering (strawberries), stem cutting (cassava), and root cuttings, as well as grafting (citrus). Groups research and report the key principles underlying each method of propagation used and possible reasons for success (or failure)"
+                },
+                {
+                  "activity_type": "Brainstorming",
+                  "description": "Brainstorm advantages and disadvantages of vegetative propagation in plants. Through class discussion agree on answers, and record answers in a table."
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe groups engaging in activities and carrying out the project to ensure effective and productive use of time leading to learning outcomes"
+                },
+                {
+                  "assessment_type": "Listening/Questioning",
+                  "description": "Listen to learners' conversations and contributions to class discussion. Ask questions to encourage critical thinking and promote progress towards learning outcomes."
+                },
+                {
+                  "assessment_type": "Product Evaluation",
+                  "description": "Evaluate quality of reports, research findings, project report, and comparison table."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [
+                  "The learner can use the internet to obtain information to support learning."
+                ],
+                "restrictions": []
+              },
+              "syllabus_notes": []
+            },
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S4-T1-02",
+                "topic_title": "SEXUAL REPRODUCTION IN PLANTS",
+                "recommended_duration_periods": "16",
+                "sequence_order": 2
+              },
+              "core_competency": "The learner understands that the flower is the specialized organ in which all events of a plant's sexual reproduction occur, leading to the formation of an embryo located in the seed.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "recognise the flower structures that are involved in the processes of pollination, fertilisation, fruit and seed development and outline their functions",
+                  "domain": "k, u, s"
+                },
+                {
+                  "outcome_text": "know the processes of pollination, fertilization and fruit formation",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "understand the difference between cross- and self-fertilisation, and the advantages of each method",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "differentiate between seeds and fruits structurally and functionally",
+                  "domain": "s"
+                },
+                {
+                  "outcome_text": "understand the importance of dispersal",
+                  "domain": ""
+                },
+                {
+                  "outcome_text": "recognise the structures and types of fruits and seeds and relate their structures to their methods of dispersal",
+                  "domain": "u, s"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Flower structure and function",
+                  "Pollination (wind/insect)",
+                  "Fertilization process",
+                  "Seed and fruit development",
+                  "Cross vs Self fertilization",
+                  "Fruit vs Seed structure",
+                  "Dispersal agents and adaptations"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": []
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Examination/Discussion",
+                  "description": "In groups or pairs, learners examine specimens and/or diagrams of insect-pollinated flowers, research using different sources, and then discuss: the meaning of the term pollination and how pollination takes place; how fertilisation takes place; how seeds and fruits develop"
+                },
+                {
+                  "activity_type": "Comparison/Examination",
+                  "description": "In groups or pairs, learners examine examples of flowers that are wind-pollinated (e.g. maize, grasses) and some that are insect-pollinated, and compare the two, especially the stamens/anthers and stigmas of each, relating structure to function. Learners then compare images or microscope slides of pollen grains from wind and insect-pollinated flowers, again relating structure to function."
+                },
+                {
+                  "activity_type": "Research/Comparison",
+                  "description": "In pairs, learners research the meaning of cross- and self-fertilisation and produce a table comparing the two."
+                },
+                {
+                  "activity_type": "Examination/Explanation",
+                  "description": "In pairs, learners examine specimens and or diagrams of fruits and seeds and discuss and explain (verbally and in notes): the structural and functional difference between fruits and seeds; how different seeds are dispersed, stating why dispersal is so important"
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe pairs and groups carrying out activities. Ensure that all individuals are participating and understanding lessons emerging from examination of specimens, diagrams and research; making progress with each task towards learning outcomes."
+                },
+                {
+                  "assessment_type": "Listening",
+                  "description": "Listen to learners' conversations and ensure that all learners grasp concepts and understand all processes set out in the learning outcomes."
+                },
+                {
+                  "assessment_type": "Product Evaluation",
+                  "description": "Evaluate quality of learning through products: annotated diagrams, tables and reports, verbal and written explanations."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [
+                  "use graphical software to draw a labelled diagram of a local flower",
+                  "use mind mapping or word processing software to categorise fruits and seeds by their structure."
+                ],
+                "restrictions": []
+              },
+              "syllabus_notes": []
+            },
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S4-T1-03",
+                "topic_title": "SEXUAL REPRODUCTION IN HUMANS",
+                "recommended_duration_periods": "22",
+                "sequence_order": 3
+              },
+              "core_competency": "The learner understands that sexual reproduction involves two parents with specialized reproductive systems.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "understand the structure and functions of male and female reproductive system in humans",
+                  "domain": "k, u, s"
+                },
+                {
+                  "outcome_text": "understand the changes that take place during the menstrual cycle",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "relate male and female gametes",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "appreciate the process of fertilization of an ovum and the developments of the zygote up to birth",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "know the role of the placenta during pregnancy",
+                  "domain": "k"
+                },
+                {
+                  "outcome_text": "understand the importance of antenatal medical care",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "understand aspects of care for the baby after birth (breast feeding, balanced diet, immunization, and hygiene)",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "recognise the health risks/complications associated with early/teenage pregnancy and abortion",
+                  "domain": "u, v"
+                },
+                {
+                  "outcome_text": "identify the common birth control methods in Uganda and give the biological principle they employ and their effectiveness. (Note: the only method recommended for young people is abstinence)",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "Identify and explain common issues associated with reproductive systems",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "know the causes, signs and symptoms and understand the mode of transmission of named STIs (Syphilis, Gonorrhoea, Candida, Human Papilloma Virus [HPV], Hepatitis B, and HIV/AIDS).",
+                  "domain": "k, u, v"
+                },
+                {
+                  "outcome_text": "appreciate the preventive measures for the named STI's. (Note: The ONLY preventive method recommended for young people is abstinence)",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "identify the challenges faced by people living with HIV/AIDS and how to overcome them.",
+                  "domain": "u, v"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Male/Female reproductive system",
+                  "Menstrual cycle (LH, FSH, Oestrogen, Progesterone)",
+                  "Gametes",
+                  "Fertilization and development",
+                  "Placenta role",
+                  "Antenatal/Postnatal care",
+                  "Teenage pregnancy/Abortion risks",
+                  "Birth control methods",
+                  "STIs (Syphilis, Gonorrhoea, Candida, HPV, Hepatitis B, HIV/AIDS)"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": []
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Drawing/Labeling",
+                  "description": "In pairs or groups, learners examine chart(s) of male and female reproductive systems, draw and label them, researching and annotating diagrams with the functions of each part."
+                },
+                {
+                  "activity_type": "Data Analysis/Discussion",
+                  "description": "In groups, learners examine graphs showing monthly variation in levels of LH and FSH, oestrogen and progesterone, and changes to the uterine wall, using the graphs to discuss and explain the events of the menstrual cycle. After class discussion, individuals record the events in charts/diagrams."
+                },
+                {
+                  "activity_type": "Research/Description",
+                  "description": "In pairs or groups, learners research and describe (verbally and in notes): the structure of male and female gametes, and functions of the parts; the process of fertilisation; stages in the process of development from zygote to birth, including the role of the placenta"
+                },
+                {
+                  "activity_type": "Research/Report",
+                  "description": "In groups, learners research, brainstorm and report on: care for the baby after birth (breast feeding, balanced diet, immunization, and hygiene); the importance of good antenatal medical care for mother and baby"
+                },
+                {
+                  "activity_type": "Visit/Research",
+                  "description": "Learners visit a health facility, listen to a visiting professional and, in groups, carry out research on: the common birth control methods used in Uganda, the biological principle they employ and their effectiveness; dangers associated with early/teenage pregnancy and abortion"
+                },
+                {
+                  "activity_type": "Report",
+                  "description": "As individuals or in groups, learners gather information and report on menstrual and erectile abnormalities in young people and the possible medical remedies."
+                },
+                {
+                  "activity_type": "Listening/Writing",
+                  "description": "Learners listen to a talk from a health worker or watch a video clip about common STIs, and write a report that includes the following: causes and mode of transmission; signs and symptoms; preventive measures"
+                },
+                {
+                  "activity_type": "Discussion",
+                  "description": "Learners listen to or recite the song 'Alone and Frightened' by Philly Bongoley Lutaya. In groups or as a whole class, learners discuss the stigma/discrimination portrayed in the song, and the significance of the song in Uganda."
+                },
+                {
+                  "activity_type": "Drama/Play",
+                  "description": "Groups write a short play about HIV/ AIDS and attitudes to sufferers."
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe pairs and groups engaging in activities. Intervene as necessary and encourage all to participate despite the sensitive nature of some topics. Ensure that all understand the importance of achieving learning outcomes for personal as well as school-related reasons."
+                },
+                {
+                  "assessment_type": "Listening/Questioning",
+                  "description": "Listen to learners' discussions and ask questions to encourage creativity and critical thinking. Ensure that all learners grasp all concepts."
+                },
+                {
+                  "assessment_type": "Product Evaluation",
+                  "description": "Evaluate learning as shown by quality of products: oral contributions, annotated diagrams, reports, and posters."
+                },
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe learners engaging in activities. Intervene as necessary to ensure that all are participating in pair/group discussion of sensitive issues. Check that all are making progress with each task towards achieving learning outcomes."
+                },
+                {
+                  "assessment_type": "Listening/Questioning",
+                  "description": "Listen to learners' discussions. Ask probing questions to encourage learners to develop deep understanding of all key issues, and to be sensitive in relation to HIV/AIDS."
+                },
+                {
+                  "assessment_type": "Product Evaluation",
+                  "description": "Evaluate quality of products: oral contributions, reports, and plays."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [],
+                "restrictions": []
+              },
+              "syllabus_notes": [
+                {
+                  "text_verbatim": "Note: the only method recommended for young people is abstinence",
+                  "note_type": "constraint",
+                  "source_page": "44"
+                },
+                {
+                  "text_verbatim": "Note: The ONLY preventive method recommended for young people is abstinence",
+                  "note_type": "constraint",
+                  "source_page": "44"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "term_name": "Term 2",
+      "term_number": 2,
+      "themes": [
+        {
+          "theme_title": "Genetics",
+          "theme_description": "Inheritance, variation, and selection.",
+          "topics": [
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S4-T2-01",
+                "topic_title": "INHERITANCE",
+                "recommended_duration_periods": "20",
+                "sequence_order": 1
+              },
+              "core_competency": "The learner appreciates that transmission of characteristics is from parents to offspring through a process known as heredity.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "understand the process of cell division and significance of meiosis",
+                  "domain": "k, u"
+                },
+                {
+                  "outcome_text": "understand the concept of inheritance using genetic diagrams",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "understand and explain sex determination in humans",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "understand and explain sex linkage in humans",
+                  "domain": "u, s"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Cell division (meiosis significance)",
+                  "Inheritance terms (chromosome, gene, dominant, recessive, etc.)",
+                  "Genetic diagrams",
+                  "Sex determination",
+                  "Sex linkage"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": [
+                  {
+                    "text_verbatim": "Give examples of incomplete and co-dominance. No details required.",
+                    "override_allowed_by_user": true
+                  }
+                ]
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Animation/Research",
+                  "description": "In groups or pairs, learners view an animation on meiotic cell division. Research using other sources, and then: identify the stages and describe what occurs at each phase using annotated diagrams and notes; explain (verbally and in notes) the significance of meiotic cell division in maintaining the chromosome number"
+                },
+                {
+                  "activity_type": "Research/Activity",
+                  "description": "In groups, learners research on inheritance, and develop an activity using coloured beads to explain the concept to the rest of the class. Ensure that individuals explain using annotated diagrams."
+                },
+                {
+                  "activity_type": "Research/Presentation",
+                  "description": "In groups, learners research the meanings of the following terms: chromosome, gene, dominant and recessive, heterozygous and homozygous, phenotype and genotype. Share their understanding with the whole class using visual aids they create. Ensure that individuals explain using annotated diagrams."
+                },
+                {
+                  "activity_type": "Research/Discussion",
+                  "description": "In groups, learners research on, discuss and explain sex determination and sex linkage using relevant examples. Ensure that individuals explain using annotated diagrams."
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe groups and ensure that they are carrying out activities effectively, and making progress in terms of achieving learning outcomes."
+                },
+                {
+                  "assessment_type": "Listening/Questioning",
+                  "description": "Listen to learners' group and wholeclass conversations, prompt them and ask questions to ensure that they grasp difficult concepts."
+                },
+                {
+                  "assessment_type": "Evaluation",
+                  "description": "Evaluate quality of contributions to group and whole class discussions. Use products like annotated diagrams and genetic diagrams to gauge understanding."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [],
+                "restrictions": []
+              },
+              "syllabus_notes": [
+                {
+                  "text_verbatim": "Give examples of incomplete and co-dominance. No details required.",
+                  "note_type": "constraint",
+                  "source_page": "46"
+                }
+              ]
+            },
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S4-T2-02",
+                "topic_title": "VARIATION and SELECTION",
+                "recommended_duration_periods": "13",
+                "sequence_order": 2
+              },
+              "core_competency": "The learner understands that variation is as a result of changes in the genetic make-up of an organism.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "appreciate that variation in organisms is due to external and internal factors, and that mutations can be beneficial, harmful or neutral",
+                  "domain": "k, u"
+                },
+                {
+                  "outcome_text": "identify diseases associated with genetic disorders; e.g. sickle cell anaemia, albinism, and Down's syndrome",
+                  "domain": "u, v"
+                },
+                {
+                  "outcome_text": "understand the concept of natural selection as a mechanism of evolution",
+                  "domain": "k, u"
+                },
+                {
+                  "outcome_text": "understand the use of artificial selection in selective breeding",
+                  "domain": "u, a"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Variation (genetic vs environmental)",
+                  "Mutations (beneficial, neutral, harmful)",
+                  "Genetic disorders (Sickle cell, Albinism, Down's)",
+                  "Natural selection",
+                  "Artificial selection/Selective breeding"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": []
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Research/Explanation",
+                  "description": "Learners do research in groups to explain the meaning and give examples of variation due to environmental factors and genetics."
+                },
+                {
+                  "activity_type": "Research/Presentation",
+                  "description": "In groups, learners research on and explain the significance of: beneficial mutations, neutral mutations, harmful mutations, examples such as sickle cell anaemia, albinism, and Down's syndrome. Groups present the findings to the rest of the class and individuals complete reports."
+                },
+                {
+                  "activity_type": "Visit/Research",
+                  "description": "Learners visit an agricultural facility, or listen to a visiting agricultural extension officer, and/or carry out research in pairs and learn about the use of genetics in plant and animal breeding."
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe groups interacting and listen to learners' conversations. Intervene as necessary to ensure that activities are leading to learning outcomes being achieved."
+                },
+                {
+                  "assessment_type": "Evaluation",
+                  "description": "Evaluate quality of products: verbal explanations, presentations, and reports."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [],
+                "restrictions": []
+              },
+              "syllabus_notes": []
+            }
+          ]
+        },
+        {
+          "theme_title": "Inter-Relationships",
+          "theme_description": "Ecology, food chains, webs, and associations.",
+          "topics": [
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S4-T2-03",
+                "topic_title": "CONCEPT OF ECOLOGY",
+                "recommended_duration_periods": "3",
+                "sequence_order": 3
+              },
+              "core_competency": "The learner understands the concepts of communities, habitats, and ecosystems.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "know the meaning of the term ecology",
+                  "domain": "k"
+                },
+                {
+                  "outcome_text": "understand the concepts of communities, habitats and ecosystems",
+                  "domain": "s, u"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Definition of ecology",
+                  "Communities, habitats, ecosystems",
+                  "Main ecosystems in East Africa"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": []
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Map Study",
+                  "description": "In groups, learners look at a map showing the main physical features of East Africa and identify at least five ecosystems; stating their distinguishing features."
+                },
+                {
+                  "activity_type": "Field Study",
+                  "description": "In groups, learners study a local ecosystem and classify its living and non-living components, identifying the dominant organisms (that determine the other organisms found there) and the communities and habitats within the ecosystem."
+                },
+                {
+                  "activity_type": "Discussion",
+                  "description": "Groups share ideas and discuss the ecosystem's components, its communities, habitats and dominant species."
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe groups interacting and intervene as necessary to ensure that activities lead to learning outcomes being achieved."
+                },
+                {
+                  "assessment_type": "Listening",
+                  "description": "Listen to learners' conversations to monitor progress and understanding. Intervene to offer guidance as appropriate."
+                },
+                {
+                  "assessment_type": "Product Evaluation",
+                  "description": "Evaluate quality of products: ecosystem descriptions and lists; conclusions regarding local ecosystem components, communities, habitats, and dominant species."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [],
+                "restrictions": []
+              },
+              "syllabus_notes": []
+            },
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S4-T2-04",
+                "topic_title": "FOOD CHAINS AND FOOD WEBS",
+                "recommended_duration_periods": "12",
+                "sequence_order": 4
+              },
+              "core_competency": "The learner appreciates the interdependence of organisms in a given ecosystem.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "understand the feeding relationships in an ecosystem, and express them using food chains, webs, and pyramids",
+                  "domain": "k, u, s"
+                },
+                {
+                  "outcome_text": "appreciate the organisms and processes involved in the carbon cycle, and its role in maintaining the carbon dioxide balance in the atmosphere",
+                  "domain": "u, v"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Feeding relationships (producers, consumers)",
+                  "Food chains and webs",
+                  "Trophic levels",
+                  "Pyramid of numbers",
+                  "Carbon cycle"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": [
+                  {
+                    "text_verbatim": "Details of pyramid of biomass and energy not required.",
+                    "override_allowed_by_user": true
+                  }
+                ]
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Field Study",
+                  "description": "In groups, learners study a local ecosystem through field visits and observe, identify, and record the organisms. The learners: note what food sources the animal species rely upon; draw simple food chains and develop these into a food web; identify the trophic levels of the organisms observed."
+                },
+                {
+                  "activity_type": "Data Analysis/Pyramid Construction",
+                  "description": "In groups, learners use the data from their local ecosystem, or use data provided showing numbers of organisms found in, for example, a grassland ecosystem, to: categorize the organisms as producers, primary consumers and secondary consumers; calculate the number of organisms in each trophic level; use the numbers to construct a pyramid of numbers; explain the appearance of the pyramid"
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe groups carrying out activities and offer guidance to ensure that observation techniques are effective, and that identifications and interpretations of feeding relationships are accurate."
+                },
+                {
+                  "assessment_type": "Listening",
+                  "description": "Listen to learners' conversations and monitor progress and understanding."
+                },
+                {
+                  "assessment_type": "Questioning",
+                  "description": "Ask questions to deepen the understanding of the learners"
+                },
+                {
+                  "assessment_type": "Product Evaluation",
+                  "description": "Evaluate quality of products: verbal and written reports, and pyramid drawings."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [
+                  "use spread sheets to enter and analyse data",
+                  "use slide presentations for report on findings"
+                ],
+                "restrictions": []
+              },
+              "syllabus_notes": [
+                {
+                  "text_verbatim": "Details of pyramid of biomass and energy not required.",
+                  "note_type": "constraint",
+                  "source_page": "48"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "term_name": "Term 3",
+      "term_number": 3,
+      "themes": [
+        {
+          "theme_title": "Inter-Relationships",
+          "theme_description": "Biological associations and human impact.",
+          "topics": [
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S4-T3-01",
+                "topic_title": "ASSOCIATIONS IN BIOLOGICAL COMMUNITIES",
+                "recommended_duration_periods": "18",
+                "sequence_order": 1
+              },
+              "core_competency": "The learner appreciates that organisms naturally interact in different ways with one another in a given habitat.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "know what competition is and describe how organisms compete in nature",
+                  "domain": "k, u"
+                },
+                {
+                  "outcome_text": "differentiate prey from predators and describe a predator-prey relationship",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "understand symbiosis, mutualism, commensalism and parasitism and appreciate their roles in an ecosystem",
+                  "domain": "k, u"
+                },
+                {
+                  "outcome_text": "recognise the role of parasites and vectors in the transmission of common diseases (malaria, bilharzia, nagana, and sleeping sickness)",
+                  "domain": "k, u, v"
+                },
+                {
+                  "outcome_text": "know the adaptations of parasites to their mode of life",
+                  "domain": "u"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Competition",
+                  "Predator-prey relationships",
+                  "Symbiosis (Mutualism, Commensalism, Parasitism)",
+                  "Parasites and vectors",
+                  "Diseases: malaria, bilharzia, nagana, sleeping sickness",
+                  "Adaptations of parasites"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": [
+                  {
+                    "text_verbatim": "Details of life cycles of parasites not required.",
+                    "override_allowed_by_user": true
+                  }
+                ]
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Observation",
+                  "description": "Learners observe areas with dense natural populations of animals such as a farm or garbage pit, or they observe video clips, noting which organisms seem to be competing for the same type of food and/ or the same space, and report how the organisms behaved and which seemed to dominate."
+                },
+                {
+                  "activity_type": "Brainstorming/Chart Creation",
+                  "description": "In pairs, learners brainstorm examples of predator-prey relationships and present their conclusions in a chart showing what eats what (regular relationships only, not including, for example, man eating lions). (Encourage thinking about smaller organisms, invertebrates)"
+                },
+                {
+                  "activity_type": "Data Analysis",
+                  "description": "In pairs, learners examine collected numerical data relating to a prey-predator relationship and plot a prey-predator curve (MS Excel, if applicable). Pairs describe and explain the curve orally and in writing."
+                },
+                {
+                  "activity_type": "Research/Poster Design",
+                  "description": "In groups, learners research the meanings of the terms symbiosis, mutualism, commensalism and parasitism, and produce a poster/graphic image explaining each term and giving natural examples."
+                },
+                {
+                  "activity_type": "Research/Report",
+                  "description": "Learners visit a nearby health/agricultural facility, or listen to a visiting health/ agricultural officer, and/or carry out research, to find out about and then report on common parasitic diseases, how they are transmitted and how they can be prevented."
+                },
+                {
+                  "activity_type": "Role Play",
+                  "description": "Learners develop and present a role play to show how different parasites are adapted to their mode of life and how humans try to prevent their transmission."
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe pair and group interactions, ensuring that all are engaging and developing their understanding. Intervene to ensure progress towards learning outcomes."
+                },
+                {
+                  "assessment_type": "Listening/Questioning",
+                  "description": "Listen to learners' discussions and probe to promote critical thinking and creativity in reports, posters, and to deepen learning."
+                },
+                {
+                  "assessment_type": "Product Evaluation",
+                  "description": "Evaluate quality of notes, charts, growth curves and analysis, posters/graphic images, reports, and role plays."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [],
+                "restrictions": []
+              },
+              "syllabus_notes": [
+                {
+                  "text_verbatim": "Details of life cycles of parasites not required. Parasites: ticks, and tapeworm.",
+                  "note_type": "constraint",
+                  "source_page": "49"
+                }
+              ]
+            },
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S4-T3-02",
+                "topic_title": "HUMANS AND THE NATURAL ENVIRONMENT",
+                "recommended_duration_periods": "20",
+                "sequence_order": 2
+              },
+              "core_competency": "The learner appreciates that Uganda has different natural resources, that our activities have an impact on these resources, and recognises the reasons why countries have committed to global sustainable development goals.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "understand there is a world-wide focus on sustainability and its importance",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "know and give examples of natural resources found in Uganda",
+                  "domain": "k, u"
+                },
+                {
+                  "outcome_text": "appreciate and describe natural factors and human influences that may have an impact on ecosystems, and make suggestions about how to preserve the natural environment for all living things",
+                  "domain": "u, s, v"
+                },
+                {
+                  "outcome_text": "understand the sources, effects and control of air, land and water pollution",
+                  "domain": "u, s, v"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Sustainability",
+                  "SDGs",
+                  "Natural resources in Uganda (renewable/non-renewable)",
+                  "Human impact on ecosystems",
+                  "Pollution (air, land, water)",
+                  "Conservation strategies",
+                  "Recycling and re-use"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": []
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Research/Report",
+                  "description": "In groups, learners research on the international commitment to countries working together to achieve sustainable development goals (SDGs) by 2030. Groups report to the class on the meaning of sustainability, the importance of the SDGs and the scope of the goals."
+                },
+                {
+                  "activity_type": "Brainstorming/Research",
+                  "description": "In groups, learners brainstorm and carry out research so that they can: develop a list of natural resources in Uganda; classify the resources into renewable and non-renewable; identify examples of human activities that have affected the natural resources (negatively and positively), and suggest ways of conserving Uganda's natural resources for future generations"
+                },
+                {
+                  "activity_type": "Research/Report",
+                  "description": "In groups, learners research and report on: the main sources of air, land, and water pollution affecting the environment world-wide, and in Uganda, and their impact; the strategies being used to address these forms of pollution, and their hopes and fears for the future"
+                },
+                {
+                  "activity_type": "Research/Description",
+                  "description": "In pairs or groups, learners research on and describe ways in which the different categories of garbage can be re-used or recycled. Report on how effectively re-use and recycling is taking place in Uganda, and in the locality; what could/should be done to improve. Include a strategy for more sustainable practices in school."
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe pairs and groups carrying out activities. Help to guide research in order to optimise progress towards learning outcomes."
+                },
+                {
+                  "assessment_type": "Listening/Questioning",
+                  "description": "Listen to learners' discussions and ask questions to probe and overcome any barriers or misunderstandings, and so deepen learning of all participants."
+                },
+                {
+                  "assessment_type": "Product Evaluation",
+                  "description": "Evaluate quality of products: verbal feedback to the class, written reports, explanatory drawings/diagrams, and sustainability strategies."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [
+                  "The learner can use word processing, mind mapping or any other software for data entry and report making."
+                ],
+                "restrictions": []
+              },
+              "syllabus_notes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

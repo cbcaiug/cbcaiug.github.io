@@ -1,0 +1,1122 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre",
+        "curriculum_name": "Advanced Secondary Curriculum",
+        "subject": "Economics",
+        "level": "A-level",
+        "class_group": "Senior Six",
+        "year": "2025",
+        "version": "1.0",
+        "source_document": "economics_syllabus_2025.pdf"
+    },
+    "global_framework": {
+        "competencies": [],
+        "generic_skills": [
+            "Critical thinking and problem-solving",
+            "Co-operation and Self-Directed Learning",
+            "Creativity and Innovation",
+            "Communication",
+            "Mathematical Computation",
+            "Information and Communication Technology (ICT) Proficiency",
+            "Diversity and Multicultural Skills"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty, uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovation",
+            "Social responsibility",
+            "Social harmony",
+            "National unity",
+            "National consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Six",
+            "class_code": "S6",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Economic Development Strategies",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ECO-A-S6-T1-0001",
+                                        "topic_title": "TOPIC 6: Economic Development Strategies",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 36,
+                                        "keywords": [
+                                            "labour-intensive",
+                                            "capital-intensive",
+                                            "intermediate technology",
+                                            "appropriate technology",
+                                            "foreign aid",
+                                            "import substitution",
+                                            "export promotion",
+                                            "education"
+                                        ]
+                                    },
+                                    "core_competency": "The learner models for the community and policymakers the most effective strategies for tackling local development challenges by assessing and comparing different development strategies.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "appraise labour-intensive and capital-intensive techniques of production, explain why labour-intensive techniques of production are predominant in Uganda and suggest the most appropriate technique of production for Uganda. (k, gs, v)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "compare intermediate and appropriate technology, features of intermediate technology and appropriate technology, their advantages and disadvantages in the production process relating to their applicability to Uganda. (u, gs, v)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "describe the role of foreign aid in the economic development of the country and the advantages and disadvantages of foreign aid to the government of Uganda. (u, gs, va)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "analyse the roles of agriculture and industry in the development process and import substitution and export promotion strategies, specifically relating to Uganda’s economy. (u, s, gs, va)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "assess the role of education in the economic development process of the country, its challenges and solutions, with reference to Uganda. (u, s, gs, va)",
+                                            "domain": "Cognitive"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "In groups, learners: a) brainstorm the meaning of labour-intensive and capital-intensive techniques of production. b) debate the advantages and disadvantages of labour-intensive and capital-intensive techniques of production and discuss why labour-intensive techniques of production are predominant in Uganda. discuss why labour-intensive techniques of production are predominant in Uganda."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "In groups, learners discuss the meaning of intermediate technology and appropriate technology and then present in the plenary."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In groups, learners use ICT devices and other resource materials to search about the meaning of foreign aid, the advantages and disadvantages of foreign aid to the government of Uganda and present their findings in plenary."
+                                        },
+                                        {
+                                            "activity_type": "Guest Speaker",
+                                            "description": "In groups, learners listen to a guest speaker (preferably from the Ministry of Agriculture, Animal Industry and Fisheries (MAAIF) and the Ministry of Trade, Industry and Cooperatives, or from Uganda National Chamber of Commerce) make a presentation on the structure and role of agriculture and industry, and the implications of import substitution and export promotion strategies in the development process. Individually, learners ask relevant questions and take note of the important aspects of the Guest Speaker’s presentation. Learners write a report on the guest speaker's presentation."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In groups, learners use ICT devices and other resource materials to search the meaning of education, and its role in economic development, stressing the education challenges and solutions, particularly in Uganda. learners present their work in the plenary."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they brainstorm, debate and discuss the meaning of labour-intensive and capital-intensive techniques of production, the advantages and disadvantages of labour-intensive and capital-intensive techniques of production, why labour-intensive techniques of production are predominant in Uganda and the most appropriate technique of production for Uganda. Take note of their: i) analytical skills. ii) critical thinking and problem-solving skills. iii) creativity and innovative skills. iv) collaborative skills."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners as you probe them on the concepts of capital-intensive and labour-intensive techniques of production."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the learners' write-ups on the techniques of production and their debating skills, and make comments for improvement."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they discuss the meaning of intermediate technology and appropriate technology, the features of intermediate technology and appropriate technology and advantages and disadvantages of each. Take note of their: i) analytical skills. ii) creativity and innovative skills. iii) teamwork skills."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with the learners and ask probing questions on both intermediate and appropriate technologies of production to assess their critical thinking skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess how they present their work in the plenary and give feedback for improvement."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they present their work. Taking note of their: ii) analytical skills. iii) problem-solving skills. iv) creativity and innovative skills. v) collaborative skills."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners and ask probing questions on the advantages and disadvantages of foreign aid to the government of Uganda."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Evaluate the learners’ output on foreign aid and make comments for improvement."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they listen to the Guest Speaker, taking note of their: i) listening skills. ii) writing skills."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with the learners and ask probing questions on agriculture and industry and the implications of import substitution and export promotion development strategies in the country, taking note of their fluency, clarity and confidence."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Evaluate the learners’ reports and give feedback for improvement."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they interact with ICT search gadgets taking note of their: i) search skills. ii) problem-solving skills. iii) collaboration skills."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners while probing to determine the role of education in their lives, taking note of their analytical skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess learners’ presentations and give feedback."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 36,
+                                        "unit": "periods",
+                                        "source_page": "17"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use ICT devices to search about the meaning of foreign aid",
+                                            "Use ICT devices to search the meaning of education and its role in economic development"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ECO-A-S6-T1-0002",
+                                        "topic_title": "TOPIC 7: Population, Labour, Labour Unions and Employment",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 60,
+                                        "keywords": [
+                                            "population structure",
+                                            "optimum population",
+                                            "labour force",
+                                            "wage determination",
+                                            "labour unions",
+                                            "unemployment",
+                                            "underemployment"
+                                        ]
+                                    },
+                                    "core_competency": "The learner analyses population trends, labour market dynamics, and their impact on national development and employment, using relevant statistics and graphical data to develop evidence-based policy recommendations that incorporate ethical principles and promote sustainable community and national development.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "analyse population including size, structure, trend and distribution, implications, factors that impact on population, over, under and optimum population, consequences of increasing, declining, and an ageing population, rapid population growth rate and its influence on the development process of a country paying particular attention to Uganda. (u, gs, v)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "assess the contribution of labour to community and national development including the structure of the labour force and factors that influence it, supply and demand for labour and factors determining them, theories of wage determination and methods of wage payment (piece and time rate) merits and demerits of each. (u, s, gs, va)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "evaluate the performance of labour unions in negotiating for better conditions of work and higher wages for their members including types of labour unions, objectives of labour unions, tools used by labour unions to negotiate for wages, achievements and failures of labour unions in Uganda. (u, gs, v)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "design interventions to address the unemployment problem in a country including the meaning of employment, full employment, underemployment and unemployment, types of employment, nature of unemployment, types of unemployment, causes of unemployment and how they can be solved in developing countries particularly in Uganda. (u,s)",
+                                            "domain": "Cognitive"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Think-Pair-Share",
+                                            "description": "Learners: a) use think-pair-share to discuss concepts of the population (population size, structure, optimum population, overpopulation, under population). b) discuss, in groups, the consequences of increasing, declining, and an ageing population, rapid population growth rate and its influence on the development process of a country paying particular attention to Uganda. c) make a presentation to the plenary."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "Use textbook extracts or ICT devices to search about the contribution of labour to community and national development including the structure of the labour force and factors that influence it, supply and demand for labour and factors determining them, theories of wage determination and methods of wage payment (piece and time rate) and the merits and demerits of each. Let learners present their work to the plenary."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "Learners use textbook extracts or ICT devices to search on the performance of labour unions in negotiating for better conditions of work and higher wages for their members including, types of labour unions, objectives of labour unions, tools used by labour unions to negotiate for wages, achievements and failures of labour unions. Learners present their work in the class."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "In groups, learners discuss the meaning of: • employment • unemployment • full employment • underemployment • voluntary unemployment • involuntary unemployment. Learners share their findings with the class."
+                                        },
+                                        {
+                                            "activity_type": "Round Robin",
+                                            "description": "Learners use textbook extracts and the round robin approach to discuss the types of employment, nature of unemployment, types of unemployment, causes of unemployment and how they can be solved in developing countries, specifically in Uganda."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they use think-pair-share on population (population size, structure, optimum population, overpopulation, population) and as they discuss consequences of increasing, declining, and ageing population, rapid population growth rate and its influence on the development process of a country paying particular attention to Uganda. Take note of their: i) communication skills. ii) cooperation and self-directed learning."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners by asking probing questions on the concepts of population to allow critical thinking and problem-solving."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the learner’s presentations and give feedback on their work."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they search for the information asked for and as they present their work. Take note of: i) communication skills. ii) ICT proficiency."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners, asking probing questions to establish their critical thinking and Problem-solving skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the output of the learner’s search on the contribution of labour to community and national development including the structure of the labour force and factors that influence it, supply and demand for labour and factors determining them, theories of wage determination and methods of wage payment (piece and time rate) and the merits and demerits of each."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they search for the information asked for and as they present their work. Take note of: i) cooperation and self-directed learning. ii) communications skills. iii) ICT proficiency."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners, asking probing questions to establish their critical thinking and problem-solving skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the output of the learner’s search on the performance of labour unions in negotiating for better conditions of work and higher wages for their members including types of labour unions, objectives of labour unions, tools used by labour unions to negotiate for wage achievements and failures of labour unions."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they discuss the meaning of: • employment • unemployment • full employment • underemployment • voluntary unemployment • involuntary unemployment. Take note of their creativity and innovation."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners, asking probing questions to establish their critical thinking and problem-solving skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the learner’s outputs and provide feedback."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they use the round robin approach, taking note of their: i) critical thinking and problem-solving skills. ii) creativity and innovative skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess learners’ solutions to the unemployment problem, especially in Uganda."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 60,
+                                        "unit": "periods",
+                                        "source_page": "17"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use ICT devices to search about the contribution of labour",
+                                            "Use ICT devices to search on the performance of labour unions"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Money, Banking and Public Finance",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ECO-A-S6-T2-0003",
+                                        "topic_title": "TOPIC 8: Money, Banking and Inflation",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 40,
+                                        "keywords": [
+                                            "money supply",
+                                            "quantity theory",
+                                            "central bank",
+                                            "commercial banks",
+                                            "credit creation",
+                                            "inflation",
+                                            "deflation"
+                                        ]
+                                    },
+                                    "core_competency": "The learner demonstrates ethical financial management prowess by generating income through legitimate means, utilising financial institutions to optimise resource allocation, and developing strategies to mitigate the effects of inflation, ultimately contributing to sustainable national development.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "analyse the concept of money, including its functions, types, and supply, and explain the determinants of money supply in an open economy, the quantity theory of money, and the interrelationships between money supply, price level, and output, as well as the factors influencing demand for money and its value in an economy. (u, gs, v)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "evaluate the role of the Central Bank in the economic development of a country; covering monetary policy (objectives, tools, effectiveness and performance of the monetary sector in Uganda. (u, gs)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "assess the role of the commercial banks (local and foreign) in the economic development of a country, how commercial banks reconcile profitability, liquidity and security, challenges faced by commercial banks in Uganda and credit creation (assumptions, process, factors influencing, and limitations) in Uganda. (u, gs, v)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "describe the role of the non-banking institutions (development banks, insurance companies, credit associations) in the economic development of a country including challenges faced in Uganda. (u, gs, v)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "design measures of controlling inflation in an economy, including meaning, degree, types, causes, effects and relationship between inflation and unemployment, giving specific reference to Uganda. (u, gs, v)",
+                                            "domain": "Cognitive"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "In groups, learners: a) discuss: i) the meaning of money. ii) functions of money. iii) characteristics of money. iv) types of money. b) present their work in class."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "use textbook extracts, ICT devices and any other resource to search and discuss the: i) supply of money (M1 and M2). ii) determinants of money supply in an open economy. iii) quantity theory of money (its applicability and shortcomings). iv) relationship between money supply, price level and output as explained by the quantity theory of money. b) Have learners present their work in the plenary."
+                                        },
+                                        {
+                                            "activity_type": "Jigsaw",
+                                            "description": "a) Learners use the jigsaw approach on demand for money and value for money in an economy giving attention to Uganda’s economy. b) Learners present their work to the class."
+                                        },
+                                        {
+                                            "activity_type": "Case Study",
+                                            "description": "In groups, learners read a case study on the Central Bank of Uganda and discuss the: i) meaning of Central Bank. ii) monetary policy. iii) Objectives of monetary policy. iv) tools of the monetary policy. v) effectiveness of monetary policy. vi) performance of the monetary policy. b) Learners make presentations to the class."
+                                        },
+                                        {
+                                            "activity_type": "Jigsaw",
+                                            "description": "Learners use the jigsaw method on the following: i) meaning of commercial banks. ii) types of commercial banks. iii) functions of commercial banks. iv) role of foreign commercial banks. v) functions of local commercial banks. vi) credit creation. vii) process of credit creation. viii) limitations of credit creation. ix) how banks reconcile profitability, liquidity and security. Learners present their work to the class."
+                                        },
+                                        {
+                                            "activity_type": "Guest Speaker",
+                                            "description": "a) Have a Guest Speaker to present to learners on the: i) Meaning of non‐banking financial intermediaries. ii) roles of development banks. iii) insurance companies. iv) credit associations. b) Individually, learners take notes and write a report of the presentation of the Guest Speaker and present to the class."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In groups, learners use ICT devices and any other relevant source of information to search for information on the: i) meaning of inflation, deflation and reflation. ii) degree of inflation. iii) Types of inflation. b) Learners make presentations in class."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "Use textbook extracts and UBOS reports on inflation to search and discuss the causes, effects, and relationship between inflation and unemployment and solutions to inflation with specific reference to Uganda. Write an essay and present it in class."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they discuss concepts of money, taking note of their: i) cooperation and self-directed learning ii) honesty in making and handling money"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners by probing them on the concepts of money to allow critical thinking."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the learners’ work and provide feedback."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they discuss concepts of the: i) supply of money (M1 and M2). ii) determinants of money supply in an open economy. iii) quantity theory of money (its applicability and shortcomings). iv) relationship between money supply, price level and output as explained by the quantity theory of money."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Have learners present their work in the plenary, taking note of their: i) creativity and innovation in generating money. ii) communication skills. iii) honesty in making and handling money."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners and ask probing questions on the determinants of money supply and the quantity theory of money to enable critical thinking."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the learners’ work and provide feedback."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they discuss concepts of demand for money and value for money in an economy giving attention to Uganda’s economy and as they make their presentation to class."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners and ask probing questions about the determinants of money demand, and value for money to enable critical thinking."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess learners’ work and provide feedback."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they read the case study on the Central Bank of Uganda and as they make their presentations to the class."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Ask probing questions about the limitations to monetary policy for purposes of encouraging critical thinking and problem-solving."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the learners’ work and provide feedback."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they use the jigsaw method on the: i) meaning of commercial banks. ii) types of commercial banks. iii) functions of commercial banks. iv) role of foreign commercial banks. v) functions of local commercial banks. vi) credit creation. vii) process of credit creation. viii) limitations of credit creation. ix) how banks reconcile profitability, liquidity and security while taking note of their: i) cooperation and self-directed learning. ii) honesty in making and handling money."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Ask probing questions about the process of credit creation, roles of commercial banks to encourage critical thinking and problem solving."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the learners' work and provide feedback."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners, taking note of their: i) ability to listen attentively. ii) respect towards the Guest Speaker and fellow learners during the talk. iii) classroom environment during the speakers’ presentation. iv) honesty in making and handling money."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Learners converse with and ask the Guest Speaker relevant questions about how to participate in banking and non-banking financial activities."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the reports concerning banking and non-banking products, requirements for account opening, and the benefits associated. Give the learners feedback."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they present their work to the class on the: i) meaning of inflation, deflation and reflation. ii) degree of inflation. iii) types of inflation."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Ask learners probing questions about their experience of inflation in Uganda taking note of their critical thinking and problem solving skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the learners’ work on the: i) meaning of inflation. ii) deflation and reflation. iii) degree of inflation. iv) types of inflation. and provide feedback for improvement."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they present their work to the class on the causes, effects, and relationship between inflation and unemployment and the solutions to inflation with specific reference to Uganda."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Ask learners probing questions about their solutions to inflation in Uganda to encourage problem-solving."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the learners’ essays on the causes and effects of inflation, the relationship between inflation and the unemployment and solutions to inflation giving specific reference to Uganda and give them feedback."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 40,
+                                        "unit": "periods",
+                                        "source_page": "17"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use ICT devices to search and discuss the supply of money and quantity theory",
+                                            "Use ICT devices to search for information on inflation, deflation and reflation"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ECO-A-S6-T2-0004",
+                                        "topic_title": "TOPIC 9: Public Finance and Fiscal Policy",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 56,
+                                        "keywords": [
+                                            "public revenue",
+                                            "taxation",
+                                            "fiscal policy",
+                                            "national budget",
+                                            "public debt",
+                                            "deficit budget"
+                                        ]
+                                    },
+                                    "core_competency": "The learner advises the community on the sources of Public Finance and its uses, the need to have an effective Fiscal Policy for a country, the need to improve a country’s tax revenue collection and the need for good public debt management practices in an economy for national development.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "examine public finance, branches, public revenue and its need, sources of public revenue (tax and non-tax), types of public expenditure, and reasons for the persistent increase in public expenditure in Uganda. (u, gs)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "recommend measures to increase the country’s tax revenue including the meaning of taxation, the role of taxation in the development of an economy, canons of taxation, types of taxes, the advantages and disadvantages of each, categories of taxes, taxes and duties collected by the Central Government, taxes and duties collected by the local government, reasons for low tax revenue in Uganda, measures to increase tax revenue in Uganda, the role of taxation in the development of an economy with specific reference to Uganda. (u, gs, v)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "describe tax administration and tax compliance including the role of URA in tax administration, key stakeholders in Uganda’s tax administration, elements of tax compliance, factors influencing tax compliance, benefits of tax compliance, forms of non- tax compliance, measures for enhancing tax compliance and rights and obligations of a taxpayer in a country with specific reference to Uganda. (u, gs)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "compute taxes payable using prevailing rates, including domestic taxes, individual tax incomes, employment income tax, presumptive tax, rental income tax, value added tax, local service tax, excise duty, import duty, corporate tax, VAT, withholding tax, infrastructural levy, and environmental levy in a country with specific reference to Uganda. (u, s, v, gs)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "show understanding of a public debt, pointing out its meaning, classification, reasons for incurring it, strategies for effective public debt management, and its role in the economic development of a country with specific reference to Uganda. (u, gs, v)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "analyse the meaning of fiscal policy and its objectives in achieving economic stability and growth in an economy with specific reference to Uganda. (u, gs)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "examine the national budget including the types, persistent budget deficit in Uganda, ways to minimise a deficit budget, and ways of financing a deficit budget to foster economic development in the economy of Uganda. (u, gs, v)",
+                                            "domain": "Cognitive"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "In groups, learners: a) discuss public finance, its branches, public revenue and its need, sources of public revenue (tax and non-tax), types of public expenditure, and reasons for persistent increase in public expenditure in Uganda. b) make a write-up and present it to the class."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In groups, learners use ICT devices or textbook extracts to search for the meaning of taxation, the role of taxation in the development of an economy, canons of taxation, types of taxes advantages and disadvantages of each, categories of taxes, taxes and duties collected by the Central government, taxes and duties collected by the local government, reasons for low tax revenue in Uganda, measures to increase tax revenue in Uganda and the role of taxation in the development of an economy. b) Learners make a write-up and present in the class."
+                                        },
+                                        {
+                                            "activity_type": "Guest Speaker",
+                                            "description": "Learners listen to a Guest Speaker presenting on tax administration and tax compliance including the role of URA in tax administration, key stakeholders in Uganda’s tax administration, elements of tax compliance, factors influencing tax compliance, benefits of tax compliance, forms of non-tax compliance, measures for enhancing tax compliance and rights and obligations of a taxpayer in a country with specific reference to Uganda. b) Let learners write reports for assessment by the teacher."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming and Computation",
+                                            "description": "Individually, learners, brainstorm the meaning of domestic taxes, individual tax incomes, employment income tax, presumptive tax, rental income tax, value added tax, local service tax, excise duty, import duty, corporate tax, VAT, withholding tax, infrastructural levy, and environmental levy. b) In groups, learners use ICT devices to search on how to compute the following taxes: i) domestic taxes ii) individual tax incomes iii) employment income tax iv) presumptive tax v) rental income tax vi) value added tax vii) local service tax viii) withholding tax ix) excise duty x) import duty xi) corporate tax xii) VAT xiii) infrastructural levy xiv) environmental levy c) Learners compute sample taxes and present them in class."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "In groups, learners discuss public debt, pointing out its meaning, classification, reasons for incurring it, strategies for effective public debt management, and its role in the economic development of a country with specific reference to Uganda. b) Learners present their findings to the class."
+                                        },
+                                        {
+                                            "activity_type": "Think-Pair-Share",
+                                            "description": "Learners use the think-pair-share method to discuss the meaning of fiscal policy and its objectives in achieving economic stability and growth in an economy with specific reference to Uganda."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In groups, learners use textbook extracts and ICT devices to search on and discuss the meaning of budgeting, types, and the role of a budget as an instrument of social and economic development in an economy. c) Learners make notes and present to the plenary."
+                                        },
+                                        {
+                                            "activity_type": "Listening",
+                                            "description": "Individually, learners listen to the National Budget Speech and take note of key economic and social highlights and present their findings to the class."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they search, discuss, and present public finance, its branches, public revenue and its need, sources of public revenue (tax and non-tax), types of public expenditure, and reasons for persistent increase in public expenditure in Uganda. Take note of their: i) critical thinking and problem-solving skills. ii) communication skills. iii) cooperation and self-directed learning."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Ask learners probing questions about the concepts of public finance and its sources to encourage problem-solving and allow for critical thinking."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the write-ups and provide feedback for improvement."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners’ participation as they search, discuss, and present concepts of taxation. Take note of their: i) critical thinking and problem-solving skills. ii) communication skills. iii) cooperation and self-directed learning."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners and ask probing questions about the concepts of taxation to enable critical thinking and problem-solving."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the write-ups and provide feedback to the learners for improvement."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they listen to the Guest Speaker and take note of their, critical thinking and problem-solving skills, communication skills, cooperation and self-directed learning."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners on tax administration and tax compliance asking probing questions to encourage problem-solving."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the learners’ reports written based on the Guest Speaker’s presentation and provide feedback for improvement."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they brainstorm and compute sample taxes taking note of their: i) mathematical computation skills. ii) ICT proficiency. iii) cooperation and self- directed learning. iv) honesty and integrity. v) national consciousness and patriotism."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners about the computation of different taxes taking note of their critical thinking and problem-solving skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess learners’ computed outputs and give feedback."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they discuss public debt, meaning, classification, reasons for incurring it, strategies for effective public debt management, and its role in the economic development of the country. Take note of their: i) Communication skills. ii) critical thinking and problem-solving skills."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners about effective strategies for public debt management taking note of their creativity and innovation."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the learners’ presentations and give them feedback."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they pair up and share on the meaning of fiscal policy and its objectives in achieving economic stability and growth. Take note of their cooperation and self-directed learning."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners about the objectives of fiscal policy in achieving economic stability and growth."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they search, discuss, and present the meaning of budgeting, types, and the role of a budget as an instrument of social and economic development in an economy. Take note of their: i) ICT proficiency. ii) communication skills. iii) cooperation and self-directed learning. iv) honesty, integrity, social harmony, and national consciousness and patriotism."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners about the role of the budget as an instrument of social and economic policy in the development of an economy, taking note of their critical thinking and problem-solving skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess learners’ presentations and notes and give them feedback."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they listen, discuss, and present the meaning of budgeting, types, and the role of budget as an instrument of social and economic development in an economy, while taking note of their: i) ICT proficiency. ii) communication skills. iii) cooperation and self-directed learning. iv) honesty, integrity, social harmony, and national consciousness and patriotism."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners about the role of the budget as an instrument of social and economic policy in the development of an economy, taking note of their, critical thinking and problem-solving skills."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 56,
+                                        "unit": "periods",
+                                        "source_page": "17"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use ICT devices to search for the meaning of taxation",
+                                            "Use ICT devices to search on how to compute taxes",
+                                            "Use ICT devices to search on and discuss the meaning of budgeting"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "International Trade and Development Planning",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ECO-A-S6-T3-0005",
+                                        "topic_title": "TOPIC 10: International Trade",
+                                        "sequence_order": 5,
+                                        "recommended_duration_periods": 60,
+                                        "keywords": [
+                                            "international trade",
+                                            "comparative advantage",
+                                            "protectionism",
+                                            "balance of payments",
+                                            "exchange rates",
+                                            "economic integration",
+                                            "east african community"
+                                        ]
+                                    },
+                                    "core_competency": "The learner demonstrates knowledge, understanding, and application of the concept of International Trade in the development of an economy.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "analyse the fundamental concepts of International Trade, including its forms and basis, benefits, the principle of comparative advantage and its implications, arguments for free trade, merits and demerits of protectionism, terms of trade, the balance of trade and balance of payment, balance of payments problems, balance of payments (causes of unfavourable balance of payments effects and solutions to overcome balance of payments problems) in an economy with specific reference to Uganda. (u, gs)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "examine the role of foreign currency, meaning of foreign exchange, types of exchange rates in an economy, advantages, and disadvantages of each exchange rate to the economic development of a country with specific reference to Uganda. (s, gs, v)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "describe the forms benefits and challenges of economic integration including the necessary conditions for success and gains from economic integration in developing countries with reference to the East African Community (EAC). (s, gs, v)",
+                                            "domain": "Cognitive"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In groups: a) learners use ICT devices and any other source of information to search on the forms and basis of International Trade, benefits, the principle of comparative advantage and its implications, arguments for free trade, merits and demerits of protectionism, terms of trade, the balance of trade and balance of payment, balance of payments problems. b) display their write-ups in a class for a gallery walk and peer critiquing."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In groups, learners use ICT devices and any other relevant source of information to search and discuss balance of payment problems, balance of payments in Uganda (causes of unfavourable balance of payments in Uganda, effects and solutions to overcome balance of payments problems) in an economy with specific reference to Uganda. b) Learners write an essay about their findings and present in class."
+                                        },
+                                        {
+                                            "activity_type": "Round Robin",
+                                            "description": "Learners use the round robin method to get information on the: i. meaning of foreign exchange. ii. role of foreign currency in an economy. iii. types of foreign exchange rates. iv. advantages and disadvantages of each type of foreign exchange rate in an economy. b) Pin up their work and carry out a gallery walk for critiquing."
+                                        },
+                                        {
+                                            "activity_type": "Case Study",
+                                            "description": "In groups, learners read a case study and discuss the, meaning, forms (free trade area, customs union, and common market, economic union), necessary conditions for success, gains, and challenges of economic integration in developing countries with reference to the East African Community. b) Learners write an essay and make a presentation to the class."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners in groups as they discuss the forms and basis of international trade, the principle of comparative advantage and its implications, arguments for free trade, merits and demerits of protectionism, terms of trade, the balance of trade and balance of payment, and balance of payment problems. Take note of their: i) communication skills. ii) critical thinking and problem-solving skills."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with the learners and ask guiding questions about the concepts of international trade, and the comparative advantage theory, benefits, and challenges of international trade for a country."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the write-ups and provide the learners with feedback."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they search and discuss balance of payments problems, balance of payments in Uganda (causes of unfavourable balance of payments in Uganda, effects and solutions to overcome balance of payments problems) in an economy with specific reference to Uganda. Take note of their: i) communication skills. ii) critical thinking and problem-solving skills. iii) creativity and innovation."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with the learners and ask probing questions as they discuss and present to determine their critical thinking."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the essays and provide feedback for improvement."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they use the round robin to get information on the: i) meaning of foreign exchange. ii) role of foreign currency in an economy. iii) types of foreign exchange rates. iv) advantages and disadvantages of each type of foreign exchange rate in an economy. Take note of their: i) communication skills. ii) mathematical computations."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners and ask probing questions about the meaning of foreign exchange, types of foreign exchange rates, advantages and disadvantages of each type of foreign exchange rate while taking note of their critical thinking skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Evaluate the write-ups and provide feedback for improvement, considering good time management."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they read a case study and discuss the meaning, forms, and necessary conditions for success, and gains of economic integration in an economy while taking note of their cooperation and self-directed learning."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Ask learners probing questions on the case study about, meaning, forms, and necessary conditions for the success, gains, and costs of economic integration in an economy, to emphasise critical thinking and problem-solving."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Evaluate the essays the learners write and provide feedback for improvement."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 60,
+                                        "unit": "periods",
+                                        "source_page": "17"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use ICT devices to search on the forms and basis of International Trade",
+                                            "Use ICT devices to search balance of payment problems"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ECO-A-S6-T3-0006",
+                                        "topic_title": "TOPIC 11: Economic Development Planning",
+                                        "sequence_order": 6,
+                                        "recommended_duration_periods": 36,
+                                        "keywords": [
+                                            "development plan",
+                                            "implementation",
+                                            "national development plan",
+                                            "parish development model"
+                                        ]
+                                    },
+                                    "core_competency": "The learner demonstrates the ability to analyse economic development plans, propose strategies to address development needs, and suggest alternative development plans for an economy.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "analyse an economic development plan for a country, taking note of, the meaning, need for, forms, principles, features, and challenges in formulation and implementation of economic development plans in Uganda. (u, gs, s)",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "evaluate the current development plan in Uganda in achieving the intended goals. (s, gs)",
+                                            "domain": "Cognitive"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In groups: a) learners use ICT devices and any other relevant source of information to search and discuss the meaning, need for, forms, principles, features and challenges in formulation and implementation of economic development plans in Uganda. b) learners make write-ups and present them in class for critiquing."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In groups, learners use ICT devices, textbook extracts and magazines to get information to discuss the current National Development Plan (NDP) and the Parish Development Model (PDM) and evaluate their achievement of the intended goals. b) Present the findings to the class."
+                                        },
+                                        {
+                                            "activity_type": "Project",
+                                            "description": "Learners prepare a development plan for their community and present to the class for critiquing."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they search and discuss the meaning, need for, forms, principles, features, and challenges in the formulation and implementation of economic development plans in Uganda. Take note of their: i) creative and innovative skills. ii) critical thinking and problem-solving."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners and ask probing questions as they discuss. Take note of their diversity and multicultural skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the write-ups and provide feedback, for improvement."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they search and discuss the current National Development Plan (NDP) and the Parish Development Model (PDM), taking note of their: i) critical thinking and problem-solving skills. ii) ICT proficiency."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners and ask probing questions on forms, principles and challenges and take note of their critical thinking and problem-solving skills"
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Assess the sample plans and provide feedback for improvement."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they prepare development plans for their communities and as they present them to the class."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners and ask probing questions as they present taking note of their confidence, ICT skills and critical thinking and problem-solving skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "Evaluate their plans and provide feedback."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "Learners prepare a development plan for their community and present to the class for critiquing.",
+                                        "deliverables_verbatim": "Development plan for their community",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "53"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 36,
+                                        "unit": "periods",
+                                        "source_page": "17"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use ICT devices to search and discuss the meaning, need for, forms, principles, features and challenges in formulation and implementation of economic development plans",
+                                            "Use ICT devices to get information to discuss the current National Development Plan (NDP)"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "Notes: u = Understanding, s= Skills, gs = Generic Skills, sr = Self-Reliance, ld = Leadership, p = Patriotism, ll = Long-life Learner, MU = Morally Upright",
+                                            "note_type": "clarification",
+                                            "source_page": "53"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

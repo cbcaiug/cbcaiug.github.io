@@ -1,0 +1,1789 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre",
+    "curriculum_name": "Upper Secondary Level Curriculum",
+    "subject": "Chinese Language",
+    "level": "Upper Secondary (A-Level)",
+    "class_group": "Senior Five",
+    "year": "2022",
+    "version": "First Edition",
+    "source_document": "CHINESE LANGUAGE SYLLABUS"
+  },
+  "global_framework": {
+    "competencies":[
+      "A confident person who has a strong sense of right and wrong, thinks independently and creatively, and communicates effectively.",
+      "A self-directed individual who takes responsibility for his/her learning, questions reflects and perseveres for lifelong learning.",
+      "An active contributor who can work effectively in teams, takes calculated risks, is innovative to produce goods and services, and strives for excellence.",
+      "A concerned citizen who is well rooted in our society, is responsible to the family, to the community, to the nation and the globe, and takes an active role in improving the lives of others."
+    ],
+    "generic_skills":[
+      "Continuous Learning",
+      "World of Work",
+      "Values and attitudes",
+      "Generic skills",
+      "Cross-cutting issues"
+    ],
+    "values":[
+      "Peace and harmony",
+      "Integrity and honesty",
+      "Citizenship and patriotism",
+      "Positive attitude towards work",
+      "Respect for human rights",
+      "Self-control",
+      "Responsibility",
+      "Teamwork",
+      "Aspirations for continuous learning"
+    ],
+    "attitudes":[
+      "Positive attitude towards vocational hands-on work",
+      "Resilience and adaptability"
+    ],
+    "cross_cutting_issues":[
+      "Environmental awareness",
+      "Health awareness",
+      "Mixed abilities and involvement",
+      "Socioeconomic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+  "authority_model": {
+    "precedence_order":[
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "classes":[
+    {
+      "class_name": "Senior Five",
+      "class_code": "S5",
+      "terms":[
+        {
+          "term_name": "Term One",
+          "term_number": 1,
+          "themes":[
+            {
+              "theme_title": "SCHOOL LIFE",
+              "theme_description": "Theme 1: SCHOOL LIFE",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHN-A-S5-T1-0001",
+                    "topic_title": "Addressing New Classmates",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner compares school activities, subjects and school culture of China and Uganda.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand and use relevant vocabulary and grammar to talk about situations in the classroom.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "listen and understand the dialogues and texts about issues related to the classroom.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "use the appropriate vocabulary and grammar to address a new classmate.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "read and understand the gist of the dialogues and texts about school activities.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing by writing a short essay related to school life.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "understand the etiquette in interpersonal relationships and know how to make friends.",
+                      "domain": "Affective"
+                    },
+                    {
+                      "outcome_text": "know the similarities and differences between the Ugandan and Chinese education systems.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "form a basic understanding of interpretation.",
+                      "domain": "Cognitive"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Listening",
+                      "description": "listens to a conversation between two classmates and in a group, and discusses the meaning of the keywords in the dialogue."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "in pairs, simulates a dialogue between two classmates as they talk about their new classmate’s strong points using the following Chinese words"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "watches a video clip of a famous speech and identifies Chinese words."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads a given text and identities sentence structures and the characters of the relevant core words."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes Chinese characters while observing the stroke orders and radicals of the characters."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "reads a short extract about the Chinese education system and identifies similarities with the Ugandan education system."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes a short essay about a classmate."
+                    },
+                    {
+                      "activity_type": "Interpretation",
+                      "description": "watches a video of a learner giving a speech in a competition in Chinese, retells and interprets it in the English language."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads an excerpt from a novel and responds to questions about it."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners as they communicate with their classmates on which subject to take. Intervene on the appropriate use of key-selected words in the chapter after the dialogue to avoid interference."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to use comparative words as they discuss in groups the similarities and differences between the Ugandan and Chinese education systems."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners watching a video of a student giving a speech in a competition in Chinese, listen to them retelling and interpreting in the English language and intervene where the interpretation skills are not appropriately used."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate how the learner follows the correct stroke order as he/she writes down characters."
+                    },
+                    {
+                      "assessment_type": "Gauge",
+                      "description": "Gauge the learner’s progress in using grammar points already learnt as he/she writes a short paragraph about his/her school using Chinese words learnt."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s understanding of the passage as he/she responds to questions on the novel about the author, persons, feelings, opinions, themes, and style."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": 80,
+                    "formative_percent": 20,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": "School-Based Assessment shall constitute 20% of all the assessments done and its implementation starts right from Senior 5 and continues to Senior Six. Overall End of Cycle Assessment will contribute 80% to the learner’s final score."
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "55"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHN-A-S5-T1-0002",
+                    "topic_title": "Food, Diet and Different Cooking Cultures",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner understands the different food cultures of China and Uganda.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand and use relevant vocabulary and grammar to talk about fruits and the cafeteria.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "listen to dialogues and texts about fruits and the cafeteria.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "communicate and discuss issues related to food.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "read and understand the gist of the dialogues and texts about fruits and the cafeteria.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing a short essay using appropriate vocabulary related to fruits and the cafeteria.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "appreciate explanatory texts and compare the different food cultures of China and Uganda.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "apply basic principles of interpretation.",
+                      "domain": "Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment":[],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Listening",
+                      "description": "listens to and retells the main ideas of what the dialogues are about using relevant vocabulary and grammar."
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "listens to a text about fruits and the cafeteria and writes down the key Chinese words he/she hears."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads and fills in the blanks in the text about food provided in the textbook."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "rearranges the given phrases using the grammar points."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes Chinese characters paying attention to ideograms and radicals."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "reads and recites the given short text about food."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes a short essay (about ten lines) describing how food looks and tastes."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads A bite of China—dumplings for pleasure to enhance their understanding of Chinese food culture."
+                    },
+                    {
+                      "activity_type": "Interpretation",
+                      "description": "interprets dialogues/texts about food."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads an excerpt from a novel and responds to questions about it."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Gauge",
+                      "description": "Gauge the learner’s fluency and articulation of Chinese words as he/she listens to and recites the dialogue about fruits and cafeteria, paying attention to the tones."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to use appropriate Chinese words as he/she talks about the differences and similarities between Chinese and Ugandan food and cooking culture."
+                    },
+                    {
+                      "assessment_type": "Examination",
+                      "description": "Examine the learner’s ability to read and understand short texts in Chinese Characters as he/she reads and answers questions about the expository text."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners individually as they act as kitchen staff and ask for each learner’s choice of food in a role play."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to use grammar points and appropriate vocabulary to talk about food learnt as he/she writes a short essay on food using Chinese characters."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s interpretation skills in groups and intervene where wrong works are used to derail the meaning as he/she interprets the given text from Chinese to English."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse to gauge the learner’s understanding as he/she shares information about the books he/she reads for pleasure."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": 80,
+                    "formative_percent": 20,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "59"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHN-A-S5-T1-0003",
+                    "topic_title": "Entertainment and free-time activities",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner has a basic understanding of Chinese painting and calligraphy art.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand and use relevant vocabulary and grammar about entertainment and free time.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "listen and understand the dialogues and text about entertainment and free time at school",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing a short essay related to entertainment and free time at school using appropriate words",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "read and understand the gist of the dialogues and text about entertainment and free time at school.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "appreciate the classic works in China.",
+                      "domain": "Affective"
+                    },
+                    {
+                      "outcome_text": "learn the basic memorizing skills in interpretation.",
+                      "domain": "Cognitive"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Listening",
+                      "description": "listens and recites the dialogue about calligraphy."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "retells the main ideas from the dialogue about calligraphy."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "uses the keywords to create a new dialogue. (people discussing their likes and dislikes)."
+                    },
+                    {
+                      "activity_type": "Grammar",
+                      "description": "rearranges the given phrases."
+                    },
+                    {
+                      "activity_type": "Character writing",
+                      "description": "identifies associative compounds and read them with a good tone."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "talks about his/her feelings about Chinese art works."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes a short notice of the calligraphy experience activity."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads and identifies the people, and what they do in Chinese traditional sports."
+                    },
+                    {
+                      "activity_type": "Interpretation",
+                      "description": "translates the topic Love of Calligraphy."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s pronunciation and fluency as he/she listens to, recites and talks about the dialogue about calligraphy paying attention to the tones."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to use the vocabulary learnt appropriately as he/she makes correct sentences with relevant words to form a dialogue."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Listen to the learner talk about his/her feelings about Chinese artworks and investigate on the appropriate use of words to express likes and dislikes."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the stroke orders as the learner practises writing calligraphy."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the appropriate use of learnt grammar point as the learner writes a short notice of the calligraphy experience activity."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s understanding of the sentences written in Chinese characters as he/she translates five sentences from Love of Calligraphy."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": 80,
+                    "formative_percent": 20,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "62"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHN-A-S5-T1-0004",
+                    "topic_title": "Travelling and sight-seeing places",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner communicates about travelling and appreciates the tourist sites in various countries.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand and use relevant vocabulary and grammar about travelling and sightseeing.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "listen to the dialogues and texts about travelling and sightseeing and understand them.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "talk about the scenic spots.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "read and understand the gist of the dialogues and texts about travelling and sightseeing.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing a short essay related to travelling and sightseeing.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "appreciate the classic Chinese tourist attractions.",
+                      "domain": "Affective"
+                    },
+                    {
+                      "outcome_text": "learn the basic memorising skills in interpretation.",
+                      "domain": "Cognitive"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Listening",
+                      "description": "listens to and reads a dialogue about the Great Wall."
+                    },
+                    {
+                      "activity_type": "Vocabulary",
+                      "description": "identifies the new words and discusses their meanings in the conversation."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "identifies and discusses the main idea in the text."
+                    },
+                    {
+                      "activity_type": "Grammar",
+                      "description": "analyses the grammar points in the dialogue/text and forms sentences using the grammar points."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "acts out a scenario recommending to friends to travel around Uganda or China."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "uses the appropriate vocabulary and grammar to write a journal about travelling."
+                    },
+                    {
+                      "activity_type": "Interpretation",
+                      "description": "identifies the important information that relates to travelling and interprets it."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the pronunciation and fluency of the learner as he/she listens to a dialogue and recites it focusing on the tones to achieve correct intonation in the sentences."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Take note of the learner’s reading habits and evaluate relevancy, accuracy and coherency in using learnt words as he/she reads a short passage provided about traveling."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Listen to the learner’s conversations and intervene when he/she loses track as he/she makes a conversation with a classmate about travelling using the appropriate vocabulary and grammar."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learner as he/she writes characters following the correct stroke order. Take note of whether he/she is moving up down, right left and out in with the writing."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the use of good sentence structures and the use of relevant vocabulary as the learner writes a travel diary using the vocabulary and grammatical structures he/she has learnt."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the use of appropriate interpretation skills and a good understanding of the oral passage in Chinese as the learner interprets a dialogue between a tour guide and a tourist about travelling and sightseeing in a role play."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": 80,
+                    "formative_percent": 20,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "66"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term Two",
+          "term_number": 2,
+          "themes":[
+            {
+              "theme_title": "SCHOOL LIFE",
+              "theme_description": "Theme 1: SCHOOL LIFE",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHN-A-S5-T2-0001",
+                    "topic_title": "Learning Resources and Online Learning Resources",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner researches various Chinese and other learning resources by him/herself, and exchanges them with others.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand and use relevant vocabulary and grammar about teaching and learning resources.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "listen and understand the dialogues and text about teaching and learning resources.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "read and understand the gist of the dialogues and texts about teaching and learning resources.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "communicate based on the topic and know the common teaching and learning materials in Ugandan and Chinese high schools.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing an email in Chinese characters.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing a short essay related to the teaching and learning resources.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "appreciate Chinese classic literary works.",
+                      "domain": "Affective"
+                    },
+                    {
+                      "outcome_text": "form a better understanding of interpretation.",
+                      "domain": "Cognitive"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment":[],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Listening",
+                      "description": "listens to the dialogue and identifies the meaning of the words."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "fills in the blanks based on the text in the textbook."
+                    },
+                    {
+                      "activity_type": "Grammar",
+                      "description": "fills in blanks in a given passage using the recognition and literacy words learnt in the lesson."
+                    },
+                    {
+                      "activity_type": "Character writing",
+                      "description": "identifies and writes the Chinese characters with the radicals: 讠 and 亻."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "in pairs, acts out the process of borrowing and returning books to the library using the “把” sentence structure."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes an email in Chinese characters to the librarian asking for information about books."
+                    },
+                    {
+                      "activity_type": "Interpretation",
+                      "description": "listens to the audio introduction to the library listens to the audio and translates the words he/she hears."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners one by one as they listen to the dialogue about teaching and learning resources and write the new words paying attention to the stroke order and evaluate their ability to identify the characters they are writing."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s pronunciation and fluency as he/she acts out a dialogue about returning and borrowing a book from the library. Judge the nature of the questions asked in the dialogue if they are philosophical or not."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s response to philosophical questions/high-order thinking questions as he/she reads the text about teaching and learning resources and answers questions about it logically."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the use of grammar as the learner writes and sends an email to a classmate about teaching and learning resources using Chinese Characters."
+                    },
+                    {
+                      "assessment_type": "Gauge",
+                      "description": "Gauge the learner’s understanding of the text in Chinese characters as he/she reads a dialogue about teaching and learning resources and translates it into English."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learner’s progress in applying interpretation skills as he/she listens to a short audio text in Chinese about teaching and learning resources and interprets it from Chinese to English."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": 80,
+                    "formative_percent": 20,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "69"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHN-A-S5-T2-0002",
+                    "topic_title": "Sports and Sports Competitions",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner responds to and makes simple conversations about sports in Chinese language.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand and use relevant vocabulary and grammar in sports and sporting activities.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "listen to and understand the dialogues and texts about sports and sports activities.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "say something about his/her favourite sport.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "discuss and compare Chinese and Ugandan sports competitions.",
+                      "domain": "Analysis"
+                    },
+                    {
+                      "outcome_text": "read and understand the gist of the dialogues and texts about sports and sports activities.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing a short essay related to the ts and sports activities.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "learn the basic skills in interpreting numbers in videos, audios and texts about sports and sports activities.",
+                      "domain": "Cognitive"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment":[],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Vocabulary",
+                      "description": "constructs sentences in Chinese language using the key words provided."
+                    },
+                    {
+                      "activity_type": "Grammar",
+                      "description": "identifies the grammar points in the dialogue, and forms sentences using the grammar points."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes a notice(of five lines) about a sports activity scheduled to take place in his/her school using the characters with the radicals."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "shares his/her favourite sports with a classmate(s) role-playing a Chinese friend(s)."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "listens to and writes a short story about a sports match he/she has ever attended using the structures learnt."
+                    },
+                    {
+                      "activity_type": "Interpretation",
+                      "description": "watches a sports report in a video in Chinese and interprets numbers in the report in English."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads an excerpt from a Chinese Classic text (novel) about sports and sports activities and responds to questions about it."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to pronounce Chinese words fluently as he/she reads and recites the dialogue about sports."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learner to assess his/her knowledge of Chinese words about sports as he/she forms new sentences using the keywords about sports and sports activities and says their English meanings in groups. Request him/her to write a notice of a sports event."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Look for appropriate use of the sentence structure “是……的”, S+V（在/有/是）+O, - S+V（在/有/是）+O, .“只有…才…” as he/she writes a short story about a sports match he/she has ever attended using the sentence structures learnt."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to use Chinese words for comparison and his/her level of awareness about sports activities in Uganda as he/she compares the differences between sports activities in Uganda and China."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learner following the stroke orders as he/she writes pinyin and characters of the keywords following the correct stroke order. Make sure the meaning of the character is in context."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to understand the message as he/she watches a sports report/ commentary in Chinese and identifies numbers and interprets them in English."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": 80,
+                    "formative_percent": 20,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "73"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "LIFE IN THE COMMUNITY",
+              "theme_description": "Theme 2: LIFE IN THE COMMUNITY",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHN-A-S5-T2-0003",
+                    "topic_title": "Appreciating Art Forms",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner understands various art forms, appreciates and compares Chinese and Ugandan artworks.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "Understand and use relevant vocabulary and grammar on the topic of Chinese art forms.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "listen and Understand dialogues and texts about Chinese art forms.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "understand and talk about China’s national quintessence and various art forms.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "read and understand the gist of the dialogues and text about Chinese art forms.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing a short essay related to Chinese art forms.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "understand words in Chinese used to appreciate Chinese art forms.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "understand and use idioms in Chinese-English translation.",
+                      "domain": "Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Listening",
+                      "description": "listens and reads a dialogue about Chinese arts."
+                    },
+                    {
+                      "activity_type": "Vocabulary",
+                      "description": "identifies the vocabulary in the dialogue about Chinese arts and searches for their meanings online."
+                    },
+                    {
+                      "activity_type": "Group Work",
+                      "description": "listens to a text and discusses in groups the main idea in the text."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes down the key Chinese words he/she hears."
+                    },
+                    {
+                      "activity_type": "Grammar",
+                      "description": "rearranges the words/phrases to make sentences."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes a notice(of five lines) about Chinese art forms using the characters with the radicals."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "reads and memorises the lyrics of the song Chang Lianpu in groups, line by line and then sings the whole song together."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "watches a video about Peking Opera, identifies and discusses the art forms with classmates and makes notes."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads, memorises and dramatises any Crosstalk."
+                    },
+                    {
+                      "activity_type": "Interpretation",
+                      "description": "reads a text Peking Opera Master-Mei Lanfang and in pairs identify the idioms used, translates the idioms from Chinese to English and explains how they are used in the text."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to identify key issues in the oral text as he/she listens to the audio text about Chinese art forms and answers questions about it."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Listen to the learner and evaluate his/her appropriate use of words to talk about Chinese arts as he/she talks about the museum in Uganda using vocabulary and grammar structures learnt in Chinese."
+                    },
+                    {
+                      "assessment_type": "Gauge",
+                      "description": "Gauge the learner’s ability to use the grammar point such as “V1 着+O+V2+O” “V1 着+O1+V 着+O2” “更、最”, “随着...”, etc, as he/she watches a video about Peking Opera and writes about his/her feelings."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learner’s pronunciation, intonation, tone, articulation and confidence, as he/she reads and recites one tongue twister in Chinese."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to understand Chinese idioms as he/she translates idioms from Chinese to English."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Take note of the learner’s ability to identify the theme/ the main ideas, the persons, the style, etc as he/she reads an extract from a Chinese text (novel) about art forms and identifies the main ideas."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": 80,
+                    "formative_percent": 20,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "78"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHN-A-S5-T2-0004",
+                    "topic_title": "Different Countries and Geography",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner knows the geography of different countries and talk about them in Chinese.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand and use relevant vocabulary and grammar about different countries and their geography.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "listen and understand the dialogues and text about different countries and their geography.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "read and understand a text about different countries and their geography.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "describe the geographical features of different countries.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "read and understand the gist of the dialogues and text about different countries and their geography.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing a short essay related to the geography of different countries.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "know and apply the basic skills of interpreting idioms.",
+                      "domain": "Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Listening",
+                      "description": "listens and reads a dialogue about “Mother River”."
+                    },
+                    {
+                      "activity_type": "Vocabulary",
+                      "description": "identifies the key words in the conversation and discusses their meaning in groups."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "describes the main idea in the text."
+                    },
+                    {
+                      "activity_type": "Grammar",
+                      "description": "forms sentences using the correct sentence patterns and grammar points."
+                    },
+                    {
+                      "activity_type": "Vocabulary",
+                      "description": "identifies and recognises supplementary words in the text."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "listens to and recites the words and sentences that relate to various geographical locations in Chinese."
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "discusses with a classmate about the various geographical sites in Uganda in Chinese."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes the Chinese characters from the text about the geography of different countries following the correct strokes and stroke orders."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads The Pearl of Africa-Uganda and identifies 10 sentences in the book that talk good about Uganda and translates them into Chinese characters."
+                    },
+                    {
+                      "activity_type": "Interpretation",
+                      "description": "identifies idioms used in any recording given and interprets them for peers in English."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learner’s reading skills with understanding and ensure relevancy, accuracy and coherency as he/she reads a given passage/dialogue about traveling and uses relevant grammar points to write correct sentences."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to use technical words related to tour guides and act out a scenario of a tour guide telling a Chinese person about the various geographical sites in Uganda."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s skills to narrate a story and use appropriate vocabulary and grammar points as he/she tells a Chinese friend a story about the “Nile River” or any other tourist site in Uganda."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Listen to the learner as he/she uses the grammar patterns like the expression of ten thousand and above, use of “几”, use of pivotal sentences, use of 只要……就…… etc, correctly to talk about the pearl of Africa to his/her foreign friends in Chinese."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to understand and use idioms, as he/she identifies and notices their use in any recording given and interprets them for peers in English."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learner as he/she uses the characters that relate to geographical features to describe the nature of any country in a short paragraph. Ensure relevance, accuracy and coherency in the use of the characters."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to identify some locations of the geographical sites and natural resources on the maps of China and Uganda."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": 80,
+                    "formative_percent": 20,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "83"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term Three",
+          "term_number": 3,
+          "themes":[
+            {
+              "theme_title": "LIFE IN THE COMMUNITY",
+              "theme_description": "Theme 2: LIFE IN THE COMMUNITY",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHN-A-S5-T3-0001",
+                    "topic_title": "Festivals and Customs",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "A learner appreciates the festivals and customs of his/her own country and China.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand and use relevant vocabulary and grammar about festivals and customs.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "listen to and understand the dialogues and texts about festivals and customs.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "read and understand the gist of the dialogues and texts about festivals and customs.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing a short essay related to festivals and customs.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "talk about the different festivals and customs of different countries.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "know and use the basic skills of interpreting idioms about festivals and customs.",
+                      "domain": "Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Listening",
+                      "description": "listens to a dialogue about Chinese festivals and customs, and identifies the Chinese words."
+                    },
+                    {
+                      "activity_type": "Group Work",
+                      "description": "in groups, researches the characters in the dialogue and identifies their radicals to determine their meaning."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads the text aloud minding about the tones and identifies the new words in groups."
+                    },
+                    {
+                      "activity_type": "Grammar",
+                      "description": "uses the verb “有/没有” to express a comparison of different festivals and customs of different countries."
+                    },
+                    {
+                      "activity_type": "Character writing",
+                      "description": "identifies the pictographic characters below and indicates which ones are used as radicals and shows their position."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "talks about Valentine’s Day and how it is celebrated in Uganda and compares it with Chinese Valentine’s Day celebrations."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes a short essay to introduce a traditional Chinese festival."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads Chinese Valentine’s Day-Qixi Festival and writes about what she/he find interesting in the text in English."
+                    },
+                    {
+                      "activity_type": "Interpretation",
+                      "description": "identifies the idioms in the recorded text about festivals and customs and interprets them."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to identify appropriate words and use them to talk about how he/she plans on celebrating Valentine’s Day and writes his/her plan in Chinese."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to describe the festivals and customs in China. Ensure accurate use of adjectives and knowledge of the Chinese festivals."
+                    },
+                    {
+                      "assessment_type": "Gauge",
+                      "description": "Gauge the learner’s writing skills as he/she writes a short skit about any one traditional festival in Uganda and China and evaluate pronunciation, appropriate use of tones and fluency as he/she acts the skit out in Chinese."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate relevancy, accuracy and coherency in the use of learnt Chinese words as the learner writes a short article for a Chinese newspaper company about different festivals and customs in Uganda and how they are celebrated in Chinese."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s interpretation skills and understanding of the original message as he/she interprets a conversation about festivals and customs from Chinese to English."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": 80,
+                    "formative_percent": 20,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "74"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHN-A-S5-T3-0002",
+                    "topic_title": "School Security and Protection",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner responds to and makes conversations about security and protection.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand and use relevant vocabulary and grammar about security and protection.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "listen to and understand dialogues and texts about security and protection.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "discuss school safety issues.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "read and understand the gist of dialogues and texts.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing by writing a notice of lost and found property.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing by writing a short essay related to security and protection.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "know and apply the basic skills of English-Chinese interpretation (Word selection).",
+                      "domain": "Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment":[],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Listening",
+                      "description": "listens to a dialogue containing the Chinese words and pronounces them paying attention to the Chinese tones."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads a text with the Chinese words noting the tones and participates in a debate in Chinese on security matters."
+                    },
+                    {
+                      "activity_type": "Grammar",
+                      "description": "makes sentences with the syntax structures to talk about security issues."
+                    },
+                    {
+                      "activity_type": "Vocabulary",
+                      "description": "views a video about Chinese character’s pictographic evolution and writes Phonograms and Radicals."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "makes 3 sentences following each of the grammar structures learnt, and in pairs, acts out an interview on security issues."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes a notice of lost and found property."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads China's campus security protection and talks about the security systems."
+                    },
+                    {
+                      "activity_type": "Interpretation",
+                      "description": "helps the new classmates to understand the content on the noticeboard and interpret it."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe and listen to the learner’s pronunciation, fluency, and correct articulation of the words as he/she listens to the dialogue about security and protection, memorises and roles play it, paying attention to the tones and pronounce the keywords."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate relevancy, accuracy and coherency as the learner uses appropriate Chinese vocabulary to present a situation at the police station between a policeman and a person who has been robbed."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the relevancy, accuracy and coherency of the learner’s use of Chinese words and grammar patterns as he/she makes 2 sentences for each of the grammar structures learnt about security."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learner’s accurate use of the following grammar patterns: V 得/不+complements of possibility, the “被” sentence structure and “刚” 和 “刚才” as he/she writes a short notice of lost and found property."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s accurate understanding of the Chinese words to interpret the message about security and protection on the noticeboard for a new classmate to understand."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": 80,
+                    "formative_percent": 20,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "79"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHN-A-S5-T3-0003",
+                    "topic_title": "Gender and Gender Equity",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner understands cultural differences about gender and gender equality in his/her country and China.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand and use relevant vocabulary and grammar about gender and gender equality.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "listen to and understand the dialogues and text about gender and gender equality.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "talk about gender and gender equality in Uganda and China.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "read and understand the gist of dialogues and texts about gender and gender equality.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing by writing a short essay related to gender and gender equality.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "know and apply the basic skills of English-Chinese interpretation. (Word selection)",
+                      "domain": "Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Listening",
+                      "description": "listens to dialogues 1 and 2 and identifies keywords and meanings."
+                    },
+                    {
+                      "activity_type": "Grammar",
+                      "description": "identifies the key grammar points in the dialogues and uses them to create sentences."
+                    },
+                    {
+                      "activity_type": "Group Work",
+                      "description": "in groups, reads a text on gender and gender equality and uses the keywords to make a comparison of gender and gender equality in Uganda and China."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes comparative sentences using the grammar points."
+                    },
+                    {
+                      "activity_type": "Vocabulary",
+                      "description": "views a video about Chinese characters’ pictographic evolution and writes: pictographic characters and radicals."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "organises and presents a short debate in class about gender and gender equality paying attention to the pronunciation of keywords."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes a short argumentative essay in Chinese based on the theme: Are men and women equal?"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads The position of women in China and gives his/her opinion about it."
+                    },
+                    {
+                      "activity_type": "Interpretation",
+                      "description": "listens to an audio recording about gender equality in Chinese and interprets keywords from Chinese to English."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to pronounce tones of the Chinese words accurately and fluently as he/she listens to the dialogues/texts focusing on how they are pronounced and recites them."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to comprehend the Chinese words as he/she reads a passage and answers questions accordingly."
+                    },
+                    {
+                      "assessment_type": "Gauge",
+                      "description": "Gauge the learner’s understanding of the passage as he/she answers questions about the text The position of Women in China."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learner’s progress in attitude towards gender equality as he/she discusses gender issues in a debate based on the theme “Are men and women equal?”. Evaluate the learner’s level of relevancy, accuracy and coherency in using learnt vocabulary, grammar points and tones and values."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learner’s ability to follow the strokes and paying attention to the stroke in order to write the characters of the keywords."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s listening and interpretation skills as he/she listens to an audio text in English about gender and gender equality and interprets it in Chinese. Gauge the level of understanding of the original oral text."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": 80,
+                    "formative_percent": 20,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "83"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses":[],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHN-A-S5-T3-0004",
+                    "topic_title": "Community Life and Service",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner integrates into community life and provides services, lives in harmony with others, and understands the differences between Chinese and Ugandan communities.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand and use relevant vocabulary and grammar about community life and service.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "listen to and understand the dialogues and texts about community life and service.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "read and understand the gist of the dialogues and texts about community life and service.",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "talk about community life and service in Uganda and China.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "express him/herself in writing by writing a narrative piece about being ready to help others.",
+                      "domain": "Application"
+                    },
+                    {
+                      "outcome_text": "apply the basic skills of English-Chinese interpretation: sentence interpretation.",
+                      "domain": "Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Listening",
+                      "description": "listens to and reads a dialogue about community life and service."
+                    },
+                    {
+                      "activity_type": "Vocabulary",
+                      "description": "identifies the keywords in the dialogue and describes their meanings."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "identifies the main idea in the article, analyses the themes and relates them to his/her immediate community."
+                    },
+                    {
+                      "activity_type": "Grammar",
+                      "description": "forms sentences with the grammar points learnt."
+                    },
+                    {
+                      "activity_type": "Vocabulary",
+                      "description": "uses literacy words to form sentences, writes the literacy words’ characters paying attention to their formation and the radicals."
+                    },
+                    {
+                      "activity_type": "Speaking",
+                      "description": "discusses with classmates how to be a good member of a community."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "writes about his/her community’s way of life."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "reads Mencius mother moved Thrice and gives his/her opinion about it."
+                    },
+                    {
+                      "activity_type": "Interpretation",
+                      "description": "uses grammar points learnt to interpret sentences in a given text, interprets what the teacher says about community life and service."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s understanding as he/she listens to what the teacher says about community life and service concerning what is in the dialogue and responds to questions about it correctly and coherently."
+                    },
+                    {
+                      "assessment_type": "Gauge",
+                      "description": "Gauge the learner’s ability to use Chinese words and grammar patterns learnt relevantly, accurately and coherently as he/she tells a classmate about the community life in their country."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to research an issue and report its findings as he/she makes a survey about community life in a brief report."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learner’s ability to pronounce and articulate well and use correct tones, as he/she reads a short passage “Mencius mother moved Thrice” aloud with the right intonation."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learner’s ability to use 有+VP+的, .“要不是……就……” and/o.“一……就……” as he/she makes posters with learnt phrases about community life and service and hangs them around the school."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s narration skills, and ability to use Chinese words relevantly, accurately and coherently as he/she writes a narrative piece about the way of life in his/her community."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": 80,
+                    "formative_percent": 20,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "87"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                      "advanced_content_flag": {
+                        "contains_extended_content": false,
+                        "extended_content_notes": ""
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }

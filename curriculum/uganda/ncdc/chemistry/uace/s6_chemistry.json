@@ -1,0 +1,1606 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Advanced Secondary Curriculum",
+    "subject": "Chemistry",
+    "level": "A-level",
+    "class_group": "Senior Six",
+    "year": "2025",
+    "version": "1.0",
+    "source_document": "CHEMISTRY SYLLABUS ADVANCED SECONDARY CURRICULUM 2025"
+  },
+  "global_framework": {
+    "competencies": [
+      "Critical thinking and problem-solving",
+      "Co-operation and Self-Directed Learning",
+      "Creativity and Innovation",
+      "Communication",
+      "Mathematical Computation",
+      "Information and Communication Technology (ICT) Proficiency",
+      "Diversity and Multicultural Skills"
+    ],
+    "generic_skills": [
+      "Planning and carrying out investigations",
+      "Sorting and analysing information",
+      "Identifying problems and proposing solutions",
+      "Predicting outcomes and making reasoned decisions",
+      "Evaluating different solutions",
+      "Working effectively in diverse teams",
+      "Interacting effectively with others",
+      "Taking responsibility for own learning",
+      "Working independently with persistence",
+      "Managing goals and time",
+      "Using imaginations to explore possibilities",
+      "Working with others to generate ideas",
+      "Suggesting and developing new solutions",
+      "Experimenting with innovative alternatives",
+      "Looking for patterns and making generalisation",
+      "Listening attentively and with comprehension",
+      "Talking confidently and explaining ideas/opinions clearly",
+      "Reading accurately and fluently",
+      "Writing and presenting information coherently",
+      "Using a range of media to communicate ideas",
+      "Using numbers and measurements accurately",
+      "Interpreting and interrogating mathematical data",
+      "Using mathematics to justify and support decisions",
+      "Using technology to create, manipulate and process information",
+      "Using technology to collaborate, communicate and refine work",
+      "Appreciate cultural diversity",
+      "Respectfully responding to people of all cultures",
+      "Respecting positive cultural practices",
+      "Appreciating ethnicity as a cradle for creativity and innovation"
+    ],
+    "values": [
+      "Respect for humanity and environment",
+      "Honesty, upholding and defending the truth at all times",
+      "Justice and fairness in dealing with others",
+      "Hard work for self-reliance",
+      "Integrity; moral uprightness and sound character",
+      "Creativity and innovation",
+      "Social responsibility",
+      "Social harmony",
+      "National unity",
+      "National consciousness and patriotism"
+    ],
+    "attitudes": [],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Life skills",
+      "Mixed abilities and involvement",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "classes": [
+    {
+      "class_name": "Senior Six",
+      "class_code": "S6",
+      "terms": [
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Topic 8: Equilibria II",
+              "theme_description": "Topic competency: The learner applies principles of physical equilibria and colligative properties to analyse and predict changes in physical systems, including phase transitions and effects of solute concentration on solution behaviour, in scientific and real-world contexts.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T1-8.1",
+                    "topic_title": "Physical Equilibria",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 27
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "evaluate the principles of Raoult’s law in ideal and non-ideal solutions, distinguishing their behaviours under varying conditions. (u, s, v/a)",
+                      "domain": "u, s, v/a"
+                    },
+                    {
+                      "outcome_text": "evaluate properties of two component systems involving immiscible liquid mixtures and their applications in real-life. (u, s, v/a)",
+                      "domain": "u, s, v/a"
+                    },
+                    {
+                      "outcome_text": "analyse the behaviour of solid-liquid mixtures and their applications in industry. (u, s, v/a)",
+                      "domain": "u, s, v/a"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about two-component systems involving miscible liquids, Raoult’s law, and non-ideal solutions, discuss their findings in groups, and prepare reports."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners apply problem-based learning to solve problems using Raoult’s law and its deviations and write reports."
+                    },
+                    {
+                      "activity_type": "Data Analysis",
+                      "description": "Learners analyse data by drawing vapor pressure/boiling point vs. mole fraction and interpreting the phase diagrams for ideal and non-ideal solutions."
+                    },
+                    {
+                      "activity_type": "ICT Simulation",
+                      "description": "In groups, learners use digital simulations (e.g. PhET interactive simulations) to visualise molecular interactions in ideal and non-ideal solutions."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners discuss how the principle of separation of miscible liquids is applied in the distillation and separation of azeotropic mixtures."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the properties of immiscible liquids, steam distillation and solvent extraction, discuss their findings in groups and make reports."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners use problem-based learning to solve mathematical problems on steam distillation (molecular mass determination and composition of distillate)."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners carry out experiments to determine partition coefficients between immiscible liquid mixtures."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners use problem-based learning to solve mathematical problems on partition coefficient and its application in solvent extraction."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about solid-liquid mixtures, phase diagrams for simple eutectic mixtures, and their applications, discuss their findings, and write reports."
+                    },
+                    {
+                      "activity_type": "Graphing",
+                      "description": "Learners work in pairs to construct phase diagrams for solid-liquid systems with simple eutectics and explain their features."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Monitor the learners’ level of engagement in group discussions about two component systems."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Ask the learners to explain Raoult’s law, deviations and its applications to gauge their level of knowledge about the concept."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess reports about two component systems involving Raoult’s law, drawings of pressure/boiling point vs. mole fraction and responses from set tasks for accuracy and coherence."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners’ planning, manipulation and safety management skills in carrying out experiments on partition coefficients between immiscible liquid mixtures."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Probe the learners to justify the methodology used in dealing with mathematical problems on steam distillation."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate the reports of the learners from research on steam distillation, experiments on partition coefficients, and related mathematical problems for accuracy and coherence."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Take note of the learners’ involvement in constructing phase diagrams."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Discuss with the learners to gauge their understanding of the difference between eutectic mixtures and compounds."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess the accuracy of reports from the discussion on phase diagrams for simple eutectic mixtures, and their applications and how representative the drawn phase diagrams on solid liquid systems are."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Determination of partition coefficients",
+                        "description_verbatim": "In groups, learners carry out experiments to determine partition coefficients between immiscible liquid mixtures.",
+                        "safety_notes_verbatim": "Observe the learners’ planning, manipulation and safety management skills in carrying out experiments",
+                        "source_page": "46"
+                      }
+                    ]
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "In groups, learners use digital simulations (e.g. PhET interactive simulations) to visualise molecular interactions in ideal and non-ideal solutions."
+                    ]
+                  },
+                  "time_allocation": {
+                    "periods": 27,
+                    "source_page": "45"
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T1-8.2",
+                    "topic_title": "Colligative Properties",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 18
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse colligative properties such as boiling point elevation and freezing point depression, and relate them to solute concentration in different solutions. (u, s)",
+                      "domain": "u, s"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the effect of adding non-volatile solutes to solvents on boiling point, freezing point, osmotic pressure, and vapour pressure, discuss their findings and make reports."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners carry out experiments to demonstrate the effect of adding non-volatile solute to a solvent on freezing point (using naphthalene or stearic acid), boiling point, and vapour pressure."
+                    },
+                    {
+                      "activity_type": "Calculation",
+                      "description": "In pairs, learners carry out exercises to calculate molecular mass and changes in boiling/freezing points with varied solute concentrations."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Evaluate the learners’ collaboration and experimental design skills on the effect of adding non-volatile solute to a solvent on freezing point."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Gauge the learners’ level of appreciation of real-life applications of colligative properties by asking them probing questions."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess the learners’ reports about calculations about colligative properties and reports from discussions on different colligative properties for accuracy and coherence."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Effect of non-volatile solute on freezing point",
+                        "description_verbatim": "In groups, learners carry out experiments to demonstrate the effect of adding non-volatile solute to a solvent on freezing point (using naphthalene or stearic acid), boiling point, and vapour pressure.",
+                        "equipment_list": [
+                          "naphthalene or stearic acid"
+                        ],
+                        "source_page": "47"
+                      }
+                    ]
+                  },
+                  "time_allocation": {
+                    "periods": 18,
+                    "source_page": "47"
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Topic 9: Organic Chemistry II",
+              "theme_description": "Topic competency: The learner analyses reaction mechanisms, evaluates reaction pathways and conditions, and designs multi-step syntheses to achieve target compounds (considering alcohols, phenols, carbonyl compounds).",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T1-9.1",
+                    "topic_title": "Alcohols and Phenols",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 24
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [
+                      {
+                        "text_verbatim": "(preparation of phenols not required)",
+                        "override_allowed_by_user": false,
+                        "source_page": "48"
+                      }
+                    ],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the structure, nomenclature, physical and chemical properties of alcohols and phenols. (u, s)",
+                      "domain": "u, s"
+                    },
+                    {
+                      "outcome_text": "evaluate the applications of alcohols and phenols in real life. (u, v/a)",
+                      "domain": "u, v/a"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the structure, nomenclature, preparation and physical properties of alcohols and phenols, discuss their findings in groups and make reports (preparation of phenols not required)."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the chemical properties of alcohols and phenols and their mechanisms, discuss their findings in groups and make reports."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners use problem-based learning to carry out exercises on chemical reactions of alcohols and phenols and their mechanisms."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners perform test tube experiments on the identification and reactions of alcohols (include distinction between classes) and phenols and write reports."
+                    },
+                    {
+                      "activity_type": "Case Study",
+                      "description": "In groups, learners analyse case studies to evaluate the applications of alcohols and phenols in real life and make presentations."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "In groups, learners carry out projects to make useful products from alcohols and phenols."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Monitor the learners on skills of planning, design, manipulation of apparatus and also respect for one another during laboratory experiments on the identification and reactions of alcohols and phenols."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Ask the learners to explain the observed reactivity differences between alcohols and phenols to assess their understanding."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess completed reports from research on the structure, nomenclature, preparation and physical properties of alcohols and phenols and laboratory experiments for the accuracy and interpretation of data."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Evaluate the learners’ level of participation in the planning and execution of project work."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Gauge the learners’ understanding of the project process by asking probing questions on reasons, choice of projects and methodology used."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess completed reports of projects and responses from case study tasks for accuracy and coherence."
+                    }
+                  ],
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "(preparation of phenols not required)",
+                      "note_type": "constraint",
+                      "source_page": "48"
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Identification and reactions of alcohols and phenols",
+                        "description_verbatim": "In groups, learners perform test tube experiments on the identification and reactions of alcohols (include distinction between classes) and phenols and write reports.",
+                        "source_page": "48"
+                      }
+                    ]
+                  },
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "In groups, learners carry out projects to make useful products from alcohols and phenols.",
+                    "deliverables_verbatim": "Assess completed reports of projects",
+                    "source_page": "49"
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "source_page": "48"
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T1-9.2",
+                    "topic_title": "Carbonyl Compounds (Aldehydes and Ketones)",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 24
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the structure, preparation and reactivity of aldehydes and ketones, identifying how functional groups affect chemical behaviour in different environments. (u, s)",
+                      "domain": "u, s"
+                    },
+                    {
+                      "outcome_text": "evaluate the different applications of carbonyl compounds in real life. (u, v/a)",
+                      "domain": "u, v/a"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the structure, nomenclature, preparation (by oxidation of alcohols) and physical properties of carbonyl compounds, discuss their findings in groups and make presentations."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about chemical properties of carbonyl compounds and their mechanisms, discuss their findings in groups and write reports."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners use problem-based learning to carry out exercises on chemical reactions of carbonyl compounds and their mechanisms: i) Addition reactions ii) Condensation reactions (hydroxylamine and Brady’s reagent) iii) Redox reactions iv) Reaction with iodine"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners perform test tube experiments on the identification and reactions of carbonyl compounds and write reports."
+                    },
+                    {
+                      "activity_type": "Case Study",
+                      "description": "Learners work in groups to analyse case studies involving applications of carbonyl compounds in real life and present their findings."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "In groups, learners identify and carry out projects to produce products from carbonyl compounds and write reports."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Track the learners’ level of participation in discussions and laboratory work on identification and reactions of carbonyl compounds."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Engage the learners in a discussion to gauge their knowledge of physical and chemical properties of carbonyl compounds."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess laboratory reports for proper interpretation and explanations and also reports from discussions for accurate representation of facts on the chemical reactions of carbonyl compounds and their mechanisms."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Evaluate the level of the learners’ engagement and interaction during project work on products from carbonyl compounds."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Discuss with the learners to assess the choices made in identification and project pathway design."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate the project reports on making products from carbonyl compounds, responses of tasks from case studies for accuracy and creativity."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Identification and reactions of carbonyl compounds",
+                        "description_verbatim": "In groups, learners perform test tube experiments on the identification and reactions of carbonyl compounds and write reports.",
+                        "source_page": "49"
+                      }
+                    ]
+                  },
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "In groups, learners identify and carry out projects to produce products from carbonyl compounds and write reports.",
+                    "source_page": "50"
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "source_page": "49"
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T1-9.3",
+                    "topic_title": "Carboxylic Acids and Derivatives",
+                    "sequence_order": 5,
+                    "recommended_duration_periods": 15
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the structure, nomenclature, preparation and properties of carboxylic acids and their derivatives (esters, acyl chlorides).",
+                      "domain": "k, u, s"
+                    },
+                    {
+                      "outcome_text": "evaluate the different applications of carboxylic acids and their derivatives in real life. (u, v/a)",
+                      "domain": "u, v/a"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the structure, nomenclature, preparation (by hydrolysis of esters and oxidation) and properties of carboxylic acids and their derivatives, discuss their findings in groups and make reports."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In groups, learners use the problem-solving approach to perform exercises on reactions of carboxylic acids and their derivatives and make reports."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In pairs, learners carry out laboratory tests on the reactions of carboxylic acids and identification of the functional group in acids."
+                    },
+                    {
+                      "activity_type": "Case Study",
+                      "description": "In groups, learners analyse case studies involving applications of carboxylic acids and their derivatives in real life and write reports."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "Learners work in groups to identify and carry out projects to make products from carboxylic acids and their derivatives and make reports."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Monitor planning and manipulation of apparatus skills and also the level of participation while carrying out experiments on the reactions of carboxylic acids and the identification of the functional group."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Engage the learners in a question-and-answer discussion about the acidity variations of different carboxylic acids."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess laboratory reports on the reactions of carboxylic acids and reports from discussions for correctness of facts about carboxylic acids and their derivatives."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Evaluate the level of engagement and interaction during project work on products from carboxylic acids and their derivatives."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Discuss with the learners to assess their choices made in identification and project pathway design."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate the reports of projects and responses to tasks from case studies on the applications of carboxylic acids and their derivatives for accuracy and creativity."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Reactions of carboxylic acids",
+                        "description_verbatim": "In pairs, learners carry out laboratory tests on the reactions of carboxylic acids and identification of the functional group in acids.",
+                        "source_page": "50"
+                      }
+                    ]
+                  },
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "Learners work in groups to identify and carry out projects to make products from carboxylic acids and their derivatives and make reports.",
+                    "source_page": "51"
+                  },
+                  "time_allocation": {
+                    "periods": 15,
+                    "source_page": "50"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "Topic 10: Electrochemistry",
+              "theme_description": "Topic competency: The learner analyses redox reactions, electrochemical processes and electrochemical cells, applies the principles of electrode potentials to predict reaction spontaneity and electrolysis outcomes.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T2-10.1",
+                    "topic_title": "Redox Reactions and Oxidation Numbers",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 18
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the concept of redox reactions, including the identification of oxidation and reduction processes, and assign oxidation numbers to elements in compounds and ions. (k, u, s)",
+                      "domain": "k, u, s"
+                    },
+                    {
+                      "outcome_text": "apply the rules for determining oxidation numbers to balance redox equations (in acidic and basic media) and predict the products of redox reactions in various chemical contexts, including redox titrations. (u, s)",
+                      "domain": "u, s"
+                    },
+                    {
+                      "outcome_text": "evaluate the importance of redox reactions in industrial and biological systems, explaining their impact on processes like respiration and corrosion. (u, s, v/a)",
+                      "domain": "u, s, v/a"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the concept of oxidation and reduction, finding oxidation numbers in binary compounds and ions, discuss their findings in groups and make reports."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners use worksheets to solve problems involving the calculation of oxidation numbers for binary compounds and ions."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners engage in a teacher-guided discussion to write balanced redox equations and related quantitative calculations and share their findings."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners use problem-based learning to perform exercises involving balancing redox equations and related calculations and write reports."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners carry out quantitative experiments on redox titration involving common redox reagents."
+                    },
+                    {
+                      "activity_type": "Case Study",
+                      "description": "In groups, learners analyse case studies involving real-life applications of redox reactions and make presentations."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "Learners work in groups to identify and carry out projects involving redox reactions."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Monitor the level of the learners’ engagement in group discussions on finding oxidation numbers."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Ask the learners to explain key concepts about redox reactions to gauge their understanding."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess the learners’ reports on finding oxidation numbers in binary compounds and ions, for accuracy and coherence."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners as they make presentations checking on the accuracy of facts; and also, the contributions of the team members to the presentations relating to writing balanced redox equations."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Gauge the level of understanding by asking the learners to explain their choice of methodology during the practical activities on redox titrations."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate the learners’ reports from balancing redox equations and quantitative experiments for accuracy and coherence."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Monitor the learners’ creativity, planning, and participation in project work involving redox reactions."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Discuss with the learners to assess their choice of procedures used during project work on redox reactions."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess the reports from projects and presentations from real-life applications of redox reactions for accuracy and creativity."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Redox Titration",
+                        "description_verbatim": "In groups, learners carry out quantitative experiments on redox titration involving common redox reagents.",
+                        "source_page": "52"
+                      }
+                    ]
+                  },
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "Learners work in groups to identify and carry out projects involving redox reactions.",
+                    "source_page": "53"
+                  },
+                  "time_allocation": {
+                    "periods": 18,
+                    "source_page": "52"
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T2-10.2",
+                    "topic_title": "Electrochemical Cells and Applications",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 21
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the structure and functioning of electrochemical cells, including galvanic (voltaic) and electrolytic cells, and describe the role of electrodes, electrolytes, and the movement of ions in these cells. (u, s)",
+                      "domain": "u, s"
+                    },
+                    {
+                      "outcome_text": "apply principles of electrochemistry to calculate cell potentials, predict the feasibility of redox reactions, and evaluate the industrial applications of electrochemical cells, such as in batteries, electroplating, and corrosion prevention. (u, s, v/a)",
+                      "domain": "u, s, v/a"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about electrode potentials and electrochemical cells, discuss their findings and make presentations."
+                    },
+                    {
+                      "activity_type": "Practical/Construction",
+                      "description": "In groups, learners design and construct a simple electrochemical cell using copper and zinc electrodes, measure voltage and explain the reactions at each electrode."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners carry out exercises about redox potentials and reactions and write reports."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners engage in a guided class discussion about the significance of electrochemical cells in batteries, renewable energy, and sustainable solutions."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "In groups, learners carry out projects involving real-life applications of electrode potentials."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate the learners' presentations on electrode potentials and electrochemical cells for clarity and accuracy of facts."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Engage the learners in discussions to assess their appreciation of real-life applications of electrode potentials."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate constructed electrochemical copper and zinc cell for functionality and reports from redox reaction exercises for accuracy and coherence."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Monitor the learners’ participation in the discussion and engagement during project work."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Discuss with the learners to assess their justification for the choice of projects and methodology."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate presentations of the learners about electrode potentials and electrochemical cells for accuracy and creativity."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Construction of electrochemical cell",
+                        "description_verbatim": "In groups, learners design and construct a simple electrochemical cell using copper and zinc electrodes, measure voltage and explain the reactions at each electrode.",
+                        "equipment_list": [
+                          "copper electrodes",
+                          "zinc electrodes"
+                        ],
+                        "source_page": "53"
+                      }
+                    ]
+                  },
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "In groups, learners carry out projects involving real-life applications of electrode potentials.",
+                    "source_page": "54"
+                  },
+                  "time_allocation": {
+                    "periods": 21,
+                    "source_page": "53"
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T2-10.3",
+                    "topic_title": "Electrolysis and Faraday's Laws",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 15
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "apply Faraday’s laws to calculate the quantities of substances produced during electrolysis in various electrolytes. (k, u, s)",
+                      "domain": "k, u, s"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners engage in a class discussion to review prior knowledge about the concept of electrolysis."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the process of electrolysis, Faraday’s laws and how to calculate quantities of substances liberated at electrodes, discuss their findings and write reports."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners use problem-based learning to perform exercises on Faraday’s laws and calculate amounts of substances produced at electrodes."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Monitor the learners’ participation during class discussions on prior knowledge of the process of electrolysis."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Ask the learners to explain their understanding of Faraday’s laws in practical contexts."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess the learners’ reports from discussion on the process of electrolysis, Faraday’s laws and how to calculate quantities of substances for accuracy."
+                    }
+                  ],
+                  "time_allocation": {
+                    "periods": 15,
+                    "source_page": "54"
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Topic 11: Periodicity II",
+              "theme_description": "Topic competency: The learner analyses the trends in the physical and chemical properties of Group 14 elements, Group 17 elements and d-block elements and relates these trends to their applications in industrial and environmental contexts.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T2-11.1",
+                    "topic_title": "Trends in Properties of Group 14 Elements and their Compounds",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 15
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "examine the general trends in physical properties, chemical reactivity, oxidation states, and bonding within Group 14 elements, with emphasis on their unique characteristics and variations down the group. (k, u, s)",
+                      "domain": "k, u, s"
+                    },
+                    {
+                      "outcome_text": "analyse the properties of chlorides and oxides of Group 14 elements and use them to explain the stability of the different oxidation states. (u, s)",
+                      "domain": "u, s"
+                    },
+                    {
+                      "outcome_text": "evaluate the applications and limitations of Group 14 elements and compounds in technology and industry. (u, v/a)",
+                      "domain": "u, v/a"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about properties of Group 14 elements such as melting point, metallic character, bond energy, structure and bonding, reaction with water, air and halogens, and discuss, in groups, their findings and make reports."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners carry out test tube experiments on the qualitative analysis of lead II compounds."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners apply problem-based learning to carry out exercises about properties of Group 14 elements and write reports."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the physical properties (structure and bonding, melting points/boiling points) and chemical properties (thermal stability, reaction with water) of Group 14 chlorides, discuss their findings and write reports."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners use worksheets to perform exercises on explaining trends and writing equations about chlorides of Group 14 elements."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the physical properties (structure and bonding, melting points/boiling points) and chemical properties (bonding, thermal stability, reaction with water, acids and alkalis) of Group 14 oxides, discuss their findings and write reports."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners use worksheets to perform exercises on explaining trends and writing equations about reactions of oxides of Group 14 elements."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners carry out test tube experiments to identify Pb2+ and Sn2+ ions."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about applications and limitations of Group 14 elements and compounds in technology and industry, discuss their findings in groups and make reports."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "In groups, learners carry out projects about the application of Group 14 elements and their compounds in real life."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners to assess their: i) interaction and collaboration during discussion. ii) practical skills of carrying out test experiments."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Talk to the learners to assess their critical thinking ability in using problem-based information to carry out exercises about the properties of Group 14 elements."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate the accuracy and coherence of the learners’ reports."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners to find out their level of involvement in discussions and skills of carrying out test tube experiments."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Talk to the learners to assess their critical thinking ability in the use of worksheets to perform exercises on trends and on writing equations about chlorides of Group 14."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess the learners’ reports for accuracy and coherence."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Monitor the learners as they discuss and carry out the projects to assess their involvement in discussion, project planning and execution."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Discuss with the learners to assess their reasoning regarding the choice and methodology of projects."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess the accuracy and coherence of the learners’ reports."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Qualitative analysis of lead II compounds",
+                        "description_verbatim": "In groups, learners carry out test tube experiments on the qualitative analysis of lead II compounds.",
+                        "source_page": "55"
+                      },
+                      {
+                        "title": "Identification of Pb2+ and Sn2+ ions",
+                        "description_verbatim": "Learners carry out test tube experiments to identify Pb2+ and Sn2+ ions.",
+                        "source_page": "56"
+                      }
+                    ]
+                  },
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "In groups, learners carry out projects about the application of Group 14 elements and their compounds in real life.",
+                    "source_page": "56"
+                  },
+                  "time_allocation": {
+                    "periods": 15,
+                    "source_page": "55"
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T2-11.2",
+                    "topic_title": "Trends in Properties of Group 17 Elements and their Compounds",
+                    "sequence_order": 5,
+                    "recommended_duration_periods": 15
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "examine the trends in electronegativity, boiling points, and reactivity of Group 17 elements and their compounds, relating them to their physical and chemical properties. (k, u, s)",
+                      "domain": "k, u, s"
+                    },
+                    {
+                      "outcome_text": "evaluate the impact of Group 17 elements in daily life and industry, particularly in disinfection and manufacturing, considering both advantages and environmental concerns. (u, s, v/a)",
+                      "domain": "u, s, v/a"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the properties of Group 17 elements such as boiling point/melting point, atomic radius, colour, and electronegativity, discuss in their groups, and make reports."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "Learners work in pairs using worksheets to respond to tasks about the physical properties of Group 17 elements."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the chemical reactions of halogens with: i) metals ii) hydrogen iii) alkalis (disproportionation) iv) water. They discuss their findings in groups and make reports."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the properties of compounds of Group 17 elements (hydrides and oxoacids) such as acidic strength, bond energy, and displacement reactions, discuss in groups and make reports."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "Learners work in pairs using worksheets to respond to tasks about the chemical properties of Group 17 elements."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners work in pairs to carry out test tube experiments to identify Cl-, Br-, and I- ions and make reports."
+                    },
+                    {
+                      "activity_type": "Case Study",
+                      "description": "In groups, learners analyse case studies about the applications of Group 17 elements and their compounds in daily life, considering both advantages and environmental health concerns and make reports."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "In groups, learners carry out projects about the application of Group 17 elements and their compounds in real life."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Gauge the learners’: i) level of involvement in group discussions. ii) skill of carrying out laboratory experiments."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Engage the learners in discussions to find out their critical thinking ability in using worksheets to respond to tasks about the physical properties of Group 17 elements."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess the learners’ reports and worksheets for accuracy."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners to assess their interaction and collaboration during discussion."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Talk to the learners to assess their critical thinking ability in analysing case studies about the applications of Group 17 elements and their compounds in daily life, considering both advantages and environmental health concerns."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess the learners’ reports for accuracy and coherence."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Identification of halide ions",
+                        "description_verbatim": "Learners work in pairs to carry out test tube experiments to identify Cl-, Br-, and I- ions and make reports.",
+                        "source_page": "58"
+                      }
+                    ]
+                  },
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "In groups, learners carry out projects about the application of Group 17 elements and their compounds in real life.",
+                    "source_page": "58"
+                  },
+                  "time_allocation": {
+                    "periods": 15,
+                    "source_page": "57"
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T2-11.3",
+                    "topic_title": "The d-Block Transition Elements",
+                    "sequence_order": 6,
+                    "recommended_duration_periods": 24
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [
+                      {
+                        "text_verbatim": "(shapes and isomerism not required)",
+                        "override_allowed_by_user": false,
+                        "source_page": "59"
+                      }
+                    ],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "Analyse the trends of the physical properties of the first series of the d-block elements (atomic radius, melting point, ionisation energy, density) across the period and compare them with s-block elements. (k, u, s)",
+                      "domain": "k, u, s"
+                    },
+                    {
+                      "outcome_text": "evaluate the properties of transition elements, explaining concepts like variable oxidation states, complex formation, coloured ions, magnetic properties and catalytic behaviour. (k, u, s)",
+                      "domain": "k, u, s"
+                    },
+                    {
+                      "outcome_text": "critique the role of transition metals in industrial processes, medicine, and biological systems, assessing both their utility and environmental or health risks. (u, v/a)",
+                      "domain": "u, v/a"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the periodic physical properties of the transition elements, comparing them with s-block elements, discuss their findings in groups and write reports."
+                    },
+                    {
+                      "activity_type": "Case Study",
+                      "description": "Learners analyse case studies about the periodic physical properties of transition elements, interpret them and respond to given tasks."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the electronic structure, magnetic properties and catalytic properties of transition elements, discuss their findings in groups and make presentations."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about complex ion formation (shapes and isomerism not required) and the naming of complexes of transition elements, discuss their findings in groups and make reports."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners engage in a guided discussion with the teacher to practise the naming of complex ions."
+                    },
+                    {
+                      "activity_type": "Video",
+                      "description": "As a class, learners watch a video on variable oxidation states and coloured ions of transition elements and respond to set tasks."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In pairs, learners perform test tube experiments to identify common transition metal ions such as: Fe2+, Fe3+, Co2+, Ni2+, Mn2+, Cr3+, Cu2+ and Zn2+ and make reports."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In groups, learners use problem-based learning to solve problems involving redox reactions of transition metal ions."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the applications and risks involved in using transition elements, discuss their findings and write reports."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "In groups, learners carry out projects on the uses and environmental concerns of transition metals in various fields."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners to assess their: i) interaction and collaboration during discussion. ii) level of attentiveness in watching videos. iii) practical skills of carrying out test experiments."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Talk to the learners to assess their critical thinking ability in analysing case studies about the periodic physical properties of transition elements and interpreting them."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess the learners’ reports for accuracy and coherence."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners to assess their: i) interaction and collaboration during discussion. ii) level of attentiveness in watching videos. iii) practical skills of carrying out test experiments."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learners to assess their: i) critical thinking in the use of problem-based information to solve tasks involving the redox reactions of transition elements. ii) ability to comprehend information presented in videos."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess the learners’ reports for accuracy and coherence."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Check the learners’ ability for planning and level of participation in project work."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Discuss with the learners to assess their: i) understanding about the application and risks involved in the use of transition elements. ii) decisions during project work."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate learners’ reports for creativity and innovation."
+                    }
+                  ],
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "(shapes and isomerism not required)",
+                      "note_type": "constraint",
+                      "source_page": "59"
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Identification of transition metal ions",
+                        "description_verbatim": "In pairs, learners perform test tube experiments to identify common transition metal ions such as: Fe2+, Fe3+, Co2+, Ni2+, Mn2+, Cr3+, Cu2+ and Zn2+ and make reports.",
+                        "source_page": "59"
+                      }
+                    ]
+                  },
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "In groups, learners carry out projects on the uses and environmental concerns of transition metals in various fields.",
+                    "source_page": "60"
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "source_page": "58"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 3",
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "Topic 12: Organic Chemistry III",
+              "theme_description": "Topic competency: The learner analyses the chemical properties, industrial applications, and environmental impacts of amines and polymers, evaluates their social and ecological implications, and proposes innovations and sustainable solutions for addressing challenges in their use and disposal.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T3-12.1",
+                    "topic_title": "Amines",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 18
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the structure, nomenclature, preparation and properties of amines in relation to their functional group. (k, u, s)",
+                      "domain": "k, u, s"
+                    },
+                    {
+                      "outcome_text": "evaluate the industrial and biological significance of amines, and assess their roles in real life. (u, s, v/a)",
+                      "domain": "u, s, v/a"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about the structure, nomenclature, physical properties and reactions of amines, discuss their findings in groups and make reports."
+                    },
+                    {
+                      "activity_type": "Modeling",
+                      "description": "Learners work in groups to construct molecular models to demonstrate primary, secondary, and tertiary amine structures."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners apply problem-based learning to perform exercises and fill worksheets on the nomenclature and properties of amines."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners work in pairs to carry out test tube experiments involving the reactions of amines."
+                    },
+                    {
+                      "activity_type": "Case Study",
+                      "description": "In groups, learners examine case studies involving examples of amines in pharmaceuticals and dyes and discuss their functions."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "In groups, learners carry out projects involving the use of amines in daily life."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Watch the learners as they discuss, model the structures of molecules, and perform an exercise to assess their: i) collaboration spirit. ii) respect for one another’s involvement. iii) skills to manipulate apparatus during experiment."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Probe the learners to find out their perception about the chemical nature and use of amines in real life."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate written experiment reports produced by learners for accuracy and consistency of procedure."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Assess the learners’ commitment to collaborating and engaging in project activities, as well as presentation skills."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Engage the learners in a discussion to assess their critical thinking in connection with: i) analysing case studies. ii) choosing projects. iii) planning and executing projects. iv) the depth of understanding and relevance of application."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate the learners’ presentations and reports for coherence and accuracy of facts."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Reactions of amines",
+                        "description_verbatim": "Learners work in pairs to carry out test tube experiments involving the reactions of amines.",
+                        "source_page": "61"
+                      }
+                    ]
+                  },
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "In groups, learners carry out projects involving the use of amines in daily life.",
+                    "source_page": "61"
+                  },
+                  "time_allocation": {
+                    "periods": 18,
+                    "source_page": "61"
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T3-12.2",
+                    "topic_title": "Polymers and Polymerisation",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 18
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "synthesise information on the types of polymerisation (addition and condensation), including the mechanisms involved in forming polymers from monomers, and distinguish between natural and synthetic polymers based on their structures and properties. (u, s)",
+                      "domain": "u, s"
+                    },
+                    {
+                      "outcome_text": "evaluate the environmental impact of polymers with emphasis on artificial polymers, proposing sustainable alternatives and analysing recycling techniques. (u, s, v/a)",
+                      "domain": "u, s, v/a"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Video",
+                      "description": "As a class, learners watch a video about the process of addition and condensation, as well as polymerisation, and use the information to hold group discussions and perform related tasks."
+                    },
+                    {
+                      "activity_type": "Inquiry-Based Learning",
+                      "description": "In groups, learners use the inquiry-based approach to compare the properties of different polymers created through each type of polymerisation."
+                    },
+                    {
+                      "activity_type": "Problem-Based Learning",
+                      "description": "In pairs, learners perform exercises involving the formation, classification and properties of polymers."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "As a class, learners engage in a debate on the pros and cons of synthetic polymers."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "In groups, learners carry out projects on polymers and sustainable alternatives to synthetic polymers."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Assess the learners’ level of attention in watching the video and engagement in the discussions."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Discuss with the learners to assess how they can predict and explain the properties of polymers based on polymerisation type."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Review the learners’ written reports for accuracy and coherence."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Watch the learners’ participation in: i) the debate for confidence and clarity of communication. ii) projects for reasoning skills during the debate."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Discuss with the learners to assess their reasoning and critical thinking ability about polymers and sustainable alternatives to synthetic polymers."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate the learners’ project reports for feasibility and usefulness."
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "In groups, learners carry out projects on polymers and sustainable alternatives to synthetic polymers.",
+                    "source_page": "62"
+                  },
+                  "time_allocation": {
+                    "periods": 18,
+                    "source_page": "62"
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Topic 13: Reaction Kinetics",
+              "theme_description": "Topic competency: The learner evaluates factors influencing reaction rates, and applies the principles of reaction, mechanisms and rate laws to predict the speed of chemical reactions under various conditions.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T3-13.1",
+                    "topic_title": "Rate Equations and Orders of Reaction",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 18
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [
+                      {
+                        "text_verbatim": "(Derivations of integrated forms of orders of reaction are not required.)",
+                        "override_allowed_by_user": false,
+                        "source_page": "63"
+                      }
+                    ],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "deduce rate equations from experimental data, determine the order of reactions, and explain the significance of rate constants. (u, s, v/a)",
+                      "domain": "u, s, v/a"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners search for information about key concepts in reaction kinetics such as rate of reaction, rate law, molecularity of reaction, and mechanisms of reaction, discuss in their groups and make reports."
+                    },
+                    {
+                      "activity_type": "Discussion/Calculation",
+                      "description": "Learners engage in a teacher-guided discussion and use the kinetic data provided to determine the order of reaction, rate constant and half-life."
+                    },
+                    {
+                      "activity_type": "Discussion/Data Analysis",
+                      "description": "Learners engage in guided discussions to analyse and interpret graphical data and use it to determine the order of reaction (first- and zero-order reactions), rate constant and half-life. (Derivations of integrated forms of orders of reaction are not required.)"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In pairs, learners design experiments to determine orders of reaction (iodination of propanone and decomposition of hydrogen peroxide) and make reports."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Assess the learners’: i) level of co-operation with peers. ii) confidence and respect for one another’s opinions during discussions."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learners to find out their reasoning in interpreting kinetic data."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate the learners’ written reports for accuracy and coherence."
+                    }
+                  ],
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "(Derivations of integrated forms of orders of reaction are not required.)",
+                      "note_type": "constraint",
+                      "source_page": "63"
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Determination of orders of reaction",
+                        "description_verbatim": "In pairs, learners design experiments to determine orders of reaction (iodination of propanone and decomposition of hydrogen peroxide) and make reports.",
+                        "equipment_list": [
+                          "propanone",
+                          "iodine",
+                          "hydrogen peroxide"
+                        ],
+                        "source_page": "63"
+                      }
+                    ]
+                  },
+                  "time_allocation": {
+                    "periods": 18,
+                    "source_page": "63"
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHE-A-S6-T3-13.2",
+                    "topic_title": "Factors Affecting Rates of Reactions",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 18
+                  },
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "evaluate how temperature, concentration, surface area, and catalysts affect reaction rates by applying collision theory to support conclusions. (u, s, v/a)",
+                      "domain": "u, s, v/a"
+                    },
+                    {
+                      "outcome_text": "evaluate the influence of factors affecting reaction rates in industrial contexts, critically analysing how optimising reaction rates benefits production processes. (u, s, v/a)",
+                      "domain": "u, s, v/a"
+                    }
+                  ],
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners use prior knowledge to discuss the effect of different factors on reaction rates, linking them to the collision theory, and then write reports."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In pairs, learners experimentally determine the activation energy of a redox reaction between ethanedioate ions and manganate (VII) ions in the acidic medium, and make reports."
+                    },
+                    {
+                      "activity_type": "Case Study/Role Play",
+                      "description": "In groups, learners analyse industrial case studies where reaction rate optimisation is crucial and role-play as industry chemists, presenting solutions."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners to find out their: i) confidence and respect for one another’s opinions during discussions. ii) skills in manipulating apparatus during laboratory experiments."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learners to find out their reasoning about how factors that affect the rate of reaction can be usefully applied in real-life contexts."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate the learner’s written reports for accuracy and coherence."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners to find out their level of engagement and analytical skills in case studies and role-play."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Discuss with the learners to assess their objectiveness and critical thinking about the industrial relevance of reaction optimisation."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Assess the learners’ written case study analyses for thoroughness and application of concepts."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Determination of activation energy",
+                        "description_verbatim": "In pairs, learners experimentally determine the activation energy of a redox reaction between ethanedioate ions and manganate (VII) ions in the acidic medium, and make reports.",
+                        "equipment_list": [
+                          "ethanedioate ions",
+                          "manganate (VII) ions",
+                          "acid"
+                        ],
+                        "source_page": "64"
+                      }
+                    ]
+                  },
+                  "time_allocation": {
+                    "periods": 18,
+                    "source_page": "64"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

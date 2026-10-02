@@ -1,0 +1,982 @@
+{
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Physics",
+        "level": "A-level",
+        "class_group": "Senior Four",
+        "year": "2019",
+        "version": "1",
+        "source_document": "PHYSICS SYLLABUS.pdf"
+    },
+    "global_framework": {
+        "competencies": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Communication",
+            "Co-operation and Self-directed Learning",
+            "Mathematical computation and ICT proficiency"
+        ],
+        "generic_skills": [
+            "Listen attentively and with comprehension",
+            "Talk confidently and explain ideas/opinions clearly",
+            "Read accurately and fluently",
+            "Write and present coherently",
+            "Use a range of media to communicate ideas",
+            "Work effectively in diverse teams",
+            "Interact effectively with others",
+            "Take responsibility for own learning",
+            "Work independently with persistence",
+            "Manage goals and time",
+            "Use imaginations to explore possibilities",
+            "Work with others to generate ideas",
+            "Suggest and develop new solutions",
+            "Try out innovative alternatives",
+            "Look for patterns and make generalisations",
+            "Plan and carry out investigations",
+            "Sort and analyse information",
+            "Identify problems and ways forward",
+            "Predict outcomes and make reasonable decisions",
+            "Evaluate different solutions",
+            "Use numbers and measurements accurately",
+            "Interpret and interrogate mathematical data",
+            "Use mathematics to justify and support decisions",
+            "Use technology to create, manipulate, and process information",
+            "Use technology to collaborate, communicate, and refine their work"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Four",
+            "class_code": "S4",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Electricity",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "PHY-S4-T1-0001",
+                                        "topic_title": "INTRODUCTION TO CURRENT ELECTRICITY",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 18
+                                    },
+                                    "core_competency": "Learners should appreciate that electric current is the transfer of charge through a conductor, either by electrons or by ions.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Understand what e.m.f is (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand that cells convert chemical energy into electrical energy, producing current and also the force needed to create a flow of current in a circuit (u, s)",
+                                            "domain": "Understanding, Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand that electric cells are very useful but have their limitations (u, v/a)",
+                                            "domain": "Understanding, Values/Attitudes"
+                                        },
+                                        {
+                                            "outcome_text": "understand the nature of electric current, its sources, what makes it flow around circuits and how and it is measured (u, s)",
+                                            "domain": "Understanding, Skills"
+                                        },
+                                        {
+                                            "outcome_text": "know that some materials are electrical conductors and other are insulators (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "recognise, understand and apply knowledge of series and parallel circuits (k, u, s, v/a)",
+                                            "domain": "Knowledge, Understanding, Skills, Values/Attitudes"
+                                        },
+                                        {
+                                            "outcome_text": "appreciate that circuits may be represented as circuit diagrams consisting of an agreed set of symbols to represent components (k, u, s)",
+                                            "domain": "Knowledge, Understanding, Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom",
+                                            "description": "In groups, learners revisit prior learning about electricity, carry out research and explain using annotated diagrams: the structure of a simple cell and how chemical reactions can produce electricity; the flow of electricity around a circuit powered by an electric cell in terms of both the current/ flow of charge and the potential difference created by the cell"
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In pairs, learners brainstorm, research and report on: common practical applications of electric cells; recent advances in cell technology; applications for which cells are not appropriate and the reasons why; other sources of e.m.f apart from simple cell"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "In pairs learners: research and use diagrams to explain the symbols used in a circuit diagram and the differences between series and parallel circuits; investigate and report the relationship between voltage and the brightness of bulbs; explain the practical implications of this relationship"
+                                        },
+                                        {
+                                            "activity_type": "Practical Investigation",
+                                            "description": "In groups, learners plan and report on an investigation, using an electric circuit with batteries and bulbs, to explore the electrical conductivity of different materials (e.g. copper, wood, plastic, iron, aluminium, graphite, rubber, cardboard, glass, wool)."
+                                        },
+                                        {
+                                            "activity_type": "Practical Investigation",
+                                            "description": "In groups, learners plan and report on an investigation using batteries, bulbs, and an ammeter to measure the current flowing through different parts of series and parallel circuits, and then explain why domestic circuits are in parallel."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "In pairs, learners research and contribute to a presentation to explain how an electric current involves the transfer of a charge by electrons or ions."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe pairs and groups engaged in practical activities and offer guidance to aid learning."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to group/pair discussions and ask questions to deepen learning."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate quality of learning and progress towards the learning outcomes through assessment of reports and presentations."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Investigation of electrical conductivity",
+                                                "description_verbatim": "In groups, learners plan and report on an investigation, using an electric circuit with batteries and bulbs, to explore the electrical conductivity of different materials (e.g. copper, wood, plastic, iron, aluminium, graphite, rubber, cardboard, glass, wool).",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [
+                                                    "electric circuit",
+                                                    "batteries",
+                                                    "bulbs",
+                                                    "different materials (e.g. copper, wood, plastic, iron, aluminium, graphite, rubber, cardboard, glass, wool)"
+                                                ],
+                                                "source_page": "47"
+                                            },
+                                            {
+                                                "title": "Investigation of current in series and parallel circuits",
+                                                "description_verbatim": "In groups, learners plan and report on an investigation using batteries, bulbs, and an ammeter to measure the current flowing through different parts of series and parallel circuits",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [
+                                                    "batteries",
+                                                    "bulbs",
+                                                    "ammeter"
+                                                ],
+                                                "source_page": "47"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 18,
+                                        "unit": "periods",
+                                        "source_page": "47"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "PHY-S4-T1-0002",
+                                        "topic_title": "VOLTAGE, RESISTANCE AND OHM’S LAW",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 18
+                                    },
+                                    "core_competency": "The learner should understand the concept of electrical resistance and apply Ohm’s law.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand electrical resistance, how it is measured, its relationship to current and voltage, and the factors that affect it (k, u, s)",
+                                            "domain": "Knowledge, Understanding, Skills"
+                                        },
+                                        {
+                                            "outcome_text": "know the function and use of a diode, transistor, thermistor, LDR. LED and potentiometer (k, s)",
+                                            "domain": "Knowledge, Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [
+                                            {
+                                                "text_verbatim": "Derivation of the resistor network formulae is not required; only their uses/applications in solving numerical problems should be emphasised",
+                                                "override_allowed_by_user": true,
+                                                "source_page": "48"
+                                            }
+                                        ],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Practical Investigation",
+                                            "description": "In pairs, learners research on electrical resistance and the flow of current through a conductor. Plan and report on practical investigations to: find the resistance of bulbs, heating coils, electric motors, and dry cells; measure current and voltage and apply Ohm’s Law to calculate resistance; use Ohm’s Law to predict current and voltage or resistance, before checking predictions with actual measurements; find the effective resistance when a number of resistors are connected in series and in parallel"
+                                        },
+                                        {
+                                            "activity_type": "Research/Discussion",
+                                            "description": "In groups, learners research, investigate, discuss, and report on the functions in a circuit of diodes, transistors, thermistors, LDRs, LEDs and potentiometers."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation/Conversation",
+                                            "description": "Listen to group and pair discussions and observe learners involved in activities. Ask probing questions to deepen knowledge and understating about resistance."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate quality of learning and progress towards the learning outcomes through assessment of reports and discussion."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Investigation of resistance",
+                                                "description_verbatim": "Plan and report on practical investigations to: find the resistance of bulbs, heating coils, electric motors, and dry cells",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [
+                                                    "bulbs",
+                                                    "heating coils",
+                                                    "electric motors",
+                                                    "dry cells",
+                                                    "ammeters",
+                                                    "voltmeters",
+                                                    "switches",
+                                                    "resistance wire"
+                                                ],
+                                                "source_page": "48"
+                                            },
+                                            {
+                                                "title": "Ohm's Law Investigation",
+                                                "description_verbatim": "measure current and voltage and apply Ohm’s Law to calculate resistance; use Ohm’s Law to predict current and voltage or resistance, before checking predictions with actual measurements",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [
+                                                    "ammeters",
+                                                    "voltmeters",
+                                                    "switches",
+                                                    "resistance wire",
+                                                    "bulbs"
+                                                ],
+                                                "source_page": "48"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 18,
+                                        "unit": "periods",
+                                        "source_page": "48"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Learner uses computer programme to analyse data in Ohm’s law experiment."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "Emphasis should be put on the significant figures of ammeters and voltmeters.",
+                                            "note_type": "examiner_hint",
+                                            "source_page": "48"
+                                        },
+                                        {
+                                            "text_verbatim": "Derivation of the resistor network formulae is not required; only their uses/applications in solving numerical problems should be emphasised",
+                                            "note_type": "constraint",
+                                            "source_page": "48"
+                                        },
+                                        {
+                                            "text_verbatim": "Variety of practical activities involving ammeters, voltmeters, switches, bulbs and resistance wire are recommended.",
+                                            "note_type": "clarification",
+                                            "source_page": "48"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Magnetism",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "PHY-S4-T1-0003",
+                                        "topic_title": "ELECTROMAGNETIC EFFECTS",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "The learner should know and understand how magnetic fields interact with electric fields and the applications of this phenomenon.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "investigate the behaviour of magnets and magnetic fields (s)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand that a current carrying conductor produces a magnetic field that can be detected. (u, s)",
+                                            "domain": "Understanding, Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand the application of electromagnets in devices such as motors, bells, and generators (u, s)",
+                                            "domain": "Understanding, Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand the difference between a.c. and d.c (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "know how a.c. and d.c. can be interconverted using rectifiers and inverters (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "understand the action and applications of transformers (u, s, v/a)",
+                                            "domain": "Understanding, Skills, Values/Attitudes"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Review",
+                                            "description": "In groups, learners revisit prior learning about the characteristics of magnets, the magnetic fields around a bar magnet and electromagnets."
+                                        },
+                                        {
+                                            "activity_type": "Practical Investigation",
+                                            "description": "In pairs, learners research how to make an electromagnet and use their learning to investigate the relationship between the number of coils and the strength of the magnet, and then make a presentation of their results."
+                                        },
+                                        {
+                                            "activity_type": "Research/Presentation",
+                                            "description": "In groups, learners research, discuss and explain in a presentation how electromagnet technology is applied in an electric bell, a d.c. motor, a relay, a telephone receiver, and a loudspeaker, using circuits to demonstrate principles where possible."
+                                        },
+                                        {
+                                            "activity_type": "Research/Presentation",
+                                            "description": "In pairs, learners research the difference between a.c. and d.c. and prepare a presentation to: explain how a.c. and d.c. can be interconverted; classify domestic appliances according to whether they operate on a.c. or d.c.; explain the advantages of using a.c. in commercial supplies and why a d.c. motor will not work when connected to an a.c. supply"
+                                        },
+                                        {
+                                            "activity_type": "Design/Construction",
+                                            "description": "In groups, learners research, discuss and design a simple transformer and show how it works using a presentation or poster."
+                                        },
+                                        {
+                                            "activity_type": "Report",
+                                            "description": "In pairs, learners produce a report to explain why transformers are not 100% efficient and how their efficiency can be improved"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to group and pair discussions about magnetism and pose questions to promote critical thinking."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Check understanding through the quality of products: presentation and demonstration."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners involved in activities, offering support to deepen learning and avoid misconceptions."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Investigation of Electromagnets",
+                                                "description_verbatim": "In pairs, learners research how to make an electromagnet and use their learning to investigate the relationship between the number of coils and the strength of the magnet",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "49"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "49"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "The learner can use ICT simulations showing how current is produced in magnetic fields.",
+                                            "The learner can use an online or downloaded simulation to illustrate how the d.c and a.c motors work."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Electricity",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "PHY-S4-T2-0004",
+                                        "topic_title": "ELECTRIC ENERGY DISTRIBUTION AND CONSUMPTION",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 24
+                                    },
+                                    "core_competency": "The learner should be able to describe how electric energy is distributed and consumed in order to ensure electric power saving and safety.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the distribution of electricity from the source to consumer units (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand the energy transformations in common domestic electrical devices and how energy can be saved (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand how to use mains electricity safely and know the insulation colour codes used in domestic wiring (u, k, s)",
+                                            "domain": "Understanding, Knowledge, Skills"
+                                        },
+                                        {
+                                            "outcome_text": "know the dangers of mains electricity and understand how these may be minimised by safety devices, and by sensible precautions (k, u, v/a)",
+                                            "domain": "Knowledge, Understanding, Values/Attitudes"
+                                        },
+                                        {
+                                            "outcome_text": "know how to read a domestic electricity meter and its significance (k, u, s)",
+                                            "domain": "Knowledge, Understanding, Skills"
+                                        },
+                                        {
+                                            "outcome_text": "appreciate the importance of the use of energy saving appliances (u, s, v/a)",
+                                            "domain": "Understanding, Skills, Values/Attitudes"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research/Presentation",
+                                            "description": "In pairs, learners research how electricity is transmitted from the power station to the consumer and explain using a presentation/ poster: the advantages of using a.c. in commercial electricity supplies; the dangers associated with high voltage power lines"
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In pairs, learners identify domestic appliances that convert electrical energy into each of the following: heat energy; heat and light energy; sound energy; sound and mechanical energy; heat, sound and mechanical energy"
+                                        },
+                                        {
+                                            "activity_type": "Practical Investigation",
+                                            "description": "In groups, learners plan, carry out and report on an investigation, using a transformer and wires of different thickness, to find out how the heating effect on the wire is affected by current and the thickness of the wire."
+                                        },
+                                        {
+                                            "activity_type": "Research/Report",
+                                            "description": "In pairs, learners research and report on: the power ratings of domestic electrical appliances, and; their calculations of the cost of the electrical energy per day for each item; suggestions regarding ways to save energy (including the use of efficient, low energy appliances)"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "In pairs, learners practise wiring a three-pin plug correctly and research on and explain the importance of the earth pin."
+                                        },
+                                        {
+                                            "activity_type": "Research/Presentation",
+                                            "description": "In pairs, learners research and explain in a presentation and/or a poster: how fuses and earthing of electrical appliances can protect appliances and save lives; why fuses, switches and circuit breakers are positioned on the livewire of a circuit; safe use of mains electricity; how to read a domestic electricity meter"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to group and pair discussions and ask probing questions to deepen learning."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe practical activities, and intervene to ensure that practice is safe, investigations are well planned and conducted, and all are fully engaged."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Gauge progress towards the learning outcomes by assessing the quality of products: presentation/poster, reports, and wiring a plug."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Investigation of heating effect of current",
+                                                "description_verbatim": "In groups, learners plan, carry out and report on an investigation, using a transformer and wires of different thickness, to find out how the heating effect on the wire is affected by current and the thickness of the wire.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [
+                                                    "transformer",
+                                                    "wires of different thickness"
+                                                ],
+                                                "source_page": "50"
+                                            },
+                                            {
+                                                "title": "Wiring a three-pin plug",
+                                                "description_verbatim": "In pairs, learners practise wiring a three-pin plug correctly",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [
+                                                    "three-pin plug"
+                                                ],
+                                                "source_page": "50"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "50"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Modern Physics",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "PHY-S4-T2-0005",
+                                        "topic_title": "ATOMIC MODELS",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 16
+                                    },
+                                    "core_competency": "The learner should be able to appreciate the different atomic models and how they are used to explain the basic structure of atoms.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the structure of an atom in terms of a positive nucleus and negative electrons (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand the terms: atomic number, mass number, and isotopes, and use them to represent different nuclides (k, u)",
+                                            "domain": "Knowledge, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand the methods by which electrons are ejected from /matter atoms and how these electrons are useful (u, v/a)",
+                                            "domain": "Understanding, Values/Attitudes"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [
+                                            {
+                                                "text_verbatim": "Laws of photoelectric effect are not required",
+                                                "override_allowed_by_user": true,
+                                                "source_page": "51"
+                                            },
+                                            {
+                                                "text_verbatim": "Numerical problems related to acceleration of electrons are beyond this level.",
+                                                "override_allowed_by_user": true,
+                                                "source_page": "51"
+                                            }
+                                        ],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Review/Research",
+                                            "description": "In pairs, learners revisit prior learning about atoms, (atomic number, mass number, nuclides, isotopes) and research on the representation of different atoms"
+                                        },
+                                        {
+                                            "activity_type": "Research/Report",
+                                            "description": "In groups, learners research and compare the Dalton model and Rutherford model of the atom. Explain atomic structure and components of a range of elements and isotopes in a report and on a poster."
+                                        },
+                                        {
+                                            "activity_type": "Research/Presentation",
+                                            "description": "In groups, learners research on and explain in a presentation: how thermionic emission and the photoelectric effect occur; how cathode rays and X-rays differ"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to group and pair discussions and pose questions to check and secure knowledge and understanding."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate quality of learning and progress towards the learning outcomes through assessment of reports and presentations."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 16,
+                                        "unit": "periods",
+                                        "source_page": "51"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Learner watches computer simulations about thermionic emission and photoelectric effect."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "Laws of photoelectric effect are not required",
+                                            "note_type": "constraint",
+                                            "source_page": "51"
+                                        },
+                                        {
+                                            "text_verbatim": "Numerical problems related to acceleration of electrons are beyond this level.",
+                                            "note_type": "constraint",
+                                            "source_page": "51"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Modern physics",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "PHY-S4-T3-0006",
+                                        "topic_title": "NUCLEAR PROCESSES",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 20
+                                    },
+                                    "core_competency": "The learner should understand how nuclear processes occur, their uses, and the dangers associated with them",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the processes of nuclear fission and fusion and the associated energy changes (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand the spontaneous and random nature of nuclear decay and interpret decay data in terms of half-life (k, u, s)",
+                                            "domain": "Knowledge, Understanding, Skills"
+                                        },
+                                        {
+                                            "outcome_text": "know the applications of radioactivity and the dangers associated with exposure to radioactive materials. (k, u)",
+                                            "domain": "Knowledge, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand and appreciate that there are significant social, political, and environmental dimensions associated with use of nuclear power. (u, v/a)",
+                                            "domain": "Understanding, Values/Attitudes"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [
+                                            {
+                                                "text_verbatim": "Calculation of half-life using decay law equation is not required at this level. However, graphical method should be emphasized",
+                                                "override_allowed_by_user": true,
+                                                "source_page": "52"
+                                            },
+                                            {
+                                                "text_verbatim": "Details of how radiations damage the body are not required. However, occurrence of recent world nuclear accidents needs to be mentioned.",
+                                                "override_allowed_by_user": true,
+                                                "source_page": "52"
+                                            }
+                                        ],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research/Presentation",
+                                            "description": "In groups, learners research and use knowledge of atomic structure to explain in a presentation/on a poster: the processes of nuclear fission and nuclear fusion and balance nuclear reactions; how energy is produced in a controlled way in a reactor; how nuclear energy is used"
+                                        },
+                                        {
+                                            "activity_type": "Research/Presentation",
+                                            "description": "In groups, learners research and prepare a presentation on: the penetrating and ionizing powers of different types of radiation; the decay of radioactive isotopes using balanced nuclear reactions; the meaning of half-life and how it may be used; background radiation and its origin; why waste containing radioactive isotopes with long half-lives presents a serious environmental problem; the medical and industrial uses of nuclear material"
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In pairs, learners research on the advantages and disadvantages of the use of nuclear materials with reference to world events; the regulations about the use and control of radioactive materials."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation/Conversation",
+                                            "description": "Listen to group and pair discussions and observe activities, asking probing questions to promote critical thinking and deepen learning."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Assess the quality of posters and presentations to evaluate and accelerate progress towards the learning outcomes."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 20,
+                                        "unit": "periods",
+                                        "source_page": "52"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Learner watches computer simulations about thermionic emission and photoelectric effect."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "Calculation of half-life using decay law equation is not required at this level. However, graphical method should be emphasized",
+                                            "note_type": "constraint",
+                                            "source_page": "52"
+                                        },
+                                        {
+                                            "text_verbatim": "Details of how radiations damage the body are not required. However, occurrence of recent world nuclear accidents needs to be mentioned.",
+                                            "note_type": "constraint",
+                                            "source_page": "52"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "PHY-S4-T3-0007",
+                                        "topic_title": "DIGITAL ELECTRONICS",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 20
+                                    },
+                                    "core_competency": "Learners should understand how electronic components combine in digital circuits.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand how resistors are used to make potential dividers in control and logic circuits (u, s)",
+                                            "domain": "Understanding, Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand elementary logic and memory circuits that exploit devices such as bistable and astable switches, logic gates and resistors as potential dividers (u, s)",
+                                            "domain": "Understanding, Skills"
+                                        },
+                                        {
+                                            "outcome_text": "know that logic circuits are able to store and process binary information and that this can be exploited in an increasingly wide variety of digital instruments (k, u, s)",
+                                            "domain": "Knowledge, Understanding, Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research/Report",
+                                            "description": "In groups, learners research potential dividers and report on how: to construct potential dividers using different sized resistors; to measure the potential difference between different points; the volume control on a radio acts as a potential divider and draw a simple circuit to explain how a potential divider works."
+                                        },
+                                        {
+                                            "activity_type": "Research/Presentation",
+                                            "description": "In groups, learners research and prepare a presentation on how: to construct truth tables for AND, NAND, OR and NOR gates; to use logic gates in control circuits; to construct a bistable switch from two NOR gates and represent this in a diagram; bistable switches may be used in a binary counting circuit; logic circuits store and process binary information, and how digital instruments use binary information"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe and listen to learners as they research on and discuss digital electronics, asking questions to promote critical thinking."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate learning by assessment of reports and presentations, and gauge progress towards the learning outcomes."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 20,
+                                        "unit": "periods",
+                                        "source_page": "53"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "The learner can use Internet technology to obtain simulations/ animation/ videos to aid the understanding of logic gates."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

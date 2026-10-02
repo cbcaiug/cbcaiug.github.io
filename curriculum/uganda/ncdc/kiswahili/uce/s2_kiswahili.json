@@ -1,0 +1,1513 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Kiswahili",
+        "level": "O-Level",
+        "class_group": "Senior Two",
+        "year": "2019",
+        "version": "1.0",
+        "source_document": "Kiswahili Syllabus.pdf"
+    },
+    "global_framework": {
+        "competencies": [],
+        "generic_skills": [],
+        "values": [],
+        "attitudes": [],
+        "cross_cutting_issues": []
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Two",
+            "class_code": "S2",
+            "terms": [
+                {
+                    "term_name": "MUHULA WA KWANZA",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "UONGOZI KATIKA JAMII",
+                            "theme_description": "Mafunzo haya yanalenga kumwezesha mwanafunzi kukuza msamiati unaohusiana na uongozi, demokrasia pamoja na kutumia vipengele vya lugha vilivyoteuliwa kuimarisha mawasiliano yake.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "KIS-O-S2-T1-0001",
+                                        "topic_title": "UONGOZI KATIKA JAMII",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "Mwanafunzi aweze kutambua na kutumia msamiati unaohusiana na uongozi, demokrasia pamoja na vipengele vya lugha vilivyoteuliwa katika mawasiliano yake ya kila siku.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "atambue msamiati wa viongozi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aeleze majukumu ya viongozi wa aina mbalimbali.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aigize kupiga kampeni za uchaguzi.",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "asome makala na kujibu maswali.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue sifa za uongozi bora.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "abaini nomino za ngeli ya I-I, azitumie katika sentensi akizingatia upatanishi wa kisarufi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atunge sentensi akitumia wakati ujao halafu azikanushe.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atege na kutegua vitendawili mbalimbali.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue hatua mwafaka za kuandika insha ya mwongozo.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aandike insha ya mwongozo.",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Discussion/Vocabulary",
+                                            "description": "Uongozi mwalimu aelekeze wanafunzi 1. kutaja msamiati wa viongozi. kama vile; kiranja mwenyekiti, spika, mbunge rais ..."
+                                        },
+                                        {
+                                            "activity_type": "Explanation",
+                                            "description": "2. kueleza majukumu ya viongozi mbalimbali katika jamii."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "3. kushiriki kidemokrasia kwa kupiga kampeni za uchaguzi kupitia uigizaji."
+                                        },
+                                        {
+                                            "activity_type": "Reading",
+                                            "description": "wanafunzi wasome makala yanayohusu sifa za uongozi bora."
+                                        },
+                                        {
+                                            "activity_type": "Grammar Exercise",
+                                            "description": "Sarufi: Mmwalimu aongoze wanafunzi kutunga sentensi kwa kutumia nomino za ngeli ya I–I wakizingatia wakati ujao –ta pamoja na ukanushi wake."
+                                        },
+                                        {
+                                            "activity_type": "Oral Literature",
+                                            "description": "Fasihi simulizi (Vitendawili) - wanafunzi watege na kutegua vitendawili."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "wanafunzi waandike insha ya mwongozo juu ya siku ya uchaguzi."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Written/Oral",
+                                            "description": "i. atumie msamiati wa viongozi katika sentensi."
+                                        },
+                                        {
+                                            "assessment_type": "Oral/Written",
+                                            "description": "ii. aeleze majukumu ya viongozi mbalimbali."
+                                        },
+                                        {
+                                            "assessment_type": "Reading Comprehension",
+                                            "description": "iii. asome na kujibu maswali ya makala kuhusu sifa za uongozi bora."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "iv. aorodheshe nomino zinazopatikana katika ngeli ya I–I halafu azitumie kutunga sentensi kwa kuzingatia upatanishi wa kisarufi"
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "v aandike sentensi katika wakati ujao kisha azikanushe."
+                                        },
+                                        {
+                                            "assessment_type": "Oral/Game",
+                                            "description": "vi atege na kutegua vitendawili."
+                                        },
+                                        {
+                                            "assessment_type": "Writing",
+                                            "description": "vii aandike insha ya mwongozo."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "21"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "21"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Mwanafunzi aweze kutumia picha au kanda iliyonasa sauti ya kiongozi akihotubia wafuasi wake katika kampeni za uchaguzi."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "AFYA NA USAFI",
+                            "theme_description": "Mafunzo haya yanalenga kumwezesha mwanafunzi kukuza msamiati unaohusiana na afya, usafi pamoja na kutumia vipengele vya lugha vilivyoteuliwa kuimarisha mawasiliano yake.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "KIS-O-S2-T1-0002",
+                                        "topic_title": "AFYA NA USAFI",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "Mwanafunzi aweze kutambua na kutumia msamiati unaohusiana na afya, usafi pamoja na vipengele vya lugha vilivyoteuliwa katika mawasiliano.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "atambue msamiati wa usafi",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aeleze vifaa vya usafi na kutambua matumizi yake",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "ataje msamiati wa afya.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue wadudu wa hatari wanaosababisha magonjwa mbalimbali na namna ya kujikinga na magonjwa hayo.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "asome makala na kujibu maswali.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atunge sentensi akitumia nomino za ngeli ya Ya–Ya",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue mnyambuliko wa vitenzi katika kauli ya kutendewa, kutendeana na kutendana.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "abaini vielezi vya namna na idadi halafu avitumie katika sentensi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aigize tanakali za sauti.",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "aandike insha ya mwongozo kuhusu mada husika.",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Vocabulary",
+                                            "description": "Msamiati wa usafi Mwalimu aelekeze wanafunzi: 1. kutaja msamiati wa usafi.kama vile: kuoga, kunawa mikono, kupiga mswaki .."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "2 kutambua vifaa vya usafi na kueleza matumizi yavyo kama vile: sabuni – kuoga/kufua nguo, wembe - kukata kucha ..."
+                                        },
+                                        {
+                                            "activity_type": "Vocabulary/Game",
+                                            "description": "Msamiati wa Afya 1 wanafunzi wakitumia chemshabongo watambue msamiati wa afya kama vile: hospitali, daktari, zahanati, kidonge, machela .."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "2mwalimu awaongoze kutaja magonjwa mbalimbali na wadudu wanaosababisha magonjwa hayo 3 wanafunzi wajadili kinga dhidi ya magonjwa hayo."
+                                        },
+                                        {
+                                            "activity_type": "Reading",
+                                            "description": "wanafunzi wasome makala kuhusu afya na usafi."
+                                        },
+                                        {
+                                            "activity_type": "Grammar Exercise",
+                                            "description": "Sarufi: Mwalimu aongoze wanafunzi: 1 kutunga sentensi kwa kutumia nomino za ngeli ya Ya-Ya huku wakizingatia upatanishi wa kisarufi,unyambuzi wa vitenzi katika kauli ya kutendewa, kutendeana na kutendana pamoja na vielezi vya namna na vya idadi."
+                                        },
+                                        {
+                                            "activity_type": "Oral Literature",
+                                            "description": "Fasihi simulizi (Tanakali za sauti) kuiga sauti au hali ya vitendo Fulani"
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "wanafunzi waandike insha ya mwongozo kuhusu namna ya kujikinga dhidi ya magonjwa mbalimbali kutokana na wadudu wa hatari."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Written",
+                                            "description": "i. atumie msamiati wa afya na usafi katika sentensi."
+                                        },
+                                        {
+                                            "assessment_type": "Matching",
+                                            "description": "ii. aambatanishe vifaa mbalimbali vya usafi pamoja na matumizi yake."
+                                        },
+                                        {
+                                            "assessment_type": "Identification",
+                                            "description": "iii. atambue aina mbalimbali za wadudu wanaosababisha magonjwa."
+                                        },
+                                        {
+                                            "assessment_type": "Explanation",
+                                            "description": "iv. aeleze kinga ya magonjwa mbalimbali."
+                                        },
+                                        {
+                                            "assessment_type": "Reading Comprehension",
+                                            "description": "v. asome makala na kujibu maswali."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "vi. aorodheshe nomino za ngeli ya Ya–Ya halafu azitumie kutunga sentensi kwa kuzingatia upatanishi wa kisarufi."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "vii. anyambue vitenzi vilivyoorodheshwa katika kauli ya kutendewa, kutendeana na kutendana."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "viii. atunge sentensi kwa kutumia vielezi vya namna na vya idadi."
+                                        },
+                                        {
+                                            "assessment_type": "Role Play",
+                                            "description": "ix. aigize tanakali sauti mbalimbali katika mazungumzo yake."
+                                        },
+                                        {
+                                            "assessment_type": "Writing",
+                                            "description": "x. aandike insha ya mwongozo."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "22"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "22"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Mwanafunzi aweza kutumia picha za wadudu wa hatari kuunga mkono maelezo yake darasani."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "SHEREHE KATIKA FAMILIA",
+                            "theme_description": "Mafunzo haya yanalenga kumwezesha mwanafunzi kukuza msamiati unaohusiana na sherehe katika familia pamoja na kutumia vipengele vya lugha vilivyoteuliwa kuimarisha mawasiliano yake.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "KIS-O-S2-T1-0003",
+                                        "topic_title": "SHEREHE KATIKA FAMILIA",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "Mwanafunzi aweze kutambua na kutumia msamiati unaohusiana na sherehe mbalimbali pamoja na vipengele vya lugha vilivyoteuliwa katika mawasiliano.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "atambue sherehe mbalimbali katika jamii.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aeleze umuhimu wa sherehe katika jamii",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aigize jinsi ndoa hutendeka katika utamaduni wake.",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "ajadili madhara ya kushiriki mapaenzi kabla ya ndoa.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "asome makala na kujibu maswali.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atunge sentensi akitumia ngeli ya PA–KU–MU huku akizingatia upatanishi wa kisarufi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aeleze mnyambuliko wa vitenzi katika kauli ya kutendeka, kutendesha na kutendua.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "abainishe vitate mbalimbali na kuvitumia katika sentensi",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "asimulie hadithi ya sherehe ya familia.",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "aandike insha juu ya sherehe aliyowahi kuhudhuria",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Vocabulary",
+                                            "description": "Msamiati wa sherehe mbalimbali Mwalimu aelekeze wanafunzi: 1. kutambua sherehe mbalimbali katika jamii yao kama vile, kuzaliwa mtoto, kuita jina, ndoa/harusi, matanga..."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "2. kueleza umuhimu wa sherehe mbalimbali katika jamii."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "3. kuigiza sherehe ya ndoa."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "4. kujadili madhara ya kushiriki mapenzi kabla ya ndoa."
+                                        },
+                                        {
+                                            "activity_type": "Reading",
+                                            "description": "wanafunzi wasome makala kuhusu kusherehekea tarehe mosi ya mwaka mpya."
+                                        },
+                                        {
+                                            "activity_type": "Grammar Exercise",
+                                            "description": "Sarufi: Mwalimu ashirikishe wanafunzi katika kutunga sentensi kwa kutumia nomino za ngeli ya PA– KU–MU pamoja na kauli za kutendeka, kutendesha na kutendua. aidha, kutambua vitate na kuvitumia katika sentensi."
+                                        },
+                                        {
+                                            "activity_type": "Oral Literature",
+                                            "description": "Fasihi simulizi (Hadithi fupi) - kusimulia hadithi juu ya sherehe ya familia."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "wanafunzi waandike insha ya mwongozo kuhusu sherehe waliyowahi kuhudhuria."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Explanation",
+                                            "description": "i. afafanue sherehe mbalimbali na umuhimu wake katika familia"
+                                        },
+                                        {
+                                            "assessment_type": "Discussion",
+                                            "description": "ii. ajadili madhara ya kushiriki mapenzi kabla ya ndoa."
+                                        },
+                                        {
+                                            "assessment_type": "Reading Comprehension",
+                                            "description": "iii. asome makala na kujibu maswali."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "iv. atunge sentensi kwa kuzingatia upatanishi wa ngeli ya PA–KU–MU."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "v. anyambue vitenzi vilivyoorodheshwa katika kauli ya kutendeka, kutendesha na kutendua."
+                                        },
+                                        {
+                                            "assessment_type": "Vocabulary",
+                                            "description": "vi. ataje vitate mbalimbali kisha avitumie kutunga sentensi."
+                                        },
+                                        {
+                                            "assessment_type": "Oral",
+                                            "description": "vii. asimulie hadithi kuhusu sherehe."
+                                        },
+                                        {
+                                            "assessment_type": "Writing",
+                                            "description": "viii. aandike insha ya mwongozo kuhusu sherehe aliyohudhuria"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "23"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "23"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Mwanafunzi aweza kutazama picha za sherehe ya harusi iliyonaswa kwenye kanda ya kunasia sauti."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "MUHULA WA PILI",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "SALAMU NA ADABU",
+                            "theme_description": "Mafunzo haya yanalenga kumwezesha mwanafunzi kukuza msamiati unaohusiana na maamkuzi na maneno ya adabu pamoja na kutumia vipengele vya lugha vilivyoteuliwa kuimarisha mawasiliano yake.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "KIS-O-S2-T2-0001",
+                                        "topic_title": "SALAMU NA ADABU",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "Mwanafunzi aweze kutambua na kutumia msamiati zaidi unaohusiana na salamu na maneno ya adabu pamoja na vipengele vya lugha katika mawasiliano yake ya kila siku.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "atambue msamiati wa ziada wa salamu.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aanzishe na kuitikia salamu kwa namna inayostahili.",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "atambue na kuigiza maneno ya adabu ya ziada.",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "asome na kuigiza mazungumzo halafu ajibu maswali.",
+                                            "domain": "Cognitive/Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "atambue nomino katika ngeli ya A- Wa na I-Zi halafu azitumie kutunga sentensi akizingatia upatanishi wa kisarufi .",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "ataje viwakilishi vya nafsi vya umoja na wingi na avitumie katika sentensi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "akariri na kuimba wimbo wa salamu na adabu.",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "aeleze hatua mwafaka zinazopitiwa kuandika insha ya mwongozo.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aandike insha ya mwongozo.",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Vocabulary",
+                                            "description": "Salamu za kujuliana hali Mwalimu aelekeze wanafunzi: 1. kutambua salamu za ziada ambazo hazikutajwa hadi sasa kama vile: Umeshindaje- Vizuri/vyema, sabalheri- alkheri/sabalheri …"
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "2. kuigiza salamu."
+                                        },
+                                        {
+                                            "activity_type": "Vocabulary",
+                                            "description": "Adabu 1. kutambua maneno ya adabu ambayo hayajatajwa kama vile: kunradhi, naomba radhi, haidhuru .."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "2. kudhihirisha matumizi ya maneno ya adabu."
+                                        },
+                                        {
+                                            "activity_type": "Reading/Role Play",
+                                            "description": "wanafunzi wasome na kuigiza mazungumzo kuhusu salamu na adabu."
+                                        },
+                                        {
+                                            "activity_type": "Grammar Exercise",
+                                            "description": "Sarufi: Mwalimu aongoze wanafunzi kutunga sentensi kwa kutumia nomino za ngeli ya A- Wa na I-Zi wakizingatia upatanishi wa kisarufi. Aidha kutaja viwakilishi vya nafsi vya umoja na wingi na kuvitumia katika sentensi."
+                                        },
+                                        {
+                                            "activity_type": "Oral Literature",
+                                            "description": "Fasihi simulizi (Nyimbo) - kuimba wimbo unaohusu salamu na adabu."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "wanafunzi waandike insha ya mwongozo kuhusu vitendo vinavyoonyesha adabu."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Role Play",
+                                            "description": "i. aigize salamu na maneno ya adabu."
+                                        },
+                                        {
+                                            "assessment_type": "Reading Comprehension",
+                                            "description": "ii. asome na kujibu maswali ya ufahamu kuhusu salamu na adabu."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "iii. aorodheshe nomino zinazopatikana katika ngeli ya A–Wa na I-Zi halafu azitumie kutunga sentensi katika umoja na wingi kwa kuzingatia upatanishi wa kisarufi."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "iv. ataje viwakilishi vya nafsi vya umoja na wingi kisha atunge sentensi kwa kuvishirikisha."
+                                        },
+                                        {
+                                            "assessment_type": "Performance",
+                                            "description": "v. akariri na kuimba wimbo."
+                                        },
+                                        {
+                                            "assessment_type": "Writing",
+                                            "description": "vi. aandike insha ya mwongozo kuhusu adabu."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "24"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "24"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Mwanafunzi aweza kutumia picha ya watu wakisalimiana. Pia aweza kutumia mtandao kutambua maneno zaidi ya kusalimiana"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "HESABU",
+                            "theme_description": "Mafunzo haya yanalenga kumwezesha mwanafunzi kukuza msamiati unaohusiana na hesabu, akisami, maumbo pamoja na kutumia vipengele vya lugha vilivyoteuliwa kuimarisha mawasiliano yake.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "KIS-O-S2-T2-0002",
+                                        "topic_title": "HESABU",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "Mwanafunzi aweze kutambua na kutumia msamiati unaohusiana na hesabu, akisami, maumbo pamoja na vipengele vya lugha vilivyoteuliwa katika mawasiliano.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "ahesabu tarakimu",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue tarakimu katika vitu mbalimbali",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atumie alama za hesabu mbalimbali kupata matokeo mapya ya tarakimu.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aeleze tarehe.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "abainishe akisami mbalimbali na kuzitumia katika sentensi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue maumbo balimbali na kuyaliganisha na vitu vya kawaida..",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "akariri shairi na kueleza ujumbe kutokana na shairi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atunge sentensi akitumia ngeli ya LI–YA",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue vivumishi vya idadi na sifa kisha avitumie katika sentensi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "afumbe na kufumbua mafumbo.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aandike insha fupi.",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Counting",
+                                            "description": "Tarakimu Mwalimu aelekeze wanafunzi: 1. kuhesabu tarakimu toka 1000- 1,000,000"
+                                        },
+                                        {
+                                            "activity_type": "Identification",
+                                            "description": "2 kutambua viti mbalimbali vyenye tarakimu kama vile: pesa, karata, n.k. kisha aandike kwa maneno."
+                                        },
+                                        {
+                                            "activity_type": "Calculation",
+                                            "description": "3 abaini alama za hesabu na kuzitumia kupata matokeo mapya ya tarakimu."
+                                        },
+                                        {
+                                            "activity_type": "Vocabulary",
+                                            "description": "Tarehe 1. kutaja tarehe."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Akisami 1. kujadili akisami kama vile: 1/2 nusu, 1/4 robo .. 2. kudhihirisha ugawaji wa vitu mbalimbali kwa kuzingatia akisami."
+                                        },
+                                        {
+                                            "activity_type": "Shape Identification",
+                                            "description": "Maumbo mwalimu asaidie wanafunzi: 1. kujadili maumbo mbalimbali kama vile: pembe tatu, mstatili ... 2. kulinganisha maumbo na vitu vya kawaida kama vile: pembe tatu dhidi ya sambusa"
+                                        },
+                                        {
+                                            "activity_type": "Reading",
+                                            "description": "wanafunzi wasome shairi linalohusu matumizi ya hesabu."
+                                        },
+                                        {
+                                            "activity_type": "Grammar Exercise",
+                                            "description": "Sarufi: Mwalimu ashirikishe wanafunzi kutambua nomino za ngeli ya Li-Ya zinazohusu hesabu na kuzitumia kutunga sentensi kwa kuzingatia upatanishi wa kisarufi. Aidha, kutambua vivumishi vya idadi na sifa ambavyo havijatajwa."
+                                        },
+                                        {
+                                            "activity_type": "Oral Literature",
+                                            "description": "Fasihi simulizi (Mafumbo) - kufumba na kufumbua mafumbo."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "wanafunzi waandike insha fupi kuhusu umuhimu wa hesabu."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Counting",
+                                            "description": "i. ahesabu tarakimu kutoka 1,000 hadi 1,000,000 na atumie tarakimu hizo kuhesabu vitu mbalimbali maishani."
+                                        },
+                                        {
+                                            "assessment_type": "Matching",
+                                            "description": "ii. aambatanishe tarakimu na maneno yanayozirejelea."
+                                        },
+                                        {
+                                            "assessment_type": "Calculation",
+                                            "description": "iii. ajumlishe, aondoe, agawanye na azidishe tarakimu mbalimbali kupata matokeo mapya."
+                                        },
+                                        {
+                                            "assessment_type": "Calendar Interpretation",
+                                            "description": "iv. afasiri kalenda na kueleza tarehe mbalimbali."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "v. aeleze akisami mbalimbali na kuzitumia katika kutunga sentensi."
+                                        },
+                                        {
+                                            "assessment_type": "Drawing/Comparison",
+                                            "description": "vi. achore maumbo mbalimbali na kuyalinganisha na vitu vya kawaida."
+                                        },
+                                        {
+                                            "assessment_type": "Recitation",
+                                            "description": "vii. akariri shairi."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "viii. atunge sentensikwa kutumiaupatanishi wa kisarufi wa ngeli ya LI– YA."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "ix. aunde sentensi kwa kutumia vivumishi vya idadi, sifa na viulizi."
+                                        },
+                                        {
+                                            "assessment_type": "Riddle",
+                                            "description": "x. afumbe na kufumbua mafumbo."
+                                        },
+                                        {
+                                            "assessment_type": "Writing",
+                                            "description": "xi. aandike insha."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "25"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "25"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Mwanafunzi aweza kutumia vikokotoo au simu za rununu kufanyia hesabu"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "USAFIRI",
+                            "theme_description": "Mafunzo haya yanalenga kumwezesha mwanafunzi kukuza msamiati unaohusiana na usafiri pamoja na kutumia vipengele vya lugha vilivyoteuliwa kuimarisha mawasiliano yake.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "KIS-O-S2-T2-0003",
+                                        "topic_title": "USAFIRI",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "Mwanafunzi aweze kutambua na kutumia msamiati unayohusiana na usafiri pamoja na vipengele vya lugha vilivyoteuliwa katika mawasiliano.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "atambue vyombo vya usafiri",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "abaini aina zausafiri.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue msamiati wa usalama barabarani.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aeleze maana ya taa za barabarani.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "asome makala kuhusu usafiri na kujibu maswali.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue nomino za I-Zi zinazohusu usafiri halafu azitumie kutunga sentensi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue vivumishi viashiria na avitumie katika sentensi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue viunganishi na kuvitumia katika sentensi",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "akamilishe methali zinazohusiana na usafiri.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aandike insha ya masimulizi.",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Usafiri Katika makundi ya mvumo, wanafunzi: 1 watambue vyombo vya usafiri kama vile: meli, baiskeli, ndege, ngamia, basi…"
+                                        },
+                                        {
+                                            "activity_type": "Explanation",
+                                            "description": "2 waeleze aina za usafiri nchini kama vile:anga, ardhi, maji …"
+                                        },
+                                        {
+                                            "activity_type": "Vocabulary",
+                                            "description": "Usalama barabarani Mwalimu awaongoze wanafunzi: 1. kutaja msamiati unaohusiana na usalama barabarani."
+                                        },
+                                        {
+                                            "activity_type": "Explanation",
+                                            "description": "2. kueleza maana ya taa za barabarani."
+                                        },
+                                        {
+                                            "activity_type": "Reading",
+                                            "description": "wanafunzi wasome makala kuhusu usafiri."
+                                        },
+                                        {
+                                            "activity_type": "Grammar Exercise",
+                                            "description": "Sarufi: mwalimu awaelekeze wanafunzi kutunga sentensi sahihi kwa kuzingatia; - nomino za ngeli ya I–ZI zinazohusu usafiri na upatanishi wazo wa kisarufi. - vivumishi viashiria. - naviunganishi"
+                                        },
+                                        {
+                                            "activity_type": "Oral Literature",
+                                            "description": "Fasihi simulizi (Methali zinazohusiana na usafiri) - kukamilisha methali."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "wanafunzi waandike insha fupi kuhusu safari yao ya kwanza kwenda mjini."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Explanation",
+                                            "description": "i. aeleze aina za usafiri nchini na vyombo vinavyotumiwa."
+                                        },
+                                        {
+                                            "assessment_type": "Explanation",
+                                            "description": "ii. aeleze ishara za barabarani."
+                                        },
+                                        {
+                                            "assessment_type": "Reading Comprehension",
+                                            "description": "iii. asome ufahamu unaohusu usafiri na kujibu maswali."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "iv. atunge sentensi sahihi kwa kutumia nomino za I-Zi, vivumishi viashiria, na viunganishi."
+                                        },
+                                        {
+                                            "assessment_type": "Proverbs",
+                                            "description": "v. akamilishe methali alizopewa kuhusu usafiri."
+                                        },
+                                        {
+                                            "assessment_type": "Writing",
+                                            "description": "vi. aandike insha."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "26"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "26"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Mwanafunzi aweza kutumia picha ya kuonyesha vyombo fulani vya usafiri. Pia, aweza kutumia mtandao kutambua vyombo mbalimbali."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "MUHULA WA TATU",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "MAWASILIANO",
+                            "theme_description": "Mafunzo haya yanalenga kumwezesha mwanafunzi kukuza msamiati unaohusiana na mawasiliano pamoja na kutumia vipengele vya lugha vilivyoteuliwa kuimarisha mawasiliano yake",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "KIS-O-S2-T3-0001",
+                                        "topic_title": "MAWASILIANO",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "Mwanafunzi aweze kutambua na kutumia msamiati unaohusiana na mawasiliano pamoja na vipengele vya lugha vilivyoteuliwa katika mawasiliano.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "atambue msamiati wa vyombo vya mawasiliano",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aigize mazungumzo ya simu.",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "asome makala yanayohusu matumizi ya simu.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue vivumishi virejeshi na avitumie katika sentensi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "abaini visawe mbalimbali",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue semi tofauti tofauti na kueleza maana yake.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue utaratibu wa kuandika insha ya barua ya kirafiki.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aandike insha ya barua ya kirafiki.",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Vocabulary",
+                                            "description": "Vyombo vya mawasiliano Mwalimu aelekeze wanafunzi: 1.kutaja na kueleza vyombo vya mawasiliano kama vile: simu, rununu, barua, barua pepe, televisheni ..."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "2 kushiriki katika maigizo ya upigaji simu."
+                                        },
+                                        {
+                                            "activity_type": "Reading",
+                                            "description": "wanafunzi wasome makala kuhusu matumizi ya simu."
+                                        },
+                                        {
+                                            "activity_type": "Grammar Exercise",
+                                            "description": "Sarufi: Mwalimu awaongoze wanafunzi kutunga sentensi sahihi kwa kuzingatia; - vivumishi virejeshi (kirejeshi amba-). - O-rejeshi na. visawe mbalimbali kama vile: msichana-banati, mvulana- ghulamu, huzuni-majonzi …"
+                                        },
+                                        {
+                                            "activity_type": "Oral Literature",
+                                            "description": "Fasihi simulizi (Semi) - kujadili maana ya semi mbalimbali."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Mwalimu awasaidie wanafunzi kujadili hatua zinazopitiwa kuandika barua ya kirafiki halafu waiandike."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Vocabulary/Sentences",
+                                            "description": "i. atumie msamiati wa vyombo vya mawasiliano katika sentensi."
+                                        },
+                                        {
+                                            "assessment_type": "Role Play",
+                                            "description": "ii. aigize mazungumzo ya upigaji na upokeaji simu."
+                                        },
+                                        {
+                                            "assessment_type": "Reading Comprehension",
+                                            "description": "iii. asome ufahamu na kujibu maswali."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "iv. ataje vivumishi virejeshi vya ngeli zote kisha atunge sentensi kwa kuvitumia."
+                                        },
+                                        {
+                                            "assessment_type": "Vocabulary",
+                                            "description": "v. ataje mifano ya visawe na kutunga sentensi kwa kutumia kila kisawe."
+                                        },
+                                        {
+                                            "assessment_type": "Oral/Written",
+                                            "description": "vi. afafanue maana ya semi alizopewa kisha atunge sentensi kwa kuzitumia."
+                                        },
+                                        {
+                                            "assessment_type": "Writing",
+                                            "description": "vii. aandike barua ya kirafiki."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "27"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "27"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Mwanafunzi aweza kutumia simu kuwasiliana na wengine kimdomo au kwa ujumbe mfupi (sms)"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "BIASHARA",
+                            "theme_description": "Mafunzo haya yanalenga kumwezesha mwanafunzi kukuza msamiati unaohusiana na biashara pamoja na kutumia vipengele vya lugha vilivyoteuliwa kuimarisha mawasiliano yake.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "KIS-O-S2-T3-0002",
+                                        "topic_title": "BIASHARA",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "Mwanafunzi aweze kutambua na kutumia msamiati unaohusiana na biashara pamoja na vipengele vya lugha vilivyoteuliwa katika mawasiliano.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "atambue msamiati wa pesa na malipo mbalimbali",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aeleze umuhimu wa pesa pamoja na madhara yake.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "asome makala, atambue na kueleza huduma za benki halafu ajibu maswali.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atumie kishirikishi-ndi- na O- rejeshi katika sentensi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "abaini vivumishi visisitizi vya ngeli mbalimbali pamoja na kuvitumia katika sentensi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "afurahie vichekesho tofauti na kubuni vingine.",
+                                            "domain": "Affective/Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "aandike insha ya bajeti kuhusu mada aliyopewa.",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Vocabulary",
+                                            "description": "Msamiati wa pesa Mwalimu aelekeze wanafunzi: 1 kutaja msamiati wa pesa kama vile; hundi, shilingi, dola, pauni ... 2 kujadili malipo mbalimbali kama vile: mshahara, kodi, ushuru, fidia.."
+                                        },
+                                        {
+                                            "activity_type": "Debate/Discussion",
+                                            "description": "Mjadala kuhusu umuhimu na madhara ya pesa 1. wanafunzi wajadiliane kuhusu umuhimu wa pesa na madhara yake."
+                                        },
+                                        {
+                                            "activity_type": "Reading",
+                                            "description": "wanafunzi wasome makala kuhusu huduma za benki."
+                                        },
+                                        {
+                                            "activity_type": "Grammar Exercise",
+                                            "description": "Sarufi: Mwalimu aelekeze wanafunzi 1 kutunga sentensi sahihi kwa kutumia kishirikishi -ndi- na O- rejeshi katika umoja na wingi. 2 kuoredhesha vivumishi visisitizi kutokana na ngeli mbalimbali na kuvitumia katika sentensi."
+                                        },
+                                        {
+                                            "activity_type": "Oral Literature",
+                                            "description": "Fasihi simulizi (Vichekesho) - kubuni vichekesho."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "wanafunzi waandike insha fupi ya bajeti kuhusu vitu wanavyotaka kununua sokoni."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Vocabulary",
+                                            "description": "i. atumie msamiati wa pesa katika sentensi."
+                                        },
+                                        {
+                                            "assessment_type": "Matching",
+                                            "description": "ii. aambatanishe msamiati wa malipo mbalimbali na maelezo yake."
+                                        },
+                                        {
+                                            "assessment_type": "Discussion",
+                                            "description": "iii. ajadili umuhimu na madhara ya pesa."
+                                        },
+                                        {
+                                            "assessment_type": "Discussion",
+                                            "description": "iv. ajadili huduma za benki."
+                                        },
+                                        {
+                                            "assessment_type": "Reading Comprehension",
+                                            "description": "v. asome ufahamu kuhusu huduma za benki na kujibu maswali."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "vi. atunge sentensi kwa kutumia ndi- na O rejeshi pamoja na vivumishi visisitizi."
+                                        },
+                                        {
+                                            "assessment_type": "Role Play",
+                                            "description": "vii. adhihirishe ubunifu wa vichekesho kupitia uigizaji."
+                                        },
+                                        {
+                                            "assessment_type": "Writing",
+                                            "description": "viii. aandike insha fupi ya bajeti."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "28"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "28"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Mwanafunzi aweza kuzuru soko au duka la karibu na kuchunguza jinsi biashara inavyofanywa."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "SEHEMU ZA MWILI",
+                            "theme_description": "Mafunzo haya yanalenga kumwezesha mwanafunzi kukuza msamiati unaohusiana na sehemu za mwili pamoja na kutumia vipengele vya lugha vilivyoteuliwa kuimarisha mawasiliano yake.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "KIS-O-S2-T3-0003",
+                                        "topic_title": "SEHEMU ZA MWILI",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "Mwanafunzi aweze kutambua na kutumia msamiati unaohusiana na sehemu za mwili pamoja na vipengele vya lugha vilivyoteuliwa katika mawasiliano.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "atambue sehemu za nje na za ndani za mwili wa binadamu",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "aeleze umuhimu wa sehemu za nje na ndani za mwili.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "achore kiunzi cha sehemu za nje na ndani ya mwili wa binadamu",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "abaini msamiati wa ulemavu.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "asome na kukariri shairi kuhusu sehemu za mwili.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "atambue nomino za ngeli ya Li– Ya, Ki–Vi na U–I zinazotaja sehemu za mwili na kuzitumia katika sentensi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "ataje viwakilishi vya nafsi katika umoja na wingi halafu avitumie kutunga sentensi.",
+                                            "domain": "Cognitive"
+                                        },
+                                        {
+                                            "outcome_text": "abuni hadithi fupi.",
+                                            "domain": "Psychomotor"
+                                        },
+                                        {
+                                            "outcome_text": "aandike insha ya mwongozo.",
+                                            "domain": "Psychomotor"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Vocabulary",
+                                            "description": "Sehemu za nje za mwili wa binadamu Mwalimu aelekeze wanafunzi: 1 kutaja sehemu za nje za mwili wa binadamu kama vile: kichwa, jicho, sikio midomo ..."
+                                        },
+                                        {
+                                            "activity_type": "Explanation",
+                                            "description": "2 kueleza umuhimu wa sehemu za nje za mwili wa binadamu."
+                                        },
+                                        {
+                                            "activity_type": "Vocabulary",
+                                            "description": "Sehemu za ndani za mwili wa binadamu 1. kutaja sehemu za ndani za mwili wa binadamu kama vile: ubongo, moyo, ini, figo... 2. kueleza mchakato wa usagaji wa chakula mwilini."
+                                        },
+                                        {
+                                            "activity_type": "Vocabulary",
+                                            "description": "Msamiati wa ulemavu 1. kubainisha msamiati wa ulemavu. kama vile: kipofu, kiziwi, kibiongo .."
+                                        },
+                                        {
+                                            "activity_type": "Reading",
+                                            "description": "wanafunzi wasome shairi kuhusu ‘Ulemavu si upungufu’."
+                                        },
+                                        {
+                                            "activity_type": "Grammar Exercise",
+                                            "description": "Sarufi: Mwalimu aongoze wanafunzi kutambua nomino za ngeliya Li-Ya, Ki- Vi, na U-I zinazorejelea sehemu za mwili na kuzitumia kutunga sentensi katika umoja na wingi. 1. Kutaja viwakilishi nafsi katika umoja na wingi na kuvitumia kutunga sentensi."
+                                        },
+                                        {
+                                            "activity_type": "Oral Literature",
+                                            "description": "Fasihi simulizi (Hadithi fupi) - kubuni hadithi fupi."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "wanafunzi waandike insha ya mwongozo kuhusu namna anavyodumisha usafi wa mwili wake."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Identification",
+                                            "description": "i. ataje sehemu za nje na za ndani za mwili wa binadamu."
+                                        },
+                                        {
+                                            "assessment_type": "Explanation",
+                                            "description": "ii. aeleze umuhimu wa sehemu za ndani na za nje za mwili wa binadamu."
+                                        },
+                                        {
+                                            "assessment_type": "Drawing",
+                                            "description": "iii. achore kiunzi cha sehemu za nje na ndani ya mwili wa binadamu."
+                                        },
+                                        {
+                                            "assessment_type": "Vocabulary",
+                                            "description": "iv. ataje na kueleza msamiati wa ulemavu."
+                                        },
+                                        {
+                                            "assessment_type": "Reading Comprehension",
+                                            "description": "v. ajibu maswali kutokana na shairi kuhusu ‘Ulemavu si upungufu’."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "vi. atunge sentensi akitumia nomino za ngeli za LI– YA, KI– VI, U–I zinazotaja sehemu za mwili."
+                                        },
+                                        {
+                                            "assessment_type": "Grammar",
+                                            "description": "vii. atunge sentensi kwa kushirikisha viwakilishi vya nafsi katika umoja na wingi."
+                                        },
+                                        {
+                                            "assessment_type": "Creative Writing/Oral",
+                                            "description": "viii. abuni hadithi fupi."
+                                        },
+                                        {
+                                            "assessment_type": "Writing",
+                                            "description": "ix. aandike insha ya mwongozo kuhusu namna anavyodumisha usafi wa mwili."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "29"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "29"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Mwanafunzi aweza kutumia kamera kupiga picha ya binadamu/mwenzake ambayo itatumiwa kama kielelezo."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

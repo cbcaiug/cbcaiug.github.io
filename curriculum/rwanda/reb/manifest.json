@@ -1,0 +1,29 @@
+{
+  "authority": "Rwanda Competence-Based Curriculum (CBC)",
+  "country": "Rwanda",
+  "curriculum_name": "Competence-Based Curriculum (CBC)",
+  "subjects": [
+    {
+      "id": "biology",
+      "name": "Biology",
+      "levels": [
+        {
+          "id": "lower_secondary",
+          "name": "Lower Secondary (O-Level)",
+          "classes": [
+            { "class_key": "S1", "class_group": "Senior One", "file": "biology/s1_biology.json" },
+            { "class_key": "S2", "class_group": "Senior Two", "file": "biology/s2_biology.json" },
+            { "class_key": "S3", "class_group": "Senior Three", "file": "biology/s3_biology.json" }
+          ]
+        },
+        {
+          "id": "associate_nursing",
+          "name": "Associate Nursing Program",
+          "classes": [
+            { "class_key": "S4", "class_group": "Senior Four", "file": "biology/s4_biology.json" }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1150 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — Populated from PDF for Senior 3.",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum - Entrepreneurship Syllabus",
+    "subject": "Entrepreneurship",
+    "level": "O-Level",
+    "class_group": "Senior Three",
+    "year": "2019",
+    "version": "1.0",
+    "source_document": "ENTREPRENEURSHIP SYLLABUS"
+  },
+
+  "global_framework": {
+    "competencies": [],
+    "generic_skills": [
+      "Critical thinking and problem-solving",
+      "Creativity and innovation",
+      "Communication",
+      "Co-operation and Self-Directed Learning",
+      "Mathematical computation and ICT Proficiency"
+    ],
+    "values": [
+      "Respect for humanity and environment",
+      "Honesty",
+      "Justice and fairness",
+      "Hard work for self-reliance",
+      "Integrity",
+      "Creativity and innovativeness",
+      "Social Responsibility",
+      "Social Harmony",
+      "National Unity",
+      "National Consciousness and patriotism"
+    ],
+    "attitudes": [],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Mixed abilities and involvement",
+      "Life skills",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+
+  "classes": [
+    {
+      "class_name": "Senior Three",
+      "class_code": "S3",
+      "terms": [
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Business Planning",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S3-T1-11.1",
+                    "topic_title": "Topic 11: Business Planning - Sub-topic 11.1: A Business Plan",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 8
+                  },
+                  "core_competency": "The learner prepares a business plan for a selected business.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the purpose of a business plan (u, s)",
+                      "domain": "u, s"
+                    },
+                    {
+                      "outcome_text": "use a business plan to plan a business and share with different stakeholders. (u, s, gs)",
+                      "domain": "u, s, gs"
+                    },
+                    {
+                      "outcome_text": "use the Internet purposefully to browse relevant information about business plans. (s, gs)",
+                      "domain": "s, gs"
+                    },
+                    {
+                      "outcome_text": "carry out networking on business development and the related etiquette. (u, s, gs)",
+                      "domain": "u, s, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Work",
+                      "description": "In groups, learners review a series of business plans and identify the key features of an effective plan."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners discuss the term ‘stakeholder’ and share examples that they know of in their community."
+                    },
+                    {
+                      "activity_type": "Analysis",
+                      "description": "For each business plan that learners have, they should explore and identify the stakeholder it was written for, explaining their reasons for this choice. Learners to agree on the uses of each plan."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "In pairs, learners use the Internet if possible, to conduct further focused research into business plans. They could select a theme to explore relating to plans for different types of products and services, or for plans for small, medium or large businesses."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners should research different opportunities for businesses to network in Uganda that range from local to national projects and from formal to informal networking opportunities."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners should discuss the benefits of networking and describe features of successful networking with examples where possible, outlining also examples of the etiquette required to develop useful relationships and connections."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Product Creation",
+                      "description": "Ask learners to produce a leaflet that a bank might distribute to highlight the importance of developing a business plan. Observe how well learners illustrate the key features of a business plan."
+                    },
+                    {
+                      "assessment_type": "Research/Discussion",
+                      "description": "Challenge learners to use the Internet where possible to conduct some research into different approaches to writing a business plan. Ask them to identify two contrasting examples and in conversation, ask them to explain which elements they think are the most effective."
+                    },
+                    {
+                      "assessment_type": "Project",
+                      "description": "Ask learners to prepare a business plan for a selected business opportunity."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 8,
+                    "unit": "periods",
+                    "source_page": "42"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use the Internet purposefully to browse relevant information about business plans"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S3-T1-11.2",
+                    "topic_title": "Sub-topic 1 1.2: Preparing A Business Plan",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner prepares a business plan for a selected business.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the steps in preparing a business plan. (u, s)",
+                      "domain": "u, s"
+                    },
+                    {
+                      "outcome_text": "understand the importance of cash flow in processing and manufacturing. (u)",
+                      "domain": "u"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "In groups, learners are guided on the steps of preparing a business plan, and they discuss the steps to follow in writing a business plan."
+                    },
+                    {
+                      "activity_type": "Evaluation",
+                      "description": "Learners should evaluate the importance of each step in the creation of a business plan and relate this to the need to understand cash flow in processing, and manufacturing in particular."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Challenge learners to do some research into a business that suffered from cash flow problems. Ask learners to identify the point at which they believe the business should have sought business support of some kind."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Product Creation",
+                      "description": "Ask learners to highlight in a flow chart the effective steps required to prepare a business plan. Observe whether they have included all the important steps."
+                    },
+                    {
+                      "assessment_type": "Comparison/SWOT Analysis",
+                      "description": "Students compare two contrasting business opportunities and discuss their possible successes, guided by a simple SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "43"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S3-T1-11.3",
+                    "topic_title": "Sub-topic 11.3: Preparing an Action Plan",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner prepares a business plan for a selected business.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "appreciate the importance of an action plan and its relation to a business plan. (u, s)",
+                      "domain": "u, s"
+                    },
+                    {
+                      "outcome_text": "prepare an action plan. (s, u, gs)",
+                      "domain": "s, u, gs"
+                    },
+                    {
+                      "outcome_text": "Use skills of making presentations with objects and animation (s, gs)",
+                      "domain": "s, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Creation",
+                      "description": "In groups, learners study a sample of an action plan and prepare their own for the developed business plan. They should discuss how an action plan enables a business plan to be developed and the importance of clear targets and aims."
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "Ask learners to present a business plan that they think is very good to an audience, using relevant technology to explain key features of the plan. Challenge learners at every point of the business plan to explain some actions that are required to realise the aims."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Product Creation",
+                      "description": "Challenge learners to produce an action plan for one key aim of a business plan. In conversation, ask learners to explain what steps and actions are required in order for the aim to be achieved."
+                    },
+                    {
+                      "assessment_type": "Presentation",
+                      "description": "Ask learners to make a presentation using animation and objects, if possible, to illustrate what they have learnt about successful action plans. Observe how well learners have been able to identify key features"
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "43"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "using relevant technology to explain key features of the plan"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S3-T1-11.4",
+                    "topic_title": "Sub-topic 11.4: Business Ethics",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 4
+                  },
+                  "core_competency": "The learner prepares a business plan for a selected business.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "appreciate the principles of good business ethics. (k, u)",
+                      "domain": "k, u"
+                    },
+                    {
+                      "outcome_text": "understand ethical issues in relation to business development. (k, u)",
+                      "domain": "k, u"
+                    },
+                    {
+                      "outcome_text": "understand acceptable business behaviour towards customers, employees, society and government. (u, gs)",
+                      "domain": "u, gs"
+                    },
+                    {
+                      "outcome_text": "know customer attraction, customer care and customer retention. (u, s, gs)",
+                      "domain": "u, s, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Case Study Review",
+                      "description": "In groups, learners review a set of case studies that illustrate ethical and unethical business practices. Learners identify and discuss ethical and unethical business practices and then relate these to any businesses they have experienced within their own communities."
+                    },
+                    {
+                      "activity_type": "Creation",
+                      "description": "Challenge learners to produce an ethics charter for a business they know reasonably well in their community. They should work in pairs to produce an attractive charter that clearly evidences the benefits of working ethically."
+                    },
+                    {
+                      "activity_type": "Discussion/Role Play",
+                      "description": "In groups, learners consider how they would ensure, if they were business owners, what customer attraction, care and retention looks like when it is secured across the business. Groups share their responses with the class and can role play these."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners agree on what is acceptable business behaviour towards employees, society and the government. They should discuss the similarities and differences between behaviour towards these three groups and identify any other groups that require specific behaviour."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Case Study/Conversation",
+                      "description": "Provide learners with a case study and in conversation, ask them to answer questions related to business ethics."
+                    },
+                    {
+                      "assessment_type": "Role Play",
+                      "description": "Ask learners to work in small groups to produce a role play illustrating good and bad behaviour towards customers. Challenge other learners to comment and narrate what is happening. Listen to comments and ask questions to further clarify their views."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 4,
+                    "unit": "periods",
+                    "source_page": "44"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2 & 3",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "Business Management",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S3-T2-12.1",
+                    "topic_title": "Topic 12: Introduction to principles of accounting - Sub-topic 12.1: Bookkeeping",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 5
+                  },
+                  "core_competency": "The learner uses relevant books of original entry to process financial information gathered from source documents.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand bookkeeping and related accounts. (u, s, gs)",
+                      "domain": "u, s, gs"
+                    },
+                    {
+                      "outcome_text": "appreciate the importance of bookkeeping and demonstrate the skill of cost accounting using spreadsheets. (k, u, v, s)",
+                      "domain": "k, u, v, s"
+                    },
+                    {
+                      "outcome_text": "use accounting records. (u, s)",
+                      "domain": "u, s"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Work",
+                      "description": "In groups, learners are given information on financial transactions for a company. As a group, learners will need to record all accounting transactions. They will need to agree what is the best way to record this information and share with the class why it is an important process."
+                    },
+                    {
+                      "activity_type": "Product Creation",
+                      "description": "Provide learners with a range of example of books used to organise accounts. Ask learners to produce their own book or ledger which they believe most effectively prepares businesses to monitor their accounts."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Ask learners to conduct some research into different accounting records to produce a report on the variations in what they find."
+                    },
+                    {
+                      "activity_type": "ICT Application",
+                      "description": "Challenge learners to find out how spreadsheets are used effectively in accounting and how this relates to mathematical skills and the use of technology. Ask learners to produce a spreadsheet of what they think a day in the life of a local store or shop might look like."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Report/Conversation",
+                      "description": "Learners produce a report to describe the users and uses of accounting records. In conversation, ask learners to explain the similarities and differences between these groups."
+                    },
+                    {
+                      "assessment_type": "Story/Comic Strip",
+                      "description": "Ask learners to write a story or produce a cartoon strip to describe a business that did not keep good banking and accounting records. Observe how they organise their story and how they select actions that lead to poor outcomes for the business."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 5,
+                    "unit": "periods",
+                    "source_page": "45"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "demonstrate the skill of cost accounting using spreadsheets",
+                      "find out how spreadsheets are used effectively in accounting",
+                      "produce a spreadsheet of what they think a day in the life of a local store or shop might look like"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S3-T2-12.2",
+                    "topic_title": "Sub-topic 12.2: Source Documents",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 5
+                  },
+                  "core_competency": "The learner uses relevant books of original entry to process financial information gathered from source documents.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "Know the various source documents used in bookkeeping. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "prepare source documents. (k, u, gs, s)",
+                      "domain": "k, u, gs, s"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Explain to the class what is meant by ‘source documents’ by sharing contrasting examples from business that may be familiar to learners. In groups, learners discuss the different source documents and their uses, explaining the benefits of using each source."
+                    },
+                    {
+                      "activity_type": "Practice",
+                      "description": "Using examples, in pairs, learners practise preparing source documents and explain how they have prepared these. They should do this for a range of business types in order to think critically about how source documents should be used."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Sorting Task/Conversation",
+                      "description": "Ask learners to separate source documents out into different groups according to some agreed criteria. In conversation, ask learners to explain how they have organised their criteria."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 5,
+                    "unit": "periods",
+                    "source_page": "46"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S3-T2-12.3",
+                    "topic_title": "Sub-topic 12.3: Books of Original Entry",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 13
+                  },
+                  "core_competency": "The learner uses relevant books of original entry to process financial information gathered from source documents.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the books of original entry. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "prepare books of original entry. (u, s)",
+                      "domain": "u, s"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "In groups, learners look at a range of accounting journals and discuss how business transactions are recorded."
+                    },
+                    {
+                      "activity_type": "Practice",
+                      "description": "In pairs, learners then practise preparing books of original entry and share with another pair the process they have used."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Design",
+                      "description": "Ask individual learners to design books of original entry. Observe how effectively these books are organised."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 13,
+                    "unit": "periods",
+                    "source_page": "46"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S3-T2-12.4",
+                    "topic_title": "Sub-topic 12.4: The Ledger",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 15
+                  },
+                  "core_competency": "The learner uses relevant books of original entry to process financial information gathered from source documents.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know a ledger. (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "appreciate the different types of ledgers. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "prepare ledger accounts. (u, s)",
+                      "domain": "u, s"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Study",
+                      "description": "Learners study a range of journal entries and are shown how to post these entries to a ledger. Learners should consider how similar and how different ledgers are, and how they best organise accounts."
+                    },
+                    {
+                      "activity_type": "Explanation",
+                      "description": "Learners are able to explain the process of posting to the ledger to their partner, and in pairs they identify different types of ledgers from the examples they have explored."
+                    },
+                    {
+                      "activity_type": "Demonstration",
+                      "description": "In pairs, learners demonstrate how to prepare ledger accounts using double entry system for a set of journal entries."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Practical/Conversation",
+                      "description": "Ask Individual learners to post transactions from journals to ledger accounts. In conversation, ask learners to explain how they have organised these changes and transactions."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 15,
+                    "unit": "periods",
+                    "source_page": "47"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S3-T2-12.5",
+                    "topic_title": "Sub-topic 12.5: Trial Balance",
+                    "sequence_order": 5,
+                    "recommended_duration_periods": 14
+                  },
+                  "core_competency": "The learner uses relevant books of original entry to process financial information gathered from source documents.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know a trial balance. (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the uses of a trial balance. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "prepare a trial balance. (u, s)",
+                      "domain": "u, s"
+                    },
+                    {
+                      "outcome_text": "identify and correct errors in a trial balance. (k, u, s)",
+                      "domain": "k, u, s"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Investigation",
+                      "description": "In groups, learners investigate a selection of trial balances and identify what information is key to writing an accurate trial balance."
+                    },
+                    {
+                      "activity_type": "Explanation",
+                      "description": "Groups explain to class the uses of the trial balance and ask each other questions about the validity of trial balances."
+                    },
+                    {
+                      "activity_type": "Practice/Game",
+                      "description": "Groups are then given general ledger accounts and asked to prepare a trial balance. They should work in pairs to prepare an accurate and inaccurate trial balance and then challenge each other to identify which is which."
+                    },
+                    {
+                      "activity_type": "Discussion/Error Correction",
+                      "description": "Groups are given a range of trial balances that illustrate errors. Groups discuss trial balances and identify errors. In groups, learners look at how the errors can be corrected."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Explanation",
+                      "description": "Ask learners to explain the purpose of a trial balance using examples from the materials that they have explored together."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the accuracy of their explanation in relation to what has been learnt."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 14,
+                    "unit": "periods",
+                    "source_page": "47"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S3-T2-12.6",
+                    "topic_title": "Sub-topic 12.6: Statement of Profit or Loss and Other Comprehensive Income",
+                    "sequence_order": 6,
+                    "recommended_duration_periods": 15
+                  },
+                  "core_competency": "The learner uses relevant books of original entry to process financial information gathered from source documents.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "Know the statement of profit or loss and other comprehensive income. (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "prepare a statement of profit or loss and other comprehensive income. (k, u, s)",
+                      "domain": "k, u, s"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners continue to work in groups using their trial balances, and in groups discuss the meaning of statement of profit or loss and other comprehensive income."
+                    },
+                    {
+                      "activity_type": "Preparation",
+                      "description": "Learners are shown how to prepare a statement of profit or loss and other comprehensive income, using information from the trial balance. Learners then work in groups to prepare a statement of profit and loss, using the trial balances they have been looking at and explaining their reasoning"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Ask learners to discuss at what point profit should lead to further investment or business development. Ask learners to also discuss and prepare some solutions for when a loss begins to appear on statements."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Individual Task/Conversation",
+                      "description": "Ask learners to individually prepare a statement of profit or loss and other comprehensive income using information provided to them about a business or product that may be familiar to them. In conversation, ask learners to explain their reasoning behind the organisation of their statement."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 15,
+                    "unit": "periods",
+                    "source_page": "48"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S3-T2-12.7",
+                    "topic_title": "Sub-topic 12.7: Statement of Financial Position (The Balance Sheet)",
+                    "sequence_order": 7,
+                    "recommended_duration_periods": 15
+                  },
+                  "core_competency": "The learner uses relevant books of original entry to process financial information gathered from source documents.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the key components of a balance sheet and how spreadsheets support them. (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the accounting equation, create and edit simple worksheets using the correct formulae. (k, u, gs)",
+                      "domain": "k, u, gs"
+                    },
+                    {
+                      "outcome_text": "prepare a balance sheet, using spreadsheets and a calculator where appropriate. (u, gs)",
+                      "domain": "u, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Investigation",
+                      "description": "In pairs, learners investigate a collection of balance sheets and explain the key components to another pair. They should challenge each other to explain any anomalies they discover."
+                    },
+                    {
+                      "activity_type": "Group Work",
+                      "description": "Learners now work in groups and discuss and list the assets and liabilities of their school and prepare a simple balance sheet. They should explain where possible the origins of these assets and liabilities."
+                    },
+                    {
+                      "activity_type": "Preparation",
+                      "description": "Learners work in groups to prepare a possible balance sheet for a local business that they know reasonably well. They should compare this to the balance sheet created for their school. They should use spreadsheets and calculators to assist them in preparing these balance sheets."
+                    },
+                    {
+                      "activity_type": "Error Correction",
+                      "description": "Learners should be presented with some balance sheets which contain some errors. Learners work together to identify and correct these errors, explaining what effect these errors could have had on business development."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Product Creation/Conversation",
+                      "description": "Ask learners to prepare an example balance sheet about a business in their community. In conversation, ask learners to explain how they organised their balance sheet and what further information they require in order to improve the accuracy of their work."
+                    },
+                    {
+                      "assessment_type": "Spreadsheet Creation",
+                      "description": "Ask learners to prepare two contrasting spreadsheets for the same business account. Ask them which they think is the most effective in supporting accurate business accounting."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 15,
+                    "unit": "periods",
+                    "source_page": "49"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "how spreadsheets support them",
+                      "create and edit simple worksheets using the correct formulae",
+                      "prepare a balance sheet, using spreadsheets"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S3-T2-12.1-TAX",
+                    "topic_title": "Topic 12: Introduction to Principles of Accounting - Sub-topic 12.1: Tax Administration in Uganda",
+                    "sequence_order": 8,
+                    "recommended_duration_periods": 14
+                  },
+                  "core_competency": "The learner uses relevant books of original entry to process financial information gathered from source documents.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "Know tax administration. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "appreciate the role of URA in tax administration. (u) (v)",
+                      "domain": "u, v"
+                    },
+                    {
+                      "outcome_text": "know the taxes collected by URA. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the taxes and duties collected by the Local Government Authorities. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "identify the non- tax revenue collected by other Government Agencies (k)",
+                      "domain": "k"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Guest Speaker Preparation",
+                      "description": "In groups, learners prepare a series of questions to ask a guest speaker about: the role of URA in tax administration, taxes collected by URA, taxes collected by Local Government Authorities, taxes collected by other government Agencies"
+                    },
+                    {
+                      "activity_type": "Report Writing",
+                      "description": "Groups then prepare an information report about tax administration in Uganda and share this with the class."
+                    },
+                    {
+                      "activity_type": "Comparative Analysis",
+                      "description": "Learners should look in more detail at the way the URA is organised. They should compare this to other government bodies and consider the importance and impact of the URA on the economy in Uganda."
+                    },
+                    {
+                      "activity_type": "List Creation",
+                      "description": "Learners should create a list of types of non-tax revenue collected by other government agencies. They should highlight the way these taxes affect communities and other government agencies."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Product Creation/Conversation",
+                      "description": "Ask learners to prepare an example balance sheet about a business in their community. In conversation, ask learners to explain how they organised their balance sheet and what further information they require in order to improve the accuracy of their work."
+                    },
+                    {
+                      "assessment_type": "Spreadsheet Creation",
+                      "description": "Ask learners to prepare two contrasting spreadsheets for the same business account. Ask them which they think is the most effective in supporting accurate business accounting."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 14,
+                    "unit": "periods",
+                    "source_page": "50"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "Sub-topic 12.1: Tax Administration in Uganda",
+                      "note_type": "clarification",
+                      "source_page": "50"
+                    }
+                  ],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

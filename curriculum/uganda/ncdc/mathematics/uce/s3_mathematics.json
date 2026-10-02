@@ -1,0 +1,1649 @@
+{
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Mathematics",
+        "level": "Lower Secondary",
+        "class_group": "Senior Three",
+        "year": "2019",
+        "version": "1",
+        "source_document": "MATHEMATICS SYLLABUS.pdf"
+    },
+    "global_framework": {
+        "competencies": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Communication",
+            "Co-operation and Self-Directed Learning",
+            "Mathematical Computation and ICT Proficiency"
+        ],
+        "generic_skills": [
+            "Listen attentively and with comprehension",
+            "Talk confidently and explain ideas/opinions clearly",
+            "Read accurately and fluently",
+            "Write and present coherently",
+            "Use a range of media to communicate ideas",
+            "Work effectively in diverse teams",
+            "Interact effectively with others",
+            "Take responsibility for own learning",
+            "Work independently with persistence",
+            "Manage goals and time",
+            "Plan and carry out investigations",
+            "Sort and analyse information",
+            "Identify problems and ways forward",
+            "Predict outcomes and make reasoned decisions",
+            "Evaluate different solutions",
+            "Use imaginations to explore possibilities",
+            "Work with others to generate ideas",
+            "Suggest and develop new solutions",
+            "Try out innovative alternatives",
+            "Look for patterns and make generalisations",
+            "Use numbers and measurements accurately",
+            "Interpret and interrogate mathematical data",
+            "Use mathematics to justify and support decisions",
+            "Use technology to create, manipulate and process information",
+            "Use technology to collaborate, communicate and refine their work"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Three",
+            "class_code": "S3",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Patterns and Algebra",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MATH-S3-T1-0001",
+                                        "topic_title": "Equation of a Straight Line",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 15
+                                    },
+                                    "core_competency": "The learner understands and uses linear equations and their graphs",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the relationship between a linear equation y=mx + c and its graph. (k u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "determine the x and y intercepts of a given linear graph. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "determine the gradient of a straight line. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "state the gradient of a straight line when given the equation. (k u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "apply the relationship of gradients of parallel and perpendicular lines to determine the equation of a straight line. (k u s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "Consider a ladder of length 10m.\na) Place the foot of the ladder at i) 8m, ii) 5m, iii) 2m from the wall and lean the ladder against the wall\nb) What happens to the angle between the ground and the ladder as the foot of the ladder moves closer to the wall?\nc) Relate the steepness of the ladder with the distance between the wall and the foot of the ladder. Explain this relationship."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "Recall Senior 1, Topic 11: how does the equation y=mx + c work?"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "Introduce gradient as a measure of steepness/rate of change"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "Draw a straight line and a perpendicular line on a coordinate grid. What are their equations? Try for another pair. What do you notice about the gradients?"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "Investigate the least number of points that need to be plotted to draw a straight line."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners in their groups as they carry out the tasks below. During the process, are learners communicating effectively? Are they learning from one another? Are they creative?"
+                                        },
+                                        {
+                                            "assessment_type": "Task",
+                                            "description": "1. Asabi is going to plot the graphs of these six equations: y=2x+1, y=3x, y=x+4\n2. Y=+x=6, y=2x-5, 2y=3-x\nWithout plotting the equations: Which graph will be steepest?\nWhich will have the greatest y- intercept? Are any of the lines parallel or perpendicular? Explain your answer."
+                                        },
+                                        {
+                                            "assessment_type": "Task",
+                                            "description": "Sendi drew the graphs of 2x-3=y and y=7 on the same set of axes.\nWhat are the coordinates of intersection?"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "44"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 15,
+                                        "unit": "periods",
+                                        "source_page": "44"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Geometry and Measures",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MATH-S3-T1-0002",
+                                        "topic_title": "Trigonometry I",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 15
+                                    },
+                                    "core_competency": "The learner understands and uses the three basic trigonometric functions.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "derive sine, cosine and tangent functions from the unit circle. (k u s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "read and uses calculators to find values of trigonometric functions. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "use sine, cosine and tangent in calculating lengths of sides and angles of right-angled triangles. (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "find angles of elevation and depression. (k s)",
+                                            "domain": "Knowledge/Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Graphing/Drawing",
+                                            "description": "Draw a circle radius 1 unit (10cm) on graph paper and add axes as shown - the centre of the circle should be on an intersection of major grid lines. For different values of angle θ measure x and y, and complete the table."
+                                        },
+                                        {
+                                            "activity_type": "Graphing",
+                                            "description": "On separate graphs, plot graphs of x and y against θ°"
+                                        },
+                                        {
+                                            "activity_type": "Graphing/Calculation",
+                                            "description": "Compute y÷x, plot y÷x against θ°"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners in their groups as they carry out the tasks below. During the process, are learners communicating effectively? Are they learning from one another? Are they creative and critical?"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "1. Find the angle of elevation θ, of the top of the lighthouse."
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "1. Find the height above the ground of a hot air balloon, whose angle elevation from the ground 1km away, is 40°."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "45"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 15,
+                                        "unit": "periods",
+                                        "source_page": "45"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Data and Probability",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MATH-S3-T1-0003",
+                                        "topic_title": "Data Collection /Display",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 15
+                                    },
+                                    "core_competency": "The learner collects and represents different sorts of data.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand mode, mean and median, as measures of location/ central tendency and knows how to find them and when to use them. (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand range as a measure of dispersion/spread and how to find it. (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "draw and use frequency tables for ungrouped data. (u, s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "draw and use frequency tables for grouped data. (u, s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "estimate measures of location and dispersion for grouped data, (u, s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "calculate the mean using an assumed mean, (u, s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "draw a histogram with equal class intervals and uses it to estimate the mode. (u, s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "draw a cumulative frequency curve(ogive) and uses it to estimate the median. (u, s, v/a)",
+                                            "domain": "Understanding/Skills/Values/Attitudes"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "Class to get in height order – stand in a circle to illustrate the range (difference between tallest and shortest person). Discuss representative/typical values – find the most popular height (mode), the middle height (median), what if we were all the same height? (the mean)."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Compare the advantages and disadvantages of mean, median and mode in different contexts."
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "Explore the need for grouping data when there are many different values. Once grouped, exact statistics (mean, median, mode, range) cannot be determined. Compare estimates from grouped data with the actual values from the raw data."
+                                        },
+                                        {
+                                            "activity_type": "Graphing",
+                                            "description": "Draw a histogram and estimate the mode"
+                                        },
+                                        {
+                                            "activity_type": "Graphing",
+                                            "description": "Draw a cumulative frequency graph and estimate the median"
+                                        },
+                                        {
+                                            "activity_type": "Project/Fieldwork",
+                                            "description": "Build on Senior 1, Topic 9. Collect data for a purpose and apply techniques to draw conclusions"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners in their groups as they carry out the task below. During the process are learners communicating effectively? Are they learning from one another? Are they creative and critical?"
+                                        },
+                                        {
+                                            "assessment_type": "Discussion/Written",
+                                            "description": "Which measure of central tendency would be best as a representative value for: salaries in a company workforce, crop yields, examination grades (A, B, C, D, E), measurements in a science experiment. Justify your choice."
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "The cumulative frequency diagram shows the time taken by 100 people to complete 10 press-ups. Find an estimate for the median time. Explain why only an estimate for the median is possible"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "46"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 15,
+                                        "unit": "periods",
+                                        "source_page": "46"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Geometry and Measures",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MATH-S3-T1-0004",
+                                        "topic_title": "Vectors",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 15
+                                    },
+                                    "core_competency": "The learner understands the nature of vector quantities, manipulate and represent them in order to solve problems.",
+                                    "prerequisites": [
+                                        {
+                                            "text_verbatim": "Recall and review Senior 2, Topic 2, what is the difference between a vector and scalar quantity? Give examples.",
+                                            "notes": "Activity derived prerequisite"
+                                        }
+                                    ],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "describe position vectors geometrically and as column vectors (k u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "find the vector of a directed line segment when position vectors of the end points are known. (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "find the position vector of the mid-point of a line segment. (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "use vector method to divide a line proportionately internally and externally. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "use vectors to show parallelism. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "use vector methods to show co-linearity. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Review",
+                                            "description": "Recall and review Senior 2, Topic 2, what is the difference between a vector and scalar quantity? Give examples."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "Identify parallel and equal vectors."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "Use vector addition and subtraction"
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "Explore the use of position vectors to define positions on a coordinate grid, including the midpoint of a line segment and proportional division of a line."
+                                        },
+                                        {
+                                            "activity_type": "Inquiry",
+                                            "description": "How can vectors be used to test for collinearity?"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners in their groups as they carry out the tasks below. During the process, are learners communicating effectively? are they learning from one another? are they creative and critical?"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "Which of the following vectors are parallel? Explain your answer."
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "Use vectors to find the midpoint of the line segment AB where A is (1, 7) and B is (-3, -3). The point (1, 1) divides the line segment AB internally in the ratio 3:4. A is (-2, 7). Use vector methods to find the coordinates of B."
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "Use vectors to establish whether the points (5, 2), (-3, 6) and (9, 4) are collinear."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "47"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 15,
+                                        "unit": "periods",
+                                        "source_page": "47"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Patterns and Algebra",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MATH-S3-T2-0001",
+                                        "topic_title": "Ratio and Proportion",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "The learner understands ratio and proportion, and use them in a range of contexts.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand and apply equivalent ratios. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand and apply direct and inverse proportional reasoning. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand and apply ratio, proportion and scale. (k u s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "draw and interpret the line of best fit when looking for a relationship in bivariate data on a scatter graph. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Visualisation/Task",
+                                            "description": "Use diagrams to illustrate ratios. Look at the diagrams. a) Use the diagrams to fill in the gaps and complete the equivalent ratios. b) Draw diagrams to show some ratios that are equivalent to 5:3"
+                                        },
+                                        {
+                                            "activity_type": "Problem Solving",
+                                            "description": "c) Simon says, \"12:15 is equivalent to 3:4\". Is he correct? Draw diagrams to justify your answer."
+                                        },
+                                        {
+                                            "activity_type": "Application",
+                                            "description": "Adjust recipes e.g. 8 cakes need 400 grams of flour. How much flour for 20 cakes? How many cakes with 750 grams of flour? These are examples of direct proportion,"
+                                        },
+                                        {
+                                            "activity_type": "Application/Graphing",
+                                            "description": "A rectangle has an area of 36 square units. If the dimensions of the rectangle are x and y, what is the relationship between x and y? Plot a graph to show the relationship, this is an example of inverse proportion,"
+                                        },
+                                        {
+                                            "activity_type": "Data Collection/Graphing",
+                                            "description": "Collect data from the class e.g. handspan and height. Plot a scatter graph. Draw a line of best fit. Use the line of best fit to estimate the handspan of someone joining the class with a particular height."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners in their groups as they carry out the tasks below. During the process, are learners communicating effectively? are they learning from one another? are they creative and critical?"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "Mrs. Mukasa is a small-scale poultry farmer. It costs her UGX.250 000 to buy the feed to raise 70 broilers. a) Mrs Mugisha wants to raise 300 broilers. How much will the feed needed to raise these broilers cost? b) Day old broiler chicks cost UGX. 2000 each. Mrs Opio has UGX. 1 000 000 (one million shillings). She wants to buy and raise as many chicks as she can. How many should she buy?"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "The height and mass of horses are shown on the scatter graph. What is the equation of the line of best fit? Estimate the height of a horse of mass 600 kg."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "48"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "48"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Geometry and Measure",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MATH-S3-T2-0002",
+                                        "topic_title": "Business Mathematics",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "The learner understands and applies business mathematics when solving problems.",
+                                    "prerequisites": [
+                                        {
+                                            "text_verbatim": "Review Senior 1, Topic 13. Recall the meaning of buying, selling, profit, loss, commission, discount and interest.",
+                                            "notes": "Activity derived prerequisite"
+                                        }
+                                    ],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "use a multiplier when calculating percentage change. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "calculate compound interest. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand and calculate depreciation and appreciation. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand and convert local or foreign currencies. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand and calculate hire purchase. (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "describe and determines Mortgage of assets. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "calculate income tax given income tax bands. (u, v/a)",
+                                            "domain": "Understanding/Values/Attitudes"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research/Review",
+                                            "description": "Review Senior 1, Topic 13. Recall the meaning of buying, selling, profit, loss, commission, discount and interest. Research and write their own definitions of mortgage, currency, income tax, appreciation and depreciation."
+                                        },
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "Explore and develop efficient ways of calculating percentage change, use a multiplier e.g. 0.8 for a decrease of 20%, 1.05 for an increase of 5%"
+                                        },
+                                        {
+                                            "activity_type": "Problem Solving",
+                                            "description": "Which is the best savings account: 1% compound interest paid monthly, 3% compound interest paid every three months, 6% compound interest paid every six months, 12% paid annually?"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Consider which assets appreciate, and which depreciate."
+                                        },
+                                        {
+                                            "activity_type": "Group Work/Poster",
+                                            "description": "In groups, find out about mortgages and make a poster to share with the class. Repeat for hire purchase. How much does it cost to borrow money?"
+                                        },
+                                        {
+                                            "activity_type": "Scenario",
+                                            "description": "You are travelling to Kenya. How much will your Ugandan money be worth in Kenya? How much does it cost to convert currency?"
+                                        },
+                                        {
+                                            "activity_type": "Graphing",
+                                            "description": "Draw a graph of income tax paid against annual salary using government information about income tax bands."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners in their groups as they carry out the tasks below. During the process, are learners communicating effectively? are they learning from one another? are they creative and critical?"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "A piece of sculpture and painting together cost UGX 21 000. The painting costs twice as much as the piece of sculpture. Find the cost of the painting."
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "The marked price of a set of curtains is UGX 75 000, but there is a cash discount of UGX 12.50 on every sh100. Find the cash price for the curtains."
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "If a forex bureau buys Kenyan shilling at the rate of UGX 42 per Kenya shilling, find: the amount in Uganda shillings paid out by the Bureau in exchange for K shillings 625. the amount in Kenya shillings that can be exchanged for Uganda shillings 5460."
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "Ashok invests UGX 100 000 in a savings account that pays 10% compound interest each year. Assuming no further money is invested and no withdrawals are made, how many years does it take to double his money?"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "49"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "49"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MATH-S3-T2-0003",
+                                        "topic_title": "Trigonometry 2",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "The learner understands and applies the three basic trigonometric functions.",
+                                    "prerequisites": [
+                                        {
+                                            "text_verbatim": "Review the work of Senior 3, Topic 2, particularly the graphs of trigonometric functions and their relationship with the unit circle",
+                                            "notes": "Activity derived prerequisite"
+                                        }
+                                    ],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "determine trigonometric ratios of angles greater than 90°. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "use the graphs of trigonometric functions to determine values of sine, cosine and tangent for any angle. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "apply sine and cosine rules to solve real life problems. (k u s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Review",
+                                            "description": "Review the work of Senior 3, Topic 2, particularly the graphs of trigonometric functions and their relationship with the unit circle"
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "Use the graph to explain how values of the trigonometric functions outside the interval [-90°,90°] are related to values in that interval. Solve trigonometric equations over different intervals."
+                                        },
+                                        {
+                                            "activity_type": "Application",
+                                            "description": "Apply the sine and cosine rules."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "In pairs, let the learners discuss the following tasks. Observe them as they discuss. Assess the learners on the core values and generic skills"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "Solve sin θ = 0.5, 0° ≤ θ ≤ 720°\ncos θ = (sqrt(2)/2), -360° ≤ θ ≤ 360°\ntan θ = -1, -180° ≤ θ ≤ 540°"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "The hour and minute hands of a clock have lengths of 44mm and 57mm respectively.\n(a) Calculate the distance between the ends of the hands when the angle between the hands is 69°.\n(b) Calculate the angle between the hands when the ends of the hands are 32mm apart."
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "3. A pole 8.3 metres long and a pole 11.5 metres long are placed on the ground with two ends in contact with each other. The distance between the other two ends is 4.7 metres. Find the angle between the two poles at the point of contact."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "50"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "50"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Data and Probability",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MATH-S3-T2-0004",
+                                        "topic_title": "Matrices",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "The learner understands and uses matrices.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "define a matrix and states its order. (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "know when matrices can be added or multiplied. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "find the determinant of a 2 × 2 matrix. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "find the inverse of a 2 × 2 matrix and understands why it may not be possible to do so. (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "apply knowledge of matrices in solving problems from real life situation. (u, s, v/a)",
+                                            "domain": "Understanding/Skills/Values/Attitudes"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "What is a matrix?"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "When can matrices be added together?"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "When can matrices be multiplied together?"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "BA is not defined. Usually AB ≠ BA"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "The inverse matrix A^-1 has the property that AA^-1=A^-1 A=I. Find out how to derive the inverse matrix for 2×2 matrices."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "ad-bc=determinant of A. What happens if det A = 0?"
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "Use matrices to solve pairs of linear equations in two unknowns. Explore what happens when there are no solutions."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners in their groups as they carry out the tasks below. During the process, are learners communicating effectively? Are they learning from one another? Are they creative and critical?"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "Use matrices to solve the simultaneous equations\n(a) 3x + 5y = 25\n2x + 4y = 18\n(b) 7m + 3n - 46 = 0\n30 - 3m = 5n + 40"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "Use the matrix method to show that the following pairs of simultaneous equations have no unique solutions. Why does this happen?\n(a) 6x - 9y = 36\n2x - 3y = 5\n(b) 3x - 7y = 45\n9x - 21y = 135"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "51"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "51"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Geometry and Measures",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MATH-S3-T2-0005",
+                                        "topic_title": "Matrix Transformations",
+                                        "sequence_order": 5,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "The learner understands and uses matrices to transform shapes on a coordinate grid.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "identify transformation matrices for reflection, rotation and enlargement. (k u s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "determine the image given the object and transformation matrix, on a coordinate grid. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "identify the matrix of transformation when the object and its image are given. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "determine the inverse of a transformation matrix. (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "use the inverse matrix to find the object when the image is given. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "identify the relationship between area scale factor and determinant of the transformation matrix. (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "determines a single matrix for successive transformations. (u, v/a)",
+                                            "domain": "Understanding/Values/Attitudes"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "Find the matrix corresponding to the transformation by considering the images of the point I(1, 0), J(0, 1) and K(1, 1):\n(a) reflection in the line x + y = 0\n(b) a 90 degrees anti-clockwise rotation about the origin\n(c) an enlargement, centre the origin, scale factor k. What do you notice about the determinant of the transformation matrix?"
+                                        },
+                                        {
+                                            "activity_type": "Graphing/Plotting",
+                                            "description": "Plot the following five triangles on grid paper.\nT1 (1, 1), (5, 1), (5, 3),\nT2 (1, 1), (1, 5), (-1, 5)\nT3 (-1, 1), (-5, 1), (-5, 3)\nT4 (-1, -1), (-5, -1), (-5, -3) and\nT5 (1, -3), (1, -5), (5, -3)\nDescribe a single transformation that maps:\n(a) T3 onto T1. (b) T4 onto T5 (c) T1 onto T2 (d) T4 onto T3 (e) T1 onto T4 (f) T4 onto T2, and determine the transformation matrix.\nDetermine the transformation matrix to 'undo' each transformation. What do you notice?"
+                                        },
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "Investigate combining transformations and the corresponding transformation matrices."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they carry out the tasks below. During the process, are learners communicating effectively? are they learning from one another? are they creative and critical?"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "1. O (0, 0), A (3, 0), B(3, 3) and C(0, 3) are the vertices of a square OABC. A' (4, 2), B'(6, 6) and C'(2, 4) are the vertices of OA'B'C', the image of OABC such that the origin is invariant. Find: (a) the transformation matrix (b) the area of OA'B'C'."
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "2. Describe the transformations defined by the matrices A = [[1/2, -sqrt(3)/2], [sqrt(3)/2, 1/2]] and B = [[-1, 0], [0, 1]] Evaluate AB and BA. Describe the transformation each represents. A shape P is subject to transformation AB to give image P_AB. The same shape P is subject to transformation BA to give image P_BA. Describe the single transformation that will map P_AB to P_BA."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "52"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "52"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Patterns and Algebra",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MATH-S3-T3-0001",
+                                        "topic_title": "Simultaneous Equations",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 15
+                                    },
+                                    "core_competency": "The learner understands, forms and solves simultaneous equations.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "solves simultaneous equations using substitution. (u, s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "solves simultaneous equations using elimination. (u, s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "draws graphs of simultaneous equations and estimates the solution. (u, s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "uses matrices to solve simultaneous equations. (u, s, v/a)",
+                                            "domain": "Understanding/Skills/Values/Attitudes"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Real-world Scenario",
+                                            "description": "Maureen buys 3 tins of peanut butter and 5 tins of margarine for UGX 32 000. Zulaika buys 6 tins of peanut butter and 8 tins of margarine for UGX 59 000. Musisi buys one tin of peanut butter and one tin of margarine. How much does he pay?"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "How does the set of equations 3x+5y=32 and 6x+8y=59, relate to the problem above?"
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "Explore different methods for solving simultaneous equations including substitution, elimination and use of matrices (Senior 3, Topic 8)."
+                                        },
+                                        {
+                                            "activity_type": "Graphing",
+                                            "description": "Represent simultaneous equations graphically. From Senior 3, Topic 1, plot 2x – 3= y and y = 7 on the same set of axes. What are the coordinates of intersection? What do the values represent?"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they work on the tasks below. During the process, are learners communicating effectively? are they learning from one another? are they creative and critical?"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "1. Solve the following pairs of simultaneous equations using elimination method.\n(a) 7x + 3y = 32\n3x + 12y = 78\n(b) 6y + 14 = 7x\n5x – 12 = 4y"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "2. Use substitution to solve the simultaneous equations:\n3x + y = -2\n4x + 2y = 0"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "3. Draw graphs for the following pairs of simultaneous equations, which have no unique solutions. Why does this happen?\na) 6x – 9y = 36\n2x – 3y = 5\nb) 3x – 7y = 45\n9x – 21y = 135\nc) x+y=3\n2y=6-2x"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "53"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 15,
+                                        "unit": "periods",
+                                        "source_page": "53"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Data and Probability",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MATH-S3-T3-0002",
+                                        "topic_title": "Probability",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 15
+                                    },
+                                    "core_competency": "The learner applies their understanding of probability to solve a wide range of problems.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the terms random, experiment, outcome, sample space, event and probability. (k, u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "construct the probability space. (u, s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "determine probabilities from experiments and real-life data. (u, s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "differentiate between theoretical and experimental probabilities. (k, u, s).",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "identify and understand mutually exclusive and independent events. (k, u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "use probability trees to determine the probabilities of mutually exclusive and independent events. (u, s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "use Venn diagrams to determine probabilities. (u, s, v/a)",
+                                            "domain": "Understanding/Skills/Values/Attitudes"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "Discuss the likelihood of different events and order them from impossible to certain. Introduce the probability scale from 0 to 1."
+                                        },
+                                        {
+                                            "activity_type": "Experiment",
+                                            "description": "In pairs, get an unbiased coin. Mark one side of the coin as a ’head (H)’ and the second side as a ‘tail (T)’. Toss the coin 100 times, recording the outcome each time e.g. H, T, T, ... Plot a graph to show the proportion of heads after each throw. What do you notice as the number of tosses increases?"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Distinguish experimental and theoretical probabilities"
+                                        },
+                                        {
+                                            "activity_type": "Game",
+                                            "description": "Play the horse race game (horses numbered 1 to 12, learners select a horse, two dice are thrown, their sum determines which horse moves)"
+                                        },
+                                        {
+                                            "activity_type": "Task",
+                                            "description": "Use a possibility space to record the possible outcomes when two dice are thrown"
+                                        },
+                                        {
+                                            "activity_type": "Experiment",
+                                            "description": "Toss a pair of coins 100 times and record the outcomes, compare the outcomes with the possibility space. Use the possibility space to determine the theoretical probabilities."
+                                        },
+                                        {
+                                            "activity_type": "Visualisation",
+                                            "description": "Use a tree diagram to determine the theoretical probabilities"
+                                        },
+                                        {
+                                            "activity_type": "Application",
+                                            "description": "Apply probability in a variety of contexts including those that can be described using a Venn diagram (Senior 2, Topic 13)."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they work on the tasks below. During the process, are learners communicating effectively? are they learning from one another? are they creative and critical?"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "1. Sara has the following coins in her pocket bag: UGX 50; UGX 100; UGX 200; UGX 500; UGX 1000. She selects a coin at random to put into a charity collection box. What is the probability that she: a) gives more than UGX 200 b) has less than UGX 800 left in her bag c) has more than UGX 300 left in her bag d) gives at least 10% of the money in her bag e) gives more than one fifth of the money in her bag"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "2. A class has 30 girls and 40 boys. The probability that a boy selected at random is wearing stockings is 0.3. The probability that a girl selected at random is wearing stockings is 0.9. Calculate the probability that a learner selected at random from the whole class: a) is a boy b) is a girl wearing stockings c) is not wearing stockings"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "3. In a school, there is an Arts Club, a Science Club, and a Mathematics Club. 30 learners in one class, each belongs to either one or two of the clubs. 15 belong to the Arts Club, 12 belong to the Science Club, and 13 belong to the Mathematics Club. Draw a Venn diagram. What is the probability of belonging to at least two clubs?"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "54"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 15,
+                                        "unit": "periods",
+                                        "source_page": "54"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Patterns and Algebra",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MATH-S3-T3-0003",
+                                        "topic_title": "Quadratic Equations",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 15
+                                    },
+                                    "core_competency": "The learner understands and solves quadratic equations and relate them to the graphs.",
+                                    "prerequisites": [
+                                        {
+                                            "text_verbatim": "Review Senior 2, Topic 6.",
+                                            "notes": "Activity derived prerequisite"
+                                        }
+                                    ],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "determine the roots of quadratic equations using factorisation, completing the square and the formula. (k u s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "form a quadratic equation given its roots. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "make a table of values for a quadratic function and draws the graph. (k u s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "link the solutions of a quadratic equation with its graphical representation. (k u s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "solve simultaneous equations involving one quadratic equation and a linear equation. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Review/Graphing",
+                                            "description": "Review Senior 2, Topic 6. Create a table of values for the quadratic equations: y=x^2, y=x^2-4, y=(x+1)^2. Describe the transformations that link these graphs. Find the solutions to the equations x^2=0, x^2=4, (x+1)^2 = 0 How do the solutions relate to the graph?"
+                                        },
+                                        {
+                                            "activity_type": "Problem Solving",
+                                            "description": "A school has a rectangular garden with an area of 1000m2. Its length is 30m greater than its width. Find the dimensions of the garden."
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "Explore completing the square to solve quadratic equations and relate to graphs"
+                                        },
+                                        {
+                                            "activity_type": "Derivation",
+                                            "description": "Generalise completing the square to derivation of the quadratic formula for ax^2 + bx + c = 0"
+                                        },
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "Investigate when quadratic equations have two distinct, a single (repeated) and no real solutions and match to the graphs."
+                                        },
+                                        {
+                                            "activity_type": "Problem Solving",
+                                            "description": "Solve simultaneous equations involving a quadratic equation and a linear equation, and represent them graphically."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners in their groups as they work on the tasks below. During the process, are learners communicating effectively? Are they learning from one another? Are they creative and critical?"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "1. A room p metres long and (p- 3) metres wide has an area of 40m2. Obtain an equation in p. Find the value of p."
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "2. The roots of a quadratic equation are -2 and 3, write down at least three different equations that have these roots. Sketch their graphs."
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "3. Try to solve x^2 – 3x + 4 = 0 by: i) factorising ii) completing the square iii) formula (a) For each method, state briefly the difficulty encountered. (b) What do you conclude about the solution set of x^2 – 3x + 4 = 0 (c) Draw the graph of y=x^2 – 3x + 4. What do you notice?"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "56"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 15,
+                                        "unit": "periods",
+                                        "source_page": "56"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Geometry and Measures",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MATH-S3-T3-0004",
+                                        "topic_title": "Circle Properties",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 15
+                                    },
+                                    "core_competency": "Learners should be able to understand and use circle properties to solve problems.",
+                                    "prerequisites": [
+                                        {
+                                            "text_verbatim": "Recall and review Senior 2, Topic 8.",
+                                            "notes": "Activity derived prerequisite"
+                                        }
+                                    ],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "identify arc, chord, sector and segment. (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "relate angles made by an arc at the circumference and centre. (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "determine the tangent, chord and angle properties of the circle. (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "determine and uses the properties of a cyclic quadrilateral. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "find the length of the common chord for two intersecting circles. (u s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "calculate the area of sectors and segments. (u, s, v/a)",
+                                            "domain": "Understanding/Skills/Values/Attitudes"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Review",
+                                            "description": "Recall and review Senior 2, Topic 8."
+                                        },
+                                        {
+                                            "activity_type": "Application",
+                                            "description": "Apply the formulae for circumference (πd) and area of a circle πr^2 to find arc lengths and areas of sectors and segments. (Note use trigonometry to derive area of a triangle is 1/2 ab sin C)"
+                                        },
+                                        {
+                                            "activity_type": "Hands-on Activity",
+                                            "description": "Cut a right-angled triangle from a piece of paper. In another piece of paper make a slit so one corner of the triangle can fit through snugly. Move the corner around, maintaining the snug fit and trace the locus of the corner. What do you notice? Repeat for the other corners."
+                                        },
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "Find the centre of the circle. For a given chord measure the angle at the centre and the angle at the circumference of the major segment. What do you notice? Prove it. Repeat for the minor segment."
+                                        },
+                                        {
+                                            "activity_type": "Derivation",
+                                            "description": "Use the results above to derive and prove the properties of cyclic quadrilaterals."
+                                        },
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "Investigate the properties of tangents to a circle."
+                                        },
+                                        {
+                                            "activity_type": "Problem Solving",
+                                            "description": "Find the length of the common chord when two circles intersect."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners in their groups as they work on the task below. During the process, are learners communicating effectively? are they learning from one another? are they creative and critical?"
+                                        },
+                                        {
+                                            "assessment_type": "Problem Solving",
+                                            "description": "Solve the problems below."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "57"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 15,
+                                        "unit": "periods",
+                                        "source_page": "57"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "Questions involve geometric diagrams (circles, chords, tangents) not transcribed here.",
+                                            "note_type": "clarification",
+                                            "source_page": "57"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

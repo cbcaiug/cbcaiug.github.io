@@ -1,0 +1,1325 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum - Local Languages",
+        "subject": "Local Languages",
+        "level": "Lower Secondary",
+        "class_group": "Senior Three",
+        "year": "2019",
+        "version": "1.0",
+        "source_document": "Local Languages Learning Framework.pdf"
+    },
+    "global_framework": {
+        "competencies": [],
+        "generic_skills": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Co-operation and Self-Directed Learning",
+            "Communication",
+            "Mathematical computation and ICT proficiency"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Three",
+            "class_code": "S3",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Strand: Occupational / Public",
+                            "theme_description": "Focus on games, sports, leisure and indigenous tourism.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S3-T1-0001",
+                                        "topic_title": "3.1 Games, Sports and Leisure",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 14,
+                                        "keywords": [
+                                            "games",
+                                            "sports",
+                                            "leisure",
+                                            "traditional",
+                                            "modern",
+                                            "gambling",
+                                            "biography",
+                                            "budget",
+                                            "argumentative composition"
+                                        ]
+                                    },
+                                    "core_competency": "The learner communicates apporriately about games and sports including traditional games",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "identify games and sports played in the locality (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "describe the importance of games and sports (k).",
+                                            "domain": "k"
+                                        },
+                                        {
+                                            "outcome_text": "differentiate between modern and traditional forms of games and sports (k, u, v).",
+                                            "domain": "k, u, v"
+                                        },
+                                        {
+                                            "outcome_text": "use possessive and demonstrative pronouns (k, u)",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "explain disadvantages of games that involve gambling and why the law prohibits them (v, a)",
+                                            "domain": "v, a"
+                                        },
+                                        {
+                                            "outcome_text": "use vocabulary applicable to games and sports (k, u, s).",
+                                            "domain": "k, u, s"
+                                        },
+                                        {
+                                            "outcome_text": "plan an event (s, gs).",
+                                            "domain": "s, gs"
+                                        },
+                                        {
+                                            "outcome_text": "write a biography (s).",
+                                            "domain": "s"
+                                        },
+                                        {
+                                            "outcome_text": "explain what leisure is (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "state forms of traditional and modern leisure activities (k, v, a)",
+                                            "domain": "k, v, a"
+                                        },
+                                        {
+                                            "outcome_text": "describe the merits and demerits of leisure (k, v, a)",
+                                            "domain": "k, v, a"
+                                        },
+                                        {
+                                            "outcome_text": "write an argumentative composition (k , s)",
+                                            "domain": "k, s"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "learners brainstorm on the games and sports played in their school and community."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to identify the rules or process/steps involved in playing a particular game or sport."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners write a one-page composition describing a game or sport they have ever watched or played."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "in groups, learners discuss benefits of games and sports giving relevant examples."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "in a plenary learners present their opinions."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "learners brainstorm on modern and traditional games and sports."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides leaners to identify terminologies used in different games and sports."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners use terminologies identified to construct sentences."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "with relevant examples, teacher guides learners to understand possessive and demonstrative pronouns."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a text and identify possessive and demonstrative pronouns."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners use two possessive and demonstrative pronouns to construct sentences."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "with relevant examples learners brainstorm on the meaning of gambling."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners identify different games that involve gambling."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "in groups learners discuss advantages and disadvantages of gambling citing relevant examples."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learner narrate their own/other peoples’ luck or bitter experiences in gambling."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using a sample text, teacher guides learners to identify key vocabulary from the text."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using the above example, learners generate key vocabularies for different games and sports."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "in groups, learners act the role of a sports committee and plan for an event."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to draw a budget for a one day sports event."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a sample biography."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to understand the format of a biography."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study and extract key information from the biography of a sports hero/heroine."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners write a short biography of a real or imaginary sporting hero (male or female)."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "learners brainstorm the meaning of leisure."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners identify traditional and modern leisure activities."
+                                        },
+                                        {
+                                            "activity_type": "Debate",
+                                            "description": "in a debate, learners discuss merits and demerits of leisure."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study an exemplar argumentative composition."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to identify aspects or principles of an argumentative composition."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners respond/do an exercise on an argumentative composition of two pages e.g. “sports have done more harm than good in our society”; “watching premier league should be banned in schools”, etc."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a composition describing a favourite game or sport in about one hundred words."
+                                        },
+                                        {
+                                            "assessment_type": "Discussion",
+                                            "description": "discusses the benefits of games and sports in small groups and make a class report on their findings."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "in groups, designs a poster warning against involvement in gambling."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "identifies possessive and demonstrative pronouns from a given text."
+                                        },
+                                        {
+                                            "assessment_type": "Debate",
+                                            "description": "conducts a debate on the topic: ‘traditional games and sports are better than modern ones’."
+                                        },
+                                        {
+                                            "assessment_type": "Peer Assessment",
+                                            "description": "groups exchange reports for review and comment."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "reads extract of different aspects of leisure and responds to questions appropriately."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 14,
+                                        "unit": "periods",
+                                        "source_page": "35"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use a camera or internet to obtain images of traditional and modern games.",
+                                            "use a computer software to prepare an invitation/ poster for a sporting event."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S3-T1-0002",
+                                        "topic_title": "3.2 Indigenous Tourism",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "tourism",
+                                            "wildlife",
+                                            "heritage sites",
+                                            "parks",
+                                            "zoos",
+                                            "noun classes",
+                                            "similes",
+                                            "conservation"
+                                        ]
+                                    },
+                                    "core_competency": "The learner uses language related to wildlife and cultural heritage sites.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "articulate tourism vocabularies (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "identify names of wildlife found in zoos and parks (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "understand noun classes 1-4 (where applicable) (u).",
+                                            "domain": "u"
+                                        },
+                                        {
+                                            "outcome_text": "appreciate the importance of cultural heritage sites and objects (v, a).",
+                                            "domain": "v, a"
+                                        },
+                                        {
+                                            "outcome_text": "describe the importance and challenges of wildlife in parks and zoos (v, a).",
+                                            "domain": "v, a"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a sample text on tourism."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to identify and discuss tourism vocabularies in the text."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners translate those vocabularies in local language and use them to construct sentences."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to share their experiences of wildlife they have seen in their communities, zoos and parks."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners generate names of animals and birds found in zoos and parks."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "with the aid of ICT/tv/media, teacher guides learners to identify more wild animals and birds."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups learners write at least five similes related to wildlife."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, leaners compose a poem about local wildlife."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "in plenary, learners recite their poems."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using appropriate examples teacher guides learners to recap the understanding of nouns."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "with relevant examples teacher guides learners to understand noun classes 1-4."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners generate at least five nouns in classes 1-4."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "with relevant examples, learners brainstorm on objects and sites they consider culturally significant in their locality e.g. trees, water bodies, hills, mountains and sacred places such as places of worship and sacrifice."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "teacher guides learners to discuss the significance of the above sites and objects."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "teacher guides learners to discuss the importance of wildlife to community and nation."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners share the difficulties faced in keeping domestic animals."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "further, learners brainstorm on the challenges of conserving wildlife."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to write an argumentative composition on the merits and demerits of wildlife conservation e.g. “wildlife has done more harm than good to our society”; “game parks and zoos should be turned into farmland”, etc."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "compiles a list of common tourism vocabularies borrowing from other learning areas such as social studies."
+                                        },
+                                        {
+                                            "assessment_type": "Role Play",
+                                            "description": "role-plays the function of a tour guide and explains to tourists about the birds in uganda."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a composition of 200-250 words about the importance of cultural sites."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes and illustrates a notice to prohibit the local population from encroaching on national parks."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes an animal story (fable) of 200-250 words."
+                                        },
+                                        {
+                                            "assessment_type": "Debate",
+                                            "description": "debates on ideas and information obtained from various sources including the media on wildlife. conservation and cultural heritage issues."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes an apology letter for a job you he/she is unable to take."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "37"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "project pictures of various tourist sites.",
+                                            "use a camera to take pictures of animals and birds or use the Internet to obtain images of animals and birds found in the environment."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Strand: Public",
+                            "theme_description": "Focus on clans, totems, and wealth creation.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S3-T2-0001",
+                                        "topic_title": "3.3 Clans",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "clan",
+                                            "tribe",
+                                            "totem",
+                                            "symbols",
+                                            "taboos",
+                                            "noun classes",
+                                            "invitation",
+                                            "if beliefs"
+                                        ]
+                                    },
+                                    "core_competency": "The learner appreciates own identity and expresses fundamental knowledge of symbols, taboos and “if beliefs”.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "name clans found in their tribe (k).",
+                                            "domain": "k"
+                                        },
+                                        {
+                                            "outcome_text": "identify clans and their totems (k, u, v)",
+                                            "domain": "k, u, v"
+                                        },
+                                        {
+                                            "outcome_text": "understand noun classes 5- 10 (where applicable) (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "write an invitation letter (s, gs).",
+                                            "domain": "s, gs"
+                                        },
+                                        {
+                                            "outcome_text": "talk about ‘If’ beliefs (v, a)",
+                                            "domain": "v, a"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "with relevant examples, teacher guides learners to understand the meaning of clan."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners identify clans in their ethnic groups and discuss their origins."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "in a plenary, learners make an oral presentation on the origin of any one clan."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to identify and classify names according to clans."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "with relevant examples, teacher guides learners to understand the meaning of a totem."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners identify their clans and totems."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "with the aid of a chart or board, teacher wraps up and provides further guidance on clans and their totems."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "teacher guides learners to brainstorm the importance of totems."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using appropriate examples, teacher guides learners to recap their understanding of noun classes."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "with relevant examples, teacher guides learners to understand noun classes 5-10."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners generate at least five nouns in classes 5-10."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher tasks learners to identify events that require invitations."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a sample invitation letter."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using the above example, teacher guides learners to understand the format of an invitation letter."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, learners write an invitation letter for a graduation party."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher explains the meaning of ‘if’ beliefs using vivid examples."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners generate a list of ‘if’ beliefs."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "teacher asks learners to justify the validity of ‘if’ beliefs e.g. is it true that “if your palms itches, you are likely to receive money?” “if an owl sings at night, death will occur?” “if one sits on a mortar, they develop hydrocele”."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "from the above discussion, teacher guides learners to understand rationales underlying ‘if’ beliefs."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "in a tree diagram or any other graphic form, illustrates the origin of his/her clan."
+                                        },
+                                        {
+                                            "assessment_type": "Discussion",
+                                            "description": "discusses any possible totems found in the clan."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "identifies four “if beliefs” and interprets them."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "translates/ interprets from local language into English a passage that talks about the origin of his/her tribe."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "reads a passage and identifies nouns belonging to classes 5-10."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a letter inviting people to a clan function."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "38"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use presentation software to prepare a photo story about any clan.",
+                                            "Type an invitation.",
+                                            "Use a computer to draw a list of clans and their totems."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S3-T2-0002",
+                                        "topic_title": "3.4 Wealth Creation",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "wealth",
+                                            "creation",
+                                            "poverty",
+                                            "adjectives",
+                                            "proverbs",
+                                            "similes",
+                                            "idioms",
+                                            "business"
+                                        ]
+                                    },
+                                    "core_competency": "The learner uses language related to wealth creation.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand what wealth is (u).",
+                                            "domain": "u"
+                                        },
+                                        {
+                                            "outcome_text": "explain how wealth can be created or generated (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "use adjectives to talk about wealth creation (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "explain how wealth can be productively or unproductively used (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "identify proverbs, poems, songs, similes and idioms related to wealth creation and poverty (k, v).",
+                                            "domain": "k, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "teacher brainstorms with learners the meaning of wealth."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners cite different forms of wealth."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to declare what they consider personal wealth."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "after declaring examples of personal wealth, learners share personal experiences on how they acquired such wealth."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "in groups, learners discuss socially acceptable and unacceptable ways, activities or practices of wealth creation."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "in plenary, each group presents outcomes of their discussion in (3) above."
+                                        },
+                                        {
+                                            "activity_type": "Guest Speaker/Activity",
+                                            "description": "teacher invites a resource person or uses “pakasa” extract of the new vision to share personal experience on wealth creation."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to recap their understanding of adjectives."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a text with adjectives on wealth creation."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to identify adjectives from the text."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "individually, learners list ten (10) adjectives and use them to construct sentences."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners share personal/family experiences on how they productively or misused wealth."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "in groups, learners brainstorm on how wealth can be used productively or misused."
+                                        },
+                                        {
+                                            "activity_type": "Debate/Composition",
+                                            "description": "learners debate or write compositions on various topics relating to productive and unproductive use of wealth e.g. “the love of money is the root cause of all evil”; “with money all things are possible”; “a wealthy person does not need people”."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "learners brainstorm on any proverbs, similes, poems, songs and idioms they know."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners identify and explain proverbs, similes and metaphors related to wealth and poverty."
+                                        },
+                                        {
+                                            "activity_type": "Activity",
+                                            "description": "learners compose and perform songs and poems related to wealth and poverty."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Discussion",
+                                            "description": "discusses in small groups the disadvantages of wealth mismanagement and poverty."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "explains in 200-250 words the various ways of creating wealth using appropriate vocabulary."
+                                        },
+                                        {
+                                            "assessment_type": "Role Play",
+                                            "description": "role-plays on the impacts of wealth mismanagement."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "describes a rich person who can be considered as a role model."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "identifies any adjectives in a given text."
+                                        },
+                                        {
+                                            "assessment_type": "Research",
+                                            "description": "conducts research on proverbs, poems, similes and idioms related to wealth, riches and poverty."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "conducts research on proverbs, poems, similes and idioms related to wealth, riches and poverty.",
+                                            "assessment_method": "Research"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "39"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use a mobile phone to share a business for wealth creation.",
+                                            "listen to or watch audio-visual recordings to learn about wealth creation.",
+                                            "use a photo to explain wealth creation."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Strand: Public/ Educational",
+                            "theme_description": "Focus on environment, climate, water and conservation.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S3-T3-0001",
+                                        "topic_title": "3.5 Environmental Awareness",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "environment",
+                                            "climate",
+                                            "degradation",
+                                            "measures",
+                                            "announcement",
+                                            "prepositions",
+                                            "postpositions",
+                                            "poems"
+                                        ]
+                                    },
+                                    "core_competency": "The learner uses appropriate language related to environmental management.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "mention the components of nature that make up the environment (k,).",
+                                            "domain": "k"
+                                        },
+                                        {
+                                            "outcome_text": "explain causes of environmental degradation (k, u, gs).",
+                                            "domain": "k, u, gs"
+                                        },
+                                        {
+                                            "outcome_text": "identify measures that can be taken to reduce environmental degradation (s, gs).",
+                                            "domain": "s, gs"
+                                        },
+                                        {
+                                            "outcome_text": "write or make an announcement (s).",
+                                            "domain": "s"
+                                        },
+                                        {
+                                            "outcome_text": "use prepositions and postpositions (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "compose poems and creative prose about environmental degradation and conservation (s).",
+                                            "domain": "s"
+                                        },
+                                        {
+                                            "outcome_text": "explain key vocabulary and their meanings related to environment (k, u).",
+                                            "domain": "k, u"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners recap the meaning of environment."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "learners brainstorm on the components of nature that make the environment."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study and interpret maps and data about climate in Uganda and changes to historical climate patterns and summarise them in writing."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners translate half-page text on environment."
+                                        },
+                                        {
+                                            "activity_type": "Field Trip",
+                                            "description": "teacher takes learners to observe evidence of environmental degradation from a nearby site e.g. excess soil erosion, garbage dumping sites, deforestation, industrial complex, etc."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners share their discoveries from the field visit in plenary randomly."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a text and answer questions on the causes of environmental degradation."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "teacher engages learners to discuss a local environmental problem and propose actions to be taken to prevent a disaster."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners identify general causes and effects of environmental degradation and suggest possible remedies."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "learners act the role of environment officer to deliver a speech on environmental awareness."
+                                        },
+                                        {
+                                            "activity_type": "Activity",
+                                            "description": "learners plant at least two trees in the school or community to curb environmental degradation and write a notice explaining why he/she planted them."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners study a sample announcement."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using the above sample, teacher guides learners to identify elements/format of an announcement."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners prepare an announcement on a given event for radio, poster, assembly, newspaper or any other media."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using relevant examples, teacher explains to learners the meaning of preposition/postposition."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a text and identify prepositions and postpositions."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners generate further examples of prepositions/postpositions and use them to construct sentences."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners write an announcement for a local radio on prevention of environmental degradation."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study an imaginative or creative text on environmental degradation and conservation."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using the above text, teacher guides learners to understand/appreciate elements of imaginative/creative writing."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners compose a poem/imaginative prose piece about environmental degradation and conservation."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "In groups, learners study a text with key vocabulary related to environment such as degradation, conservation, reclamation, afforestation, deforestation, soil erosion and terracing and translate it into their local language."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Research",
+                                            "description": "conducts research on environmental terminologies, for instance, from SST Learning Area and translates them in the Local Language."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "reads and responds to questions on texts on environment/ climate change."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "studies various media about the causes of environmental degradation and writes a short article for the school magazine giving the dangers of environmental degradation."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "shows cooperation by persuading a group to agree on key points in a discussion on degradation/ disaster areas."
+                                        },
+                                        {
+                                            "assessment_type": "Discussion",
+                                            "description": "in a group, discusses how the environment can be conserved, using a local example."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a composition of 200-250 words on the dangers of environmental degradation using appropriate vocabulary and punctuation."
+                                        },
+                                        {
+                                            "assessment_type": "Debate",
+                                            "description": "debates the following scenario arguing for or against the move: the village members are planning to expel an old man from the village because he is said to be the cause of a long dry spell in the area."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "watches films or reads texts regarding climate change and disasters and summarises them in 80- 100 words."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "reads and responds to a poem on environment."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a short poem/story based on his/her personal response to this topic."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Planting Trees",
+                                                "description_verbatim": "learners plant at least two trees in the school or community to curb environmental degradation and write a notice explaining why he/she planted them.",
+                                                "min_trials_or_reps": "at least two trees",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "40"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "conducts research on environmental terminologies, for instance, from SST Learning Area and translates them in the Local Language.",
+                                            "assessment_method": "Research"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "40"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use the Internet to obtain images of climate changes."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S3-T3-0002",
+                                        "topic_title": "3.6 Water",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 10,
+                                        "keywords": [
+                                            "water",
+                                            "comprehension",
+                                            "summary",
+                                            "translation",
+                                            "adjectives",
+                                            "aquatic creatures"
+                                        ]
+                                    },
+                                    "core_competency": "The learner knows language related the importance of water.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "study a comprehension passage on the sources of safe or unsafe water (s).",
+                                            "domain": "s"
+                                        },
+                                        {
+                                            "outcome_text": "summarise a passage (s).",
+                                            "domain": "s"
+                                        },
+                                        {
+                                            "outcome_text": "explain the importance of water (gs).",
+                                            "domain": "gs"
+                                        },
+                                        {
+                                            "outcome_text": "translate large texts (s).",
+                                            "domain": "s"
+                                        },
+                                        {
+                                            "outcome_text": "describe common water creatures using adjectives (k).",
+                                            "domain": "k"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "learners brainstorm on local sources of safe and unsafe water."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a sample comprehension text."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to understand the principles of studying a comprehension."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners read a comprehension passage on how to maintain water safety and respond to questions. (the passage should entail traditional and modern ways of water preservation)."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher explains to learners the meaning of summary writing."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using a sample, teacher guides learners to understand the principles of summary writing."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a passage on dangers of drinking unsafe water and summarise it."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners identify importance or uses of water."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "for every use in (1) above, learners identify the verb used."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using (1) and (2) above, learners suggest a title and compose a poem on it."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a sample text and translate it (quarter-page)."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher randomly assesses learner’s work and guides them to understand the principles of translation."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using the above principles, learners translate a large text (half-page) on waterborne diseases."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners identify aquatic creatures."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners write two sentences describing each creature."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using the assignment in (2) above, teacher asks learners to identify adjectives used."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher clarifies on adjectives of size, quality, quantity, base, comparative and superlative (for example a hippopotamus is the biggest aquatic animal but with the smallest tail (superlative))."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "summarises a passage on a disease caused by drinking unsafe water (acquisition, symptoms, treatment)"
+                                        },
+                                        {
+                                            "assessment_type": "Interview",
+                                            "description": "carries out an interview in the community to collect views on their sources of water."
+                                        },
+                                        {
+                                            "assessment_type": "Role Play",
+                                            "description": "in a group simulation, acts as a local leader and addresses the people in his/her village on ways of preventing and treating waterborne diseases. the other learners ask questions and discuss the issues."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "uses verbs to construct five sentences describing the importance of water."
+                                        },
+                                        {
+                                            "assessment_type": "Performance",
+                                            "description": "composes and performs a poem of 80-100 words about water creatures."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 10,
+                                        "unit": "periods",
+                                        "source_page": "41"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use the Internet to obtain images of water creatures."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

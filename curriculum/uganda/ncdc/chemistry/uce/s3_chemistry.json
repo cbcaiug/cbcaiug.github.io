@@ -1,0 +1,296 @@
+{
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "Chemistry",
+    "level": "Lower Secondary",
+    "class_group": "Senior Three",
+    "year": "2020",
+    "version": "1.0",
+    "source_document": "CHEMISTRY SYLLABUS"
+  },
+  "global_framework": {
+    "competencies": [
+      "The new curriculum focuses on four 'Key Learning Outcomes' of: self – assured individuals; responsible and patriotic citizens; lifelong learners; positive contributors to society. (source_page: 6)"
+    ],
+    "generic_skills": [
+      {
+        "skill": "Critical thinking and problem-solving",
+        "description": "Plan and carry out investigations; Sort and analyse information; Identify problems and ways forward; Predict outcomes and make reasoned decisions; Evaluate different solutions (source_page: 7)"
+      },
+      {
+        "skill": "Creativity and innovation",
+        "description": "Use imaginations to explore possibilities; Work with others to generate ideas; Suggest and develop new solutions; Try out innovative alternatives; Look for patterns and make generalisations (source_page: 7)"
+      },
+      {
+        "skill": "Communication",
+        "description": "Listen attentively and with comprehension; Talk confidently and explain things clearly; Read accurately and fluently; Write and present coherently; Use a range of media to communicate idea (source_page: 7)"
+      },
+      {
+        "skill": "Co-operation and Learning",
+        "description": "Work effectively in diverse teams; Interact effectively with others; Take responsibility for own learning; Work independently with persistence; Manage goals and time (source_page: 7)"
+      },
+      {
+        "skill": "Calculation and ICT",
+        "description": "Use numbers and measurements accurately; Interpret and interrogate mathematical data; Use mathematics to justify and support decisions; Use technology to create, manipulate and process information; Use technology to collaborate, communicate and refine their work (source_page: 7)"
+      }
+    ],
+    "values": [
+      "Peace and harmony",
+      "Integrity and honesty",
+      "Patriotism",
+      "Positive attitude towards work",
+      "Respect for human rights",
+      "Self-Control (source_page: 6)"
+    ],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Diversity and inclusion",
+      "Socio-economic challenges",
+      "Citizenship (source_page: 8)"
+    ]
+  },
+  "classes": [
+    {
+      "class_name": "Senior Three",
+      "class_code": "S3",
+      "terms": [
+        {
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Carbon in Life",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHM-L-S3-T1-0001",
+                    "topic_title": "CARBON IN LIFE",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 30
+                  },
+                  "core_competency": "The learner appreciates the diversity of organic carbon compounds including the alkanes, alkenes, alcohols and fatty acids. (source_page: 29)",
+                  "learning_outcomes": [
+                    { "outcome_text": "a. recognise that there is a diversity of carbon compounds in living things and materials derived from living things, and that these may be classified into groups (u, s)", "domain": "understanding_skills", "source_page": 29 },
+                    { "outcome_text": "b. understand that crude oil is a mixture of different alkanes which can be separated by fractional distillation and that these products are used in fuels and to make other useful products (k, u)", "domain": "knowledge_understanding", "source_page": 29 },
+                    { "outcome_text": "c. know and appreciate that natural gas deposits are found worldwide, that their main constituent is methane and that gas deposits are a useful source of fuels and chemical feedstock (k, u)", "domain": "knowledge_understanding", "source_page": 29 },
+                    { "outcome_text": "d. appreciate that biogas is a carbon-based fuel useful for cooking and lighting (u, s)", "domain": "understanding_skills", "source_page": 29 },
+                    { "outcome_text": "e. know some common synthetic and natural polymers and how their properties relate to their uses (u, s)", "domain": "understanding_skills", "source_page": 29 },
+                    { "outcome_text": "f. understand and appreciate that alcohols form a group of compounds of which ethanol is a typical member and has many uses (u, s)", "domain": "understanding_skills", "source_page": 29 },
+                    { "outcome_text": "g. understand how ethanol is made naturally by fermentation of sugars and other organic substances, and be aware of the dangers of abuse of ethanol (u, s)", "domain": "understanding_skills", "source_page": 29 },
+                    { "outcome_text": "h. know the process of making soapy detergents from natural fats and oils and appreciate that soaps are effective in removing oily stains (u, s)", "domain": "understanding_skills", "source_page": 29 },
+                    { "outcome_text": "i. know that soapless detergents are made from crude oil and that soapless detergents are better cleaning agents in hard water than the soapy detergents but have a more deleterious effect on the environment (k, u, s)", "domain": "knowledge_understanding_skills", "source_page": 30 },
+                    { "outcome_text": "j. understand how organic compounds can be grouped into homologous series, each of which has similarities in structure and properties (k, u)", "domain": "knowledge_understanding", "source_page": 30 }
+                  ],
+                  "suggested_learning_activities": [
+                    { "activity_type": "Research/Report", "description": "Individually, learners research and report on the uses of some common organic compounds derived from living things, such as ethanol, sucrose and ethanoic acid. (source_page: 29)" },
+                    { "activity_type": "Poster/Classification", "description": "In groups, learners research and explain the characteristics of alkanes, alkenes, alcohols, and carboxylic acids on a poster and then classify common carbon compounds such as ethanol, methanoic acid, butane, ethene, ethane, methanol, butanoic acid, and propene. (source_page: 29)" },
+                    { "activity_type": "Poster/Practical", "description": "Individually, learners revisit prior learning on fractional distillation and use it to explain on a poster how crude oil can be separated into fractions by distillation. Groups discuss and list the main fractions in order of boiling point, and discuss their uses in everyday life. (source_page: 29)" },
+                    { "activity_type": "Practical/Soap Making", "description": "In groups, learners use sodium chloride, coconut oil (25cc) and 20% sodium hydroxide (30cc) to create a suspension and 15g salt to create a solid (soap) which is separated by filtering. (source_page: 30)" },
+                    { "activity_type": "Investigation", "description": "In groups, learners plan, carry out and report on an investigation to find out how effective different types of soap are at removing a food stain on cotton fabric and research how soap emulsifies fats and oils. (source_page: 30)" }
+                  ],
+                  "suggested_assessment_activities": [
+                    { "assessment_type": "Oral/Observation", "description": "Listen to discussions about the composition of carbon compounds and the process of fractional distillation and, where appropriate, pose questions to secure understanding. (source_page: 29)" },
+                    { "assessment_type": "Peer Feedback", "description": "Listen to group discussion about methane and invite peer feedback to ensure full understanding. (source_page: 29)" },
+                    { "assessment_type": "Product Assessment", "description": "Evaluate quality of learning through assessment of contributions to discussion and written reports, including about the conversion of glucose sugar to ethanol. (source_page: 29)" }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use Internet to as a research tool for information and images about fractional distillation, production of biogas and the production of soap. (source_page: 30)"
+                    ]
+                  },
+                  "time_allocation": { "periods": 30, "unit": "periods", "source_page": 12 },
+                  "keywords": ["alkanes", "alkenes", "alcohols", "ethanol", "fermentation", "soap", "detergents", "polymers", "crude oil", "fractional distillation"]
+                }
+              ]
+            },
+            {
+              "theme_title": "Structures and Bonds",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHM-L-S3-T1-0002",
+                    "topic_title": "STRUCTURES AND BONDS",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 18
+                  },
+                  "core_competency": "The learner appreciates how atoms are composed of fundamental particles, and how molecules and compounds are composed of atoms. (source_page: 31)",
+                  "learning_outcomes": [
+                    { "outcome_text": "a. understand that atoms are the building blocks from which all matter is made (u)", "domain": "understanding", "source_page": 31 },
+                    { "outcome_text": "b. understand the terms ‘element’, ‘atom’, ‘molecule’ and ‘compound’, and appreciate how they are related (u)", "domain": "understanding", "source_page": 31 },
+                    { "outcome_text": "c. understand how atoms of different elements differ in their subatomic structure (u)", "domain": "understanding", "source_page": 31 },
+                    { "outcome_text": "d. appreciate that atoms are made up of subatomic particles and know the properties of these particles (k, u)", "domain": "knowledge_understanding", "source_page": 31 },
+                    { "outcome_text": "e. understand the terms relative atomic mass, proton number, nucleon number and isotopes (u, s)", "domain": "understanding_skills", "source_page": 31 },
+                    { "outcome_text": "f. understand and appreciate that the atoms of elements join together to form compounds (u, s)", "domain": "understanding_skills", "source_page": 31 },
+                    { "outcome_text": "g. understand the processes involved in the formation of ionic, covalent and metallic bonds (u)", "domain": "understanding", "source_page": 31 },
+                    { "outcome_text": "h. recognise the difference in the physical properties of ionic and covalent compounds and relate them to their bonding (u, s)", "domain": "understanding_skills", "source_page": 31 }
+                  ],
+                  "suggested_learning_activities": [
+                    { "activity_type": "Modeling", "description": "In groups, learners research atomic structure and use their understanding to make models of some simple atoms, showing protons, neutrons and electrons, and include the relative charges and approximate relative masses. (source_page: 31)" },
+                    { "activity_type": "Tabulation", "description": "In groups, learners apply what they know about e.g. water, iron, carbon dioxide, sodium chloride, aluminium, copper (II) oxide, oxygen, hydrochloric acid, chlorine, gold and organise them in a table according to whether they are elements or compounds. (source_page: 31)" },
+                    { "activity_type": "Atomic Representation", "description": "Groups research the elements and write: a. the symbols of elements; b. the standard representation for an atom of any element: (A/Z)X where X = element, A = nucleon number, Z = proton number. (source_page: 31)" }
+                  ],
+                  "suggested_assessment_activities": [
+                    { "assessment_type": "Observation", "description": "Observe how learners draw on prior learning to inform their understanding about elements, atoms, compounds and molecules. (source_page: 31)" },
+                    { "assessment_type": "Evaluation", "description": "Evaluate quality of learning through assessment of products (reports; tables; models; posters) and where appropriate intervene to secure their understanding. (source_page: 31)" }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": ["use Internet to research about isotopes and obtain appropriate simulations. (source_page: 32)"]
+                  },
+                  "time_allocation": { "periods": 18, "unit": "periods", "source_page": 12 },
+                  "keywords": ["atom", "molecule", "compound", "protons", "neutrons", "electrons", "isotopes", "valency", "bonding", "electronic structure"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "Using Equations in Chemistry",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHM-L-S3-T2-0001",
+                    "topic_title": "FORMULAE, STOICHIOMETRY AND MOLE CONCEPT",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 30
+                  },
+                  "core_competency": "The learner should be able to use formulae and equations to determine quantities of matter. (source_page: 32)",
+                  "learning_outcomes": [
+                    { "outcome_text": "a. understand the concepts of relative atomic mass and relative molecular mass (k, u)", "domain": "knowledge_understanding", "source_page": 32 },
+                    { "outcome_text": "b. analyse the relationship between the number of moles and the number of particles (k, u)", "domain": "knowledge_understanding", "source_page": 32 },
+                    { "outcome_text": "c. analyse the relationship between the number of moles of a substance and its mass (k, u)", "domain": "knowledge_understanding", "source_page": 32 },
+                    { "outcome_text": "d. analyse the relationship between the number of moles of a gas and its volume (k, u)", "domain": "knowledge_understanding", "source_page": 32 },
+                    { "outcome_text": "e. synthesise chemical formulae (u)", "domain": "understanding", "source_page": 32 },
+                    { "outcome_text": "f. interpret chemical equations (k, u)", "domain": "knowledge_understanding", "source_page": 32 },
+                    { "outcome_text": "g. practise scientific attitudes and values in investigating matter (u)", "domain": "understanding", "source_page": 32 }
+                  ],
+                  "suggested_learning_activities": [
+                    { "activity_type": "Data Analysis", "description": "In groups, learners collect and interpret data concerning relative atomic mass and relative molecular mass based on carbon-12 scale. (source_page: 32)" },
+                    { "activity_type": "Simulation", "description": "In groups, learners research the mole concept on a computer simulation (where available) and research the relationship between the number of particles in one mole of a substance with the Avogadro constant. (source_page: 32)" },
+                    { "activity_type": "Mind-mapping", "description": "Groups construct a mind-map to show the relationship between number of particles, number of moles, mass of substances and volume of gases at STP and room conditions. (source_page: 32)" },
+                    { "activity_type": "Problem Solving", "description": "Carry out problem solving activities involving number of particles, number of moles, mass of a substance and volume of gases at STP or room conditions. (source_page: 33)" }
+                  ],
+                  "suggested_assessment_activities": [
+                    { "assessment_type": "Conversation", "description": "Listen to group discussion and intervene appropriately to help understanding of relative atomic and molecular mass, and the significance of the Avogadro constant. (source_page: 32)" },
+                    { "assessment_type": "Product Assessment", "description": "Evaluate quality of learning through assessment of products and presentations, encouraging group feedback. (source_page: 32)" }
+                  ],
+                  "time_allocation": { "periods": 30, "unit": "periods", "source_page": 12 },
+                  "keywords": ["mole concept", "avogadro constant", "molar volume", "relative atomic mass", "molecular mass", "stp", "iupac nomenclature", "empirical formula", "stoichiometry"]
+                }
+              ]
+            },
+            {
+              "theme_title": "Structures of substances",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHM-L-S3-T2-0002",
+                    "topic_title": "PROPERTIES AND STRUCTURES OF SUBSTANCES",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 18
+                  },
+                  "core_competency": "The learner appreciates that in a chemical reaction, starting materials or reactants interact to form products. (source_page: 34)",
+                  "learning_outcomes": [
+                    { "outcome_text": "a. understand the concepts of relative atomic mass and relative molecular mass (k, u)", "domain": "knowledge_understanding", "source_page": 34 },
+                    { "outcome_text": "b. analyse the relationship between the number of moles and the number of particles (k, u)", "domain": "knowledge_understanding", "source_page": 34 },
+                    { "outcome_text": "c. analyse the relationship between the number of moles of a substance and its mass (k, u)", "domain": "knowledge_understanding", "source_page": 34 },
+                    { "outcome_text": "d. analyse the relationship between the number of moles of a gas and its volume (k, u)", "domain": "knowledge_understanding", "source_page": 34 },
+                    { "outcome_text": "e. synthesise chemical formulae (u)", "domain": "understanding", "source_page": 34 },
+                    { "outcome_text": "f. interpret chemical equations (k, u)", "domain": "knowledge_understanding", "source_page": 34 },
+                    { "outcome_text": "g. practise scientific attitudes and values in investigating matter (u)", "domain": "understanding", "source_page": 34 }
+                  ],
+                  "suggested_learning_activities": [
+                    { "activity_type": "Research/Poster", "description": "In groups or pairs, learners research and report on the physical properties of giant molecular, giant ionic and giant metallic structures and explain the differences in physical properties in a poster or presentation. (source_page: 34)" },
+                    { "activity_type": "Equation Writing", "description": "Write equations for common covalent reactions and show that some bonds are broken, and others are formed. (source_page: 34)" },
+                    { "activity_type": "Calculation", "description": "Carry out simple stoichiometric calculations using the mole concept. (source_page: 34)" }
+                  ],
+                  "suggested_assessment_activities": [
+                    { "assessment_type": "Observation", "description": "Observe groups involved in activities and check their understanding about chemical reactions using the mole concept. (source_page: 34)" },
+                    { "assessment_type": "Product Evaluation", "description": "Evaluate learning through products: reports, posters, presentations, balanced equations, stoichiometric calculations. (source_page: 34)" }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use equation editor to write balanced chemical equations for common chemical reactions. (source_page: 34)",
+                      "use spreadsheets to carry out simple stoichiometric calculations. (source_page: 34)"
+                    ]
+                  },
+                  "time_allocation": { "periods": 18, "unit": "periods", "source_page": 12 },
+                  "keywords": ["giant molecular", "giant ionic", "giant metallic", "chemical reactions", "stoichiometric calculations", "covalent reactions", "bond breaking", "reactants", "products"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "Fuels and energy",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHM-L-S3-T3-0001",
+                    "topic_title": "FOSSIL FUELS",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 20
+                  },
+                  "core_competency": "The learner understands the origins of fossil fuels and appreciates their importance as an energy resource. (source_page: 35)",
+                  "learning_outcomes": [
+                    { "outcome_text": "a. understand the types and origins of fossil fuels and why they can be used as sources of energy and useful materials. (u, s)", "domain": "understanding_skills", "source_page": 35 }
+                  ],
+                  "suggested_learning_activities": [
+                    { "activity_type": "Research/Brainstorming", "description": "In pairs, learners brainstorm and research common fossil fuels and produce reports explaining: why they all contain carbon; how they were formed; how they can be used as sources of energy; why they are described as non-renewable and unsustainable. (source_page: 35)" }
+                  ],
+                  "suggested_assessment_activities": [
+                    { "assessment_type": "Observation", "description": "Observe pair interaction and engagement in the activity, intervening to ensure all make progress. (source_page: 35)" },
+                    { "assessment_type": "Report Evaluation", "description": "Evaluate learning through quality of reports. (source_page: 35)" }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": ["use the Internet to research fossil fuels. (source_page: 35)"]
+                  },
+                  "time_allocation": { "periods": 20, "unit": "periods", "source_page": 12 },
+                  "keywords": ["fossil fuels", "carbon", "coal", "oil", "gas", "non-renewable", "sustainability", "energy source"]
+                }
+              ]
+            },
+            {
+              "theme_title": "Reactants and Products",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHM-L-S3-T3-0002",
+                    "topic_title": "CHEMICAL REACTIONS",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 28
+                  },
+                  "core_competency": "The learner understands the effects of external conditions on rate of reaction and how this can be explained in terms of a kinetic particle model. (source_page: 35)",
+                  "learning_outcomes": [
+                    { "outcome_text": "a. understand and appreciate that chemical reactions take place at different rates (u)", "domain": "understanding", "source_page": 35 },
+                    { "outcome_text": "b. understand the effect of various factors on the rate of chemical reactions and recognise that many reactions are reversible (u, s)", "domain": "understanding_skills", "source_page": 35 },
+                    { "outcome_text": "c. Understand the importance of reversible reactions in industrial processes (u)", "domain": "understanding", "source_page": 35 }
+                  ],
+                  "suggested_learning_activities": [
+                    { "activity_type": "Investigation", "description": "In groups, learners plan, carry out and report on several investigations to find out how temperature, the concentration of reactants and particle size affect the rate of chemical reactions, identifying whether reactions can be reversed or not. (source_page: 35)" },
+                    { "activity_type": "Research/Flow Chart", "description": "Individually, learners research examples of reversible reactions, including the reversible steps in the industrial manufacture of sulphuric acid, and explain, using a flow chart. (source_page: 35)" }
+                  ],
+                  "suggested_assessment_activities": [
+                    { "assessment_type": "Observation", "description": "Observe learners planning and carrying out investigations, check that their procedures will lead to meaningful results. (source_page: 35)" },
+                    { "assessment_type": "Evaluation", "description": "Evaluate quality of learning and progress through assessment of products: reports on procedures and effects of factors on rates; recognition of significance of reversible/irreversible reactions. (source_page: 35)" }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": ["use an online or downloaded simulation to illustrate key aspects of chemical reactions. (source_page: 35)"]
+                  },
+                  "time_allocation": { "periods": 28, "unit": "periods", "source_page": 12 },
+                  "keywords": ["reaction rates", "temperature", "concentration", "particle size", "reversible reactions", "sulphuric acid", "industrial manufacture", "catalyst"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]}

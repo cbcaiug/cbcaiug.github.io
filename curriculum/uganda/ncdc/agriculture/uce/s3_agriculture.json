@@ -1,0 +1,1187 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — Populated from Lower Secondary Curriculum - Agriculture Syllabus (NCDC, 2019).",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Agriculture",
+        "level": "Lower Secondary",
+        "class_group": "Senior Three",
+        "year": "2019",
+        "version": "1.0",
+        "source_document": "Agriculture Syllabus_Final.pdf"
+    },
+    "global_framework": {
+        "competencies": [
+            "The learner selects desirable cattle for production and breeding and carries out all processes involved in their rearing",
+            "The learner makes animal feeds based on nutritional requirements, using feed ingredients available for maximum nutrition and optimal economic production",
+            "The learner identifies, establishes, manages, and conserves nutritive pasture",
+            "The learner identifies, establishes, manages, and produces crops using hydroponic systems",
+            "The learner understands the importance of prudent financial management and uses knowledge and skills to manage financial resources effectively",
+            "The learner establishes a cost effective and functional farm building and farm structure"
+        ],
+        "generic_skills": [
+            "Critical thinking and problem solving",
+            "Creativity and innovation",
+            "Communication",
+            "Co-operation and Self-directed Learning",
+            "Mathematical Computation and ICT Proficiency"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [
+            "Self-assured individuals",
+            "Responsible and patriotic citizens",
+            "Lifelong learners",
+            "Positive contributors to society"
+        ],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Three",
+            "class_code": "S3",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "ANIMAL PRODUCTION",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S3-T1-0001",
+                                        "topic_title": "TOPIC 3.1: CATTLE PRODUCTION",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 48,
+                                        "keywords": [
+                                            "cattle breeds",
+                                            "digestive system",
+                                            "reproductive system",
+                                            "artificial insemination",
+                                            "nutrition",
+                                            "diseases",
+                                            "parasites",
+                                            "milk production"
+                                        ]
+                                    },
+                                    "core_competency": "The learner selects desirable cattle for production and breeding and carries out all processes involved in their rearing",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "distinguish different breeds of cattle and describe their characteristics (k,u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand the physical characteristics of cattle with potential for rearing profitably, and show skills in selecting the best breed for rearing (u,s,v)",
+                                            "domain": "Skills/Values"
+                                        },
+                                        {
+                                            "outcome_text": "understand the internal organs and outline their functions, particularly the digestive system and related physiological processes (u,s,v)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand female and male reproductive systems(u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand and outline the different breeding and selection systems used in cattle(u,s)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "apply artificial insemination in rearing of cattle (u, s,v)",
+                                            "domain": "Application"
+                                        },
+                                        {
+                                            "outcome_text": "understand the significance of good nutrition in rearing of cattle, and be able to prepare a balanced ration and various feeds required by dairy cattle at different stages from locally available foodstuff (u, s, v)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "make efficient use of high-quality roughage in rearing cattle (u,s,v)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "distinguish between and evaluate different cattle management systems (u,s,v)",
+                                            "domain": "Evaluation"
+                                        },
+                                        {
+                                            "outcome_text": "show skills in prevention and control of diseases and parasites affecting cattle (k, u,s,v)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "detect milk abnormalities using a strip cup(s, v, a)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "keep records of breeding, management, and production (k, u, s,a, v)",
+                                            "domain": "Application"
+                                        },
+                                        {
+                                            "outcome_text": "carry out identification, dehorning, and castration in cattle (u, s, a,v)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand the importance of milking techniques and clean milk/meat production(u, a,v)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "show skills in handling cattle products and bi-products(s, a,v)",
+                                            "domain": "Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Breeds of cattle (Ankole, Sanga, Zebu, Boran, Friesian, Jersey, and Guernsey)",
+                                            "Digestive and reproductive systems",
+                                            "Breeding and selection systems",
+                                            "Artificial insemination",
+                                            "Nutrition and balanced rations",
+                                            "Diseases and parasites (red water, heart water, foot and mouth disease, anthrax, roundworm, and ticks)",
+                                            "Milk abnormalities testing",
+                                            "Record keeping",
+                                            "Dehorning and castration",
+                                            "Milking techniques"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Field Visit",
+                                            "description": "As a class, learners visit a farm to observe and identify the characteristics of the most important breeds of cattle (Ankole, Sanga, Zebu, Boran, Friesian, Jersey, and Guernsey). Witness different stages in the process of rearing, breeding, and marketing products. Individuals record conclusions in a learning log."
+                                        },
+                                        {
+                                            "activity_type": "Research/Discussion",
+                                            "description": "In groups, learners carry out research and review learning from farm visit to select a breed of cattle to rear; present and discuss conclusions with the class and record decisions and reasons in learning logs."
+                                        },
+                                        {
+                                            "activity_type": "Practical/Dissection",
+                                            "description": "As class or group, learners carry out or view a dissection to identify, draw and state the functions of them in parts of the digestive and reproductive systems."
+                                        },
+                                        {
+                                            "activity_type": "Research/Report",
+                                            "description": "In groups, learners research, discuss, and report on the different breeding systems (in breeding, line breeding, crossbreeding and upgrading) and select systems, their advantages, and disadvantages."
+                                        },
+                                        {
+                                            "activity_type": "Research/Report",
+                                            "description": "In groups, learners research and report to the class on the nutritional requirements of cattle at different stages; the meaning of a balanced ration, suitable, locally-available foodstuffs, and the value of high-quality roughage."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "As a group, learners explore, discuss, and report on the suitability of different cattle management systems for dairy and beef cattle."
+                                        },
+                                        {
+                                            "activity_type": "Case Study",
+                                            "description": "In pairs, using case studies, and other sources, learners compare extensive, semi-extensive and intensive management systems."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "In groups, learners discuss and present to the class on: the symptoms and causes of the most important diseases and parasites such as red water, heart water, foot and mouth disease, anthrax, roundworm, and ticks; how to prevent and control diseases and parasites."
+                                        },
+                                        {
+                                            "activity_type": "Lecture/Discussion",
+                                            "description": "legislation on animal diseases with specific reference to notifiable diseases and animal movements"
+                                        },
+                                        {
+                                            "activity_type": "Practical Skills",
+                                            "description": "In pairs, learners practice skills in; identifying, preventing, and treating diseases and parasites; artificial insemination; testing for milk abnormalities using a strip cup; record keeping, such as the animal register, record cards, record sheets and tagging, identification marks, plus chips; using ICT where applicable; dehorning and castration. Individuals record key learning points in learning logs"
+                                        },
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "As a class, learners investigate the range of dairy and beef cattle products, suggest, and report on ways of marketing them."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners developing practical skills in relation to selecting and caring for cattle. Intervene and provide support to ensure that they make good progress and achieve learning outcomes. Observe pair and group interactions and ensure that all are participating and making best use of learning opportunities."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ conversations and contributions to pair, group and class discussion. Ask probing questions and lead them to further develop their thinking and deepen their understanding."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products: learning logs; dissection drawings and functions; reports on breeding systems, nutritional requirements and cattle management systems; comparisons of extensive and intensive systems; presentations on diseases and parasites: quality of practical work on prevention and treatment of diseases and parasites, artificial insemination, milk testing, record- keeping, dehorning and castration; reports on products and marketing; presentation on diseases and parasites; report on the range dairy and beef cattle products"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe collaboration, creativity, and communication, leadership, as well as critical thinking when learners are carrying out the animal husbandry process."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Cattle Dissection (or observation)",
+                                                "description_verbatim": "As class or group, learners carry out or view a dissection to identify, draw and state the functions of them in parts of the digestive and reproductive systems.",
+                                                "min_trials_or_reps": "1",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "33"
+                                            },
+                                            {
+                                                "title": "Husbandry Skills",
+                                                "description_verbatim": "In pairs, learners practice skills in; identifying, preventing, and treating diseases and parasites; artificial insemination; testing for milk abnormalities using a strip cup; record keeping... dehorning and castration",
+                                                "min_trials_or_reps": "1",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [
+                                                    "strip cup",
+                                                    "record cards",
+                                                    "tagging equipment",
+                                                    "dehorning equipment",
+                                                    "castration equipment"
+                                                ],
+                                                "source_page": "34"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "investigate the range of dairy and beef cattle products",
+                                            "assessment_method": "Report"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 48,
+                                        "unit": "periods",
+                                        "source_page": "33"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "using ICT where applicable"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "legislation on animal diseases with specific reference to notifiable diseases and animal movements",
+                                            "note_type": "clarification",
+                                            "source_page": "34"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "ANIMAL PRODUCTION",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S3-T2-0001",
+                                        "topic_title": "TOPIC 3.2: LIVESTOCK FEED MAKING",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 24,
+                                        "keywords": [
+                                            "livestock feeds",
+                                            "feed ingredients",
+                                            "compound feeds",
+                                            "mineral supplements",
+                                            "nutrition",
+                                            "feed processing"
+                                        ]
+                                    },
+                                    "core_competency": "The learner makes animal feeds based on nutritional requirements, using feed ingredients available for maximum nutrition and optimal economic production.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "know the range and types of livestock feeds(k ,a,v)",
+                                            "domain": "Knowledge/Attitudes/Values"
+                                        },
+                                        {
+                                            "outcome_text": "know the ingredients and understand the technique for making livestock feeds according to specific animal requirements (k, u ,a, v)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "know how to: i. prepare and process a single material feed for livestock(k, v) ii. prepare air-dried livestock compound feeds(k, v) iii. make dry season livestock feeds(k, v) iv. blend prepared livestock feeds(k, v)",
+                                            "domain": "Skills/Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "know how to make mineral supplements (k, v)",
+                                            "domain": "Skills/Knowledge"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Range and types of livestock feeds",
+                                            "Ingredients for livestock feeds",
+                                            "Techniques for making livestock feeds",
+                                            "Preparation of single material feed",
+                                            "Preparation of air-dried livestock compound feeds",
+                                            "Making dry season livestock feeds",
+                                            "Blending prepared livestock feeds",
+                                            "Mineral supplements"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Brainstorm/Research",
+                                            "description": "In groups, learners brainstorm and research on the range and types of feeds available for different livestock, and share their conclusions with the class."
+                                        },
+                                        {
+                                            "activity_type": "Research/Calculation",
+                                            "description": "In groups, learners research on how to prepare a compound blend of livestock feeds (like. calf pellet, calf weaner, sow weaner, chick and duck mash, broiler starter, broiler finisher, layer mash, rabbit pellet and fish meal) using simple mathematical calculations to ensure the right balance of nutrients in the feeds. After class discussion, individuals record the process in their learning logs."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "In groups, learners prepare, calculate quantities of ingredients, and make compound feeds (types in outcomes column) from available materials for a selected livestock in order to reduce costs."
+                                        },
+                                        {
+                                            "activity_type": "Research/Practical",
+                                            "description": "In pairs, learners research and report on mineral needs of different livestock and make mineral supplements for selected livestock."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners developing practical skills in relation to understanding and making animal feeds. Intervene and provide support to ensure that they make good progress, develop skills, and achieve learning outcomes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ conversations and contributions to pair, group and class discussion. Ask probing questions to promote critical thinking, deepen understanding and improve skills in livestock feed making to earn income."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products: conclusions regarding range and types of feeds; reasoning and calculations of animal feed formulations; quality of feeds produced; reports on mineral supplements and quality of supplements made."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners’ creativity in livestock feed making."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Making Compound Feeds",
+                                                "description_verbatim": "In groups, learners prepare, calculate quantities of ingredients, and make compound feeds (types in outcomes column) from available materials for a selected livestock",
+                                                "min_trials_or_reps": "1",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "35"
+                                            },
+                                            {
+                                                "title": "Making Mineral Supplements",
+                                                "description_verbatim": "make mineral supplements for selected livestock",
+                                                "min_trials_or_reps": "1",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "35"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "35"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "CROP PRODUCTION (EITHER)",
+                            "theme_description": "The school chooses EITHER Pasture management and conservation OR Hydroponic farming",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S3-T2-0002",
+                                        "topic_title": "TOPIC 3.2.1: PASTURE MANAGEMENT OR CONSERVATION",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 24,
+                                        "keywords": [
+                                            "pasture types",
+                                            "soil erosion",
+                                            "irrigation",
+                                            "botanical composition",
+                                            "pasture conservation",
+                                            "grazing plan"
+                                        ]
+                                    },
+                                    "core_competency": "The learner identifies, establishes, manages, and conserves nutritive pasture.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "identify and describe different types of pasture (k, u, s,v)",
+                                            "domain": "Knowledge/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "evaluate the quality of natural pasture land and improve it (u, s,a)",
+                                            "domain": "Evaluation"
+                                        },
+                                        {
+                                            "outcome_text": "select appropriate plant species to improve the botanical composition of a pasture land (u,s, a,v)",
+                                            "domain": "Skills/Application"
+                                        },
+                                        {
+                                            "outcome_text": "select appropriate planting material for growing pastures (u, s, a,v)",
+                                            "domain": "Skills/Application"
+                                        },
+                                        {
+                                            "outcome_text": "show skills in managing and conserving pastures (u, s, a,v)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "show creativity in using available waste resources to grow irrigated crops (u,s, a, v)",
+                                            "domain": "Creativity/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand the causes of soil erosion, how soil can be conserved, and apply learning in practice (u, s, a,v)",
+                                            "domain": "Understanding/Application"
+                                        },
+                                        {
+                                            "outcome_text": "understand and apply learning in relation to the importance of the conservation of soil moisture (u,s, a,v)",
+                                            "domain": "Understanding/Application"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Types of pasture",
+                                            "Quality of natural pasture",
+                                            "Botanical composition of pasture",
+                                            "Planting material for pastures",
+                                            "Managing and conserving pastures",
+                                            "Irrigation using waste resources",
+                                            "Soil erosion and conservation",
+                                            "Soil moisture conservation"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "As a class, learners brainstorm and research on different pastures and ways of improving a natural pasture; including its botanical composition. Individuals record class conclusions."
+                                        },
+                                        {
+                                            "activity_type": "Discussion/Selection",
+                                            "description": "In pairs, learners discuss and select plant species for pastures using given criteria and report the reasons for their selection to the class"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Gardening",
+                                            "description": "As a class, learners grow a pasture garden carrying out the different agronomic practices (land preparation, botanical composition selection, planting, applying fertilizer, weeding, utilising shade trees and water points) Individuals keep learning logs."
+                                        },
+                                        {
+                                            "activity_type": "Design",
+                                            "description": "In groups, learners design and present a grazing plan including pasture conservation measures to ensure pasture is harvested sustainably."
+                                        },
+                                        {
+                                            "activity_type": "Construction/Irrigation",
+                                            "description": "In groups, learners design and create a simple drip irrigation system which can supply enough water to a 5m x 2m garden using: pole stands/hangers, a plastic bucket, PVC pipe or rubber tubing, used pet bottles, strings, and pipe fittings Groups present an evaluative report of the system’s effectiveness."
+                                        },
+                                        {
+                                            "activity_type": "Research/Presentation",
+                                            "description": "In groups, learners research on soil and moisture conservation measures in pasture areas and present their conclusions to the class."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners developing practical skills in relation to planting and managing pasture. Intervene and provide support to ensure that they make good progress and achieve learning outcomes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ conversations and contributions to pair, group, and class discussion. Ask probing questions and lead them to further develop their thinking, deepen their understanding, and improve their skills in pasture conservation for income."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products and make conclusions regarding types of pasture and improvement strategies. Reports on plant species selection, quality of pasture produced, and irrigation systems. Make learning logs, grazing plans, and reports and conclusions regarding soil and moisture conservation."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe how learners collaborate during pasture conservation and in designing a simple drip irrigation system."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Pasture Garden",
+                                                "description_verbatim": "As a class, learners grow a pasture garden carrying out the different agronomic practices",
+                                                "min_trials_or_reps": "1",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "36"
+                                            },
+                                            {
+                                                "title": "Drip Irrigation System",
+                                                "description_verbatim": "In groups, learners design and create a simple drip irrigation system which can supply enough water to a 5m x 2m garden",
+                                                "min_trials_or_reps": "1",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [
+                                                    "pole stands/hangers",
+                                                    "plastic bucket",
+                                                    "PVC pipe or rubber tubing",
+                                                    "used pet bottles",
+                                                    "strings",
+                                                    "pipe fittings"
+                                                ],
+                                                "source_page": "36"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "research on soil and moisture conservation measures in pasture areas",
+                                            "assessment_method": "Presentation"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "36"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "EITHER Pasture management and conservation OR Hydroponic farming",
+                                            "note_type": "constraint",
+                                            "source_page": "36"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "CROP PRODUCTION (OR)",
+                            "theme_description": "The school chooses EITHER Pasture management and conservation OR Hydroponic farming",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S3-T2-0003",
+                                        "topic_title": "TOPIC 3.2.2: HYDROPONICS FARMING",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 24,
+                                        "keywords": [
+                                            "hydroponics",
+                                            "open systems",
+                                            "closed systems",
+                                            "growth media",
+                                            "agrochemicals",
+                                            "marketing"
+                                        ]
+                                    },
+                                    "core_competency": "The learner identifies, establishes, manages, and produces crops using hydroponic systems.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "know the meaning and understand the principles of hydroponics (k,u, a,v)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "distinguish between and explain open and closed hydroponic systems (u, s, a)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand how to select an appropriate hydroponic system and media to suit the requirements of different plants (u,s, a,v)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand and apply the practical steps involved in growing crops in the hydroponic farming system (u,s, a,v)",
+                                            "domain": "Application"
+                                        },
+                                        {
+                                            "outcome_text": "budget and estimate the construction costs of a selected hydroponic farming system (u,s, a,v)",
+                                            "domain": "Skills/Application"
+                                        },
+                                        {
+                                            "outcome_text": "know how to apply agrochemicals in the hydroponic garden for increased production(k, a,v)",
+                                            "domain": "Knowledge/Application"
+                                        },
+                                        {
+                                            "outcome_text": "understand how to market crops produced in hydroponic farming system (u, a, v)",
+                                            "domain": "Understanding/Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Principles of hydroponics",
+                                            "Open and closed hydroponic systems",
+                                            "Selection of hydroponic system and media",
+                                            "Growing crops in hydroponic systems",
+                                            "Construction costs and budgeting",
+                                            "Agrochemical application",
+                                            "Marketing hydroponic crops"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In groups, learners brainstorm and research on the meaning, principles, models, and advantages of hydroponic farming systems and share conclusions with the class."
+                                        },
+                                        {
+                                            "activity_type": "Discussion/Selection",
+                                            "description": "In groups, learners discuss and select the crop(s) to grow, the hydroponic system to adopt, and the appropriate media to use. Individuals report their conclusions and the reasons for them."
+                                        },
+                                        {
+                                            "activity_type": "Research/Case Study",
+                                            "description": "In pairs, learners research on and read case studies regarding how to set up and manage hydroponic farming systems and produce a plan for their hydroponic garden."
+                                        },
+                                        {
+                                            "activity_type": "Budgeting",
+                                            "description": "In groups, learners develop a budget for their hydroponic unit and procure the materials required to establish the garden."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "In pairs, learners set up and manage a hydroponic farming unit, keeping proper records and learning logs."
+                                        },
+                                        {
+                                            "activity_type": "Marketing Plan",
+                                            "description": "In pairs, learners develop, implement and report a marketing plan for the crops produced."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners developing practical skills in relation to planning and operating a hydroponic system. Intervene and provide support to ensure that they make good progress and achieve learning outcomes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ conversations and contributions to pair, group, and class discussion. Ask probing questions and lead them to further develop their thinking, deepen their understanding and improve skills of hydroponic gardens to earn income."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products and make conclusions regarding meaning, principles, types, and advantages of hydroponics. Make conclusions on selection of crops and systems; plan and budgets for actual hydroponic system set-ups and marketing plans."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe how learners collaborate during the operation of hydroponic farming system."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Hydroponic Farming Unit",
+                                                "description_verbatim": "In pairs, learners set up and manage a hydroponic farming unit, keeping proper records and learning logs.",
+                                                "min_trials_or_reps": "1",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "37"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "research on and read case studies regarding how to set up and manage hydroponic farming systems",
+                                            "assessment_method": "Plan production"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "37"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "OR TOPIC 3.2.2: HYDROPONICS FARMING",
+                                            "note_type": "constraint",
+                                            "source_page": "37"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "AGRICULTURAL ECONOMICS",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S3-T3-0001",
+                                        "topic_title": "TOPIC 3.3: FINANCIAL SERVICES AND MONEY IN AGRICULTURE",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 24,
+                                        "keywords": [
+                                            "financial literacy",
+                                            "investment",
+                                            "saving culture",
+                                            "banks",
+                                            "budgeting",
+                                            "needs and wants"
+                                        ]
+                                    },
+                                    "core_competency": "The learner understands the importance of prudent financial management and uses knowledge and skills to manage financial resources effectively.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the difference between needs and wants (u ,a,v)",
+                                            "domain": "Understanding/Values"
+                                        },
+                                        {
+                                            "outcome_text": "explain the five core pillars of financial literacy (a, v, u)",
+                                            "domain": "Understanding/Values"
+                                        },
+                                        {
+                                            "outcome_text": "know the difference between investment and saving (k,u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand the importance of the saving culture (u, s, a,v)",
+                                            "domain": "Understanding/Values"
+                                        },
+                                        {
+                                            "outcome_text": "know the different types of banks and bank accounts (k, a, u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "demonstrate the ability to open a bank account (s, a,v)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "show skills in budgeting using spread-sheets/Excel, or books and calculators (s,a)",
+                                            "domain": "Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Needs vs Wants",
+                                            "Five core pillars of financial literacy (earning, saving, spending, budgeting, and borrowing)",
+                                            "Investment vs Saving",
+                                            "Saving culture",
+                                            "Types of banks and bank accounts",
+                                            "Opening a bank account",
+                                            "Budgeting (using spreadsheets or books)"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "In groups, learners plan and present a role play to show a conversation between two young farmers; one who appreciates the need for careful budget management and one who does not, followed by a whole class discussion to draw conclusions."
+                                        },
+                                        {
+                                            "activity_type": "Sorting Activity",
+                                            "description": "In groups, learners study pictures of common items used in the home and sort them into wants and needs (like. radio, matooke, shoes, a ball, water, Coke/ Pepsi drink, fish, sunglasses, ice cream, cake, plate, school uniform, medical care, mobile phone, hair oil, etc.). Groups suggest examples of needs and wants of a farmer."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "In groups or pairs, learners discuss and record the meaning and importance of the core pillars of financial literacy (earning, saving, spending, budgeting, and borrowing)"
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "In groups, learners brainstorm on saving and investment: meaning of saving and investment, reasons for saving and investing, and methods of saving and investing money. Make saving and investment plans; discuss reasons why farmers may want to save or invest, and the risks of doing so and of not doing so. Individuals report on conclusions."
+                                        },
+                                        {
+                                            "activity_type": "Research/Report",
+                                            "description": "In groups, learners’ research, read case studies, and complete a report on the functions of different types of banks and bank accounts."
+                                        },
+                                        {
+                                            "activity_type": "Simulation",
+                                            "description": "Individually, learners use templates and dummies from a financial institution to imitate opening a bank account with the school bursar’s office."
+                                        },
+                                        {
+                                            "activity_type": "Practical/Budgeting",
+                                            "description": "In pairs, learners practise budgeting (for a farming initiative), using a spreadsheet or a book and calculator."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they engage in learning activities. Intervene and provide support to ensure that they make good progress, improve their understanding, develop skills, and achieve learning outcomes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ conversations and contributions to pair, group and class discussion. Ask probing questions to promote critical thinking, deepen understanding and improve skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products; role plays on the need for budget management in farming, conclusions regarding wants and needs, and understanding of the pillars of financial literacy. Reporting on saving and investment, mock applications for bank accounts, and budgeting skills shown in spreadsheets/ accounts books."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners’ creativity in making budgets and demonstration of critical thinking."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Mock Bank Account Opening",
+                                                "description_verbatim": "Individually, learners use templates and dummies from a financial institution to imitate opening a bank account with the school bursar’s office.",
+                                                "min_trials_or_reps": "1",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [
+                                                    "templates and dummies from a financial institution"
+                                                ],
+                                                "source_page": "38"
+                                            },
+                                            {
+                                                "title": "Budgeting",
+                                                "description_verbatim": "In pairs, learners practise budgeting (for a farming initiative), using a spreadsheet or a book and calculator.",
+                                                "min_trials_or_reps": "1",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [
+                                                    "spreadsheet",
+                                                    "book",
+                                                    "calculator"
+                                                ],
+                                                "source_page": "38"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "research, read case studies, and complete a report on the functions of different types of banks and bank accounts",
+                                            "assessment_method": "Report"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "38"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "budgeting using spread-sheets/Excel"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "AGRICULTURAL MACHINERY",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S3-T3-0002",
+                                        "topic_title": "TOPIC 3.4: FARM BUILDINGS AND FARM STRUCTURES",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 24,
+                                        "keywords": [
+                                            "building tools",
+                                            "concrete mixing",
+                                            "brick making",
+                                            "construction",
+                                            "roofing materials",
+                                            "farm structures"
+                                        ]
+                                    },
+                                    "core_competency": "The learner establishes a cost effective and functional farm building and farm structure.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "show skills in handling building tools correctly and safely (k, u,s, a,v)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand and perform the processes of concrete mixing, mortar mixing, brick making, plastering and painting of farm structures and farm building (u,s, a,v)",
+                                            "domain": "Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "know appropriate types of housing for different animals (k, u, a,v)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "budget and procure materials for establishing farm buildings and farm structures (k, u, a,v)",
+                                            "domain": "Skills/Application"
+                                        },
+                                        {
+                                            "outcome_text": "show skills in constructing farm building and structures(s, a,v)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "know how to use locally available materials for roofing (k, s, a,v)",
+                                            "domain": "Skills/Knowledge"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Handling building tools",
+                                            "Concrete mixing, mortar mixing",
+                                            "Brick making",
+                                            "Plastering and painting",
+                                            "Types of housing for different animals",
+                                            "Budgeting and procurement",
+                                            "Constructing farm buildings and structures",
+                                            "Roofing with locally available materials"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "In pairs or individually, learners practice and demonstrate proper use of the following tools: spirit level, builder’s square, spot board, claw hammer, bar line, trowel, tape measure, wheelbarrow, and shovel."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "As a class or in groups, learners practice and demonstrate the process of mixing concrete or mortar using the correct ratio of materials."
+                                        },
+                                        {
+                                            "activity_type": "Practical/Brick Making",
+                                            "description": "In groups, learners practice making bricks using locally available materials: sun dried mud bricks, soil cement bricks, and fire- baked bricks and find out how to earn from it."
+                                        },
+                                        {
+                                            "activity_type": "Practical/Construction",
+                                            "description": "Individually or in pairs, learners demonstrate building skills including brick laying, plastering and painting of farm buildings and structures."
+                                        },
+                                        {
+                                            "activity_type": "Practical/Roofing",
+                                            "description": "In groups, learners identify and source locally available roofing materials and demonstrate how to use them."
+                                        },
+                                        {
+                                            "activity_type": "Planning/Budgeting",
+                                            "description": "In groups, learners research on appropriate farm buildings for different animals and plan a farm building or structure accordingly. Use an Excel/spreadsheet or books and a calculator to develop a budget for it."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners developing practical skills in relation to farm buildings and structures. Intervene and provide support to ensure that they make good progress, develop their skills, and achieve learning outcomes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ conversations and contributions to pair and group discussions. Ask probing questions to sharpen techniques, promote critical thinking, deepen understanding, and improve individuals’ skills."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products: demonstrations of use of tools; quality of mixed mortar and concrete; quality of bricks made; quality of brick- laying, plastering and painting; quality of materials and roofing; conclusions about appropriate farm buildings for different animals, and quality of budgeting."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners’ creativity, collaboration, and communication skills in dealing with farm building construction and farm structure manufacture."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Tool Handling",
+                                                "description_verbatim": "In pairs or individually, learners practice and demonstrate proper use of the following tools: spirit level, builder’s square, spot board, claw hammer, bar line, trowel, tape measure, wheelbarrow, and shovel.",
+                                                "min_trials_or_reps": "1",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [
+                                                    "spirit level",
+                                                    "builder’s square",
+                                                    "spot board",
+                                                    "claw hammer",
+                                                    "bar line",
+                                                    "trowel",
+                                                    "tape measure",
+                                                    "wheelbarrow",
+                                                    "shovel"
+                                                ],
+                                                "source_page": "39"
+                                            },
+                                            {
+                                                "title": "Concrete/Mortar Mixing",
+                                                "description_verbatim": "As a class or in groups, learners practice and demonstrate the process of mixing concrete or mortar using the correct ratio of materials.",
+                                                "min_trials_or_reps": "1",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "39"
+                                            },
+                                            {
+                                                "title": "Brick Making",
+                                                "description_verbatim": "In groups, learners practice making bricks using locally available materials: sun dried mud bricks, soil cement bricks, and fire- baked bricks",
+                                                "min_trials_or_reps": "1",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "39"
+                                            },
+                                            {
+                                                "title": "Building Skills",
+                                                "description_verbatim": "Individually or in pairs, learners demonstrate building skills including brick laying, plastering and painting of farm buildings and structures.",
+                                                "min_trials_or_reps": "1",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "39"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "research on appropriate farm buildings for different animals and plan a farm building or structure accordingly",
+                                            "assessment_method": "Plan/Budget"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "39"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use an Excel/spreadsheet or books and a calculator to develop a budget"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

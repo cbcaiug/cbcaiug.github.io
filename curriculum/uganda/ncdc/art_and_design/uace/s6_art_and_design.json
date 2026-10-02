@@ -1,0 +1,1565 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre",
+        "curriculum_name": "Advanced Secondary Curriculum",
+        "subject": "Art & Design",
+        "level": "A-level",
+        "class_group": "Senior Six",
+        "year": "2025",
+        "version": "1.0",
+        "source_document": "ART & DESIGN SYLLABUS ADVANCED SECONDARY CURRICULUM"
+    },
+    "global_framework": {
+        "competencies": [
+            "Critical thinking and problem-solving",
+            "Co-operation and Self-Directed Learning",
+            "Creativity and Innovation",
+            "Communication",
+            "Mathematical Computation",
+            "Information and Communication Technology (ICT) Proficiency",
+            "Diversity and Multicultural Skills"
+        ],
+        "generic_skills": [
+            "Planning and carrying out investigations",
+            "Sorting and analysing information",
+            "Identifying problems and proposing solutions",
+            "Predicting outcomes and making reasoned decisions",
+            "Evaluating different solutions",
+            "Working effectively in diverse teams",
+            "Interacting effectively with others",
+            "Taking responsibility for own learning",
+            "Working independently with persistence",
+            "Managing goals and time",
+            "Using imaginations to explore possibilities",
+            "Working with others to generate ideas",
+            "Suggesting and developing new solutions",
+            "Experimenting with innovative alternatives",
+            "Looking for patterns and making generalisation",
+            "Listening attentively and with comprehension",
+            "Talking confidently and explaining ideas/opinions clearly",
+            "Reading accurately and fluently",
+            "Writing and presenting information coherently",
+            "Using a range of media to communicate ideas",
+            "Using numbers and measurements accurately",
+            "Interpreting and interrogating mathematical data",
+            "Using mathematics to justify and support decisions",
+            "Using technology to create, manipulate and process information",
+            "Using technology to collaborate, communicate and refine work",
+            "Appreciate cultural diversity",
+            "Respectfully responding to people of all cultures",
+            "Respecting positive cultural practices",
+            "Appreciating ethnicity as a cradle for creativity and innovation"
+        ],
+        "values": [
+            "Respect for humanity and the environment",
+            "Honesty, upholding and defending the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovation",
+            "Social responsibility",
+            "Social harmony",
+            "National unity",
+            "National consciousness and patriotism"
+        ],
+        "attitudes": [
+            "Positive attitude towards productive work",
+            "Strong respect for the dignity of labour",
+            "Positive attitude towards learning as a lifelong process"
+        ],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Six",
+            "class_code": "S6",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Theme 1: Drawing and Painting II",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T1-0001",
+                                        "topic_title": "Topic 1.9: The Material Environment",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 13
+                                    },
+                                    "core_competency": "The learner creates compositions using creative skills, a variety of materials and processes to develop various ideas for art making.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "explore various materials with regard to their possibilities in creating drawings and paintings. (k, u, s, v)",
+                                        "create compositions in drawing and painting using a combination of materials and tools for various purposes. (k, s)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Use a viewfinder to enlarge and create a new composition from the previous artwork",
+                                            "Render in wet or dry media",
+                                            "Employ perspective devices and overlapping"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Project-based learning",
+                                            "description": "Using project-based learning, learners explore various objects employing various methods and techniques based on driving questions to create forms, lines and texture (e.g. How can we create new forms and shapes needed for industrial production using our material environment?)."
+                                        },
+                                        {
+                                            "activity_type": "Experimentation",
+                                            "description": "i) Learners experiment with colour, drawing and painting tools and implement a multimedia approach suitable for development into still-life compositions."
+                                        },
+                                        {
+                                            "activity_type": "Drawing",
+                                            "description": "ii) Make drawings of selected objects extending into an image using line, tone and colour to render the surface texture and form of objects."
+                                        },
+                                        {
+                                            "activity_type": "Composition",
+                                            "description": "iii)Use a viewfinder to enlarge and create a new composition from the previous artwork and render in wet or dry media."
+                                        },
+                                        {
+                                            "activity_type": "Composition",
+                                            "description": "iv)Choose the best option to employ perspective devices and overlapping."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe the learner’s ability to: i) participate in the group activity. ii) respect self and others."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "b) Assess the learner’s ability to: i) demonstrate originality and creativity. ii) generate new ideas in drawing and painting guided by the driving questions. iii) plan and make informed judgement while exploring different materials."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "c) Converse with learners to establish and caution them on health and safety precautions."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "explore various materials with regard to their possibilities in creating drawings and paintings",
+                                            "assessment_method": "Observation"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "Using project-based learning, learners explore various objects employing various methods and techniques based on driving questions to create forms, lines and texture",
+                                        "deliverables_verbatim": "still-life compositions, drawings of selected objects, new composition from previous artwork",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "41"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 13,
+                                        "unit": "periods",
+                                        "source_page": "41"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T1-0002",
+                                        "topic_title": "Topic 1.10: Living Person (Torso)",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 8
+                                    },
+                                    "core_competency": "The learner develops artistic impressions of the human torso using various materials and tools to communicate human body formations.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "examine and make drawings and paintings based on the human torso using different materials and tools. (k, u, s)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Human figure: front, back and sides, body twists and its effects on the structure",
+                                            "Tonal variations",
+                                            "Facial expressions"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Observation and Discussion",
+                                            "description": "a) In groups, learners observe the human figure and discuss the structure, tonal effects and proportions of the torso."
+                                        },
+                                        {
+                                            "activity_type": "Drawing/Painting",
+                                            "description": "b) Individually, learners: i) develop drawings or paintings, studying the human torso in different postures (front, back and sides, body twists and its effects on the structure) using a model."
+                                        },
+                                        {
+                                            "activity_type": "Study of Light",
+                                            "description": "ii) study the light effects on the human torso (tonal variations) and develop it into a complete representation of the human figure using dry or wet media."
+                                        },
+                                        {
+                                            "activity_type": "Drawing",
+                                            "description": "iii) draw the human face in addition to the facial expressions."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe the learner’s ability to show focused attention on the torso."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "b) Assess the way different learners communicate what they perceive."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "c) Assess individual learners’ drawings or paintings to depict the different body postures and disposition of drapery."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 8,
+                                        "unit": "periods",
+                                        "source_page": "42"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T1-0003",
+                                        "topic_title": "Topic 1.11: Drawing and Painting Imaginative Figurative Compositions",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 8
+                                    },
+                                    "core_competency": "The learner creates figurative imaginative compositions based on the human figure to communicate messages and ideas.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "demonstrate understanding of colour and its aspects in painting compositions. (k, u)",
+                                        "create artistic compositions based on elements and principles of arts. (k, s, u)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Human activities in a composition (e.g. at the market, a heated discussion, newspaper vending)",
+                                            "Colour harmony and symbolism"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "a) Learners: i) collaboratively explore the different aspects of colour observed from different paintings of great masters and document their findings."
+                                        },
+                                        {
+                                            "activity_type": "Sketching/Planning",
+                                            "description": "ii) generate sketches/plans for the creation of drawings or paintings based on human activities in a composition (e.g. at the market, a heated discussion, newspaper vending)."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming/Reflection",
+                                            "description": "iii) use brainstorming and reflection to filter the sketches in order to select the ideas for finished drawings or paintings."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "b) Individually, the learner makes drawings or paintings expressing and communicating through colour, depicting the human activities in a composition (e.g. at the market, a heated discussion, newspaper vending)."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe the learner’s contribution in group work with regard to: i) discussion and collaboration with others. ii) self-regulation and confidence."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "b) Assess the learners’ documentation in form of write-ups/ with sketches."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "c) Converse with the learners to ascertain the influence of peer feedback on the work."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "d) Assess the learner’s product with regard to: i) creativity and originality. ii) organisation of ideas and elements of art to formulate a composition. iii) growth and development of the initial ideas. iv) evidence of reflection and revision of the initial plans. v) interpretation of the theme into visual image. vi) colour harmony and symbolism."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 8,
+                                        "unit": "periods",
+                                        "source_page": "43"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Theme 2: Graphic Design II (Crafts A)",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T1-0004",
+                                        "topic_title": "Topic 2.5: Advertising Design",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 10
+                                    },
+                                    "core_competency": "The learner creates graphic design concepts using materials and tools suitable for commercial communication.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "apply vocabulary of terms, concepts and techniques relating to advertising design. (k, u, gs)",
+                                        "create images and symbols suitable for advertising designs based on a given theme. (u, s)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Calendars, fliers, brochures, cards",
+                                            "Vocabulary associated with design making"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "a) Learners collaboratively: i) search for information on the communal and educational value of advertising designs (e.g. calendars, fliers, brochures and cards), examining the concepts, practices and vocabulary associated with design making."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "ii) discuss and record their findings."
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "iii) explore and develop a concept in the set theme on either calendars, fliers, brochures or cards."
+                                        },
+                                        {
+                                            "activity_type": "Experimentation",
+                                            "description": "b) Individually, learners: i) experiment with visual images used in commercial and visual displays."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "ii) develop the final work of the chosen design to serve a given purpose."
+                                        },
+                                        {
+                                            "activity_type": "Portfolio Development",
+                                            "description": "iii) develop a folder to keep the finished work which will contribute to the learners’ portfolio."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe the learner’s ability to: • work in teams/groups. • listen to one another and contribute to the discussion."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "b) Assess learners’ documentation from their information search and how the findings informed their concept development."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "c) Assess the individual learner’s product in relation to: • the theme. • originality and creativity. • research, planning, drawings and development of ideas into final artwork. • functionality. • precision and finish."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "d) Assess the learner’s folder with regard to. • sketching. • finished work, labelled and dated."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "search for information on the communal and educational value of advertising designs",
+                                            "assessment_method": "Documentation Assessment"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 10,
+                                        "unit": "periods",
+                                        "source_page": "44"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T1-0005",
+                                        "topic_title": "Topic 2.6: Design Illustration",
+                                        "sequence_order": 5,
+                                        "recommended_duration_periods": 9
+                                    },
+                                    "core_competency": "The learner creates artistic images from a given text using various materials and available technologies to ease and enhance information dissemination.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "apply concepts and techniques relating to design illustrations. (k, u)",
+                                        "create images and symbols adopted from written text. (u, s)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Key elements and principles of illustration",
+                                            "Categories and functions of illustration (narrative, decorative and informative)"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research/Scrapbooking",
+                                            "description": "a) i) Learners collaboratively search for information on various illustrations from different sources (e.g. text books, posters, fliers, magazines and newspapers) and make a scrap book."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "ii) Learners discuss their findings with regard to: • the key elements and principles of illustration. • categories and functions of illustration (narrative, decorative and informative)."
+                                        },
+                                        {
+                                            "activity_type": "Experimentation",
+                                            "description": "b) Individually, the learner: i) experiments with different materials to illustrate a given text into various image possibilities."
+                                        },
+                                        {
+                                            "activity_type": "Critique/Reflection",
+                                            "description": "ii) uses self-reflection to critique the visual images used to impact the commercial and visual displays."
+                                        },
+                                        {
+                                            "activity_type": "Production",
+                                            "description": "iii) produces the final work using the revisions obtained from self-reflection."
+                                        },
+                                        {
+                                            "activity_type": "Portfolio Development",
+                                            "description": "iv) develops a folder to keep a record of the production process of the work which will contribute to the learners’ portfolio."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) Observe the learner’s ability to: i) work in teams/groups. ii) listen to one another. iii) contribute to the discussion."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "b) Assess group documentation from the information search following concept development for illustration."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "c) Assess learners’ work with regard to: i) originality and creativity. ii) interpretation of the text. iii) development of ideas into final artwork. iv) precision and finish."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "c) Assess the learner’s folder with regard to: i) communication of ideas. ii) aesthetic design qualities. iii) materials. iv) the technical process. v) personal response."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 9,
+                                        "unit": "periods",
+                                        "source_page": "45"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Theme 3: Crafts B II",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T1-0006",
+                                        "topic_title": "Topic 3.4: Two-Dimensional Crafts",
+                                        "sequence_order": 6,
+                                        "recommended_duration_periods": 38
+                                    },
+                                    "core_competency": "The learner produces design concepts using available materials, tools and technologies to decorate different surfaces for various purposes.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "demonstrate understanding of the process of concept development based on cultural inspirations in respect to traditional beliefs. (k, u, s, v)",
+                                        "demonstrate understanding of the influence of artmaking to the economy and careers related to the visual arts. (k, u, v)",
+                                        "demonstrate understanding of the legal, ethical, health and safety, practices in the production of crafts. (k, u, v, a)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Textile designing: screen printing, batik, patchwork, applique, tie-and-dye",
+                                            "Leather decoration techniques: stamping, embossing, dyeing, painting",
+                                            "Legal, ethical, health and safety practices"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Inquiry Learning",
+                                            "description": "a) In small groups or individually, learners use inquiry learning method to search for information and discuss the traditional and contemporary methods, significance of textile and leather designing (either using field trip or case study) and document the findings."
+                                        },
+                                        {
+                                            "activity_type": "Planning/Sketching",
+                                            "description": "b) Individually, the learner develops plans and sketches based on cultural inspirations, to suit a specific textile (e.g. screen printing, batik, patchwork, applique, tie-and-dye) and leather decoration techniques (e.g. stamping, embossing, dyeing, painting etc) conforming to the elements and principles of design, for a given purpose."
+                                        },
+                                        {
+                                            "activity_type": "Making Trials",
+                                            "description": "c) Learners: i) make trials on a small scale (e.g. 12 cm by 12 cm for textile) for a given technique using suitable materials and tools based on the market demands."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "ii) discuss the trials to filter the ideas and select a suitable one to serve as the basis of their artwork."
+                                        },
+                                        {
+                                            "activity_type": "Revision",
+                                            "description": "iii) revise the plan based on peer assessment and show attention to detail."
+                                        },
+                                        {
+                                            "activity_type": "Project Work",
+                                            "description": "d) Learners opt for a project in either textile or leather design and decorations while considering the legal, ethical, health and safety practices."
+                                        },
+                                        {
+                                            "activity_type": "Portfolio Development",
+                                            "description": "e) Learners develop a folder for the design process."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "a) Assess learners’ documentation to check for the designs, patterns of traditional and contemporary textile and leather decorations."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "b) Observe group discussions with regard to: i) teamwork. ii) self-regulation and confidence. iii) respect for self, others and the environment."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "c) Converse with learners to defend their thinking on the choice of plans regarding the suitability and relevance of the patterns created."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "d) Assess the learner’s textile and leather designs with regard to: i) the quality, technique, colour choice and registration of the trials. ii) neatness and consistency."
+                                        },
+                                        {
+                                            "assessment_type": "Observation/Conversation",
+                                            "description": "e) Observe and converse with learners to establish their understanding of legal and ethical standards, health and safety, practices art production practices."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "f) Assess the learner’s folder with regard to. • sketching. • finished work, labelled and dated."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "use inquiry learning method to search for information and discuss the traditional and contemporary methods",
+                                            "assessment_method": "Documentation Assessment"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "Learners opt for a project in either textile or leather design and decorations while considering the legal, ethical, health and safety practices.",
+                                        "deliverables_verbatim": "Project in either textile or leather design and decorations, folder for the design process",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "46"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 38,
+                                        "unit": "periods",
+                                        "source_page": "46"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Theme 4: History and Appreciation of Art II",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T1-0007",
+                                        "topic_title": "Topic 4.3: Appreciation of the 19th Century Art in France and England",
+                                        "sequence_order": 7,
+                                        "recommended_duration_periods": 10
+                                    },
+                                    "core_competency": "The learner evaluates the 19th century art in France and England as a basis to make personal judgement on historical art in relation to Uganda’s contemporary contexts.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "analyse the concepts and important developments of 19th century art in France and England as an influence to art production. (k, u, v)",
+                                        "evaluate the artists, their artworks, and influence on contemporary art production in Uganda. (k, u, v)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Artists: Vincent Van Gogh, Auguste Rodin, Dominique, Ingres, Gian Lorenzo Bernini",
+                                            "Influence of 19th century art on contemporary art production in Uganda"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "a) In groups, learners gather information from different sources about the important 19th century art developments and artists in France and England (e.g. Vincent Van Gogh, Auguste Rodin, Dominique, Ingres, Gian Lorenzo Bernini), and document."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "b) In groups, learners discuss the influence of the 19th century art in France and England on contemporary art production in Uganda and make individual notes."
+                                        },
+                                        {
+                                            "activity_type": "Reflection/Assessment",
+                                            "description": "c) Using a variety of strategies (e.g. peer assessment and self-assessment or reflection), learners reflect on the qualities within different art forms (painting and sculpture) describing the subject matter, purpose, style/technique and materials used."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "a) Assess learner’s ability to: i) conduct research and document the findings. ii) positively contribute to the group discussion."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "b) Assess the quality of the write-up with regard to: i) validity and relevance given. ii) coherence of the information. iii) correctness of the information. iv) accuracy and examples cited."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "gather information from different sources about the important 19th century art developments and artists",
+                                            "assessment_method": "Documentation Assessment"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 10,
+                                        "unit": "periods",
+                                        "source_page": "47"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Theme: Drawing and Painting II",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T2-0001",
+                                        "topic_title": "Topic 1.12: Drawing and Painting from a Living Person II",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 36
+                                    },
+                                    "core_competency": "The learner draws and paints human figures in artistic compositions using materials and tools for communication and self-expression.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "demonstrate understanding of elements and principles of design to create human figure compositions that communicate messages to an audience. (k, u, s, a)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Human figure compositions based on observation",
+                                            "Study of the model in different poses, gesture techniques",
+                                            "Disposition of drapery"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Idea Generation",
+                                            "description": "a) Individually, the learner; i) generates ideas of human figure compositions using thumbnail sketches, based on observation of the living person. (study of the model in different poses, gesture techniques)."
+                                        },
+                                        {
+                                            "activity_type": "Experimentation",
+                                            "description": "ii) uses exploration or experimentation of different materials to create plans for the trial compositions."
+                                        },
+                                        {
+                                            "activity_type": "Development",
+                                            "description": "iii) uses reflection and revision to develop the final composition in consideration of the elements and principles of art and disposition of drapery."
+                                        },
+                                        {
+                                            "activity_type": "Portfolio Preparation",
+                                            "description": "b) Use appropriate practices to prepare a folder for the artworks for presentation."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "a) i) Assess the learner’s ability to: • generate an artistic idea through observation of the living person. • capture and record what has been observed. • develop from simple gestural drawings to more detailed figurative composition. • develop preliminary stages into the final composition by using either dry or wet media."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "ii)Assess the individual learner’s final work in terms of: • use of elements and principles. • articulation of body structure and anatomy. • Treatment of drapery • message conveyance. • Finish."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "b) Assess the learner’s folder with regard to. • Sketching • Finished work, labelled and dated"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 36,
+                                        "unit": "periods",
+                                        "source_page": "48"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Theme 3: Crafts B II",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T2-0002",
+                                        "topic_title": "Topic 3.5: Two-Dimensional and Three-Dimensional Crafts",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 48
+                                    },
+                                    "core_competency": "The learner creates craft products based on a chosen theme using suitable materials and technologies to serve different purposes.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "demonstrate understanding of the process of creating a 2D or 3D craft in respect to cultural heritage. (k, u, s, v)",
+                                        "evaluate the contribution of art to the Ugandan economy and how economic considerations influence artmaking. (k, u, s, v)",
+                                        "apply the health and safety, legal and ethical issues to art production. (k, u, v, a)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Production process of art making (themes, planning, experimenting, revising)",
+                                            "Trial motifs or maquettes",
+                                            "Legal and ethical issues (Copyright and ownership issues)",
+                                            "Health and safety practices"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Project-Based Learning",
+                                            "description": "a) Using projects or project-based learning, the learners: i) follow a production process of art making (themes, planning, experimenting, revising) and depict cultural influences for the ideation process."
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "ii) explore and experiment with a variety of materials, tools and technologies to create trial motifs or maquettes, templates for leather articles (create, interpret, explore, develop and communicate ideas)."
+                                        },
+                                        {
+                                            "activity_type": "Production",
+                                            "description": "iii) produce the final product by choosing the best option to develop and focus on a successful idea."
+                                        },
+                                        {
+                                            "activity_type": "Identification",
+                                            "description": "iv) identify on the basis of exploration, opportunities in the society related to visual arts and the cost of production."
+                                        },
+                                        {
+                                            "activity_type": "Safety Practice",
+                                            "description": "b) The learner: i) demonstrates safe practices associated with use of materials, tools and technologies (precautionary measures for handling hazardous materials)."
+                                        },
+                                        {
+                                            "activity_type": "Responsibility",
+                                            "description": "ii) exercises social, civic and environmental responsibility in using technologies and the environment to produce artworks."
+                                        },
+                                        {
+                                            "activity_type": "Appreciation",
+                                            "description": "iii) appreciates the legal and ethical issues associated with the production of artworks (Copyright and ownership issues)."
+                                        },
+                                        {
+                                            "activity_type": "Exhibition",
+                                            "description": "c) Learners present their finished articles to an audience (exhibition)."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "a) Assess the learners’ project following: i) themes, planning, experimenting and revising the plans. ii) the learner’s trials based on growth and development of the idea. iii) the final product with regard to; use of materials, elements and principles of art, technique used, production process, functionality and finishing. iv) the information on production of artwork in form of analysis with regard to opportunities in relation to careers of art. v) meeting the demands of the expected solution"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "b) Ensure that learners observe health, safety and legal precautions."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "identify on the basis of exploration, opportunities in the society related to visual arts",
+                                            "assessment_method": "Project Assessment"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "Using projects or project-based learning, the learners: follow a production process of art making... produce the final product",
+                                        "deliverables_verbatim": "trial motifs or maquettes, final product, exhibition",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "49"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 48,
+                                        "unit": "periods",
+                                        "source_page": "49"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Theme 4: History and Appreciation of Art II",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T2-0003",
+                                        "topic_title": "Topic 4.4: Contemporary Art in Uganda",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "The learner evaluates Ugandan contemporary art practices by examining artists and their artworks to make informed judgement.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "analyse Ugandan contemporary art in an artistic and meaningful way. (k, u, v, gs)",
+                                        "evaluate the role of contemporary artists and their influence on Ugandan society. (k, u, v)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "History of studying art in Uganda (Margaret Trowel School of Industrial and Fine Art)",
+                                            "Prominent contemporary Ugandan artists: Ronix Ahimbisibwe, Naita, Fred Mutebi, George Kyeyune, F.X. Nnaggenda, Lillian Nabulime, Bruno Sserunkuuma, Nuwa Nyanza",
+                                            "Role of art in society: engage, entertain, transmit culture, sell"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "a) Learners collaboratively search for information and document: i) the history of studying art in Uganda (the development of Margaret Trowel School of Industrial and Fine Art)."
+                                        },
+                                        {
+                                            "activity_type": "Research/Analysis",
+                                            "description": "ii) the work of prominent contemporary Ugandan artists (freelance, academic and professional artists, such as Ronix Ahimbisibwe, Naita, Fred Mutebi; George Kyeyune, F.X. Nnaggenda, Lillian Nabulime, Bruno Sserunkuuma, Nuwa Nyanza) with regard to theme, message, style and materials."
+                                        },
+                                        {
+                                            "activity_type": "Evaluation",
+                                            "description": "b) In groups, learners: i) evaluate the selected contemporary artists in Uganda, their contribution in various fields of art and the factors behind their art production (cultural, political, foreign inputs and prevailing environments)."
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "ii) analyse the Ugandan artists’ contribution to the economy and society, and how the economy impacts art production."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) i) Observe the learner’s ability to: • work in teams/groups. • listen to one another. • contribute to the discussion."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "ii)Assess the learner’s documentation of the research findings in a write-up."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "b) Assess the quality of the write-up with regard to: i) validity and relevance given. ii) coherence of the information. iii) correctness of the information. iv) the examples cited."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "search for information and document the history of studying art in Uganda",
+                                            "assessment_method": "Documentation Assessment"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "50"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Theme: Drawing and Painting II",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T3-0001",
+                                        "topic_title": "Topic 1.13: Landscape Representation",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 30
+                                    },
+                                    "core_competency": "The learner creates artworks depicting sceneries from different landscapes for communication and self-expression.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "create depictions of landscapes by exploring different kinds of subject matter, about the natural environment. (k, u, s, gs)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Features of a landscape (scaling)",
+                                            "Perspective devices and overlapping (implied from T1 content but relevant here)"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "a) Collaboratively, learners: i) gather information and write about different artists and their depiction of landscapes with regard to theme, style, use of elements, principles and materials."
+                                        },
+                                        {
+                                            "activity_type": "Field Study",
+                                            "description": "ii) take a field study to scan the environment for interesting features to gain inspiration for their work."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "iii) discuss findings with peers for self-assessment and refinement of facts."
+                                        },
+                                        {
+                                            "activity_type": "Trial",
+                                            "description": "b) Individually or in groups, learners select a theme for landscape drawing or painting and make trials."
+                                        },
+                                        {
+                                            "activity_type": "Refinement",
+                                            "description": "c) Individually, learners: i) refine their trials into final sketches and produce their final artworks while following elements and principles, style and use of materials."
+                                        },
+                                        {
+                                            "activity_type": "Portfolio Development",
+                                            "description": "ii) develop a folder for their work as evidence of the creation process."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) i) Observe the learner’s ability to: • work in teams/groups. • listen to one another. • contribute to the discussion."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "ii) Assess the learner’s notes and sketches to ascertain the learner’s: • evidence of planning and focusing ideas for landscape drawing or painting. • creativity."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "b) Observe the learner’s ability to interpret the features of a landscape into personal sketches (scaling)."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "c) Assess the learner’s final artwork with regard to: i) theme. ii) use of elements and principles. iii) revision and refinement. iv) style and technique. v) use of materials and tools."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "d) Assess the learner’s folder with regard to. • sketching. • finished work, labelled and dated."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "take a field study to scan the environment for interesting features to gain inspiration",
+                                            "assessment_method": "Observation/Notes Assessment"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 30,
+                                        "unit": "periods",
+                                        "source_page": "51"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Theme 2: Graphic Design II",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T3-0002",
+                                        "topic_title": "Topic 2.7: Simulations in Graphics",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 14
+                                    },
+                                    "core_competency": "The learner develops graphical concepts for simulations using hand or computer aided designing to serve various purposes.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "explore and experiment with various ways of expressing ideas using different graphic techniques to serve different purposes. (k, u, s, gs)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Simulations of graphic images",
+                                            "Exaggeration or magnifying",
+                                            "Free-hand drawing or computer-aided design"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "a) Collaboratively or individually, learners conduct research from the available sources (such as the library, the Internet, markets, interviews) and identify a theme to guide their creative process as they consider the problem to be solved and the target audience."
+                                        },
+                                        {
+                                            "activity_type": "Ideation/Sketching",
+                                            "description": "b) Learners start the ideation process by developing images that suit their imaginations for the task/theme through sketching."
+                                        },
+                                        {
+                                            "activity_type": "Experimentation",
+                                            "description": "c) i) Learners experiment with tones and colour to capture the simulations of the graphic images. The image developed could be enhanced with scanned work or an illustration."
+                                        },
+                                        {
+                                            "activity_type": "Concept Development",
+                                            "description": "ii)Learners develop concepts by eliminating the unwanted creations, enhance the work to show areas of immediate impact by either exaggeration or magnifying to the required size."
+                                        },
+                                        {
+                                            "activity_type": "Production",
+                                            "description": "d) Individually, learners produce the final product using either free-hand drawing or computer-aided design."
+                                        },
+                                        {
+                                            "activity_type": "Portfolio Development",
+                                            "description": "e) Individually, the learner organises a folder for the graphic work."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "a) i) Observe the learner’s ability to: • work in teams/groups. • listen to one another. • contribute to the discussion."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "ii) Assess the learners’ theme with regard to: • problem-based learning. • the target audience."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "b) Assess the learners’ sketches in terms of: • depiction of a theme. • progression of the ideation process."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "c) Assess individual learners’ originality and creativity with regard to: i) the development of ideas (sketches) into final artwork. ii) precision and finish."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "d) Observe the learner’s ability to use appropriate technologies to produce the final work with regard to: i) a message. ii) the use of elements and principles. iii) the use of materials and tools or appropriate software."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "e) Assess the learner’s folder with regard to coherence and consistency."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "conduct research from the available sources (such as the library, the Internet, markets, interviews)",
+                                            "assessment_method": "Observation"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 14,
+                                        "unit": "periods",
+                                        "source_page": "52"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "computer-aided design"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Theme 3: Crafts B II",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T3-0003",
+                                        "topic_title": "Topic 3.6: Portfolio Making and Art Exhibition",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 6
+                                    },
+                                    "core_competency": "The learner presents artworks in a portfolio showing the production process for assessment and public viewing.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "create a portfolio with visual arts as evidence of work and achievement over a specified period of time. (k, u, s)",
+                                        "present and exhibit the artworks to an audience. (k, u, s, v, a)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Portfolio structure: cover design, statement of intent, artworks, glossary, references",
+                                            "Exhibition techniques: trimming, mounting, labelling, polishing, framing, creating pedestals"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Documentation",
+                                            "description": "a) Individually, learners document the creative process in a portfolio by: i) compiling personal artworks (trials and the final works)."
+                                        },
+                                        {
+                                            "activity_type": "Selection",
+                                            "description": "ii) selecting the main artworks done as classroom tasks."
+                                        },
+                                        {
+                                            "activity_type": "Arrangement",
+                                            "description": "iii) arranging the artworks in order of production and development (e.g. research ideas, notes, final work, journals, photographs) that reflect all that was experienced and learnt."
+                                        },
+                                        {
+                                            "activity_type": "Glossary Compilation",
+                                            "description": "iv) alphabetically compiling a glossary of technical words met throughout the DURATION of work."
+                                        },
+                                        {
+                                            "activity_type": "Referencing",
+                                            "description": "v) listing references at the end of the portfolio. (This is a list of the sources from which the research and information was taken for the portfolio.)"
+                                        },
+                                        {
+                                            "activity_type": "Writing Statement",
+                                            "description": "vi) writing a statement of what was intended and how it was done throughout the period of learning. (This should appear first to guide the viewer of the portfolio.)"
+                                        },
+                                        {
+                                            "activity_type": "Cover Design",
+                                            "description": "vii) creating a cover design reflecting and revealing what is expected in the portfolio."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "viii) presenting the finished portfolio to an audience. • Where possible, learners present the e/digital portfolio"
+                                        },
+                                        {
+                                            "activity_type": "Exhibition Preparation",
+                                            "description": "b) Individually, the learner prepares and presents the finished own 2D and 3D artworks for display (trimming, mounting, labelling, polishing, framing, creating pedestals)."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "a) Assess learner’s presentation of a portfolio with regard to: i) the portfolio cover design. ii) selection and arrangement of suitable artworks (with accompanying notes and sketches). iii) the glossary. iv) the reference."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "b) If the e/digital portfolio is used, assess the learner’s ability to use the available technologies to achieve the above components."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "c. Assess the presentation styles of the learner’s work regarding: • trimming. • mounting. • labelling. • polishing. • framing. • creating pedestals."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "create a portfolio with visual arts as evidence of work and achievement over a specified period of time... present and exhibit the artworks",
+                                        "deliverables_verbatim": "Finished portfolio (physical or digital), 2D and 3D artworks for display",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "53"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 6,
+                                        "unit": "periods",
+                                        "source_page": "53"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "e/digital portfolio"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Theme 4: History and Appreciation of Art II",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-A-S6-T3-0004",
+                                        "topic_title": "Topic 4.5: Art in Society",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 6
+                                    },
+                                    "core_competency": "The learner applies marketing skills of artworks using social, cultural and commercial attributes for survival in society.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        "demonstrate an understanding of the role of visual arts in society. (k, s, u, v)",
+                                        "examine opportunities for integrating and marketing art in society. (k, s, u, v, a)"
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Roles of art in society: engage, entertain, transmit culture and values, sell",
+                                            "Marketing strategies, sales management, digital marketing, business strategies and communication"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Reflection",
+                                            "description": "a) In groups, learners reflect on: i) diverse traditions and societal values and discuss their impact on art making."
+                                        },
+                                        {
+                                            "activity_type": "Documentation",
+                                            "description": "ii) the various functions of artworks in society and how they contribute to and belong to the traditions (e.g. advertising, religious, satirical, ceremonial) and make a documentation."
+                                        },
+                                        {
+                                            "activity_type": "Evaluation",
+                                            "description": "b) Learners collaboratively: i) evaluate the roles of art in society (to engage, entertain, transmit culture and values and to sell) envisaging personal, career pathways and opportunities to sell their artworks (costing, valuing and pricing) and/or applying art in other occupations (architecture, advertising and leisure activities)."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "ii) give a presentation to a given audience, demonstrate an understanding of entrepreneurship in art as a business entity (marketing strategies, sales management, digital marketing, business strategies and communication)."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "a) Assess the learner’s write-up with regard to: i) language (appropriateness to the topic, vocabulary, structure and punctuations). ii) coherence (logical flow of ideas, explanation of the ideas, illustration with examples)."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "b) i) Converse with learners, prompting them to describe and justify their likes, choice and value attached to different careers in art."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "ii)Observe and assess the learner’s presentation with regard to costing, valuing and pricing."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 6,
+                                        "unit": "periods",
+                                        "source_page": "54"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

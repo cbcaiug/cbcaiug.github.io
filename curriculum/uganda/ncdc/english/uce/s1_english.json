@@ -1,0 +1,1605 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — Populated from Lower Secondary Curriculum - English Language Syllabus (Senior 1).",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "English Language",
+    "level": "Lower Secondary",
+    "class_group": "Senior One",
+    "year": "2019",
+    "version": "1",
+    "source_document": "English Language Syllabus"
+  },
+
+  "global_framework": {
+    "competencies": [
+      "Self-assured individuals",
+      "Responsible and patriotic citizens",
+      "Lifelong learners",
+      "Positive contributors to society"
+    ],
+    "generic_skills": [
+      "Critical thinking and problem-solving",
+      "Creativity and innovation",
+      "Communication",
+      "Co-operation and Self-Directed Learning",
+      "Mathematical Computation and ICT Proficiency"
+    ],
+    "values": [
+      "Respect for humanity and environment",
+      "Honesty; uphold and defend the truth at all times",
+      "Justice and fairness in dealing with others",
+      "Hard work for self-reliance",
+      "Integrity; moral uprightness and sound character",
+      "Creativity and innovativeness",
+      "Social Responsibility",
+      "Social Harmony",
+      "National Unity",
+      "National Consciousness and patriotism"
+    ],
+    "attitudes": [],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Life skills",
+      "Mixed abilities and involvement",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+
+  "classes": [
+    {
+      "class_name": "Senior One",
+      "class_code": "S1",
+      "terms": [
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Personal",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S1-T1-0001",
+                    "topic_title": "PERSONAL LIFE AND FAMILY",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 24,
+                    "keywords": [
+                      "family",
+                      "personal life",
+                      "narrate",
+                      "stories",
+                      "experiences",
+                      "relationships"
+                    ]
+                  },
+                  "core_competency": "The Learner narrates experiences, reads and responds to stories about personal and family life.",
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "communicate information and opinions about families and family life (k, gs)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "interpret and construct graphical/pictorial representations of families (k, s)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "express likes and dislikes (k, v)",
+                      "domain": "Knowledge/Values"
+                    },
+                    {
+                      "outcome_text": "use abstract nouns (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "use correct forms of the verb ‘to be’ in the present tense(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use all forms of personal pronouns in conversations and writing(k)",
+                      "domain": "Knowledge"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Ask learners to: describe themselves"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "in pairs, talk about themselves and family using the present simple tense"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "discuss the responsibilities of the different members of their families"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "listen and respond encouragingly to other learners’ accounts of their personal and family lives"
+                    },
+                    {
+                      "activity_type": "Group Work",
+                      "description": "in small groups, share interesting details of how their families work together to avoid conflicts"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "research their family tree going back to their great grandparents by talking to family members and using online sources (where possible)"
+                    },
+                    {
+                      "activity_type": "ICT Activity",
+                      "description": "using a template/smart art in a word processor, complete a personal family tree from their great grandparents to the present, including names and occupations where known"
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "talk about the members of their own family, using the family tree and anecdotes to illustrate his/her talk"
+                    },
+                    {
+                      "activity_type": "Oral Expression",
+                      "description": "orally express their own likes and dislikes and those of family members with reasons"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write 10 sentences that summarise the key things they think ought to be conveyed about their family"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "use the correct forms of the verb ‘to be’, correct personal pronouns and abstract nouns(e.g. to describe a family member’s ideas or ideals) in their writing."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ communication skills as they talk about themselves and their family to evaluate how creatively they engage their audience."
+                    },
+                    {
+                      "assessment_type": "Written/Oral Check",
+                      "description": "In written and oral communication, check their correct use of the verb ‘to be’, personal pronouns and abstract nouns."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe how learners listen and respond to others to assess their understanding, respect and appreciation of lives that are different from their own."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Note the skill with which a family tree is produced using ICT and how learners have applied themselves to the task of researching their family history."
+                    }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use recorded audio/video messages/scenes to guide them on the correct use of language",
+                      "use the internet for family research, or a digital camera to take pictures of their family, to use in their family tree."
+                    ],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "23"
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Public/ Educational",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S1-T1-0002",
+                    "topic_title": "FINDING INFORMATION",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 26,
+                    "keywords": [
+                      "information sources",
+                      "library",
+                      "media",
+                      "surveys",
+                      "recorded materials",
+                      "reference books"
+                    ]
+                  },
+                  "core_competency": "The learner finds the information they need, carries out surveys, interprets oral and recorded materials and reads including use of information from different sources for a variety of purposes.",
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "identify different sources of information (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "find sources of information in a library (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use media correctly and responsibly to find information (k, v, gs)",
+                      "domain": "Knowledge/Values/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "extract and present information from recorded material (s, v)",
+                      "domain": "Skills/Values"
+                    },
+                    {
+                      "outcome_text": "summarize printed materials (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "appreciate the different language used in reference materials (u, v)",
+                      "domain": "Understanding/Values"
+                    },
+                    {
+                      "outcome_text": "conduct a survey (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use a variety of question forms (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "pronounce soft and hard consonants(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "pronounce sounds of combined vowels (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "use comparatives and superlatives(k)",
+                      "domain": "Knowledge"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Ask learners to: brainstorm different sources of information: different types of books, broadcast media, recorded media, the internet, etc."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "discuss the uses and scope of different types and sources of information: reference books, magazines, newspapers, newsletters, periodicals, journals, encyclopedias, etc."
+                    },
+                    {
+                      "activity_type": "Field Visit",
+                      "description": "visit the school library and listen to a talk by the librarian explaining how books are catalogued/arranged and take notes."
+                    },
+                    {
+                      "activity_type": "Interpretation",
+                      "description": "interpret graphic information, abbreviations and number systems used in libraries"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "locate and get familiar with the sources of information available in the library, e.g. dictionaries, encyclopedias, maps and charts, the internet, computer databases, newspapers, magazines, etc."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "locate particular sources of information by their identifying numbers, titles or web addresses"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "in a group, discuss different types of public and private information and the consequences if information is mishandled"
+                    },
+                    {
+                      "activity_type": "Group Work",
+                      "description": "in pairs, create rules for the responsible use of various sources of information and explain why each rule is in everyone’s best interests"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "in pairs, write an introduction for these rules that summarises the need for responsible recording/reporting and confidentiality"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "listen to recorded or spoken passages and take notes on the important points"
+                    },
+                    {
+                      "activity_type": "Comparison",
+                      "description": "compare points with another learner and add or delete points as necessary"
+                    },
+                    {
+                      "activity_type": "Summary",
+                      "description": "summarise the passage to the class, adding their own views and insights on the topic at the end"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "read a given passage and make a note of the main points"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "research how information is presented in different reference materials with regards to the language, format, abbreviations, etc. used and note these variations"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "research how to conduct a survey on a topic"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "when writing the survey, use the following question forms: yes/no questions, question tags and ‘wh’ questions"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "use open-ended questions to get opinions and feelings from the respondents"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "conduct a short survey with a few learners on a given topic, during which care is taken to: (a) pronounce hard and soft sounds of consonants, e.g./s/, /∫/ //j/, /ts/ dz/ as in: jeer, chop, church, challenge, sheep, chew, chip, ship, cheap, joke, shoe, jeep, etc. (b) pronounce the sounds of diphthongs, e.g. /ea/, /ai/, /au/, /ou/ as in: hear, hair, caught, cough, etc."
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "present the results of the survey in a written report that includes numbers and graphics, using comparatives and superlatives to highlight differences in opinions given in the survey."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners discuss different sources of information and note their participation."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Note learners’ ability to find various sources of information in the library using the cataloguing knowledge they gained from the librarian."
+                    },
+                    {
+                      "assessment_type": "Questioning",
+                      "description": "Ask learners challenging questions during their discussion on the correct use of information and note their critical thinking. Check their written introduction to their rules reflects their discussion."
+                    },
+                    {
+                      "assessment_type": "Written Check",
+                      "description": "When summarizing an audio or written passage, check to ensure that the learners have covered all the main points, communicated their ideas clearly and thought about the topic critically themselves."
+                    },
+                    {
+                      "assessment_type": "Note Check",
+                      "description": "Check learners’ notes on language employed in reference materials covers a variety of types/styles."
+                    },
+                    {
+                      "assessment_type": "Written Check",
+                      "description": "When writing their survey, check that it uses the question forms required and that these questions get to the heart of the topic."
+                    },
+                    {
+                      "assessment_type": "Listening",
+                      "description": "When conducting their survey, listen to learners’ pronunciation of vowels and consonants."
+                    },
+                    {
+                      "assessment_type": "Written Check",
+                      "description": "In the written results of their survey, note learners’ use of statistics and graphic representation using ICT, and their use of comparatives and superlatives."
+                    }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use electronic library databases to search for book records",
+                      "use the internet to obtain information about various sources of information",
+                      "use a word processor to prepare their survey results."
+                    ],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 26,
+                    "unit": "periods",
+                    "source_page": "24"
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Personal /Public",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S1-T1-0003",
+                    "topic_title": "FOOD",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 22,
+                    "keywords": [
+                      "food",
+                      "nutrition",
+                      "recipes",
+                      "cooking",
+                      "manners",
+                      "etiquette"
+                    ]
+                  },
+                  "core_competency": "The learner discusses the types of food grown in different parts of the country and how they can be prepared for consumption, and expresses personal likes and dislikes and appreciates mealtime etiquette.",
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "identify the food that is grown in the different areas of Uganda(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "interpret recipes/articles/passages about food and nutrition(u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "sequence actions/events (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "give instructions clearly(k, v)",
+                      "domain": "Knowledge/Values"
+                    },
+                    {
+                      "outcome_text": "use ‘some’/‘any’ countable and non- countable nouns (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use adjectives to describe taste (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "identify and appreciate table manners and etiquette(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use verbs of preference(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "pronounce short and long vowel sounds (s)",
+                      "domain": "Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Listing",
+                      "description": "Ask learners to: list at least five different types of food produced in the place/region they come from"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "discuss with other learners, food grown in different areas of Uganda and why they think certain regions grow particular food"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "listen and respond to other learners when they talk about different types of food"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "research how food is grown and prepared in Uganda and try to find answers to questions raised in the previous discussion"
+                    },
+                    {
+                      "activity_type": "Chart Creation",
+                      "description": "find interesting recipes and create a flowchart showing the usual process of food preparation: peel/cut, heat oil, add ingredients in a particular order, etc."
+                    },
+                    {
+                      "activity_type": "Oral Description",
+                      "description": "describe orally how to prepare/cook two types of food that they enjoy the most, taking care to put the steps in the correct order"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "follow the accounts of other learners and ask them appropriate questions"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write a simple recipe for a favorite dish using commands (in the second person) and countable and non-countable nouns, ensuring that it is easy to follow and includes all the required information about weights, measures and timings"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write sentences/fill gaps in sentences to describe the taste of food using adjectives, such as delicious, sweet and bitter"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "use adjectives to support statements about the food they like and dislike"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "role play a scenario where a host invites other people to eat, offers food and asks guests’ about their likes and dislikes; everyone using verbs of preference"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "discuss what was right or wrong with the table manners and etiquette in the role- plays and why"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "conduct new role-plays as hosts and guests at a dinner party and notice any changes in the use of manners and etiquette as a result of the discussion, e.g. changes relating to asking, accepting and refusing politely and use of utensils; continue to use verbs of preference and pay attention to the pronunciation of short and long vowel sounds"
+                    },
+                    {
+                      "activity_type": "Drama",
+                      "description": "write and perform a comedy sketch about a guest at a posh dinner party who has no manners at all."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ conversation about what is grown in Uganda and where, to assess their background knowledge and communication skills and how they collaborate as a group"
+                    },
+                    {
+                      "assessment_type": "Research Check",
+                      "description": "Check that learners’ research on food production follows on from the discussion."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Examine learners’ flowchart of food preparation to check their level of understanding and whether the basic steps have been summarized in a clear manner."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe whether learners listen closely to the cooking instructions of other learners."
+                    },
+                    {
+                      "assessment_type": "Written/Oral Check",
+                      "description": "In written work and oral conversation, check for the correct use of the grammar required for this topic. In their comedy sketch, look for creativity and innovation in their presentation of the wrong way to behave."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ communication, co-operation and imaginative skills in role-plays."
+                    }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use the internet to obtain information about recipes",
+                      "use a word processor to prepare activities and assignments as necessary."
+                    ],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 22,
+                    "unit": "periods",
+                    "source_page": "26"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "Public/Personal",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S1-T2-0001",
+                    "topic_title": "AT THE MARKET",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 24,
+                    "keywords": [
+                      "market",
+                      "shopping",
+                      "advertisements",
+                      "buying",
+                      "selling",
+                      "goods"
+                    ]
+                  },
+                  "core_competency": "The learner listens to recordings, holds conversations and writes about a visit made to the market, and uses the language in advertisements.",
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "identify the value of markets to communities (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "take part in conversations/role-plays about visits to the market (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "extract information from conversations(s, gs)",
+                      "domain": "Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "comprehend stories/extracts about the topic (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "organise information(s, gs)",
+                      "domain": "Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "talk and write about his/her personal experience (s, v)",
+                      "domain": "Skills/Values"
+                    },
+                    {
+                      "outcome_text": "use vocabulary and tenses related to market scenarios (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "form plurals of nouns(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use punctuation marks appropriately(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "appreciate advertisements and promotional materials (u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "use language to persuade (s, v)",
+                      "domain": "Skills/Values"
+                    },
+                    {
+                      "outcome_text": "express personal opinions(s, v)",
+                      "domain": "Skills/Values"
+                    },
+                    {
+                      "outcome_text": "promote a book they have read (k, s)",
+                      "domain": "Knowledge/Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Listing",
+                      "description": "Ask learners to: list at least 10 items that come from a market, indicating which stalls/sellers they prefer and why"
+                    },
+                    {
+                      "activity_type": "Sharing",
+                      "description": "share and compare their lists with others in a group"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "describe the scene in their local market using descriptive writing to capture the sights, smells and people; include facts about its opening hours, what goods are seasonal, new things, things that can’t be found anymore"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "discuss the benefits of the market to their community and how it could be improved"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write five questions that might be asked at a market before purchasing a variety of items. Use vocabulary related to market scenarios, e.g. purchase, rate, a head of…, a kilo, a bunch of…, I would like…, How much is…? How much does…cost?"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "listen to people’s public conversations in a market, note the gist and specific details of their conversation; write a summary or share a summary with the class"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "role play buying and selling at a market using local dialect expressions"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "read stories or extracts about market activities and visits to markets or supermarkets, and note the similarities and differences between these markets and the one(s) they visit"
+                    },
+                    {
+                      "activity_type": "ICT Activity",
+                      "description": "using a word processor, create a table to organise these similarities and differences for easy comparison to the market they usually visit"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "talk about a particular visit to a market, including at least five things that attracted their attention during the visit; use the correct plural forms"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write a letter to a friend about a market visit using the correct vocabulary, punctuation and grammar, and descriptive and emotive language that would make the experience sound interesting"
+                    },
+                    {
+                      "activity_type": "Analysis",
+                      "description": "find advertisements for products or services that are sold at a market; identify the persuasive language used in these advertisements and how it is supported by visual elements"
+                    },
+                    {
+                      "activity_type": "Design",
+                      "description": "in pairs, design their own advertisements using persuasive language"
+                    },
+                    {
+                      "activity_type": "Evaluation",
+                      "description": "evaluate the advertisements of other learners against agreed criteria and give opinions"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "read some sample book advertisements and identify the main features"
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "in groups, create an advertisement for a class novel that could be displayed in a bookstore, using the persuasive language of advertising to encourage the age group for the book to purchase and read it. Make sure the genre of the book is clear and that there is a brief but intriguing summary of the plot."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "During spoken activities and role-play, observe learners’ co-operation and communication skills and their imaginative recreation of market situations using appropriate vocabulary and terminology."
+                    },
+                    {
+                      "assessment_type": "Written Check",
+                      "description": "In written work, look for good use of descriptive and persuasive language, in addition to correct grammar: tenses, plural forms and punctuation."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ responses to stories, extracts and conversations about markets and note their ability to compare and analyse similarities and differences, grasp main points and summarise a conversation."
+                    }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use a word processor to prepare activities where necessary",
+                      "use publishing software to design advertisements."
+                    ],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "28"
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Personal/ Public/ Educational",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S1-T2-0002",
+                    "topic_title": "CHILDREN AT WORK",
+                    "sequence_order": 5,
+                    "recommended_duration_periods": 24,
+                    "keywords": [
+                      "child labour",
+                      "work",
+                      "rights",
+                      "debate",
+                      "jobs",
+                      "money"
+                    ]
+                  },
+                  "core_competency": "The learner discusses the types of work found in different areas and settings and different work experiences, and engage in a debate on a motion related to child labour.",
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "identify the kinds of work carried out by children in their community(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use vocabulary related to work and the workplace (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "compare and contrast work in different settings (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "express opinions in discussions(s, v, gs)",
+                      "domain": "Skills/Values/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "comprehend extracts/stories/magazine articles about work which children do in different places (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "debate a topic arising from their reading (s, v, gs)",
+                      "domain": "Skills/Values/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "use ‘wh’ interrogatives to question the views of others in a debate(k, s)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "use adverbs of time (k)",
+                      "domain": "Knowledge"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Ask learners to: ask questions and discuss with other learners the type of work they do at home, in school and in the community"
+                    },
+                    {
+                      "activity_type": "Comparison",
+                      "description": "listen and talk about different types of work done in homes/communities/ schools and compare them using vocabulary related to these different workplaces"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "interact with other learners to give their personal views on the topic, e.g. whether children should work at all, or the type of work he/she would like to do to make money"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "read extracts/stories/magazine articles about work that children do in different places"
+                    },
+                    {
+                      "activity_type": "Questioning",
+                      "description": "answer questions about their reading and compare and contrast the different facts and styles of writing used"
+                    },
+                    {
+                      "activity_type": "Essay Writing",
+                      "description": "write a short essay about the most interesting things learned about children who work and why it is important to know about them"
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "give their opinions during a debate, e.g. on whether children should work or not and protection of the rights of working children"
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "give reasons why children should or should not work"
+                    },
+                    {
+                      "activity_type": "Questioning",
+                      "description": "answer questions based on a table showing the hours that family members spend on different kinds of work in the home and use the information to construct sentences orally using adverbs of time, e.g. often, always, usually, every day/week, once in a while"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write sentences stating how often members of their family do certain activities using adverbs of time, e.g. always, usually, every day/week, once in a while."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ communication skills when they exchange information and give opinions on the work children do in various settings."
+                    },
+                    {
+                      "assessment_type": "Note Check",
+                      "description": "Note learners’ understanding of reading material and their ability to identify different writing styles used for different purposes and effects."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "During a debate, look for well-reasoned and articulate points, with use of supporting evidence from their reading and discussion."
+                    },
+                    {
+                      "assessment_type": "Written Check",
+                      "description": "In the short essay, look for good comprehension of reading material and clarity of expression. In the sentences on work done by family members, check the correct use of adverbs of time."
+                    }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "30"
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Public",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S1-T2-0003",
+                    "topic_title": "ENVIRONMENT AND POLLUTION",
+                    "sequence_order": 6,
+                    "recommended_duration_periods": 24,
+                    "keywords": [
+                      "pollution",
+                      "environment",
+                      "natural environment",
+                      "conservation",
+                      "causes",
+                      "effects"
+                    ]
+                  },
+                  "core_competency": "The learner carries out research and talks about the environment and pollution, and suggests ways of reducing pollution.",
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "appreciate different environments (u, v)",
+                      "domain": "Understanding/Values"
+                    },
+                    {
+                      "outcome_text": "recognise types of pollution (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "comprehend recorded articles/short talks on the topic(u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "carry out research (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use adjectives and adverbs to describe the causes and effects of pollution (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "express their opinions clearly on public issues (s, gs)",
+                      "domain": "Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "suggest solutions to problems(s, gs)",
+                      "domain": "Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "use modals (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use vocabulary related to pollution (k)",
+                      "domain": "Knowledge"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Listing",
+                      "description": "Ask learners to: write down at least three types of environments in which they operate, e.g. social, physical and cultural"
+                    },
+                    {
+                      "activity_type": "Definition",
+                      "description": "define what is meant by the term ‘natural environment’"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "in groups, talk about the different types of pollution that affect the environment"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "conduct research to find other types of pollution not already mentioned and produce a comprehensive class list"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "listen to/view recorded talks on environmental pollution"
+                    },
+                    {
+                      "activity_type": "Summary",
+                      "description": "write a summary of the main messages in one of these talks"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "in groups, find extracts/articles/stories about the environment and pollution in order to explain the causes and effects of pollution; using a recorder or other device, where possible, gather opinions from classmates and community members on environmental issues as part of this research"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "discuss this research to clarify the group’s understanding"
+                    },
+                    {
+                      "activity_type": "Essay Writing",
+                      "description": "each choose one type of pollution and write an essay, with graphics, on its causes and effects, using a word processor"
+                    },
+                    {
+                      "activity_type": "Description",
+                      "description": "vividly describe the chosen type of pollution using adjectives and adverbs to highlight its danger to the environment; the essay should include their own opinions and those of others recorded during their research on the topic"
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "present their essays to the class, then form groups to discuss solutions to the environmental pollution problems, using set phrases, e.g. In my opinion, In my view, On the other hand, In conclusion, and modal verbs, e.g. I think we should…/ ought to…/ought not to…"
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "study anti-pollution poster campaigns and find pictures of pollution to use for their own posters"
+                    },
+                    {
+                      "activity_type": "Design",
+                      "description": "use these pictures to create posters that encourage others to change the habits/ practices that lead to these kinds of pollution"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "use vocabulary related to the environment and pollution in their posters and use persuasive language to motivate readers to change their behavior."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "During discussion, observe learners’ ability to share and learn information and co-operate to produce group results."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "When conducting research, note learners’ ability to find, understand and summarize relevant information."
+                    },
+                    {
+                      "assessment_type": "Written Check",
+                      "description": "In learners’ essays, look for the correct use of vocabulary and grammar required in this topic and for well-formulated opinions supported by facts from their research."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Assess posters for their persuasive use of images and language to encourage a change in the behavior of the reader."
+                    }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use the internet to research different types of pollution",
+                      "use a recording device to capture opinions about pollution",
+                      "use a word processor to prepare activities and assignments when required."
+                    ],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "31"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 3",
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "Public/ Educational",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S1-T3-0001",
+                    "topic_title": "URBAN AND RURAL LIFE",
+                    "sequence_order": 7,
+                    "recommended_duration_periods": 25,
+                    "keywords": [
+                      "urban life",
+                      "rural life",
+                      "advantages",
+                      "disadvantages",
+                      "migration",
+                      "debate"
+                    ]
+                  },
+                  "core_competency": "The learner listens to and reads factual texts for information to support their arguments in discussions/ debates and write creatively on the topic of urban and rural life.",
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "state advantages and disadvantages of urban and rural life (s, v)",
+                      "domain": "Skills/Values"
+                    },
+                    {
+                      "outcome_text": "take part in conversations/role-plays about visits to the market (s, v)",
+                      "domain": "Skills/Values"
+                    },
+                    {
+                      "outcome_text": "appreciate written accounts of young people’s experiences of success in different settings(u, gs, v)",
+                      "domain": "Understanding/Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "use regular and irregular verbs(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "pronounce consonant sounds that are often confused(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "conduct a debate on a motion related to rural/urban life (k, s, v, gs)",
+                      "domain": "Knowledge/Skills/Values/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "use adverbs of time, manner and frequency (k, v)",
+                      "domain": "Knowledge/Values"
+                    },
+                    {
+                      "outcome_text": "use the appropriate vocabulary and tenses(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "defend his/her views in writing(s, gs)",
+                      "domain": "Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "use sentence connectors and conjunctions (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use comparatives and superlatives(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use the conditional (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "express the future in different verb forms (k, s)",
+                      "domain": "Knowledge/Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Work",
+                      "description": "Ask learners to: in groups, draw a table to list the advantages and disadvantages of urban life and rural life"
+                    },
+                    {
+                      "activity_type": "Sharing",
+                      "description": "share these tables and comment on the statements of other groups"
+                    },
+                    {
+                      "activity_type": "Sharing",
+                      "description": "in pairs, share experiences of people in their community who have moved from one setting to another"
+                    },
+                    {
+                      "activity_type": "Retelling",
+                      "description": "retell another learner’s account to someone else in the class using their own words"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "silently read a variety of accounts of young people that have moved from a city to the country, or vice versa"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "find and read aloud words with difficult consonants that are found in these accounts"
+                    },
+                    {
+                      "activity_type": "Listing",
+                      "description": "list the factors that led to the success or otherwise of these people, using regular and irregular verbs and check the spelling of words with problematic consonants"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "in pairs, read the sentences to each other to practice the pronunciation of consonants"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "discuss different scenarios about what could happen to someone who moves from one setting to the other, based on what they have already read or discussed"
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "decide on a debate motion related to urban and rural life"
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "take on roles of first, second and third proposition and opposition speakers and chairperson; make contributions from each side; reply on both sides and vote"
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "use adverbs, vocabulary and tenses correctly as this, together with the strength of their side’s argument, will be used to decide who wins"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "after the debate, choose points not raised or well-defended in their opinion and write sentences that argue these points persuasively"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "use comparatives to explain/justify results or opinions, e.g. better than…, instead of…, rather than...; connectives, e.g. while, not only… but also; and the conditional: If…then..."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "use superlatives to convince readers of these points"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write at length for other learners to read about their future plans for moving to another setting (urban or rural) or staying where they are; use imagination and descriptive language to convey why this is their desired option"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "in this piece of writing, practice moving from the present tense for life as it is now, to the future tense for expressing their future plans"
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "create a class book/wall display of these pieces, including illustrations."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ critical thinking as they list and discuss the advantages and disadvantages of rural and urban life."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Assess their listening and communication skills as they retell other learners’ stories."
+                    },
+                    {
+                      "assessment_type": "Note Check",
+                      "description": "Note learners’ understanding of written accounts of moving and their creativity in imagining other scenarios."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "During the debate, observe learners’ ability to think and respond critically to the arguments from both sides of the issue. In writing, assess their ability to use words and phrases that strengthen their arguments."
+                    },
+                    {
+                      "assessment_type": "Language Check",
+                      "description": "Check learners’ appropriate use of the vocabulary and grammar required for each activity and listen for correct pronunciation."
+                    }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use recorded audio/video messages/scenes to guide them on the correct use of language",
+                      "use a word processor to prepare activities and assignments when required."
+                    ],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 25,
+                    "unit": "periods",
+                    "source_page": "33"
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Public",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S1-T3-0002",
+                    "topic_title": "TRAVEL",
+                    "sequence_order": 8,
+                    "recommended_duration_periods": 29,
+                    "keywords": [
+                      "travel",
+                      "tourism",
+                      "transport",
+                      "instructions",
+                      "letters",
+                      "application forms"
+                    ]
+                  },
+                  "core_competency": "The learners reads and listens to information about travel and tourism carries out simulation exercises and role-plays related to travel.",
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "make suggestions about journeys and means of transport (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "use appropriate vocabulary and language to describe travel experiences(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use adverbs and adjectives related to the topic appropriately(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "comprehend travel instructions given orally and in writing (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "use real and unreal conditional(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "understand specific details in broadcast information related to travel (u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "get information while travelling from other travelers and officials (s, gs)",
+                      "domain": "Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "use action verbs related to giving directions(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "pronounce consonant sounds that are often confused(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "scan texts for information (s, gs)",
+                      "domain": "Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "understand symbols and abbreviations in texts (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "fill in application forms (u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "make reservations using different media and for different purposes(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "pronounce past tense endings(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "identify the language of different greetings cards (k, u)",
+                      "domain": "Knowledge/Understanding"
+                    },
+                    {
+                      "outcome_text": "use conjunctions (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "know the format of a formal letter(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "know the conventions of formal writing (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "use polite language(s, gs, v)",
+                      "domain": "Skills/Generic Skills/Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Listing",
+                      "description": "Ask learners to: in a group, list means of transport and talk about their suitability for different journeys"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "in role-plays, act out one journey within Uganda and another abroad; make it obvious in speech and actions what modes of transport are being used and use specific vocabulary for these modes"
+                    },
+                    {
+                      "activity_type": "Description",
+                      "description": "refer to the distances and timings of the journeys; use adjectives and adverbs to describe distance, length of journeys, any difficulties, etc. in both oral and written work"
+                    },
+                    {
+                      "activity_type": "Listening/Reading",
+                      "description": "listen to and read a variety of instructions given to travelers and test each other’s understanding of them"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "role play giving instructions to travelers who don’t understand at first, need more explanation and want to change their travel arrangements; offer alternative travel advice using conditionals"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write down instructions to give to other learners, who then role play the correct actions"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "listen for specific travel details that you have been told to note down in recorded travel announcements, e.g. flight numbers, destinations, departure times and gate numbers, making sure to get the correct information; discuss anything not understood about how to act on this information"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "listen to and answer questions on a talk about means of transport: air/road/water/rail"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "ask for and respond to travel information/ directions in role-plays, using polite language and action verbs"
+                    },
+                    {
+                      "activity_type": "Sentence Construction",
+                      "description": "construct sentences asking politely for directions and help/assistance using action verbs"
+                    },
+                    {
+                      "activity_type": "Pronunciation",
+                      "description": "read these sentences aloud to practice the pronunciation of words with difficult consonants, e.g. b/p, g/k, r/l, f/v"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "scan texts (guidebooks or websites) for the most useful information when deciding whether or not to visit a particular destination"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "scan for information about how and when this destination can be visited, e.g. modes of transport that can be used, departure and arrival times and contact telephone numbers"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "read and explain symbols and abbreviations given in travel guides/ brochures, directories and maps"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "read information and instructions on an application form (for travel insurance, car hire, etc.) and check their understanding with other learners"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "fill in the application form correctly"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "in role-plays, make telephone reservations orally at a travel agency or hotel reception; pronounce past tense endings: …d/…t/…id"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write email messages to make reservations"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "in role-plays, arrive at a hotel and confirm the reservation made by telephone or email"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "read a variety of greetings cards and establish the gist of their messages; identify the type of language that is being used: formal/informal, humorous, slang, puns, etc."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write a humorous, informal greetings card to a friend wishing them a good holiday/ journey; use conjunctions correctly"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "read sample formal letters and note the main features"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "create a template for a formal letter"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write a formal letter asking for information or making a travel booking, using the appropriate polite language"
+                    },
+                    {
+                      "activity_type": "Review",
+                      "description": "read the letters written by other learners and suggest improvements."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "In role-plays, observe learners’ creativity, innovation and communication skills. Note how well they give instructions using the correct vocabulary and grammar covered in the topic. Check their pronunciation of consonants and past tense endings."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "In listening activities, note learners’ understanding and ability to identify the details requested."
+                    },
+                    {
+                      "assessment_type": "Written Check",
+                      "description": "In reading activities, assess their ability to scan and select the desired information, understand symbols and abbreviations and act on written instructions."
+                    },
+                    {
+                      "assessment_type": "Written Check",
+                      "description": "In written exercises, check their use of formal/polite and informal language for letters, greetings cards and reservations."
+                    }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use recorded audio/video messages/scenes to guide them on the correct use of language",
+                      "use a word processor to prepare activities and assignments when required."
+                    ],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 29,
+                    "unit": "periods",
+                    "source_page": "35"
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Public /Educational",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENG-O-S1-T3-0003",
+                    "topic_title": "EXPERIENCE OF SECONDARY SCHOOL",
+                    "sequence_order": 9,
+                    "recommended_duration_periods": 18,
+                    "keywords": [
+                      "secondary school",
+                      "school rules",
+                      "personal experiences",
+                      "comparison",
+                      "superlatives"
+                    ]
+                  },
+                  "core_competency": "The learner talks about personal experiences of primary education and the first year of secondary school as a new student.",
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "identify spoken and written information, instructions and rules about a new school (v, u)",
+                      "domain": "Values/Understanding"
+                    },
+                    {
+                      "outcome_text": "use possessive and reflexive pronouns(k, u)",
+                      "domain": "Knowledge/Understanding"
+                    },
+                    {
+                      "outcome_text": "use the simple past tense(k, u, s)",
+                      "domain": "Knowledge/Understanding/Skills"
+                    },
+                    {
+                      "outcome_text": "guide a visitor around a school and give relevant information (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "compare and contrast schools (k, s)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "use the comparative and superlative forms(k, s)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "appreciate oral accounts of the experiences of other learners in a new school (u, v)",
+                      "domain": "Understanding/Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Listening",
+                      "description": "Ask learners to: listen to information, instructions and rules about a new school and list the main points"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "read and answer questions about school rules, showing an understanding of why they are important"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "write about their personal experiences in primary school using the simple past tense, possessive and reflexive pronouns, and descriptive language to enable the reader to imagine sights, smells, sounds and feelings"
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "perform role-plays as guides for school visitors/new students, explaining the rules, acceptable behaviour, timetables, locations and activities and answer questions"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "discuss the similarities/differences and advantages/disadvantages between day and boarding schools, single sex/mixed schools, single shift/double shift schools"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "use expressions of comparison and superlatives to give convincing opinions for and against certain types of schools, school regulations, etc."
+                    },
+                    {
+                      "activity_type": "Sharing",
+                      "description": "talk about their experiences in the school during the first year and listen to others’ accounts"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "identify and note important information from the story/account they listened to"
+                    },
+                    {
+                      "activity_type": "Listening",
+                      "description": "respond encouragingly to others as they talk"
+                    },
+                    {
+                      "activity_type": "Questioning",
+                      "description": "request further information/details and encourage the speaker to continue"
+                    },
+                    {
+                      "activity_type": "Retelling",
+                      "description": "try to recapture the tone and feeling of the original story when retelling the account to another learner."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "In listening activities, assess learners’ understanding, not only of the facts, but of the tone and feeling of others’ expressions as they listen. Look for their active encouragement of other speakers."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "When communicating with others, observe learners’ effectiveness in communicating their school experiences using comparisons and superlatives, and their critical thinking when putting forward comparisons between different types of schools."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "In role-plays, assess learners’ ability to clearly communicate key information about the school as a guide."
+                    },
+                    {
+                      "assessment_type": "Written Check",
+                      "description": "In written work about learners’ school experiences, check for the use of the grammar required but also for emotive and descriptive language."
+                    }
+                  ],
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 18,
+                    "unit": "periods",
+                    "source_page": "37"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

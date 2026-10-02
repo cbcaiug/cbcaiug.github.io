@@ -1,0 +1,1446 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum - Local Languages",
+        "subject": "Local Languages",
+        "level": "Lower Secondary",
+        "class_group": "Senior One",
+        "year": "2019",
+        "version": "1.0",
+        "source_document": "Local Languages Learning Framework.pdf"
+    },
+    "global_framework": {
+        "competencies": [],
+        "generic_skills": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Co-operation and Self-Directed Learning",
+            "Communication",
+            "Mathematical computation and ICT proficiency"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior One",
+            "class_code": "S1",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Strand: Personal",
+                            "theme_description": "Focus on personal relationships, family, and home life.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S1-T1-0001",
+                                        "topic_title": "1.1 Family",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 18,
+                                        "keywords": [
+                                            "family",
+                                            "relationships",
+                                            "genealogy",
+                                            "numerals",
+                                            "greetings",
+                                            "alphabet",
+                                            "vowels",
+                                            "time",
+                                            "letters",
+                                            "riddles"
+                                        ]
+                                    },
+                                    "core_competency": "The learner appreciates families and the vocabulary related to family relationships and descriptions.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "pronounce, listen to, read and write the Local Language (k, s).",
+                                            "domain": "k, s"
+                                        },
+                                        {
+                                            "outcome_text": "differentiate between Local Language alphabet and the English alphabet (u).",
+                                            "domain": "u"
+                                        },
+                                        {
+                                            "outcome_text": "use vowel length (s).",
+                                            "domain": "s"
+                                        },
+                                        {
+                                            "outcome_text": "describe family genealogy and relationships (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "write numerals (k, s, gs)",
+                                            "domain": "k, s, gs"
+                                        },
+                                        {
+                                            "outcome_text": "write days of the week, months of the year and dates (k, u, s)",
+                                            "domain": "k, u, s"
+                                        },
+                                        {
+                                            "outcome_text": "write time (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "welcome, greet and bid farewell using appropriate vocabulary (words) while observing time, number, gender and age of people (k, v).",
+                                            "domain": "k, v"
+                                        },
+                                        {
+                                            "outcome_text": "use gestures that accompany greeting to express respect, age difference/similarity and so on (s, gs).",
+                                            "domain": "s, gs"
+                                        },
+                                        {
+                                            "outcome_text": "write informal letters (k, s, gs).",
+                                            "domain": "k, s, gs"
+                                        },
+                                        {
+                                            "outcome_text": "use riddles related to family (k, v).",
+                                            "domain": "k, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learner illustrates the English language alphabet on the board."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the teacher guides the learner to identify, list and pronounce letters of the local language alphabet from a given text."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learner populates the generated list of sounds/letters with relevant examples of words from the text studied."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learner constructs additional words outside the given text that contain specific sounds."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher engages learner in a spelling exercise by dictating specific words especially those with common confusing sounds such as dh and th, ng and ŋ and those with diacritic marks."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher brainstorms with learners about members in their families."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher draws an example of a family tree on the board."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "through discussion, teacher asks learner to study a family tree chart and asks them to state any reasons for its arrangement."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher then wraps up the discussion."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using the given example of a family in (2), learners draw family trees reflecting their own immediate family genealogies."
+                                        },
+                                        {
+                                            "activity_type": "Project",
+                                            "description": "as an individual project, teacher may ask learners to generate a larger relational tree of their families and clans."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "teacher asks learners in groups to read a short text of a half-page containing numbers 1-20 in words."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to write numbers 1-20 in figures and words."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher explains common rules observed in writing numbers beyond 20 in words."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using the principles learnt, learners write numbers beyond 20 in words (21-1,000,000)"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to mention their position of birth in family."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to line up and mention their positions in the line."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides learners with flashcards containing ordinal numbers 1-20."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using examples in flashcards, learners write ordinal numbers 21-1000."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners what day of the week it is."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners read aloud a poem about days of the week and corresponding activities."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to write days of the week and their activities from the poem."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher presents learners with a table of months of the year in the local language."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners match months of the year in English and the local language."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher demonstrates how to write dates in a local language e.g. 03/12/1454. Ka adek dwe marapar g’aryo oro ma gana achiel pyer’apar dingwen gi pyer’abich g’angwen (Dhopadhola); Nga isatu omwezi gwa Namuwawuzo, mu mwaka lukumi bina ataanu n’ena(Lusoga); Eraasi auni olap loka Orara okaru loka ilukumit akwata aungon akaisiakany aungon (Ateso)."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher points key prepositions, conjunctions and punctuations involved in writing date e.g. ‘on’."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to write their personal birthdays and those of three family members."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to divide and name parts of the day: dawn, morning, noon, afternoon, evening and night in the local language."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learner to group times of the day into morning, afternoon, evening and night e.g. 12am-11am (morning), 12pm-3pm (afternoon), 4pm-7pm (evening), 8pm-11pm (night)."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "through group discussion, the teacher asks learners to write equivalents of specific terms such as am, pm, second, minute, hour, time, half-past, quarter-past or quarter-to, break, lunch, dinner, supper, etc. in the local language."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher illustrates to learners how to write given time in the local language in words or figures e.g. 10:15am (Sawa angwen gi dakika apar g’abich m’odikini); saawa inhha ne dakiika ikumi na itanu."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to pair up and greet one another."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks one learner to greet a group of learners."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learner greets the teacher."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to talk about/explain what rules they followed while greeting in scenarios 1-3."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher clarifies or sums up rules involved in greeting (time, number, gender, title, and age)."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to construct a greeting dialogue."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to discuss and demonstrate how they would greet peers, in-laws, women, men, and elders."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher engages learners to critique the greeting demonstrations and clarifies on some gestures."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to comment on the greeting gestures from other cultures vis-a-viz their own."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to mention types of letters they know."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to identify examples of people to whom informal letters can be written."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher demonstrates on the board or presents a text example of an informal letter."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to study example in 3 and identify parts of the letter."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to write their own letters to a family member, friend or relative."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher begins the lesson by giving examples of riddles and learners respond."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "teacher groups learners and tasks them to write ten riddles."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners share their collections with the rest of the class."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "after sharing, teacher asks learners to suggest importance of riddles."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "compares Local Language and English language alphabets."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "spells words from a dictation."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "transcribes words recorded in an electronic device."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "tabulates words according to vowel length e.g. bana vs baana, baba vs baaba, etc."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "writes a greeting dialogue with two responses for each time variation, that is, morning, afternoon and evening."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "responds to questions from an audio or audio-visual recorded greeting dialogue."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "writes given figures in the local language using words e.g. 14,579."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "writes a letter to a relative."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "poses and responds to five riddles related to family."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "draws an extended family tree."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "as an individual project, teacher may ask learners to generate a larger relational tree of their families and clans.",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "16"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 18,
+                                        "unit": "periods",
+                                        "source_page": "16"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use recorded episodes to support development of listening and speaking skills."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S1-T1-0002",
+                                        "topic_title": "1.2 Life at Home",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "roles",
+                                            "family members",
+                                            "lullabies",
+                                            "singular",
+                                            "plural",
+                                            "crafts",
+                                            "domestic objects",
+                                            "traditional fashion",
+                                            "taboos",
+                                            "hygiene"
+                                        ]
+                                    },
+                                    "core_competency": "The learner understands the home environment and the roles of the people at home.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "tell roles of different people at home (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "appreciate members of the family for carrying out their roles efficiently using appropriate vocabulary (v, a).",
+                                            "domain": "v, a"
+                                        },
+                                        {
+                                            "outcome_text": "appreciate the values of lullabies at home (k, v).",
+                                            "domain": "k, v"
+                                        },
+                                        {
+                                            "outcome_text": "name objects found at home in singular and plural (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "identify how some traditional objects, crafts and wears are made (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "explain the importance of domestic objects and wears (k, v).",
+                                            "domain": "k, v"
+                                        },
+                                        {
+                                            "outcome_text": "appreciate traditional fashion and style (k, v)",
+                                            "domain": "k, v"
+                                        },
+                                        {
+                                            "outcome_text": "appreciate the taboos related to the misuse of some of the objects at home (v, a).",
+                                            "domain": "v, a"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher probes learner to name titles of different people at home."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "through a discussion, the teacher asks earners to describe the roles of people at home."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups learners generate lists of common words related to roles played in a home."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners engage in a conversation using common words used in a family."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides a text on appreciation."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners identify the words/ language used in appreciation"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners share life examples/ personal experiences of appreciation/gratitude."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners explain the purpose/benefits of appreciation and effects of ingratitude."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learner writes a letter of appreciation to a family member for help received."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher probes learners to mention various songs sung in their community and their purpose."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the teacher picks out a lullaby and explains what it is."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the learners sing the lullabies they know from their communities."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups learners compose lullabies."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "leaners present their composed lullabies."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides a text with plural and singular forms of objects found at home."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners identify objects they have at their homes."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the learners generate a table of singular and plural forms of objects at home"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to identify some traditional objects, crafts or wears and describe how they are made."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher sums-up the process of making any given traditional object, craft or wear e.g. mortar/pestle, sieve, rope, mat, footwear or backcloth."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners write a half-page composition describing how any chosen traditional object, wear or craft is made."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "in groups, learners discuss the importance of any traditional object or wear."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners present their group’s finding in a plenary."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to appreciate the concept of moral and physical beauty."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "with vivid examples, teacher guides learners to discover aspects of moral beauty of a person in a traditional setting (honesty, appropriate language, respect of rule of law and order, respect for elders, hard work, etc.)"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "in groups, learners discuss aspects of physical beauty of a person in a traditional setting (decency, adornment, grooming, tooth extraction, body size, traditional dress codes, etc.)"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "using specific examples, teacher guides learners to understand the meaning of ‘taboo’."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners identify and discuss the purpose of taboos associated with misuse of some objects found in a home."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners share their findings in a plenary."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Debate",
+                                            "description": "debates on topics related to the family such as: ‘Mother is more important to the family than Father.’"
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "writes the singular and plural of objects found at home."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "writes a letter of apology or of gratitude to a family member."
+                                        },
+                                        {
+                                            "assessment_type": "Activity",
+                                            "description": "writes a lullaby, rehearses it and discusses its importance."
+                                        },
+                                        {
+                                            "assessment_type": "Activity",
+                                            "description": "makes a traditional object such as a banana fibre ball or skipping rope."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "writes a one-page essay describing how one traditional object is made."
+                                        },
+                                        {
+                                            "assessment_type": "Debate",
+                                            "description": "debates on traditional beauty vs modern beauty."
+                                        },
+                                        {
+                                            "assessment_type": "Activity",
+                                            "description": "picks a role model from each side of beauty and explain why they admire them."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "explains the rationale of at least five taboos associated with misuse of some traditional objects/crafts/wares. e.g Not sitting on the mortar is for hygiene purposes i.e. the mortar is used for preparing food and therefore should be kept clean/not be contaminated."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "identifies at least five proverbs associated with the taboos on misuse of those objects /crafts/wares."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "writes a short essay on the roles of people at home (100-150 words)."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Make a traditional object",
+                                                "description_verbatim": "makes a traditional object such as a banana fibre ball or skipping rope.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "19"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "19"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use the Internet to obtain images or digital camera to take pictures of the objects in a home to support class discussion.",
+                                            "Use a computer to prepare a list of tribes and their cultural dress codes (where applicable)."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Strand: Occupational",
+                            "theme_description": "Focus on occupations, farming, and food practices.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S1-T2-0001",
+                                        "topic_title": "1.3 Crops, Plants and Foods in Our Area",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 16,
+                                        "keywords": [
+                                            "crops",
+                                            "plants",
+                                            "foods",
+                                            "seasons",
+                                            "agriculture",
+                                            "harvesting",
+                                            "taboos",
+                                            "yields",
+                                            "preparation",
+                                            "preservation",
+                                            "menu"
+                                        ]
+                                    },
+                                    "core_competency": "The learner understands knowledge concerning practices of growing crops, plants and making food.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "categorise food crops, non-food crops and wild plants and understand their importance to the family/ community (k, u, v).",
+                                            "domain": "k, u, v"
+                                        },
+                                        {
+                                            "outcome_text": "differentiate seasons of the year and understand their impact on agricultural activities (k, u, v).",
+                                            "domain": "k, u, v"
+                                        },
+                                        {
+                                            "outcome_text": "use appropriate vocabulary in the Local Language during planting and harvesting (k).",
+                                            "domain": "k"
+                                        },
+                                        {
+                                            "outcome_text": "study the taboos related to crop growing, harvesting and seasons and how they affect the crops (k, v, a).",
+                                            "domain": "k, v, a"
+                                        },
+                                        {
+                                            "outcome_text": "identify the techniques used in improving crop yields (k, v).",
+                                            "domain": "k, v"
+                                        },
+                                        {
+                                            "outcome_text": "describe the process of food preparation (k, v).",
+                                            "domain": "k, v"
+                                        },
+                                        {
+                                            "outcome_text": "describe ways of preserving and storing crops and food (k, v).",
+                                            "domain": "k, v"
+                                        },
+                                        {
+                                            "outcome_text": "describe a food menu (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "use a dictionary (k, u, s, gs).",
+                                            "domain": "k, u, s, gs"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "teacher groups learners and asks them to identify examples of food crops, non-food crops and wild plants in the community."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to discuss the importance of crops and wild plants to the community."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners write one-page composition describing the importance of crops."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a text on different seasons and their impact on agricultural activities."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners identify seasons mentioned in the text and their respective activities."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners identify impacts of the season on the activities."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to understand how their community categorises seasons e.g. by weather patterns or activity."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "learners in their groups discuss and identify activities carried out in particular seasons and why."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners share experiences of how they grow and harvest any crop at home or school."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides a descriptive text on the process of growing and harvesting any chosen crop."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "teacher guides learners to brainstorm on certain terms and processes as indicated in the text."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners write a one-page description of the steps involved in growing and harvesting any crop."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher introduces the concept of taboos by asking learners to brainstorm the purposes of rules and regulations at school."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to relate school rules and regulations to taboos involved in growing and harvesting crops."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "teacher asks learners to research and report on taboos related to growing and harvesting crops in their communities."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to talk about what crops were grown in their communities in their previous season and whether the yields were good or not."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to explain what could have caused better or poor yields."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "in groups, learners discuss methods of improving crop yields."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, teacher asks to categorise methods into traditional and modern practices."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to mention various types of foods, sauces and beverages prepared at their homes."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "teacher groups learners and allocates them different types of foods and asks them to describe the process involved in preparing such a food."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners make a report on (2) above."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "teacher asks learners to brainstorm on what takes place at mealtime."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, teacher asks learners to identify examples of good and bad manners portrayed while having a meal."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to identify the methods of food preservation or storage."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, teacher tasks learners to identify the types of food and how they can be preserved or stored."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, teacher provides learners with manilla papers and asks them to draw any type of food preservation or storage system known to them."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "in their groups, learners present their work."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "learners brainstorm on what foods, sauces and beverages they often have for a meal at home."
+                                        },
+                                        {
+                                            "activity_type": "Field Trip",
+                                            "description": "the class visits any local restaurant to appreciate how a food menu is prepared."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "while in the field, learners take notes."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, teacher asks learners to write a food menu using their field notes."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, teacher provides learners with a dictionary or photocopies and guides them to locate certain words."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners pronounce words they have located and use them to construct different sentences."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, learners display their sentences on charts."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "with specific examples, teacher illustrates the meanings of synonyms, antonyms and homophones."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners complete assignments on synonyms, antonyms and homophones."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "reads and answers questions from a comprehension passage on effects of seasonal changes on crops."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "mentions five advantages of growing crops to the family/ community."
+                                        },
+                                        {
+                                            "assessment_type": "Debate",
+                                            "description": "holds a debate on different topics related to agriculture such as modern vs traditional techniques of farming, advantages and disadvantages of farming, etc."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "writes two taboos related to crops."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "uses a graphic organiser/ template to communicate the process of preparing a favourite food."
+                                        },
+                                        {
+                                            "assessment_type": "Performance",
+                                            "description": "prepares and acts a skit to educate people about table manners etiquette."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "correctly pronounces particular words on a given list."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "explains meanings of given words."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "re-arranges given words in alphabetical order."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "using minimal pairs differentiates meanings of homophones."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "teacher asks learners to research and report on taboos related to growing and harvesting crops in their communities.",
+                                            "assessment_method": "Report"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 16,
+                                        "unit": "periods",
+                                        "source_page": "21"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use a Word processor to prepare a food menu.",
+                                            "use a digital camera to take pictures of local crops."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Strand: Occupational",
+                            "theme_description": "Focus on animal husbandry and care.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S1-T3-0001",
+                                        "topic_title": "1.4 Animal Rearing",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "domestic animals",
+                                            "poultry",
+                                            "products",
+                                            "shelter",
+                                            "punctuation",
+                                            "taboos",
+                                            "diseases",
+                                            "treatment",
+                                            "animal rights"
+                                        ]
+                                    },
+                                    "core_competency": "The learner appreciates knowledge concerning practices of animal rearing.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "name domestic animals, birds, their products and understand their importance (k, u, v).",
+                                            "domain": "k, u, v"
+                                        },
+                                        {
+                                            "outcome_text": "differentiate punctuation marks and their functions (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "explain taboos related to domestic animals and poultry (v, a).",
+                                            "domain": "v, a"
+                                        },
+                                        {
+                                            "outcome_text": "identify the symptoms and traditional ways of treating some common sicknesses that affect animals (k, u, v, a).",
+                                            "domain": "k, u, v, a"
+                                        },
+                                        {
+                                            "outcome_text": "know animal rights (k, u, v).",
+                                            "domain": "k, u, v"
+                                        },
+                                        {
+                                            "outcome_text": "explain the relationship between animals and different communities in Uganda (k, u, v, a).",
+                                            "domain": "k, u, v, a"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to mention animals and birds they know."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, the learners generate a list of domestic animals, birds, their young ones and shelter."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the learners share lists."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "learners discuss the importance of domestic animals and poultry."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "learners research and report on ways in which domestic animals and birds contribute to livelihoods."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "by way of tabulation, learners identify animals/birds and their young ones."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides a varied-punctuated text for the learner to read."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the learner identifies the different punctuation marks used in the text."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learner writes them in their local language."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learner compares them with those in the standard orthography."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "leaners discuss the use/importance of each of them."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learner punctuates a given text."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to identify taboos related to domestic animals and poultry."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "in two groups: one for domestic animals and the second for poultry, learners discuss the taboos."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "each group reports their findings."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learner writes an essay on the taboos."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides a text on animal/bird diseases."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learner describes symptoms of different diseases."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learner generates a table on animal and poultry diseases and their traditional treatment."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides a text on animal rights for learners to study."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners identify two animal and poultry rights."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners share their opinions/feelings on animal rights."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, learners write a composition on animal rights."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "teacher guides learners to brainstorm on animals found in their communities."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "learners discuss the uses of animals in different communities."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners describe agricultural activities relating to animal rearing."
+                                        },
+                                        {
+                                            "activity_type": "Debate",
+                                            "description": "learners debate on the relationship between animals and people."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "reads/listens to a text on a topic related to health issues of animals and/or birds and answers questions."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "writes a letter to his/her father informing him of the state of the animals or poultry at home."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "writes a composition on the importance of domestic animals and poultry (half-page)."
+                                        },
+                                        {
+                                            "assessment_type": "Discussion",
+                                            "description": "discusses the importance of observing the rights of animals."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "reads a one-paragraph passage on the importance of domestic animals and punctuates it correctly."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "fills a table with names of five animals, their young ones and shelter."
+                                        },
+                                        {
+                                            "assessment_type": "Debate",
+                                            "description": "debates on topics related to birds and animals e.g. “poultry keeping is better than animal rearing.”"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "learners research and report on ways in which domestic animals and birds contribute to livelihoods.",
+                                            "assessment_method": "Report"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "23"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use a Word processor to generate a list of domestic animals, their young ones and shelter.",
+                                            "use the Internet to obtain images of domestic animals.",
+                                            "generate a table on animal and poultry diseases and their treatment."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Strand: Public",
+                            "theme_description": "Focus on personal health, hygiene, and community sanitation.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S1-T3-0002",
+                                        "topic_title": "1.5 Personal and Community Hygiene",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "hygiene",
+                                            "sanitation",
+                                            "body parts",
+                                            "diseases",
+                                            "prevention",
+                                            "translation",
+                                            "songs",
+                                            "poems",
+                                            "health"
+                                        ]
+                                    },
+                                    "core_competency": "The learner understands language related to should be able to basic hygiene.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "use words related to hygiene and how it is maintained at personal and community level (k, u, v, gs).",
+                                            "domain": "k, u, v, gs"
+                                        },
+                                        {
+                                            "outcome_text": "name internal and external parts of the body that are prone to disease due to poor hygiene (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "translate words and short sentences (k, s).",
+                                            "domain": "k, s"
+                                        },
+                                        {
+                                            "outcome_text": "maintain personal hygiene and proper sanitation (gs).",
+                                            "domain": "gs"
+                                        },
+                                        {
+                                            "outcome_text": "explain how to prevent various diseases using traditional approaches and modern methods k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "compose and write simple songs and poems (s).",
+                                            "domain": "s"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a text on personal and community hygiene."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to identify words related to hygiene from the text."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "learners brainstorm the meanings of words identified."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners use the words identified to construct sentences."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "teacher groups learners, provides them with charts and asks them to draw and label the human body."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, learners identify parts of the body that are prone to disease."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners identify different diseases that affect internal and external parts of the human body."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, teacher provides learners with translated text on parts of the body and human diseases."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, learners translate short sentences related to parts of the body and human diseases into the local language."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher assesses learners’ work."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher identifies some simple songs from different languages about health and tasks learners to translate them."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "learners brainstorm the different ways on how proper hygiene and sanitation are maintained."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "learners discuss advantages of maintaining proper hygiene and dangers of poor hygiene."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, teacher asks learners to recap various human diseases."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, learners suggest ways of preventing and treating diseases mentioned."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to categorise the prevention and treatments into traditional and modern methods."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study sample poems/songs."
+                                        },
+                                        {
+                                            "activity_type": "Performance",
+                                            "description": "teacher recites a poem and learners sing a song along with teacher."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners compose poems and songs about hygiene."
+                                        },
+                                        {
+                                            "activity_type": "Performance",
+                                            "description": "learners sing the songs or perform their poems."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Discussion",
+                                            "description": "discusses the causes of diseases related to poor hygiene in their community."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "suggests ways of preventing common diseases in the community."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "draws and labels the human body."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "matches six diseases related to hygiene and the body parts they attack."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "writes four paragraphs about keeping their bodies and environment clean, observing the rules of orthography."
+                                        },
+                                        {
+                                            "assessment_type": "Activity",
+                                            "description": "composes simple songs and poems."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "25"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use electronic devices to record plays/songs/poems in a Local Language.",
+                                            "use mobile thermometer, stethoscope and sphygmomanometer (Blood Pressure Machine) for measuring one’s body temperature, breathing and pressure."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

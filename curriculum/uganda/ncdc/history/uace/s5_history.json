@@ -1,0 +1,1874 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Advanced Secondary Curriculum",
+    "subject": "History",
+    "level": "A-level",
+    "class_group": "Senior Five",
+    "year": "2025",
+    "version": "1.0",
+    "source_document": "HISTORY SYLLABUS ADVANCED SECONDARY CURRICULUM"
+  },
+
+  "global_framework": {
+    "competencies": [],
+    "generic_skills": [
+      "Critical thinking and problem-solving",
+      "Co-operation and Self-Directed Learning",
+      "Creativity and Innovation",
+      "Communication",
+      "Mathematical Computation",
+      "Information and Communication Technology (ICT) Proficiency",
+      "Diversity and Multicultural Skills"
+    ],
+    "values": [
+      "Respect for humanity and the environment",
+      "Honesty, upholding and defending the truth at all times",
+      "Justice and fairness in dealing with others",
+      "Hard work for self-reliance",
+      "Integrity; moral uprightness and sound character",
+      "Creativity and innovation",
+      "Social responsibility",
+      "Social harmony",
+      "National unity",
+      "National consciousness and patriotism"
+    ],
+    "attitudes": [],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Life skills",
+      "Mixed abilities and involvement",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+
+  "classes": [
+    {
+      "class_name": "Senior Five",
+      "class_code": "S5",
+      "terms": [
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Unit 1: History of Africa Since 1800",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T1-0001",
+                    "topic_title": "The Social and Economic Systems in the Pre-Colonial Institutions in Africa",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 20
+                  },
+                  "core_competency": "The learner appreciates pre-colonial social and economic systems by analysing their structures and how they can be used to address current societal challenges.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "assess the importance of the clan in pre-colonial societies as the foundation of shared values, heritage and governance. (u, v, a)",
+                      "domain": "Understanding, Values, Application"
+                    },
+                    {
+                      "outcome_text": "analyse the role of age groups in promoting social harmony so as to understand his/her role in the community. (gs, v, u)",
+                      "domain": "Generic Skills, Values, Understanding"
+                    },
+                    {
+                      "outcome_text": "evaluate the role of initiation ceremonies instilling pride and a sense of identity to appreciate being a member of a particular society. (u, v, a)",
+                      "domain": "Understanding, Values, Application"
+                    },
+                    {
+                      "outcome_text": "analyse the role of African traditional religion in pre-colonial societies as a means of preserving societal knowledge and values. (u, v, gs)",
+                      "domain": "Understanding, Values, Generic Skills"
+                    },
+                    {
+                      "outcome_text": "examine the role of pre-colonial production in ensuring the survival of pre-colonial African societies and how this knowledge can be applied to address current societal challenges. (gs, v, u)",
+                      "domain": "Generic Skills, Values, Understanding"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "The Clan",
+                      "Initiation Ceremonies",
+                      "African Traditional Religions",
+                      "Pre-Colonial Production"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Learners brainstorm the concept of a clan. Through questioning and explanation, the class reaches a common understanding of what constitutes a clan."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners form groups to discuss their respective clans and generate a list of clans represented in their group."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, use textbooks, the internet, and other sources to search for the roles and significance of clans in African traditional societies."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners, in groups, share ideas on the potential impact of the absence of clans on their community and country."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "Learners participate in a project to identify a community problem related to the neglect or misunderstanding of clan laws. They research its causes, engaging with a clan leader to explore solutions."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in small groups, search using textbooks and online resources, for the roles of age groups in traditional African societies."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners, in groups, identify their own age groups and analyse their roles in promoting harmony and responsibility within their communities."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "In groups, learners identify initiation ceremonies in their own communities and other parts of Uganda. They discuss the activities involved and the value of each activity."
+                    },
+                    {
+                      "activity_type": "Group Analysis",
+                      "description": "Learners, in groups, analyse the contributions of initiation ceremonies to traditional African societies and present their insights to the class."
+                    },
+                    {
+                      "activity_type": "Fieldwork/Interview",
+                      "description": "Learners prepare an interview guide and visit a local community to interview elders about the practices, rituals and beliefs in African traditional religion within their community and write a report."
+                    },
+                    {
+                      "activity_type": "Journaling",
+                      "description": "Learners create a journal on the role of age sets or other society social structures, which is then presented and discussed in class."
+                    },
+                    {
+                      "activity_type": "Comparison/Table",
+                      "description": "Individually, learners draw a comparison table showing the features of traditional African religion and their own religion, focusing on beliefs, values and rituals. They then display the tables in the classroom for peer review."
+                    },
+                    {
+                      "activity_type": "Research/Report",
+                      "description": "Learners, in groups, search specific pre-colonial economic activities using textbooks, the internet and other sources and analyse the role of these activities in societal survival and write a report."
+                    },
+                    {
+                      "activity_type": "Guest Speaker",
+                      "description": "Invite a guest speaker or a panel of teachers to discuss a predominant pre-colonial economic activity in the area and its contribution to the survival of their community."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ ability to: a) demonstrate their understanding of the concept of the clan by: i) analysing historical data to make informed personal decisions. ii) applying logical reasoning to assess historical facts. iii) clearly and effectively communicating insights into the historical and cultural roles of clans. iv) collaborating in group activities, presenting arguments, and supporting them with evidence."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners to assess their ability to sustain a logical discussion on the role of age groups in any community. Take note of: i) their listening and comprehension levels. ii) their confidence in explaining issues clearly."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the relevance, accuracy and coherence of the report created by learners focusing on the identified problem in the community and suggesting a solution."
+                    },
+                    {
+                      "assessment_type": "Assessment",
+                      "description": "Assess the relevance, accuracy and the coherence of the contributions of initiation ceremonies given by learners from the traditional African societies."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [
+                    {
+                      "text_verbatim": "Learners participate in a project to identify a community problem related to the neglect or misunderstanding of clan laws. They research its causes, engaging with a clan leader to explore solutions.",
+                      "assessment_method": "Evaluate the relevance, accuracy and coherence of the report created by learners focusing on the identified problem in the community and suggesting a solution."
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "Learners participate in a project to identify a community problem related to the neglect or misunderstanding of clan laws. They research its causes, engaging with a clan leader to explore solutions.",
+                    "deliverables_verbatim": "Report created by learners focusing on the identified problem in the community and suggesting a solution.",
+                    "assessment_weight_percent": null,
+                    "source_page": "24"
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 20,
+                    "unit": "periods",
+                    "source_page": "24"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use textbooks, the internet, and other sources to search for the roles and significance of clans in African traditional societies."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T1-0002",
+                    "topic_title": "The Pre-Colonial Trade Systems in Africa",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 28
+                  },
+                  "core_competency": "The learner evaluates pre-colonial trade systems in Africa by examining their impact to appreciate their contribution to the continent’s economic development and the struggle for equality.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "describe the organisation of the Trans-Saharan trade and its role in the development of African states to appreciate their contribution to the growth of modern trade systems. (u,gs,v, a)",
+                      "domain": "Understanding, Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "describe the organisation of the Trans-Atlantic slave trade and its impact on Africa and the world to understand the rise of African diasporas. (gs,v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "analyse the process of abolition of slave trade in West Africa and its impact on African societies to appreciate the foundations of human rights and civil liberties. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "The Trans-Saharan Trade",
+                      "The Trans-Atlantic Slave Trade"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners, in groups, using textbooks, the internet and any available map, discuss the organisation of Trans-Saharan trade by identifying major trade routes, cities, major traders and goods traded."
+                    },
+                    {
+                      "activity_type": "Reading/Note-taking",
+                      "description": "Learners, in groups, read textbooks or history extracts about the Trans-Saharan trade in West African communities like Mali and Songhai. They note down its impact on the communities."
+                    },
+                    {
+                      "activity_type": "Role-play",
+                      "description": "Learners in a role-play session, dramatise the challenges faced by traders during the Trans-Saharan trade."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners, in groups, using textbooks, the internet and any available map, discuss the organisation of the Trans-Atlantic slave trade by identifying major trade routes, cities, major traders and goods traded."
+                    },
+                    {
+                      "activity_type": "Analysis",
+                      "description": "Learners use textbooks, magazines or the internet to analyse the role of African traditional leaders in the Trans-Atlantic slave trade."
+                    },
+                    {
+                      "activity_type": "Comparison",
+                      "description": "In a class discussion, learners compare the Trans-Atlantic slave trade with other forms of human trafficking today."
+                    },
+                    {
+                      "activity_type": "Storytelling",
+                      "description": "In a storytelling session, learners narrate cases in which they have seen or heard about oppression and exploitation similar to that of slave trade."
+                    },
+                    {
+                      "activity_type": "Comparison",
+                      "description": "Learners, in groups, compare the problems faced in Trans-Saharan trade and those faced in Trans-Atlantic trade."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "Learners, in groups, read an extract about the British Slave Trade Act (1807) to understand abolition strategies."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Learners engage in a debate about human trafficking and the teacher does a wrap-up."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they identify and locate trade routes, cities, major traders and goods on a West African historical map. Assess their ability to: i) accurately and fluently interpret maps symbols, legends, and scales. ii) systematically sort and analyse data presented on the map, such as distinguishing between different trade routes and identifying key trading towns."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners as they compare the problems faced in both Trans-Saharan trade and Trans-Atlantic slave trade and take note of their ability to: i) talk confidently and explain ideas clearly. i) sort and analyse information."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the relevance and coherence of the stories narrated by learners about oppression and exploitation similar to that of slave trade."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 28,
+                    "unit": "periods",
+                    "source_page": "26"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners use textbooks, magazines or the internet to analyse the role of African traditional leaders in the Trans-Atlantic slave trade."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Unit 2: History of World Affairs Since 1789",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T1-0003",
+                    "topic_title": "The French Revolution of 1789",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 32
+                  },
+                  "core_competency": "The learner analyses the influence of the 1789 French Revolution by examining its causes, events and impact to appreciate how oppression and poor leadership can lead to conflicts in society.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the political and socio-economic conditions in Europe on the eve of the 1789 French Revolution to understand the conditions that can lead to a revolution in society. (gs, v, a).",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "examine the causes of the 1789 French Revolution and identify ways to prevent similar conflicts in the future. (v, a)",
+                      "domain": "Values, Application"
+                    },
+                    {
+                      "outcome_text": "identify the major events and progression of the 1789 French Revolution to understand how historical events unfold and evolve. (u,v, a)",
+                      "domain": "Understanding, Values, Application"
+                    },
+                    {
+                      "outcome_text": "analyse the impact of the 1789 French Revolution on France and the world to understand how people can take charge of their own destiny. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Europe on the Eve of the 1789 French Revolution",
+                      "Causes of the French Revolution of 1789",
+                      "Key Events in the Course of 1789 French Revolution",
+                      "Impact of the French Revolution of 1789"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, use the internet, textbooks, extracts and other sources to search for the political and socio-economic conditions in Europe before the 1789 French Revolution."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Learners use the internet, textbooks, extracts and other sources to investigate the causes of the 1789 French Revolution and discuss how these factors contributed to the revolution in France."
+                    },
+                    {
+                      "activity_type": "Essay",
+                      "description": "Learners, in an essay competition, write essays on the lessons Uganda can learn from the 1789 French Revolution. Learners pin up their essays in a portfolio corner."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, search, using textbooks and internet sources, for major events during the 1789 French Revolution."
+                    },
+                    {
+                      "activity_type": "Role-play",
+                      "description": "Learners, in pairs, act out different scenes (e.g. King Louis XVI, Marie Antoinette, revolutionaries, peasants etc.) to demonstrate their roles in the French Revolution."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "In a brainstorming session, learners discuss the impact of the 1789 French Revolution and take notes."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners participate in a discussion on how failure to bring about reforms can result in a conflict."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they present on the conditions in Europe before the outbreak of the 1789 French Revolution and take note of: i) the level of interaction with peers. ii) respect for one another’s opinions."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners during their discussion on the causes of the 1789 French Revolution and take note of their ability to: i) listen attentively. ii) present issues logically."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the relevance, accuracy and coherence of the facts used in the essays to explain the lessons learnt by Ugandans from the outbreak of the French Revolution in 1789."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 32,
+                    "unit": "periods",
+                    "source_page": "34"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners, in groups, use the internet, textbooks, extracts and other sources to search for the political and socio-economic conditions in Europe before the 1789 French Revolution.",
+                      "Learners, in groups, search, using textbooks and internet sources, for major events during the 1789 French Revolution."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T1-0004",
+                    "topic_title": "The Era of Napoleon Bonaparte, 1799–1815",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 16
+                  },
+                  "core_competency": "The learner demonstrates an understanding of how Napoleon Bonaparte I dominated European affairs by examining his background and policies to appreciate how leadership can shape society.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the factors that contributed to the rise of Napoleon I of France to appreciate how his leadership was influential on society. (gs, a, v)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "assess Napoleon Bonaparte’s policies to appreciate the lessons that modern leaders in Africa can draw from his leadership. (u,v, a)",
+                      "domain": "Understanding, Values, Application"
+                    },
+                    {
+                      "outcome_text": "evaluate the factors leading to the end of the Napoleonic era in 1815 and their implications for ending aggressive regimes in modern times. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Rise of Napoleon Bonaparte to Power",
+                      "The Domestic and Foreign Policies of Napoleon Bonaparte I",
+                      "The End of Napoleon Bonaparte I Era"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Learners, in a brainstorming session, discuss the relationship between the French Revolution and the rise of Napoleon Bonaparte."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners search, using textbooks and internet sources, for the factors that led to the rise of Napoleon Bonaparte I to power."
+                    },
+                    {
+                      "activity_type": "Group Analysis",
+                      "description": "Learners, in groups, using an extract on Napoleon Bonaparte I, analyse and present key aspects of his domestic policies."
+                    },
+                    {
+                      "activity_type": "Comparison",
+                      "description": "Learners, in pairs compare Napoleon Bonaparte’s domestic policies with those of any modern African leader and present their findings in class."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, using the internet or any other sources, search for Napoleon Bonaparte’s foreign policy."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "In a brainstorming session, learners explore the reasons behind Napoleon Bonaparte’s downfall and the teacher wraps up the lesson."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they brainstorm the background of Napoleon I and assess their ability to: i) listen attentively with comprehension. ii) sort and analyse connections of events."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners to gauge their level of listening skills, their eloquence and fluency in presentation as they discuss the factors that led to the rise of Napoleon 1."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the relevance and accuracy of the write-ups on the reasons for the downfall of Napoleon 1."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 16,
+                    "unit": "periods",
+                    "source_page": "35"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners search, using textbooks and internet sources, for the factors that led to the rise of Napoleon Bonaparte I to power.",
+                      "Learners, using the internet or any other sources, search for Napoleon Bonaparte’s foreign policy."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "Unit 1: History of Africa Since 1800",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T2-0001",
+                    "topic_title": "Islamic Revolutions in Africa",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 16
+                  },
+                  "core_competency": "The learner analyses the Islamic revolutions in Africa by examining their impact to appreciate how they have shaped cultural diversity in contemporary Africa",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "examine the factors that contributed to the spread of Islam in North Africa and its influence on cultural practices in modern Africa. (gs, u, v, a)",
+                      "domain": "Generic Skills, Understanding, Values, Application"
+                    },
+                    {
+                      "outcome_text": "explore the role of jihad movements in West Africa and their contribution to contemporary cultural diversity in Africa. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "assess the causes and effects of the Mahdist Revolt to appreciate the role of religion in influencing events in society. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Islam in North Africa",
+                      "Jihad Movements in West Africa",
+                      "The Mahdist Movement in Sudan"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners individually search, using the internet and other sources, for the factors that contributed to the spread of Islam in North Africa."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Learners engage in a debate on the spread of Islam in North Africa."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, search the internet or textbooks to find out the various strategies Muslim clerics employed to encourage Africans to adopt Islam."
+                    },
+                    {
+                      "activity_type": "Video/Documentary",
+                      "description": "Learners watch a guided documentary or listen to a narration about jihad movements in West Africa. They analyse their origins, groups and causes in West Africa."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Learners participate in a debate on the results of jihad movements in West Africa."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners use textbooks, the internet and other reliable sources to investigate the influence of jihad movements in modern Islamic practices."
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "Learners, in groups, read textbooks, historical extracts and other sources about the Mahdist Revolt in Sudan. They identify its features and causes."
+                    },
+                    {
+                      "activity_type": "Role-play",
+                      "description": "Learners, in a role-play, act out scenes of an Islamic leader mobilising support for war and its possible results and a panel of teachers does a wrap-up."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they share factors that attracted Muslims to North Africa, taking note of: i) their eloquence in explaining facts. ii) their ability to structure information logically."
+                    },
+                    {
+                      "assessment_type": "Dialogue",
+                      "description": "Engage in dialogue with learners to assess their understanding of the influence of Islam on African cultural practices. Focus on their ability to: i) talk confidently. ii) explain issues clearly and critically."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Examine the relevance, accuracy and coherence of learners’ presentation on the features and causes of the Mahdist revolt."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 16,
+                    "unit": "periods",
+                    "source_page": "27"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners individually search, using the internet and other sources, for the factors that contributed to the spread of Islam in North Africa.",
+                      "Learners, in groups, search the internet or textbooks to find out the various strategies Muslim clerics employed to encourage Africans to adopt Islam."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T2-0002",
+                    "topic_title": "The Scramble for and Partition of Africa 1880–1914",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 20
+                  },
+                  "core_competency": "The learner analyses European imperialism in Africa by examining its causes, processes and impact to appreciate the contemporary African challenges.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "examine the motives behind the 19th-century scramble for Africa to appreciate the contemporary interests of foreign powers in Africa. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "analyse the process of European colonisation of Africa to understand how European colonialism was planted on the continent. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "evaluate the impact of European colonialism in Africa to appreciate its influence in his/her own community. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Background to the Scramble for and Partition of Africa",
+                      "The Berlin Conference of 1884 – 85",
+                      "Impact of Colonisation"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Learners participate in a brainstorming session to express their understanding of the concept of the scramble and partition of Africa."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, using internet sources, historical extracts and textbooks about the scramble and partition, find out and present the factors for the scramble for and partition of Africa by Europeans."
+                    },
+                    {
+                      "activity_type": "Map Analysis",
+                      "description": "Learners use historical and contemporary maps to compare how Africa was affected by different colonial powers in the 19th century and how modern foreign powers have taken control of Africa."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, using historical extracts or textbooks on the Berlin Conference of 1884–85, find out reasons why it was convened and show its impact on the colonisation of Africa."
+                    },
+                    {
+                      "activity_type": "Research/Presentation",
+                      "description": "Learners, in groups, use the internet, textbooks or other sources to investigate the shortcomings of the Berlin Conference 1884–85 and share their insights through class presentations."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Learners, in a brainstorming session, identify and discuss elements within their community that originated from European colonialism (e.g. architecture, legal systems, education, language, and administrative structures)."
+                    },
+                    {
+                      "activity_type": "Case Study/Research",
+                      "description": "Learners, in groups, conduct an internet or library search to examine case studies on the impact of the scramble for and partition of Africa in any two countries under different colonial powers."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they analyse the factors for 19th-century European occupation of Africa. Assess their ability to: i) sort and analyse information. ii) work with others to generate ideas."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Engage learners in a conversation to evaluate their understanding of current border conflicts in Africa. Assess their ability to: i) identify underlying problems. ii) propose practical and innovative solutions."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate learners’ selected case studies on the impact of the scramble for and partition of Africa by taking note of the following: i) relevance of content. ii) accuracy of facts. iii) coherence and logical flow of arguments."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 20,
+                    "unit": "periods",
+                    "source_page": "28"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners, in groups, using internet sources, historical extracts and textbooks about the scramble and partition, find out and present the factors for the scramble for and partition of Africa by Europeans."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T2-0003",
+                    "topic_title": "Establishment of Colonial Rule in Africa",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner evaluates how European colonialism was established in Africa by examining the strategies employed by European powers to understand the diverse methods used to impose colonial rule.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "evaluate the methods used by European powers to establish colonies in Africa to understand the European resolve to take over Africa so as to be able to defend its independence. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "examine the role played by colonial agents in advancing colonial interests in Africa to understand how the loss of Africa’s independence was a collective effort. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Methods Used in the Establishment of Colonial Rule",
+                      "The Agents of Colonial Rule: Explorers, Missionaries, Imperialists and Chartered Companies"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Learners collaboratively brainstorm and discuss various methods employed by European powers to colonise Africa and the teacher wraps up."
+                    },
+                    {
+                      "activity_type": "Role-play",
+                      "description": "Learners, in a role-play, act out a scene on the methods used by different European powers and African leaders during the late 19th century colonisation of Africa."
+                    },
+                    {
+                      "activity_type": "Research Project",
+                      "description": "Learners undertake individual research projects to investigate the roles of traders, explorers and missionaries in the colonisation of Africa and make reports for class discussion."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, use textbooks, magazines, the internet and other sources to explore the problems faced by colonial agents."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ ability to create scenes depicting colonial acquisitions in Africa. Take note of their: i) eloquence and confidence. ii) effectiveness in interacting with others."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation, engage learners in a discussion to assess their analytical skills, sort and analyse information regarding the contributions of various colonial agents."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the relevance and accuracy of the problems faced by colonial agents in Africa."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "Learners undertake individual research projects to investigate the roles of traders, explorers and missionaries in the colonisation of Africa and make reports for class discussion.",
+                    "deliverables_verbatim": "Reports for class discussion.",
+                    "assessment_weight_percent": null,
+                    "source_page": "29"
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "29"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners, in groups, use textbooks, magazines, the internet and other sources to explore the problems faced by colonial agents."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Unit 2: History of World Affairs Since 1789",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T2-0004",
+                    "topic_title": "Restoration of Order and Stability in Europe (1814–1830)",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 16
+                  },
+                  "core_competency": "The learner analyses the peace restoration efforts in Europe between 1814 and 1830 by examining selected peace agreements to appreciate the need for diplomacy in resolving political disputes.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the role of the 1814–1815 Vienna Settlement to appreciate its contribution in restoring peace in Europe. (gs, v)",
+                      "domain": "Generic Skills, Values"
+                    },
+                    {
+                      "outcome_text": "assess the role of the Congress System on diplomatic efforts in Europe to appreciate the contribution of collective efforts after periods of conflict. (gs, v)",
+                      "domain": "Generic Skills, Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Vienna Settlement",
+                      "Congress System"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, using the internet, textbooks and other sources, explore the background and objectives of the Vienna Settlement."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners, in groups, discuss the terms for the calling of the Vienna Settlement (1814–1815)."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Learners, in a debate session, discuss the impact of the 1814 –15 Vienna Settlement and the teacher does a wrap-up."
+                    },
+                    {
+                      "activity_type": "Think-pair-share",
+                      "description": "Learners in think-pair-share session discuss the meaning of the term Congress System."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners, in groups, discuss the major congresses in Europe that include: Aix La Chapelle in1818, Troppau in 1820, Laibach in 1821, Verona in 1822, St. Petersburg 1825 and London 1827."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, using the internet and textbooks, search for the impact of the Congress System and its contribution to the restoration of peace in Europe."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners, in groups, discuss and take note of the factors that led to the collapse of the Congress System by 1830."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ ability to manage goals and time and use accurate facts in a sharing session about the establishment of the Vienna Settlement."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Engage learners in a conversation to assess their ability to generate a list of congress meetings that took place in Europe after 1814, focusing on their ability to: i) use facts accurately. ii) write and present coherently."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate learners’ accuracy and coherence of written summaries on the effects of the Congress System to understand the class comprehension levels."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 16,
+                    "unit": "periods",
+                    "source_page": "36"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners, using the internet, textbooks and other sources, explore the background and objectives of the Vienna Settlement.",
+                      "Learners, in groups, using the internet and textbooks, search for the impact of the Congress System and its contribution to the restoration of peace in Europe."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T2-0005",
+                    "topic_title": "The Revolutions of 1848 in Europe",
+                    "sequence_order": 5,
+                    "recommended_duration_periods": 16
+                  },
+                  "core_competency": "The learner demonstrates an understanding of one of the most volatile periods in European history by examining the 1848 revolutions to appreciate how poor leadership can lead to conflicts in society.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the role of 1848 revolutions in the 19th century political order in Europe to understand some of the current political movements and changes in the world. (v, a)",
+                      "domain": "Values, Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "The 1848 Revolutions in Europe"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Guided Discovery",
+                      "description": "Learners, in a guided discovery, use the internet, textbooks, extracts and other sources to search for and present the major countries where the 1848 revolutions took place in Europe. These countries include France, Austria - Hungary, Prussia and the Italian states."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners, in groups, discuss the causes of the 1848 revolutions in Europe."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Learners, in a brainstorming session, share the characteristics of the 1848 revolutions in Europe and the teacher wraps up the lesson."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, using textbooks and the internet, search for the reasons for the absence of revolutions in some parts of Europe in 1848."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Learners, in a brainstorming session, discuss and share factors for the success of 1848 revolutions in some parts of Europe."
+                    },
+                    {
+                      "activity_type": "Think-pair-share",
+                      "description": "Learners, in a think-pair-share session, discuss reasons for the failure of 1848 revolutions in some parts of Europe."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Learners, in a debate session, discuss the results of the 1848 revolutions in Europe."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners in a discussion on the causes of the 1848 European revolutions and take note of their ability to: i) analyse historical ideas using logical reasoning. ii) use historical timelines properly."
+                    },
+                    {
+                      "assessment_type": "Dialogue",
+                      "description": "Engage learners in a dialogue as they discuss the factors for the success of the1848 revolutions in Europe and take note of their ability to: i) interact effectively with others. ii) use evaluative questions."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Assess the relevance and accuracy of learners’ speeches in a debate session on the impact of the 1848 revolutions in Europe."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 16,
+                    "unit": "periods",
+                    "source_page": "37"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners, in a guided discovery, use the internet, textbooks, extracts and other sources to search for and present the major countries where the 1848 revolutions took place in Europe."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T2-0006",
+                    "topic_title": "The Unification Struggles in Europe up to 1871",
+                    "sequence_order": 6,
+                    "recommended_duration_periods": 16
+                  },
+                  "core_competency": "The learner analyses how the unification efforts of several fragmented states in Europe led to the rise of two formidable states by examining the unifications of Italy and Germany to appreciate the need for national unity and independence.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "explain the process involved in the unification of Italy by 1870 to understand its relevance to contemporary movements for national unity and independence in Africa. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "analyse the process involved in the unification of Germany by 1871 to understand its relevance to contemporary movements for national unity and independence in Africa. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "The Unification of Italy up to 1870",
+                      "The Unification of Germany up to 1871"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, using the internet, textbooks or extracts, search for the nature of Italian states before 1870."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "In a brainstorming session, learners explore the challenges that hindered the unification of Italian states."
+                    },
+                    {
+                      "activity_type": "Learning Station",
+                      "description": "In a learning station session, learners share and discuss the stages of Italian unification."
+                    },
+                    {
+                      "activity_type": "Think-pair-share",
+                      "description": "Learners, in a think-pair-share session, discuss the challenges faced during the unification processes of Italy."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, using the internet, textbooks or other sources, search for the roles of any two personalities in the unification of Italy, such as Giuseppe Mazzini, Giuseppe Garibaldi, Victor Emmanuel, Camillo Cavour, Pope Pius IX, or Orsini."
+                    },
+                    {
+                      "activity_type": "Class Discussion",
+                      "description": "Learners, in groups, engage in a class discussion to analyse the factors that facilitated Italian unification by 1870."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, using the internet, textbooks or extracts, search for the nature of German states before 1871."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "In a brainstorming session, learners explore the challenges that hindered the unification of German states."
+                    },
+                    {
+                      "activity_type": "Learning Station",
+                      "description": "In a learning station session, learners share and discuss the stages of Germany unification."
+                    },
+                    {
+                      "activity_type": "Think-pair-share",
+                      "description": "Learners, in a think-pair-share session, discuss the challenges faced during the unification process of Germany."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, using the internet, textbooks or other sources, search for the roles of any two personalities in the unification of Germany such as Fredrick William IV, William I, Otto von Bismarck, Von Roon or Von Maltke."
+                    },
+                    {
+                      "activity_type": "Class Discussion",
+                      "description": "Learners, in groups, engage in a class discussion to analyse the factors that facilitated German unification by 1971."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they participate in discussions about the nature of Italian states before the unification struggles and find out their ability to: i) work with others and generate ideas. ii) listen critically and comprehend ideas. iii) establish meaningful connections between pieces of information."
+                    },
+                    {
+                      "assessment_type": "Targeted Discussion",
+                      "description": "Engage learners in targeted discussions to assess their depth of understanding regarding the contributions of key personalities to the unification of Italy and Germany."
+                    },
+                    {
+                      "assessment_type": "Assessment",
+                      "description": "Assess learners’ ability to sort and analyse factors that hindered the unification struggles for both Italy and Germany."
+                    },
+                    {
+                      "assessment_type": "Assessment",
+                      "description": "Assess learners’ ability to accurately and coherently present the factors that facilitated the unification of Italy and Germany."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 16,
+                    "unit": "periods",
+                    "source_page": "38"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners, in groups, using the internet, textbooks or extracts, search for the nature of Italian states before 1870."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 3",
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "Unit 1: History of Africa Since 1800",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T3-0001",
+                    "topic_title": "Colonial Administration in Africa",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 13
+                  },
+                  "core_competency": "The learner investigates how colonies were administered by examining selected colonial administrative policies to appreciate their impact on Africa.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the reasons behind the French administration policy in West Africa to appreciate its continued influence on African people. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "evaluate the impact of the French administration policy to understand its influence on contemporary West African societies (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "Compare the French administration policy with other European administration policies to appreciate various related administration policies in Africa today. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "analyse the factors that led to the French change of policy in West Africa to appreciate why sometimes there is need for flexibility in approach. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "analyse the African responses to colonial rule to understand their influence on the contemporary political landscape across Africa. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Colonial Administration in West Africa",
+                      "Response to Colonial Rule"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Think-pair-share",
+                      "description": "Learners use think-pair-share to explain the meaning and types of colonial administration in Africa."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Learners in a class participate in a debate on colonial administration in Africa. Teacher wraps up."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners use textbooks and the internet to find out the the reasons for the adoption of the assimilation policy by the French in West Africa."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners, in groups, discuss the impact of the French assimilation policy on African societies."
+                    },
+                    {
+                      "activity_type": "Research/Comparison",
+                      "description": "Learners use textbooks and the internet to find out the shortcomings of the French assimilation policy and compare it to the British system of indirect rule, highlighting their key differences."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners, in groups, discuss the features of European colonial administration policies and make comparisons among them."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "In a group discussion, learners explore the reasons behind France’s abandonment of the assimilation policy in West Africa."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, use the internet, textbooks and extracts to gather information on the reasons for collaboration by personalities such as: i) Kakungulu of Buganda ii) Khama of the Tswana iii) Laibon Lenana of the Masai iv) The Fante of the West African Confederation"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Using internet sources, textbooks and extracts, learners, in groups, gather information on the reasons for resistance by personalities such as: i) Samoure Toure of the Mandika Empire ii) Kabalega of Bunyoro iii) King Shaka of the Zulu iv) Lubengula of the Ndebele"
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners during debate as they argue for or against the effectiveness of the assimilation policy. Assess their: i) ability to attentively listen to opposing viewpoints in a debate. ii) clarity and assertiveness in presentations iii) respect for peers and acknowledgement of differing opinions."
+                    },
+                    {
+                      "assessment_type": "Dialogue",
+                      "description": "Dialogue with learners to assess their ability to identify and analyse the shortcomings of the French colonial policy in West Africa and assess: i) their ability to effectively distinguish between relevant and irrelevant information during discussions. ii) the depth of analysis."
+                    },
+                    {
+                      "assessment_type": "Assessment",
+                      "description": "Assess their reports to compare the relevance, accuracy and coherence of the French and the British colonial administration systems in Africa."
+                    },
+                    {
+                      "assessment_type": "Assessment",
+                      "description": "Assess learners’ accuracy and logical presentation of historical facts during class discussions on French and British colonial administration in Africa."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 13,
+                    "unit": "periods",
+                    "source_page": "30"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners use textbooks and the internet to find out the the reasons for the adoption of the assimilation policy by the French in West Africa."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T3-0002",
+                    "topic_title": "Foreign Struggles for Economic Resources and the Unification in South Africa",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 18
+                  },
+                  "core_competency": "The learner analyses Anglo-Boer relations in Southern Africa by examining their causes and impact to draw lessons that can foster unity and justice in Africa.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the causes and effects of the Anglo-Boer conflicts between 1880 and 1902 in Southern Africa and how they promoted unity among minority groups. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "examine the impact of the Treaty of Vereeniging to understand how it gave rise to racial discrimination in Southern Africa. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "assess the significance of the 1910 Act of Union to appreciate its impact on the creation of modern Southern African states. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "First Anglo-Boer War 1880 –1881",
+                      "Jameson Raid 1895",
+                      "Second Anglo-Boer War",
+                      "Vereeniging Settlement of 1902",
+                      "Act of Union of 1910"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Analysis",
+                      "description": "Learners, in groups, analyse excerpts and discuss the historical relationship between the Dutch, the British, and the Africans in South Africa before the establishment of apartheid regime."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, search using textbooks, the internet, and other relevant sources the causes and effects of the Anglo-Boer conflicts."
+                    },
+                    {
+                      "activity_type": "Analysis",
+                      "description": "Learners, in groups, read and analyse an extract from the Treaty of Vereeniging to explore the lessons for contemporary African governance. Groups present their findings and critique one another’s work."
+                    },
+                    {
+                      "activity_type": "Drama",
+                      "description": "Learners, in a drama session, show how minority groups can contribute to national unity when faced with external threats."
+                    },
+                    {
+                      "activity_type": "Analysis",
+                      "description": "In groups, learners use textbooks, the internet, extracts, and other relevant sources to analyse how the 1910 Act of Union created legal structures that justified inequality and injustice."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "In a brainstorming session, learners present ideas on how modern governments can use laws to promote justice rather than perpetuate injustice."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners, in groups, discuss challenges in a specific African country and create strategies to address unity, governance, and socio-economic injustices."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Through observation, evaluate learners’ understanding of pre-apartheid in South Africa. Take note of their ability to: i) explain facts clearly. ii) ability to articulate historical narratives effectively."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners about the terms and impacts of the Vereeniging Treaty and assess them on: i) proficiency in mentioning historical facts. ii) levels of comprehension and listening skills."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners to bring out the relationship between the Dutch, British, and the Blacks, noting their ability to: i) talk confidently and explain ideas clearly. ii)sort and analyse information well."
+                    },
+                    {
+                      "assessment_type": "Assessment",
+                      "description": "Assess the relevance and accuracy of the learners’ presentation on the creation of legal structures by the 1910 Act of Union."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 18,
+                    "unit": "periods",
+                    "source_page": "32"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners, in groups, search using textbooks, the internet, and other relevant sources the causes and effects of the Anglo-Boer conflicts."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T3-0003",
+                    "topic_title": "The Growth of African Nationalism",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 17
+                  },
+                  "core_competency": "The learner demonstrates an understanding of African nationalism by analysing its growth and development to appreciate its impact on independence and post-independence struggles in Africa.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the forms and features of African nationalism to appreciate varied African responses of European colonialism. (k, u)",
+                      "domain": "Knowledge, Understanding"
+                    },
+                    {
+                      "outcome_text": "examine the factors that contributed to the rise of African nationalism to appreciate the conditions that can cause discontent among people. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "evaluate the challenges in Africa’s struggle for independence to appreciate the efforts of freedom fighters. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Key Features of African Nationalism",
+                      "The Factors Responsible for the Rise of African Nationalism",
+                      "The Challenges Faced in the Independence Struggles in Africa"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, using African history extracts and internet sources, find out the meaning of the concept of African nationalism and its features."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners, in groups, engage in a discussion about the challenges of colonial rule and their role in the rise of African nationalism."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, use textbooks, the internet and other sources to search factors that contributed to the growth of African nationalism."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "In groups, learners carry out a library or internet search to assess the contributions of any two nationalistic movements towards the achievement of independence in Africa."
+                    },
+                    {
+                      "activity_type": "Comparison",
+                      "description": "Learners, in groups, compare the rise of African nationalism in different countries and assess how these movements shaped the struggle for independence."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "In groups, learners discuss the challenges of African independence struggles and reflect on the lessons for Africa’s unity."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ ability to discuss the challenges of colonial rule that contributed to the rise of African nationalism and take note of: i) accuracy of facts. ii) their ability to sort and analyse issues."
+                    },
+                    {
+                      "assessment_type": "Dialogue",
+                      "description": "Dialogue with learners to assess their understanding of the contribution of selected nationalistic movements in Africa to the struggle for independence."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learner’s ability to write and present coherently about African personalities who contributed to Africa’s independence."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 17,
+                    "unit": "periods",
+                    "source_page": "33"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners, in groups, using African history extracts and internet sources, find out the meaning of the concept of African nationalism and its features."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Unit 2: History of World Affairs Since 1789",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T3-0004",
+                    "topic_title": "The Emergence of the United States of America and Canada",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner demonstrates an understanding of the rise of powerful nations by analysing the creation of the USA and Canada to appreciate their contribution to emerging human rights and civil liberties.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the ways of life of the indigenous peoples of early America and Canada before European colonisation to appreciate ways of life that are similar to those of their own. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "evaluate the effects of European colonisation on America and Canada to understand how foreign influence can impact indigenous populations. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "analyse the impact of the civil rights movement to appreciate its contribution to the fight against injustice and inequality in the world. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "The Natives of America and Canada",
+                      "The Colonisation of America and Canada",
+                      "The Creation of the USA",
+                      "The Rise of the Civil Rights Movement"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Analysis",
+                      "description": "Learners, in groups, use online sources and other materials to search for and analyse the history of America and Canada before European colonisation."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, use online sources, textbooks and other materials to search for the effects of European colonisation on indigenous populations in America and Canada."
+                    },
+                    {
+                      "activity_type": "Research/Analysis",
+                      "description": "Learners, using online sources and other materials, search for specific indigenous communities in America and Canada, and analyse how European colonisation affected their land, culture and social systems."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "Learners, in groups, discuss and compare the impact of European colonisation on America and Canada with that of Africa."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, use the internet and textbooks to search for the origin of the racial and minority problems in the USA."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, use the internet and textbooks to find out Martin Luther King Jr.’s role in the fight against racial discrimination. Other civil rights activists included Rosa Parks, Malcolm X, Andrew Young, Louis Farrakhan, John Lewis, W.EB. Dubois etc."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, use the internet and other sources to search for other anti-racial groups and their impact on the civil rights movement in the USA."
+                    },
+                    {
+                      "activity_type": "Interview/Research",
+                      "description": "Learners, in groups, prepare a guide to interview a knowledgeable person in their community or use online sources to gather information about the concept of human rights, its history and its challenges in Uganda."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ ability to work effectively in diverse teams and handle constructive criticism while discussing ways of life in America and Canada before British colonisation."
+                    },
+                    {
+                      "assessment_type": "Discussion",
+                      "description": "Engage learners in discussions about their findings on Martin Luther King Junior and his team in their role of addressing racial discrimination, focusing on their ability to: i) connect personal experiences with historical concepts. ii) form evidence-based judgements."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the relevance, accuracy and coherence of interview reports on human rights in Uganda."
+                    },
+                    {
+                      "assessment_type": "Assessment",
+                      "description": "Assess learners’ ability to sort and analyse information about the rise of the civil rights movement and its impact on the United States."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "40"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners, in groups, use online sources and other materials to search for and analyse the history of America and Canada before European colonisation."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HIS-A-S5-T3-0005",
+                    "topic_title": "The Creation of Sierra Leone and Liberia",
+                    "sequence_order": 5,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner analyses the role of Britain and America in the resettlement of freed slaves by examining the creation of Sierra Leone and Liberia to appreciate the quest for identity and freedom in Africa.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the factors that led to the founding of Sierra Leone and Liberia and to understand their contribution to the repatriation of freed slaves. (gs, u, v)",
+                      "domain": "Generic Skills, Understanding, Values"
+                    },
+                    {
+                      "outcome_text": "analyse the challenges faced in the resettlement and establishment of Sierra Leone and Liberia to appreciate problems involved in the resettlement of people. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    },
+                    {
+                      "outcome_text": "assess the impact of Western resettlement efforts on Africa to understand how these efforts shaped and continue to shape international relations. (gs, v, a)",
+                      "domain": "Generic Skills, Values, Application"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "The Origins of Sierra Leone and Liberia",
+                      "The Significance of the Creation of Sierra Leone and Liberia to the History of West Africa"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Learners, in groups, draw a map of Africa and locate the Trans-Atlantic slave trade routes connecting to America and Europe, and pin up their maps in portfolio corners."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners, in groups, use the internet and textbooks to find out the reasons why Sierra Leone and Liberia were selected as settlement areas for ex-slaves."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners, in small groups, use History extracts on the founding of Sierra Leone and Liberia to identify and discuss the challenges faced during the resettlement in these areas."
+                    },
+                    {
+                      "activity_type": "Think-pair-share",
+                      "description": "Learners engage in a think-pair-share activity to discuss the impact of the creation of Sierra Leon and Liberia."
+                    },
+                    {
+                      "activity_type": "Comparison/Discussion",
+                      "description": "Learners, in groups, discuss and compare the historical humanitarian efforts that led to the establishment of Sierra Leone and Liberia with current humanitarian initiatives in Africa."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they use a map of Africa to identify key routes associated with the Trans-Atlantic slave trade and assess their ability to: i) accurately draw and interpret the map. ii) communicate effectively using a map."
+                    },
+                    {
+                      "assessment_type": "Engagement",
+                      "description": "Engage with learners during discussions on the founding of Sierra Leone and Liberia and take note of their ability to: i) interact and collaborate effectively with peers. ii) analyse historical information accurately."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the relevance and accuracy of group presentations on human rights efforts/initiatives today and the then establishment of Liberia and Sierra Leone."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "42"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners, in groups, use the internet and textbooks to find out the reasons why Sierra Leone and Liberia were selected as settlement areas for ex-slaves."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1341 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Advanced Secondary Curriculum",
+    "subject": "Geography",
+    "level": "A-level",
+    "class_group": "Senior Five",
+    "year": "2025",
+    "version": "1.0",
+    "source_document": "Geography Syllabus Advanced Secondary Curriculum"
+  },
+  "global_framework": {
+    "competencies": [
+      "The learner demonstrates appreciation of the structure of the Earth and its influence on geomorphic processes and formation of some natural resources by examining the properties of each of its layers to better understand the geologic foundation of human development.",
+      "The learner demonstrates an understanding of the role of theories in exploring geomorphic concepts by critically evaluating the continental drift theory based on scientific evidence to inform further geographical inquiry and to acquire problem-solving skills.",
+      "The learner demonstrates an understanding of development by analysing spatial development patterns, development priorities, and factors influencing development, while proposing interventions to address disparities in development at the country or regional level.",
+      "The learner gives written or oral advice to a certain community or country on appropriate farming types and techniques to be adopted to promote development through appraising the different types and methods of farming.",
+      "The learner proposes feasible ways of using and managing soil through gathering and analysing information about soil properties, formation, and quality to promote sustainable development.",
+      "The learner proposes strategies for managing population as a key resource in development through analysing its dynamics and their implications for development at different scales.",
+      "The learner devises sustainable ways of harnessing drainage features and related resources for development through analysing their nature and impact on landscape, ecosystems, and human activities.",
+      "The learner devises innovative ways of developing and using energy through analysing the production, consumption and sustainability of the various sources of energy to balance energy use and environmental stewardship."
+    ],
+    "generic_skills": [
+      "Critical thinking and problem-solving",
+      "Co-operation and Self-Directed Learning",
+      "Creativity and Innovation",
+      "Communication",
+      "Mathematical Computation",
+      "Information and Communication Technology (ICT) Proficiency",
+      "Diversity and Multicultural Skills"
+    ],
+    "values": [
+      "Respect for humanity and the environment",
+      "Honesty; uphold and defend the truth at all times",
+      "Justice and fairness in dealing with others",
+      "Hard work for self-reliance",
+      "Integrity; moral uprightness and sound character",
+      "Creativity and innovation",
+      "Social responsibility",
+      "Social harmony",
+      "National unity",
+      "National consciousness and patriotism"
+    ],
+    "attitudes": [
+      "Appreciation of the structure of the Earth",
+      "Respect divergent views",
+      "Respect for the environment",
+      "Positive attitude towards learning as a lifelong process",
+      "Appreciate community and government efforts"
+    ],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Life skills development",
+      "Inclusivity and mixed abilities",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "classes": [
+    {
+      "class_name": "Senior Five",
+      "class_code": "S5",
+      "terms": [
+        {
+          "term_name": "Term One",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Physical Geography",
+              "theme_description": "Study of the Earth's physical structure and geomorphic processes.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S5-T1-0001",
+                    "topic_title": "TOPIC 1: The Structure of the Earth",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner demonstrates appreciation of the structure of the Earth and its influence on geomorphic processes and formation of some natural resources by examining the properties of each of its layers to better understand the geologic foundation of human development.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the Earth by examining its nature, shape, and external features as a basis for exploring its internal structure (u, gs).",
+                      "domain": "Cognitive/Skills"
+                    },
+                    {
+                      "outcome_text": "assess the significance of the internal properties of the Earth in understanding the evolution of tectonic landforms and some natural resources (k, u, gs, v/a).",
+                      "domain": "Cognitive/Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "The External structure of the earth",
+                      "The internal structure of the Earth"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Work",
+                      "description": "In groups, learners study the globe or a drawn 3-D model of the Earth from the Internet, and use the information gathered to describe the external/outer structure of the Earth"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Groups make presentations and their ideas feed into a whole class discussion"
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Learners brainstorm how scientists can find out about the interior of the Earth."
+                    },
+                    {
+                      "activity_type": "Analysis",
+                      "description": "In groups, learners analyse texts and maps or watch videos about earthquakes, faulting and volcanic eruptions to find clues about the interior of the Earth."
+                    },
+                    {
+                      "activity_type": "Practical/Modelling",
+                      "description": "Learners make a cross-section of an avocado, pear, or study a cross section of the Earth. They draw diagrams to show the internal structure of the Earth and write notes to describe it."
+                    },
+                    {
+                      "activity_type": "Concept Mapping",
+                      "description": "In groups, learners create a concept map linking the properties of the internal layers of the Earth, geomorphic processes; and their impact on humans."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they work in groups, focussing on individual participation, contribution to group ideas, and ability to work with persistence."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Listen to learners’ submissions about the nature of the Earth and evaluate their level of awareness and how logical their ideas are in relation to the four main external layers of the Earth."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners working in groups, noting how effectively they interact, sort, and analyse information."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Evaluate learners’ concept maps, focusing on how well and how logically they can bring out the relationship between the nature of the internal layers of the Earth and the formation of tectonic landforms; and the natural resources associated with the landforms."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Model of the Earth's Internal Structure",
+                        "description_verbatim": "Learners make a cross-section of an avocado, pear, or study a cross section of the Earth. They draw diagrams to show the internal structure of the Earth and write notes to describe it.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "Avocado or pear",
+                          "Knife (implied)"
+                        ],
+                        "source_page": "19"
+                      }
+                    ]
+                  },
+                  "investigative_skills": [
+                    {
+                      "text_verbatim": "Learners investigate the relationship between the internal structure of the Earth and the evolution of some of the natural resources on Earth.",
+                      "assessment_method": "Concept map evaluation"
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "19"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use a drawn 3-D model of the Earth from the Internet",
+                      "Watch videos about earthquakes, faulting and volcanic eruptions"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S5-T1-0002",
+                    "topic_title": "TOPIC 2: The Origin of Continents and Ocean Basins",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 34
+                  },
+                  "core_competency": "The learner demonstrates an understanding of the role of theories in exploring geomorphic concepts by critically evaluating the continental drift theory based on scientific evidence to inform further geographical inquiry and to acquire problem-solving skills.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "evaluate the continental drift theory using scientific evidence (u, v/a).",
+                      "domain": "Cognitive/Values"
+                    },
+                    {
+                      "outcome_text": "predict the future shapes, sizes and positions of world continents and landforms basing on the knowledge of the continental drift theory (u, s, v/a).",
+                      "domain": "Cognitive/Skills/Values"
+                    },
+                    {
+                      "outcome_text": "demonstrate appreciation of the role of scientific inquiry in understanding geomorphic processes and their influence on the way we live on earth (u, gs, v/a).",
+                      "domain": "Cognitive/Generic Skills/Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "The Continental Drift theory",
+                      "Effects of Continental Drift on Relief and Landscape"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Map Analysis",
+                      "description": "Learners study an atlas map/wall map/textbook map of the world to find out what continents and ocean basins are."
+                    },
+                    {
+                      "activity_type": "Demonstration",
+                      "description": "Demonstrate the drifting of continents using jig-saw pieces of the world map or any other method."
+                    },
+                    {
+                      "activity_type": "Individual Work",
+                      "description": "Individually, learners write brief notes to describe their observations and explain their understanding of continental drift."
+                    },
+                    {
+                      "activity_type": "Video/Text Analysis",
+                      "description": "Learners read printed or digital texts or watch a video on continental drift to deepen their knowledge of the concept."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Learners brainstorm and suggest the forces responsible for the drifting of continents."
+                    },
+                    {
+                      "activity_type": "Modelling",
+                      "description": "Use modelling techniques, sketch maps, and diagrams to help learners understand key evidence of continental drift, emphasising concepts from natural sciences such as Geology, Geophysics, Botany, and Palaeoclimatology."
+                    },
+                    {
+                      "activity_type": "Group Analysis",
+                      "description": "In groups, learners analyse texts and photographs that illustrate the effects of continental drift on relief and landforms."
+                    },
+                    {
+                      "activity_type": "Prediction/Speculation",
+                      "description": "Using knowledge of continental movement and evidence of continental drift, learners speculate about the future shapes, sizes, and positions of world’s continents. They write down their ideas and draw maps to illustrate them."
+                    },
+                    {
+                      "activity_type": "Concept Mapping",
+                      "description": "In groups, learners create a concept map that links continental drift, geomorphic processes, resultant landforms, and their potential impact on human activities."
+                    },
+                    {
+                      "activity_type": "Case Study Research",
+                      "description": "Learners research two case studies of major landforms related to continental drift and their effects on human activities and development (e.g., the Himalayas, Atlas Ranges, the Great African Rift valley, the Mid-Atlantic Oceanic Ridge)."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they discuss the meaning of continents and ocean basins. Note their ability to construct meanings from investigations, and how well they respect divergent views."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Prompt learners to explain their submissions on the forces responsible for the drifting of continents, focusing on their ability to relate forces to the properties of the core, mantle and the crust."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Evaluate learners’ findings about evidence of continental drift for accuracy and coherence of information and ability to use relevant sketch maps and diagrams to illustrate their ideas."
+                    },
+                    {
+                      "assessment_type": "Presentation Evaluation",
+                      "description": "Evaluate group presentations about the effects of continental drift on relief and landscape, noting how well they bring out the cause-effect relationships relevant to the context."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Ask learners to explain their predictions about the future shapes, sizes, and positions of world continents. Evaluate how their predictions build on what has been learnt."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Assess learners’ maps and diagrams illustrating future continents for creativity, originality and understanding of continental drift."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Drifting Continents Demonstration",
+                        "description_verbatim": "Demonstrate the drifting of continents using jig-saw pieces of the world map or any other method.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "Jig-saw pieces of world map"
+                        ],
+                        "source_page": "20"
+                      }
+                    ]
+                  },
+                  "investigative_skills": [
+                    {
+                      "text_verbatim": "Learners research two case studies of major landforms related to continental drift and their effects on human activities and development",
+                      "assessment_method": "Report and proposal"
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 34,
+                    "unit": "periods",
+                    "source_page": "20"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Read digital texts or watch a video on continental drift"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Human Geography",
+              "theme_description": "Study of global development and human systems.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S5-T1-0003",
+                    "topic_title": "TOPIC 3: World Development",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 20
+                  },
+                  "core_competency": "The learner demonstrates an understanding of development by analysing spatial development patterns, development priorities, and factors influencing development, while proposing interventions to address disparities in development at the country or regional level.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "form opinions about world development pattern through analysing statistics, maps, and other relevant information (s, gs, v/a).",
+                      "domain": "Skills/Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "analyse the level of development in the local area and home country by applying various indicators used to measure development to appreciate community and government efforts to improve the lives of the people (s, gs, v/a).",
+                      "domain": "Skills/Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "predict the future trend of development in Uganda and other countries using relevant information (gs, v/a).",
+                      "domain": "Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "analyse the conditions which may slow down or totally affect holistic regional or national development as a basis for planning proper management and utilisation of resources (u, v/a).",
+                      "domain": "Understanding/Values"
+                    },
+                    {
+                      "outcome_text": "propose a suitable development strategy for Uganda through applying the knowledge of sustainable development models (u, gs, v/a).",
+                      "domain": "Understanding/Generic Skills/Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "What is development?",
+                      "Indicators of Development",
+                      "Causes of Inequalities in World Development",
+                      "Sustainable development and How it Can be Achieved"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Learners brainstorm the meaning of development."
+                    },
+                    {
+                      "activity_type": "Map Analysis",
+                      "description": "In groups, learners analyse the map showing the pattern of world development, write down their findings, and make presentations."
+                    },
+                    {
+                      "activity_type": "Data Analysis",
+                      "description": "Groups analyse texts, statistics, and graphs about development to validate their ideas regarding the indicators used to measure development."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners discuss why Uganda and other African countries are considered developing countries."
+                    },
+                    {
+                      "activity_type": "Evaluation",
+                      "description": "Using statistics and maps, learners critically evaluate the existing measures of development, such as Gross National Product per capita (GNP) and the Human Development Index (HDI)."
+                    },
+                    {
+                      "activity_type": "Speculation/Forecasting",
+                      "description": "Learners speculate on Uganda’s or another country’s level of development in 20 years, based on current development indicators and policies."
+                    },
+                    {
+                      "activity_type": "Gallery Walk",
+                      "description": "In groups, learners discuss why development disparities exist in their country and between countries and regions, and share their ideas using a gallery walk."
+                    },
+                    {
+                      "activity_type": "Case Study Research",
+                      "description": "Individually, learners research case studies—one from a developing country (e.g. Ladakh in India) and another from a developed country—to analyse successful sustainable development initiatives."
+                    },
+                    {
+                      "activity_type": "Simulation",
+                      "description": "Learners simulate a sustainable development summit where they take on roles as stakeholders, and discuss policies and trade-offs for achieving sustainable development goals (SDGs) in Africa."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "Learners carry out a project on assisting their home district or country to achieve sustainable development."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Listen to learners’ submissions, noting their ability to use appropriate terms in relation to development."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Prompt learners to explain their views about world development, focussing on their ability to look for patterns and make generalisations."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they analyse statistics, maps and graphs, focusing on how well they interpret and interrogate mathematical data to derive meanings and conclusions."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In conversation, ask learners to defend their submissions about suitable development strategies, noting their ability to use evidence to support their arguments."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they account for development disparities in their country and between countries and regions. Pay attention to how they relate the disparities to historical and current factors."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Evaluate learners’ research reports on the use of credible sources and suitability of the chosen case studies."
+                    },
+                    {
+                      "assessment_type": "Project Assessment",
+                      "description": "Assess learners’ project work at every stage of development paying special attention to their ability to: suggest and develop solutions to problems, try out innovative alternatives, evaluate different solutions, use a range of media to communicate ideas, take responsibility for own learning."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [
+                    {
+                      "text_verbatim": "Learners carry out a project on assisting their home district or country to achieve sustainable development.",
+                      "assessment_method": "Project assessment"
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "Learners carry out a project on assisting their home district or country to achieve sustainable development.",
+                    "deliverables_verbatim": "Suggested and developed solutions, innovative alternatives, evaluation of different solutions",
+                    "assessment_weight_percent": null,
+                    "source_page": "24"
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 20,
+                    "unit": "periods",
+                    "source_page": "22"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Search using the Internet or textbooks or other sources for information on sustainable development"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term Two",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "Human Geography",
+              "theme_description": "Study of agricultural systems and development.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S5-T2-0004",
+                    "topic_title": "TOPIC 4: Agriculture and Development",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 57
+                  },
+                  "core_competency": "The learner gives written or oral advice to a certain community or country on appropriate farming types and techniques to be adopted to promote development through appraising the different types and methods of farming.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "evaluate plans and strategies aimed at promoting agriculture in Uganda and other developing countries (s, gs, v/a).",
+                      "domain": "Skills/Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "demonstrate an understanding of subsistence farming by articulating its types, characteristics and challenges affecting it (u, s, gs).",
+                      "domain": "Understanding/Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "evaluate policies and strategies aimed at improving subsistence agriculture in Uganda and other countries in order to select the most feasible options for addressing the challenges faced by farmers (u, s, gs, v/a).",
+                      "domain": "Understanding/Skills/Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "propose a suitable type of commercial agriculture to be adopted in a given locality based on the prevailing conditions to promote societal transformation (u, gs, v/a).",
+                      "domain": "Understanding/Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "evaluate programmes and policies aimed at modernising agriculture in Uganda and other countries to make informed decisions about transforming farming communities (v/a).",
+                      "domain": "Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "form opinions about the adoption of western type farming techniques to improve agricultural productivity in Uganda and other developing countries (v/a).",
+                      "domain": "Values/Attitudes"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "The Role of Agriculture in Development",
+                      "Subsistence Agriculture",
+                      "Challenges facing subsistence agriculture",
+                      "Improving Subsistence Agriculture",
+                      "Commercial Agriculture",
+                      "Advantages and Disadvantages of Commercial Agriculture",
+                      "Agricultural Modernisation"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "In groups, learners identify local agricultural practices they are familiar with. Groups discuss and evaluate the contribution of agriculture to the development of Uganda, presenting both the advantages and disadvantages."
+                    },
+                    {
+                      "activity_type": "Case Study Analysis",
+                      "description": "Learners search textbooks, magazines, newspaper articles, or the Internet to analyse two case studies—one from a developing country and another from a developed country—comparing the importance of agriculture in their economies."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Learners debate whether African countries should invest more or less in agriculture to achieve faster economic development and improved human welfare."
+                    },
+                    {
+                      "activity_type": "Statistical Analysis",
+                      "description": "Learners examine climate statistics and other information about typical farmers’ annual activities in a subsistence farming community, and draw a circular graph or farmer’s calendar to represent it."
+                    },
+                    {
+                      "activity_type": "Fieldwork",
+                      "description": "Learners conduct a fieldwork study to investigate subsistence farming in the local area. They use a Problem Tree Analysis to identify key challenges faced by subsistence farmers in the area and compile a report."
+                    },
+                    {
+                      "activity_type": "Policy Analysis",
+                      "description": "In groups, learners analyse digital or printed extracts of policies and strategies that have been put in place to improve subsistence agriculture in Uganda such as National Agricultural Advisory Services Programme (NAADS), Operation Wealth Creation (OWC), National Agriculture Policy, Agro Industrialisation Policy, The 4-Acre Development Model."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "Learners carry out a project on promoting commercial farming in a selected area to improve the welfare of the local community."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Individually, learners carry out library or online research to analyse the Green Revolution as a scientific and technological intervention in agriculture."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners during group presentations, focusing on clarity, confidence, and ability to respond to questions."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners during the debate, noting their ability to defend their points of view and respect for views at variance."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Assess learners’ fieldwork findings for accuracy and completeness of data analysis, ensuring they clearly present findings, interpret trends, and establish cause-and-effect relationships."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Evaluate learners’ plan or manifesto for addressing the problems and challenges faced by farmers for ability to identify problems and ways forward, originality and feasibility of the suggested interventions."
+                    },
+                    {
+                      "assessment_type": "Project Assessment",
+                      "description": "Assess learners’ project work at every stage, focusing on their ability to: identify challenges and propose viable solutions, critically evaluate different approaches to problems-solving."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Evaluate learners’ reports about the green revolution for depth of analysis, accuracy of facts, and ability to relate experiences of the countries participating in the green revolution to local context."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Subsistence Farming Fieldwork",
+                        "description_verbatim": "Learners conduct a fieldwork study to investigate subsistence farming in the local area. They use a Problem Tree Analysis to identify key challenges faced by subsistence farmers in the area and compile a report.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "27"
+                      }
+                    ]
+                  },
+                  "investigative_skills": [
+                    {
+                      "text_verbatim": "Learners conduct a fieldwork study to investigate subsistence farming in the local area.",
+                      "assessment_method": "Fieldwork report"
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "Learners carry out a project on promoting commercial farming in a selected area to improve the welfare of the local community.",
+                    "deliverables_verbatim": "Identify challenges and propose viable solutions, critically evaluate different approaches",
+                    "assessment_weight_percent": null,
+                    "source_page": "30"
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 57,
+                    "unit": "periods",
+                    "source_page": "25"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Analyse digital extracts of policies",
+                      "Online research to analyse two case studies",
+                      "Watch videos about subsistence farming",
+                      "Use a range of media to effectively communicate ideas"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Physical Geography",
+              "theme_description": "Study of soil processes and management.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S5-T2-0005",
+                    "topic_title": "TOPIC 5: Soil Development and Management",
+                    "sequence_order": 5,
+                    "recommended_duration_periods": 51
+                  },
+                  "core_competency": "The learner proposes feasible ways of using and managing soil through gathering and analysing information about soil properties, formation, and quality to promote sustainable development.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the significance of the composition and properties of soil to land use and development (u, v/a).",
+                      "domain": "Understanding/Values"
+                    },
+                    {
+                      "outcome_text": "analyse soil formation in a selected locality by examining soil forming processes, factors influencing soil formation, and their relative significance (s, gs, v/a).",
+                      "domain": "Skills/Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "deduce the arrangement of soil layers in a selected area using information from secondary sources and field observations in order to determine possible developments that can be carried out in the area (u, s, gs, v/a).",
+                      "domain": "Understanding/Skills/Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "infer suitable land use options for certain areas using the knowledge of soil profile and soil catena (u, gs v/a).",
+                      "domain": "Understanding/Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "analyse factors affecting soil productivity to propose sustainable practices to enhance soil quality for long term agricultural success and environmental health (k, u, s, v).",
+                      "domain": "Knowledge/Understanding/Skills/Values"
+                    },
+                    {
+                      "outcome_text": "propose feasible soil conservation strategies for a selected area to promote sustainable development through analysing the causes and effects of soil degradation (v/a).",
+                      "domain": "Values/Attitudes"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Components and Properties of Soil",
+                      "Soil Formation",
+                      "Factors influencing Soil Formation",
+                      "The Soil Profile",
+                      "The Soil Catena",
+                      "Soil Productivity",
+                      "Soil Degradation and Conservation"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Practical/Analysis",
+                      "description": "In groups, learners analyse different soil samples to find out the components of soil."
+                    },
+                    {
+                      "activity_type": "Fieldwork",
+                      "description": "Learners carry out a fieldwork study of the local area to investigate the types and properties of soil. They draw transects and other diagrams to illustrate the influence of soil on land use in the area."
+                    },
+                    {
+                      "activity_type": "Text Analysis",
+                      "description": "In groups, learners analyse texts about the processes of soil formation, make notes with illustrations, and present their ideas."
+                    },
+                    {
+                      "activity_type": "Fieldwork",
+                      "description": "Learners conduct a fieldwork study of a local area to investigate soil types, properties, factors influencing soil formation, and soil forming processes taking place in the area."
+                    },
+                    {
+                      "activity_type": "Observation",
+                      "description": "Learners visit a roadside cutting or a graded construction site, or a quarry or study a photograph to investigate a soil profile."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "Learners carry out a project to determine the soil profile of selected area(s) using information on topographic survey maps, photographs, line transects, or field observations."
+                    },
+                    {
+                      "activity_type": "Fieldwork",
+                      "description": "Learners conduct a field study on a slope, from the valley to the hilltop. They dig pits or holes at different elevations along the slope, collect soil samples, and examine soil variations."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "Learners carry out a project to help a local farming community improve and maintain soil productivity."
+                    },
+                    {
+                      "activity_type": "Video Analysis",
+                      "description": "Learners watch a video on soil degradation or analyse textbooks and photographs to explore its types, causes, and effects."
+                    },
+                    {
+                      "activity_type": "Fieldwork",
+                      "description": "Learners conduct a field study in the local area to investigate soil degradation."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they analyse soil samples focusing on how well they follow the recommended procedure of carrying out scientific investigation and pay attention to details."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Assess learners’ fieldwork findings for accuracy of information, and ability to establish and illustrate cause-and-effect relationship in the real world."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they investigate a soil profile and draw diagrams to illustrate it, noting their ability to sort and analyse information and look for patterns, and make generalisations."
+                    },
+                    {
+                      "assessment_type": "Project Assessment",
+                      "description": "Assess learners’ project work throughout the process paying special attention to their ability to: plan and conduct investigations, write and present information coherently, use a range of media to communicate ideas."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they investigate the soil catena during field study. Note their ability to apply appropriate sampling and data collection technique in order to get reliable findings."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners during discussions and presentations, noting how well they use appropriate gestures and expression to make their presentation more engaging."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Soil Analysis",
+                        "description_verbatim": "In groups, learners analyse different soil samples to find out the components of soil.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "Soil samples",
+                          "Magnifying glass"
+                        ],
+                        "source_page": "32"
+                      },
+                      {
+                        "title": "Soil Profile Investigation",
+                        "description_verbatim": "Learners visit a roadside cutting or a graded construction site, or a quarry or study a photograph to investigate a soil profile.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "34"
+                      },
+                      {
+                        "title": "Soil Catena Field Study",
+                        "description_verbatim": "Learners conduct a field study on a slope, from the valley to the hilltop. They dig pits or holes at different elevations along the slope, collect soil samples, and examine soil variations.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "Digging tools"
+                        ],
+                        "source_page": "35"
+                      }
+                    ]
+                  },
+                  "investigative_skills": [
+                    {
+                      "text_verbatim": "Learners conduct a fieldwork study of the local area to investigate the types and properties of soil.",
+                      "assessment_method": "Fieldwork report"
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "Learners carry out a project to determine the soil profile of selected area(s) using information on topographic survey maps, photographs, line transects, or field observations and how such a profile can influence land use and development.",
+                    "deliverables_verbatim": "Information coherently presented, range of media used, analysis of maps/photos",
+                    "assessment_weight_percent": null,
+                    "source_page": "34"
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 51,
+                    "unit": "periods",
+                    "source_page": "32"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use digital resources and videos & documentaries",
+                      "Online research about soil"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term Three",
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "Human Geography",
+              "theme_description": "Study of population dynamics and energy.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S5-T3-0006",
+                    "topic_title": "TOPIC 6: Population and Development",
+                    "sequence_order": 6,
+                    "recommended_duration_periods": 38
+                  },
+                  "core_competency": "The learner proposes strategies for managing population as a key resource in development through analysing its dynamics and their implications for development at different scales.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "investigate the distribution and density of population using topographic maps, statistical data, and maps to guide decision-making. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "propose ways of regulating population growth in developed and developing countries based on statistics and other relevant knowledge (u, s, gs).",
+                      "domain": "Understanding/Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "infer the likely impact of population structure of a town/country or region on resource utilisation and people’s wellbeing to suggest ways of managing the population. (v/a)",
+                      "domain": "Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "predict occurrence and impact of population migration in Uganda and other places based on the knowledge of migrations (c).",
+                      "domain": "Cognitive"
+                    },
+                    {
+                      "outcome_text": "develop a plan/manifesto for regulating or promoting a certain type of population migration by applying relevant information (c).",
+                      "domain": "Cognitive"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Distribution and Density of Population",
+                      "Population Growth and Size",
+                      "Population Structure",
+                      "Population Migrations"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Map Analysis",
+                      "description": "Learners study topographic survey maps from different regions of Uganda to analyse the distribution and density of population."
+                    },
+                    {
+                      "activity_type": "Data Plotting",
+                      "description": "Individually, learners research the recent national population census data for Uganda. They plot the data on base maps to create a dot map and a choropleth map."
+                    },
+                    {
+                      "activity_type": "Fieldwork",
+                      "description": "In groups, learners conduct a field study within their school’s parish to investigate population distribution and density."
+                    },
+                    {
+                      "activity_type": "Case Study Analysis",
+                      "description": "Learners analyse two case studies of population distribution and density in regions or countries with contrasting geographical settings."
+                    },
+                    {
+                      "activity_type": "Research/Survey",
+                      "description": "In pairs, learners conduct a community survey on attitudes towards family size, family planning, and population control. They use questionnaires."
+                    },
+                    {
+                      "activity_type": "Analysis",
+                      "description": "In groups, learners analyse population pyramids of countries or regions with contrasting levels of economic development, including Uganda."
+                    },
+                    {
+                      "activity_type": "Survey",
+                      "description": "Learners conduct a survey in the local community to determine when the inhabitants settled in the area, where they migrated from, and reasons behind the migration."
+                    },
+                    {
+                      "activity_type": "Plan Development",
+                      "description": "Individually, learners select a type of migration in Uganda and draft a plan to regulate or promote it."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they analyse topographic survey maps, focusing on their ability to use the key and contour lines."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Assess learners’ statistical maps for accuracy, clarity, and effectiveness of communication."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation, prompt learners to explain how the factors influencing population distribution and density in their parish and areas shown on survey maps can be used to explain spatial population patterns in other areas."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Evaluate community survey reports, focusing on how well they reflect the beliefs and attitudes of the local community."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Assess learners’ population pyramids, focusing on their ability to accurately use numbers and measurements."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Assess learners’ plans and presentations, focusing on clarity of ideas, feasibility of the proposals, and ability to evaluate different solutions."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Population Distribution Field Study",
+                        "description_verbatim": "In groups, learners conduct a field study within their school’s parish to investigate population distribution and density. They count households, estimate population density, and draw both a density map and a dot map to visualise their findings.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "38"
+                      },
+                      {
+                        "title": "Community Survey on Family Size",
+                        "description_verbatim": "In pairs, learners conduct a community survey on attitudes towards family size, family planning, and population control. They use questionnaires to gather data.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "Questionnaires"
+                        ],
+                        "source_page": "39"
+                      }
+                    ]
+                  },
+                  "investigative_skills": [
+                    {
+                      "text_verbatim": "Learners conduct a survey in the local community to determine when the inhabitants settled in the area, where they migrated from, and reasons behind the migration.",
+                      "assessment_method": "Report and presentation"
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 38,
+                    "unit": "periods",
+                    "source_page": "38"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Research national population census data using the internet"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S5-T3-0008",
+                    "topic_title": "TOPIC 8: Energy Production",
+                    "sequence_order": 8,
+                    "recommended_duration_periods": 38
+                  },
+                  "core_competency": "The learner devises innovative ways of developing and using energy through analysing the production, consumption and sustainability of the various sources of energy to balance energy use and environmental stewardship.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "Demonstrate an understanding of energy resources and their spatial distribution to appreciate variations in energy production (u, s, gs).",
+                      "domain": "Understanding/Skills/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "compare energy production and consumption in countries at different levels of development to understand the need for wise use of energy resources (v/a).",
+                      "domain": "Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "analyse the influence of economic, environmental, and social factors on energy resource development to form opinions about challenges facing the energy sector (u, v/a).",
+                      "domain": "Understanding/Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "assess the impact of energy development on the environment to appreciate the benefits and problems associated with harnessing energy resources (u, v/a).",
+                      "domain": "Understanding/Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "evaluate policies and strategies aimed at ensuring access to sustainable sources of energy to understand ways of reducing energy poverty (v/a).",
+                      "domain": "Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "argue out the case for sustainable utilisation of energy resources at local, regional, and global scales to promote energy security (v/a).",
+                      "domain": "Values/Attitudes"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Major Energy Resources",
+                      "World energy Production and Consumption",
+                      "Factors Affecting Development of Energy Resources",
+                      "Environmental Impacts of Energy Production",
+                      "Sustainable Utilisation of Energy Resources"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Map Work",
+                      "description": "In groups, learners use atlas or hand-drawn or digital maps to locate major energy sources in Uganda and other East African countries."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners research textbooks, magazines, journals, research reports, or online resources for factors influencing the distribution of energy resources in Uganda and globally."
+                    },
+                    {
+                      "activity_type": "Statistical Analysis",
+                      "description": "Learners analyse statistical data and graphs, charts, or map infographics on energy production and consumption in Uganda."
+                    },
+                    {
+                      "activity_type": "Fieldwork",
+                      "description": "Learners conduct a field study in the local area to investigate the extraction of energy sources or an energy project."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Learners engage in a debate on whether developing countries should prioritise renewable or non-renewable energy sources to ensure long-term energy security."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they work in pairs or groups, noting how well they recognise the value of other’s ideas."
+                    },
+                    {
+                      "assessment_type": "Presentation Evaluation",
+                      "description": "Evaluate learners’ presentations on energy sources and their advantages and disadvantages, focusing on their ability to write and present information coherently."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they analyse statistics and statistical drawings, noting their ability to interpret and interrogate mathematical data."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners during the field study, focusing on how effectively they apply the methods and techniques of collecting primary data."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Probe learners to identify lessons Uganda can learn from the case studies and assess their ability to transfer knowledge and apply it in new situations."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Energy Extraction Field Study",
+                        "description_verbatim": "Learners conduct a field study in the local area to investigate the extraction of energy sources or an energy project.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "47"
+                      }
+                    ]
+                  },
+                  "investigative_skills": [
+                    {
+                      "text_verbatim": "Learners conduct a field study in the local area to investigate the extraction of energy sources or an energy project.",
+                      "assessment_method": "Fieldwork report"
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 38,
+                    "unit": "periods",
+                    "source_page": "45"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use digital maps to locate major energy sources",
+                      "Research online resources for factors influencing distribution"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Physical Geography",
+              "theme_description": "Study of drainage systems.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S5-T3-0007",
+                    "topic_title": "TOPIC 7: Drainage and the Role of Rivers in Shaping the Landscape",
+                    "sequence_order": 7,
+                    "recommended_duration_periods": 32
+                  },
+                  "core_competency": "The learner devises sustainable ways of harnessing drainage features and related resources for development through analysing their nature and impact on landscape, ecosystems, and human activities.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "demonstrate an understanding of Uganda’s drainage system by using relevant maps and diagrams to illustrate its aspects (u, s).",
+                      "domain": "Understanding/Skills"
+                    },
+                    {
+                      "outcome_text": "assess the role of Pleistocene Earth movements in the evolution of Uganda’s drainage and resources (v/a).",
+                      "domain": "Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "infer, from photographs, topographic survey maps and field observations the river channel processes taking place in an area (s).",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "develops a plan for exploiting the resource potential presented by a drainage feature or features to improve peoples’ lives by applying relevant knowledge and skills (u, s, gs, v/a).",
+                      "domain": "Understanding/Skills/Generic Skills/Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "The drainage System of Uganda",
+                      "Evolution of Uganda’s Drainage",
+                      "The Role of Rivers in Shaping the Landscape",
+                      "Importance of Drainage in Development"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Map Work",
+                      "description": "In groups or pairs, learners study a topographic map of a local or other area in Uganda to identify the drainage features in the area."
+                    },
+                    {
+                      "activity_type": "Comparative Analysis",
+                      "description": "Using a map of ancient drainage in East Africa (before Pleistocene period) and the map of present drainage, leaners explore the evolution of Uganda’s drainage system."
+                    },
+                    {
+                      "activity_type": "Fieldwork",
+                      "description": "Learners visit a local stream or river to investigate channel processes and how they affect relief and landscape."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "Learners design and implement a project focused on promoting the sustainable utilisation of a drainage feature in their local area."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they analyse the topographic survey map. Note how effectively they use the key to identify the geography of the area."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Assess learners’ maps for accuracy, clarity, and the richness of information."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they investigate channel processes in the field study. Note how effectively they apply methods and techniques of data collection."
+                    },
+                    {
+                      "assessment_type": "Product Review",
+                      "description": "Evaluate learners’ field study reports and notes for relevance, accuracy, and logical flow of information."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation, ask learners to compare and contrast the importance of the drainage features in the case studies with that of the local drainage feature nearest to their home or school."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "River Channel Fieldwork",
+                        "description_verbatim": "Learners visit a local stream or river to investigate channel processes and how they affect relief and landscape. They write a report and illustrate it with a concept map linking river channel processes to their effects on landscape.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "43"
+                      }
+                    ]
+                  },
+                  "investigative_skills": [
+                    {
+                      "text_verbatim": "Learners visit a local stream or river to investigate channel processes",
+                      "assessment_method": "Report and concept map"
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "Learners design and implement a project focused on promoting the sustainable utilisation of a drainage feature in their local area.",
+                    "deliverables_verbatim": "Project implementation, promotion of sustainable utilisation",
+                    "assessment_weight_percent": null,
+                    "source_page": "44"
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 32,
+                    "unit": "periods",
+                    "source_page": "42"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Watch a simulation of a river channel",
+                      "Internet research to analyse case studies"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

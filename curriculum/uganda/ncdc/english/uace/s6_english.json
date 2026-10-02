@@ -1,0 +1,1275 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre",
+    "curriculum_name": "Advanced Secondary Curriculum",
+    "subject": "Literature in English",
+    "level": "A-level",
+    "class_group": "Senior Six",
+    "year": "2025",
+    "version": "1.0",
+    "source_document": "LITERATURE IN ENGLISH SYLLABUS.pdf"
+  },
+  "global_framework": {
+    "competencies": [
+      "The learner critiques, produces and publishes prose pieces through analysing, writing, presenting or exhibiting in order to increase language proficiency, entertainment and for ethical edification and self-sustenance.",
+      "The learner critiques, writes, performs and publishes own poetry through reading and appreciating both its thematic concerns and stylistic effects; for entertainment, ethical edification and self-sustenance.",
+      "The learner writes, publishes and performs own drama/play through reading, analysing, critiquing and appreciating their work in order to inform, entertain; and for ethical edification and self-sustenance.",
+      "The learner writes, publishes own novella/short story through reading, appreciating and presenting/exhibiting in order to inform, entertain; and for ethical edification and self-sustenance."
+    ],
+    "generic_skills": [
+      "Critical thinking and problem-solving",
+      "Co-operation and Self-Directed Learning",
+      "Creativity and Innovation",
+      "Communication",
+      "Mathematical Computation",
+      "Information and Communication Technology (ICT) Proficiency",
+      "Diversity and Multicultural Skills"
+    ],
+    "values": [
+      "respect for humanity and environment",
+      "honesty, uphold and defend them at all times",
+      "Justice and dealing with others",
+      "hard work for self-reliance",
+      "integrity; moral uprightness and sound character",
+      "creativity and innovation",
+      "social responsibility",
+      "social harmony",
+      "national unity",
+      "national consciousness and patriotism"
+    ],
+    "attitudes": [
+      "appreciate cultural diversity",
+      "respectfully responding to people of all cultures",
+      "respecting positive cultural practices",
+      "appreciating ethnicity as a cradle for creativity and innovation",
+      "instill and promote national unity",
+      "strong love and care for others and respect for public property",
+      "appreciation of international relations and beneficial international co-operation",
+      "appreciation and understanding of the cultural heritage of Uganda including its languages",
+      "sense of self discipline",
+      "positive attitudes towards productive work and strong respect for the dignity of labour",
+      "positive attitude towards learning as a lifelong process"
+    ],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Life skills",
+      "Mixed abilities and involvement",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "classes": [
+    {
+      "class_name": "Senior Six",
+      "class_code": "S6",
+      "terms": [
+        {
+          "term_name": "Term One",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Prose",
+              "theme_description": "In-depth analysis of Style using a variety of Prose pieces of different categories and types",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-A-S6-T1-0001",
+                    "topic_title": "In-depth analysis of Style",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 24,
+                    "keywords": [
+                      "prose",
+                      "style",
+                      "analysis",
+                      "diction",
+                      "structure",
+                      "theme",
+                      "message",
+                      "figurative language"
+                    ]
+                  },
+                  "core_competency": "The learner critiques, produces and publishes prose pieces through analysing, writing, presenting or exhibiting in order to increase language proficiency, entertainment and for ethical edification and self-sustenance.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    "analyse the message and style in the different types and forms of prose. (s, v, gs) (communication, critical thinking)"
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "In-depth analysis of Style using a variety of Prose pieces of different categories and types (continued)",
+                      "Analysis of Figurative Language and its effectiveness in Prose using a variety of Prose passages. (continued)"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Activity",
+                      "description": "In groups, learners read a variety of prose pieces and analyse the structure (word order, sentence structure, paragraphing, layout e.g. introduction, body and conclusion etc.) of the different forms (descriptive, narrative, expository, and argumentative)."
+                    },
+                    {
+                      "activity_type": "Pair Activity",
+                      "description": "Guide the learners to read a specific piece of prose in pairs and; i) analyse the relevance and suitability of the title to the prose piece ii) discuss the writer’s intention and iii) present in plenary."
+                    },
+                    {
+                      "activity_type": "Reading and Analysis",
+                      "description": "Guide learners to read a selected passage and: i) explain the subject matter, meaning and message. ii) discuss the theme(s) explored therein. iii) analyse narrator’s attitude and iv) present in plenary."
+                    },
+                    {
+                      "activity_type": "Descriptive Prose Analysis",
+                      "description": "Ask the learners to read a descriptive prose and: i) identify and analyse the effective use of mood. ii) use appropriate adjectives to describe the prevailing atmosphere in the passage. iii) present in plenary."
+                    },
+                    {
+                      "activity_type": "Figurative Language Analysis",
+                      "description": "Expose learners to various prose pieces and ask them in pairs to: i) analyse the effective use of imagery. ii) identify and illustrate the use of metaphors and similes. iii) analyse the use of diction. iv) determine the register and its use. v) illustrate the effective use of euphemism. vi) illustrate the effective use of hyperbole. vii) analyse the effective use of juxtaposition. viii) present in plenary."
+                    },
+                    {
+                      "activity_type": "Small Group Analysis",
+                      "description": "Ask learners in small groups to read a prose excerpt rich in metonymy and synecdoche and: i) brainstorm on the use of figurative comparisons. ii) think, pair, and share the effective use of metonymy and synecdoche."
+                    },
+                    {
+                      "activity_type": "Pair Exploration",
+                      "description": "Guide learners in pairs, to explore excerpts/passages rich in apostrophe, personification and allusion and: i) brainstorm on the effective use of allusion (historical, literary, religious and cultural), apostrophe, and personification. ii) present to plenary."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe and point out the learners’ ability to: i) speak confidently (voice projection, eye contact, gesture, body language articulation, etc.). ii) listen actively (give feedback, nod, jot a few points, effective eye contact etc.) as they discuss and share their findings in groups and plenary, think critically (as they make well-structured arguments, back them up with evidence, make logical conclusions etc.) as they analyse prose extracts and share their findings regarding the significance and effects of subject matter and theme, stylistic aspects e.g., structure, diction, setting, figures of speech, speaking voice, attitude, mood, tone, etc."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learners through probing to determine the correctness of their responses as they discuss prose extracts to analyse the significance and effects of: i) subject matter and theme. ii) stylistic aspects such as structure, diction, setting, figures of speech, speaking voice, attitude, mood, tone, etc."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "30"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "In-depth analysis of Style using a variety of Prose pieces of different categories and types (continued)",
+                      "note_type": "clarification",
+                      "source_page": "27"
+                    }
+                  ],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Poetry",
+              "theme_description": "Analysis of Figurative Language, its usage and effectiveness in Poetry",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-A-S6-T1-0002",
+                    "topic_title": "Analysis of Figurative Language and Creation of Poetry",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 24,
+                    "keywords": [
+                      "poetry",
+                      "figurative language",
+                      "lullaby",
+                      "tongue twister",
+                      "ballad",
+                      "free verse",
+                      "style",
+                      "creation"
+                    ]
+                  },
+                  "core_competency": "The learner critiques, writes, performs and publishes own poetry through reading and appreciating both its thematic concerns and stylistic effects; for entertainment, ethical edification and self-sustenance.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    "analyse the effective use of poetic (figurative language, sound and rhetorical) devices."
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Analysis of Figurative Language, its usage and effectiveness in Poetry (continued)",
+                      "Creation of a Lullaby in line with its aspects, Style and Language",
+                      "Creation of a Tongue Twister in line with its aspects, Style and Language",
+                      "Creation of a Lyrical Poem in line with its aspects, Style and Language",
+                      "Creation of a Dirge in line with its aspects, Style and Language",
+                      "Creation of a Ballad in line with its aspects, Style and Language",
+                      "Creation of a Free verse Poem in line with its Aspects, Style and Language"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Analysis",
+                      "description": "In groups, read a variety of sample poems and: i) analyse the poet’s choice of words. ii) assess the effect of the choice of words/diction to the meaning of the poem. iii) evaluate the effective use of poetic (figurative language, sound and rhetorical) devices. iv) present their written work to plenary."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learners using guiding questions to determine the correctness of their responses on: i) subject matter ii) theme iii) meaning iv) message v) intention of the poet vi) figures of speech vii) sound elements, etc. as they read, analyse, present and critique sample poems/own work."
+                    },
+                    {
+                      "assessment_type": "Determination",
+                      "description": "Determine the significance and effect of the various aspects of poetry and poetic devices."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "30"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Drama/Plays",
+              "theme_description": "Creation of real-life characters and Setting",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-A-S6-T1-0003",
+                    "topic_title": "Creation of Drama",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 29,
+                    "keywords": [
+                      "drama",
+                      "play",
+                      "creation",
+                      "characters",
+                      "setting",
+                      "scenes",
+                      "acts",
+                      "compilation"
+                    ]
+                  },
+                  "core_competency": "The learner writes, publishes and performs own drama/play through reading, analysing, critiquing and appreciating their work in order to inform, entertain; and for ethical edification and self-sustenance.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    "Write/type/braille a one-act-drama script, on any of the categories of drama employing the different elements and techniques learnt, in order to educate, entertain and for self-sustenance. (s, v, gs) (skills: writing and speaking, values: teamwork and respect, gs: communication, ICT proficiency, creativity & innovation, critical thinking & problem solving)"
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Creation of real-life characters in line with the category of the Play and Theme (continued)",
+                      "Creation of the Setting of the Play in line with its category and the Identified Theme",
+                      "Creating a Structure for the Scenes within an Act",
+                      "Compilation of a one-Act Play, observing the various categories, aspects and language"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research and Creation",
+                      "description": "Task learners to make a search on the internet/Library and/or consult peers/teachers and; i) identify a social theme/situation (corruption, marriage, suffering, disillusionment etc.) on which to compose a drama story. ii) construct an appropriate title. iii) develop a plot and storyline of a one- act drama script. iv) construct a dialogue for the one-act drama. v) present the plot and its dialogue in plenary for peer critiquing."
+                    },
+                    {
+                      "activity_type": "Character Development",
+                      "description": "In groups, task the learners to: i) create real-life like, symbolic, round/flat, individual/group characters in line with the selected category of drama and theme. ii) assign social/textual roles to characters (author’s mouth-piece or protagonist) and their contribution to the development of the drama. iii) formulate character relationships (biological and social connections). iv) present their characters to plenary for peer critiquing and appreciation."
+                    },
+                    {
+                      "activity_type": "Setting Construction",
+                      "description": "Ask learners to construct the physical, time and social setting of their drama pieces in line with the selected category and theme then divide/ sequence the drama pieces into scenes and present to plenary."
+                    },
+                    {
+                      "activity_type": "Compilation",
+                      "description": "In groups, compile a one-act play observing the various categories, aspects and language of drama."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe and evaluate the learner’s ability to: i) work in teams (collaborating, respecting individual contributions, listening to one another etc.) to; identify a social theme. ii) craft an appropriate title (precise, appealing, relevant etc.); iii) creatively develop a logical story and plot. iv) create real life-like characters and suitable setting."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learners using probing questions to determine the correctness of their responses as they discuss the relevance and suitability of the social themes, plot, setting, characters, and structure to create a one act drama."
+                    },
+                    {
+                      "assessment_type": "Appraisal",
+                      "description": "Appraise the coherence of the written drama script by focusing on; i) the title, structure, plot/story, characterisation and setting of their drama pieces. ii) relevance in respect to the selected theme, title, elements, techniques; and accuracy through correctness, factualness and verifiability of their written content."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "Write/type/braille a one-act-drama script, on any of the categories of drama employing the different elements and techniques learnt",
+                    "deliverables_verbatim": "One-act-drama script",
+                    "assessment_weight_percent": null,
+                    "source_page": "59"
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 29,
+                    "unit": "periods",
+                    "source_page": "30"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Task learners to make a search on the internet"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "The Novel and Short Story",
+              "theme_description": "Creation of the Novella",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-A-S6-T1-0004",
+                    "topic_title": "Creation of a Novella",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 31,
+                    "keywords": [
+                      "novella",
+                      "creation",
+                      "plot",
+                      "structuring",
+                      "chapters",
+                      "characters",
+                      "setting",
+                      "themes"
+                    ]
+                  },
+                  "core_competency": "The learner writes, publishes own novella/short story through reading, appreciating and presenting/exhibiting in order to inform, entertain; and for ethical edification and self-sustenance.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    "write/type/braille and/or print a novella using suitable aspects and narrative techniques to raise awareness and entertain. (s, v, gs) (creativity, and innovation, ICT proficiency)"
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Creation, structuring and presentation of the Plot of the Novella in chapters and sub chapters. (Continued)",
+                      "Creation of life-like characters of a Novella.",
+                      "Creation of a suitable Setting for the Plot and Characters",
+                      "Identifying the overriding Social Themes for the Novella",
+                      "Write a Novella observing all the aspects, Style and Language"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research and Planning",
+                      "description": "Guide individual learners to search about topical issues and choose a title to write about and: i) gather information related to the topic. ii) develop a plot and a title for the novella. iii) create character(s) that fit the topic and present in plenary."
+                    },
+                    {
+                      "activity_type": "Presentation and Critique",
+                      "description": "Ask the individual learners to: i) present their written/typed/brailled plots to the plenary. ii) critique their plots in terms of logical flow of ideas, originality and character development."
+                    },
+                    {
+                      "activity_type": "Drafting and Critiquing",
+                      "description": "Ask the individual learners to present their first drafts and critique each other in terms of: i) relevance to the title. ii) setting. iii) structure (chapter, sub chapter or parts). iv) paragraph structure and linkage. v) sentence construction and linkage."
+                    },
+                    {
+                      "activity_type": "Guided Discovery",
+                      "description": "Through guided discovery, probe the individual learners to identify the aspects of the novella that their colleagues employed."
+                    },
+                    {
+                      "activity_type": "Editing",
+                      "description": "In groups ask learners to edit their final draft."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe and determine the learners’ ability to: i) use ICT gadgets (surfing, browsing, projecting, sharing, tethering etc.). ii) exhibit honesty (originality, consistency etc.). iii) work with others to generate ideas. iv) listen actively (give feedback, jot down a few points, eye contact, nodding etc.). v) speak confidently (eye contact, articulation, audibility, gesture etc.). vi) respect one another as they gather information, develop plot line and create characters, and apply aspects in their written short story or novella and present to the plenary."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learners through probing to establish the correctness of their responses as they critique each other’s plot, characterisation, narrative techniques etc. in draft short story or novella."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate learner’s ability to critique their novella to evaluate the accuracy (topical issues, societal values, and aesthetic qualities), coherence (plot, structure, and characterisation), relevance (theme, appropriate language, setting) and generic skills."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "write/type/braille and/or print a novella using suitable aspects and narrative techniques to raise awareness and entertain.",
+                    "deliverables_verbatim": "novella",
+                    "assessment_weight_percent": null,
+                    "source_page": "67"
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 31,
+                    "unit": "periods",
+                    "source_page": "30"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use ICT gadgets (surfing, browsing, projecting, sharing, tethering etc.)"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term Two",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "Prose",
+              "theme_description": "Creation of different categories of Prose",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-A-S6-T2-0001",
+                    "topic_title": "Creation of Prose",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 28,
+                    "keywords": [
+                      "prose",
+                      "creation",
+                      "writing",
+                      "categories",
+                      "groups",
+                      "individual"
+                    ]
+                  },
+                  "core_competency": "The learner critiques, produces and publishes prose pieces through analysing, writing, presenting or exhibiting in order to increase language proficiency, entertainment and for ethical edification and self-sustenance.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    "write/braille /type own reader-focused prose of different types and forms/categories that increase language proficiency, awareness; and for entertainment. (s, v, gs) (communication, critical thinking, creativity & innovation, ICT proficiency, corporation and self-directed learning)"
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Creation of different categories of Prose in Groups observing the aspects of Prose writing",
+                      "Creation of different categories of Prose at an individual level",
+                      "Compilation of a Prose Anthology at a group/class Level"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Research",
+                      "description": "Guide learners in groups to search about topical issues and: i) gather information related to the topic. ii) create a title and develop a plot/story/subject in line with the topic. iii) state the purpose for writing. iv) explore the options for readership."
+                    },
+                    {
+                      "activity_type": "Presentation and Critique",
+                      "description": "Ask the individual groups to: i) present their written plans to plenary. ii) critique their plans for editing and improvement."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "Ask learners in groups, to write a particular category of prose at a time employing the features and aspects of prose."
+                    },
+                    {
+                      "activity_type": "Peer Review",
+                      "description": "Present their drafts in plenary and critique each other for editing and improvement."
+                    },
+                    {
+                      "activity_type": "Editing",
+                      "description": "In groups ask learners to edit and write their final prose pieces."
+                    },
+                    {
+                      "activity_type": "Individual Writing",
+                      "description": "Guide individual learners to search about topical issues and plan to write their own prose pieces for each category. Ask the individual learners to present their drafts and critique them for editing and improvement. Ask the individual learners to edit and write their final prose pieces."
+                    },
+                    {
+                      "activity_type": "Compilation",
+                      "description": "Guide learners in groups to: i) collect all the group and individual prose pieces. ii) sort and arrange the pieces according to their different categories and types. iii) create a folder for typed work or a file for a hard copy ready for publication."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe and determine the learners’ ability to: i) use ICT gadgets (type, braille, store and retrieve information etc. ii) exhibit honesty (create and present original pieces, completing the assignment in time etc.) iii) work with others to generate ideas. iv) listen actively. (give feedback, nod, jot a few points, effective eye contact etc.) v) speak confidently. (voice projection, eye contact, gesture, body language articulation, etc.). vi) respect one another (accommodating each other’s views, consensus, respect differences in personalities, use of respectful language, etc.) as they gather information, develop plot/storyline/subject line in line with the topic."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners through probing to establish the correctness of their responses (giving relevant responses to tasks, etc.) as they critique each other’s prose pieces in terms of: i) relevance of the title to the piece. ii) layout of the prose piece. iii) paragraph structure and linkage. iv) sentence construction and linkage."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate learners’ ability to critique their written prose piece to evaluate the accuracy (topical issues, societal values, aesthetic qualities), coherence (plot, structure, characterisation), relevance (theme, appropriate language, setting) and generic skills."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "write/braille /type own reader-focused prose of different types and forms/categories",
+                    "deliverables_verbatim": "prose pieces",
+                    "assessment_weight_percent": null,
+                    "source_page": "44"
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 28,
+                    "unit": "periods",
+                    "source_page": "34"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use ICT gadgets (type, braille, store and retrieve information etc.)"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Poetry",
+              "theme_description": "Creation of various forms of Poetry",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-A-S6-T2-0002",
+                    "topic_title": "Creation of Poetry",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 26,
+                    "keywords": [
+                      "poetry",
+                      "creation",
+                      "sonnet",
+                      "ode",
+                      "elegy",
+                      "recitation",
+                      "free verse"
+                    ]
+                  },
+                  "core_competency": "The learner critiques, writes, performs and publishes own poetry through reading and appreciating both its thematic concerns and stylistic effects; for entertainment, ethical edification and self-sustenance.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    "write or type their own reader-focused poems of different types and forms to increase language proficiency, create awareness; and provide entertainment. (s, v, gs). (communication, critical thinking, creativity & innovation, ICT proficiency, corporation and self-directed learning)"
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Creation of a Free-verse Poem in line with its Aspects, Style and Language (continued)",
+                      "Creation of a Sonnet in line with its Aspects, Style and Language",
+                      "Creation of an Ode in line with its Aspects, Style and Language",
+                      "Creation of an Elegy in line with its Aspects, Style and Language",
+                      "Group and individual recitation of the various forms of Poetry written across the weeks."
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Creation",
+                      "description": "In pairs/ individually, learners write/braille /type own reader-focused poems on: i) lullabies that are in line with aspects of style and language of the lullaby. ii) tongue-twisters that conform to the aspects of style and language. iii) lyrics that reflect musicality and melody. iv) dirges that reflect the tone and mood of the type. v) free verse poems that reflect contemporary issues. vi) sonnets, odes, elegies, epics, ballads that adhere to the conventional forms and structure."
+                    },
+                    {
+                      "activity_type": "Critiquing",
+                      "description": "Present their written poems in plenary for critiquing, editing and improvement."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe and gauge the learners’ ability to: i) write in conformity with the prescribed forms/types of poetry. ii) work in teams. iii) exhibit integrity iv) present their work confidently and creatively. v) Write/braille/type/recite poems and present own works."
+                    },
+                    {
+                      "assessment_type": "Probing",
+                      "description": "Probe the learners to determine the correctness of their responses as they plan, write/braille/type, present own poems."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the coherence and accuracy of the learners’ written poems focusing on: i) meaning ii) stanzas iii) lineation iv) punctuation, and its relevance; focusing on message, language aspects and devices."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "write or type their own reader-focused poems of different types and forms",
+                    "deliverables_verbatim": "poems",
+                    "assessment_weight_percent": null,
+                    "source_page": "52"
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 26,
+                    "unit": "periods",
+                    "source_page": "34"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Drama/Plays",
+              "theme_description": "Compilation and Presentation of Plays",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-A-S6-T2-0003",
+                    "topic_title": "Compilation and Presentation of Plays",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 29,
+                    "keywords": [
+                      "drama",
+                      "compilation",
+                      "one-act play",
+                      "presentation",
+                      "staging"
+                    ]
+                  },
+                  "core_competency": "The learner writes, publishes and performs own drama/play through reading, analysing, critiquing and appreciating their work in order to inform, entertain; and for ethical edification and self-sustenance.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    "plan how to reach the target audience and access requirements for performance of their play. (u, s, v, gs) (skill: writing, value: respect, teamwork, hard work GS: communication, creativity & innovation, critical thinking & problem-solving)"
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Compilation of a One-Act Play observing the various categories, aspects and language (continued)",
+                      "Mini class presentations of the various categories of Plays written by the class",
+                      "Staging the various categories of Plays on School Assemblies, Class Day or Parents’ Meetings"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Planning and Research",
+                      "description": "Guide the learners to use the internet/library/ consult teachers in the department/drama patron/members and task them in groups to investigate and come up with: i) a list of relevant locally available media (voice projectors, sound system, etc.) and fora such as school assemblies, class days or parents’ meetings, school open days etc. to perform their plays. ii) the resources and logistics e.g. costumes, props, lights, time etc. needed to effectively carry out a performance. iii) a detailed plan on how they will reach their target audience and access the requirements for the performance of their play. iv) present their findings in plenary for peer critiquing, editing and improvement."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe and determine the learner’s ability to: i) draw feasible plans. (clear, achievable, timebound, realistic etc.) ii) speak confidently (articulation, voice projection, eye contact, gestures) and creatively (movement, posturing etc.) present own written drama. iii) use internet or library effectively as they carry out an investigation to identify the locally available media channels and fora, resources and logistics to perform own drama."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learners using guiding questions to determine the correctness of their responses as they discuss the appropriateness of the selected locally available media channels, fora, resources and logistics to facilitate the performance of their play."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the coherence of the written (drawn out plans) and oral presentations by focusing on the appropriateness of the locally available media channels, fora, resources and logistics to facilitate the performance of their plays."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 29,
+                    "unit": "periods",
+                    "source_page": "34"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use internet or library effectively"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "The Novel and Short Story",
+              "theme_description": "Writing and Exhibition of the Novella",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-A-S6-T2-0004",
+                    "topic_title": "Writing and Serialisation of Novella",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 25,
+                    "keywords": [
+                      "novella",
+                      "writing",
+                      "exhibition",
+                      "serialisation"
+                    ]
+                  },
+                  "core_competency": "The learner writes, publishes own novella/short story through reading, appreciating and presenting/exhibiting in order to inform, entertain; and for ethical edification and self-sustenance.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    "plan how to reach their target readership and access the requirements for presenting or exhibiting their novella. (u, gs) (critical thinking, self-directed learning)"
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Writing a Novella observing all the aspects, style and language (continued)",
+                      "Exhibition of the Novella through Serialisation"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Planning and Research",
+                      "description": "Guide the learners through search/interaction with a resource person (teachers in the department, writer’s club patrons/members or fellow learners etc.) to: i) identify the locally available media choices such as; school websites, school magazines, newsletters or notice boards, or fora such as school assembly, Parents’ Days, school open days etc. to present an extract, full story or series of their novella. ii) plan how to reach the target audience. iii) access the requirements for presenting or exhibiting their novella. iv) share their findings in plenary"
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe and judge the learners’ ability to: i) draw feasible plans (realistic, time-bound, achievable etc). ii) take responsibility for own learning (search, consult, discuss, record etc.). iii) work effectively in diverse teams (collaboration, communication, flexibility etc.). iv) confidently and creatively present own written plans as they search for information and think critically as they interact with a resource person or share their search findings about the locally available media choices; how to reach their target audience; and the requirements for presenting or exhibiting their novella."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learners using probing questions after their search findings or interaction with a resource person to establish the accuracy of their responses in: i) identifying the locally available media choices. ii) how to reach their target audience. iii) the requirements for presenting or exhibiting their novella."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 25,
+                    "unit": "periods",
+                    "source_page": "34"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term Three",
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "Prose",
+              "theme_description": "Exhibiting of group Prose pieces",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-A-S6-T3-0001",
+                    "topic_title": "Presentation and Publishing of Prose",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 21,
+                    "keywords": [
+                      "prose",
+                      "presentation",
+                      "publishing",
+                      "exhibition",
+                      "media"
+                    ]
+                  },
+                  "core_competency": "The learner critiques, produces and publishes prose pieces through analysing, writing, presenting or exhibiting in order to increase language proficiency, entertainment and for ethical edification and self-sustenance.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    "plan how to reach the target audience and access requirements for presenting/publishing of their prose pieces. (u, s, v, gs) (skill: writing, value: respect, teamwork, hard work GS: communication skill, creativity & innovation, critical thinking & problem solving)",
+                    "present or publish their written prose pieces through appropriate and easily accessible media/fora. (s, v, gs) (communication, ICT proficiency, creativity and innovation, critical thinking and problem solving)"
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Exhibiting of group Prose pieces using School Media or Class presentations (continued)"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Planning",
+                      "description": "Guide the learners to use the internet/library/ consult teachers in the department/writers’ club patron/members and task them in groups to investigate and come up with: i) a list of relevant, locally available media (voice projectors, sound system etc.) and fora such as school assemblies, class days or parents’ meetings, school open days etc. to present/publish their work. ii) the resources and logistics e.g. manila paper, flip charts, space, time needed to effectively carry out a performance. iii) a detailed plan on how they will reach their target audience/readership and access the requirements for presenting/publishing of their prose pieces. iv) present their findings in a plenary for peer critiquing, editing and improvement."
+                    },
+                    {
+                      "activity_type": "Presentation/Publishing",
+                      "description": "In groups/individually: i) present/ publish their prose pieces. ii) critique peers’ presentation for improvement. iii) present their prose pieces at school assemblies, class days or parents’ meetings etc. iv) publish serialised work(s) in school magazines, newsletters and on school websites, notice boards, etc."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe and determine the learner’s ability to: i) draw feasible plans (clear, specific, achievable and relevant to the task). ii) confidently and creatively present own written prose pieces. iii) use internet or library effectively as they carry out an investigation to identify the locally available media channels and fora, resources and logistics to present or publish their prose pieces."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learners using guiding questions to determine the correctness of their responses as they discuss the appropriateness of the selected locally available media channels, fora, resources and logistics to facilitate the presentation and publishing of their prose pieces."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the coherence of the written (drawn out plans) and oral presentations by focusing on the appropriateness of the locally available media channels, fora, resources and logistics to facilitate the presentation of their prose pieces."
+                    },
+                    {
+                      "assessment_type": "Performance Assessment",
+                      "description": "Observe and evaluate the learners’ ability to: i) manage the stage and time (punctuality, optimum use of stage, organisation etc). ii) effectively communicate using verbal and body language. iii) creatively and confidently present/publish their prose pieces."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 21,
+                    "unit": "periods",
+                    "source_page": "37"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use the internet",
+                      "publish serialised work(s) in school magazines, newsletters and on school websites"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Poetry",
+              "theme_description": "Recitation of Poetry",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-A-S6-T3-0002",
+                    "topic_title": "Recitation and Performance of Poetry",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 19,
+                    "keywords": [
+                      "poetry",
+                      "recitation",
+                      "performance",
+                      "presentation"
+                    ]
+                  },
+                  "core_competency": "The learner critiques, writes, performs and publishes own poetry through reading and appreciating both its thematic concerns and stylistic effects; for entertainment, ethical edification and self-sustenance.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    "plan how to reach their target audience and access requirements for recitations/performance",
+                    "perform/recite and publish reader-focused poems using locally available and easily accessible materials/media for entertainment, moral edification and self-sustenance. (s, v, a, GS)"
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Group and Individual recitation of the various forms of Poetry written across the weeks in class (continued)",
+                      "Group and individual recitation of the various forms of Poetry in School Magazine, Assemblies, Inter-class Competitions, etc."
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Planning and Research",
+                      "description": "Guide the learners to use the internet/library/ consult teachers in the department/poetry club patron/members and task them in groups to investigate and come up with: i) a list of relevant, easily accessible and locally available media (voice projectors, sound system etc.) and fora such as school assemblies, class days or parents’ meetings, school open days etc. to perform their poems. ii) the resources and logistics e.g. costumes, props, time and space needed to effectively carry out a performance. iii) a detailed plan on how they will reach their target audience and access the requirements for the performance of their poems. iv) present their findings in plenary for peer critiquing, editing and improvement."
+                    },
+                    {
+                      "activity_type": "Performance/Recitation",
+                      "description": "In groups/individually learners: i) stage class performances/recitations of the various categories of poems created by the class. ii) critique peers’ recitations/performances for improvement. iii) recite/perform the various poems at school assemblies, class days or parents’ meetings. iv) publish works in school magazines, newsletters on school notice boards, and other media channels or platforms. v) Compile and publish a complete anthology."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe and determine the learner’s ability to: i) draw feasible plans. ii) speak confidently (eye contact, gesture, audibility, articulation, body language) and creatively as they present own written poems. iii) use internet (browsing, surfing etc.) or library effectively as they carry out investigations to identify the locally available media channels and fora, resources and logistics to perform/recite their own poetry."
+                    },
+                    {
+                      "assessment_type": "Performance Evaluation",
+                      "description": "Observe and evaluate the learner’s ability to: i) manage stage (positioning, movement, gesture etc.) and time (punctuality, precision etc.). ii) effectively communicate using verbal (audibility, articulation, etc.) and body language (gesturing, movement, eye contact, posturing etc.). iii) creatively and confidently present a performance of own poetry."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learners using leading questions to determine their ability to critique, edit and appreciate class performances of own poems for improvement of their final product(s)."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the: i) coherence of the experiences described. ii) relevance of the message and theme to the contemporary society. iii) effective use of poetic aspects and devices in their performance."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 19,
+                    "unit": "periods",
+                    "source_page": "37"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use internet (browsing, surfing etc.)"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Drama/Plays",
+              "theme_description": "Staging of Plays",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-A-S6-T3-0003",
+                    "topic_title": "Performance of Drama",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 16,
+                    "keywords": [
+                      "drama",
+                      "staging",
+                      "performance",
+                      "inter-house competitions",
+                      "plays"
+                    ]
+                  },
+                  "core_competency": "The learner writes, publishes and performs own drama/play through reading, analysing, critiquing and appreciating their work in order to inform, entertain; and for ethical edification and self-sustenance.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    "Perform their play using locally available and easily accessible materials. (s, v, gs) (communication, ICT proficiency, creativity and innovation, critical thinking and problem-solving)"
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Staging the various categories of Plays on School Assemblies, Class day or Parents’ Meetings and Inter-house competitions (continued)"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Performance",
+                      "description": "In groups: i) stage class performances of the selected types of own play(s). ii) critique peers’ performances for improvement. iii) perform the various plays at school assemblies, class days or parents’ meetings, etc. iv) publish serialised work(s) in school magazine, notice boards, newsletters, website, etc."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Performance Observation",
+                      "description": "Observe and evaluate the learners’ ability to: i) manage stage (positioning, movement, gesture etc.) and time (punctuality, precision etc). ii) effectively communicate using verbal (audibility, articulation, etc.) and body language (gesturing, movement, eye contact, posturing etc). iii) creatively and confidently present a performance of their own plays."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learners using leading questions to determine their ability to critique, edit and appreciate class performances of their own plays for improvement of the final product(s)."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the: i) coherence of the story and plot. ii) relevance of the message and theme to the contemporary society. iii) effective use of dramatic elements and techniques in their performance."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 16,
+                    "unit": "periods",
+                    "source_page": "37"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "publish serialised work(s) in school magazine, notice boards, newsletters, website, etc."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "The Novel and Short Story",
+              "theme_description": "Exhibition of the Novella",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-A-S6-T3-0004",
+                    "topic_title": "Exhibition and Presentation of Novella",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 16,
+                    "keywords": [
+                      "novella",
+                      "exhibition",
+                      "serialisation",
+                      "presentation"
+                    ]
+                  },
+                  "core_competency": "The learner writes, publishes own novella/short story through reading, appreciating and presenting/exhibiting in order to inform, entertain; and for ethical edification and self-sustenance.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    "present or exhibit their novella using locally available and easily accessible media or fora. (s, v, gs) (communication, ICT proficiency, creativity)"
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Exhibition of the Novella through Serialisation (continued)"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Presentation",
+                      "description": "Guide the learners to use suitable and easily accessible media for example; school websites, school magazines, newsletters or notice boards, school assemblies, Parents’ days to present an extract, full story or serial of their novella."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe and evaluate the learner’s ability to: i) listen actively (jots down a few points, nods, etc.). ii) talk confidently (eye contact, voice projection, stage use, body language, gestures, etc.). iii) read accurately (correct pronunciation, pauses, audibility etc.) as they present series of their novella iv) be creative and innovative as they present their novella."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with the learners through probing to determine the correctness of their responses based on their experiences in presenting or exhibiting their novella during the feedback sessions."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate the learners’ novella presentation or exhibition, focusing on: i) accuracy (topical issues, social values, aesthetic qualities). ii) coherence (articulation, structure, layout), relevance (theme of the presentation, audience engagement, graphics) and generic skills."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 16,
+                    "unit": "periods",
+                    "source_page": "37"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "school websites"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,897 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Foreign Languages (French/German)",
+        "level": "Lower Secondary",
+        "class_group": "Senior Two",
+        "year": "2018",
+        "version": "1.0",
+        "source_document": "Foreign Languages Syllabus French/German"
+    },
+    "global_framework": {
+        "competencies": [],
+        "generic_skills": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Communication",
+            "Co-operation and Self-Directed Learning",
+            "Mathematical computation and ICT proficiency"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Two",
+            "class_code": "S2",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Theme 3: Working for healthy body (Part 1)",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "FL-O-S2-T1-0001",
+                                        "topic_title": "TOPIC 2.1: FREE TIME ACTIVITIES AND CELEBRATIONS",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 18
+                                    },
+                                    "core_competency": "The learner knows a variety of free time activities, talks about family occasions; present and past celebrations and understands cultural differences and exchanges information orally and in writing in relation to own country and community and those where the target language is spoken, basing on free time and celebrations.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "a) Know and use further phrases for conducting classroom business. (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "b) Revise the present tense. (k,u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "c) Know a range of words and simple phrases for free time activities(k,u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "d) Recall how to express likes and dislikes and give an opinion about free time activities (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "e) Know and use adverbs of frequency (k , u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "f) ) Understand people talking in the past and know how to exchange personal information about past events (k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "g) Understand how to form the simple past tense of common regular verbs(k,u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "h) Talk about past events using some simple past indicators e.g. last week, yesterday, two days ago, etc. (k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "i) Know words for special days and festivals and locate major TLCC festivals on a world map (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "j) Know a range of vocabulary and phrases to exchange information about typical celebrations at home and abroad. (k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "k) Use connectives to compare and contrast (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "l) Talk about giving and receiving gifts (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "m) Exchange information about an event using recent past and present tense. (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Matching/Speaking",
+                                            "description": "Match up key phrases to pictures and work in pairs, reading aloud to practise and rehearse pronunciation."
+                                        },
+                                        {
+                                            "activity_type": "Speaking Practice",
+                                            "description": "Practise key phrases in a simple exchange of information with a partner until known by heart"
+                                        },
+                                        {
+                                            "activity_type": "Game",
+                                            "description": "‘Speed date’ four new classmates to find out their favourite activities and how often they participate."
+                                        },
+                                        {
+                                            "activity_type": "Listening",
+                                            "description": "Listen to recordings of TLCC speakers discussing recent past and current events (birthday, Easter etc.) Identify main messages."
+                                        },
+                                        {
+                                            "activity_type": "Grammar Activity",
+                                            "description": "Investigate verb patterns in the chosen texts and complete related gap-fill activity to consolidate understanding of verb conjugation."
+                                        },
+                                        {
+                                            "activity_type": "Game",
+                                            "description": "Play games in groups to rehearse set phrases."
+                                        },
+                                        {
+                                            "activity_type": "Dialogue",
+                                            "description": "Take part in dialogues about past events where some phrases have to be memorised and others substituted."
+                                        },
+                                        {
+                                            "activity_type": "Role-play",
+                                            "description": "Using a model, role-play conversations e.g. between secretive adolescents and anxious parents following a weekend away with friends."
+                                        },
+                                        {
+                                            "activity_type": "Map Work/Listening",
+                                            "description": "Identify target language countries and communities (TLCC) on a world map noting where certain festivals take place. Listen to people talking about festivals."
+                                        },
+                                        {
+                                            "activity_type": "Game",
+                                            "description": "Play games in groups to memorise key words and their spellings, questions and phrases."
+                                        },
+                                        {
+                                            "activity_type": "Matching",
+                                            "description": "Match simple statements about celebrations (birthday, Christmas, Eid, Diwali, Chinese New Year etc.) to pictures. Choose most appropriate sentences from a list to describe typical celebration activities."
+                                        },
+                                        {
+                                            "activity_type": "Reading",
+                                            "description": "Read aloud and understand some brief descriptions of festivals from people of different ages from TLCC."
+                                        },
+                                        {
+                                            "activity_type": "Comparative Analysis",
+                                            "description": "Compare texts to what typically happens at home."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Write two connected paragraphs comparing celebrations at home and abroad."
+                                        },
+                                        {
+                                            "activity_type": "Memory Challenge",
+                                            "description": "Take part in memory challenges to produce the longest sentence possible (gifts received for a birthday or special event)."
+                                        },
+                                        {
+                                            "activity_type": "Reading",
+                                            "description": "In pairs, read short extracts about events in the recent past and present."
+                                        },
+                                        {
+                                            "activity_type": "Listening/Viewing",
+                                            "description": "Watch YouTube clips or listen to people discussing recent past and present events. Recognise and identify the different tenses and time indicators in each text."
+                                        },
+                                        {
+                                            "activity_type": "Group Exploration",
+                                            "description": "In groups, explore strategies to memorise grammar points and vocabulary and share findings with class."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "Give a presentation using prepared set phrases about an imagined festival that is celebrated at home and abroad. Say what usually happens and what happened last year."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Routine Observation",
+                                            "description": "Routinely check developing understanding/ use of greetings, classroom phrases during registration, and as lessons progress."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe use of target language including applying clarification strategies when working in pairs, groups, playing games etc."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Circulate during oral and written activities to check understanding and accuracy including conjugations and pronunciation."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Evaluate contribution to pair and group work ensuring coverage of all learners over time."
+                                        },
+                                        {
+                                            "assessment_type": "Self/Peer Assessment",
+                                            "description": "Involve learners in self and peer assessment using success criteria agreed at the beginning of tasks."
+                                        },
+                                        {
+                                            "assessment_type": "Records",
+                                            "description": "Record listening and reading comprehension results."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess products: description; presentation against agreed and shared success criteria."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 18,
+                                        "unit": "periods",
+                                        "source_page": "24"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Watch YouTube clips or listen to people discussing recent past and present events."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Theme 3: Working for healthy body",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "FL-O-S2-T2-0001",
+                                        "topic_title": "TOPIC 2.2: FOOD AND DRINK",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 18
+                                    },
+                                    "core_competency": "The learner responds to, and makes simple requests in the target language and understands cultural differences and exchanges information orally and in writing in relation to own country and community and those where the target language is spoken, on the following: Shopping for food; describing dishes; healthy lifestyle, and ordering snacks and meals.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "a) Recognise, recall and use a range of words, set phrases and questions related to shopping in markets, shops and groceries (k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "b) Recall and use some key questions and phrases relating to asking the way and locating a place. (k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "c) Recognise and use numbers 1-1000, specific quantities and currencies in the context of buying food and drink. (k,u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "d) Know some key question phrases to ask about national and regional dishes and find out the main ingredients(k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "e) Describe what’s in a particular dish, express preferences and give opinions (k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "f) ) Understand how to form the simple past tense of common irregular verbs (k, u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "g) Know how to express surprise, enthusiasm or displeasure. (k,u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "h) Know a range of vocabulary and some simple phrases relating to buying snacks and meals (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "i) Recall how to express lack of understanding and ask for clarification (k, s)",
+                                            "domain": "Knowledge/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "j) Know and use a range of vocabulary and phrases to exchange information about healthy food types and drink options. (k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "k) Say what you should and shouldn’t eat and drink to stay healthy (k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Matching/Game",
+                                            "description": "Match shops and shopping lists to pictures of food in baskets/trolleys. Play games to memorise key questions and phrases in shopping conversations."
+                                        },
+                                        {
+                                            "activity_type": "Speaking Practice",
+                                            "description": "Adapt conversations, changing item, quantity, and price."
+                                        },
+                                        {
+                                            "activity_type": "Reading",
+                                            "description": "Read TLCC food labels and recipes to identify ingredients, quantities and prices."
+                                        },
+                                        {
+                                            "activity_type": "Reading/Grammar",
+                                            "description": "Read about local and regional dishes and complete ingredients table. Recognise how to indicate non-specific quantities and establish grammar rules with the teacher"
+                                        },
+                                        {
+                                            "activity_type": "Listening",
+                                            "description": "Listen to speakers from the TLCC describing dishes eaten at different times of year, including festivals/special celebrations."
+                                        },
+                                        {
+                                            "activity_type": "Grammar/Discussion",
+                                            "description": "Decide whether their attitude is positive or negative. Identify past tenses in their descriptions and recap how to talk about past events. Discuss strategies for learning irregular forms by heart."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "Work in groups to describe favourite dishes using set phrases."
+                                        },
+                                        {
+                                            "activity_type": "Pair Work",
+                                            "description": "Work with a partner to promote a dish eaten recently at a local restaurant or event."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "Memorise prepared sentences to give a presentation to the class about a favourite dish. Respond to questions asking for further information."
+                                        },
+                                        {
+                                            "activity_type": "Game",
+                                            "description": "Practise and memorise key questions and phrases."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "Work in groups to read and interpret TLCC menus and deduce meaning of some unfamiliar words. Check unknown words in the dictionary. Listen to dialogues in café/restaurant and extract most information."
+                                        },
+                                        {
+                                            "activity_type": "Role-play",
+                                            "description": "Role-play different transactions in café or restaurant ordering food and drink, checking ingredients of dishes and clarifying price."
+                                        },
+                                        {
+                                            "activity_type": "Matching/Game",
+                                            "description": "Match food types to pictures. Play games in groups to memorise key questions and phrases include those using modals e.g. I can’t resist fast food."
+                                        },
+                                        {
+                                            "activity_type": "Listening/Reading",
+                                            "description": "Watch selected YouTube clips or listen to people talking about their diets and decide whether they are healthy or unhealthy and explain why. Read extracts about diets and answer true and false statements/ complete gap fill exercises."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Write a paragraph adapting words in a table in pairs to describe a healthy diet and say what you should and shouldn’t eat using adverbs of frequency to enhance sentences."
+                                        },
+                                        {
+                                            "activity_type": "Project",
+                                            "description": "Produce a blog or write a short article for a magazine about healthy eating"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Routine Observation",
+                                            "description": "Routinely check developing understanding/ use of greetings, classroom phrases during registration, and as lessons progress."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe use of target language including applying clarification strategies when working in pairs, groups, playing games etc."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Circulate during oral and written activities to check understanding and accuracy including conjugations and pronunciation."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Evaluate contribution to pair and group work ensuring coverage of all learners over time."
+                                        },
+                                        {
+                                            "assessment_type": "Self/Peer Assessment",
+                                            "description": "Involve learners in self and peer assessment using success criteria agreed at the beginning of tasks."
+                                        },
+                                        {
+                                            "assessment_type": "Records",
+                                            "description": "Record listening and reading comprehension results."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess products: descriptions; presentation; blog against agreed and shared success criteria."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 18,
+                                        "unit": "periods",
+                                        "source_page": "26"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Watch selected YouTube clips or listen to people talking about their diets"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "SENIOR 2: TERM ½",
+                                            "note_type": "constraint",
+                                            "source_page": "26"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Theme 4: Interaction with the Environment",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "FL-O-S2-T2-0002",
+                                        "topic_title": "TOPIC 2.3: CLOTHES AND FASHION",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 18
+                                    },
+                                    "core_competency": "The learner responds to, and makes simple requests in the target language, and understands cultural differences and exchanges information orally and in writing in relation to own country and community and those where the target language is spoken, on the following: Shopping for clothes; describing what someone is wearing; young people and fashion.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "a) Recognise, recall and use a range of words, set phrases and questions related to shopping for clothing in boutiques and in the shopping mall (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "b) Recall and use some key questions and phrases relating to asking the way around a shopping mall and locating a department. (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "c) Recognise and use numbers 1-1000, specific quantities and currencies in the context of buying clothes and shoes (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "d) Understand the reasons for different items of clothing in relation to their suitability (k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "e) Recall agreement of adjectives and understand comparatives (k, u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "f) Know some questions and phrases to talk about what clothes people normally wear at work, at school and at the weekend (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "g) Understand and apply the imperfect tense to talk about how people used to dress in the past. (k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "h) Know a range of words and phrases to talk about fashion and compare styles (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Matching/Practice",
+                                            "description": "Match key vocabulary to pictures. Use pictures to practise key vocabulary in pairs"
+                                        },
+                                        {
+                                            "activity_type": "Listening/Matching",
+                                            "description": "Listen to a number of people buying different clothes, in different places and match to photos."
+                                        },
+                                        {
+                                            "activity_type": "Listening",
+                                            "description": "Listen to shopping conversations in boutiques and department stores and note main points and some details."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "Work in groups against the clock using a dictionary to compile own list of possible reasons for not buying (too big, small, wide, expensive, bright etc.). Share and check answers and agree on a common list."
+                                        },
+                                        {
+                                            "activity_type": "Grammar Practice",
+                                            "description": "Complete texts by adding missing adjectives in pairs."
+                                        },
+                                        {
+                                            "activity_type": "Role-play",
+                                            "description": "Role-play different transactions in shops adapting them by changing type of clothing, fabric, size, price etc. and reasons for not buying."
+                                        },
+                                        {
+                                            "activity_type": "Listening",
+                                            "description": "Listen to young people from TLCC talking about how they dress for work and school and at the weekend. Identify main points and some detail."
+                                        },
+                                        {
+                                            "activity_type": "Listening",
+                                            "description": "Listen to people talking about how they will dress for a party and identify them from a series of photos."
+                                        },
+                                        {
+                                            "activity_type": "Comparative Analysis",
+                                            "description": "In groups, compare current dress to descriptions of how people used to dress. Identify the imperfect tense and discuss rules. Clarify with the teacher. Draw and label outfits based on descriptions."
+                                        },
+                                        {
+                                            "activity_type": "Survey",
+                                            "description": "Conduct a survey (online if possible) to find out the preferred dress styles of peers."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Write a letter to a friend about preferred dress styles of self, family and friends, saying how you/they used to dress as a child."
+                                        },
+                                        {
+                                            "activity_type": "Game",
+                                            "description": "Play games to memorise key questions and phrases. Match simple statements about fashion to pictures."
+                                        },
+                                        {
+                                            "activity_type": "Listening",
+                                            "description": "Listen to fashion adverts and extract main information."
+                                        },
+                                        {
+                                            "activity_type": "Group Reading",
+                                            "description": "Work in groups to read and analyse young people’s comments about fashion. Check unknown words in the dictionary."
+                                        },
+                                        {
+                                            "activity_type": "Design/Writing",
+                                            "description": "In pairs design and label an outfit and write a description for a fashion magazine."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Routine Observation",
+                                            "description": "Routinely check developing understanding/ use of greetings, classroom phrases during registration, and as lessons progress."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe use of target language including applying clarification strategies when working in pairs, groups, playing games etc."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Circulate during oral and written activities to check understanding and accuracy including conjugations and pronunciation."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Evaluate contribution to pair and group work ensuring coverage of all learners over time."
+                                        },
+                                        {
+                                            "assessment_type": "Self/Peer Assessment",
+                                            "description": "Involve learners in self and peer assessment using success criteria agreed at the beginning of tasks."
+                                        },
+                                        {
+                                            "assessment_type": "Records",
+                                            "description": "Record listening and reading comprehension results."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess products: Letter; design and description against agreed and shared success criteria."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 18,
+                                        "unit": "periods",
+                                        "source_page": "28"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Conduct a survey (online if possible) to find out the preferred dress styles of peers."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "SENIOR 2: TERM 2/3",
+                                            "note_type": "constraint",
+                                            "source_page": "28"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Theme 4: Interaction with the Environment",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "FL-O-S2-T3-0001",
+                                        "topic_title": "TOPIC 2.4: THE ENVIRONMENT",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 18
+                                    },
+                                    "core_competency": "The learner responds to, and makes simple requests in the target language and understands cultural differences and exchange information orally and in writing in relation to own country and community and those where the target language is spoken, on the following: Local environment; the weather; recycling; environmental problems.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "a) Recall and use a range of words, set phrases and questions related to geographical features i.e. mountains, countryside, sea, hills, river, forest (k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "b) Talk about the advantages and disadvantages of living in different locations and express personal opinions. (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "c) Describe where a town or village is located express and explain opinions.(k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "d) Talk about the climate, and the weather there at different times of year (k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "e) Recall the future tense and understand a simple weather report (k, u)",
+                                            "domain": "Knowledge/Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "f) ) Know and use some key words, phrases and questions relating to recycling (k, s)",
+                                            "domain": "Knowledge/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "g) Use simple expressions to talk about cause and consequence (k, s)",
+                                            "domain": "Knowledge/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "h) Recall how to ask for new words and to use coping strategies to express what you want. (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "i) Know and use a range of vocabulary and some simple phrases relating to environmental problems such as waste, pollution, climate change, extinction etc. (k, u, s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        },
+                                        {
+                                            "outcome_text": "j) Talk about some environmental problems and possible solutions using the modal verbs must, can etc. (k, u,s)",
+                                            "domain": "Knowledge/Understanding/Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Matching",
+                                            "description": "Match key vocabulary re location and geographical features to pictures/ symbols."
+                                        },
+                                        {
+                                            "activity_type": "Reading/Ordering",
+                                            "description": "Read aloud, simple texts about locations and put the images in the correct order."
+                                        },
+                                        {
+                                            "activity_type": "Listening",
+                                            "description": "Listen to speakers from the TLCC describing their locality and the advantages and disadvantages of living there. Decide whether their attitude is positive or negative."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "Work in groups to describe different locations using set phrases."
+                                        },
+                                        {
+                                            "activity_type": "Listening/Singing",
+                                            "description": "Listen to and recite songs about the environment."
+                                        },
+                                        {
+                                            "activity_type": "Matching",
+                                            "description": "Match key vocabulary related to climate/weather to pictures/symbols."
+                                        },
+                                        {
+                                            "activity_type": "Listening/Reading",
+                                            "description": "Revise the future tense. Listen to, watch and read simple weather reports."
+                                        },
+                                        {
+                                            "activity_type": "Role-play",
+                                            "description": "Create and present own weather forecasts using the future tense, in groups"
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Work with a partner to write a short description of a location, its climate and seasonal weather."
+                                        },
+                                        {
+                                            "activity_type": "Game",
+                                            "description": "Place key nouns into one of three boxes, - throw/compost/recycle. Play games to practise and memorise key questions and phrases."
+                                        },
+                                        {
+                                            "activity_type": "Listening/Group Work",
+                                            "description": "Listen to TLCC speakers talking about recycling in their localities and countries and extract the main information. Work in groups to work out meaning of new words checking any unknown words in the dictionary."
+                                        },
+                                        {
+                                            "activity_type": "Grammar Practice",
+                                            "description": "Complete gap fill activities about recycling, practising simple cause and consequence constructions to say if something happens, something else will happen."
+                                        },
+                                        {
+                                            "activity_type": "Pair Work",
+                                            "description": "Work in pairs on prepared questions about the environment. Adapt answers from a model and add extra information to improve responses."
+                                        },
+                                        {
+                                            "activity_type": "Role-play",
+                                            "description": "Using a model, role-play a conversation advising young children about how to manage their waste better in school. Practise using coping strategies (mime, point, facial expressions etc.)"
+                                        },
+                                        {
+                                            "activity_type": "Reading/Game",
+                                            "description": "Read aloud, short texts about environmental problems and highlight key words and phrases. Play games to practise and memorise key questions and phrases."
+                                        },
+                                        {
+                                            "activity_type": "Listening",
+                                            "description": "Listen to TLCC speakers talking about environmental problems in their localities and countries and extract the main information. Note the differences and similarities."
+                                        },
+                                        {
+                                            "activity_type": "Game",
+                                            "description": "Play games to revise modal verbs."
+                                        },
+                                        {
+                                            "activity_type": "Matching",
+                                            "description": "Match simple statements about environmental issues with possible solutions."
+                                        },
+                                        {
+                                            "activity_type": "Pair Work",
+                                            "description": "Work with a partner to ask and answer some set questions about sustainability and own routines to help save the planet."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Using a model, work in groups to write a contribution to an internet forum about the most important environmental issue. Offer a couple of solutions."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Routine Observation",
+                                            "description": "Routinely check developing understanding/ use of greetings, classroom phrases during registration, and as lessons progress."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe use of target language including applying clarification strategies when working in pairs, groups, playing games etc."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Circulate during oral and written activities to check understanding and accuracy including conjugations and pronunciation."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Evaluate contribution to pair and group work ensuring coverage of all learners over time."
+                                        },
+                                        {
+                                            "assessment_type": "Self/Peer Assessment",
+                                            "description": "Involve students in self and peer assessment using success criteria agreed at the beginning of tasks."
+                                        },
+                                        {
+                                            "assessment_type": "Records",
+                                            "description": "Record listening and reading comprehension results."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess products: descriptions; weather report; contribution to internet forum against agreed and shared success criteria."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 18,
+                                        "unit": "periods",
+                                        "source_page": "30"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

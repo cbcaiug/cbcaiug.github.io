@@ -1,0 +1,956 @@
+{
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "Literature in English",
+    "level": "O-Level",
+    "class_group": "Senior One / Senior Two",
+    "year": "2019",
+    "version": "First Edition",
+    "source_document": "Lower Secondary Curriculum: Literature in English Syllabus, NCDC Uganda, ISBN 978-9970-00-124-8"
+  },
+
+  "global_framework": {
+    "competencies": [
+      "Self-assured individuals who demonstrate self-motivation, self-management and self-esteem; know their own preferences, strengths and limitations; adjust their behaviour and language appropriately to different social situations; relate well to a range of personality types.",
+      "Responsible and patriotic citizens who cherish the values promoted in the curriculum; promote equity, the development of indigenous cultures and languages and appreciate other people's cultures; apply environmental and health awareness when making decisions for themselves and their community; are positive in their own identity as individuals and global citizens; are motivated to contribute to the well-being of themselves, their community and the nation.",
+      "Lifelong learners who can plan, reflect and direct their own learning; actively seek lifelong learning opportunities for personal and professional development.",
+      "Positive contributors to society who have acquired and can apply the Generic Skills; demonstrate knowledge and understanding of the emerging needs of society and the economy; understand how to design, make and critically evaluate products and processes to address needs; appreciate the physical, biological and technological world and make informed decisions about sustainable development and its impact on people and the environment."
+    ],
+    "generic_skills": [
+      "Critical thinking and problem-solving: Plan and carry out investigations; Sort and analyse information; Identify problems and ways forward; Predict outcomes and make reasoned decisions; Evaluate different solutions.",
+      "Creativity and innovation: Use imaginations to explore possibilities; Work with others to generate ideas; Suggest and develop new solutions; Try out innovative alternatives; Look for patterns and make generalisations.",
+      "Communication: Listen attentively and with comprehension; Talk confidently and explain ideas/opinions clearly; Read accurately and fluently; Write and present coherently; Use a range of media to communicate ideas.",
+      "Co-operation and Self-Directed Learning: Work effectively in diverse teams; Interact effectively with others; Take responsibility for own learning; Work independently with persistence; Manage goals and time.",
+      "Mathematical computation and ICT proficiency: Use numbers and measurements accurately; Interpret and interrogate mathematical data; Use mathematics to justify and support decisions; Use technology to create, manipulate and process information; Use technology to collaborate, communicate and refine their work."
+    ],
+    "values": [
+      "Respect for humanity and environment",
+      "Honesty; uphold and defend the truth at all times",
+      "Justice and fairness in dealing with others",
+      "Hard work for self-reliance",
+      "Integrity; moral uprightness and sound character",
+      "Creativity and innovativeness",
+      "Social Responsibility",
+      "Social Harmony",
+      "National Unity",
+      "National Consciousness and patriotism"
+    ],
+    "attitudes": [
+      "Honesty",
+      "Integrity",
+      "Tolerance",
+      "Respect",
+      "Love",
+      "Positive attitude to work",
+      "Patience",
+      "Perseverance",
+      "Kindness",
+      "Responsibility",
+      "Generosity",
+      "Loyalty",
+      "Unity"
+    ],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Life skills",
+      "Mixed abilities and involvement",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+
+  "classes": [
+    {
+      "class_name": "Senior One",
+      "class_code": "S1",
+      "terms": [
+        {
+          "term_name": "Term 1-3",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Literature in English: Core Literary Forms",
+              "theme_description": "Senior 1 covers four core literary forms — Oral Literature, Poetry, Drama, and Prose — distributed across Terms 1–3. Literature in English is an elective subject from Senior 1 to Senior 4. Time allocation is 2 periods a week for Senior 1 and 2.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-O-S1-T1-0001",
+                    "topic_title": "Oral Literature",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 10
+                  },
+
+                  "core_competency": "The learner applies the techniques of oral literature and persuasive speaking creatively.",
+
+                  "prerequisites": [
+                    {
+                      "text_verbatim": "The Lower Secondary Syllabus for Literature in English builds upon concepts, skills, attitudes and values developed at the primary school level.",
+                      "notes": "Source page 1 (Foreword). Prior primary-level literacy and oral communication expected."
+                    }
+                  ],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "use subject specific language.",
+                      "domain": "Knowledge, Skills (k, s)"
+                    },
+                    {
+                      "outcome_text": "give instructions orally and in writing.",
+                      "domain": "Skills, Values (s, v)"
+                    },
+                    {
+                      "outcome_text": "make reservations in different media and for different purposes.",
+                      "domain": "Skills, Values, Generic Skills (s, v, gs)"
+                    },
+                    {
+                      "outcome_text": "analyse and evaluate how speakers present points effectively through use of language and gesture.",
+                      "domain": "Understanding (u)"
+                    },
+                    {
+                      "outcome_text": "sustain a conversation that involves explaining and giving reasons for their views or choices.",
+                      "domain": "Understanding, Generic Skills (u, gs)"
+                    },
+                    {
+                      "outcome_text": "participate in debate, using the conventions and language of debates.",
+                      "domain": "Skills (s)"
+                    },
+                    {
+                      "outcome_text": "present spoken arguments, sequencing points logically, defending views with evidence and making use of persuasive language.",
+                      "domain": "Skills, Values (s, v)"
+                    },
+                    {
+                      "outcome_text": "know how to interpret real life experiences so as to be able to express likes and dislikes.",
+                      "domain": "Knowledge, Skills (k, s)"
+                    },
+                    {
+                      "outcome_text": "know how to ask range of questions to extend their thinking.",
+                      "domain": "Knowledge, Values (k, v)"
+                    },
+                    {
+                      "outcome_text": "know how to write own compositions based on questions asked.",
+                      "domain": "Knowledge, Skills (k, s)"
+                    },
+                    {
+                      "outcome_text": "understand persuasive techniques related to selling a product or service.",
+                      "domain": "Understanding, Skills (u, s)"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Retelling traditional stories in pairs or groups using various forms of oral literature",
+                      "Storytelling through song or role play",
+                      "Identifying themes and story patterns in oral literature",
+                      "Recounting personal experiences using key features of a good recount: past tense, chronological order, dialogue, humour, drama",
+                      "Role play, telling real and imagined stories using conventions of familiar story language",
+                      "Describing or telling stories from own experience using specific detail",
+                      "Conversations/role plays about visits/key scenarios using language of buying and selling",
+                      "Persuasive language analysis (e.g. Martin Luther King's 'I have a dream' speech)",
+                      "Planning and conducting a formal debate on a school or news issue",
+                      "Preparing a formal speech on children's rights/gender inequalities using persuasive language and body language",
+                      "Narrating the experience of attending a celebration event",
+                      "Newspaper report writing (who, what, where, when, why, how)",
+                      "Inviting a visitor to speak; learners devise questions using topic-specific vocabulary; writing a critique",
+                      "Analysing TV, radio and print advertisements for purpose and audience",
+                      "Role-playing a short promotion for radio or TV",
+                      "Forms of Oral Literature: Lullabies, Lyrics, Rhymes, Chants, Dirges, Work songs, War songs, Puzzles, Proverbs, Sayings, Puns, Tongue twisters, Fairy tales, Folk tales, Myths, Legends, Parables, Allegories"
+                    ],
+                    "optional_enrichment": [
+                      "Use ICT to listen to recorded forms of literature to guide discussion lessons",
+                      "Use radio or T.V. to listen to examples of the forms of oral literature"
+                    ],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group storytelling",
+                      "description": "Encourage learners to retell traditional stories in pairs or groups, using the various forms of oral literature. Learners should have access to a range of literature."
+                    },
+                    {
+                      "activity_type": "Group story planning",
+                      "description": "In groups, learners decide how they want to tell their story; e.g. through song or role play. They discuss the different characters and how they will use their voices to demonstrate the tone of the story. They think about how they want the audience to feel as they listen to their story."
+                    },
+                    {
+                      "activity_type": "Listening and discussion",
+                      "description": "Learners listen to any themes or story patterns they hear, and discuss them: How did the story make them feel? Were they entertained by the way the story was told? Why, or why not?"
+                    },
+                    {
+                      "activity_type": "Paired recount",
+                      "description": "In pairs, learners plan and retell a personal experience, using the key features of a good recount: past tense, chronological order, dialogue, humour, drama. For example, a visit to their relatives, using a family tree to explain family relationships."
+                    },
+                    {
+                      "activity_type": "Peer feedback",
+                      "description": "Pairs join another pair and listen to their recounts, commenting on the way they are told."
+                    },
+                    {
+                      "activity_type": "Group role play",
+                      "description": "As a group, learners role play, tell real and imagined stories using the conventions of familiar story language."
+                    },
+                    {
+                      "activity_type": "Descriptive storytelling",
+                      "description": "Describe or tell stories from their own experience, recounting events using specific detail."
+                    },
+                    {
+                      "activity_type": "Market role play",
+                      "description": "Take part in conversations/role plays about visits/key scenarios a visit to, for example, the local market, using the language of buying and selling at the market."
+                    },
+                    {
+                      "activity_type": "Peer evaluation of role play",
+                      "description": "Learners discuss the positives and negatives of each group's role play and how it could be improved. A list of key features of a good recount is made."
+                    },
+                    {
+                      "activity_type": "Travel agent role play",
+                      "description": "In groups, learners role play planning a trip. This could involve a visit to a travel agent to get specific advice about transportation and accommodation. Make reservations orally at the travel agency, and also by booking the holiday over the phone with the airline and hotel. Learners follow up their oral instructions with both a letter and an email message to confirm the reservations."
+                    },
+                    {
+                      "activity_type": "Persuasive language analysis",
+                      "description": "Provide learners with an example of the use of persuasive language: e.g. Martin Luther King's 'I have a dream' speech. In groups, discuss and list features that make the speech effective. Discuss effective persuasive phrases; e.g. 'You must realise that…', 'It is obvious that', 'Without doubt'."
+                    },
+                    {
+                      "activity_type": "Favourite phrases identification",
+                      "description": "Learners to identify their favourite sections, sentences or phrases of the example given, and justify their reasons."
+                    },
+                    {
+                      "activity_type": "Body language analysis",
+                      "description": "Learners identify persuasive body language; e.g. hand gestures, voice level, intonation, eye contact, while watching videos of public speakers, if possible."
+                    },
+                    {
+                      "activity_type": "Debate planning and execution",
+                      "description": "In groups, learners plan to debate a school issue; for example, 'cell phones should be banned in classrooms', or a controversy that is in the news. Through an exchange of views in conversation, brainstorm both sides of the issue, giving reasons, and establish the wording of the motion to be debated. Groups agree roles of proposer and seconder, opposer and seconder, and chairperson; make contributions from each side, using the rules and formal language of debate; sum up on both sides and vote."
+                    },
+                    {
+                      "activity_type": "Formal speech",
+                      "description": "Prepare a formal speech on a topic related to children's rights/gender inequalities. Put points in a logical order that build to a planned conclusion, using evidence to support each point, persuasive language, and practice persuasive body language. Present the speech to the class. Class to provide feedback on its effectiveness."
+                    },
+                    {
+                      "activity_type": "Celebration narration",
+                      "description": "Narrate the experience of attending a celebration in an interesting way to a partner, drawing out key moments and dialogue that serve to explain why the event was successful or not, enjoyable or not."
+                    },
+                    {
+                      "activity_type": "Newspaper account analysis",
+                      "description": "Look at newspaper accounts of celebration events and list the questions that are answered by facts in the reports."
+                    },
+                    {
+                      "activity_type": "Reporter role play",
+                      "description": "Be a reporter covering a celebration event you have read about or experienced. In pairs, think of questions to ask the host and attendees. Practice asking each other questions; i.e., who was involved, what happened, where did the event take place, why is it newsworthy? Interview main person at event."
+                    },
+                    {
+                      "activity_type": "Mystery artefact questioning",
+                      "description": "Learners bring in a concealed artefact related to either a topic they are learning about in another subject, or something that is personal to them. Each learner to provide clues relating to why they have chosen the object. The rest of the class to devise a series of questions to ask in order to identify the mystery artefact."
+                    },
+                    {
+                      "activity_type": "Newspaper report writing",
+                      "description": "Write a newspaper report of the celebration event, answering the who, what, where, when, why and how questions."
+                    },
+                    {
+                      "activity_type": "Visitor talk and critique",
+                      "description": "Invite a visitor to speak to the class on a topic of interest. Learners research the topic in advance and devise a series of questions for the visitor, using topic-specific vocabulary. Learners write a critique of the talk, indicating where the learner agreed or disagreed, and why, and appraising how persuasive speaker was."
+                    },
+                    {
+                      "activity_type": "Advertisement analysis and role play",
+                      "description": "Look at a range of TV, radio and print advertisements and discuss their purpose and audience (age, gender, lifestyle, etc.). Work collaboratively to agree a set of criteria for what makes a good advert. Role-play a short promotion for radio or TV on a chosen product or service, using the criteria established."
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation – storytelling",
+                      "description": "Note the language, tone and creativity used by learners in storytelling, and assess their skill in entertaining their audience."
+                    },
+                    {
+                      "assessment_type": "Listening – recount features",
+                      "description": "Listen to whether or not learners are using key features and detail in their accounts creatively to make their stories come alive."
+                    },
+                    {
+                      "assessment_type": "Observation – role play language",
+                      "description": "In role plays, note their understanding and application of subject specific language, and their communication skills in making reservations."
+                    },
+                    {
+                      "assessment_type": "Conversation – persuasive speech analysis",
+                      "description": "In conversation, note learners' ability to analyse a persuasive speech for its key ingredients, and to evaluate how body language is employed in support of the argument."
+                    },
+                    {
+                      "assessment_type": "Observation – debate planning",
+                      "description": "Listen to learners plan a debate, noting their critical thinking on the issue from both sides."
+                    },
+                    {
+                      "assessment_type": "Observation – debate performance",
+                      "description": "Observe their debate, and their speech, for their communication skills, critical thinking and ability to apply persuasive techniques."
+                    },
+                    {
+                      "assessment_type": "Listening – celebration narration",
+                      "description": "Listen to their narration of a celebration to assess learners' analysis of why aspects of the event pleased them or not."
+                    },
+                    {
+                      "assessment_type": "Observation – questioning quality",
+                      "description": "Assess the relevance and quality of their questions as reporters, and in identifying the mystery artefact."
+                    },
+                    {
+                      "assessment_type": "Product – newspaper report and critique",
+                      "description": "In their newspaper reports and critiques, look for their ability to formulate pertinent questions, and then provide an accurate/well-argued account or analysis."
+                    },
+                    {
+                      "assessment_type": "Observation – advertising role play",
+                      "description": "Assess their creative use of persuasive advertising techniques."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "investigative_skills": [],
+
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+
+                  "assessment_weightings": {
+                    "summative_percent": 20,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": "This summative teacher assessment will contribute 20% to the final grade of the School Leaving Certificate as elaborated in the Assessment Framework."
+                  },
+
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "12"
+                  },
+
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use ICT to listen to recorded forms of literature to guide some of the discussion lessons.",
+                      "Use radio or T.V. to listen to examples of the forms of oral literature."
+                    ],
+                    "restrictions": []
+                  },
+
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "Literature in English is an elective subject from Senior 1 to Senior 4.",
+                      "note_type": "constraint",
+                      "source_page": "11"
+                    },
+                    {
+                      "text_verbatim": "LITERATURE IN ENGLISH S1&2: 2 periods a week",
+                      "note_type": "constraint",
+                      "source_page": "11"
+                    },
+                    {
+                      "text_verbatim": "Forms of Oral Literature: Lullabies, Lyrics, Rhymes, Chants, Dirges, Work songs, War songs, Puzzles, Proverbs, Sayings, Puns, Tongue twisters, Fairy tales, Folk tales, Myths, Legends, Parables, Allegories",
+                      "note_type": "clarification",
+                      "source_page": "15"
+                    },
+                    {
+                      "text_verbatim": "These are not the only possible learning activities, and teachers are encouraged to extend these and devise their own that are appropriate to the needs of their class.",
+                      "note_type": "clarification",
+                      "source_page": "12"
+                    }
+                  ],
+
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-O-S1-T1-0002",
+                    "topic_title": "Poetry",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 20
+                  },
+
+                  "core_competency": "The learner understands form and structure in poetry, responds to poetic techniques and thinks critically about a poem's meaning.",
+
+                  "prerequisites": [
+                    {
+                      "text_verbatim": "The Lower Secondary Syllabus for Literature in English builds upon concepts, skills, attitudes and values developed at the primary school level.",
+                      "notes": "Source page 1 (Foreword). Prior primary-level literacy and language awareness expected."
+                    }
+                  ],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand basic poetic features such as stanzas, rhythm and rhyme schemes.",
+                      "domain": "Knowledge, Understanding (k, u)"
+                    },
+                    {
+                      "outcome_text": "compare poems with a similar theme.",
+                      "domain": "Understanding, Skills, Values (u, s, v)"
+                    },
+                    {
+                      "outcome_text": "think critically about what is unique about African poetry.",
+                      "domain": "Understanding, Values (u, v)"
+                    },
+                    {
+                      "outcome_text": "analyse their response to poetry with reference to a particular poem.",
+                      "domain": "Understanding, Skills, Values (u, s, v)"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Studying a range of poems demonstrating different themes and containing a range of poetic features",
+                      "Identifying stanzas, rhythm and rhyme schemes",
+                      "Comparing poems with similar themes (e.g. war, friendship, loneliness, nature, love)",
+                      "Reading three to five poems written by African poets",
+                      "Identifying themes, language and stylistic features of African poetry vs non-African poetry",
+                      "Writing about a poem of their choice, analysing why it encourages or discourages further reading",
+                      "Forms and aspects of poetry: Ballads, Sonnets, Blank verse, Haiku, Descriptive poem/poetry, Rhymes/Rhyme scheme, Lyrics, Songs, Free verse, Meaning of a poem, Structure of a poem, Sound features, Message/Theme in a poem, Speaker, Characters in a poem"
+                    ],
+                    "optional_enrichment": [
+                      "Use ICT to listen to recorded poems to guide some of the discussion lessons.",
+                      "Use radio, mobile phone or T.V. to listen to examples of the poems."
+                    ],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Individual reading and annotation",
+                      "description": "Learners should study a range of poems that demonstrate different themes and contain a range of poetic features. Encourage learners to read the poems a few times, and to individually write notes on what they think each poem means, its main features and the attitudes and the feelings it conveys."
+                    },
+                    {
+                      "activity_type": "Group discussion – poetic features",
+                      "description": "Working in groups, learners share their notes and agree on key features of a poem. They are guided in a discussion in which they identify these features as stanzas, rhythm and rhyme schemes."
+                    },
+                    {
+                      "activity_type": "Group presentation",
+                      "description": "Groups present these features to the rest of the class, explaining how they differ from fiction and drama."
+                    },
+                    {
+                      "activity_type": "Thematic comparison",
+                      "description": "Learners read selected poems with a similar theme; e.g. war, friendship, loneliness, nature, love, etc. The class discusses the way in which different poets have approached the theme, and the similarities and differences in their thoughts and impressions on the subject."
+                    },
+                    {
+                      "activity_type": "Individual response notes",
+                      "description": "Learners individually note the images that come to mind when reading the poems, how the poem makes them feel, which words evoke a response, and then they share these notes with their group."
+                    },
+                    {
+                      "activity_type": "Group poetry performance",
+                      "description": "In groups, learners select, prepare and rehearse a poem to present to the class of sufficient length to allow each member of the group to read a stanza. Afterwards, members of the group explain the poet's thoughts on the theme, citing words and phrases from the poem in support of their view."
+                    },
+                    {
+                      "activity_type": "African poetry study",
+                      "description": "Read three to five poems written by African poets. Learners individually identify the themes, language and stylistic features that seem to make these poems different from those written by non-African poets. As a class, decide on what might distinguish African poetry from that produced by poets from other parts of the world."
+                    },
+                    {
+                      "activity_type": "Personal response writing",
+                      "description": "In groups, learners brainstorm and write reasons why they like/dislike poems. They express personal ideas/feelings. Using thoughts expressed in groups, learners write about a poem of their choice, analysing why it encourages or discourages them from reading more poetry, giving specific examples from the poem of language, rhyme and structure/form to back up their points."
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Listening – key features discussion",
+                      "description": "Listen to learners discuss the key features of a poem to assess their understanding of structure and form, and how these are used to convey thoughts and feelings."
+                    },
+                    {
+                      "assessment_type": "Conversation – thematic analysis",
+                      "description": "Engage in conversation with them to assess their analysis of the different ways in which poets approach the same theme. Note their ability to respond to the feelings conveyed in poetic language, both in conversation and performance."
+                    },
+                    {
+                      "assessment_type": "Observation – African poetry",
+                      "description": "Note their analytical skills in identifying the special character of African poetry."
+                    },
+                    {
+                      "assessment_type": "Product – written analysis",
+                      "description": "In their written product, look for analysis and critical thinking when arguing their case about poetry on the basis of a particular poem."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "investigative_skills": [],
+
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+
+                  "assessment_weightings": {
+                    "summative_percent": 20,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": "This summative teacher assessment will contribute 20% to the final grade of the School Leaving Certificate as elaborated in the Assessment Framework."
+                  },
+
+                  "time_allocation": {
+                    "periods": 20,
+                    "unit": "periods",
+                    "source_page": "12"
+                  },
+
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use ICT to listen to recorded poems to guide some of the discussion lessons.",
+                      "Use radio, mobile phone or T.V. to listen to examples of the poems."
+                    ],
+                    "restrictions": []
+                  },
+
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "Forms and aspects of poetry: Ballads, Sonnets, Blank verse, Haiku, Descriptive poem poetry, Rhymes/Rhyme scheme, Lyrics, Songs, Free verse, Meaning of a poem, Structure of a poem, Sound features, Message/Theme in a poem, Speaker, Characters in a poem",
+                      "note_type": "clarification",
+                      "source_page": "17"
+                    },
+                    {
+                      "text_verbatim": "These are not the only possible learning activities, and teachers are encouraged to extend these and devise their own that are appropriate to the needs of their class.",
+                      "note_type": "clarification",
+                      "source_page": "12"
+                    }
+                  ],
+
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-O-S1-T1-0003",
+                    "topic_title": "Drama",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 21
+                  },
+
+                  "core_competency": "The learner understands basic dramatic terms and techniques, and can assess their application in a performance.",
+
+                  "prerequisites": [
+                    {
+                      "text_verbatim": "The Lower Secondary Syllabus for Literature in English builds upon concepts, skills, attitudes and values developed at the primary school level.",
+                      "notes": "Source page 1 (Foreword). Prior primary-level oral and literacy skills expected."
+                    }
+                  ],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "analyse the themes and techniques of a range of selected plays using basic drama terminology.",
+                      "domain": "Knowledge, Understanding, Values (k, u, v)"
+                    },
+                    {
+                      "outcome_text": "understand how drama skills and techniques are used to create characterisation, mood and atmosphere.",
+                      "domain": "Understanding (u)"
+                    },
+                    {
+                      "outcome_text": "analyse events in plays to deepen understanding of themes and characters, and to enrich a performance.",
+                      "domain": "Understanding, Knowledge (u, k)"
+                    },
+                    {
+                      "outcome_text": "write short plays (one scene) of their own, and know how to set out dialogue.",
+                      "domain": "Knowledge, Skills, Values (k, s, v)"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Reading a range of plays with different themes; seeing stage or video performances where possible",
+                      "Drama terminology: set, stage directions, dialogue, monologue, flashback/forward, tension, climax, resolution",
+                      "Discussing themes and characters in plays",
+                      "Predicting plot outcomes based on opening scenes",
+                      "Reading aloud parts of plays with attention to audience",
+                      "Planning performance of scenes using facial expressions, body language, voice (tone, pitch, volume)",
+                      "Practising dramatic skills: freeze frame, tableau, thought-tracking",
+                      "Use of props for dramatic effect",
+                      "Group rehearsal and performance of scenes with justification of technique choices",
+                      "Class evaluation of performed scenes",
+                      "Writing simple scripts using stage directions and dialogue based on real events with imaginative touches",
+                      "Forms and aspects of drama: One-man plays/monologue, Improvised drama pieces such as skits and simulations, Mimes, Comedies, Tragedies, Soap opera/Melodrama"
+                    ],
+                    "optional_enrichment": [
+                      "Use ICT to listen to recorded plays or extracts to guide some of the discussion lessons.",
+                      "Use radio, mobile phone or T.V. to listen to or watch the texts that learners are studying to guide the class discussions."
+                    ],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Reading range of plays",
+                      "description": "Learners should read a range of plays with different themes, and see stage or video performances of the plays, if possible."
+                    },
+                    {
+                      "activity_type": "Drama terminology discussion",
+                      "description": "Discussion of plays should be guided by the use of the appropriate terminology: set, stage directions, dialogue, monologue, flashback/forward, tension, climax, resolution."
+                    },
+                    {
+                      "activity_type": "Reading group sharing",
+                      "description": "Share ideas about the themes and characters in the plays they are reading in their reading groups."
+                    },
+                    {
+                      "activity_type": "Plot prediction",
+                      "description": "Groups to select a new play, read the first two scenes, then discuss the theme, dialogue and actions of characters to predict what is likely to happen next."
+                    },
+                    {
+                      "activity_type": "Oral reading for effect",
+                      "description": "Individually, learners read out loud given parts of the play, thinking about the audience. Learners encouraged to read with anger, make the audience feel frightened, or laugh."
+                    },
+                    {
+                      "activity_type": "Group performance planning",
+                      "description": "In groups, learners select a scene/act and plan how they would perform it and which dramatic skills they would use. Teacher to guide them to think about facial expressions, body language, voice (tone, pitch, volume)."
+                    },
+                    {
+                      "activity_type": "Dramatic skills evaluation",
+                      "description": "In their group, learners practice the various skills and evaluate the impact and effectiveness of each, considering how they will create tension and develop the characters in their play using them."
+                    },
+                    {
+                      "activity_type": "Exploration techniques",
+                      "description": "As a group they explore different methods for understanding the play: e.g. freeze frame a part, create a tableau, use thought-tracking to explore issues."
+                    },
+                    {
+                      "activity_type": "Props exploration",
+                      "description": "Encourage group to consider the use of props to add effect."
+                    },
+                    {
+                      "activity_type": "Group performance and evaluation",
+                      "description": "Groups to rehearse, then act their scene for the class, ending with their reasons for choosing the particular scene/act, and why they employed particular dramatic techniques. Class to evaluate the scene/act with regard to the effectiveness of the techniques used, and how improvements could have been made."
+                    },
+                    {
+                      "activity_type": "Script writing in pairs",
+                      "description": "In pairs, learners create a simple script using stage directions and dialogue that dramatises a short real event in their lives, adding imaginative touches to enhance the impact on the audience."
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation – drama terms",
+                      "description": "Assess learners' understanding of basic drama terms in their conversation."
+                    },
+                    {
+                      "assessment_type": "Listening – theme and character analysis",
+                      "description": "Listen to their analysis of how theme and character are employed, and note their ability to predict outcomes in a play, based on preliminary evidence."
+                    },
+                    {
+                      "assessment_type": "Observation – acting skills",
+                      "description": "Observe their understanding of how acting skills can make a character come alive."
+                    },
+                    {
+                      "assessment_type": "Observation – performance preparation",
+                      "description": "Engage with learners as they prepare to act out a scene, noting the depth of their understanding of the play and how it influences their decisions on which dramatic skills/props to use."
+                    },
+                    {
+                      "assessment_type": "Observation – post-performance analysis",
+                      "description": "Note their analysis of the dramatic decisions they made with regard to the performance, as based on specifics in the play."
+                    },
+                    {
+                      "assessment_type": "Product – script reading",
+                      "description": "Read their scripts, looking for their knowledge of how to write a play and create a dramatic scene, and their use of imagination."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "investigative_skills": [],
+
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+
+                  "assessment_weightings": {
+                    "summative_percent": 20,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": "This summative teacher assessment will contribute 20% to the final grade of the School Leaving Certificate as elaborated in the Assessment Framework."
+                  },
+
+                  "time_allocation": {
+                    "periods": 21,
+                    "unit": "periods",
+                    "source_page": "12"
+                  },
+
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use ICT to listen to recorded plays or extracts to guide some of the discussion lessons.",
+                      "Use radio, mobile phone or T.V. to listen to or watch the texts that learners are studying to guide the class discussions."
+                    ],
+                    "restrictions": []
+                  },
+
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "Forms and aspects of drama: One-man plays/monologue, Improvised drama pieces such as skits and simulations, Mimes, Comedies, Tragedies, Soap opera/Melodrama",
+                      "note_type": "clarification",
+                      "source_page": "19"
+                    },
+                    {
+                      "text_verbatim": "These are not the only possible learning activities, and teachers are encouraged to extend these and devise their own that are appropriate to the needs of their class.",
+                      "note_type": "clarification",
+                      "source_page": "12"
+                    }
+                  ],
+
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+
+                {
+                  "topic_metadata": {
+                    "topic_id": "LIT-O-S1-T1-0004",
+                    "topic_title": "Prose",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 21
+                  },
+
+                  "core_competency": "The learner responds to a variety of prose, demonstrating understanding and creativity with regard to literary techniques.",
+
+                  "prerequisites": [
+                    {
+                      "text_verbatim": "The Lower Secondary Syllabus for Literature in English builds upon concepts, skills, attitudes and values developed at the primary school level.",
+                      "notes": "Source page 1 (Foreword). Prior primary-level reading and writing skills expected."
+                    }
+                  ],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "use them when discussing a variety of prose texts.",
+                      "domain": "Understanding (u)"
+                    },
+                    {
+                      "outcome_text": "form opinions about a book in a review and other formats based on specific character and plot points.",
+                      "domain": "Skills, Values (s, v)"
+                    },
+                    {
+                      "outcome_text": "analyse prose in order to identify themes and structures.",
+                      "domain": "Knowledge, Skills (k, s)"
+                    },
+                    {
+                      "outcome_text": "understand and employ literary language effects in order to describe setting and character.",
+                      "domain": "Understanding, Skills (u, s)"
+                    },
+                    {
+                      "outcome_text": "demonstrate understanding of language effects and characterisation in prose by being able to read/act scenes dramatically.",
+                      "domain": "Understanding, Skills (u, s)"
+                    },
+                    {
+                      "outcome_text": "write a short story that reflects their best understanding of literary techniques.",
+                      "domain": "Knowledge, Skills, Understanding (k, s, u)"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Reading a range of prose texts; selecting and reading own books",
+                      "Key prose terms: plot, character, setting, dialogue, theme, structure, style/language, point-of-view",
+                      "Justifying book choice with personal reasons",
+                      "Discussing setting and main plot; summarising story",
+                      "Analysing what makes the main character interesting using dialogue and actions",
+                      "Writing a short book review with personal response to characters and plot",
+                      "Presenting responses in different writing formats: SMS message, email, letter to an incoming student, short account for a school magazine",
+                      "Identifying themes and explaining how they were identified using textual evidence",
+                      "Identifying key elements of structure: parts/sections, chapters, prologue, epilogue, character arcs, escalation of tension/suspense, climax, resolution",
+                      "Studying language used to describe character and setting: imagery, adjectives, metaphor, simile",
+                      "Understanding how vocabulary choice influences the reader's perception of mood and atmosphere",
+                      "Creating character profiles and sharing reasons for liking/disliking characters",
+                      "Reading aloud significant extracts for dramatic effect; acting significant moments/episodes",
+                      "Writing short stories applying learned literary techniques",
+                      "Planning structure: developing theme, plot, character, style and tone",
+                      "Forms and aspects of prose: Descriptive and narrative stories; Genres (crime, thriller, drama, adventure, horror, romance, etc.); Short prose (short stories, micro-stories, novelettes or abridged series); Storyline/plot; Characterisation/Character arc; Climax; Resolution; Message/themes; Structure; Language effects: adjectives, imagery, metaphor, simile"
+                    ],
+                    "optional_enrichment": [
+                      "Use radio, mobile phone or T.V. to listen to or watch the texts that learners are studying to guide the class discussions."
+                    ],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Independent reading",
+                      "description": "Learners should be given a range of prose texts to read. They should also have the opportunity to select a book of their own."
+                    },
+                    {
+                      "activity_type": "Sharing reading experiences",
+                      "description": "They share their reading experiences with class, guided in the use of key terms: plot, character, setting, dialogue, theme, structure, style/language, point-of-view."
+                    },
+                    {
+                      "activity_type": "Book choice justification",
+                      "description": "In groups, learners tell each other why they chose their own books, justifying their choice with reasons; e.g., it relates to a personal experience or interest."
+                    },
+                    {
+                      "activity_type": "Setting and plot discussion",
+                      "description": "Learners discuss the setting and the main plot, summarising the story."
+                    },
+                    {
+                      "activity_type": "Character analysis",
+                      "description": "They explain what makes the main character in the book they have chosen interesting, referring to dialogue and actions."
+                    },
+                    {
+                      "activity_type": "Book review writing",
+                      "description": "Complete a template and write a short review of their own book, giving a personal response to the characters and plot."
+                    },
+                    {
+                      "activity_type": "Multi-format response",
+                      "description": "Challenge learners to present their response in different writing formats: e.g. SMS message, email, a letter to an incoming student, a short account for a school magazine."
+                    },
+                    {
+                      "activity_type": "Theme identification",
+                      "description": "From the range of prose under consideration, identify some of the themes being employed. Explain how these themes were identified, using examples from the texts to support their answer."
+                    },
+                    {
+                      "activity_type": "Structure analysis",
+                      "description": "Create a list of the key elements of structure of the texts: e.g. parts/sections, chapters, prologue, epilogue, character arcs, escalation of tension/suspense, climax, resolution."
+                    },
+                    {
+                      "activity_type": "Language and imagery study",
+                      "description": "Learners work in pairs to read through chosen text and consider the language used to describe character and setting, considering the use of imagery, adjectives, metaphor and simile."
+                    },
+                    {
+                      "activity_type": "Vocabulary and mood analysis",
+                      "description": "Draw attention to how choice of vocabulary influences the reader's perception of the mood and atmosphere of a setting/character. Think about appearance, movement, smells and textures for setting. Think of images created for effect, highlighting key words/phrases. Learners create a list of what makes setting/character effective."
+                    },
+                    {
+                      "activity_type": "Character description reading aloud",
+                      "description": "Read aloud character descriptions and think about how the writer brings the character/relationships between characters alive, giving reasons to explain."
+                    },
+                    {
+                      "activity_type": "Character profiles",
+                      "description": "In groups, learners create character profiles, describing the character and relationships between characters."
+                    },
+                    {
+                      "activity_type": "Liking/disliking characters",
+                      "description": "In pairs, they share reasons for their liking/disliking of a character."
+                    },
+                    {
+                      "activity_type": "Dramatic reading/performance",
+                      "description": "Learners to be selected to read aloud some of the significant extracts from prose, using the language in the text to create a dramatic effect. In groups, they can act significant moments/episodes in the story for dramatic effect."
+                    },
+                    {
+                      "activity_type": "Short story writing",
+                      "description": "Learners to be given opportunities to write short stories. They should plan how they will structure their writing in order to develop theme, plot and character, and plan what style and tone they will adopt."
+                    },
+                    {
+                      "activity_type": "Peer selection of best examples",
+                      "description": "Groups to read each other's writing and select the best examples, identifying the techniques or literary features that have been used."
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation – literary terms",
+                      "description": "Converse with learners to measure their understanding of key literary terms, and their ability to evaluate setting, plot and character in discussion."
+                    },
+                    {
+                      "assessment_type": "Product – written response formats",
+                      "description": "Read their written product, looking for well-formulated opinions based on the text, and creativity in using different formats to express their views."
+                    },
+                    {
+                      "assessment_type": "Listening – theme and structure analysis",
+                      "description": "Listen for their ability to analyse a text to determine its themes and structure."
+                    },
+                    {
+                      "assessment_type": "Observation – language effects",
+                      "description": "Assess their understanding and application of the language effects a writer uses to create evocative descriptions."
+                    },
+                    {
+                      "assessment_type": "Observation – dramatic reading/performance",
+                      "description": "Observe their ability to turn their understanding of language effects into a dramatic reading or performance."
+                    },
+                    {
+                      "assessment_type": "Product – short stories",
+                      "description": "In their short stories, assess their creative application of the literary techniques they have learned."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "investigative_skills": [],
+
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+
+                  "assessment_weightings": {
+                    "summative_percent": 20,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": "This summative teacher assessment will contribute 20% to the final grade of the School Leaving Certificate as elaborated in the Assessment Framework."
+                  },
+
+                  "time_allocation": {
+                    "periods": 21,
+                    "unit": "periods",
+                    "source_page": "12"
+                  },
+
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use radio, mobile phone or T.V. to listen to or watch the texts that learners are studying to guide the class discussions."
+                    ],
+                    "restrictions": []
+                  },
+
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "Forms and aspects of prose: Descriptive and narrative stories; Genres: crime, thriller, drama, adventure, horror, romance, etc.; Short prose such as short stories, micro-stories and novelettes or abridged series; Storyline/plot; Characterisation/Character arc; Climax; Resolution; Message/themes; Structure; Language effects: adjectives, imagery, metaphor, simile",
+                      "note_type": "clarification",
+                      "source_page": "21"
+                    },
+                    {
+                      "text_verbatim": "These are not the only possible learning activities, and teachers are encouraged to extend these and devise their own that are appropriate to the needs of their class.",
+                      "note_type": "clarification",
+                      "source_page": "12"
+                    }
+                  ],
+
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

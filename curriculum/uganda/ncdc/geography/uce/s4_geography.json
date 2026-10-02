@@ -1,0 +1,1281 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — Populated from PDF for Senior Four Geography",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "Geography",
+    "level": "O-level",
+    "class_group": "Senior Four",
+    "year": "2015",
+    "version": "1",
+    "source_document": "GEOGRAPHY SYLLABUS.pdf"
+  },
+  "global_framework": {
+    "competencies": [
+      "self – assured individuals",
+      "responsible and patriotic citizens",
+      "lifelong learners",
+      "positive contributors to society"
+    ],
+    "generic_skills": [
+      "Critical thinking and problem-solving",
+      "Creativity and innovation",
+      "Communication",
+      "Co-operation and Learning",
+      "Calculation and ICT"
+    ],
+    "values": [
+      "Peace and harmony",
+      "Integrity and honesty",
+      "Patriotism",
+      "Positive attitude towards work",
+      "Respect for human rights",
+      "Self-Control"
+    ],
+    "attitudes": [],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Diversity and inclusion",
+      "Socio-economic challenges",
+      "Citizenship"
+    ]
+  },
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "classes": [
+    {
+      "class_name": "Senior Four",
+      "class_code": "S4",
+      "terms": [
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Mining and industrialisation in Africa; Rhine lands and China",
+              "theme_description": "Theme: Mining and industrialisation in Africa; Rhine lands and China",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-O-S4-T1-0037",
+                    "topic_title": "MINERAL RESOURCES AND MINING IN AFRICA",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 9
+                  },
+                  "core_competency": "After studying this topic, learners should know the main mineral resources in Africa, understand how these can contribute to the development of African countries and why minerals do not always benefit everyone.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the use of mineral resources in the development of any two industries in Uganda (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "locate the main mining centres on the map of East Africa (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "recognise types and consequences of mining from photographs (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "appreciate the positive and negative contribution of mineral resources to development (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "understand why most mining is capital-intensive(u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand why most mining in Africa is controlled by overseas companies (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "draw a map to show the main mining areas of Africa (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "draw diagrams to show the main methods of mining (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "appreciate the dangers that most people may not benefit from mining in the countries where mining takes place (a, gs)",
+                      "domain": "a, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": [
+                      {
+                        "text_verbatim": "(Use the most important mining areas only, not an exhaustive list).",
+                        "override_allowed_by_user": true,
+                        "source_page": "100"
+                      }
+                    ]
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Minerals in Africa",
+                      "description": "Use a wall map, sketch map and/or atlas map or Internet map of mineral resources and mining areas in Africa. Learners draw the map and make a table of countries with minerals and the minerals in each. (Use the most important mining areas only, not an exhaustive list).\nRevision: From work on minerals in East Africa (topic 15), learners draw diagrams to show the three main methods of mining: open cast, underground and oil extraction. Make a list of the problems of each method.\nLearners annotate photographs of mining, identifying what the process is and how it might affect the environment."
+                    },
+                    {
+                      "activity_type": "Case studies",
+                      "description": "Case studies of mining areas: underground gold mining in South Africa; copper mining in Zambia and Congo; oil in Nigeria. Emphasise the social, economic and environmental problems: migrant labour in South Africa; landlocked area, transport problems and politics in Zambia/Congo; pollution in Nigeria (show photographs of pollution in Niger delta)\nLook up one of the above areas on Internet."
+                    },
+                    {
+                      "activity_type": "Economic benefits of mining",
+                      "description": "Ask learners to suggest the possible economic benefits of mining to governments and people (profits from taxes and exports, employment, infrastructure development, social service development).\nExplain why these economic developments do not always benefit the people of the countries: mines owned by overseas companies who send profits overseas; poor wages paid to miners, especially formerly under apartheid; corruption when the rulers take all the profits and only a few people become rich e.g. Nigeria, Angola; pollution destroying people’s land e.g. Nigeria; political conflict partly caused by mining e.g. Congo, Biafra war, Zimbabwe.\nLearners discuss the above problems and collaborate in groups to come up recommendations and suggestions as to how we can make sure that most people in a country benefit from mining."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe as learners hold a discussion on whether mining has been a good thing or a bad thing for Africa."
+                    },
+                    {
+                      "assessment_type": "Explanation",
+                      "description": "Learners use photographs and their research to explain mining impacts on environments and give reasons, with evidence. (Include a photograph of oil pollution in Nigeria or any other oil mining country in Africa.)"
+                    },
+                    {
+                      "assessment_type": "Explanation",
+                      "description": "Ask learners to explain the pros and cons of mining and use their research to explain who some winners and losers might be."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 9,
+                    "unit": "periods",
+                    "source_page": "100"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Look up one of the above areas on Internet."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "Emphasise the social, economic and environmental problems",
+                      "note_type": "examiner_hint",
+                      "source_page": "100"
+                    }
+                  ],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-O-S4-T1-0038",
+                    "topic_title": "INDUSTRIAL DEVELOPMENT IN AFRICA",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 9
+                  },
+                  "core_competency": "After studying this topic, learners should understand the economic importance and difficulties of industrial development in Africa and know the main types of industries which have been developed.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the meaning of manufacturing industries (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the factors influencing the distribution and development of any three manufacturing industries (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the effects of manufacturing industries on the environment (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the use of energy resources in the development of manufacturing industries in Uganda or the rest of East Africa (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "visit a local factory to find out how a factory works and show its effects on the environment (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "appreciate the contribution of manufacturing industries in transforming primary products (a, v)",
+                      "domain": "a, v"
+                    },
+                    {
+                      "outcome_text": "understand the benefits manufacturing industries can bring to African countries (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the problems of developing manufacturing industries in African countries (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "study, through research, examples of areas with manufacturing industries (gs)",
+                      "domain": "gs"
+                    },
+                    {
+                      "outcome_text": "Draw a map showing important industrial areas in Africa. (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "appreciate why many African countries are trying to develop manufacturing industries (a, gs)",
+                      "domain": "a, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Manufacturing industries",
+                      "description": "Revision by questioning: remind learners that in studying East Africa, they learnt about three kinds of industries: mining industries; agricultural processing industries; manufacturing industries. Explain that they have looked at mining industries and agricultural processing industries in different topics. Now we will look at manufacturing industries. Ask what two kinds of manufacturing industries there are? (consumer goods and industrial/producer goods).\nEither recap an earlier fieldtrip to a factory site or arrange a visit and ask learners to create a small case study identifying what happens there, the positive and negative impacts on people, environment and economy and explain how they feel about it.\nUse a map to show examples of manufacturing goods in industrial areas in Africa (Accra-Tema, Ghana; Lower Egypt industrial area; Witwatersrand or Rand industrial area, South Africa). Learners draw their own map or annotate a digital one.\nLearners construct a table to compare these industrial areas under the following headings and illustrate with their own drawn or digitally sourced maps:\nFactors: Raw materials, Power, Fresh water, Land, Relief, Transport, Capital, Labour, Market, Government policies.\nExplain for each area the main industries and the ownership of industries.\nLearners use Internet to help them compile the above table.\nLearners discuss the advantages of African countries establishing manufacturing industries."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate learners’ case studies to see how much their prior learning has been consolidated."
+                    },
+                    {
+                      "assessment_type": "Explanation",
+                      "description": "Ask learners to choose one industrial area. They use their map and information to explain why it was developed; what industries are found; what benefits it brings to the country; and what problems it has. Observe what they produce to explore relevance and accuracy."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Visit a local factory",
+                        "description_verbatim": "visit a local factory to find out how a factory works and show its effects on the environment",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "102"
+                      }
+                    ]
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 9,
+                    "unit": "periods",
+                    "source_page": "102"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "annotate a digital one",
+                      "digitally sourced maps",
+                      "Learners use Internet to help them compile the above table"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-O-S4-T1-0039",
+                    "topic_title": "MINING AND INDUSTRIAL DEVELOPMENT IN THE RUHR",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 9
+                  },
+                  "core_competency": "After studying this topic, learners should understand why industries developed in the Ruhr, the industries which developed, later changes in the industries and competition from other countries.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the location of the Ruhr in the Rhinelands (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the mining and industries which developed there (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the factors which led to the development of industries in the Ruhr are (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "use photos and statistics to illustrate industrialisation (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand the history of the development of industries in the Ruhr (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the importance of the European Union in industrial development in Europe and Germany (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the competition from other areas and changes in the industries in the Ruhr (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "draw a map to show the location of the Ruhr industrial area (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "appreciate the importance of power and transport in the development of industries (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "appreciate that the European Union may have lessons for the East African Community and the development of industries in Uganda and East Africa (a, gs)",
+                      "domain": "a, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Growth of industries in the Ruhr",
+                      "description": "Show a map of the Ruhr industrial area and the coalfield, showing rivers, canals, coalfield, towns and position in relation to Rhinelands.\nLearners use the Internet to research facts about the Ruhr industrial area and compare notes. They create their own maps with annotations.\nExplain that this is one of the main industrial areas of Europe. It originally developed heavy industries i.e. industries producing goods for use in other industries, especially iron and steel. Ask learners to use the map to suggest what advantages the Ruhr area had for the development of heavy industries, including iron and steel.\nDiscuss the answers and further explain the factors leading to development of heavy industry (coal, rivers and canals for transporting heavy goods, flat land, position in the middle of western Europe giving a big market, capital from Germany which was a rich country, skilled labour as Germany had well developed education, connection with Britain where industrial revolution started).\nAsk learners what goods from Germany are sold in Uganda? (cars like Mercedes, Volkswagen and Audi, electrical goods and technology).\nExplain the history of the Ruhr: Germany was involved in First and Second World Wars leading to destruction of industries. Formation of European Union (formerly European Economic Community) bringing together European countries, especially Germany, France and Britain, which had always fought each other. Free trade without customs between countries gave very big market for goods from Ruhr. Later disagreements, with Britain leaving."
+                    },
+                    {
+                      "activity_type": "Comparison with East Africa",
+                      "description": "Ask learners how this compares with formation of East African Community. (idea of big market with no customs but still many disagreements).\nExplain changes in Ruhr. Ask why Asian countries (e.g. China) can produce goods cheaper than Europe? (Because of lower wages). Asian countries competed in heavy industries including steel and vehicles. Ruhr now produces less steel and fewer vehicles, and it has moved into more specialised technology like computers and mobile phones."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate learners’ maps to record how effectively they researched the Ruhr area."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe as learners describe the history of industry in the Ruhr and the changes which have taken place to the present day. Ask learners to explain what lessons if any East Africa can learn from this, using evidence to support their claims."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 9,
+                    "unit": "periods",
+                    "source_page": "104"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners use the Internet to research facts about the Ruhr industrial area"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-O-S4-T1-0040",
+                    "topic_title": "MINING AND INDUSTRIAL DEVELOPMENT IN CHINA",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 9
+                  },
+                  "core_competency": "After studying this topic, the learners should understand why and how industries developed in China, the industries which developed, and later changes in the industries.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the minerals found in China (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the types of industries in China (K)",
+                      "domain": "K"
+                    },
+                    {
+                      "outcome_text": "draw a map to indicate the main mining and industrial areas of China (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand how China developed industries (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "realise the role of the government and central planning in this (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand changes in industries in China (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the importance of Africa as a market for Chinese goods and investment (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "appreciate the growing importance of China in the economic development of Africa (a, gs)",
+                      "domain": "a, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Minerals and mining in China",
+                      "description": "Use a wall map, atlas map or Internet map to show location of the main minerals. Learners find these with their own sources and create their own maps.\nExplain the importance of minerals in the development of industries in China."
+                    },
+                    {
+                      "activity_type": "Industrial development in China",
+                      "description": "Explain the importance of government policy in the development of industries in China: communist control of the economy and industrial development – the Great Leap Forward. Later government control of industrial development.\nLearners work in groups to research facts about industrial development in China, using the Internet and other sources, and make a small presentation with maps and charts to illustrate this. They investigate current news stories to search for information about Chinese investment in Uganda.\nAsk learners what kinds of products from China are sold in Uganda. (Cheap consumer goods, textiles, plastics etc., electronic goods esp. mobile phones and computers).\nExplain the industries developed in China and changes in these: starting with heavy industries (iron and steel etc.); consumer goods industries based on cheap labour; changes to more advanced technological industries as wages increased.\nExplain advantages of China for development of industries: minerals and other raw materials; very large population for cheap labour and big market; education emphasising technical and industrial skills; government control and encouragement.\nAsk learners if they can name any projects in Uganda or other areas of Africa where Chinese are investing. What sort of projects are these? Why are they good at these? (roads, railways, hydro-electricity: large scale projects where they have experts backed by large companies)."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate accuracy of learners’ maps."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe as learners explain whether most African countries have the same advantages for development of industries as China."
+                    },
+                    {
+                      "assessment_type": "Explanation",
+                      "description": "Learners use their research to give their views on the pros and cons of Chinese investment in Uganda, giving examples of small and large-scale projects as explanation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 9,
+                    "unit": "periods",
+                    "source_page": "106"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Internet map",
+                      "Learners work in groups to research facts about industrial development in China, using the Internet and other sources",
+                      "investigate current news stories to search for information"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "Population and urban development China, and Rotterdam",
+              "theme_description": "Theme: Population and urban development in Africa, China, and Rotterdam",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-O-S4-T2-0041",
+                    "topic_title": "POPULATION AND URBANISATION IN AFRICA",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 16
+                  },
+                  "core_competency": "After studying this topic, the learners should understand the growth rates and distribution of population in Africa, reasons for rapid urbanisation and consequences of this.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the concepts related to population (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the relationship between population, resources and the provision of services (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the demographic transition model and how this relates to the historical growth and population structures of East Africa",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "understand the factors which have led to rapid population increase in Uganda and the rest of East Africa",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "use maps, statistics, graphs and diagrams to analyse population (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "know areas of high, moderate and low population density in Africa (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "locate and name some major urban areas in Africa (k, s)",
+                      "domain": "k, s"
+                    },
+                    {
+                      "outcome_text": "understand the distribution of population in Africa and reasons for it (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand why the population of some countries is growing faster than others (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "form opinions about the advantages and problems of having a large or rapidly increasing population in a country (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "understand the methods which can be used to control the rate of population growth",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "form opinions on the need for, and use of population control methods (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "use statistics and graphs to show rapid urban development",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "understand rural-urban migration and the reasons for this (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the rapid growth of urban area (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the problems facing urban areas and the effects of urbanisation on the environment",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "draw maps to show the main areas of high density of population and main urban areas of Africa (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "appreciate the need for planning urban areas and urban growth (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "understand the relationship between a rapidly growing population and urbanisation (u)",
+                      "domain": "u"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Population growth",
+                      "description": "Revision by questioning: Ask learners to explain birth and death rates, and how these rates affect population growth.\nUse statistics of Africa’s population about every 10 years from 1900 to date. Ask learners to describe the growth of population during this period.\nLearners use Internet to find the above figures.\nLearners suggest reasons for this rapid growth of population: high fertility rate, high birth rate, early marriage, polygamy, decreasing death rate due to improved medicine, cultural and religious influences – tradition of many children and opposition to birth control."
+                    },
+                    {
+                      "activity_type": "Distribution of population",
+                      "description": "Use a map of the distribution of African population.\nAsk learners to list main areas of high density (over 40 persons per sq. km.), moderate density (10 – 40 people per sq. km.) and low density (fewer than 10 persons per sq. km.) and suggest reasons for these.\nLearners work in groups to discuss and list the factors which affect the density of population in Africa: climate, esp. rainfall; soils; vegetation; historical events – slave trade and colonialism; minerals and mining; industrial development; urban development; transport; migration and refugees."
+                    },
+                    {
+                      "activity_type": "Problems caused by rapid population increase",
+                      "description": "Learners look up population growth on Internet.\nLearners work in pairs and discuss the problems caused by increasing rate of population growth and high densities of population, drawing on their own experience and previous discussion of Uganda (topic 21). Look at rural and urban areas. Compare views with another pair.\nAs a whole class, learners discuss and give opinions if African countries should try to reduce high rate of population growth, giving reasons.\nAsk learners how the rate of population growth can be reduced and whether they agree with possible methods: birth control and family planning; abstinence; education of women; education of men; limiting number of children allowed in a family, as in China."
+                    },
+                    {
+                      "activity_type": "Urbanisation in Africa",
+                      "description": "Learners make a statistical analysis of the population growth in some urban areas.\nLearners choose some urban areas/cities in Africa. Look them up on Internet and describe characteristics.\nLearners discuss causes of rural-urban drift.\nLearners discuss and list problems caused by rapid urban growth: revision of topic 21.\nLearners discuss the need for planning urban areas.\nLearners look up Lagos on Internet\nCase study of an urban area in Africa: Lagos or similar area, emphasising growing inequality and social problems caused.\nLearners discuss ways in which urban problems can be solved or alleviated."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Eliciting as much information as possible from learners, evaluate how well they can recall prior learning."
+                    },
+                    {
+                      "assessment_type": "Monitoring",
+                      "description": "Monitor group discussion and prompt learners where necessary."
+                    },
+                    {
+                      "assessment_type": "Discussion",
+                      "description": "Listen to learners discuss and give their opinions about the rapid growth of population in Africa: they give reasons and suggest strategies, using evidence."
+                    },
+                    {
+                      "assessment_type": "Analysis",
+                      "description": "Ask learners to use maps and graphs to analyse rapid urbanisation and its problems. Observe their discussions and solutions and evaluate their reasons."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 16,
+                    "unit": "periods",
+                    "source_page": "107"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners use Internet to find the above figures",
+                      "Learners look up population growth on Internet",
+                      "Learners choose some urban areas/cities in Africa. Look them up on Internet and describe characteristics",
+                      "Learners look up Lagos on Internet"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-O-S4-T2-0042",
+                    "topic_title": "POPULATION AND URBANISATION IN CHINA",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "After studying this topic, learners should understand the size of the Chinese population, the history of its growth rate and the one-child policy to slow the growth.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the total population of China(k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the changes in her population growth rate (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the number and size of some urban areas in China(k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the size and rapid growth of China’s population and reasons for this (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "form opinions about the advantages and problems of having a large or rapidly increasing population in a country (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "understand the reasons for the adoption of the one child policy (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the consequences of the policy and changes in it (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the reasons for rural-urban drift and growth of urban areas in China (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the growth of Shanghai as a major city (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand government control over the growth of urban areas (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "use maps, statistics, graphs and diagrams to analyse population (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "draw a map to show the major urban areas of China (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand the methods which can be used to control the rate of population growth",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "appreciate the advantages and disadvantages of the one child policy (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "form opinions about the advantages and problems of having a large or rapidly increasing population in a country (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "form opinions on the need for, and use of population control methods (a)",
+                      "domain": "a"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "China’s population and population growth",
+                      "description": "Use a table to show the population of the world’s biggest countries, and some countries of Africa, as a proportion of the world’s population. Learners compare the populations and realise the size of China compared to other countries.\nLearners use Internet to find figures for the above table.\nUse a table or graph of China’s population from about 1900 to the present. Ask learners to describe the growth of population during this period.\nLearners use Internet to construct the above table or graph\nLearners suggest reasons for the rapid growth and the later decline of the growth rate. Compare this with East Africa and other African countries (rapid growth but no decline in rate).\nExplain the rapid growth: due to large birth rate but decreasing death rate due to modern medicine, as in Africa.\nExplain the one-child policy and its effect on growth. Explain other social consequences of one child policy: special treatment of one child; abortions of female children as males are more important in culture; imbalance of males and females and not enough females for men to marry.\nExplain reasons for change to two-child policy.\nLearners work in pairs to investigate and research the one-child policy in China on Internet and share the information they have found with their group."
+                    },
+                    {
+                      "activity_type": "Urban areas in China",
+                      "description": "Show table of number and size of urban areas in China with large populations.\nLearners suggest reasons for increasing size of urban areas based on topic 41 on industrialisation.\nExplain control of rural-urban drift and population migration in China (people need permission to move to urban areas or they do not get social services, including free education). Ask learners what problems may be avoided by this policy.\nDiscuss whether this policy would be good in Africa, including Uganda.\nLocate Shanghai on a map.\nLearners suggest why Shanghai has become a big city.\nExplain the reasons for the growth of Shanghai, including its original growth as a European enclave like Hong Kong"
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ use of sources and effectiveness in applying researched information in tables and graphs."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate how effectively learners recall prior learning."
+                    },
+                    {
+                      "assessment_type": "Explanation",
+                      "description": "Learners use their research and class discussions to explain how the government controls the population and movement to urban areas in China. In conversation, ask them to explain their views."
+                    },
+                    {
+                      "assessment_type": "Discussion",
+                      "description": "Learners discuss and give reasons as to whether such policies are possible or desirable in Uganda or other African countries."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "109"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners use Internet to find figures for the above table.",
+                      "Learners use Internet to construct the above table or graph",
+                      "investigate and research the one-child policy in China on Internet"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-O-S4-T2-0043",
+                    "topic_title": "URBAN AREAS IN NETHERLANDS: ROTTERDAM",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 6
+                  },
+                  "core_competency": "After studying this topic, learners should understand the reasons why Rotterdam has developed into a large urban area and how they have solved the problems of urban growth.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the location and size of Rotterdam (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand why Rotterdam grew into a big city (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "form opinions about the advantages and problems of having a large or rapidly increasing population in a country (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "use maps, statistics, graphs and diagrams to analyse population (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "appreciate why European cities are growing much more slowly than African cities today (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "explain why Rotterdam is growing less rapidly than most African cities today",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "appreciate any lessons Uganda can learn from the development of European cities like Rotterdam (a, gs)",
+                      "domain": "a, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Rotterdam",
+                      "description": "Learners research Rotterdam on Internet, to find out where it is and what it is like.\nUse a map to show location of Rotterdam\nLearners suggest why Rotterdam has grown as a port: on Rhine; Rhine an important waterway by river and route way by land to Germany and centre of Europe: rich farming area and industrial area; on North Sea, giving access to other European ports and the world; entrepot: trade in which a port imports goods from overseas and re-exports them to inland countries, or gathers goods from inland countries to export to other countries. Learners give examples of this from East Africa.\nExplain that Netherlands always looked towards the sea and was one of the first countries in Europe to explore overseas outside Europe, establishing a colony in South Africa and ruling Indonesia, so trade is very important to Netherlands. Netherlands ruled areas overseas far larger than Netherlands itself.\nDiscuss how this has led to the importance of Rotterdam.\nPresent, and ask learners to analyse, statistics to show growth of Rotterdam since 19th century. Ask what main period of growth was and what is happening to rate of growth today.\nLearners compare Rotterdam with any big town in East Africa and describe and explain the similarities and differences, using maps and statistics to back up their claims."
+                    },
+                    {
+                      "activity_type": "Solving urban problems",
+                      "description": "Explain how Rotterdam and other European cities have solved some of the problems of urban areas: industrialisation created more jobs, so those who moved to cities were employed in industries or services to serve the industries; slums have been cleared and replaced by better housing; transport: development of public transport instead of relying on private cars, and restriction of private cars from going into city centres; policies of taxing the rich and providing social services to the poor have led to less inequality; this in turn leads to reduction in crime rates.\nAsk learners to discuss whether any of these policies would work in Africa. Give reasons."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe how accurately learners can provide reasons why Rotterdam has grown as a port. Elicit as much as possible before explaining."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate learners’ ability to justify their opinions."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 6,
+                    "unit": "periods",
+                    "source_page": "111"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners research Rotterdam on Internet"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 3",
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "Transport, communication and trade in Africa",
+              "theme_description": "Theme: Transport, communication and trade in Africa",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-O-S4-T3-0044",
+                    "topic_title": "DEVELOPMENT OF TRANSPORT, COMMUNICATION AND TRADE IN AFRICA",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 10
+                  },
+                  "core_competency": "After studying this topic, learners should understand the main forms of transport and communication in Africa; the main forms of trade in Africa and the advantages and disadvantages of each.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "use maps to show the major transport routes (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand the role of the different types of transport in development (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "use photographs to identify the different types/modes of transport (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "form opinions on the importance of transport in national and regional development (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "understand the difference between internal transport, inter-African transport and international transport (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand how the main forms of transport used for international journeys are different from those used in inter-African and internal transport (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the characteristics of the main forms of inter-African transport (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "form opinions about the advantages, disadvantages and uses of the main forms of inter-African transport (u, a, gs)",
+                      "domain": "u, a, gs"
+                    },
+                    {
+                      "outcome_text": "understand the development of water transport in Africa (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand why inter-African transport is less developed than transport between Africa and the rest of the world (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the main forms of international transport (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the main forms of trade in Africa: internal, inter-African and international (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the reasons for this pattern of trade (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the trade patterns of the selected countries and the factors influencing them (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the contributions of trade to the development of the selected countries (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "use flow charts, statistics and maps to show trade patterns (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand the main forms of international communications (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand how the Internet has transformed international communication (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "analyse statistics of trade in African countries (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "appreciate the importance of promoting inter African transport and communication to promote African unity and trade (a, gs)",
+                      "domain": "a, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": [
+                      {
+                        "text_verbatim": "(Note: show only the very important ones.)",
+                        "override_allowed_by_user": true,
+                        "source_page": "113"
+                      }
+                    ]
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Transport in Africa",
+                      "description": "Use a map showing the main railways, important inter-African roads, main navigable waterways, main international airports and main ports of Africa. (Note: show only the very important ones.)\nLearners make a table of the above, showing type of transport, from where to where, and countries linked.\nLearners suggest reasons for this pattern of transport: transport developed by colonial powers more interested in exporting raw materials outside Africa and importing industrial goods than inter-African trade; transport networks mainly developed within each country’s borders or within countries linked politically e.g. East Africa or southern Africa; different colonial powers introduced railways with different gauges; many countries produce the same kinds of goods, so no need for trade.\nExplain the physical problems of African transport e.g. Congo.\nAsk learners which types of transport are likely to be important for inter-African trade (road and air, and rail in some places). Which types of transport are important for international trade outside Africa? (ship and air)\nAsk learners to suggest the usefulness and advantages of developing inland water transport e.g. on Congo River. Ask learners the importance of developing ports in Africa."
+                    },
+                    {
+                      "activity_type": "The role of China in developing African transport",
+                      "description": "Learners use Internet to look up: China: railway building in Africa.\nRefer back to Chinese investment in large-scale projects in Africa (topic 41).\nExplain Chinese investment in railways in Africa: the Tanzam railway in 1970s and the East African Standard gauge railway today.\nAsk learners to suggest the advantages and disadvantages of Chinese investment in railways in Africa."
+                    },
+                    {
+                      "activity_type": "Trade in Africa",
+                      "description": "From previous knowledge, learners list the main forms of trade: inter-African and international. Learners explain why international trade is more important to most African countries than inter-African trade\nUse an example of trade statistics of two African countries and learners comment on them.\nLearners find on the Internet trade statistics for two African countries and compare the trade.\nIn groups, learners discuss and explain the problems facing inter-African trade. They identify the advantages and disadvantages of developing more inter-African trade."
+                    },
+                    {
+                      "activity_type": "Communications in Africa",
+                      "description": "Revision: learners list the main forms of communication in the past and today.\nAsk learners how they would communicate with people in other African countries.\nLearners suggest the changes in communication brought about by the Internet and social media. How has this helped Africa?\nLearners explain whether and how the internet will improve trade within Africa and back this up with reasons."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners making tables and evaluate their transparency and effectiveness in delivering information."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate how effectively learners are consolidating their prior learning, and ability to build on this."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they discuss and explain the problems facing inter-African trade. How well can they identify the advantages and disadvantages of developing more inter-African trade?"
+                    },
+                    {
+                      "assessment_type": "Explanation",
+                      "description": "Note how well learners explain whether and how the internet will improve trade within Africa. To what extent are they able to back this up with reasons."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "113"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners use Internet to look up: China: railway building in Africa.",
+                      "Learners find on the Internet trade statistics for two African countries"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-O-S4-T3-0045",
+                    "topic_title": "TRADE BETWEEN EUROPE, ESPECIALLY THE RHINELANDS, AND AFRICA; AND BETWEEN CHINA AND AFRICA",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 8
+                  },
+                  "core_competency": "After studying this topic, the learners should know and understand the main forms of trade between Europe, including the Rhinelands, and Africa and the advantages and disadvantages for both sides; the trade between China and Africa and the reasons for its increasing importance.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the trade which exists between Europe, especially the Rhinelands, and Africa (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the trade between China and Africa (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the benefits of trade to both sides (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "appreciate the role of trade in development (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "use flow charts, statistics and maps to show trade patterns (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "form opinions about these two types of trade with Europe and China (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "analyse the trade statistics between the European Union and African countries and China and Africa (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "appreciate the difficulties of negotiating trade agreements (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "appreciate the increasing importance of China in Africa and African development (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "appreciate the need for an economic system which helps to distribute the resources in an equitable way (a)",
+                      "domain": "a"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Trade between the European Union and East Africa",
+                      "description": "Explain that the countries in the Rhinelands are all part of a wider political union called the European Union (EU), with 27 countries in Europe. (NB UK currently due to leave in March 2019). For trade they negotiate as one body\nPresent the trade statistics for one or more years between the EU and any one African country. Give a series of questions for learners to analyse these statistics. What kinds of goods do the African countries export to Europe and what kind do European countries export to Africa?\nLearners do above activity obtaining statistics from the Internet.\nLearners discuss what benefits this trade brings to the EU and to African countries.\nExplain that in 2017 the EU was negotiating a trade agreement with East Africa where the goods from each side would enter the other side without paying duty. Ask learners to suggest what benefits this would bring to each side. Learners find out if this has now been agreed.\nAsk learners to suggest the problems this might bring East African countries in developing industries.\nIn trade negotiations, which countries do you think are most powerful: the developed industrialised countries or the less developed non-industrialised countries? Explain your reasons."
+                    },
+                    {
+                      "activity_type": "Trade between Africa and China",
+                      "description": "Ask learners what kinds of goods which they buy are made in China. Refer to prior learning.\nLearners use Internet to find statistics of trade between East Africa and China.\nRefer back to the development of industries in China (topic 41). Ask learners why many Chinese goods are very cheap (low wages in China compared with ‘western’ industrialised countries; mass production giving ‘economies of scale’; some goods of very low standard)\nIn China, wages are increasing: what effect might this have on trade? (Goods become more expensive and cheaper to buy from other Asian countries; China beginning to export more technically advanced goods like mobile phones, computers, televisions etc.)"
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Report",
+                      "description": "Learners use what they have learnt to report whether they believe a duty-free agreement with the European Union would. Observe and note to what extent learners can give reasons."
+                    },
+                    {
+                      "assessment_type": "Explanation",
+                      "description": "Learners explain what it means and identify the pros and cons of free trade. Observe and note to what extent learners can they explain their reasons."
+                    },
+                    {
+                      "assessment_type": "Suggestion",
+                      "description": "Learners suggest what is fair, and what is not, in trade relations with other countries such as China and explain why."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 8,
+                    "unit": "periods",
+                    "source_page": "115"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners do above activity obtaining statistics from the Internet.",
+                      "Learners use Internet to find statistics of trade between East Africa and China."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "NB UK currently due to leave in March 2019",
+                      "note_type": "clarification",
+                      "source_page": "115"
+                    }
+                  ],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

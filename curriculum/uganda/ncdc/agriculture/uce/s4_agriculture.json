@@ -1,0 +1,956 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Agriculture",
+        "level": "Lower Secondary",
+        "class_group": "Senior Four",
+        "year": "2019",
+        "version": "1.0",
+        "source_document": "Agriculture Syllabus_Lower Secondary_NCDC_2019.pdf"
+    },
+    "global_framework": {
+        "competencies": [
+            "Self-assured individuals",
+            "Responsible and patriotic citizens",
+            "Lifelong learners",
+            "Positive contributors to society"
+        ],
+        "generic_skills": [
+            "Communication",
+            "Critical thinking and problem solving",
+            "Co-operation and Self-directed Learning",
+            "Creativity and innovation",
+            "Mathematical Computation and ICT Proficiency"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Four",
+            "class_code": "S4",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "ANIMAL PRODUCTION",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S4-T1-0001",
+                                        "topic_title": "TOPIC 4.1: VALUE ADDITION TO DOMESTIC MILK PRODUCTS",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "The learner demonstrates hygienic milk handling, processing and milk safety",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand and be able to carry out the following processes: i. pasteurization of milk (k, s, a,v) ii. homogenization of milk (u,s, a,v)",
+                                            "domain": "k, s, a, v, u"
+                                        },
+                                        {
+                                            "outcome_text": "demonstrate skills in processing fermented and other milk products(s, a,v)",
+                                            "domain": "s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "process flavored milk and sweetened condensed milk(s, a, v)",
+                                            "domain": "s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "handle, collect, test, and quality control milk (k, s, a,v)",
+                                            "domain": "k, s, a, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Work/Research/Practical",
+                                            "description": "In groups, learners research and develop a plan for each of the following steps and then put the plan into action: prepare milk by filtration; homogenize milk; pasteurize milk; processing milk to make fermented and non-fermented products. Prepare a starter culture and inoculate milk; causing milk to form curds. Apply principles of introducing additives; brand, pack, label and offer products for sale. Individuals keep learning logs of all stages."
+                                        },
+                                        {
+                                            "activity_type": "Group Work/Practical",
+                                            "description": "In groups, learners research on and develop a plan for each of the following steps and then put the plan into action. Use a recipe to make flavoured milk and sweetened condensed milk. Brand, pack, label and offer the product for sale. Individuals add to their learning logs."
+                                        },
+                                        {
+                                            "activity_type": "Pair Work/Practical",
+                                            "description": "In pairs, learners research on and then practice the following: hygienic collection and handling of milk for testing, grading, and basic milk quality testing (sight, smell, alcohol, clot on boiling and use of lactometer), as well as storage before processing. Individuals produce reports."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners developing practical skills in relation to treating milk, processing milk to make other products, and marketing milk and products. Intervene, ask questions and provide support to ensure that they make good progress and achieve learning outcomes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ conversations and contributions to pair and group discussion. Ask probing questions and lead them to further develop their thinking, deepen understanding, and improve their skills in value addition to milk products."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products: plans for treating milk and producing milk products, quality of products, learning logs, and reports on testing and quality control."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "40"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S4-T1-0002",
+                                        "topic_title": "TOPIC 4.2: VALUE ADDITION TO DOMESTIC MEAT PRODUCTS",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 12
+                                    },
+                                    "core_competency": "The learner understands and follows safe and hygienic procedures when handling and processing meat",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "know the different sources of meat for processing and the meat products made (k, a,v)",
+                                            "domain": "k, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "select, handle, and process meat safely and hygienically (u, s, a,v)",
+                                            "domain": "u, s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "demonstrate basic practical skills such as the use of relevant tools in meat processing (u, s, a,v)",
+                                            "domain": "u, s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "show skill in meat processing of different animals (s, a,v)",
+                                            "domain": "s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "know how to smoke meat (s, a,v)",
+                                            "domain": "s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "market processed meat (u, s, a,v)",
+                                            "domain": "u, s, a, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "In groups, learners discuss and apply criteria for choosing meat (beef, game, pork, chicken, rabbit, lamb, goat, and mutton) to use in making sausages and minced meat, documenting reasons for choices made."
+                                        },
+                                        {
+                                            "activity_type": "Group Work/Calculation",
+                                            "description": "In groups, learners use a recipe and spreadsheet (or book and calculator) to predict the amount of product (sausages or sausage meat) after processing."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "In groups, learners discuss the food safety regulations relating to meat, their importance and what they mean in practice, and produce a good practice guide"
+                                        },
+                                        {
+                                            "activity_type": "Group Work/Research/Practical",
+                                            "description": "In groups, learners research on and practice the basic skills in processing meat from a range of animals the different methods of smoking meat and present a step-by-step guide for smoking meat and storage of smoked meat"
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "In groups, learners discuss, develop, and draw a process flow chart for marketing meat products."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners developing practical skills in relation to handling and processing meat from a range of animals. Intervene, ask questions and provide support to ensure that they make good progress and achieve learning outcomes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ conversations and contributions to group discussions. Ask probing questions to promote critical thinking, to deepen their understanding, and to improve their skills in value addition to domestic meat products."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products: conclusions regarding how to select meat for processing, calculations of quantity of product, and good practice safety guides; products for processing; smoking guides, and smoking flow charts."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "41"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "CROP PRODUCTION",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S4-T1-0003",
+                                        "topic_title": "TOPIC 4.3: BIOTECHNOLOGY AND BIOSAFETY IN AGRICULTURE",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 24
+                                    },
+                                    "core_competency": "The learner should be able to appreciate the emerging trends in agricultural production and their implications.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "know the meaning of biotechnology, bioengineering and bio safety(k, a,v)",
+                                            "domain": "k, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "understand how genetic engineering is carried out in crops and animals (u, a,v)",
+                                            "domain": "u, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "understand and put the case for the use and development of biotechnology in agricultural production (u, s, a,v)",
+                                            "domain": "u, s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "research and understand emerging trends in biotechnology, bioengineering and biosafety(s, a, v)",
+                                            "domain": "s, a, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Work/Research",
+                                            "description": "In groups, learners\n• brainstorm and research on (Internet, library, other sources) issues associated with the use of biotechnology in agriculture today; finding out its origin, impact, benefits, and challenges\n• investigate and research on the use of biotechnology and bioengineering in Uganda and its influence on agricultural productivity\n• present the findings to the class"
+                                        },
+                                        {
+                                            "activity_type": "Class Discussion/Debate",
+                                            "description": "As a class, learners discuss biosafety and debate on how positively we should regard genetically modified crops and animals. Individuals record their conclusions."
+                                        },
+                                        {
+                                            "activity_type": "Pair Work/Research",
+                                            "description": "In pairs, learners research on and discuss guidelines and reasons for carrying out genetic engineering in crops and animals, and share findings with the class."
+                                        },
+                                        {
+                                            "activity_type": "Pair Work/Presentation",
+                                            "description": "In pairs, learners design and create a presentation for the community to explain the significance of biotechnology for agricultural purposes."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners’ interacting as they engage in the learning activities. Ensure that all are participating and making a positive contribution so that they make good progress and achieve learning outcomes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ conversations and contributions to pair, group, and class discussion. Ask probing questions to deepen their thinking and understanding biotechnology to earn income."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products: presentations to the class, conclusions in relation to biosafety, conclusions about genetic engineering guidelines, and community presentations on biotechnology."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe communication approaches about biotechnology, bioengineering and biosafety."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "42"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "AGRICULTURAL ECONOMICS",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S4-T2-0001",
+                                        "topic_title": "TOPIC 4.4: LAND TENURE SYSTEM",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 24
+                                    },
+                                    "core_competency": "The learner appreciates land reforms in Uganda.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "know and understand the land tenure system, tenure types and land legislation of Uganda (k, u, a)",
+                                            "domain": "k, u, a"
+                                        },
+                                        {
+                                            "outcome_text": "obtain information from land tenure documents and maps (s, a,v)",
+                                            "domain": "s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "distinguish between land reform and land registration (u, s, a,v)",
+                                            "domain": "u, s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "promote land reforms (s, a,v)",
+                                            "domain": "s, a, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Investigation",
+                                            "description": "In groups, learners investigate:\n• the system of land tenure in their locality and Uganda in general\n• how the system influences agricultural productivity\nGroups present findings to inform class discussion, after which individuals record conclusions."
+                                        },
+                                        {
+                                            "activity_type": "Pair Work/Reading",
+                                            "description": "In pairs, learners read case studies on the different land tenure systems and land reforms, including land fragmentation and land reclamation. They note issues, challenges and benefits of existing systems and reforms that have taken place."
+                                        },
+                                        {
+                                            "activity_type": "Pair Work",
+                                            "description": "In pairs, learners suggest how land can be reclaimed and how further land reforms can be carried out for agricultural purposes."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners participating in activities and intervene to ensure all are fully engaged and all achieve learning outcomes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ contributions to pair, group and class discussion. Ask questions, leading them to think critically and creatively, deepening their understanding and improving their skills on land tenure system."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products: presentations on tenure systems, conclusions recorded by individuals, and suggestions regarding land reclamation and reforms"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe communication skills used when obtaining land tenure documents"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "43"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S4-T2-0002",
+                                        "topic_title": "TOPIC 4.5: COOPERATIVES AND SELF-HELP GROUPS IN AGRICULTURE",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 24
+                                    },
+                                    "core_competency": "The learner organizes and participates in farmers’ organisations.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "know the different types of farmers’ organisations in Uganda and understand their purposes (k, a)",
+                                            "domain": "k, a"
+                                        },
+                                        {
+                                            "outcome_text": "explain the principles that govern cooperatives and self-help groups (a, k, v)",
+                                            "domain": "a, k, v"
+                                        },
+                                        {
+                                            "outcome_text": "understand how to participate in a meeting following parliamentary procedures (u, a,v)",
+                                            "domain": "u, a, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Work/Research",
+                                            "description": "In groups, learners research on and discuss the types of farming organisations, cooperatives, and self-help groups (Village Saving and Loan Association-VSLA, Saving and Credit Cooperative Society -SACCOS). They find out the reasons for their formation and why farmers engage with them. Then they report to the class."
+                                        },
+                                        {
+                                            "activity_type": "Pair Work/Research",
+                                            "description": "In pairs, learners research (Internet, case studies and other sources) on the principles and structures that govern cooperatives or self-help groups and present to the class"
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "As a class, learners organise and role play a meeting (class decides farming issues to be discussed) to demonstrate and practise parliamentary procedures and public speaking."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners involved in activities and monitor effectiveness of participation and developing skills in public speaking and parliamentary practice. Intervene to provide support to ensure that they make good progress and achieve learning outcomes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ conversations and contributions to pair, group and class discussion and debate. Ask probing questions to further develop learners’ thinking, deepen understanding, and improve skills in cooperatives and self –help groups."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products: reports on farmers’ organizations, presentations on principles and structures, as well as quality of and participation in debate."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "44"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "CROP PRODUCTION AND ANIMAL PRODUCTION",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S4-T3-0001",
+                                        "topic_title": "TOPIC 4.6: VALUE ADDITION TO AGRO WASTES AND BY-PRODUCTS",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 24
+                                    },
+                                    "core_competency": "The learner manufactures biofuels and handmade paper to preserve the environment.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "know materials used in making paper, biogas and briquettes(k, a,v)",
+                                            "domain": "k, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "show creativity and skills in utilising domestic animal wastes (k, s, u, a,v)",
+                                            "domain": "k, s, u, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "make uncarbonized and carbonized briquettes from crop and animal domestic waste(s, a,v, u, k)",
+                                            "domain": "s, a, v, u, k"
+                                        },
+                                        {
+                                            "outcome_text": "understand how handmade paper is manufactured(u, s, a,v)",
+                                            "domain": "u, s, a, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Work/Research",
+                                            "description": "In groups, learners brainstorm, research and report on the ‘waste’ materials that are available for making handmade paper, biogas and briquettes (cassava, banana stems, animal dung/droppings, bagasse, maize/rice/wheat husks, banana/cassava/ sweet potato peelings, sawdust, and brewers ‘grain)\nAfter class discussion, individuals record conclusions."
+                                        },
+                                        {
+                                            "activity_type": "Pair Work/Research",
+                                            "description": "In pairs, learners research and report with annotated designs and notes on the requirements for making a bio-gas digester/briquette mould/handmade paper-making press"
+                                        },
+                                        {
+                                            "activity_type": "Group Project 1",
+                                            "description": "Group project 1: Groups plan and construct either a bio-gas digester, a briquette mould or a handmade paper press in school"
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "In groups or as a class, learners establish a system for collection and transport of appropriate crop/animal waste to the school for use in making biogas, briquettes and/or paper."
+                                        },
+                                        {
+                                            "activity_type": "Group Project 2",
+                                            "description": "Group project 2: Learners plan and implement a system for making bio gas/briquettes (carbonized and uncarbonized) /handmade paper, using the equipment they have designed and material collected. They apply good and safe manufacturing practices in the process and report on their projects to other groups."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners developing practical skills in relation to designing and making equipment and manufacturing biofuels/ paper. Intervene, ask questions, and provide support to ensure that they make good progress and achieve learning outcomes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ conversations and contributions to pair, group, and class discussions. Ask probing questions to steer groups, deepen understanding, and improves kills in value addition to agro wastes and by products."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products: reports and conclusions; designs and equipment made and waste collection systems; biogas, briquettes, and paper, as well as project reports."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe Learners creativity, collaboration, and communication skills in agro wastes and by product manufacturing."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "Group project 1: Groups plan and construct either a bio-gas digester, a briquette mould or a handmade paper press in school... Group project 2: Learners plan and implement a system for making bio gas/briquettes (carbonized and uncarbonized) /handmade paper, using the equipment they have designed and material collected.",
+                                        "deliverables_verbatim": "bio-gas digester, a briquette mould or a handmade paper press... bio gas/briquettes... handmade paper... report on their projects",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "45"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "45"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "CROP PRODUCTION (EITHER)",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S4-T3-0002",
+                                        "topic_title": "TOPIC 4.7: VALUE ADDITION TO VEGETABLES",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 24
+                                    },
+                                    "core_competency": "The learner processes vegetables for sale.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "know how to find information on vegetable processing (k, a,v)",
+                                            "domain": "k, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "understand the principles of and show skills in using different methods of drying vegetables (u,s, a,v)",
+                                            "domain": "u, s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "understand the principles and demonstrate methods of preserving vegetables with acids, salt, and sugar (k, u, s, a,v)",
+                                            "domain": "k, u, s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "market processed vegetable products (s, a,v)",
+                                            "domain": "s, a, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Pair Work/Research",
+                                            "description": "In pairs, learners research on(Internet, library, other sources):\n- the reasons for preserving rather than selling all fresh vegetables\n- the different methods of processing vegetables\nPairs draw a process flow chart for each method of preserving vegetables annotated with information supporting each step."
+                                        },
+                                        {
+                                            "activity_type": "Group Projects",
+                                            "description": "In group projects, learners\n- develop preservation plans\n- process vegetables by one or more methods: drying, preserving with acids, salt, and sugar\n- research on and develop marketing plans and market their products in the community\n- report on their methods and the success of their projects to the class"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe pairs and groups as they engage in the activities. Intervene and ask questions to ensure that groups remain on track, make good progress and achieve learning outcomes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ conversations and contributions to pair and group discussion. Offer guidance when necessary to avoid misconceptions and ensure that every individual understands and develops skills in value addition to vegetables."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products: preservation method flow charts, group preservation plans; and quality of preserved vegetables, marketing plans and project reports."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "In group projects, learners\n- develop preservation plans\n- process vegetables by one or more methods: drying, preserving with acids, salt, and sugar\n- research on and develop marketing plans and market their products in the community\n- report on their methods and the success of their projects to the class",
+                                        "deliverables_verbatim": "preservation plans, preserved vegetables, marketing plans, project reports",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "46"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "46"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "EITHER",
+                                            "note_type": "constraint",
+                                            "source_page": "46"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "CROP PRODUCTION (OR)",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-O-S4-T3-0003",
+                                        "topic_title": "TOPIC 4.8: VALUE ADDITION TO FRUITS",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 24
+                                    },
+                                    "core_competency": "The learner processes and markets quality fruit products.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "show skills in planning and budgeting (using Excel/ spreadsheets or books and calculators) for a recipe, and purchasing (s, u)",
+                                            "domain": "s, u"
+                                        },
+                                        {
+                                            "outcome_text": "know and understand the requirements regarding quality of water to use in processing fruit, and apply basic methods of water treatment (k, u,s, a,v)",
+                                            "domain": "k, u, s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "plan and prepare processing premises, taking account of the importance of premises hygiene (k, u, s, a,v)",
+                                            "domain": "k, u, s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "know the different types of fruit beverages and their specifications(s, a,v)",
+                                            "domain": "s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "show skills in juice and pulp extraction, processing and preservation, taking account of good manufacturing practices (s, a,v)",
+                                            "domain": "s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "understand the principles and demonstrate methods of preserving fruit with acids, salt, and sugar (k, u, s, a,v)",
+                                            "domain": "k, u, s, a, v"
+                                        },
+                                        {
+                                            "outcome_text": "know how to advertise and market processed fruits (u, s, a,v)",
+                                            "domain": "u, s, a, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Work/Planning",
+                                            "description": "In groups, learners prepare a plan and a budget for the materials needed in processing fruits in a selected recipe and procure them from the market."
+                                        },
+                                        {
+                                            "activity_type": "Group Work/Research",
+                                            "description": "In groups, learners brainstorm and discuss with the class and report on the qualities of safe drinking water for use in processing fruits."
+                                        },
+                                        {
+                                            "activity_type": "Group Work/Planning",
+                                            "description": "In groups, learners plan how to treat water for safe use in processing fruits, taking account of uses of hygiene promoting facilities such as: rubbish pits, waste recycling collection points, toilets or pit latrines, drainage points, sheds and other storage facilities.\nGroups process water accordingly.\nIndividuals record key points in learning logs."
+                                        },
+                                        {
+                                            "activity_type": "Pair Work/Practical",
+                                            "description": "In pairs, learners practice using measuring tools: like refractometer, thermometer and scales, to ensure compliance with specifications and quality when processing fruits.\nIndividuals record notes on correct use in learning logs."
+                                        },
+                                        {
+                                            "activity_type": "Group Work/Research/Practical",
+                                            "description": "In groups, learners:\n- research on and read case studies to identify the technical methods used to reduce food deterioration in fruits, and share conclusions with class\n- prepare and process fruits by extracting and preserving juice or pulp, while applying good manufacturing practices (GMP); like., use of recommended chemical preservatives"
+                                        },
+                                        {
+                                            "activity_type": "Pair Work/Practical",
+                                            "description": "In pairs, learners use sugar and acid to preserve fruits including making jam, jellies, and marmalades."
+                                        },
+                                        {
+                                            "activity_type": "Group Projects",
+                                            "description": "Group projects construct one type of solar dryer for drying fruits using locally available materials (or revisit if a solar drier was made earlier in the course)"
+                                        },
+                                        {
+                                            "activity_type": "Group Work/Practical",
+                                            "description": "In groups, learners apply different recipes in treating and preparing fruits for drying."
+                                        },
+                                        {
+                                            "activity_type": "Pair/Group Work/Marketing",
+                                            "description": "In pairs or groups, learners design a brand and label for advertising/ displaying bottled beverages, preserved fruits or fruit products for sale.\nIndividuals report in learning logs"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe pairs and groups as they engage in the activities and develop their skills and understanding. Intervene to help learners overcome any barriers to learning and ensure that all participate and achieve learning outcomes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Listen to learners’ discussions and contributions to the pair or group discussion. Ask questions to promote critical thinking and ensure that no learning opportunities are missed and all develop skills in value addition to fruits."
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through products: budgets and materials purchased, reports on water safety, as well as plans and processes for water treatment, learning logs; reports on use of measuring tools and preserved fruits/fruit products, solar driers; dried fruits and marketing campaigns"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners creativity, collaboration, leadership, communication, and critical thinking skills during fruit processing."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "Group projects construct one type of solar dryer for drying fruits using locally available materials",
+                                        "deliverables_verbatim": "solar dryer, dried fruits, brand and label for advertising",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "48"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "47"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "OR",
+                                            "note_type": "constraint",
+                                            "source_page": "47"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

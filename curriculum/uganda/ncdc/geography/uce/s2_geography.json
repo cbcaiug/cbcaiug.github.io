@@ -1,0 +1,1752 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — Populated from Lower Secondary Curriculum Geography Syllabus",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "Geography",
+    "level": "Lower Secondary",
+    "class_group": "Senior Two",
+    "year": "2008",
+    "version": "1.0",
+    "source_document": "Geography Syllabus.pdf"
+  },
+
+  "global_framework": {
+    "competencies": [
+      "Self-assured individuals",
+      "Responsible and patriotic citizens",
+      "Lifelong learners",
+      "Positive contributors to society"
+    ],
+    "generic_skills": [
+      "Critical thinking and problem-solving",
+      "Creativity and innovation",
+      "Communication",
+      "Co-operation and Learning",
+      "Calculation and ICT"
+    ],
+    "values": [
+      "Peace and harmony",
+      "Integrity and honesty",
+      "Patriotism",
+      "Positive attitude towards work",
+      "Respect for human rights",
+      "Self-Control"
+    ],
+    "attitudes": [],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Diversity and inclusion",
+      "Socio-economic challenges",
+      "Citizenship"
+    ]
+  },
+
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+
+  "classes": [
+    {
+      "class_name": "Senior Two",
+      "class_code": "S2",
+      "terms": [
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Mining and Manufacturing in East Africa and North America",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S2-T1-0001",
+                    "topic_title": "Mining in East Africa",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 10
+                  },
+                  "core_competency": "After studying this topic, the learner should know what minerals are found in East Africa, and understand the methods used to extract them, the factors favouring mining and its contribution to the East African economy.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand what a mineral is and why some minerals are valuable (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "locate the main mining centres on the map of East Africa (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "know the main minerals occurring in East Africa and their amounts (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the use of mineral resources in the development of any two industries in Uganda (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the methods of mining used for different minerals and their problems (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "draw flow diagrams to show the main stages and methods of mining (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "recognise types and consequences of mining on photographs (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand the effects of mining on the environment (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "appreciate the positive and negative contribution of mineral resources to development (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "appreciate that the benefits of mining often go mainly to overseas companies or a local elite only (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "understand the physical and economic problems facing mining (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "appreciate the need for strict laws to control mining physically and economically (a, gs)",
+                      "domain": "a, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [
+                      {
+                        "text_verbatim": "(Note this should show only main minerals not every mineral and site)",
+                        "override_allowed_by_user": true,
+                        "source_page": "48"
+                      }
+                    ],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners explain what a mineral is and give examples of minerals in East Africa. Pairs group objects and artefacts that they might find in their community into minerals and non-minerals."
+                    },
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Show a map of the main mining sites in East Africa, and the minerals mined. Learners work in pairs to make a list from this in four columns under each East African country: name of mineral, mining sites, uses of mineral, exported or used locally."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners discuss how factors like size of deposits, quality of mineral, capital, skilled labour, etc. affect whether a mineral is mined."
+                    },
+                    {
+                      "activity_type": "Diagramming",
+                      "description": "Use a photograph and draw a diagram of an open cast mine and learners use this to describe the mining. Learners convert this into a flow diagram showing the stages."
+                    },
+                    {
+                      "activity_type": "Diagramming",
+                      "description": "Use a photograph and draw a diagram of an underground mine (Kilembe copper?) and learners describes the methods of mining. Learners convert this into a flow diagram to show the stages of mining."
+                    },
+                    {
+                      "activity_type": "Investigation",
+                      "description": "Explain why Kilembe underground mine stopped for a long while and discover if it has re-opened."
+                    },
+                    {
+                      "activity_type": "Diagramming",
+                      "description": "Draw a series of diagrams to show the stages in the extraction of oil or learners look this up on Internet, and learners convert this to a flow diagram."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners suggest possible problems of oil extraction, how this may damage the environment and how this may be prevented."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Ask learners whether local people always benefit from mining and if not, why not. Explain that sometimes taxes are kept or diverted to rich people by corruption. Learners suggest how this may be prevented."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Listening/Evaluation",
+                      "description": "Listen to learners work pairs work to evaluate learners’ understanding of minerals."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the tables completed by learners in order to explore how accurately they have described minerals."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate how well learners have understood from class feedback, explaining and expanding if necessary to ensure all achieve the objective."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe diagrams produced by learners to explain the differences between open cast and underground mining, with examples from East Africa."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe as learners discuss the dangers of each kind of mining and the effect of each kind on the environment."
+                    },
+                    {
+                      "assessment_type": "Explanation",
+                      "description": "Learners explain with examples the contributions mining can make to the development of East African countries and the dangers of this development only benefitting a few people. Observe how well they are able to explain these dangers using examples and evidence."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "11"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Look up mining in East Africa on Internet."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "Note this should show only main minerals not every mineral and site",
+                      "note_type": "constraint",
+                      "source_page": "48"
+                    }
+                  ],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S2-T1-0002",
+                    "topic_title": "Development of Manufacturing industries in East Africa",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "After studying this topic, the learner should understand the advantages of developing manufacturing industries, the types and locations of manufacturing industries and the problems of developing manufacturing industries.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand what manufacturing industries are (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know some types of manufacturing industries in East Africa and their locations (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "visit a local factory to find out how a factory works and show its effects on the environment (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand the factors influencing the distribution and development of any three manufacturing industries (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "appreciate the contribution of manufacturing industries in transforming primary products (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "appreciate the importance of developing industries to process raw materials exported from East Africa (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "understand the effects of manufacturing industries on the environment (u)",
+                      "domain": "u"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners explain three types of manufacturing industry: those making goods for sale in shops (consumer goods); those making goods for sale to other industries (industrial/ producer goods); those processing agricultural raw materials or minerals (processing industries)."
+                    },
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Learners investigate where manufacturing industries are located in Uganda and East Africa and create maps to show this."
+                    },
+                    {
+                      "activity_type": "Field Work",
+                      "description": "Where possible, learners should visit a manufacturing or processing industry and discover what it produces, raw materials, use of labour, capital and ownership etc."
+                    },
+                    {
+                      "activity_type": "Case Study",
+                      "description": "They choose one of each of the following and explain the development of one example of this type of industry in East Africa: processing industry; industrial/producer goods industry; consumer goods industry."
+                    },
+                    {
+                      "activity_type": "Group Work",
+                      "description": "Working in small groups, learners list things which are needed to develop a manufacturing industry... make notes of the factors necessary for the development of industries."
+                    },
+                    {
+                      "activity_type": "Diagramming",
+                      "description": "Draw a flow diagram to show the processes of industrial development from raw material to markets."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Learners debate an imagined scenario in which a new cement factory is to be built, some arguing in favour and some against."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners explain the advantages of a \"Buy Uganda Build Uganda\" policy."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Ask learners to discuss or debate whether we should continue to import second-hand clothes from overseas."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe whether learners can give a definition and an example."
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Learners produce a map or poster to explain the location of industries, noting the type and how that influences where they are. Observe the accuracy of their explanations."
+                    },
+                    {
+                      "assessment_type": "Report",
+                      "description": "Learners use evidence from their field trip to produce a report and assess any environmental impacts. Evaluate their charts and diagrams."
+                    },
+                    {
+                      "assessment_type": "Explanation",
+                      "description": "Observe learners as they explain their recommendations with regard to given criteria."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate flow diagrams and discussion to ensure learners can reach objectives."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners discuss a. the advantages of developing manufacturing industries in East Africa; b. the problems in developing manufacturing industries in East Africa."
+                    },
+                    {
+                      "assessment_type": "Debate Observation",
+                      "description": "Observe learners’ debate to gauge how well they have understood the issues. Clarify where necessary."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate case studies to assess learning outcomes."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Factory Visit",
+                        "description_verbatim": "Where possible, learners should visit a manufacturing or processing industry and discover what it produces, raw materials, use of labour, capital and ownership etc. They carry out a field trip to investigate an industry and its effects on the environment, showing this with charts and diagrams.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "51"
+                      }
+                    ]
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "11"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use a range of sources to research manufacturing industry on Internet",
+                      "Ask them to work in small groups to look up one of the Uganda cement industries on the internet."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S2-T1-0003",
+                    "topic_title": "Mining and Manufacturing Industries in North America",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 14
+                  },
+                  "core_competency": "After studying this topic, the learner should understand the importance of mining and manufacturing industry in North America especially the Great Lakes region and Silicon Valley and what we can learn from that for the development of industries in East Africa.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the position of the Great Lakes region of North America and the main towns and industries there (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the main minerals in the Great Lakes region (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the position of Silicon Valley and the main industries there (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the reasons for the development of industries in the Great Lakes region (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the importance of mining in this area (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand how mining and manufacturing industries are linked (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the consequences of the development of industries in this area (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the reasons for the decline of the traditional industries (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand how new technology is changing industrial development (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the reasons for the development of industries in Silicon Valley (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand what East Africa can learn from the decline of the Great Lakes area and rise of Silicon Valley (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "appreciate that technology is changing industry (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "appreciate that East Africa has a lot to learn from changing technology in industrial development (a, gs)",
+                      "domain": "a, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Learners draw the map, showing: the Great Lakes, international boundary, mining areas including iron ore and coal, agricultural areas, main industrial towns."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners use Internet to look up mining and manufacturing in Great Lakes region."
+                    },
+                    {
+                      "activity_type": "Analysis",
+                      "description": "Challenge learners to identify the links between the iron and coal industry, the production of steel and the development of car and vehicle industries, especially in Detroit."
+                    },
+                    {
+                      "activity_type": "Diagramming",
+                      "description": "Ask learners to produce a diagram showing the links between location, resources (iron and coal) and car production; and explain what it shows."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Ask learners to discuss what they have learnt and suggest similarities and differences between industries and towns in Uganda and North America."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners look up and read about Silicon Valley on internet."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Class discussion on whether start-ups might succeed in Uganda."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Use the internet to find information on Uganda entrepreneurs and start-ups."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they explain what sort of industries developed in the Great Lakes region and where and why."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In conversation, ask learners to suggest realistic advantages of the Great Lakes’ region in relation to industrial development."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the accuracy of the links in the learners’ diagrams."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe as learners give their views about whether good ideas are more important than raw materials in the development of industries?"
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ discussions about whether start-ups might succeed in Uganda. Can learners talk about present technology and entrepreneurial skills in this context?"
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 14,
+                    "unit": "periods",
+                    "source_page": "11"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use the atlas, an Internet map or a BB sketch map to show the Great Lakes area.",
+                      "Learners use Internet to look up mining and manufacturing in Great Lakes region",
+                      "Learners work in groups to use the internet to research some facts about agriculture in Great Lakes region.",
+                      "Learners look up and read about Silicon Valley on internet",
+                      "Use the internet to find information on Uganda entrepreneurs and start-ups"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "Fishing, Wildlife Conservation and Tourism in East Africa",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S2-T2-0001",
+                    "topic_title": "Sustainable use of Fisheries resources in East Africa",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 10
+                  },
+                  "core_competency": "After studying this topic, the learner should know the main fishing areas in East Africa, factors affecting the development of fishing, types of fishing and the contribution of fishing to the economy, the dangers facing fishing and ways to make it sustainable.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the main types of agriculture in Uganda and the rest of East Africa and the factors influencing them (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the major fishing areas in East Africa, inland and on the sea (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the main methods of fishing and types of fish caught (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the factors favouring fishing in East Africa (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the differences between traditional and modern fishing methods (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "describe the characteristics, trends, benefits and problems of fishing in a local area",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "understand the factors affecting the choice of methods (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the dangers of over-fishing and how this can be prevented (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the factors causing damage to fishing grounds, including pollution and how this can be prevented (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know some methods of preserving fish after catching (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the methods of farming fish and their help in conserving fish stocks (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "describe the marketing of fish",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "understand the methods of conserving fishing grounds (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "draw diagrams to illustrate methods of fishing (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "use statistics to show the decline in fish stocks and fish catches (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "appreciate the dangers facing fishing in East Africa, including over-fishing, poor methods and pollution (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "appreciate the need for strict laws and enforcement to preserve fish stocks (a, gs)",
+                      "domain": "a, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Use wall map, BB sketch map or atlas map to show main fishing areas. Learners copy map as sketch map or create digital maps."
+                    },
+                    {
+                      "activity_type": "Field Work",
+                      "description": "If possible, learners visit an area where fishing takes place. Find out what fish are caught, what methods are used, where and how the fish are sold, what problems the fishing people have etc."
+                    },
+                    {
+                      "activity_type": "Diagramming",
+                      "description": "Learners draw annotated diagrams of the equipment using sources like these, and research the methods used. (spears, nets, fishing lines, traps, baskets, bow and arrow)"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners use Internet to find out about fishing in East Africa"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners discuss the advantages and disadvantages of each method and whether traditional or modern methods are best for conserving fish."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Group learners and ask them to discuss what they think will encourage fishing"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners discuss and list what benefits the fishing communities and the country can get from fishing"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Ask learners to discuss the dangers to fishing in East Africa"
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe as learners sketch and explain methods of fishing, using appropriate language and identifying some of the problems associated with different methods."
+                    },
+                    {
+                      "assessment_type": "Monitoring",
+                      "description": "Monitor group discussions to gauge learners’ understanding. Add information if necessary to develop their thoughts."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ discussions and prompt them if they need help getting started. Evaluate how well they can contribute to the discussion."
+                    },
+                    {
+                      "assessment_type": "Role Play",
+                      "description": "Ask learners to imagine that they are the Minister in charge of fisheries. Ask them to make up a policy for Uganda to get the best income from fishing that will also help preserve fish stocks. Observe the relevance of their policy."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they discuss the methods and benefits of fish farming, making links between health, jobs and the environment."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Fishing Area Visit",
+                        "description_verbatim": "If possible, learners visit an area where fishing takes place. Find out what fish are caught, what methods are used, where and how the fish are sold, what problems the fishing people have etc.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "58"
+                      }
+                    ]
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "11"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners use Internet to find out about fishing in East Africa"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S2-T2-0002",
+                    "topic_title": "Wildlife Conservation and Tourism in East Africa",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "After studying this topic, the learner should understand the need for conserving wildlife, why tourists come to East Africa, what facilities they want, the benefits we get from tourism and how we can encourage more tourists to come.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know what is meant by wildlife (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the meaning of National Park, game/wild life reserves, sanctuaries, historic and prehistoric sites (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the factors influencing the development of tourism in Uganda and the rest of East Africa (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand that tourism is an important form of trade (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand what a tourist is, why they come and the facilities tourists need (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the benefits of tourism and its possible benefits to young people (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the main tourist attractions of East Africa and locations of the main tourist areas (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "study a tourist attraction or potential tourist attraction in the local area through field work",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "guide visitors and tourists around attractions in the local area or any other area",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "know where most tourists to East Africa come from (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the meaning of domestic tourism",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "represent the statistics about tourism using simple graphs (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand why we should preserve wildlife and the challenges facing wildlife conservation in East Africa (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand why tourists are particularly interested in natural scenery and wild animals (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "appreciate that tourism can bring both benefits and problems",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "understand the challenges facing tourism in East Africa (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the problems which can be brought by tourism",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "appreciate the need for conserving wildlife (gs)",
+                      "domain": "gs"
+                    },
+                    {
+                      "outcome_text": "appreciate the need for ensuring political stability and security if we are to develop tourism (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "understand that, in attracting tourists, we are always competing with other countries (u)",
+                      "domain": "u"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In pairs, with the word “wildlife” on the BB, learners decide on a definition of the word. Then pairs tell class their definition."
+                    },
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Learners use photographs to identify important tourist attractions and draw a map to show the main national parks and other tourist areas in East Africa."
+                    },
+                    {
+                      "activity_type": "Field Work",
+                      "description": "Learners individually think of an area they know e.g. the area round the school or their home area and investigate through fieldwork. Decide on what things in the area are or might be good for tourists."
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "Learners use their findings to plan a day’s activity as though they were a guide. Learners work in pairs and role -play one being a tourist, and the other persuading them to go on the day activity they have designed."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Use internet to find statistics of tourist arrivals and origins of tourists in East Africa"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners discuss why sometimes tourists do not come to some parts of East Africa and the dangers which may spoil tourism."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Note learners’ definitions of wildlife. Lead them to an agreement. and tourists and explain how they are connected, giving examples."
+                    },
+                    {
+                      "assessment_type": "Essay",
+                      "description": "To assess and consolidate understanding, learners think of any areas of Uganda that they know well and write a short essay suggesting what tourist attractions it has or could have, and how they could attract tourists, or more tourists, to the area. Observe the writing they produce in order to evaluate how well they understand they key features of tourism."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate sketches or digital maps."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate learners’ job descriptions."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ plans and monitor role-play. Intervene if necessary to ensure achievement of objective."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In conversation, ask learners to use what they have learnt to suggest the best ways to attract more tourists to East Africa. Evaluate the depth of their knowledge and broaden it if necessary."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Local Area Tourism Investigation",
+                        "description_verbatim": "Learners individually think of an area they know e.g. the area round the school or their home area and investigate through fieldwork. Decide on what things in the area are or might be good for tourists.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "62"
+                      }
+                    ]
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "11"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners use Internet to find tourist attractions in East Africa.",
+                      "Use internet to find statistics of tourist arrivals and origins of tourists in East Africa"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S2-T2-0003",
+                    "topic_title": "Wildlife Conservation, Forests, Fishing and Tourism in North America (British Columbia)",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 14
+                  },
+                  "core_competency": "After studying this topic, the learner should understand the relief, climate and natural vegetation of British Columbia, the traditional way of life, need to conserve the wild life and vegetation and uses for tourism.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the location, relief features and main towns of British Columbia (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the main natural resources of British Columbia (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the climate of British Columbia and its effect on vegetation (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the importance of forest vegetation (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the traditional way of life of the Native Americans in this area and the effects of European occupation",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "understand the importance of fishing in British Columbia",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "appreciate the need to conserve the natural environment (v/a)",
+                      "domain": "v/a"
+                    },
+                    {
+                      "outcome_text": "understand the dangers of deforestation, over-fishing and pollution of water bodies (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "draw a map to locate main features of British Columbia (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "draw a climate graph and use this to describe climate of British Columbia (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "draw diagrams and flow diagrams to show stages in logging (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "draw diagrams to show fishing techniques (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "recognise features of British Columbia on photographs (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "appreciate the need to preserve the natural environment (v/a, gs)",
+                      "domain": "v/a, gs"
+                    },
+                    {
+                      "outcome_text": "appreciate the dangers of over-use of natural resources: deforestation and over-fishing (v/a, gs)",
+                      "domain": "v/a, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Use wall map or BB map and atlas or Internet, and elicit from learners the location of British Columbia. Learners describe relief from maps."
+                    },
+                    {
+                      "activity_type": "Analysis",
+                      "description": "Learners use previous knowledge of climatic regions and position and relief of British Columbia to describe climate"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners use Internet to find photographs of natural vegetation in British Columbia."
+                    },
+                    {
+                      "activity_type": "Investigation",
+                      "description": "Learners investigate what happened when European settlers arrived (This way of life was threatened or destroyed by Europeans using forests and rivers)."
+                    },
+                    {
+                      "activity_type": "Diagramming",
+                      "description": "Use photographs for learners to describe stages in logging or ‘lumbering’ and movement of timber."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners use Internet to look up use of forests in British Columbia."
+                    },
+                    {
+                      "activity_type": "Case Study",
+                      "description": "Learners use the Internet to work in groups and research a case study of sustainable forestry practice in British Columbia."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "Individually, learners write a summary of this conflict [between development and preservation of natural environment]."
+                    },
+                    {
+                      "activity_type": "Report",
+                      "description": "Working in pairs, learners are given an exercise to compare tourism in British Columbia and East Africa. They write a report to reflect their ideas, giving reasons for them."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners use of maps and graphs to explain the key features of British Columbia, including climate, making links between these."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe as learners use their work to describe the traditional way of life in British Columbia and discuss how and why this has been changed."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate case studies to see how well learners have understood the problems and solutions of deforestation."
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Use learners’ summaries to evaluate how well they have understood the conflict between development and conservation or preservation of the environment."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ reports and reasons for their answers."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 14,
+                    "unit": "periods",
+                    "source_page": "11"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use wall map or BB map and atlas or Internet",
+                      "Learners use Internet to find photographs of natural vegetation in British Columbia.",
+                      "Learners use Internet to look up use of forests in British Columbia.",
+                      "Learners use the Internet to work in groups and research a case study of sustainable forestry practice in British Columbia."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 3",
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "Population, Urbanisation and Trade in East Africa and North America",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S2-T3-0001",
+                    "topic_title": "Population and Urbanisation in East Africa",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 8
+                  },
+                  "core_competency": "After studying this topic, the learner should understand and appreciate factors influencing population growth and distribution in East Africa and the effects this has, including effects on environment and urbanization.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the concepts related to population (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the main areas of low and high density of population in East Africa (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the location of the main urban centres of East Africa (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "use maps, statistics, graphs and diagrams to analyse population (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand the demographic transition model and how this relates to the historical growth and population structures of East Africa",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "understand the relationship between population, resources and the provision of services (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the factors which have led to rapid population increase in Uganda and the rest of East Africa (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the relationship between a rapidly growing population and urbanisation (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand Kampala city as an example of rapid urbanisation (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the concept of urbanisation, the factors influencing urbanisation, and the functions of urban areas (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the advantages, disadvantages and problems resulting from urbanisation (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "form opinions on the implications of urbanisation for development. (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "use statistics and photographs to illustrate urbanisation and its problems (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand the methods which can be used to control the rate of population growth (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "form opinions on the need for, and use of population control methods (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "appreciate the social and cultural problems of slowing down population growth (a, gs)",
+                      "domain": "a, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Use wall map, BB map or atlas or internet to show distribution of population in East Africa"
+                    },
+                    {
+                      "activity_type": "Analysis",
+                      "description": "Learners list a. areas of high population density; b. moderate population density; c. low population density. They analyse statistics of population for East Africa and draw a map to show areas of high, moderate and low population density in East Africa."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners discuss problems of high densities in rural areas"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners use internet to find population of some urban areas e.g. Kampala, Nairobi in 1960, 1980, 2000, 2010, 2015"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners discuss reasons for rural-urban drift: pull factors and push factors"
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Learners hold debate or discussion on whether the rate of population growth in Uganda needs to be reduced and if so how this can be done. Include cultural and religious issues."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners using maps and diagrams to make notes on high and low population. Intervene if there is any misunderstanding, so that whole-class feedback is informative and relevant."
+                    },
+                    {
+                      "assessment_type": "Monitoring",
+                      "description": "Monitor in group stage and contribute if they need prompting, and to clear up any misunderstanding. In whole-class feedback, note if learners ask relevant question or extend topic."
+                    },
+                    {
+                      "assessment_type": "Essay",
+                      "description": "Ask learners to write an essay on whether Uganda’s population is growing too rapidly and, if so, what measures should be taken to reduce the rate of growth. Observe what they have produced, exploring how balanced their essay is."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 8,
+                    "unit": "periods",
+                    "source_page": "11"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use wall map, BB map or atlas or internet to show distribution of population in East Africa",
+                      "Learners use internet to find population of some urban areas"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S2-T3-0002",
+                    "topic_title": "Urbanisation in North America (New York)",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "After studying this topic, the learner should know the situation and site of New York, and he/she should understand why New York became a big city and the characteristics and problems of New York as an urban area.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know where New York is situated (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the names of some areas in and around New York (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the characteristics of New York as a city (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand New York City as an example of rapid urbanisation (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the advantages of the site and situation of New York in relation to early European settlement of North America (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the population structure of New York and use statistics and graphs to analyse it (u) (s)",
+                      "domain": "u, s"
+                    },
+                    {
+                      "outcome_text": "understand the concept of urbanization, the factors influencing urbanization, and the functions of urban areas (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the layout and divisions of New York (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the importance of New York in USA (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "make a comparison between New York and Kampala (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "appreciate the attraction of New York to young people in America and its influence on young people in East Africa (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "understand the advantages, disadvantages and problems resulting from urbanisation (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "use statistics and graphs to show the rapid urban development in New York",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "use statistics and photographs to illustrate urbanization and its problems (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand Kampala city as an example of rapid urbanisation (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "form opinions on the implications of urbanisation for development (a)",
+                      "domain": "a"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners collaborate to find a range of aerial imagery, maps and photographs, from online sources, to describe what New York is like and its characteristics."
+                    },
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Use a wall map, BB map and atlas to show the position of New York along the N.E coast of North America and the site of New York. Learners create their own maps and annotate them to show how its location enabled rapid development."
+                    },
+                    {
+                      "activity_type": "Graphing",
+                      "description": "Present statistics of the growth of New York and learners draw line or bar graphs to show this. Learners analyse and explain the growth of New York"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Use answers to list functions of New York City."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Use photographs of different areas of New York or learners find these on internet. Learners describe what the areas look like and, using ideas from Kampala or elsewhere, suggest what they might be used for or who might live in them."
+                    },
+                    {
+                      "activity_type": "Investigation",
+                      "description": "In groups, learners investigate recent and reliable sources to collect data about poverty levels in New York."
+                    },
+                    {
+                      "activity_type": "Modelling",
+                      "description": "Learners work in groups to create a model city of the future and explain its features."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Report",
+                      "description": "Drawing on what they have learnt about urbanisation, learners should produce a short news report. Observe their report to identify accurate details of urbanisation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Learners use their maps to explain the features that encouraged development. In conversation, ask learners to explain what they have learnt."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ graphs for accuracy and understanding."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe as learners use their maps and graphs to compare and contrast New York and Kampala, describing similarities and differences."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners as they explain why they have chosen the features that they have for their cities of the future."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "11"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Learners collaborate to find a range of aerial imagery, maps and photographs, from online sources",
+                      "Use photographs of different areas of New York or learners find these on internet."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S2-T3-0003",
+                    "topic_title": "Transport and Communication in East Africa",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 8
+                  },
+                  "core_competency": "After studying this topic, the learner should understand the major types of transport and communication in East Africa and factors influencing their development and their role in development.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the difference between transport and communication (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "use photographs to identify the different types/modes of transport (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "use maps to show the major transport routes (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand the factors which influence the distribution of the major transport routes in Uganda and the rest of East Africa (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the role of the different types of transport in development (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the advantages and disadvantages of each form of communication (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the consequences of the revolution in communication caused by digital communication: mobile phones, computers and Internet, social media (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "form opinions on the importance of transport in national and regional development (a)",
+                      "domain": "a"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Table Construction",
+                      "description": "Learners construct a table to show the advantages and disadvantages of different types of transport (human, animal, road, railway, water, air) in terms of speed, cost, and ability to carry goods including bulk goods."
+                    },
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Learners draw a paper or digital map showing the main railways, important road routes and shipping routes in East Africa. They draw and use maps to investigate proposed routes for exporting oil from east Africa and give their views."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners work in pairs and talk about the different transport types in their local area and how they have been beneficial to the local community."
+                    },
+                    {
+                      "activity_type": "Table Construction",
+                      "description": "Ask learners what means they use to communicate with people close to them and far away. They draw a table choosing their own criteria to compare and contrast."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Problem Solving",
+                      "description": "Give learners a list of different types of goods to be transported to different places. Observe how well learners suggest and justify the best means of transport for a particular journey."
+                    },
+                    {
+                      "assessment_type": "Explanation",
+                      "description": "Learners use evidence to explain some factors which influence the distribution of transport routes in Uganda and the rest of East Africa"
+                    },
+                    {
+                      "assessment_type": "Monitoring",
+                      "description": "Learners discuss. Monitor discussion and help steer learners if necessary to ensure they achieve the outcome."
+                    },
+                    {
+                      "assessment_type": "Comparison",
+                      "description": "Ask learners to compare ways of communicating with people in other areas or places with the ways your parents used to communicate. Observe discussions about the advantages and disadvantages of each."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 8,
+                    "unit": "periods",
+                    "source_page": "11"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "GEO-A-S2-T3-0004",
+                    "topic_title": "Trade within and outside East Africa",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 8
+                  },
+                  "core_competency": "After studying this topic, the learner should understand the types of trade carried out within East Africa and between East Africa and Africa and the rest of the world and the importance and difficulties of each type of trade.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "study a local market/shopping centre to identify the patterns of trade (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "know the main exports of Uganda and their contributions to intraregional and international trade (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the main exports and imports of East African countries (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the destination and origins of the main exports and imports (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the importance of trade in the development of a country (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the types of trade including barter, visible trade, invisible trade (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the meaning and importance of a favourable balance of trade and difficulties of an unfavourable balance of trade (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand historical problems with trade in East Africa: reliance on exporting raw materials and importing manufactured goods (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "form opinions about ways of overcoming this problem (a)",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "understand why there is limited trade between East African countries (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand ways of encouraging trade between East African countries and with other African countries (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "use flow charts, statistics and maps to show trade patterns (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "appreciate the advantages of processing to add value to exports (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "appreciate the advantages of developing import substitution industries (a, gs)",
+                      "domain": "a, gs"
+                    },
+                    {
+                      "outcome_text": "appreciate the need for an economic system which helps to distribute the resources in an equitable way (a)",
+                      "domain": "a"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Field Work",
+                      "description": "In groups, learners go and study a local market, using questionnaires and other methods. They find out what is sold, where it comes from, who buys things, how the prices are set, how the goods in the market change in different seasons and the problems the traders face."
+                    },
+                    {
+                      "activity_type": "Investigation",
+                      "description": "Use a table or learners find out on the Internet, statistics of the imports and exports of Uganda or any other country of East Africa. Learners find answers to... [questions about exports/imports]."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners discuss this [balance of trade] in groups and then have whole-class feedback."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Ask learners to suggest why there is limited trade between East African countries."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe what learners produce to explain the pattern of traded goods as a result of their fieldwork investigation."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In conversation, ask learners to suggest ways to get more benefits from our trade outside Uganda."
+                    },
+                    {
+                      "assessment_type": "Explanation",
+                      "description": "Learners identify some benefits of trade within Uganda and give examples."
+                    },
+                    {
+                      "assessment_type": "Explanation",
+                      "description": "Learners identify some of the advantages and disadvantages of making free trade agreements with countries outside Africa. In conversation, assess their reasons for their answers."
+                    },
+                    {
+                      "assessment_type": "Report",
+                      "description": "Learners produce a report which explains the relative successes of goods sold within Uganda – that have not been exported. In conversation, ask learners to explain what they think the challenges of regarding this kind of trade."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Local Market Study",
+                        "description_verbatim": "In groups, learners go and study a local market, using questionnaires and other methods. They find out what is sold, where it comes from, who buys things, how the prices are set, how the goods in the market change in different seasons and the problems the traders face.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "74"
+                      }
+                    ]
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 8,
+                    "unit": "periods",
+                    "source_page": "11"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use a table or learners find out on the Internet, statistics of the imports and exports of Uganda or any other country of East Africa.",
+                      "Use statistics on trade between East African countries or learners find these from Internet."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

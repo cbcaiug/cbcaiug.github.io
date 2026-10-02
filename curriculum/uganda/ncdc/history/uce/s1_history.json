@@ -1,0 +1,1564 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+  "class_subject_file": "s1_history_and_political_education.json",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "History and Political Education",
+    "level": "O-Level",
+    "class_group": "Senior One",
+    "year": "2019",
+    "version": "1.0",
+    "source_document": "HISTORY & POLITICAL EDUCATION SYLLABUS"
+  },
+
+  "global_framework": {
+    "competencies": [
+      "Critical thinking and problem-solving",
+      "Creativity and innovation",
+      "Communication",
+      "Co-operation and self-directed learning",
+      "Mathematical computation & ICT proficiency"
+    ],
+    "generic_skills": [
+      "Listen attentively and with comprehension",
+      "Talk confidently and explain issues clearly",
+      "Read accurately and fluently",
+      "Write and present coherently",
+      "Use a range of media to communicate ideas",
+      "Plan and carry out investigations",
+      "Sort and analyse information",
+      "Identify problems and ways forward",
+      "Predict outcomes and make reasoned decisions",
+      "Evaluate different solutions",
+      "Use imaginations to explore possibilities",
+      "Work with others to generate ideas",
+      "Suggest and develop new solutions",
+      "Try out innovative alternatives",
+      "Look for patterns and make generalisations",
+      "Work effectively in diverse teams",
+      "Interact effectively with others",
+      "Take responsibility for own learning",
+      "Work independently with persistence",
+      "Manage goals and time",
+      "Use numbers and measurements accurately",
+      "Interpret and interrogate mathematical data",
+      "Use mathematics to justify and support decisions",
+      "Use technology to create, manipulate and process information",
+      "Use technology to collaborate, communicate and refine their work"
+    ],
+    "values": [
+      "Respect for humanity and environment",
+      "Honesty; uphold and defend the truth at all times",
+      "Justice and fairness in dealing with others",
+      "Hard work for self-reliance",
+      "Integrity; moral uprightness and sound character",
+      "Creativity and innovativeness",
+      "Social responsibility",
+      "Social harmony",
+      "National unity",
+      "National consciousness and patriotism"
+    ],
+    "attitudes": [
+      "Self-assured individuals",
+      "Responsible and patriotic citizens",
+      "Life-long learners",
+      "Positive contributors to society"
+    ],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Life skills",
+      "Mixed abilities and involvement",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+
+  "classes": [
+    {
+      "class_name": "Senior One",
+      "class_code": "S1",
+      "terms": [
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "THEME 1: UNDERSTANDING OUR PAST",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S1-T1-0001",
+                    "topic_title": "TOPIC 01: Finding out about our past",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 10
+                  },
+
+                  "core_competency": "The learner understands different methods of finding out about the past, and appreciate the importance of historical sites.",
+
+                  "prerequisites": [],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the meaning of History and political education.",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "appreciate the importance of learning about our past. (u) (v)",
+                      "domain": "u, v"
+                    },
+                    {
+                      "outcome_text": "understand how people find out about the past (u) (k) (v)",
+                      "domain": "u, k, v"
+                    },
+                    {
+                      "outcome_text": "know the historical sites in Uganda and the rest of East Africa, (k) (s) (u)",
+                      "domain": "k, s, u"
+                    },
+                    {
+                      "outcome_text": "understand the benefits of historical sites in Uganda.",
+                      "domain": "u"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Meaning of History and political education",
+                      "Importance of learning about the past",
+                      "Methods of finding out about the past",
+                      "Historical sites in Uganda and East Africa"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Using ICT and the library research, find the meaning of the term history and political education."
+                    },
+                    {
+                      "activity_type": "Guidance",
+                      "description": "Guide learners to understand how the two terms are related."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners in a discussion on the advantages and disadvantages of learning about the past."
+                    },
+                    {
+                      "activity_type": "Field Visit",
+                      "description": "Let learners visit a historical site."
+                    },
+                    {
+                      "activity_type": "Research/Presentation",
+                      "description": "Using ICT and library research, in groups, let learners find out why we study history and political education, and make a presentation to class."
+                    },
+                    {
+                      "activity_type": "Multimedia/Discussion",
+                      "description": "Let learners watch a video or listen to a narration on historical research, and discuss the different sources of history."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Involve learners in a brainstorming session to find out the challenges involved in the use of specific sources of history."
+                    },
+                    {
+                      "activity_type": "Research/Note-taking",
+                      "description": "Guide learners to use ICT and library research and find out the methods we use to study about our past. Take notes and present them to the teacher."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In a discussion, compare modern and traditional methods of researching on the past."
+                    },
+                    {
+                      "activity_type": "Drawing/Analysis",
+                      "description": "Guide learners to draw a table that shows the advantages and disadvantages of using different sources and methods of finding out about the past."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners to discuss in groups and identify important historical sites in Uganda and the rest of East Africa."
+                    },
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Guide learners to draw a sketch map of East Africa showing the location and names of some important historical sites."
+                    },
+                    {
+                      "activity_type": "Field Visit/Reporting",
+                      "description": "In groups guide learners to visit at least two of the nearest historical sites, find out their benefits, make a report and present to class."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "In groups task learners to prepare a project and show what they can do to earn a living in their community and specifically using historical sites."
+                    },
+                    {
+                      "activity_type": "Reflection",
+                      "description": "Learners develop reflective journals either with ICT or manually depicting key issued on this topic."
+                    },
+                    {
+                      "activity_type": "Portfolio",
+                      "description": "Let learners prepare a portfolio of historical sites and organise the information and give a brief explanation of each."
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation/Discussion",
+                      "description": "Observe in a discussion whether learners can explain the meaning of the term history and political education."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners as they discuss and brainstorm to assess their understanding of historical methods and sources, of studying about our past."
+                    },
+                    {
+                      "assessment_type": "Practical/Drawing",
+                      "description": "Task learners individually to draw a sketch map of East Africa and mark there the main historical sites."
+                    },
+                    {
+                      "assessment_type": "Written Report",
+                      "description": "In their written reports, assess their ability to evaluate why the sites are important to the nation’s history."
+                    },
+                    {
+                      "assessment_type": "Practical/Mapping",
+                      "description": "Assess individual learners’ maps drawn accurately locating historical sites in East Africa."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "In groups task learners to prepare a project and show what they can do to earn a living in their community and specifically using historical sites.",
+                    "deliverables_verbatim": "Project presentation/demonstration",
+                    "assessment_weight_percent": null,
+                    "source_page": "16"
+                  },
+
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "16"
+                  },
+
+                  "syllabus_notes": [],
+                  
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S1-T1-0002",
+                    "topic_title": "TOPIC 02: The origin of man",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 16
+                  },
+
+                  "core_competency": "The learner understands the theories about the origin of man using a series of accounts.",
+
+                  "prerequisites": [],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand traditional East African beliefs about the origin of man. (u) (v)(s)",
+                      "domain": "u, v, s"
+                    },
+                    {
+                      "outcome_text": "analyse the bible and the creation stories about the origin of man. (a, s)",
+                      "domain": "a, s"
+                    },
+                    {
+                      "outcome_text": "know scientific view about the origin of man. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "analyse the concept of human evolution.",
+                      "domain": "a"
+                    },
+                    {
+                      "outcome_text": "understand the out of Africa theory about the origin of man.(u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "appreciate the multi-regional theory on creation and the origin of man. (a, s)",
+                      "domain": "a, s"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Traditional East African beliefs on origin of man",
+                      "Bible creation stories",
+                      "Scientific view on origin of man",
+                      "Human evolution concept",
+                      "Out of Africa theory",
+                      "Multi-regional theory"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Discussion/Writing",
+                      "description": "Guide learners in pairs to discuss about the beliefs that existed in traditional Africa and write about them."
+                    },
+                    {
+                      "activity_type": "Storytelling",
+                      "description": "Task learners to give accounts of some ethnic groups on the story about the origin of man."
+                    },
+                    {
+                      "activity_type": "Differentiation",
+                      "description": "Guide learners to distinguish between cultural and traditional beliefs about the origin of man."
+                    },
+                    {
+                      "activity_type": "Reading/Role-play",
+                      "description": "Guide learners to read the Old Testament and role play the Bible story of the creation of man."
+                    },
+                    {
+                      "activity_type": "Reading/Analysis",
+                      "description": "Guide Learners to read individually the story of the Garden of Eden and analyse its significance in the creation of man."
+                    },
+                    {
+                      "activity_type": "Research/Comparison",
+                      "description": "Using ICT and library research, let learners make notes about the scientific view on the origin of man and compare their findings in class in the next lesson."
+                    },
+                    {
+                      "activity_type": "Research/Highlighting",
+                      "description": "Task learners to research and give highlights on key aspects of human evolution theory and the stages of human development."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Involve learners in a discussion about the concept of human creation out of Africa."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners in a discussion to find out about the theories of creation of man among the white race."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners in a discussion to understand the multi-regional theory about the origin of man."
+                    },
+                    {
+                      "activity_type": "Research/Tabulation",
+                      "description": "Task learners to use ICT and library research to make a table and match each theory of origin of man with its founder plus the timelines and compare the notes."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "In a debate session, let learners compare the reality of traditional theory and bible story about the origin of man."
+                    },
+                    {
+                      "activity_type": "Collection",
+                      "description": "Guide learners to identify and collect artefacts on the origin of man."
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners to assess their understanding of traditional African theory about the origin of man."
+                    },
+                    {
+                      "assessment_type": "Presentation",
+                      "description": "In class presentations, find out whether the learners can critique the bible theory about the creation of man."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe whether the learners can compare the reality between the scientific theory and the multi-regional theory on creation of man."
+                    },
+                    {
+                      "assessment_type": "Assessment",
+                      "description": "Assess learner’s critical thinking in arguing and presenting issues on Darwin’s theory of man."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+
+                  "time_allocation": {
+                    "periods": 16,
+                    "unit": "periods",
+                    "source_page": "17"
+                  },
+
+                  "syllabus_notes": [],
+
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S1-T1-0003",
+                    "topic_title": "TOPIC 03: Migration and settlement into East Africa since 1000 AD.",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 8
+                  },
+
+                  "core_competency": "The learner understands the origins of their own families, as a result of migration and settlement of people in East Africa.",
+
+                  "prerequisites": [],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the groups of people who lived in East Africa before 19th century Migrations. (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the origins of local people in different areas of East Africa. (s, k)",
+                      "domain": "s, k"
+                    },
+                    {
+                      "outcome_text": "understand the origins of Bantu, Luo and Ngoni people who came to East Africa. (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the reasons for the migration of these peoples into East Africa. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the results of Bantu, Luo and Mfecane migration into East Africa. (k, u)",
+                      "domain": "k, u"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Inhabitants of East Africa before 19th century",
+                      "Origins of Bantu, Luo and Ngoni",
+                      "Reasons for migration",
+                      "Results of Bantu, Luo and Mfecane migration"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Presentation",
+                      "description": "Using ICT and library research, let learners take notes and present to class the inhabitants of East Africa before the 19th century migrations."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Carry out a research using ICT or library to find out the origins of their families and other people in the area."
+                    },
+                    {
+                      "activity_type": "Tabulation",
+                      "description": "Let learners individually make tables to match the current ethnic groups with their original migration groups that came into East Africa since 1000 AD."
+                    },
+                    {
+                      "activity_type": "Illustration",
+                      "description": "Let learners explain and illustrate their findings using tables, diagrams and statistics."
+                    },
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Learners illustrate and locate the origins of East African people on a map."
+                    },
+                    {
+                      "activity_type": "Oral Presentation",
+                      "description": "Learners use the above visual aids in the delivery of an oral presentation on the fieldwork to the class."
+                    },
+                    {
+                      "activity_type": "Research/Location",
+                      "description": "Using the internet or library research, learners locate the Bantu, Luo and Ngoni migration."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Task learners to discuss the origins, culture and history of Bantu, Luo, and Ngoni."
+                    },
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Guide learners to draw a sketch map(s) showing the course of Bantu, Luo and Mfecane migration."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In a discussion, identify the reasons for the migration of these peoples into East Africa."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners in a discussion about the results of Bantu, Luo and Ngoni migrations."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "Learners prepare a documentary in prose showing evidence of their origins."
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In conversation, assess learners’ understanding of the Bantu, Luo and Ngoni course of migration and the reasons for their migration."
+                    },
+                    {
+                      "assessment_type": "Practical/Assessment",
+                      "description": "Assess the accuracy of migration maps drawn by learners."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ communication skills and critical thinking in a discussion about the effect of these migrations into East Africa."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+
+                  "time_allocation": {
+                    "periods": 8,
+                    "unit": "periods",
+                    "source_page": "18"
+                  },
+
+                  "syllabus_notes": [],
+                  
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S1-T2-0001",
+                    "topic_title": "TOPIC 04: CULTURE AND KEY ETHNIC GROUPS IN EAST AFRICA",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 12
+                  },
+
+                  "core_competency": "The learner understands the concept of culture and the people relations in East Africa.",
+
+                  "prerequisites": [],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "appreciate the existence of cultural values in our families. (k, u)",
+                      "domain": "k, u"
+                    },
+                    {
+                      "outcome_text": "know the key cultural institutions and their leaders in East Africa. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know cultural centres that exist in East Africa. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the ethnic groups in East Africa.",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "analyse the contribution of cultural handcrafts in East Africa. (u, a)",
+                      "domain": "u, a"
+                    },
+                    {
+                      "outcome_text": "understand the need to respect the cultures of other ethnic groups to avoid conflicts. (u, v)",
+                      "domain": "u, v"
+                    },
+                    {
+                      "outcome_text": "appreciate the value of cultural traditional transitional justice mechanisms in conflict resolutions in East Africa. (k, v, u)",
+                      "domain": "k, v, u"
+                    },
+                    {
+                      "outcome_text": "understand the role of culture and gender in family matters.",
+                      "domain": "u"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Cultural values in families",
+                      "Cultural institutions and leaders in East Africa",
+                      "Ethnic groups in East Africa",
+                      "Cultural handcrafts",
+                      "Traditional justice mechanisms",
+                      "Culture and gender in family matters"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Field Work/Survey",
+                      "description": "Task learners to develop an interview guide, visit nearby families, conduct a survey and write a report about the form of cultural values practiced in East Africa."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Involve learners in a discussion about the main cultural institutions in East Africa."
+                    },
+                    {
+                      "activity_type": "Tabulation",
+                      "description": "Task learners to draw a table and match the traditional institutions existing in East Africa with their countries."
+                    },
+                    {
+                      "activity_type": "Analysis",
+                      "description": "Let learners analyse the contribution of emerging cultural/moral youth camps in Uganda."
+                    },
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Instruct learners to draw a sketch map of East Africa, on it mark the existing cultural sites."
+                    },
+                    {
+                      "activity_type": "Listing",
+                      "description": "In groups let learners list the main ethnic groupings in East Africa."
+                    },
+                    {
+                      "activity_type": "Graphing",
+                      "description": "Using graphs, let learners show the population levels of these ethnic groups in East Africa today."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Involve learners in a discussion about the importance of handcrafts in East Africa."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners to discuss how respect for other cultures can be useful in aspect of leadership, and can reduce the possibility of other conflicts."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "In a brainstorm session, engage learners to mention the importance of cultural camps like “kisakate” in Uganda."
+                    },
+                    {
+                      "activity_type": "Field Visit/Research",
+                      "description": "Guide learners to visit a nearby community and research about the traditional methods of justice used in resolving conflicts."
+                    },
+                    {
+                      "activity_type": "Comparison",
+                      "description": "Guide learners to compare the modern and the traditional methods of resolving community conflicts and find out which of the two is very effective in stabilising the community leadership."
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "Involve learners in a role play about gender issues in the family. Use pictures or photographs to illustrate gender roles(s)."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Engage learners in a discussion on how the ethnic differences and clashes can be reduced in East Africa."
+                    },
+                    {
+                      "activity_type": "Field Visit",
+                      "description": "Guide learners to carry out a field visit to cultural institutions or centres in their community or an elder or a community development officer to analyse and establish the contribution of cultural institutions."
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the group presentations made after the historical site visit and provide guidance to the learners."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe class discussion and find out whether learners understood the role of culture in family affairs."
+                    },
+                    {
+                      "assessment_type": "Observation/Role Play",
+                      "description": "In a role play, observe learners’ understanding of the application of traditional justice mechanisms in settlement of cases."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "19"
+                  },
+
+                  "syllabus_notes": [],
+                  
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S1-T2-0002",
+                    "topic_title": "TOPIC 05: STATE FORMATION IN EAST AFRICA",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 14
+                  },
+
+                  "core_competency": "The learner appreciates the organisation of centralised and non-centralised states in East Africa.",
+
+                  "prerequisites": [],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the centralised and non-centralised states in East Africa. (v, k)",
+                      "domain": "v, k"
+                    },
+                    {
+                      "outcome_text": "know the characteristics of centralised and non-centralised societies. (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the distinction between the centralised and non-centralized societies in East Africa.",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "Explain the factors that contributed to the growth and decline of pre-colonial societies. (U)",
+                      "domain": "U"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Centralised and non-centralised states in East Africa",
+                      "Characteristics of these societies",
+                      "Bunyoro Kitara",
+                      "Buganda",
+                      "Ankole",
+                      "Tooro",
+                      "Karagwe",
+                      "Kikuyu",
+                      "Nyamwezi",
+                      "Masai",
+                      "Tonga",
+                      "Acholi",
+                      "Factors for growth and decline"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Let learners brainstorm and compare the centralised and non-centralised states they are familiar with in East Africa."
+                    },
+                    {
+                      "activity_type": "Guidance",
+                      "description": "Guide learners to understand the organisation of the following societies:\n- Bunyoro Kitara\n- Buganda\n- Ankole\n- Tooro\n- Karagwe\n- Kikuyu\n- Nyamwezi\n- Masai\n- Tonga\n- Acholi"
+                    },
+                    {
+                      "activity_type": "Research/Description",
+                      "description": "Guide learners to conduct research on all existed pre-colonial societies and describe their social, political and economic organisation in their notebooks."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Let learners discuss the factors that led to the growth and decline of both pre-colonial kingdoms and the decentralised societies."
+                    },
+                    {
+                      "activity_type": "Description",
+                      "description": "Let learners describe the characteristics of precolonial centralised and non-centralised societies in East Africa."
+                    },
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Let learners draw a sketch map of East Africa and locate the precolonial centralised and non-centralised societies."
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Assessment",
+                      "description": "Assess learners’ drawn maps to see that they have identified and located the societies appropriately."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners to find out if they can describe the distinction between the centralised and non-centralised states, and analyse the strengths and weaknesses of each."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+
+                  "time_allocation": {
+                    "periods": 14,
+                    "unit": "periods",
+                    "source_page": "20"
+                  },
+
+                  "syllabus_notes": [],
+                  
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S1-T2-0003",
+                    "topic_title": "TOPIC 06: RELIGIONS IN EAST AFRICA",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 10
+                  },
+
+                  "core_competency": "The learner understands the influence and impact of religions in East Africa.",
+
+                  "prerequisites": [],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the religions that existed in East Africa before the coming of foreign religions.",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the Christian and Islamic religious groups that came to Uganda in the 19th century, why they came and where they had influence. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the impact of foreign religions in Uganda. (v, u)",
+                      "domain": "v, u"
+                    },
+                    {
+                      "outcome_text": "know the activities carried out by the European Christian Missionaries. (v, s)",
+                      "domain": "v, s"
+                    },
+                    {
+                      "outcome_text": "understand why Christians and some Muslims were killed at Namugongo. (v, u)",
+                      "domain": "v, u"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Traditional religions in East Africa",
+                      "Christian and Islamic religious groups in 19th century Uganda",
+                      "Impact of foreign religions",
+                      "Missionary activities",
+                      "Uganda Martyrs (Namugongo)"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Listing",
+                      "description": "Using ICT and school libraries, task learners to list down the traditional religions that existed in East Africa in the pre-historic period."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners discuss foreign religions in their community and the wider East Africa, mentioning differences in beliefs, dress, diet and customs, and raising questions about what they don’t understand."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Let learners conduct a research to identify those religions that arrived in the 19th century, where they came from and why they came."
+                    },
+                    {
+                      "activity_type": "Guest Speaker",
+                      "description": "Invite Christian and Muslim leaders to visit the class and talk about history of Uganda, and their beliefs, customs and influence."
+                    },
+                    {
+                      "activity_type": "Research/Presentation",
+                      "description": "Task learners to conduct research among members of their community about the influence of religions faith in their area, and make presentations to class on their findings."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "In a whole class setting, guide learners in a debate on assessment of missionary activities in Uganda."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Guide learners to use ICT or library research and find out why religious people were killed in Namugongo."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Organise the class and discuss the importance of Namugongo shrines to Ugandans today."
+                    },
+                    {
+                      "activity_type": "Research/Reporting",
+                      "description": "Instruct learners to conduct research among the informed elderly of the major religions in their communities and make a report on the statistics of Catholics, Protestants, Orthodox and Moslem martyrs at Namugongo. How many were each category and why were they killed?"
+                    },
+                    {
+                      "activity_type": "Simulation",
+                      "description": "Guide learners in a simulation on being missionaries."
+                    },
+                    {
+                      "activity_type": "Documentation",
+                      "description": "Guide learners to document the work of missionaries and Muslim leaders at the time."
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Debate",
+                      "description": "Engage learners in a debate to compare the pre-historic religions and those of colonial period."
+                    },
+                    {
+                      "assessment_type": "Assessment",
+                      "description": "Assess learners’ listening and communication skills when dialoguing with visitors, and members of their communities, and their ability to summarise their discussions."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe their analysis and critical thinking when debating missionary activity."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "21"
+                  },
+
+                  "syllabus_notes": [],
+                  
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S1-T2-0004",
+                    "topic_title": "TOPIC 07: LOCAL AND EXTERNAL TRADE CONTACTS IN EAST AFRICA BEFORE 1880 (Sub-topic 7.1: Indian Ocean Trade and slavery in East Africa)",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 9
+                  },
+
+                  "core_competency": "The Learner understands the pre-colonial trade contacts and connects them to the colonial trade systems in East Africa.",
+
+                  "prerequisites": [],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand trade contacts that existed in East Africa before the pre-colonial time.",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the pre-colonial trade systems in East Africa that began before 1800.",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the organisation of Indian Ocean trade in East Africa",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the relationship between slave trade and the Indian Ocean trade.",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "know the organisation of slave trade and slavery (k).",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand slave trade and its impact in East Africa. (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the impact of slave trade abolition in East Africa.",
+                      "domain": "k"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Pre-colonial trade contacts",
+                      "Trade systems before 1800",
+                      "Indian Ocean trade organisation",
+                      "Relationship between slave trade and Indian Ocean trade",
+                      "Slave trade organisation and slavery",
+                      "Impact of slave trade",
+                      "Abolition of slave trade"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Explanation",
+                      "description": "Using ICT and library research, let the learners explain the trade system that existed in East Africa before the pre-colonial time."
+                    },
+                    {
+                      "activity_type": "Guidance",
+                      "description": "Guide learners to establish the type of goods traded in East Africa, form of transaction carried out and name the groups involved in trade in ancient times."
+                    },
+                    {
+                      "activity_type": "Organisation",
+                      "description": "Organise learners to understand the pre-colonial trade systems involving the communal agricultural exchanges."
+                    },
+                    {
+                      "activity_type": "Explanation",
+                      "description": "Task learners to explain the relationship between slave trade and Indian Ocean trade."
+                    },
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Guide learners to draw a sketch map of Indian Ocean trade routes."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Involve learners in a discussion about the organisation of Indian Ocean trade. Mention the challenges that were faced by these traders."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Engage learners in the discussion to analyse the impact of Indian Ocean trade in East Africa."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners to discuss the organisation of slave trade and slavery in East Africa."
+                    },
+                    {
+                      "activity_type": "Brainstorming/Debate",
+                      "description": "Guide learners in a brainstorm session; debate the advantages and disadvantages of slave trade in East Africa."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners to discuss the possible reasons for the development of slave trade."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "In a debate session, discuss the effects of slave trade in East Africa. Let learners take note."
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "In a role play, organise the class to show the life of slavery and indicate its implication to East Africans."
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "In groups, guide learners to research, discuss and find out and present in class reasons for abolition of slave trade as they take notes."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Involve learners in a brainstorm session about the results for abolition of slave trade."
+                    },
+                    {
+                      "activity_type": "Reflection",
+                      "description": "Let learners take note of key issues on the topic in their reflective journals."
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation/Observation",
+                      "description": "Converse with learners and observe whether they know the trade system in East Africa before pre-colonial time."
+                    },
+                    {
+                      "assessment_type": "Assessment",
+                      "description": "Assess learners’ participation and contribution on the effects of slave trade."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners to ascertain their understanding of Indian Ocean trade."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the ability of learners to draw a sketch map of East African trade routes for slavery."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners and find out whether they can identify the reasons for abolition of slave trade in East Africa."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+
+                  "time_allocation": {
+                    "periods": 9,
+                    "unit": "periods",
+                    "source_page": "22"
+                  },
+
+                  "syllabus_notes": [],
+                  
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S1-T2-0005",
+                    "topic_title": "TOPIC 07: LOCAL AND EXTERNAL TRADE CONTACTS IN EAST AFRICA BEFORE 1880 (Sub-topic 7.2: East African Long Distance Trade)",
+                    "sequence_order": 5,
+                    "recommended_duration_periods": 9
+                  },
+
+                  "core_competency": "The Learner understands the pre-colonial trade contacts and connects them to the colonial trade systems in East Africa.",
+
+                  "prerequisites": [],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the background of East Africa’s Long Distance trade. (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the reasons for growth and expansion of Long Distance trade in East Africa t. (v, k)",
+                      "domain": "v, k"
+                    },
+                    {
+                      "outcome_text": "understand the organisation of Long Distance trade in East Africa.",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the impact of East African Long Distance trade. (s, u, v)",
+                      "domain": "s, u, v"
+                    },
+                    {
+                      "outcome_text": "appreciate the contribution of Long Distance trade in the history of East Africa.",
+                      "domain": "a"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Background of Long Distance trade",
+                      "Reasons for growth and expansion",
+                      "Organisation of Long Distance trade",
+                      "Impact of Long Distance trade"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Reflection",
+                      "description": "Let learners use ICT or library research to find out the background of Long Distance trade and take note in their reflective journal."
+                    },
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Guide learners to draw a sketch map of the routes used in the Long Distance trade and take note of key issues."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Organise the class into a brainstorm session and find out the goods traded. Separate the exports from the import list."
+                    },
+                    {
+                      "activity_type": "Research/Description",
+                      "description": "Let learners use the library or the Internet to describe the rise, organisation and benefits of the Long Distance trade."
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "In groups let learners’ present findings of their research in a whole class discussion."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Guide learners to participate in a debate session and discuss the effects of Long Distance trade."
+                    },
+                    {
+                      "activity_type": "Comparison",
+                      "description": "Guide learners to compare the challenges faced by Long Distance traders and those of today in Uganda who import goods from Mombasa."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Involve learners to discuss the impact of Slave Trade abolition on the Long Distance Trade business."
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "Organise a role play and show how the traditional East African chief was involved in the Long Distance trade business."
+                    },
+                    {
+                      "activity_type": "Note-taking",
+                      "description": "Teacher wraps up the lesson as learners take the notes."
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Assessment",
+                      "description": "Assess learners on findings of key aspects of Long Distance Trade."
+                    },
+                    {
+                      "assessment_type": "Assessment/Mapping",
+                      "description": "Assess learners’ accuracy in movements and locating the trade routes in East Africa using a sketch map."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ creativity in presentations of facts about Slave Trade."
+                    },
+                    {
+                      "assessment_type": "Discussion",
+                      "description": "Engage in a discussion with learners about the effects of Long Distance Trade to access their critical thinking and communication skills."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+
+                  "time_allocation": {
+                    "periods": 9,
+                    "unit": "periods",
+                    "source_page": "23"
+                  },
+
+                  "syllabus_notes": [],
+                  
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 3",
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S1-T3-0001",
+                    "topic_title": "TOPIC 08: SCRAMBLE, PARTITION AND COLONIZATION OF EAST AFRICA",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 10
+                  },
+
+                  "core_competency": "The learner understands the causes, methods and impact of the colonisation of East Africa.",
+
+                  "prerequisites": [],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the term scramble, partition and colonisation of East Africa.",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the reasons why Europeans and Asians came to East Africa. (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand how Uganda and the rest of East Africa was colonised. (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "understand the results of colonisation of East Africa. (s, u)",
+                      "domain": "s, u"
+                    },
+                    {
+                      "outcome_text": "appreciate the impact of European and Asian influence in East Africa. (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand how the rest of Africa was colonised by the different European powers. (u)",
+                      "domain": "u"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Scramble, partition and colonisation definitions",
+                      "Reasons for European and Asian arrival",
+                      "Colonisation process of Uganda and East Africa",
+                      "Results of colonisation",
+                      "Impact of influence",
+                      "Colonisation of rest of Africa"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners in a discussion about the various groups from Europe and Asia who came to East Africa, and their roles:\n- Missionaries\n- Chartered companies’ agents\n- Explorers\n- Imperialists"
+                    },
+                    {
+                      "activity_type": "Research/Mapping",
+                      "description": "Learners conduct a research on entry of Europeans and Asians into East Africa and construct a timeline and a map."
+                    },
+                    {
+                      "activity_type": "Guidance",
+                      "description": "Guide learners to understand the reasons for the success of European colonisation of East Africa."
+                    },
+                    {
+                      "activity_type": "Discussion/Debate",
+                      "description": "In groups, let learners discuss/debate on the effects of the scramble and partition of East Africa."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Engage learners in a discussion about the methods used by European countries in the colonisation of East Africa and the problems they faced."
+                    },
+                    {
+                      "activity_type": "Mapping",
+                      "description": "Instruct the individual learners to draw the map of Eastern Africa and on it mark and name the European countries that controlled a particular African country."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Engage learners in a discussion about the challenges faced by Europeans in the colonisation process of East Africa."
+                    },
+                    {
+                      "activity_type": "Matching",
+                      "description": "Construct a matching table and show which European power colonised a specific African country."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "Task the individual learners to write a story about the life of a colonised Ugandan."
+                    },
+                    {
+                      "activity_type": "Simulation",
+                      "description": "Guide learners to simulate the life of a white man in the process of colonising an African state."
+                    },
+                    {
+                      "activity_type": "Reflection",
+                      "description": "Let learners write key issued to remember in their reflective journals"
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Check",
+                      "description": "Check the accuracy of the information presented by learners on maps, timelines and colonisation."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ participation and contribution in a debate giving factual information, and the effects of colonisation."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "24"
+                  },
+
+                  "syllabus_notes": [],
+                  
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S1-T3-0002",
+                    "topic_title": "TOPIC 09: RESPONSE TO THE ESTABLISHMENT OF COLONIAL RULE IN EAST AFRICA",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 10
+                  },
+
+                  "core_competency": "The learner understands how East African communities reacted against colonial rule in both primary and secondary responses.",
+
+                  "prerequisites": [],
+
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the concept of collaboration and resistance. (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "analyse the factors that made East Africans either to collaborate or resist colonial rule. (a, u)",
+                      "domain": "a, u"
+                    },
+                    {
+                      "outcome_text": "know the key agreements made in East Africa with colonialists. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "analyse the impact of the signing of the 1900 Buganda agreement to East Africans. (a, s)",
+                      "domain": "a, s"
+                    },
+                    {
+                      "outcome_text": "know the terms and the significance of 1923 Devonshire White Paper in Kenya. (k)",
+                      "domain": "k"
+                    }
+                  ],
+
+                  "content_scope": {
+                    "must_cover": [
+                      "Concept of collaboration and resistance",
+                      "Factors for collaboration or resistance",
+                      "Key agreements in East Africa",
+                      "1900 Buganda Agreement",
+                      "1923 Devonshire White Paper in Kenya"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Guidance",
+                      "description": "Guide learners to use ICT and library research to understand the origin and background of collaboration and resistance to colonial rule."
+                    },
+                    {
+                      "activity_type": "Discussion/Analysis",
+                      "description": "Let learners discuss in groups and analyse the factors that led to either collaboration or resistance against colonial rule."
+                    },
+                    {
+                      "activity_type": "Guidance",
+                      "description": "Guide learners to find out the circumstances that led to each type of response."
+                    },
+                    {
+                      "activity_type": "Research/Writing",
+                      "description": "Let learners use the Internet or library research to find out about the key agreements made in East Africa and write a report."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Involve learners in a discussion to understand the impact of the signing of the 1923 Devonshire White Paper."
+                    },
+                    {
+                      "activity_type": "Research/Recording",
+                      "description": "Let learners research on communities that collaborated or resisted colonial rule and record their findings about the benefits and challenges for publications."
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "In a role play, let learners dramatise instances of resistance and collaboration in East Africa."
+                    },
+                    {
+                      "activity_type": "Guidance",
+                      "description": "Guide learners to understand the reasons for the signing of 1900 Buganda Agreement."
+                    },
+                    {
+                      "activity_type": "Research/Presentation",
+                      "description": "Using ICT or library research, in groups let learners make presentations on the terms and the effects of the 1900 Buganda Agreement."
+                    },
+                    {
+                      "activity_type": "Comparison",
+                      "description": "Task learners to compare the features of the 1900 Buganda Agreement and that of Devonshire White Paper of 1923 in Kenya."
+                    }
+                  ],
+
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners’ discussion to understanding of the terms collaboration and resistance."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners and find out whether they can talk confidently and explain issues with brainstorming on the factors that conditioned the East Africans to either collaborate or resist colonialists."
+                    }
+                  ],
+
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "25"
+                  },
+
+                  "syllabus_notes": [],
+                  
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

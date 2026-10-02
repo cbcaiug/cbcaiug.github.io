@@ -1,0 +1,620 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — Populated from Lower Secondary Curriculum Mathematics Syllabus PDF for Senior 4",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Mathematics",
+        "level": "Lower Secondary",
+        "class_group": "Senior Four",
+        "year": "2019",
+        "version": "1.0",
+        "source_document": "MATHEMATICS SYLLABUS.pdf"
+    },
+    "global_framework": {
+        "competencies": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Communication",
+            "Co-operation and Self-Directed Learning",
+            "Mathematical Computation and ICT Proficiency"
+        ],
+        "generic_skills": [
+            "Listen attentively and with comprehension",
+            "Talk confidently and explain ideas/opinions clearly",
+            "Read accurately and fluently",
+            "Write and present coherently",
+            "Use a range of media to communicate ideas",
+            "Work effectively in diverse teams",
+            "Interact effectively with others",
+            "Take responsibility for own learning",
+            "Work independently with persistence",
+            "Manage goals and time",
+            "Plan and carry out investigations",
+            "Sort and analyse information",
+            "Identify problems and ways forward",
+            "Predict outcomes and make reasoned decisions",
+            "Evaluate different solutions",
+            "Use imaginations to explore possibilities",
+            "Work with others to generate ideas",
+            "Suggest and develop new solutions",
+            "Try out innovative alternatives",
+            "Look for patterns and make generalisations",
+            "Use numbers and measurements accurately",
+            "Interpret and interrogate mathematical data",
+            "Use mathematics to justify and support decisions",
+            "Use technology to create, manipulate and process information",
+            "Use technology to collaborate, communicate and refine their work"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Four",
+            "class_code": "S4",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Patterns and Algebra",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MAT-LS-S4-T1-0001",
+                                        "topic_title": "Composite Functions",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 20
+                                    },
+                                    "core_competency": "The learner understands and uses composite functions.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand and use function notation. (k u s)",
+                                            "domain": "k u s"
+                                        },
+                                        {
+                                            "outcome_text": "describe and understand a composite function. (k u s)",
+                                            "domain": "k u s"
+                                        },
+                                        {
+                                            "outcome_text": "work out the inverse of a function and recognise the graphical relationship between a function and its inverse. (k u s)",
+                                            "domain": "k u s"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Review",
+                                            "description": "Recall and review Senior 2, Topic 1."
+                                        },
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "In pairs, consider the functions f(x) = 6x and g(x) = x + 5\n(a) What is f(3)?\n(b) What is g(f(3))?\n(c) What is g(3)? What is f(g(3))? Is g(f(3)) the same as f(g(3))?\n(d) What is f(f(5))=f^2 (5)?\nRepeat for x."
+                                        },
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "Investigate the inverse function of a given function. Illustrate graphically. What do you notice? By considering the domain and range of the function and its inverse – explain why this happens."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation/Task",
+                                            "description": "Observe the learners in their groups as they work on the tasks below. During the process, are learners communicating effectively? are they learning from one another? are they creative and critical?\n1. f(x) is the greatest number prime less than x. Find: (a) f(40), (b) f(29)\n2. If f(x) = 2x³ and g(x) = x – 1, find h(x)=f(g(x)). Find h⁻¹(x), and sketch the graph of function h with its inverse.\n3. Given f(x) = 2x and g(x) = x – 3, find;\n(a) f³(x) (b) f(x³) (c) g²(x) (d) g(x²) (e) gf(x) (f) f(g(x)) (g) f(g(f(x)))"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 20,
+                                        "unit": "periods",
+                                        "source_page": "58"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MAT-LS-S4-T1-0002",
+                                        "topic_title": "Equations and Inequalities",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 20
+                                    },
+                                    "core_competency": "The learner understands, uses and solves problems using equations and inequalities.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "build formula from word statements. (u s)",
+                                            "domain": "u s"
+                                        },
+                                        {
+                                            "outcome_text": "re-write a given formula by changing the subject. (u s)",
+                                            "domain": "u s"
+                                        },
+                                        {
+                                            "outcome_text": "solve equations and inequalities, representing the solutions on a number line or graphically as appropriate. (k u s)",
+                                            "domain": "k u s"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Review",
+                                            "description": "a) Review and build on Senior 2, Topic 5 and Senior 3,Topics 10 and 12."
+                                        },
+                                        {
+                                            "activity_type": "Problem Solving",
+                                            "description": "b) Bayo, Ruth and John were all born on Independence Day, but in different years. Bayo is one year older than Ruth. John’s age is 3 times Bayo’s age.\nIf Ruth is r years old, write down expressions for:\n(a) Bayo’s age\n(b) John’s age\n(c) How many years older than Bayo is John? Give your answer in terms of r\n(d) In 6 years’ time, John will be 6 years older than Bayo. How old is Ruth now?"
+                                        },
+                                        {
+                                            "activity_type": "Exercise",
+                                            "description": "a) Solve quadratic inequalities and represent the solutions on a number line."
+                                        },
+                                        {
+                                            "activity_type": "Exercise",
+                                            "description": "b) Extend graphing inequalities to include quadratics."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation/Task",
+                                            "description": "Observe the learners in their groups as they discuss the tasks below. During the process of the presentation, are learners communicating effectively? Are they learning from one another? Are they creative and critical?\n1. Alupo thinks of a number. She carries out two calculations on the number. First, she adds 5. Then she multiplies the sum by 3. Her result is 27. What was Alupo’s original number?\n2. Sketch the region enclosed by the inequalities y≤4-x² and y>2x-4."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 20,
+                                        "unit": "periods",
+                                        "source_page": "59"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MAT-LS-S4-T1-0003",
+                                        "topic_title": "Linear Programming",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 20
+                                    },
+                                    "core_competency": "The learner understands and uses linear programming to solve problems.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "form linear inequalities based on real life situations. (u, s)",
+                                            "domain": "u, s"
+                                        },
+                                        {
+                                            "outcome_text": "represent the inequalities on the graph and identifies the required region. (u, s)",
+                                            "domain": "u, s"
+                                        },
+                                        {
+                                            "outcome_text": "find and interpret the optimum solution of a set of linear inequalities in two unknowns. (u, s, v/a)",
+                                            "domain": "u, s, v/a"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Problem Solving/Discussion",
+                                            "description": "Peter has UGX 900 000. He wants to buy some apples and oranges. Apples cost UGX 10 000 each and oranges cost UGX 600 each. He wants to buy at least 22 apples and at least 10 oranges. The number of apples bought must be more than twice the number of oranges bought.\nIn groups, discuss how to form the inequalities that must be satisfied. Plot them on a coordinate grid and propose a solution."
+                                        },
+                                        {
+                                            "activity_type": "Problem Solving",
+                                            "description": "Use linear programming to solve this problem: A small business makes 3-speed and 10-speed bicycles.\no Factory A produces 16 3-speed and 20 10-speed bicycles each day. It costs UGX 100M each day to operate factory A.\no Factory B produces 12 3-speed and 20 10-speed bicycles each day. It costs UGX 80M each day to operate factory B.\nAn order for 96 3-speed bicycles and 140 10-speed bicycles has just arrived. How many days should each factory operate in order to fill the order at minimum cost.\nWhat is the minimum cost?"
+                                        },
+                                        {
+                                            "activity_type": "Creation/Pair Work",
+                                            "description": "In pairs, make up a linear programming problem for your peers."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation/Task",
+                                            "description": "In pairs, let the learners discuss the following task. Observe them as they discuss. Assess the learners on the core values and generic skills.\n1. A mother buys x notes books at UGX 600 each and y pens for UGX 800 each. She has UGX 8000 to spend and there must be at least 4 note books and at least 4 pens.\nWrite three inequalities in x and y that satisfy these conditions.\nIllustrate them graphically by shading out the unwanted regions. Write down the integer solution set.\n2. A farmer has 32 acres on which to plant corn and soybean.\nFor each acre of corn planted, the expenses are UGX 100 000, and for each acre of soybean planted it is UGX 200 000.\nEach acre of corn requires 100 bushels of storage and yields a profit of UGX 120 000.\nEach acre of soybean requires 40 bushels of storage and yields a profit of UGX 180 000.\nIf the total amount of storage space is 1920 bushels and the farmer has only UGX 8M to pay for planting, how many acres of each crop should be planted to maximize the profit?\nWhat will the profit be?"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 20,
+                                        "unit": "periods",
+                                        "source_page": "60"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Patterns and Algebra",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MAT-LS-S4-T2-0004",
+                                        "topic_title": "Loci",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 20
+                                    },
+                                    "core_competency": "The learner understands and applies loci.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "describe common types of loci. (k, u)",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "construct loci involving points under given conditions. (u, s)",
+                                            "domain": "u, s"
+                                        },
+                                        {
+                                            "outcome_text": "construct intersecting loci. (u, s)",
+                                            "domain": "u, s"
+                                        },
+                                        {
+                                            "outcome_text": "construct loci involving inequalities. (u, s, v/a)",
+                                            "domain": "u, s, v/a"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Review",
+                                            "description": "Recall and review the work in Senior 1, Topic 5 on loci."
+                                        },
+                                        {
+                                            "activity_type": "Construction/Discussion",
+                                            "description": "In pairs, draw a line AB 10 cm long. A variable point P is such that angle APB = 90° and AP ≤ PB. Discuss and construct the locus of P (link with Senior 3, Topic 13)."
+                                        },
+                                        {
+                                            "activity_type": "Practical/Hands-on",
+                                            "description": "On a rectangular piece of paper, mark a point a few centimetres from the centre of one edge. Fold the edge to pass through the point multiple times – to obtain the envelope below.\nWhat shape is the locus? Prove it by adding a set of axes and using algebra."
+                                        },
+                                        {
+                                            "activity_type": "Construction/Algebra",
+                                            "description": "On a coordinate grid plot points A (2, 3) and B (-4, 7). Construct and find the equation of the perpendicular bisector of AB."
+                                        },
+                                        {
+                                            "activity_type": "Problem Solving/Sketching",
+                                            "description": "A goat is tethered to the corner of a building. Assuming the length of the rope is less than the length of the sides of the building, sketch the locus of the area the goat can reach. What if the rope is longer than one of the sides of the building? Both sides of the building? Construct the locus in each case."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation/Task",
+                                            "description": "Observe the learners in their groups as they work on the tasks below. During the process, are learners communicating effectively? Are they learning from one another? Are they creative and critical?\n1. Sketch and describe the locus of point M, where M is the mid-point of a chord of length 6 cm in a circle of radius 5 cm.\n2. Find the equation of the locus of P such that AP is 5 units, where A is (2, 3).\n3. Construct the locus to show the area available to a cow tethered by a rope of 3m to a horizontal rail length 4m.\nWhat is the area of the locus?"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 20,
+                                        "unit": "periods",
+                                        "source_page": "61"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Geometry and Measures",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MAT-LS-S4-T2-0005",
+                                        "topic_title": "Lines and Planes in Three Dimensions",
+                                        "sequence_order": 5,
+                                        "recommended_duration_periods": 20
+                                    },
+                                    "core_competency": "The learner understands and applies lines and planes in 3D to solve problems.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "applies Pythagoras theorem in 3D to calculate the distance between two points. (u s)",
+                                            "domain": "u s"
+                                        },
+                                        {
+                                            "outcome_text": "finds the angle between a line and a plane. (u s)",
+                                            "domain": "u s"
+                                        },
+                                        {
+                                            "outcome_text": "finds the angle between two planes. (u s)",
+                                            "domain": "u s"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Review",
+                                            "description": "Recall and review Senior 2, Topics 10 and 11."
+                                        },
+                                        {
+                                            "activity_type": "Practical/Observation",
+                                            "description": "Collect polyhedra and for each one, record the number of faces, edges and vertices. Determine the relationship between the number of vertices, edges and faces."
+                                        },
+                                        {
+                                            "activity_type": "Construction/Measurement",
+                                            "description": "Construct a square based pyramid using four equilateral triangles and a square. Use Pythagoras’ theorem to determine the perpendicular height of the pyramid, check by measuring your model."
+                                        },
+                                        {
+                                            "activity_type": "Construction/Problem Solving",
+                                            "description": "Construct a net for a square based pyramid whose perpendicular height is half the length of the square. How many of these will fill a cube?"
+                                        },
+                                        {
+                                            "activity_type": "Investigation/Calculation",
+                                            "description": "What is the angle between the triangular faces and the square face? What is the angle between the triangular faces?"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation/Task",
+                                            "description": "Observe the learners in their groups as they discuss the task below. During the process of, are learners communicating effectively? Are they learning from one another? Are they creative and critical?\nA wireless mast is held vertically by four stays 10m long, fixed to the mast at the same height and joined to the four corners of a square on level ground. If each stay is inclined at 60° to the horizontal. Calculate the height of the top of each stay and the side length of the square"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 20,
+                                        "unit": "periods",
+                                        "source_page": "62"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Revision",
+                            "theme_description": "All Revision",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "MAT-LS-S4-T3-0006",
+                                        "topic_title": "All Revision",
+                                        "sequence_order": 6,
+                                        "recommended_duration_periods": null
+                                    },
+                                    "core_competency": "",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [],
+                                    "suggested_assessment_activities": [],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": null,
+                                        "unit": "periods|hours|weeks",
+                                        "source_page": "17"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "Term 3 All Revision",
+                                            "note_type": "clarification",
+                                            "source_page": "17"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

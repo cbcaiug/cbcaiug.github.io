@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-10-02T05:30:00.000Z",
+  "total_files": 7,
+  "files": [
+    { "path": "rwanda/o-level/s2/biology/unit_01.json", "type": "json", "unit_number": 1, "unit_title": "Classification of kingdom Animalia", ... },
+    { "path": "rwanda/o-level/s2/biology/unit_02.json", "type": "json", "unit_number": 2, "unit_title": "Introduction to environmental biology", ... },
+    { "path": "uganda/uce/s1/biology/unit_01.json",     "type": "json", "unit_number": 1, "unit_title": "Cell Biology", ... },
+    { "path": "uganda/uce/s1/biology/teacher-notes.pdf","type": "pdf",  ... },
+    { "path": "uganda/uace/s5/physics/unit_03.json",    "type": "json", ... }
+  ]
+}

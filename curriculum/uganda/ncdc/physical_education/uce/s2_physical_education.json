@@ -1,0 +1,1130 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — VERBATIM EXTRACTION FOR SENIOR TWO PHYSICAL EDUCATION",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "Physical Education",
+    "level": "O-Level",
+    "class_group": "Senior Two",
+    "year": "S2",
+    "version": "2019",
+    "source_document": "PHYSICAL EDUCATION SYLLABUS"
+  },
+  "global_framework": {
+    "competencies":[
+      "Self-assured individuals",
+      "Responsible and patriotic citizens",
+      "Lifelong learners",
+      "Positive contributors to society"
+    ],
+    "generic_skills":[
+      "Communication",
+      "Critical thinking and problem-solving",
+      "Creativity and innovation",
+      "Mathematical computation and ICT proficiency",
+      "Co-operation and Self-Directed Learning"
+    ],
+    "values":[
+      "Respect for humanity and environment",
+      "Honesty; uphold and defend the truth at all times",
+      "Justice and fairness in dealing with others",
+      "Hard work for self-reliance",
+      "Integrity; moral uprightness and sound character",
+      "Creativity and innovativeness",
+      "Social Responsibility",
+      "Social Harmony",
+      "National Unity",
+      "National Consciousness and patriotism"
+    ],
+    "attitudes":[],
+    "cross_cutting_issues":[
+      "Environmental awareness",
+      "Health awareness",
+      "Life skills",
+      "Mixed abilities and involvement",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+  "authority_model": {
+    "precedence_order":[
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "classes":[
+    {
+      "class_name": "Senior Two",
+      "class_code": "S2",
+      "terms":[
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes":[
+            {
+              "theme_title": "Theory and practice of Physical Education",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S2-T1-0001",
+                    "topic_title": "FACTORS IN PERFORMANCE OF PHYSICAL ACTIVITIES",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 6
+                  },
+                  "core_competency": "The learner understands the factors that relate to performance in physical activities.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "examine personal qualities; skills, strengths and weaknesses in regard to performance in physical activities and future careers.(gs,a)",
+                      "domain": "Generic Skills/Attitudes"
+                    },
+                    {
+                      "outcome_text": "assess opportunities and risks to make informed decisions about their own career. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "know the factors that affect mental, social and emotional performance and recognize. (u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment":[],
+                    "explicitly_excluded": [],
+                    "depth_limitations":[]
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In a guided discussion, learners differentiate between skills, talents and interests giving clear examples of each based on self-analysis."
+                    },
+                    {
+                      "activity_type": "Self-Reflection",
+                      "description": "Individually, learners scrutinize their personal skills, talents and interests and note them down in their Diary or notebook. They should also seek feedback from trusted peers and their teacher."
+                    },
+                    {
+                      "activity_type": "Diagnosis",
+                      "description": "Individually, learners diagnose their strengths and weaknesses in physical education and sports performance and in pairs they share and suggest improvements, building on their strengths."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups of not more than ten, the learners engage in a discussion to relate their interests, talents and skills to possible future career choices."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In small groups, learners are engaged in a discussion to describe the effects of active involvement in physical activities on their mental, social and emotional performance, and then make a presentation of their findings."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "In groups, learners carry out some research in school to analyse the effect of participation in physical activities on mental, social and emotional performances of S3 and S4 students and write a report on their results."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Product",
+                      "description": "Ask learners to design posters that display the need to develop skills, talents and interests throughout an individuals’ life. Product should be a poster designed by the students with illustrations and reasons."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners and note the generic skills of teamwork, creativity critical thinking within this context of skills, talents and interests."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Engage learners in discussions on the choice of reasons included in the poster to ascertain their understanding of the concepts in the task."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 6,
+                    "unit": "periods",
+                    "source_page": "27"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S2-T1-0002",
+                    "topic_title": "PHYSICAL FITNESS",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 10
+                  },
+                  "core_competency": "The learner understands physical fitness and performs exercises that can be used to develop physical fitness for lifelong well-being.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "perform exercises to develop health related fitness taking care of safety.(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "perform exercises to develop skill related fitness taking care of safety. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "understand the concept of physical fitness. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "understand abilities and limitations regarding fitness. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "relate fitness to their daily life activities. (k, u)",
+                      "domain": "Knowledge/Understanding"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment":[],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners are taken through and given time to practice health related fitness exercises for muscular strength and trunk stability, cardio-respiratory and endurance such as walking, jogging, and running."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "As a class, learners are guided to perform exercises related to right posture with emphasis on the back and neck"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners observe and practice skill-related fitness exercises in relation to speed, power, coordination and agility that can improve one’s performance in physical activities."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "As a class, learners are guided in a discussion to define physical fitness and explain the components of physical fitness including their relevance in one’s daily life."
+                    },
+                    {
+                      "activity_type": "Self-Assessment",
+                      "description": "Learners are guided to assess their abilities and limitations towards fitness"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "In groups learners are guided in a search for limitations and abilities regarding fitness"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners practice and follow the safety precautions before, during and after performance of physical fitness activities and design posters of safety precautions required to perform physical fitness activities."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Task the learner to demonstrate physical activities that can be used to develop one’s flexibility. Observe their performance and note the accuracy and appropriateness of the exercise chosen."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Probe learners to ascertain their understanding of the exercises required in the task."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Product should be a demo of flexibility exercises which can be recorded."
+                    },
+                    {
+                      "assessment_type": "Task",
+                      "description": "Task the learners to develop a basic fitness training schedule to cater for at least three fitness components."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "28"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Aesthetics",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S2-T1-0003",
+                    "topic_title": "BASIC SKILLS IN EDUCATIONAL GYMNASTICS",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 8
+                  },
+                  "core_competency": "The learner performs various gymnastic skills individually or with partners in a safe environment.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "engage in and understand various gymnastic activities such as rolling and balance activities, demonstrating an awareness of safety precautions and activities that are safe for practice.(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "develop a simple gymnastics routine for their personal fitness training. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "exhibit good interpersonal skills while working with others, valuing own and other people’s body in social and physical interactions. (gs,v)",
+                      "domain": "Generic Skills/Values"
+                    },
+                    {
+                      "outcome_text": "recognize the various gymnastic activities that can be done to improve one’s fitness. (k,s)",
+                      "domain": "Knowledge/Skills"
+                    },
+                    {
+                      "outcome_text": "understand the contribution of gymnastics to an individual’s well-being. (u,a)",
+                      "domain": "Understanding/Attitudes"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment":[],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "With a partner or in small groups, learners observe and practice the following gymnastic activities: Balances (crouch balance, head stand, hand stand, shoulder balance, v-balance, swan balance, crab-balance, angle balance, candle sticks, centipede and chains, shoulder stand, thigh hold balance, elbow balance, fore arm stand); Rolling (forward roll, backward roll, side rolls, tank rolls, judo roll); Skipping (individual, pairs and small groups; double leg, single leg, alternate leg skip)"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "As a class, learners discuss the importance of engaging in gymnastic activities to an individual and to the society."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "At individual level, every learner composes a fitness schedule for themselves based on what they have learnt."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Demonstrate a skill from the category of either rolling or balancing in gymnastics. Observe the learners noting their: performance of the chosen activities; use of safety measures; transition between the various rolling and balance activities chosen."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation probe learners with questions and situations to check their awareness of safety precautions"
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Product: Coordinated Performance of the various rolling and balance activities with awareness of safety precautions."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 8,
+                    "unit": "periods",
+                    "source_page": "29"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2",
+          "term_number": 2,
+          "themes":[
+            {
+              "theme_title": "Theory and Practice of Physical Education",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S2-T2-0004",
+                    "topic_title": "AGREEABLE AND DISAGREEABLE BEHAVIOUR",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 4
+                  },
+                  "core_competency": "The learner understands the agreeable and disagreeable behaviour in society and in the field of physical performance and sports.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "differentiate between agreeable and disagreeable behaviour in the society. (k, u,v)",
+                      "domain": "Knowledge/Understanding/Values"
+                    },
+                    {
+                      "outcome_text": "differentiate between agreeable and disagreeable behaviour during performance of physical activities. (k, u,v)",
+                      "domain": "Knowledge/Understanding/Values"
+                    },
+                    {
+                      "outcome_text": "understand the ethics of physical education and how they can be used in daily life. (k,u)",
+                      "domain": "Knowledge/Understanding"
+                    },
+                    {
+                      "outcome_text": "understand the features of self-defense and perform skills that build self-defense. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "understand how to handle different crisis situations (u, a, s)",
+                      "domain": "Understanding/Attitudes/Skills"
+                    },
+                    {
+                      "outcome_text": "understand the concepts of drug and substance abuse and know about legislations of drug use. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "know the types of prohibited drugs and substances in sports and in Uganda. (k,v)",
+                      "domain": "Knowledge/Values"
+                    },
+                    {
+                      "outcome_text": "understand the dangers of drug and substance abuse in relation to body health and sports performance. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "analyse the circumstances that may lead a young person to use drugs and know about sources of support for substance addiction. (u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners in a discussion to state and then present the meaning of agreeable and disagreeable behaviours."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Explore further with learners the relationship between behaviours and values in Uganda and their community."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners are engaged in a discussion to describe general agreeable and disagreeable behaviour at school and in the community and provide a report for their school website, noticeboard or newsletter."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In their discussion groups, guide learners to discuss agreeable and disagreeable behaviours in sports, providing examples in each case."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups learners are guided to discuss the ethics in PES and they are tasked to give examples of cases they know"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In a guided discussion, learners describe the consequences of disagreeable sportsmanship on an individual, team and community."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups learners share the different self-defense mechanism that they know. Learn about key moves and strategies for self-defense. Learners practice various self-defense moves"
+                    },
+                    {
+                      "activity_type": "Simulation",
+                      "description": "In groups learners are guided to describe different crisis situations, demonstrate different actions to be taken in a crisis in a correct sequence (e.g. fire, floods, lightening), practice what to say and how to say it in a crisis (e.g. emergency call) and locate places in their community where to call or get professional help during emergencies."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In small groups, learners discuss the meaning of the term drug and substance abuse. Guide learners to discuss the types of drugs and their effects on the body for example blood doping, smoking and alcohol, stimulants, narcotic-analgesics, diuretics, anxiety reducing drugs, peptide hormones and analogues. Learners are guided to discuss the dangers of enhancing performance using drugs."
+                    },
+                    {
+                      "activity_type": "Case Study",
+                      "description": "In groups, learners explore cases of drug abuse in sports and discuss the consequences that the acts led to. Learners then discuss and identify sources of support for substance addiction cases"
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Written",
+                      "description": "Task learners to write up an explanation of the dangers of engaging in drug and substance abuse suggesting ways in which this habit can be prevented or overcome."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In a conversation probe learners to ascertain their understanding and accuracy of explanations and solutions given."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Product is the write up clearly stating the dangers of drug and substance abuse and suggestions for prevention."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 4,
+                    "unit": "periods",
+                    "source_page": "30"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Athletics",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S2-T2-0005",
+                    "topic_title": "BASIC JUMPING SKILLS",
+                    "sequence_order": 5,
+                    "recommended_duration_periods": 10
+                  },
+                  "core_competency": "The learner performs jumping skills with consideration of safety and understands how they can be applied in one’s daily life.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand the categories of jumping events in Athletics. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "make improvised jumping equipment from local materials. (s, gs, v,a)",
+                      "domain": "Skills/Generic Skills/Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "perform the skills involved in selected jumping activities with awareness of safety. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "perform the various jumping basic skills. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "follow the safety precautions while performing jumping activities in order to prevent injuries. (s, v)",
+                      "domain": "Skills/Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In small groups, learners are guided to discuss and list the different categories of jumping events"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "The learners are guided by the teacher to use local materials and make improvised equipment that can be used for activity."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small groups, learners observe and practice the basic long jump techniques of sail, and hang in long jump while observing safety."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners observe and practice the basic high jumping techniques of straddle, scissors while observing safety."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners observe and practice the triple jumping techniques while observing the correct sequence"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Guide learners to practice activities involving single take-off, landing, strength in the legs, leap jumps"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In a discussion learner describe the relevancy of jumping skills in one’s life."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners observe and practice various jumping fitness activities with a major objective of skill learning through fun."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Task learners to demonstrate the basic jumping techniques of sail and hang in long jump following the basic rules that govern them. Observe: the approach, take off, flight and landing of each learner for the two techniques; learners applying safety measures during the jumping activities; learners as they apply the rules that govern the various jumping techniques"
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Discuss the impact of learners’ input in relation to the final output as they jump"
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Proper arm and leg action during jumps. Application of rules and regulations to be followed when conducting jumping activities."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "32"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S2-T2-0006",
+                    "topic_title": "BASIC THROWING SKILLS",
+                    "sequence_order": 6,
+                    "recommended_duration_periods": 10
+                  },
+                  "core_competency": "The learner performs throwing skills with consideration of safety and understands how they can be applied in one’s daily.",
+                  "prerequisites":[],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "understand the categories of jumping and throwing events in Athletics. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "make improvised jumping and throwing equipment from local materials. (s, gs, v,a)",
+                      "domain": "Skills/Generic Skills/Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "identifies the safety measures to be ensured during throws. (u, s)",
+                      "domain": "Understanding/Skills"
+                    },
+                    {
+                      "outcome_text": "perform the techniques used in shot put, javelin, and discus. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "demonstrate knowledge of basic rules and regulations in the throws. (k, u)",
+                      "domain": "Knowledge/Understanding"
+                    },
+                    {
+                      "outcome_text": "perform the various jumping and throwing skills. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "follow the safety precautions before, during and after jumping and throwing activities in order to prevent injuries and damaging equipment. (s, v)",
+                      "domain": "Skills/Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In small groups, learners are guided to discuss and list the different categories of throwing events"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "The learners are guided by the teacher to use local materials and make improvised equipment that can be used for throwing activity."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Guide learners to practice activities involving single take-off, landing, strength in the legs, leap jumps"
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "In groups learners brainstorm on the safety measures involved in all throws; shot put, discus, javelin and hammer"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Demonstrate for the learners and give them time to practice the following skills of throwing; - 3 step approach in javelin throw - Standing shot in shot put - Standing throw in discuss"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In small groups, learners discuss and explain the basic rules, regulations followed in the four categories of throws"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Through explanation and demonstration guide earners to practice activities involving - holding the tip of a stick (about 1 foot long) between the fore finger and the thumb and throwing it over the shoulder to whirl in the air, - cross step run, - hopping and planting foot to throw objects, - acceleration runs, - strength in the arms, - hip twist (torque),"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Learners observe and practice various jumping and throwing fitness activities with a major objective of skill learning through fun."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Task learners select a category from jumping or throwing vents and design improvised equipment that can be used to perform that activity. Observe the learners performance taking note of the Generic skill of team work, creativity, innovation, numeracy; Focus on the task"
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Ask learners to explain their action and choices made"
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Product should be an improvised material made by a learner displayed and a record of the learners’ performance should be kept"
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "33"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 3",
+          "term_number": 3,
+          "themes":[
+            {
+              "theme_title": "Theory and Practice of Physical Education",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S2-T3-0007",
+                    "topic_title": "LEISURE AND RECREATION",
+                    "sequence_order": 7,
+                    "recommended_duration_periods": 4
+                  },
+                  "core_competency": "The learner understands the relation between leisure and recreation and illustrates the ways one can spend their leisure time without being idle and disorderly.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "know what leisure and recreation entails.(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "understand the various forms of activities that can be considered to either be for leisure and recreation. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "understand the factors which determine what people do during their leisure time.(u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "analyse the trend in engagement in leisure and recreation activities. (u, gs)",
+                      "domain": "Understanding/Generic Skills"
+                    },
+                    {
+                      "outcome_text": "set a personal leisure activity goal and strategies towards achieving it. (gs,v,a)",
+                      "domain": "Generic Skills/Values/Attitudes"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners work in small groups to recap on lessons learned about the meaning of ‘leisure time’, leisure and recreation."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners are supported to describe the activities they do during their leisure time and the factors that determine their choice of ‘activities’."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "As either a group or as a class activity, learners are guided to discuss trends of leisure and recreation activities in their community."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners are asked to carry out a survey of the recreational interests of members of their family or friends and then present it as a chart or display board."
+                    },
+                    {
+                      "activity_type": "Planning",
+                      "description": "Learners are supported to set personal goals, taking records of them in their diaries so as to guide their work towards them."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Presentation",
+                      "description": "Task learners to develop and present an article explaining the relevance of active leisure and recreation."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners and note the generic skills of teamwork, creativity critical thinking."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Engage learners in discussion on the choice of reasons included in the article to ascertain their understanding of the concepts in the task."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Product should be an article developed by the students with illustrations and reasons"
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 4,
+                    "unit": "periods",
+                    "source_page": "34"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses":[],
+                    "restrictions": []
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Games",
+              "theme_description": "",
+              "topics":[
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S2-T3-0008",
+                    "topic_title": "BASIC SKILLS IN HANDBALL",
+                    "sequence_order": 8,
+                    "recommended_duration_periods": 10
+                  },
+                  "core_competency": "The learner creates improvised equipment for Handball, performs basic skills in handball and applies the acquired skills in a game situation.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "make improvised equipment for Handball using local materials. (s, gs,v,a)",
+                      "domain": "Skills/Generic Skills/Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "execute basic skills used in Handball with application of the safety precautions. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "understand the skills, safety precautions and rules considered in the game of Handball. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "apply the basic skills of Handball in mini-game situations. (s,a)",
+                      "domain": "Skills/Attitudes"
+                    },
+                    {
+                      "outcome_text": "display aspects of teamwork, companionship, leadership, decision-making and judgment in relation to the game of Handball. (gs,s,v,a)",
+                      "domain": "Generic Skills/Skills/Values/Attitudes"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover":[],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small groups, leaners are guided to collect local materials and make improvised equipment for Handball (balls, goal posts) which can be used for practice."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In manageable groups, learners observe and practice basic handball skills such as: Catching, throwing/passing - chest pass, underarm pass, bounce pass, overhead pass - movement without and with the ball. - dribbling: single handed dribble, 3 step – stop - jump stop - stopping and feinting; Shooting and goal keeping - three step shot - double handed overhead shot - single handed over arm shot - penalty shot - jump shot; Goal keeping - catching, deflecting, blocking - low and high balls; Blocking - single and double block"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In small groups, using their prior interface with Handball, learners are guided to discuss the basic rules of Handball and related safety measures to be considered for a game."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In groups, learners form teams and are given a chance to use the acquired skills and techniques in game situations under the supervision of the teacher."
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Task learners to demonstrate any basic skill of Handball for example shooting. Observe the learners’ performance noting the execution of the skill i.e. grip, stance, release and follow through."
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Product should be a demonstration of the skill by the learner which can be recorded using a rubric or video clip where applicable."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "35"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "PE-O-S2-T3-0009",
+                    "topic_title": "BASIC SKILLS IN SOCCER",
+                    "sequence_order": 9,
+                    "recommended_duration_periods": 10
+                  },
+                  "core_competency": "The learner creates improvised equipment for Soccer, performs basic skills and applies the acquired skills in a game situation.",
+                  "prerequisites": [],
+                  "learning_outcomes":[
+                    {
+                      "outcome_text": "make improvised equipment for Soccer using local materials. (s, gs,v,a)",
+                      "domain": "Skills/Generic Skills/Values/Attitudes"
+                    },
+                    {
+                      "outcome_text": "execute basic skills used in Soccer with application of the safety precautions.(s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "understand the skills, safety precautions and rules considered in the game of Soccer. (u,a)",
+                      "domain": "Understanding/Attitudes"
+                    },
+                    {
+                      "outcome_text": "apply the basic skills of Soccer in mini-game situations. (s)",
+                      "domain": "Skills"
+                    },
+                    {
+                      "outcome_text": "display aspects of teamwork, companionship, leadership, decision-making and judgment in relation to the game of Soccer. (gs, s,v,a)",
+                      "domain": "Generic Skills/Skills/Values/Attitudes"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded":[],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities":[
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small groups, learners are guided to collect local materials and make improvised equipment for Soccer (balls, goal posts) which can be used for practice"
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "In small groups, learners observe and practice the following basic skills of soccer: - Kicking: Instep, inside of foot, outside of the foot, back heel, sole - Trapping/ball control: Sole of foot, inside of the foot, instep, thigh, chest - Passing: Loft, square pass Dribbling - In step and inside of foot, outside of the foot Basics of heading Shooting: - penalty shot, basic shot Goal keeping - Catching Throw-in - Standing throw-in, throw-in on the move."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "- In small groups, using their prior interface with Soccer, learners are guided in a discussion to explore the basic rules of Soccer and safety measures to be considered for the game."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "- In groups learners form teams and are given a chance to use the acquired skills and techniques in game situations under the supervision of the teacher"
+                    }
+                  ],
+                  "suggested_assessment_activities":[
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Task learners to demonstrate any basic skill of Soccer for example ball control. Observe the learners’ performance noting the execution of the skill i.e. stance, body position and follow through"
+                    },
+                    {
+                      "assessment_type": "Product",
+                      "description": "Product should be a demonstration of the skill by the learner which can be recorded using a rubric or video clip where applicable"
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals":[]
+                  },
+                  "investigative_skills":[],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "36"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions":[]
+                  },
+                  "syllabus_notes":[],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,650 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre",
+    "curriculum_name": "Uganda Advanced Certificate of Education",
+    "subject": "Kiswahili",
+    "level": "A-level",
+    "class_group": "Senior Six",
+    "year": "2013",
+    "version": "",
+    "source_document": "Volume 8: Kiswahili, Music"
+  },
+  "global_framework": {
+    "competencies": [
+      "kuingiza na kukuza umoja wa kitaifa na ufahamu wa uraia mwema na hisia za kuwajali binadamu wenzetu, kuheshimu mali ya umma, na pia kutambua uhusiano wa kimataifa na faida za ushirikiano wa kimataifa",
+      "kukuza upendo na ufahamu wa turathi(?) zetu za kitaifa, mkiwemo utamaduni na lugha zetu asili",
+      "kupasha na kusisitiza nidhamu ya kibinafsi, uadilifu na manufaa ya kiroho, uwajibikaji na ari ya kujituma",
+      "kumwezesha kila raia kupata na kukuza maarifa na ufahamu wa mahitaji ya jamii na uchumi wake",
+      "kumwezesha kila raia kupata na kukuza milisi zake za kusuluhisha migogoro, kujiarifu na kufasili habari, usomaji na uandikaji huriya, kujiboreshea hali na kujiendelezea uwezo wa [physical]? kimaumbile? na kiuongozi kupitia jitihada kama vile michezo, riadha, vyama na vilabu",
+      "kujenga misingi ya elimu ya viwango vya juu"
+    ],
+    "generic_skills": [
+      "kuwasiliana kwa Kiswahili fasaha katika fani mbalimbali",
+      "kutathmini fasihi kama sehemu muhimu ya lugha ya Kiswahili na kuelewa jinsi ya kuitumia katika maisha",
+      "kujenga tabia ya udadisi na ubunifu katika masuala ya lugha ya fasihi ya Kiswahili",
+      "kutumia lugha ya kisanii katika miktadha mbalimbali",
+      "kujenga tabia ya kujisomea maandiko mbalimbali",
+      "kutumia Kiswahili kupata maarifa, mwelekeo na stadi za kijamii, kitamaduni, kiteknolojia na kitaaluma kutoka nje na ndani ya nchi."
+    ],
+    "values": [],
+    "attitudes": [
+      "kuunda taluma za kihisia, kiutambuzi na kiamali",
+      "kuvutikia fasihi ya Kiswahili ili kuboresha ukomavu/ukwasi wa lugha, ujumi na ubunifu",
+      "kumhamasisha mwanafunzi kusoma kwa burudani ili kukuza taaluma mbalimbali za kusoma"
+    ],
+    "cross_cutting_issues": []
+  },
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "classes": [
+    {
+      "class_name": "Senior Six",
+      "class_code": "S6",
+      "terms": [
+        {
+          "term_name": "Kidato Cha Tano Na Cha Sita",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Kipengele: Nathari",
+              "theme_description": "Nathari ni maandishi ya kawaida yenye utajiri wa sanna za lugha kama vile lugha ya kimapambo, lugha ya kitamathali, mizani na mbinu nyinginezo. Kazi za nathari huwa kazi fupi lakini kuna kazi nyingi ndefu zinazotumia lugha ya nathari, kama vile riwaya.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "KIS-A-S6-T1-0001",
+                    "topic_title": "Sifa bainifu za nathari",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 150
+                  },
+                  "core_competency": "Kuchanganua, Kufasili Kinachosomwa, Kinachohisiwa Na Kinachodhaniwa",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "Kueleza hisia zake kwa ufasaha katika Kiswahili",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kueleza mbinu anazotumia mwandishi kudhihirisha dhamira zake",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kusoma, kuchanganua na kufasili matini",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kufurahia elimu pana iliyomo katika dondoo la matini",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuvutikia mabadiliko ya lahani katika makala",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuchunguza athari za mbinu za usimulizi",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kung’amua hisia za makala",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kutambua maswali yanayoibuka kutoka kwenye makala na kuyakadiria kwa makini",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuhusisha muktadha wa makala na utu kwa jumla",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuitikia jinsi waandishi wanavyotuathiri kwa kutumia usanii wa uandishi",
+                      "domain": ""
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Aina za nathari",
+                      "Mandhari",
+                      "Muundo",
+                      "Mada",
+                      "Maana",
+                      "Maudhui",
+                      "Kichwa",
+                      "Lugha",
+                      "Mtindo",
+                      "Mtazamo",
+                      "Lahani/toni",
+                      "Hisia",
+                      "Hulka/tabia",
+                      "Dhamira"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Reading",
+                      "description": "Kusoma kwa sauti/kimoyomoyo ili kufahamu"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Mijadala ya vikundi na uwasilishaji hadharani"
+                    },
+                    {
+                      "activity_type": "Exercise",
+                      "description": "Mazoezi ya ukuzaji wa msamiati"
+                    },
+                    {
+                      "activity_type": "Review",
+                      "description": "Uhakiki wa makala/matini zilizosomwa"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Utafiti"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "Uandishi wa kumbukumbu"
+                    }
+                  ],
+                  "suggested_assessment_activities": [],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": "Karatasi ya Kwanza : Nathari na Ushairi. Karatasi hii itakuwa na sehemu tatu, A, B, na C. Kila sehemu itachukua alama 33. Karatasi hii itatahiniwa kwa muda wa masaa matatu. Sehemu A itakuwa na matini ya nathari, pamoja na maswali ya ufahamu. Sehemu B itakuwa na matini moja au mbili za nathari. Maswali yatajikita hasa katika uchanganuzi wa matini, yakizingatia muundo, mtindo wa lugha na kusudio la matini."
+                  },
+                  "time_allocation": {
+                    "periods": 150,
+                    "unit": "periods",
+                    "source_page": "24"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "Tanbihi: Mwalimu anashauriwa afuate utaratibu uliopendekezwa hapo juu.",
+                      "note_type": "clarification",
+                      "source_page": "25"
+                    },
+                    {
+                      "text_verbatim": "Kwa upande wa nathari, mwalimu ana uhuru wa kutumia habari yoyote ya Kiswahili (sanifu) ambayo inazingatia lugha wastani, hadithi za kubuni na zisizo za kubuni zenye ukwasi wa lugha, habari zenye fani maalum kimaandishi, habari za majadiliano na za maelezo ya moja kwa moja.",
+                      "note_type": "examiner_hint",
+                      "source_page": "20"
+                    }
+                  ],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Kipengele: Ushairi",
+              "theme_description": "Ushairi mara nyingi hutumia lugha ya mkato kuashiria maana fiche, kuwasilisha ujumbe. Ushairi hutumia mbinu fulani kama vile balagha, dhihaka, dokezo, n.k.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "KIS-A-S6-T1-0002",
+                    "topic_title": "Uainishaji wa mashairi na Viambajengo vya ushairi",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 150
+                  },
+                  "core_competency": "Mwanafunzi aweze kuchambua na kuhakiki mashairi",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "Kufurahia usanii kama chombo cha: usimulizi, udhihirishaji wa hisia, ukaguzi wa mawazo, ufafanuzi na utafakari binafsi",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kufafanua na kueleza milio ya ushairi, mkiwemo: mdundo, vina, takriri, tanakali za sauti",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuhusisha sauti za ushairi na maana, toni na hisia",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kutambua uteuzi wa msamiati katika shairi",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuitikia taswira za ushairi na jinsi zinavyochangia kuleta maana na hisia",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kukagua jinsi muundo unavyochangia maana",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kutambua kwamba ushairi unaweza kuwa na maana wazi na maana fiche",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuitikia mandhari tofauti katika mashairi",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kufahamu aina na bahari mbalimbali za ushairi",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kutumua lugha wekevu na fasaha",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuvutikia mabadiliko ya toni, hisia na mitazamo katika shairi",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kutoa maoni na uamuzi kuhusu shairi husika",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuhamasishwa kutunga mashairi yake mwenyewe",
+                      "domain": ""
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Uainishaji wa mashairi",
+                      "(a) Aina: Tathnia, Tathlitha (utatu), Tarbia, Takhmisa, Tasdisa",
+                      "(b) Bahari za ushairi: Utenzi, Mtiririko, Ukara, Kikai, Msuko, Ngonjera, Malumbano",
+                      "Viambajengo vya ushairi: Mandhari, Sauti husika, Mada, Maana, Ujumbe, Mtindo, Umbo na muundo, Lahani/toni, Hisia, Mtazamo, Hulka/tabia, Dhamira"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Reading",
+                      "description": "Kusoma kimoyomoyo ili kufahamu"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Kujadili mada, umbo, muundo na matumizi ya lugha katika shairi"
+                    },
+                    {
+                      "activity_type": "Transformation",
+                      "description": "Kubadilisha shairi katika lugha ya nathari au tamthilia"
+                    },
+                    {
+                      "activity_type": "Performance",
+                      "description": "Kuigiza na kukariri shairi"
+                    },
+                    {
+                      "activity_type": "Creative",
+                      "description": "Kutunga mashairi"
+                    },
+                    {
+                      "activity_type": "Critique",
+                      "description": "Kuhakiki tungo zao wenyewe kwa wenyewe"
+                    }
+                  ],
+                  "suggested_assessment_activities": [],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": "Karatasi ya Kwanza : Nathari na Ushairi. Sehemu C itashughulikia ushairi. Mashairi ya kutahiniwa yatatolewa kutoka kwenye diwani mbili tofauti zilizoteuliwa na NCDC. Shairi moja au mawili yatateuliwa. Maswali kuhusu mashairi haya yatamwagiza mtahiniwa kudhihirisha ufahamu wake, kulinganisha tungo, muundo, maudhui, dhamira na matumizi ya lugha. Tanibihi: Mashairi lazima yawe ya lugha sanifu na yadondolewe kutoka diwani mbili zilizoteuliwa na NCDC."
+                  },
+                  "time_allocation": {
+                    "periods": 150,
+                    "unit": "periods",
+                    "source_page": "26"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "Tanbihi: Mwalimu anashauriwa afuate utaratibu uliopendekezwa hapo juu.",
+                      "note_type": "clarification",
+                      "source_page": "27"
+                    }
+                  ],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Kipengele: Tamthilia",
+              "theme_description": "Tamthilia au Michezo ya Kuigiza.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "KIS-A-S6-T1-0003",
+                    "topic_title": "Uchambuzi na Uhakiki wa Tamthilia",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 150
+                  },
+                  "core_competency": "Kuwezesha wanafunzi kuitikia mchango wa tamthilia katika ukomavu wao wa kiujumi na kihisia, kwa kukuza uwezo wao wa kubuni na kuhakiki",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "Kupokea maarifa ya kimatini kupitia kwa kusikiliza, kutazama na kukumbuka vitendo katika maonyesho mbalimbali",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuvutikia maonyesho ya hali mbalimbali na namna maneno ya mazungumzo yanavyosaidia kudhihirisha hali hii",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kutambua njia mbalimbali za kubainisha mhusika katika tamthilia.",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kubainisha uhusiano uliopo miongoni mwa wahusika katika tamthilia",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kutambua mabadiliko ya kihulka ya wahusika katika tamthilia",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuvutikia toni za wahusika mbalimbali katika mazungumzo",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuvutikia maudhui ya tamthilia",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kutambua migogoro katika tamthilia na kuweza kutoa uamuzi unaofaa",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kufanya uhakiki wa matukio",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kulinganisha matukio ya tamthilia na maisha halisi.",
+                      "domain": ""
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Tofauti kati ya tamthilia matini na tamthilia igizwa",
+                      "Uanishaji wa tamthilia: vichekesho, futuhi, tanzia, tanzia-futuhi",
+                      "Viambajengo vya tamthilia: Kichwa/anwani, Hadithi na ploti/msuko, Wahusika na uhusika, Maudhui, Mandhari: kimazingira, kihistoria na kijamii, Muundo, Mtindo",
+                      "Mbinu za uigizaji: Uzungumzaji kando, Maelekezo ya jukwaani, Usemaji kando, Kinaya, Kijembe, Kejeli, Nyimbo na viitikio, Taswira, Muundo, Usambamba wa maonyesho, Uzungumzaji nafsi, Ushairi na unathari katika tamthilia, Umulikaji jukwaani, Maleba, Hali ya hisia, Mazungumzo binafsi, Toni, Sauti, Mbinu rejeshi, Mapumziko, Majazi",
+                      "Uhusiano wa tamthilia na hali halisi ya maisha"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Performance",
+                      "description": "Uigizaji wa baadhi ya madondoo kutoka kwenye tamthilia husika"
+                    },
+                    {
+                      "activity_type": "Reading",
+                      "description": "Usomaji halisi wa matini"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Mjadala"
+                    },
+                    {
+                      "activity_type": "Visual",
+                      "description": "Matumizi ya michoro, chati na majedwali"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "Kuandika mihtasari ya vitendo, maonyesho na migao"
+                    },
+                    {
+                      "activity_type": "Creative",
+                      "description": "Kutunga shairi kutokana na dondoo la matini husika"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "Kuandika kumbukumbu za matini"
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Utafiti"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "Uandishi wa insha kutokana na tamthilia"
+                    }
+                  ],
+                  "suggested_assessment_activities": [],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": "Karatasi ya Pili: Tamthilia. Karatasi hii itakuwa na sehemu nne, A, B, C na D, na itadumu masaa matatu. Sehemu ya A itahusisha tamthilia mbili mwanana za Kiswahili. Sehemu za B, C na D zitakuwa na tamthilia mbilimbili kila sehemu. Maswali ya muktadha au chopoleo yatatungwa kutoka sehemu moja tu ya karatasi hii. Mwanafunzi atahitajiwa kujibu swali moja kutoka sehemu hii. Maswali mawili ya insha yatatungwa kutoka kila tamthilia katika sehemu zilizosalia. Kila swali la insha litachukuwa alama 33, na swali la muktadha litapewa 34. Karatasi nzima itachukuwa alama 100."
+                  },
+                  "time_allocation": {
+                    "periods": 150,
+                    "unit": "periods",
+                    "source_page": "28"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [
+                    {
+                      "text_verbatim": "Tanbihi: Mwalimu anashauriwa afuate utaratibu uliopendekezwa hapo juu.",
+                      "note_type": "clarification",
+                      "source_page": "29"
+                    }
+                  ],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Kipengele: Riwaya",
+              "theme_description": "Riwaya na Hadithi Fupi.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "KIS-A-S6-T1-0004",
+                    "topic_title": "Uchambuzi na Uhakiki wa Riwaya",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 150
+                  },
+                  "core_competency": "Mwanafunzi awe na uwezo wa kukagua nyanja mbalimbali za tajriba za binadamu na aweze kujiamini na kujithamini yeye mwenyewe pamoja na wengine.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "Kuvutiwa na ufahamu wa ndani wa usimulizi",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kukumbuka wahusika na mtiririko wa hadithi",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuvutikia kilele na usuluhishi wa mgogoro",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kung’amua hali mbalimbali za hisia katika riwaya",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kutambua usawiri wa wahusika katika riwaya",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kufafanua maudhui katika riwaya",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kufuatilia mabadiliko ya wahusika kwenye riwaya",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kufafanua maudhui ya riwaya",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kubainisha sababu za matukio mbalimbali riwayani",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kubashiri matukio",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kuhusisha matukio ya riwaya na hali halisi ya maisha",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "Kutaja msimamo wake kuhusu riwaya husika",
+                      "domain": ""
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Vipengele vya riwaya: Kichwa/anwani, Mandhari, Vitukio (Ploti)/msuko, Wahusika na usawiri wao, Muundo, Maudhui",
+                      "Mbinu za usimulizi: Mtazamo, Mbinu rejeshi, Ndoto, Nyimbo, Utabiri/ubashiri, Mkondo wa dhana, Mtazamo wa njozi (kifantasia), Mjadala, Mgogoro, Ufafanuzi",
+                      "Mtindo wa lugha: Taswira, Ujazanda, Udokezi, Kinaya, Chuku (balagha), Kishairi, Tashbihi, Tashhisi, Taharuki, Majazi"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Reading",
+                      "description": "Kusoma matini"
+                    },
+                    {
+                      "activity_type": "Performance",
+                      "description": "Uigizaji wa madondoo"
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Majadiliano na uwasilishaji katika makundi"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "Mihtasari ya sehemu mbalimbali za riwaya husika"
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Midahalo ya makundi"
+                    },
+                    {
+                      "activity_type": "Visual",
+                      "description": "Uchoraji wa picha na vibonzo"
+                    },
+                    {
+                      "activity_type": "Creative",
+                      "description": "Utunzi wa mchezo na shairi kutokana na dondoo la matini husika"
+                    },
+                    {
+                      "activity_type": "Performance",
+                      "description": "Uigizaji"
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "Uandishi wa kubuni kwa mfano: barua, magazeti na makala mbalimbali"
+                    }
+                  ],
+                  "suggested_assessment_activities": [],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": "Karatasi ya Tatu: Riwaya. Karatasi hii itakuwa na sehemu nne, A, B, C na D, na itadumu masaa matatu. Sehemu ya A itahusisha riwaya mbili mwanana za Kiswahili. Sehemu za B, C na D zitakuwa na riwaya mbili kila sehemu. Maswali ya muktadha au chopoleo yatatungwa kutoka sehemu moja tu ya karatasi hii. Maswali mawili ya insha yatatungwa kutoka kila riwaya katika sehemu zilizosalia. Kila swali la insha litachukuwa alama 33, na swali la muktadha litachukua alama 34. Karatasi nzima itachukuwa alama 100."
+                  },
+                  "time_allocation": {
+                    "periods": 150,
+                    "unit": "periods",
+                    "source_page": "30"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

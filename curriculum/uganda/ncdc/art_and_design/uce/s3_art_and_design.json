@@ -1,0 +1,1501 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Art and Design",
+        "level": "Lower Secondary",
+        "class_group": "Senior Three",
+        "year": "2019",
+        "version": "1",
+        "source_document": "Art and Design Syllabus"
+    },
+    "global_framework": {
+        "competencies": [
+            "Self-assured individuals",
+            "Responsible and patriotic citizens",
+            "Lifelong learners",
+            "Positive contributors to society"
+        ],
+        "generic_skills": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Communication",
+            "Co-operation and Self-Directed Learning",
+            "Mathematical computation and ICT proficiency"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [
+            "Positive attitude to work",
+            "Self-esteem",
+            "Conscientiousness"
+        ],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Three",
+            "class_code": "S3",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Art Theory",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-O-S3-T1-0001",
+                                        "topic_title": "TOPIC 3.1: EXPLORING THE CULTURAL ENVIRONMENT",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 10,
+                                        "keywords": [
+                                            "cultural environment",
+                                            "art elements",
+                                            "composition",
+                                            "still-life",
+                                            "painting techniques",
+                                            "self-expression",
+                                            "cezanne",
+                                            "picasso"
+                                        ]
+                                    },
+                                    "core_competency": "The learner uses the cultural environment to create artworks and communicate messages, ideas.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "use the elements and principles art to create artworks. (s, u)",
+                                            "domain": "Skills, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "explore imaginative ways to develop compositions in response to the cultural environment (k, s, u)",
+                                            "domain": "Knowledge, Skills, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "Appreciate the cultural environment in the making of works (k,u)",
+                                            "domain": "Knowledge, Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Elements of form, value, colour and balance and movement",
+                                            "Still-life compositions",
+                                            "Painting and drawing techniques",
+                                            "Cultural environment themes"
+                                        ],
+                                        "optional_enrichment": [
+                                            "Recommended artists: Cezanne, Picasso, Van Gogh, Giorgio Morandi, and Leonardo da Vinci"
+                                        ],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "As a class, learners discuss the artistic elements of form, value, colour and balance and movement as viewed from a range of paintings by famous artists for inspiration. Recommended artists: Cezanne, Picasso, Van Gogh, Giorgio Morandi, and Leonardo da Vinci"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Individually learners work from still-life compositions, to produce a drawing or painting based on clear study of form, value, colour and balance."
+                                        },
+                                        {
+                                            "activity_type": "Experimentation",
+                                            "description": "Individually, learners experiment with a range of painting and drawing techniques and materials (water colours, powder colours, acrylics, crayons, coloured pencils)"
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "Individually, learners base their drawings/paintings on the cultural environment to set themes of their work."
+                                        },
+                                        {
+                                            "activity_type": "Project",
+                                            "description": "Learners create a final large artwork based on the ideas developed during the previous activity and present this to the class. This piece should reflect the individual's personal response to their cultural environment and be an act of self- expression as opposed to a technical study."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the responses of individual learners during group discussions for evidence of understanding."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess each learner's, creative working process, expression of ideas and level of experimentation during activities and the finished products."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "Learners create a final large artwork based on the ideas developed during the previous activity and present this to the class.",
+                                        "deliverables_verbatim": "This piece should reflect the individual's personal response to their cultural environment and be an act of self- expression as opposed to a technical study.",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "38"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 10,
+                                        "unit": "periods",
+                                        "source_page": "38"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Graphic Design",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-O-S3-T1-0002",
+                                        "topic_title": "TOPIC 3.2: BRAND IDENTITY SYMBOLS",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "brand identity",
+                                            "logos",
+                                            "emblems",
+                                            "trademarks",
+                                            "monochrome",
+                                            "fonts",
+                                            "design process"
+                                        ]
+                                    },
+                                    "core_competency": "The learner creates and develops identification symbols relating to a given theme.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "examine the concepts, practices, process and vocabulary associated with the production of identification symbols(k, u)",
+                                            "domain": "Knowledge, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "apply a combination of key elements and principles of design when creating identification symbols (k, s, u)",
+                                            "domain": "Knowledge, Skills, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "use graphic skills to analyse the use of principles in designing identification symbols (k, u)",
+                                            "domain": "Knowledge, Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Brand identity symbols (logos, badges, emblems, trade marks)",
+                                            "Local and international symbols",
+                                            "Design process: sketching, editing, transfer",
+                                            "Monochrome and limited colours"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "As a class, learners research about and collect different brand identity symbols (logos, badges, emblems and trade marks) regarding their design and use."
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "In groups or individually learners analyse the key aspects of the local and international recognised identification symbols e.g. Coca Cola, Pepsi, McDonalds, Red cross, Bell beer, shell etc) analyse some of the elements of their design (colour/"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Individually, learners follow the process of making an identification symbol based on a theme, in both monochrome and limited colours."
+                                        },
+                                        {
+                                            "activity_type": "Experimentation",
+                                            "description": "Learners experiment with different colours/fonts and consider design elements observed in their previous research."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "Learners make and produce their ideas of identification symbols in a final design."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Process Assessment",
+                                            "description": "Analyse the design process followed: sketching, editing, transfer of ideas."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": ". Assess the learner's use of key design elements, use of colour and neatness of the product."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "39"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "In groups or individually learners analyse the key aspects of the local and international recognised identification symbols e.g. Coca Cola, Pepsi, McDonalds, Red cross, Bell beer, shell etc) analyse some of the elements of their design (colour/",
+                                            "note_type": "clarification",
+                                            "source_page": "39"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-O-S3-T1-0003",
+                                        "topic_title": "TOPIC 3.3: POSTER DESIGNING",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "poster design",
+                                            "layout",
+                                            "typography",
+                                            "imagery",
+                                            "symbols",
+                                            "visual communication",
+                                            "advertising"
+                                        ]
+                                    },
+                                    "core_competency": "The learner applies knowledge and skills of graphic design to create posters.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "examine the concepts, practices, process and vocabulary associated with the principles of graphic design in poster making (k, u)",
+                                            "domain": "Knowledge, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "Use a combination of key elements and principles when Posters (k, s, u)",
+                                            "domain": "Knowledge, Skills, Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Poster layout, fonts, images, clarity",
+                                            "Interrelationship of images and symbols",
+                                            "Internationally recognised symbols",
+                                            "Key factors in posters (imagery, text, logo, colour)"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Study/Discussion",
+                                            "description": "As a class, learners study and discuss examples of posters from different sources regarding lay out, choice of fonts, images, and clarity of message."
+                                        },
+                                        {
+                                            "activity_type": "Examination",
+                                            "description": "In pairs, learners examine the concept , practices, and vocabulary associated with poster making"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "As a class, leaner's discuss the interrelationship of images and symbols to take the place of words, and consider the effect of illustrations in relation to text."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "In small groups, learners discuss the effective use of internationally recognised symbols in the locality ( door labeling for washrooms, road signs, zebra crossings, no smoking signs etc)"
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "In groups, learners discuss and list the common key factors in the posters, e.g. use of strong, appropriate and memorable imagery, clear and effective use of text, addition of a recognised logo, eye-catching colour, tells a story/sells a lifestyle, clarity."
+                                        },
+                                        {
+                                            "activity_type": "Design",
+                                            "description": "Using their knowledge of effective poster design, learners individually design their own work, advertising a real product, service or event using limited number of colours."
+                                        },
+                                        {
+                                            "activity_type": "Creation (ICT/Manual)",
+                                            "description": "The poster could be entirely planned and created on the computer, hand drawn/coloured or a combination of different media."
+                                        },
+                                        {
+                                            "activity_type": "Critique",
+                                            "description": "The completed posters are displayed around the classroom and critiqued by fellow learners."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners' responses to questions during group discussions for evidence of understanding of elements of design."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "observe the images collected by learners to determine if they have understood the key elements of effective poster making."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess the learners' working process and finished product to determine their success in using the key elements of design y to their own work."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "40"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "The poster could be entirely planned and created on the computer"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Three-Dimensional Arts",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-O-S3-T1-0004",
+                                        "topic_title": "TOPIC 3.4 : POTTERY",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "pottery",
+                                            "ceramics",
+                                            "slab method",
+                                            "slip",
+                                            "clay",
+                                            "decoration",
+                                            "incisions"
+                                        ]
+                                    },
+                                    "core_competency": "The learner uses clay to form ceramic artworks.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Understand and follow the process of creating ceramic products (k, u)",
+                                            "domain": "Knowledge, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "apply theory and skill of producing ceramic products(k,s,u)",
+                                            "domain": "Knowledge, Skills, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "use a variety of ideas and techniques to further develop the skill of forming pottery(u,s)",
+                                            "domain": "Understanding, Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Slab method in pottery",
+                                            "Forming slabs and slip",
+                                            "Joining slabs",
+                                            "Decoration (incisions or additions)",
+                                            "Finishing"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In pairs or small groups, learners research about the method of slab in the production of pottery, regarding its possibilities and limitations."
+                                        },
+                                        {
+                                            "activity_type": "Design",
+                                            "description": "Individually, learners develop drawings and sketches for pottery production using slab method"
+                                        },
+                                        {
+                                            "activity_type": "Preparation",
+                                            "description": "Individually, learners make use of the sketches to form slabs and slip to be used in the production of their articles."
+                                        },
+                                        {
+                                            "activity_type": "Fabrication",
+                                            "description": "Individually, learners create a pot by joining slabs. The slip is used to fix the joints which could be enhanced with coils from the inner sides."
+                                        },
+                                        {
+                                            "activity_type": "Decoration",
+                                            "description": "Learners create a finishing by decorating the surface of their pottery by either incisions or additions of decorative patters."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Research Assessment",
+                                            "description": "Examine the research done by learner on the materials to be used and its appropriateness."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess each learner's technical skills, in forming the pottery articles, the production process, and a finished product."
+                                        },
+                                        {
+                                            "assessment_type": "Criteria",
+                                            "description": "Elements to assess include: weight, balance, size, surface appearance."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "41"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Textile Decoration and Printmaking",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-O-S3-T2-0001",
+                                        "topic_title": "TOPIC 3.5: TECHNIQUES IN FABRIC DECORATION",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "fabric decoration",
+                                            "tie-dye",
+                                            "printing",
+                                            "batik",
+                                            "motifs",
+                                            "patterns",
+                                            "safety"
+                                        ]
+                                    },
+                                    "core_competency": "The learner applies ideas, knowledge and skills of fabric decorations to create art",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "investigate the traditional and contemporary fabric decorations and adapt them to create fabric art (k, u)",
+                                            "domain": "Knowledge, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "experiment with various materials and tools, techniques and processes to produce fabric designs (s, k, u,)",
+                                            "domain": "Skills, Knowledge, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "apply safety and health practices associated with the use of materials, tools and technologies in making of fabric designs (k, u, s)",
+                                            "domain": "Knowledge, Understanding, Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Traditional and contemporary fabric decorations (tie-dye, printing, batik)",
+                                            "Motif design (patterns, design elements)",
+                                            "Material selection (tie and dye, screen printing, blocks)",
+                                            "Printing/Dying process",
+                                            "Finishing techniques",
+                                            "Health and safety measures"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "In pairs or small groups, learners investigate traditional and contemporary approaches to fabric decoration in the local area and elsewhere in Uganda (e.g. tie-dye, printing, batik)."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "As a class, or, in groups, learners research as they study the natural and material environment for inspiration of designs."
+                                        },
+                                        {
+                                            "activity_type": "Design",
+                                            "description": "Individually learners make sketches in their sketchbooks, developing design motifs based on their sources of inspiration. (patterns, use of design elements)"
+                                        },
+                                        {
+                                            "activity_type": "Selection",
+                                            "description": "Select the technique to determine material use (tie and dye, screen printing, blocks)"
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "exploring elements and principles of design, in the creation of motif designs in preparation for printing/dying."
+                                        },
+                                        {
+                                            "activity_type": "Preparation",
+                                            "description": "Individually, learners prepare the ground /cloth for printing (treating the background to suit printing applications."
+                                        },
+                                        {
+                                            "activity_type": "Execution",
+                                            "description": "Transfer the design according to the technique applied, (e.g. dying the fabric to create effects before printing on it)"
+                                        },
+                                        {
+                                            "activity_type": "Finishing",
+                                            "description": "Finishing the artwork with the necessary finishing techniques (untying for tie and dye, ironing/hot pressing to remove folds and crease."
+                                        },
+                                        {
+                                            "activity_type": "Safety Demonstration",
+                                            "description": "Learners demonstrate the purpose of health and safety measures while handling tools, equipment and materials in the studio (e.g. demonstrating workplace behavior and using appropriate precautions when handling sharp tools or hazardous materials)."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Research Assessment",
+                                            "description": "Examine the quality and accuracy of the research each learner presents."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners' use of planning and design as a preparation to execute artistic work."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Engage learners in conversation individually to explain their choices and processes of design- making to assess their creativity."
+                                        },
+                                        {
+                                            "assessment_type": "Critique",
+                                            "description": "Critique the product produced to objectively assess the use of key elements and understanding of processes."
+                                        },
+                                        {
+                                            "assessment_type": "Safety Assessment",
+                                            "description": "Observe if the learners are working safely and using appropriate precautions."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "42"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Drawing and Painting",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-O-S3-T2-0002",
+                                        "topic_title": "TOPIC 3.6 : STUDY OF THE HUMAN FIGURE",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 10,
+                                        "keywords": [
+                                            "human figure",
+                                            "proportions",
+                                            "anatomy",
+                                            "postures",
+                                            "drapery",
+                                            "sketching",
+                                            "tone"
+                                        ]
+                                    },
+                                    "core_competency": "The learner presents the human figure drawings.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Understand the formation of human body in different postures. (k, u)",
+                                            "domain": "Knowledge, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "experiment with various materials and tools, techniques and processes to produce drawings of a human figure (s, k, u,)",
+                                            "domain": "Skills, Knowledge, Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Proportions of human figure (relation to head length)",
+                                            "Body structure (anatomy), gender, age",
+                                            "Postures",
+                                            "Drapery and tone",
+                                            "Tools: pencils, coloured pencils, charcoal, drawing pens"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Study",
+                                            "description": "In pairs or small groups, learners study the proportions of a human figure (the size of a human figure in relation to its head length.)"
+                                        },
+                                        {
+                                            "activity_type": "Study/Drawing",
+                                            "description": "As a class, or, in groups, learners study and draw parts of the human figure focusing on body structure (anatomy) depending on gender, age."
+                                        },
+                                        {
+                                            "activity_type": "Sketching",
+                                            "description": "Individually learners make sketches studied from different postures, using line drawing."
+                                        },
+                                        {
+                                            "activity_type": "Study",
+                                            "description": "Individually, learners study tone considering drapery in relation to body structure."
+                                        },
+                                        {
+                                            "activity_type": "Experimentation",
+                                            "description": "Experimenting with different drawing tools e.g. pencils, coloured pencils, charcoal, drawing pens)"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners' use of planning in terms of sketch, and drawing from observation"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess the product learners use line to capture the posture and proportions, use of tones to capture body structure and drapery."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "Assess the use of drawing tools to capture a living human being."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 10,
+                                        "unit": "periods",
+                                        "source_page": "43"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Graphic Design",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-O-S3-T2-0003",
+                                        "topic_title": "TOPIC 3.7 : PRODUCT AND PACKAGING DESIGN",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "packaging design",
+                                            "product design",
+                                            "labeling",
+                                            "layout",
+                                            "prototype",
+                                            "brief"
+                                        ]
+                                    },
+                                    "core_competency": "The learner creates products and packaging designs.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Understand the concepts and techniques of designing packaging and product designs (k, s, u)",
+                                            "domain": "Knowledge, Skills, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "apply elements and principles of design to create labels and package designs.(k,u,s)",
+                                            "domain": "Knowledge, Understanding, Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Labeling of products",
+                                            "Layout and design elements",
+                                            "Packaging requirements",
+                                            "Prototype development"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research/Discussion",
+                                            "description": "In pairs or small groups, learners research and discuss about different labeling of products from various sources regarding the lay out, and use of the design elements and principles."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "In groups, learners discuss and identify the requirements for designing labels and packaging."
+                                        },
+                                        {
+                                            "activity_type": "Design",
+                                            "description": "Individually learners develop sketches based on a given theme for a given product and or packaging design."
+                                        },
+                                        {
+                                            "activity_type": "Development",
+                                            "description": "Individually learners develop personal ideas to suit a given product design and or packaging designs following a brief."
+                                        },
+                                        {
+                                            "activity_type": "Prototyping",
+                                            "description": "Learners develop a prototype of a given design to suit its design requirements."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Research Assessment",
+                                            "description": "Examine the quality and accuracy of the research to suit the production of a required product."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess each learner's technical skills, creative working process and Step by step production of a design up to the last product."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "44"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Three-Dimensional Arts",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-O-S3-T2-0004",
+                                        "topic_title": "TOPIC 3.8 : RELIEF SCULPTURE",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 16,
+                                        "keywords": [
+                                            "relief sculpture",
+                                            "clay",
+                                            "intaglio",
+                                            "high relief",
+                                            "low relief",
+                                            "size",
+                                            "depth"
+                                        ]
+                                    },
+                                    "core_competency": "The learner uses clay to form relief sculpture.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Explore the concept, classification and practices of relief sculpture",
+                                            "domain": "Knowledge, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "Use clay in the production of relief sculpture (k, u, s)",
+                                            "domain": "Knowledge, Understanding, Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Types of relief: Intaglio/sunken, Low relief, High relief",
+                                            "Historical development (Egypt, Greece, Rome)",
+                                            "Clay preparation (slabs)",
+                                            "Principles: size and depth"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In small groups, learners research about the historical development of relief sculpture as a style (intaglio-in ancient Egypt, high relief in ancient Greece, low relief in ancient Rome) developing a vocabulary related to relief sculpture."
+                                        },
+                                        {
+                                            "activity_type": "Preparation",
+                                            "description": "Individually or in groups, learners prepare clay and slabs in preparation for the relief work production."
+                                        },
+                                        {
+                                            "activity_type": "Design",
+                                            "description": "Individually, learners develop sketches in relation to a given subject matter suitable for a relief work."
+                                        },
+                                        {
+                                            "activity_type": "Fabrication",
+                                            "description": "Learners follow the two guiding principles of: size and depth to formulate their relief work in the following categories: i. Intaglio/sunken relief ii.Low relief iii.High relief"
+                                        },
+                                        {
+                                            "activity_type": "Maintenance",
+                                            "description": "Learners develop un understanding of keeping their work in progress covered to avoid warping, hardening, and breaking."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Research Assessment",
+                                            "description": "Observe the research to check accuracy of facts presented by learners during their research."
+                                        },
+                                        {
+                                            "assessment_type": "Process Assessment",
+                                            "description": "observe the required plasticity of clay, the neatness of working environment and storage facilities for the work."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess the finished product for originality and use of the two guiding principles of size and depth."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 16,
+                                        "unit": "periods",
+                                        "source_page": "45"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Drawing and Painting",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-O-S3-T3-0001",
+                                        "topic_title": "TOPIC 3.9: DRAWING FROM LANDSCAPE",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "landscape",
+                                            "perspective",
+                                            "linear perspective",
+                                            "aerial perspective",
+                                            "varnishing point",
+                                            "depth",
+                                            "tonal effect"
+                                        ]
+                                    },
+                                    "core_competency": "The learner draws and paints depicting the rule of perspective.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Understand the illusion of perspective in drawing and painting.",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "Experiment with materials and processes, tools and techniques to create the illusion of depth in an art work. (k,u,s)",
+                                            "domain": "Knowledge, Understanding, Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Linear perspective (one point, two-point)",
+                                            "Eye level and vanishing points",
+                                            "Aerial/atmospheric perspective",
+                                            "Tonal effects (black and white, colours)"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "As a class, learners discuss the concept of perspective, regarding definition, types and purpose."
+                                        },
+                                        {
+                                            "activity_type": "Practice",
+                                            "description": "Individually, learners practice the concept of linear perspective by focusing on 'one point and two-point perspective'. Working on an imaginary line of the eye level and the varnishing points."
+                                        },
+                                        {
+                                            "activity_type": "Drawing/Painting",
+                                            "description": "Draw or paint pictures depicting architecture and the natural setting where lines diminish to a varnishing point on the horizon."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "Create a simple landscape that shows aerial perspective and use of values of black and white to create a tonal effect."
+                                        },
+                                        {
+                                            "activity_type": "Painting",
+                                            "description": "Make a painting depicting a natural scenery and occurrence of aerial or atmospheric perspective, which makes colours look pale as they merge into the distance."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe class discussions to ensure members participation and collaboration and discipline."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess each learner's work regarding the application of the principle of perspective."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "46"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Three-Dimensional Arts",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-O-S3-T3-0002",
+                                        "topic_title": "TOPIC 3.10: CARVING",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 14,
+                                        "keywords": [
+                                            "carving",
+                                            "subtractive technique",
+                                            "sculpture",
+                                            "materials",
+                                            "tools",
+                                            "relief carving",
+                                            "texture"
+                                        ]
+                                    },
+                                    "core_competency": "The learner applies knowledge and skills acquired to create a sculpture through carving.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Understand the concepts of carving as a subtractive technique in sculpture (k, u)",
+                                            "domain": "Knowledge, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "experiment with materials and processes, tools and techniques to create sculpture (s, u)",
+                                            "domain": "Skills, Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Carving as subtractive technique",
+                                            "Difference between carving and modeling",
+                                            "Materials and tools",
+                                            "Relief carving",
+                                            "Safe use of tools"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In pairs or small groups, learners research to find examples of carving from a range of cultures, time periods and materials and tools used."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "As a class, learners discuss the technique of carving and the major distinction between carving and modeling."
+                                        },
+                                        {
+                                            "activity_type": "Sketching",
+                                            "description": "Individually, learners make sketches of intended work to be carved based on a given theme, or subject matter for a relief carving."
+                                        },
+                                        {
+                                            "activity_type": "Carving",
+                                            "description": "Learners transfer their design onto the surface of the tile/block and begin work on their carving. Learners should be encouraged to draw ideas from their research and use a range of carving techniques to create different effects and textures in the surface."
+                                        },
+                                        {
+                                            "activity_type": "Safety Demonstration",
+                                            "description": "Learners practice and demonstrate the safe use of tools in the carving process."
+                                        },
+                                        {
+                                            "activity_type": "Documentation",
+                                            "description": "Learners write up the process of carving a given material into a sculpture explaining the process and challenges met."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Research Assessment",
+                                            "description": "Examine the quality and accuracy of the research each learner presents and their contribution to their group/pair."
+                                        },
+                                        {
+                                            "assessment_type": "Questioning",
+                                            "description": "In the group discussion, question the individual learners to assess their understanding of process of carving."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess each learner's technical skills and creative working process by examining the finished carving and written product."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 14,
+                                        "unit": "periods",
+                                        "source_page": "47"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Art Theory",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-O-S3-T3-0003",
+                                        "topic_title": "TOPIC 3.11: RENAISSANCE ART",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 6,
+                                        "keywords": [
+                                            "renaissance art",
+                                            "leonardo da vinci",
+                                            "michelangelo",
+                                            "raphael",
+                                            "titian",
+                                            "chiaroscuro",
+                                            "sfumato",
+                                            "perspective"
+                                        ]
+                                    },
+                                    "core_competency": "The learner critically examines, interprets, and evaluates Renaissance art.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "examine Renaissance art from a social and cultural context (k, u)",
+                                            "domain": "Knowledge, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "explore concepts and language associated with art of the Renaissance period, while investigating the style of Renaissance art (u, k)",
+                                            "domain": "Understanding, Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "evaluate the characteristics of the works of the prominent artists of the Renaissance period (k,u)",
+                                            "domain": "Knowledge, Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Key personalities: Leonardo da Vinci, Michelangelo, Raphael, and Titian",
+                                            "High renaissance period",
+                                            "Developments in painting, drawings, sculpture, and architecture",
+                                            "Influence of scientific discoveries",
+                                            "Techniques: chiaroscuro and Sfumato, perspective"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "In pairs, learners investigate the concept and period, identifying the key dates, places of renaissance art."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "In groups, learners discuss and identify key personalities of the renaissance period focusing on the following: Leonardo da Vinci, Michelangelo, Raphael, and Titian'."
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "As a class, learners analyse important developments in painting, drawings, sculpture, and architecture with a focus on high renaissance period."
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In groups , learners research on the influence of the scientific discoveries on renaissance art."
+                                        },
+                                        {
+                                            "activity_type": "Practical/Technique",
+                                            "description": "Individually, learners create a landscape using techniques of shading and perspective basing on the technique of 'chiaroscuro and Sfumato' as in the paintings of Leonardo Da Vinci and Raphael."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Research Assessment",
+                                            "description": "Assess learners research, examine their notes and check for accuracy of information regarding renaissance period."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the responses of individual learners during group discussions/ conversations for evidence of understanding, knowledge and appropriate technical language."
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Examine the quality of the learner work presented in their written product."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 6,
+                                        "unit": "periods",
+                                        "source_page": "48"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ART-O-S3-T3-0004",
+                                        "topic_title": "TOPIC 3.12: WEST AND CENTRAL AFRICAN ART",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 10,
+                                        "keywords": [
+                                            "west african art",
+                                            "central african art",
+                                            "cultural influence",
+                                            "sculpture",
+                                            "pottery",
+                                            "tribal art"
+                                        ]
+                                    },
+                                    "core_competency": "The learner appreciates the Art of the West and Central Africa.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Examine elements and principles of design used in West and Central African art. (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "interpret a variety of historical and/or contemporary art works of West and Central Africa (k, u)",
+                                            "domain": "Knowledge, Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "Analyse ways in which various artworks reflect the society in which they were created (u)",
+                                            "domain": "Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Elements and principles in West/Central African art",
+                                            "Subject matter, purpose, meanings",
+                                            "Historical and contemporary artworks",
+                                            "Cultural/tribal influences",
+                                            "Sculpture and pottery"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "In pairs or small groups, learners research and identify elements and principles of design used to make artworks in West and Central African art (e.g. identify the nature of the art, the subject matter and purpose and the meanings they convey)."
+                                        },
+                                        {
+                                            "activity_type": "Analysis/Discussion",
+                                            "description": "As a class, learners analyse a range of historical and contemporary artworks from West and Central Africa. Discuss the similarities and differences, and cultural/tribal influences on the art."
+                                        },
+                                        {
+                                            "activity_type": "Comparison",
+                                            "description": "As a class, learners compare and contrast West and Central African art with art studied in previous units to gain an understanding of how artworks reflect the society in which they were created."
+                                        },
+                                        {
+                                            "activity_type": "Writing/Analysis",
+                                            "description": "Individually, learners make a write up analyzing the art of sculpture and pottery in either west or central Africa. The information given should include the style, material, tools and purpose of the piece."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe individual learner's participation in group activities: how he/she interacts and relates effectively with others and demonstrates an understanding of teamwork and collaboration."
+                                        },
+                                        {
+                                            "assessment_type": "Research Assessment",
+                                            "description": "Observe students during their research, examine their notes and check for accuracy and vivid examples given."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 10,
+                                        "unit": "periods",
+                                        "source_page": "49"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

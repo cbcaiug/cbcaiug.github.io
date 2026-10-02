@@ -1,0 +1,961 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre",
+        "curriculum_name": "Advanced Level Secondary Curriculum",
+        "subject": "General Paper",
+        "level": "A-level",
+        "class_group": "Senior Five",
+        "year": "2025",
+        "version": "1.0",
+        "source_document": "General Paper Syllabus"
+    },
+    "global_framework": {
+        "competencies": [
+            {
+                "text_verbatim": "The learner communicates effectively using appropriate media for different target audiences to be understood.",
+                "source_page": "20"
+            },
+            {
+                "text_verbatim": "The learner demonstrates appreciation of different language categories, policies, and different literature forms in the local community by applying them to come up with write-ups using appropriate styles.",
+                "source_page": "22"
+            },
+            {
+                "text_verbatim": "The learner produces an extended essay in relation to a given situation identified in their immediate community by applying relevant knowledge to address community challenges.",
+                "source_page": "24"
+            },
+            {
+                "text_verbatim": "The learner supports evidence-based decision making through collecting, analysing, interpreting and communicating data using a range of media to solve societal problems.",
+                "source_page": "28"
+            }
+        ],
+        "generic_skills": [
+            {
+                "text_verbatim": "Critical thinking and problem-solving",
+                "source_page": "11"
+            },
+            {
+                "text_verbatim": "Co-operation and Self-Directed Learning",
+                "source_page": "11"
+            },
+            {
+                "text_verbatim": "Creativity and Innovation",
+                "source_page": "11"
+            },
+            {
+                "text_verbatim": "Communication",
+                "source_page": "11"
+            },
+            {
+                "text_verbatim": "Mathematical Computation",
+                "source_page": "11"
+            },
+            {
+                "text_verbatim": "Information and Communication Technology (ICT) Proficiency",
+                "source_page": "11"
+            },
+            {
+                "text_verbatim": "Diversity and Multicultural Skills",
+                "source_page": "11"
+            }
+        ],
+        "values": [
+            {
+                "text_verbatim": "Respect for humanity and the environment",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "Honesty, uphold and defend the truth at all times",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "Justice and dealing with others",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "Hard work for self-reliance",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "Integrity, moral uprightness, and sound character",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "Creativity and innovation",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "Social responsibility",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "Social harmony",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "National unity",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "National consciousness and patriotism",
+                "source_page": "12"
+            }
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            {
+                "text_verbatim": "Environmental awareness",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "Health awareness",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "Life skills",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "Mixed abilities and involvement",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "Socio-economic challenges",
+                "source_page": "12"
+            },
+            {
+                "text_verbatim": "Citizenship and patriotism",
+                "source_page": "12"
+            }
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Five",
+            "class_code": "S5",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Communication",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GP-A-S5-T1-0001",
+                                        "topic_title": "Communication",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 33
+                                    },
+                                    "core_competency": "The learner communicates effectively using appropriate media for different target audiences to be understood.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "convey relevant information effectively by applying it to a given scenario. (s, gs)",
+                                            "domain": "skills",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "outcome_text": "analyse the value of media in promoting effective communication in contemporary society. (u, s, gs)",
+                                            "domain": "understanding",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "outcome_text": "apply skills of communication and relevant content to argue cases in given contexts. (s, gs)",
+                                            "domain": "skills",
+                                            "source_page": "21"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "Learners share their experiences about communication and note down.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "Learners discuss the purpose of effective communication and share in plenary.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "Learners, in groups, select a scenario and write a speech, poem, skit, or story in prose form or song.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "Learners present their speeches, poems, skits, or stories in prose form or songs as other groups critique, focusing on the following features: i) Non-verbal ii) Verbal - register - jargon - style - context",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "Learners research the different types of media used to communicate in contemporary society and, in groups, share their findings.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "Learners, in groups, discuss and note down the value of media in society.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "activity_type": "Plenary",
+                                            "description": "Learners, in a plenary, expound on the role of media in society.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "activity_type": "Group Activity",
+                                            "description": "Learners, in groups, come up with motions from the different research topics in the syllabus and search for information to be used for debate.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "activity_type": "Individual Activity",
+                                            "description": "Learners, individually, prepare texts targeting specific audiences and, present them to the rest of the class.",
+                                            "source_page": "21"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they discuss communication and look out for: i) How they convey ideas. ii) Their ability to listen to one another. iii) Their ability to appreciate contributions from one another.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "assessment_type": "Observation/Interaction",
+                                            "description": "Interact with learners as they discuss to ensure that they focus on and properly bring out the following: i) Non-verbal ii) Verbal • register • jargon • style • context",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess the speeches, poems, skits, or stories in prose form, or songs made by learners in the different groups and check the learners' ability to express themselves effectively, focusing on: i) Non-verbal ii) Verbal • register • jargon • style • context",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they share about the different types of media used in contemporary society.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Relate with the learners as they share about the value and role of media in society and take note of the use of vocabulary and expression.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess the learners as they present the role of media in society and take note of how the register/diction and style resonate with the context.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they present the different motions from the different research topics in the syllabus.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Dialogue with the leaners as they discuss and use arguments in debates to check on effective communication.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess the learners' texts as regards register, diction, style, jargon, and context.",
+                                            "source_page": "21"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 33,
+                                        "unit": "periods",
+                                        "source_page": "20"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Language and Literature",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GP-A-S5-T2-0001",
+                                        "topic_title": "Language and Literature",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 27
+                                    },
+                                    "core_competency": "The learner demonstrates appreciation of different language categories, policies, and different literature forms in the local community by applying them to come up with write-ups using appropriate styles.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the area, indigenous, first, second, and foreign language as used in their community. (k, u)",
+                                            "domain": "knowledge",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "outcome_text": "appreciate the different forms of literature (in the indigenous and foreign languages) used in specific circumstances. (u, s, gs)",
+                                            "domain": "understanding",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "outcome_text": "apply different styles and diction in a given context. (u, s, gs)",
+                                            "domain": "skills",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "outcome_text": "understand language policies on official, national language, and language in education used within our country. (k, u, s, v)",
+                                            "domain": "knowledge",
+                                            "source_page": "24"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "Learners, in groups, search from library/online/resource persons about the following language categories: i) Area ii) Indigenous iii) first iv) Second v) Foreign",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "activity_type": "Group Analysis",
+                                            "description": "Learners, in their groups, analyse the differences between: i) Area ii) Indigenous iii) First iv) Second v) Foreign language",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "activity_type": "Plenary",
+                                            "description": "Learners, in a plenary, present their findings and critique each other's work on: i) Area ii) Indigenous iii) First iv) Second v) Foreign language",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "activity_type": "Individual Activity",
+                                            "description": "Learners, individually, write an essay on the differences in: i) Area ii) Indigenous iii) First iv) Second v) Foreign language",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "Learners research and share the different forms of literature used in specified circumstances.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "activity_type": "Group Reading",
+                                            "description": "Learners, in groups, read texts on different forms of literature as they analyse the circumstances under which each form is written and used.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "activity_type": "Debate",
+                                            "description": "Learners debate on the best form of literature that can be used for a specific purpose.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "activity_type": "Group Deliberation",
+                                            "description": "Learners, in groups, deliberate on: i) different styles used in writing. ii) how they can be achieved. iii) factors influencing style in writing. iv) register.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "activity_type": "Group Activity",
+                                            "description": "Learners, in groups, use chosen texts to discuss different aspects of style in each text as they note down: i) factors influencing style in writing. ii) effectiveness of the style used in the given text. iii) register/diction.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "Learners present their findings to the entire class as the rest write down their observations and use them to critique the presentations.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "activity_type": "Pair Work",
+                                            "description": "Learners form pairs, and examine the tenets of: i) official language. ii) national language. iii) language used in education as one of them writes down their responses.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "activity_type": "Debate",
+                                            "description": "Learners, in groups, debate on official, national language and language in education, as the group secretary writes down the summary of their points for presentation.",
+                                            "source_page": "24"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners' ability to retrieve and share information on the characteristics of area, first, indigenous, second and foreign languages.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Probe learners to gauge their ability to differentiate between area, first, indigenous, second and foreign languages.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Critique the learners' presentations and essays in relation to the meaning of: i) Area ii) Indigenous iii) First iv) Second v) Foreign language",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners to ascertain their ability to interact and use evaluative questions to discuss the different forms of literature.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Probe learners to contribute during the discussion and to critique each other's views.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess the debate for the arguments put forward in regard to: i) choice of genre ii) suitability of text for the circumstance iii) presentation skills",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they discuss and document the various aspects of the style used in writing, focusing on: genre, diction, context.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "assessment_type": "Interaction",
+                                            "description": "Interact with learners to ensure that they focus their discussions on the chosen aspects of style.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Evaluate the presentations in relation to the chosen aspects of style in writing.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners to ascertain their ability to work together and come up with the difference in the language categories.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Interact with the learners to generate more responses as they critique each other's views.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess the learners' presentations with emphasis on: i) criteria of choice for official and national language. ii) language in education.",
+                                            "source_page": "24"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 27,
+                                        "unit": "periods",
+                                        "source_page": "22"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GP-A-S5-T2-0002",
+                                        "topic_title": "Extended Essay Writing",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 27
+                                    },
+                                    "core_competency": "The learner produces an extended essay in relation to a given situation identified in their immediate community by applying relevant knowledge to address community challenges.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "comprehend the structure of an Extended Essay and the purpose. (u, s)",
+                                            "domain": "understanding",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "outcome_text": "generate topic ideas from a scenario that can be addressed through Extended Essay writing. (u, s, gs, v)",
+                                            "domain": "skills",
+                                            "source_page": "25"
+                                        },
+                                        {
+                                            "outcome_text": "comprehend information relevant to their topic. (u, s, gs)",
+                                            "domain": "understanding",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "outcome_text": "apply relevant literature appropriately into their work. (u, s, gs)",
+                                            "domain": "skills",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "outcome_text": "demonstrate an understanding of research questions for their essay, based on existing information. (k, u, s, v/a)",
+                                            "domain": "knowledge",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "outcome_text": "develop an introduction, body, and conclusion related to their research questions. (k, u, s, v/a).",
+                                            "domain": "skills",
+                                            "source_page": "27"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Discussion",
+                                            "description": "Learners discuss what an Extended Essay is and its structure (main sections of the Extended Essay).",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "activity_type": "Group Activity",
+                                            "description": "In groups, learners prepare a brief write-up, highlighting the significance of each of the sections of the Extended Essay.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "In small groups, learners discuss each other's write-ups on the sections of the Extended Essay, and the importance of each section.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "activity_type": "Peer Feedback",
+                                            "description": "Learners provide constructive feedback to each other's presentations.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "In groups, learners discuss the challenges faced by their immediate society that could become potential topics for their Extended Essay writing. The topics can fall into any of the categories (human rights, education, economics, globalisation, agriculture, science and technology, historical perspective, politics, and governance).",
+                                            "source_page": "25"
+                                        },
+                                        {
+                                            "activity_type": "Class Discussion",
+                                            "description": "Learners discuss as a class, the problems that affect their immediate society, and make notes.",
+                                            "source_page": "25"
+                                        },
+                                        {
+                                            "activity_type": "Group Activity",
+                                            "description": "Learners, in groups, discuss the problems identified in their society, categorise them based on the topical areas in the syllabus, and present them to the rest of the class for feedback.",
+                                            "source_page": "25"
+                                        },
+                                        {
+                                            "activity_type": "Individual Activity",
+                                            "description": "Learners, individually, write a preliminary topic idea and present their ideas in the plenary or share with classmates for feedback and refining.",
+                                            "source_page": "25"
+                                        },
+                                        {
+                                            "activity_type": "Small Group Discussion",
+                                            "description": "In small groups, learners discuss each other's topic ideas and provide constructive feedback.",
+                                            "source_page": "25"
+                                        },
+                                        {
+                                            "activity_type": "Group Research",
+                                            "description": "Learners, in groups, search and generate sources that have relevant information for their topics and make notes.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Individual Research",
+                                            "description": "Learners, individually, read a variety of texts about their topics, extract the relevant information, and summarise it for presentation to their group members.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Group Analysis",
+                                            "description": "Learners, in groups, analyse different texts to establish how literature is directly quoted or paraphrased to be integrated into writing (as would be used in their essays).",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Group Activity",
+                                            "description": "Learners, in groups, construct sample references and bibliographies for some of the quoted sources according to the version of the referencing system (APA, MLA) chosen.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Case Study",
+                                            "description": "Through a case study, guide learners to analyse a sample Extended Essay to identify its research question and how it was developed.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Guided Activity",
+                                            "description": "Guide learners to carry out preparatory reading about their chosen topic to enable them draft research questions based on their selected topic.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Individual/Group Activity",
+                                            "description": "In groups or individually, learners draft their research questions based on their chosen topics.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Peer Review",
+                                            "description": "Learners present their research questions to their classmates for discussion and feedback for further improvement.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Guided Writing",
+                                            "description": "Guide learners to write an introduction, body, and conclusion with an argument and evidence (citation).",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Group Writing",
+                                            "description": "In pairs or small groups, give learners a task to collaboratively write sample introduction, body, and conclusion sections for each other's research questions.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Individual Compilation",
+                                            "description": "Learners, individually, compile reference and bibliography lists of the sources used in their work for submission.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "Allow the learners to present different sections to the rest of the class for discussion and feedback.",
+                                            "source_page": "27"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners' ability to identify the three main sections of an Extended Essay; introduction, body, and conclusion.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Guide learners to put their ideas in writing for the understanding of whoever reads their submission.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners' ability to provide constructive feedback to their peers' work.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they discuss problems that affect society, to ascertain their ability to identify the actual problem.",
+                                            "source_page": "25"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Probe the learners about: i) problems that affect society in general. ii) their areas of interest. iii) problems that emanate from topics to be covered according to the syllabus. iv) correctness of the facts. v) how the work will benefit the community.",
+                                            "source_page": "25"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess the learners' ideas and their ability to provide and receive positive feedback about their work.",
+                                            "source_page": "25"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they scrutinise the various sources of information, paying attention to how they locate sources that will yield relevant information for different topics, including: • books. • websites. • experts.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners as they respond to each other's presentation, focusing on: • the correctness of the retrieved information. • whether the information resonates with their guiding questions. • correct construction of references and bibliographies. • the sample tools developed by the groups. • tools selected by individual learners.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners' ability to identify credible sources of academic information from those that are not.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess the submissions for: i) relevance of the sources identified. ii) detailed information garnered for their topics. iii) the correctness of the references and bibliographies they have constructed.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "During conversations with the learners, guide them to make their research questions more focused and specific.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "During presentations, emphasise the need to give positive feedback on each other's work, and guide one another on how best to improve their work.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe how learners are collaborating and supporting one another to write the introduction, body and conclusion sections based on their respective research questions.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners' ability to express their ideas clearly through writing and oral presentation, with a clear logical presentation of reasoning (argument).",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess the learners' presentation for; clarity and ability to sustain coherency between the sections of the essay, and keep focused on the research question.",
+                                            "source_page": "27"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "In General Paper, the learner will be required to prepare an Extended Essay as the project in this subject. This project will introduce the learner to academic research and the development of writing skills on a topic of the learner's choice.",
+                                        "deliverables_verbatim": "The learner identifies a problem to work with and at the end writes an Extended Essay.",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "13"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 27,
+                                        "unit": "periods",
+                                        "source_page": "24"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Data Collection and Analysis",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GP-A-S5-T3-0001",
+                                        "topic_title": "Data Collection and Analysis",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 18
+                                    },
+                                    "core_competency": "The learner supports evidence-based decision making through collecting, analysing, interpreting and communicating data using a range of media to solve societal problems.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "analyse appropriate methods for data collection in relation to their area of research. (u, s, gs)",
+                                            "domain": "skills",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "outcome_text": "develop sample tools for data collection in their area of research. (k, u, s, gs)",
+                                            "domain": "skills",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "outcome_text": "establish how best they can present data for their topics. (u, s, gs)",
+                                            "domain": "skills",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "outcome_text": "understand mathematical and statistical concepts used in data presentation. (u, s, gs, v, a)",
+                                            "domain": "understanding",
+                                            "source_page": "29"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "Learners, in groups, discuss and generate methods of collecting data such as: i) questionnaires. ii) interviews. iii) focused group discussions.",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "activity_type": "Individual Research",
+                                            "description": "Learners, individually, research about the best methods that can be used to collect data from the field for their topics and make notes justifying their choices.",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "activity_type": "Plenary",
+                                            "description": "Learners, in a plenary, share their group findings as they evaluate each other's selected methods.",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "activity_type": "Group Activity",
+                                            "description": "Learners, in groups, construct sample tools for the established methods of data collection.",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "activity_type": "Individual Activity",
+                                            "description": "Learners, individually, choose tools for their selected methods of data collection.",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "activity_type": "Plenary",
+                                            "description": "Learners, in a plenary, share about the various ways of presenting data in their extended essays.",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "activity_type": "Group Activity",
+                                            "description": "Learners, in groups, categorise data presentations for different topics.",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "activity_type": "Individual Activity",
+                                            "description": "Learners, individually, choose the most appropriate methods of data presentation that they will use in their extended essays.",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "activity_type": "Group Research",
+                                            "description": "Learners, in groups, research on mathematical and statistical concepts focusing on: i) computation ii) mensuration iii) conversions iv) tabulation v) percentile",
+                                            "source_page": "29"
+                                        },
+                                        {
+                                            "activity_type": "Group Activity",
+                                            "description": "Learners, in groups, categorise data presentations for the different types of studies.",
+                                            "source_page": "29"
+                                        },
+                                        {
+                                            "activity_type": "Individual Activity",
+                                            "description": "Learners, individually, choose the most appropriate methods for data presentation that they will use in their extended essay.",
+                                            "source_page": "29"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners as they interact and share the methods of data collection.",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Probe the learners on the most appropriate methods that they can use for particular research.",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess the submissions for appropriateness of the: i) selected methods of data collection. ii) sample tools developed by the groups. iii) methods of data presentation to be used in their Extended Essays.",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they research the selected mathematical and statistical concepts.",
+                                            "source_page": "29"
+                                        },
+                                        {
+                                            "assessment_type": "Interaction",
+                                            "description": "Interact with the learners as they categorise data presentations for the different types of study using: i) computation ii) mensuration iii) conversions iv) tabulation v) percentile",
+                                            "source_page": "29"
+                                        },
+                                        {
+                                            "assessment_type": "Product Assessment",
+                                            "description": "Assess their choices of the most appropriate methods of presentations for different types of studies.",
+                                            "source_page": "29"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 18,
+                                        "unit": "periods",
+                                        "source_page": "28"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

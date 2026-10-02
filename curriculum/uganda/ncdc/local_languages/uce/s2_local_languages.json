@@ -1,0 +1,1467 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum - Local Languages",
+        "subject": "Local Languages",
+        "level": "Lower Secondary",
+        "class_group": "Senior Two",
+        "year": "2019",
+        "version": "1.0",
+        "source_document": "Local Languages Learning Framework.pdf"
+    },
+    "global_framework": {
+        "competencies": [],
+        "generic_skills": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Co-operation and Self-Directed Learning",
+            "Communication",
+            "Mathematical computation and ICT proficiency"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Two",
+            "class_code": "S2",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Strand: Public",
+                            "theme_description": "Focus on growth, development, peer pressure and school environment.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S2-T1-0001",
+                                        "topic_title": "2.1 Establishing and Managing Relationships",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 14,
+                                        "keywords": [
+                                            "adolescence",
+                                            "peer pressure",
+                                            "relationships",
+                                            "growth",
+                                            "drug abuse",
+                                            "diary",
+                                            "dialogue",
+                                            "persuasion",
+                                            "changes"
+                                        ]
+                                    },
+                                    "core_competency": "The learner knows about growth and development in adolescents and the management of peer pressure.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "describe changes experienced during adolescence and their effects on the person (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "use verbs (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "identify challenges of peer pressures and how to manage them (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "know the impacts of peer pressure on young people in decision-making. (k,u, v/a)",
+                                            "domain": "k, u, v/a"
+                                        },
+                                        {
+                                            "outcome_text": "identify dangers of drug abuse, e.g. alcohol, marijuana, “weed”, cigarettes (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "use appropriate vocabulary to overcome challenges associated with peer influence (k, u, s, gs).",
+                                            "domain": "k, u, s, gs"
+                                        },
+                                        {
+                                            "outcome_text": "explain what a diary is (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "state why keeping a diary is important (k, u, v)",
+                                            "domain": "k, u, v"
+                                        },
+                                        {
+                                            "outcome_text": "mention what to keep in a diary and how (k, u).",
+                                            "domain": "k, u"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "using prior knowledge, teacher guides learners to brainstorm on what adolescence is and the age at which it begins."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners outline the biological changes experienced during adolescence."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "learners discuss the effects of those changes on girls and boys in their groups."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to identify specific terms related to adolescence and their equivalents in their local language."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners translate a text on adolescence from English to their local language (quarter page)."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to understand a verb."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, learners list the verbs they know and use them to construct sentences."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the leaners identify and use key verbs that describe biological changes during adolescence."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the teacher probes learners to identify who peers are citing examples."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "in their groups, leaners discuss challenges in managing relationships among young people."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "leaners perform a dialogue on persuasion and resistance to peer pressure."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners share the impact of peer pressure."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the teacher prompts learners to give their personal judgements on the impact of peer pressure."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners read and respond to texts relating to peer influence."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners write their personal experience on the effects of peer pressure."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "the teacher guides leaners to brainstorm on what drug abuse is."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, the leaners name drugs that are abused locally and their effects."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the leaners answer questions from a dictated passage about drug abuse."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, leaners write a short article for the local media explaining dangers of drug abuse."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the teacher groups leaners and provides them with passages/pictures relating to peer influence for them to interpret."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners translate a passage about drug abuse from English into local language."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "through a role-play, learners express their views clearly and coherently."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "through question and answer, teacher guides leaners to brainstorm on what a diary is."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, learners study a sample diary provided by the teacher."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "learners discuss the features/format of a diary."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "in their groups, the leaners brainstorm on the type of information to keep in a diary."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "the learners brainstorm on the advantages and disadvantages of keeping a diary."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the teacher probes leaners to identify how people in the past kept their information."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the teacher tasks learners to fill out a hypothetical diary for a week using appropriate tense."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "listens to a conversation and notes down perspectives on peer influence."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "describes orally their experiences in managing peer pressure."
+                                        },
+                                        {
+                                            "assessment_type": "Discussion",
+                                            "description": "discusses the dangers of drug abuse."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a letter to a friend advising them against drug abuse giving reasons."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "lists five verbs related to growth, maturation and relationships."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a persuasive dialogue on how one can resist peer pressure."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "reads a passage on dangers of drug abuse and answers the questions accordingly."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "translates a one-paragraph text on drug abuse or peer influence."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes one-passage essay on the effects of drug abuse."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes an expository essay on the advantages and disadvantage of keeping a diary."
+                                        },
+                                        {
+                                            "assessment_type": "Debate",
+                                            "description": "debates on why diary is not popular."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "designs a diary for a particular period such as a school term, etc."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes an argumentative composition comparing traditional ways to the modern ways of storing information."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 14,
+                                        "unit": "periods",
+                                        "source_page": "26"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use electronic devices to record information in the diary.",
+                                            "watch a movie on the effects of good/bad peer influence."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S2-T1-0002",
+                                        "topic_title": "2.2 School Environment",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 16,
+                                        "keywords": [
+                                            "school",
+                                            "environment",
+                                            "composition",
+                                            "adverbs",
+                                            "news",
+                                            "strikes",
+                                            "rules",
+                                            "forms",
+                                            "routine"
+                                        ]
+                                    },
+                                    "core_competency": "The learner uses language related to wellbeing in the school environment.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "describe the school environment (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "write a descriptive composition (k, u, s).",
+                                            "domain": "k, u, s"
+                                        },
+                                        {
+                                            "outcome_text": "differentiate types of schools (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "use adverbs (k, u, s).",
+                                            "domain": "k, u, s"
+                                        },
+                                        {
+                                            "outcome_text": "appreciate school routines (v, a).",
+                                            "domain": "v, a"
+                                        },
+                                        {
+                                            "outcome_text": "explain what news is (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "identify various sources of news and how to extract it (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "present news on different platforms (s).",
+                                            "domain": "s"
+                                        },
+                                        {
+                                            "outcome_text": "fill in forms, identity cards and so on (s, gs).",
+                                            "domain": "s, gs"
+                                        },
+                                        {
+                                            "outcome_text": "understand the importance of school rules (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "identify the types and causes of strikes in schools (k, u).",
+                                            "domain": "k, u"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "teacher probes learners to brainstorm on what environment is."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, learners list ten things found at school."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners name five different categories of people found at school."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners name different places at school."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the teacher tasks learners to draw a map of their school and locate different places on it."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides a sample descriptive text."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to identify elements/principles/characteristics of a descriptive text from the sample."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners write a composition of 150 words describing the school environment."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "through question and answer, the teacher guides the learner to outline the types of schools that are common in Uganda."
+                                        },
+                                        {
+                                            "activity_type": "Group Analysis",
+                                            "description": "in their groups learners analyse what differentiates the schools/ different curricula."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher probes leaners to explain what an adverb is."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "leaners identify adverbs from a text provided by the teacher."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "leaners construct sentences using given adverbs."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher probes leaners to narrate what happens in a normal school day."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "in groups, learners discuss different programmes that take place in the school and their rationale."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the learners interpret school schedules/lists and tables, for example a timetable."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides leaners to draw a class routine chart."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners are tasked to fill in important events on a class calendar."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher probes learners to explain what news is."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups learners identify the different ways in which news is delivered in their community."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "the learners mention/talk about their favourite news presenters on both radio/tv and the time of broadcast."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "in their groups, learners discuss qualities/characteristics of a good news reader/format of a good news article."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners listen to news on a radio broadcast."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners read a news article extracted from one of the local dailies."
+                                        },
+                                        {
+                                            "activity_type": "Project",
+                                            "description": "as project work the learners are tasked to gather news for the school newspaper/newsletter."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "teacher groups learners and asks them to study sample forms and other official documents."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to analyse and extract key information from the sample forms and other official documents."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, the learners fill in the forms and other official documents as guided by the teacher."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher probes learners to explain what “rules” are."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups teacher guides learners to reflect and discuss examples of rules in their family/community."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "learners outline rules in their school in their groups."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "teachers brainstorm with learners the importance of family/social rules."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "in groups, learners discuss the importance of school rules."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners present the outcomes of their discussion in a plenary."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "teachers and learners brainstorm the meaning of strikes."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to identify types of strikes. (sit-down, hunger strikes, demonstrations, laydown tools)."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners study a text/article on strikes and identify the causes."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, learners analyse the causes of strikes in schools."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "learners discuss advantages and disadvantages of strikes at school in their groups."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners suggest how strikes can be avoided."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners prepare a persuasive speech to discourage others from striking."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "learners deliver their speeches in a plenary."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "draws a sketch map of a school showing the locations of different places."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "identifies adverbs from a given text."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a brief essay explaining why they like the news presenter they have selected."
+                                        },
+                                        {
+                                            "assessment_type": "Presentation",
+                                            "description": "presents news (relating to school and community) to the class/school assembly."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a persuasive speech discouraging others from striking."
+                                        },
+                                        {
+                                            "assessment_type": "Debate",
+                                            "description": "debates on the impacts of strikes."
+                                        },
+                                        {
+                                            "assessment_type": "Role Play",
+                                            "description": "assumes the role of a school representative and gives a speech on the causes and impacts of school strikes."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "as project work the learners are tasked to gather news for the school newspaper/newsletter.",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "28"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 16,
+                                        "unit": "periods",
+                                        "source_page": "27"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use a camera to take pictures of the school environment.",
+                                            "use the Internet to study about school strikes, and obtain images about objects and areas around the school to scupper class discussions.",
+                                            "use a computer to prepare a news item."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Strand: Public",
+                            "theme_description": "Focus on behaviour in public places and traditional naming ceremonies.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S2-T2-0001",
+                                        "topic_title": "2.3 Public Places",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 14,
+                                        "keywords": [
+                                            "public places",
+                                            "market",
+                                            "hospital",
+                                            "buying",
+                                            "selling",
+                                            "dialogue",
+                                            "tenses",
+                                            "customer care",
+                                            "dress codes"
+                                        ]
+                                    },
+                                    "core_competency": "The learner understands appropriate behaviour and language used in public places.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "acquire appropriate vocabulary concerning public places such as shops, markets and hospitals (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "explain activities pertaining to buying and selling (k, u, v, a, gs).",
+                                            "domain": "k, u, v, a, gs"
+                                        },
+                                        {
+                                            "outcome_text": "write a dialogue (s).",
+                                            "domain": "s"
+                                        },
+                                        {
+                                            "outcome_text": "use tenses (k, u, s).",
+                                            "domain": "k, u, s"
+                                        },
+                                        {
+                                            "outcome_text": "describe activities in hospitals (as public places) using appropriate vocabulary and punctuation (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "develop customer care skills and marketing skills (gs).",
+                                            "domain": "gs"
+                                        },
+                                        {
+                                            "outcome_text": "recognise dress codes for different public places (v, a, gs).",
+                                            "domain": "v, a, gs"
+                                        },
+                                        {
+                                            "outcome_text": "describe an incident witnessed in a public place (k, u, s).",
+                                            "domain": "k, u, s"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "the teacher asks learners to study a map extract of a local trading centre or town."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to interpret the map extract and guides them to identify specific public places."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "leaners read a text provided by the teacher on public places."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners identify specific words used in different public places."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners construct sentences using the words they have identified (in 4 above)."
+                                        },
+                                        {
+                                            "activity_type": "Field Trip",
+                                            "description": "learners make a visit to a nearby trading centre and interact with the community."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to interpret public signs and notices."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "learners roleplay a bargain for a commodity during a transaction in a market."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners identify the appropriate negotiation and persuasion skills, phrases and sentences in marketing or buying a commodity."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "teacher groups learners and tasks them to act a transaction."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "learners study a sample dialogue in groups."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to write a conversation of one page (8-10 pairs) on an activity between a buyer and seller carried out in a market/shop."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "learners act a telephone conversation as the teacher observes."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners respond to an exercise on a telephone conversation."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides learners with a sample text with varied tenses."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides the learners to identify all the different tenses in the text and their tense markers."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners write sentences in different tenses. (present, past and future)."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "teacher groups learners and tasks them to identify, draw and name five objects found in hospital."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners name five categories of people found in the hospital and their roles."
+                                        },
+                                        {
+                                            "activity_type": "Pair Work",
+                                            "description": "teacher pairs learners and tasks them to engage in a telephone conversation between a patient and doctor."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners as they demonstrate conversation etiquette."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "teacher brainstorms with learners on what attracts them to buy certain items on the market."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners share their personal experiences."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides a text containing different products for learners to choose an item/product and try to convince customer to buy it."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "in pairs, learners role play/dramatise number (3) above."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners write an advert to market an item/product as guided by the teacher."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners make an exhibition of the products."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "respond to news on a market survey and answer questions related to it."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "listen to a radio advert on an item."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to identify different professions that have specific dress codes."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "learners brainstorm on the rationale for the dress codes."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners describe how a person working in any one public building/location should dress."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides an oral or written account of a real or imaginary incident witnessed in a local centre, for instance, a fistfight, an accident or a theft for learners to study."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "in plenary leaners vividly describe an incident, such as a fight, or an accident they witnessed."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners produce well-structured pieces of writing of one page, which clearly express an argument or specific viewpoint using a wide range of language related to public places."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "identifies types of public places and describes activities carried out in them."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a composition of 100-150 words about an experience in any one public place."
+                                        },
+                                        {
+                                            "assessment_type": "Role Play",
+                                            "description": "role-plays the interaction between a buyer and seller in a marketplace."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a conversation between a doctor and patient of about one page."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "listens and responds to a radio advert on a product and answers related questions (the advert can be recorded or read to the class)."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a composition of 200 words giving a first or second-hand account of an incident."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 14,
+                                        "unit": "periods",
+                                        "source_page": "29"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use a camera to take pictures of public places, local signposts and images to support classroom discussions.",
+                                            "use an online Geographical Information System (GIS) to obtain an insight in the plan, map interpretation and location."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S2-T2-0002",
+                                        "topic_title": "2.4 Traditional Ceremonies: Naming",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 12,
+                                        "keywords": [
+                                            "naming",
+                                            "baptism",
+                                            "rituals",
+                                            "names",
+                                            "meanings",
+                                            "surnames",
+                                            "clans",
+                                            "totems",
+                                            "invitation",
+                                            "beliefs"
+                                        ]
+                                    },
+                                    "core_competency": "The learner appreciates traditions and rituals of baptism and naming.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "explain how (ways in which) people acquire names (k, u, v, a).",
+                                            "domain": "k, u, v, a"
+                                        },
+                                        {
+                                            "outcome_text": "use key vocabulary applicable to baptismal/ aqeeqah and naming activities. (u, k)",
+                                            "domain": "u, k"
+                                        },
+                                        {
+                                            "outcome_text": "state the importance of rituals associated with baptismal/ aqeeqah and naming ceremonies. (u, v/a)",
+                                            "domain": "u, v/a"
+                                        },
+                                        {
+                                            "outcome_text": "understand how nouns and verbs are formed.",
+                                            "domain": ""
+                                        },
+                                        {
+                                            "outcome_text": "identify the values of bearing a name that reflects ones’ origin. (u, v, a)",
+                                            "domain": "u, v, a"
+                                        },
+                                        {
+                                            "outcome_text": "identify songs related to naming (k, u).",
+                                            "domain": "k, u"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners talk about the meanings of their names."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "teacher brainstorms with learners on how and when children are named."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners describe different ways in which children/people acquire names."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups, learners explain situations that induce people to give names to their children."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to list and categorise names according to situations of naming."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in their groups learners identify surnames with masculine and feminine equivalents. (e.g. Ngobi vs Nangobi- Lusoga, Oketcho vs Nyaketcho– Dhopadhola)"
+                                        },
+                                        {
+                                            "activity_type": "Project",
+                                            "description": "as project work, learners collect twenty surnames and investigate their meanings and origins."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a text on baptism."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to identify and discuss key vocabularies used in the text."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners use vocabularies identified to construct sentences (god-father, god-mother, overcoming Satan, sprinkling water, candle, etc.)"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to describe a naming ceremony they ever attended."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners identify the different rituals associated with naming."
+                                        },
+                                        {
+                                            "activity_type": "Group Analysis",
+                                            "description": "in their groups, learners analyse the importance of the rituals identified above."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides leaners to identify five proverbs associated with naming."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners recap the meanings of noun and verb with examples."
+                                        },
+                                        {
+                                            "activity_type": "Demonstration",
+                                            "description": "using appropriate examples, teacher demonstrates to learners how nouns and verbs are formed."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners study a text on noun and verb formation and respond to questions on the text."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher gives a list of names from different ethnic groups, religions and clans and asks for learners’ opinion."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "learners brainstorm on the values/importance of names."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to point out at least two levels of identity associated with names."
+                                        },
+                                        {
+                                            "activity_type": "Performance",
+                                            "description": "teacher sings a song related to naming."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners to explain the subject and purpose of the song."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups learners identify other examples of naming songs and perform them."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "reads a text and responds to questions on baptism /aqeeqah and naming."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "states five names of personal significance (e.g. names of members of his/her family) and describes the circumstances surrounding their meanings/ origins."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "states a name that he/she would love to give to his/her child and gives reasons."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "compiles a list of proverbs associated with names in his/her culture."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "collects and writes various naming/ baptismal songs in his/her culture."
+                                        },
+                                        {
+                                            "assessment_type": "Performance",
+                                            "description": "composes and performs a song related to naming."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "as project work, learners collect twenty surnames and investigate their meanings and origins.",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "31"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 12,
+                                        "unit": "periods",
+                                        "source_page": "31"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "listen or watch recordings of traditional naming ceremonies."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Strand: Occupational",
+                            "theme_description": "Focus on careers, professions, and job application skills.",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "LL-O-S2-T3-0001",
+                                        "topic_title": "2.5 Occupations and Careers",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 16,
+                                        "keywords": [
+                                            "professions",
+                                            "careers",
+                                            "occupations",
+                                            "cv",
+                                            "application letter",
+                                            "apology letter",
+                                            "comedy",
+                                            "dress code",
+                                            "interview"
+                                        ]
+                                    },
+                                    "core_competency": "The learner understands different occupations, professions and careers and their related terminologies.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "identify the the various professions in the world of work (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "identify terminologies used in the different professions and occupations (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "identify different places of work for the various professions /occupations (k, u).",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "appreciate the dress code for the different professions (v, a, gs).",
+                                            "domain": "v, a, gs"
+                                        },
+                                        {
+                                            "outcome_text": "write a CV (s, gs)",
+                                            "domain": "s, gs"
+                                        },
+                                        {
+                                            "outcome_text": "write an application letter (s, gs).",
+                                            "domain": "s, gs"
+                                        },
+                                        {
+                                            "outcome_text": "write an apology letter (s, gs)",
+                                            "domain": "s, gs"
+                                        },
+                                        {
+                                            "outcome_text": "describe what comedy is (k).",
+                                            "domain": "k"
+                                        },
+                                        {
+                                            "outcome_text": "explain characteristics of comedy (k).",
+                                            "domain": "k"
+                                        },
+                                        {
+                                            "outcome_text": "state the merits and demerits of comedy (k).",
+                                            "domain": "k"
+                                        },
+                                        {
+                                            "outcome_text": "use personal pronouns (k, u).",
+                                            "domain": "k, u"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks leaners to identify the various professions/careers in their communities and schools."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "learners talk about their career interests and why."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to identify other professions and occupations in the world of work."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "individually learners write a one-page essay explaining their career interests."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners mention titles of people working in different professions/occupations."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to derive professions from verbs."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners identify professionals and what they do e.g. teacher-teaches, a doctor-dragonises /prescribes /treats, a lawyer-defends/prosecutes suspects, driver-drives,etc."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher identifies terminologies and tasks learners to use them to construct sentences."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners mention the equipment and tools used in different occupations."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners mention the work places of their relatives and friends."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides learners with a text on different professions and workplaces. (e.g. mechanic- garage, judge-court, shopkeeper – shop, teacher-school, doctor-hospital, etc."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners answer questions on the text."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides leaners with a chart having samples of different dress codes and asks them to match them with corresponding professions."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups, learners describe dress codes of other professionals they know."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "learners discuss reasons for the different dress codes in their groups."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners on how to present information about themselves."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners talk about themselves - bringing out necessary information. (random selection)."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides a sample cv for learners to study."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners identify aspects of a cv basing on the sample (format)."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "individually learners write personal cvs."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a sample application letter."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "from the sample letter, teacher asks learners to identify parts of an application letter (format)."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher provides a sample job advert to which he/she responds with learners."
+                                        },
+                                        {
+                                            "activity_type": "Exercise",
+                                            "description": "in an exercise, learners write an application letter"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher asks learners whether they have ever wronged any one."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "then asks them to share how they respond when they have done something wrong."
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "a role-play in which a learner is apologising to a superior (e.g. a parent, teacher, prefect, priest, police officer etc.)"
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners study a sample apology letter identifying key parts."
+                                        },
+                                        {
+                                            "activity_type": "Exercise",
+                                            "description": "in an exercise learners write an apology."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "teacher brainstorms with learners on what comedy is and who comedians are."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners describe any comedian they know."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "learners identify other persons they consider to be comedians in their community, school, media and beyond explaining why."
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "in groups teacher guides learners to suggest what makes a comedian comic."
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "learners brainstorm on why people perform comedy."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "in their groups, learners discuss the benefit of comedy in society, e.g. entertainment, stress reliever, excitement, income generation, talent expo/development, mirror what happens in society, advocacy."
+                                        },
+                                        {
+                                            "activity_type": "Presentation",
+                                            "description": "in a plenary, learners present their responses to (6) above."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners to recap their understanding of pronouns."
+                                        },
+                                        {
+                                            "activity_type": "Demonstration",
+                                            "description": "using examples, teacher illustrates to learners what personal pronouns are (singular and plural)."
+                                        },
+                                        {
+                                            "activity_type": "Classroom Activity",
+                                            "description": "teacher guides learners on how to construct sentences using personal pronouns."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "answers comprehension questions about a given passage on professions/ occupations."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a composition explaining his/her profession/ occupation interest."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "fills in a table on the different professions and their respective places of work."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "translates texts on different professions."
+                                        },
+                                        {
+                                            "assessment_type": "Debate",
+                                            "description": "debates on topics related to places of work e.g. “uniforms should be abolished at places of work.”"
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes an application letter for a job attaching a c.v."
+                                        },
+                                        {
+                                            "assessment_type": "Performance",
+                                            "description": "presents a comic skit on a topic/issue selected from the learners’ suggestions."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a composition about a comedy s/he enjoy and the lessons learnt."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a composition on the merits and demerits of comedy to society."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "matches tools and equipment with their respective professions/ occupations in a matching exercise."
+                                        },
+                                        {
+                                            "assessment_type": "Exercise",
+                                            "description": "draws a table to show personal pronouns and their plural forms."
+                                        },
+                                        {
+                                            "assessment_type": "Product",
+                                            "description": "writes a report about a tour to a place of work highlighting activities taking place there."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 16,
+                                        "unit": "periods",
+                                        "source_page": "33"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use a project to display to various dress codes for different professions.",
+                                            "project a comedy.",
+                                            "use e-mail, social media, SMS or wikis to share information and collaborate with one another."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,559 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Information & Communications Technology",
+        "level": "Lower Secondary",
+        "class_group": "Senior Three",
+        "year": "2019",
+        "version": "1",
+        "source_document": "ICT Syllabus"
+    },
+    "global_framework": {
+        "competencies": [
+            "Self-assured individuals",
+            "Responsible and patriotic citizens",
+            "Lifelong learners",
+            "Positive contributors to society"
+        ],
+        "generic_skills": [
+            "Communication",
+            "Critical thinking and problem-solving",
+            "Co-operation and Self-Directed Learning",
+            "Creativity and innovation",
+            "Mathematical Computations and ICT Proficiency"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and Patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Three",
+            "class_code": "S3",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "DATA MANAGEMENT AND SHARING",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-O-S3-T1-0001",
+                                        "topic_title": "WORD PROCESSING II",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 48
+                                    },
+                                    "core_competency": "The learner uses advanced word processing features to enhance document outlook.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "explain the effects of various advanced tools and features of a word processor (k, u).",
+                                            "domain": "Knowledge/Understanding",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "outcome_text": "use advanced tools and features of a word processor to format and edit documents (s, v).",
+                                            "domain": "Skills/Values",
+                                            "source_page": "24"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research/Practical",
+                                            "description": "Guide learners to: research about various advanced word processing features (footnotes, mail merge, paragraph, text columns) and how they affect document appearance.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "activity_type": "Group Project",
+                                            "description": "work in groups to choose a topic or topics and write about it in form of a school magazine (about 4 pages).",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Formatting",
+                                            "description": "ensure that the article has the following characteristics:\n- Images at different points with text wrapping around them in different ways.\n- Some of the information in tabular form\n- Use footnotes and end notes\n- Some text in multiple column layout\n- A watermark\n- The document is secured with a password\n- Page numbers in both Arabic and Roman numerals within the same document.\n- A list of figures and tables and a table of contents for the entire document.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Mail Merge",
+                                            "description": "write and send a personalized letter to the parents of 10 (fictional) selected students informing them of their children’s performance (use mail merge).",
+                                            "source_page": "24"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe and listen to learners as they research and discuss their chosen topic and develop their magazine content.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate learners’ progress by assessment of products: magazine overall and all elements of it; letters to parents.",
+                                            "source_page": "24"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "work in groups to choose a topic or topics and write about it in form of a school magazine (about 4 pages).",
+                                        "deliverables_verbatim": "magazine overall and all elements of it; letters to parents.",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "24"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 48,
+                                        "unit": "periods",
+                                        "source_page": "24"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "DATA MANAGEMENT AND SHARING",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-O-S3-T2-0001",
+                                        "topic_title": "SPREADSHEET II",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 32
+                                    },
+                                    "core_competency": "The learner processes data using advanced spreadsheet features for quick and easy interrogation.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "explain the effects of various advanced tools and features of a spreadsheet (k,u).",
+                                            "domain": "Knowledge/Understanding",
+                                            "source_page": "25"
+                                        },
+                                        {
+                                            "outcome_text": "use advanced tools and features of a spreadsheet to process and present data.(s,v)",
+                                            "domain": "Skills/Values",
+                                            "source_page": "25"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Practical/Data Entry",
+                                            "description": "Guide learners to: Enter data provided in a table and:\n- Generate bar / column, pie and line charts\n- Work with chart formatting; title adjustment, positioning, legend and data label formatting.\n- Use varying scales on graph axes.\n- Customise chart appearance (e.g. colour, design)",
+                                            "source_page": "25"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Data Processing",
+                                            "description": "Load a mark sheet with at least 20 (fictional) students and 3 subjects, e.g. Maths, English, History populated with marks out of 100.\n- Filter the data in various ways, e.g. students who scored more than 30% in Maths, between 25 and 50 in English.\n- Work with the functions of IF, Sumif, CountIf, Rank, Vlookup and HLookup (up to 4 outcomes for nested functions).\n- Reference using absolute/ relative/ mixed referencing.\n- Toggle between formula and value views.\n- Set print area.\n- Deliberately create the following errors, explain and fix them: #N/A, #VALUE!, #REF!, #DIV/0!, #NUM!, #NAME?, or #NULL!, ####.",
+                                            "source_page": "25"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they perform the tasks, intervening to ensure they understand and develop required skills.",
+                                            "source_page": "25"
+                                        },
+                                        {
+                                            "assessment_type": "Discussion",
+                                            "description": "Listen to discussion, correcting any misconceptions and guiding learners towards expected outcomes.",
+                                            "source_page": "25"
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate learning through quality of products of each task.",
+                                            "source_page": "25"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 32,
+                                        "unit": "periods",
+                                        "source_page": "25"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "PUBLICATIONS",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-O-S3-T2-0002",
+                                        "topic_title": "ELECTRONIC PUBLICATION",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 16
+                                    },
+                                    "core_competency": "The learner uses desktop publishing software (e.g. MS Publisher) to design and produce simple publications such as business cards, flyers, calendars, invitation cards, letterheads and certificates.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "explain the concept of electronic publishing. (k, u, v)",
+                                            "domain": "Knowledge/Understanding/Values",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "outcome_text": "use the electronic publishing application features to prepare a publication. (u, s,v)",
+                                            "domain": "Understanding/Skills/Values",
+                                            "source_page": "26"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Discussion/Research",
+                                            "description": "Guide learners to: discuss the meaning of electronic publishing.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "identify publications in their school and other organisations and research about techniques involved in electronic publishing.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "research about different examples of electronic publishing software.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "navigate through a publication software suite to discover the different templates provided.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "open electronic publishing application software.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "study the application interface; take note of and practice using the various features/ tools.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Exploration",
+                                            "description": "explore the features of a pre-type set hardcopy document with various formats.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Creation",
+                                            "description": "use a template and blank page to create a publication, customise the templates and add content (shapes, images and text) and produce a publication, also adjusting measurement units (inches, centimetres).",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "save a publication to a given location.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Formatting",
+                                            "description": "load an existing publication and format the publication to a desired style, adjusting the shapes, sizes, colour of graphics, objects and text, applying borders to the publication or parts of the publication and adjusting the publication background.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "effectively make use of the spaces in a publication.",
+                                            "source_page": "26"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Discussion/Observation",
+                                            "description": "Listen to learners discussing tasks and intervene as appropriate, asking probing questions to deepen learning and guide thinking.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe as groups or pairs carry out the activities, offering support and guidance to ensure that intended learning outcomes are achieved.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate the quality of learning through reports and products developed in each task.",
+                                            "source_page": "26"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 16,
+                                        "unit": "periods",
+                                        "source_page": "26"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "DATA MANAGEMENT AND SHARING",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-O-S3-T3-0001",
+                                        "topic_title": "DATABASE MANAGEMENT SYSTEMS",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 48
+                                    },
+                                    "core_competency": "The learner uses a Database Management System (DBMS) programme (e.g. MS Access) to manage data.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "explain the concept of databases. (k, u, v)",
+                                            "domain": "Knowledge/Understanding/Values",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "outcome_text": "use tools and features of a DBMS to manipulate data. (s, v)",
+                                            "domain": "Skills/Values",
+                                            "source_page": "27"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research/Discussion",
+                                            "description": "Guide learners to: research and report on: a) commonly used Database Management Software (e.g. MS Access, Oracle, MySql) and their features\nb) how and why database management systems are used in businesses, the public sector and the home, contributing their thoughts to class discussion (e.g. family records, e-library management system, students’ records, government records, bank account records, hospital patient details, airline booking systems)",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "identify records and fields in the database of class list, address book, library catalogue.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Data Entry",
+                                            "description": "add some information to selected databases (records and fields). Launch database software and create and save databases, identifying the various database objects such as tables, forms, queries, reports.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Design",
+                                            "description": "determine an appropriate data type for each of the fields identified and respective field properties.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Validation",
+                                            "description": "apply simple validation rules, validation text and input mask",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Data Entry",
+                                            "description": "enter data in a table to create a form and use it for data entry.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Queries",
+                                            "description": "query the database, retrieving data in various form views and create query objects to retrieve specific records and or fields.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Queries",
+                                            "description": "use the following operators in a query: = (Equal), <> (Not equal to), < (Less than), <= (Less than or equal to), > (Greater than), >= (Greater than or equal to) NULL and NOT NULL.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Reports",
+                                            "description": "practise generating reports using various approaches: design view, report view and generate automatic calculations in various database objects.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Relational DB",
+                                            "description": "create a relational database of up to two tables.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Printing",
+                                            "description": "print objects to required layouts and formats.",
+                                            "source_page": "27"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Discussion/Observation",
+                                            "description": "Listen as pairs discuss the tasks involved in the activity, asking questions to develop understanding and ensure skills are learned.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners carrying out the tasks, noting good practice and providing guidance to help them achieve expected learning outcomes.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate learning through the quality of reports and databases produced by the learners.",
+                                            "source_page": "27"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 48,
+                                        "unit": "periods",
+                                        "source_page": "27"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

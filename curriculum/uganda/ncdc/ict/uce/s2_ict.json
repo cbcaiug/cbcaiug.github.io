@@ -1,0 +1,626 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Republic of Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Information & Communications Technology",
+        "level": "O-Level",
+        "class_group": "Senior Two",
+        "year": "2019",
+        "version": "1",
+        "source_document": "INFORMATION & COMMUNICATIONS TECHNOLOGY SYLLABUS"
+    },
+    "global_framework": {
+        "competencies": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Communication",
+            "Co-operation and Self-Directed Learning",
+            "Mathematical Computations and ICT Proficiency"
+        ],
+        "generic_skills": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Communication",
+            "Co-operation and Self-Directed Learning",
+            "Mathematical Computations and ICT Proficiency"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and Patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Two",
+            "class_code": "S2",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "DATA MANAGEMENT AND SHARING",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-O-S2-T1-0001",
+                                        "topic_title": "SPREAD SHEET I",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 24,
+                                        "keywords": [
+                                            "spreadsheet",
+                                            "excel",
+                                            "data manipulation",
+                                            "charts",
+                                            "formulas",
+                                            "functions",
+                                            "columns",
+                                            "rows"
+                                        ]
+                                    },
+                                    "core_competency": "The learner uses spreadsheet software (e.g. MS Excel) to create, save, edit and print spreadsheets.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "use spreadsheet functions to manipulate data and print it, (k, s, v).",
+                                            "domain": "Skills",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "outcome_text": "use charts to represent data. (s, v)",
+                                            "domain": "Skills",
+                                            "source_page": "20"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "open a spreadsheet.",
+                                            "enter data in a spreadsheet.",
+                                            "study the spreadsheet interface and try out the various features on text.",
+                                            "study a pre-type set hardcopy document with various formats and ask them to comment on the observed features.",
+                                            "use a simple spreadsheet formula to compute sum, min, max, average and count.",
+                                            "sort data using alphabetical, ascending & descending order.",
+                                            "generate simple labelled charts: pie, line and bar.",
+                                            "using a discovery approach to creatively come up with different formats of presenting information."
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Guide learners to: open a spreadsheet.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Guide learners to: enter data in a spreadsheet.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "activity_type": "Observation/Practical",
+                                            "description": "Guide learners to: study the spreadsheet interface and try out the various features on text.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "activity_type": "Analysis",
+                                            "description": "Guide learners to: study a pre-type set hardcopy document with various formats and ask them to comment on the observed features.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Calculation",
+                                            "description": "Guide learners to: use a simple spreadsheet formula to compute sum, min, max, average and count. (See below for an example).",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Guide learners to: sort data using alphabetical, ascending & descending order.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Visualization",
+                                            "description": "Guide learners to: generate simple labelled charts: pie, line and bar.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "activity_type": "Discovery",
+                                            "description": "Guide learners to: using a discovery approach to creatively come up with different formats of presenting information.",
+                                            "source_page": "20"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they open spreadsheet application and interact with its features.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "assessment_type": "Checklist/Verification",
+                                            "description": "Check for the correctness of the formulas used based in the computations and procedures.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate learning through assessment of products (such as the mark sheet) and contributions to class discussion.",
+                                            "source_page": "20"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "20"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Spreadsheet software (e.g. MS Excel)"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "DATA MANAGEMENT AND SHARING",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-O-S2-T2-0001",
+                                        "topic_title": "ELECTRONIC PRESENTATION",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 24,
+                                        "keywords": [
+                                            "presentation",
+                                            "powerpoint",
+                                            "slides",
+                                            "animation",
+                                            "transitions",
+                                            "multimedia",
+                                            "hyperlinks",
+                                            "audience"
+                                        ]
+                                    },
+                                    "core_competency": "The learner uses presentation software (e.g. MS PowerPoint) to prepare, deliver and print presentations.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "use the presentation application functions and tools to prepare interactive presentations. (u, s, v, k)",
+                                            "domain": "Skills",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "outcome_text": "deliver a presentation to an audience (s, v)",
+                                            "domain": "Skills",
+                                            "source_page": "21"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "conduct a research from the surrounding community using a field visit guideline to gather information including taking pictures and prepare a presentation.",
+                                            "watch a simple demonstration of a presentation, (From YouTube or teacher led presentation)",
+                                            "load and open presentation software",
+                                            "enter information in a presentation application.",
+                                            "prepare a presentation formatted with themes, animations, backgrounds, images, transitions, hyperlinks.",
+                                            "discuss their presentation with the audience, evaluating strengths and inviting suggestions for improvement",
+                                            "print a presentation or part of a presentation to specified print settings."
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research/Field Work",
+                                            "description": "Guide learners to: conduct a research from the surrounding community using a field visit guideline to gather information including taking pictures and prepare a presentation.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "activity_type": "Demonstration",
+                                            "description": "Guide learners to: watch a simple demonstration of a presentation, (From YouTube or teacher led presentation)",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Guide learners to: load and open presentation software",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Guide learners to: enter information in a presentation application.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Design",
+                                            "description": "Guide learners to: prepare a presentation formatted with themes, animations, backgrounds, images, transitions, hyperlinks.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "activity_type": "Discussion/Evaluation",
+                                            "description": "Guide learners to: discuss their presentation with the audience, evaluating strengths and inviting suggestions for improvement",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Guide learners to: print a presentation or part of a presentation to specified print settings.",
+                                            "source_page": "21"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners perform the activity, intervening to help them improve their skills and develop their understanding so they can all achieve learning outcomes.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "assessment_type": "Listening/Questioning",
+                                            "description": "Listen to learners’ discussions as they work on their presentations. Ask probing questions to deepen their learning.",
+                                            "source_page": "21"
+                                        },
+                                        {
+                                            "assessment_type": "Product Evaluation",
+                                            "description": "Evaluate quality of presentations produced, the steps along the way and contributions to evaluation of their own and others’ work.",
+                                            "source_page": "21"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "21"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Presentation software (e.g. MS PowerPoint)"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "DATA MANAGEMENT AND SHARING",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-O-S2-T3-0001",
+                                        "topic_title": "INFORMATION ACCESS AND SHARING",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 18,
+                                        "keywords": [
+                                            "internet",
+                                            "online",
+                                            "offline",
+                                            "email",
+                                            "cloud",
+                                            "network",
+                                            "netiquette",
+                                            "safety"
+                                        ]
+                                    },
+                                    "core_competency": "The learner uses a computer and internet to access and share information.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "use online and on offline platforms to search for information. (k, s, v)",
+                                            "domain": "Skills",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "outcome_text": "use various ICT tools to share information. (u, s, v)",
+                                            "domain": "Skills",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "outcome_text": "explain safety practices while using the internet (netiquette). (k, u, v)",
+                                            "domain": "Knowledge",
+                                            "source_page": "22"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "individually use online or offline platforms like Encarta, Encyclopedia to search for information.",
+                                            "use different technologies such as e-mails, networks, cloud, Bluetooth to share data / information between ICT tools or devices.",
+                                            "research about possible risks and safety practices associated with Internet use."
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Research/Practical",
+                                            "description": "Guide learners to: individually use online or offline platforms like Encarta, Encyclopedia to search for information.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Communication",
+                                            "description": "Guide learners to: use different technologies such as e-mails, networks, cloud, Bluetooth to share data / information between ICT tools or devices.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "Guide learners to: research about possible risks and safety practices associated with Internet use.",
+                                            "source_page": "22"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe pairs as they carry out the steps involved in the activity, intervening to steer learning towards achievement of the learning outcomes.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "assessment_type": "Listening",
+                                            "description": "Listen to learners as they discuss the tasks and promote deeper learning by encouraging them to think critically about the process.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "assessment_type": "Evaluation",
+                                            "description": "Evaluate learning by assessing quality of presentations, information sharing, reports, providing feedback to improve.",
+                                            "source_page": "22"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 18,
+                                        "unit": "periods",
+                                        "source_page": "22"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "ICT SAFETY AND ENVIRONMENT",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "ICT-O-S2-T3-0002",
+                                        "topic_title": "HEALTH AND SAFETY",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 6,
+                                        "keywords": [
+                                            "health",
+                                            "safety",
+                                            "ergonomics",
+                                            "eye strain",
+                                            "back pain",
+                                            "rsi",
+                                            "mitigation",
+                                            "computer use"
+                                        ]
+                                    },
+                                    "core_competency": "The learner appreciates the various health problems associated with regular use of computers/ICT systems and how they can be avoided.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "analyse common health problems associated with prolonged use of computers (eye strain, back pains, RSI). (k, u, s, v)",
+                                            "domain": "Analysis",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "outcome_text": "explain possible ways to avoid each of the health problems associated with use of ICTs. (k, u, v)",
+                                            "domain": "Knowledge",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "outcome_text": "communicate information on health and safety measures of using a computer(k, u, v, gs).",
+                                            "domain": "Communication",
+                                            "source_page": "23"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "brainstorm what they think are the health risks associated with using a computer.",
+                                            "watch a video showing common health problems associated with computers.",
+                                            "develop a graphic, matching a computer part/device to a body part it affects.",
+                                            "research and report on mitigation measures to the health problems associated with computer use in an article.",
+                                            "write articles on health and safety of using computers and share with the immediate community."
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "Guide learners to: brainstorm what they think are the health risks associated with using a computer.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "activity_type": "Video Analysis",
+                                            "description": "Guide learners to: watch a video showing common health problems associated with computers.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "activity_type": "Graphic/Visual",
+                                            "description": "Guide learners to: develop a graphic, matching a computer part/device to a body part it affects.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "activity_type": "Research/Report",
+                                            "description": "Guide learners to: research and report on mitigation measures to the health problems associated with computer use in an article.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "activity_type": "Writing/Communication",
+                                            "description": "Guide learners to: write articles on health and safety of using computers and share with the immediate community.",
+                                            "source_page": "23"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Listening/Observation",
+                                            "description": "Listen to and observe learners as they discuss various health problems caused by prolonged use of ICTs.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "assessment_type": "Listening/Observation",
+                                            "description": "Listen and observe learners when they discuss how problems caused by prolonged use of ICTs can be avoided.",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "assessment_type": "Evaluation",
+                                            "description": "Evaluate learning through the verbal contributions and products (mind map, record of brainstorm / video comparison, graphic of computer parts / devices and health impact, reports on avoiding health problems).",
+                                            "source_page": "23"
+                                        },
+                                        {
+                                            "assessment_type": "Listening/Presentation",
+                                            "description": "Listen to learners presenting their articles taking note of the facts, pronunciation, and the presentation skills in terms of grammar.",
+                                            "source_page": "23"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 6,
+                                        "unit": "periods",
+                                        "source_page": "23"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

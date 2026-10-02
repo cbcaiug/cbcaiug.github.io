@@ -1,0 +1,297 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre",
+    "curriculum_name": "Advanced Secondary Curriculum",
+    "subject": "German Language",
+    "level": "A-Level",
+    "class_group": "Senior Five",
+    "year": "2025",
+    "version": "",
+    "source_document": "German Language Syllabus"
+  },
+  "global_framework": {
+    "competencies": [],
+    "generic_skills": [
+      "Critical thinking and problem-solving",
+      "Co-operation and Self-Directed Learning",
+      "Creativity and Innovation",
+      "Communication",
+      "Mathematical Computations",
+      "Information and Communication Technology (ICT) Proficiency",
+      "Diversity and Multicultural Skills"
+    ],
+    "values": [
+      "Respect for humanity and the environment",
+      "Honesty, uphold and defend the truth at all times",
+      "Justice and dealing with others",
+      "Hard work for self-reliance",
+      "Integrity; moral uprightness and sound character",
+      "Creativity and innovation",
+      "Social responsibility",
+      "Social harmony",
+      "National unity",
+      "National consciousness and patriotism"
+    ],
+    "attitudes": [],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Life skills",
+      "Mixed abilities and involvement",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "classes": [
+    {
+      "class_name": "Senior Five",
+      "class_code": "S5",
+      "terms": [
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "TOPIC 1: LISTENING",
+              "theme_description": "Die Lernenden entwickeln ihre Hörfähigkeiten, um Gespräche und Anweisungen, die sich auf das Familien- und Hausleben beziehen, effektiv zu verstehen und zu interpretieren.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GER-A-S5-T1-0001",
+                    "topic_title": "SUB-TOPIC 1.1: FAMILY AND HOME LIFE",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 6
+                  },
+                  "core_competency": "Die Lernenden entwickeln ihre Hörfähigkeiten, um Gespräche und Anweisungen, die sich auf das Familien- und Hausleben beziehen, effektiv zu verstehen und zu interpretieren. Sie zeigen, dass sie in der Lage sind, häusliche Rollen und Verantwortlichkeiten durch Zuhöraktivitäten zu erkennen, ihnen zu folgen und sich darauf einzulassen.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "a. describe physical and moral behaviours using appropriate Vocabulary and Structures (Wortschatz und Strukturen) within conversations about Family and Home Life. (k,u,s,v, gs)",
+                      "domain": "cognitive"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Work",
+                      "description": "a. In groups, learners participate in role-playing activities where they engage in conversations describing family members' physical and moral behaviours."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "a. Observe the learners’ use of adjectives, accurate depiction of behaviours, fluency, and confidence in speaking."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 6,
+                    "unit": "periods",
+                    "source_page": "20"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "TOPIC 6. LISTENING: SCHOOL SYSTEMS AND CULTURAL VALUES",
+              "theme_description": "Die Lernenden sind in der Lage, Vorlieben für verschiedene Schultypen auszudrücken, Schulabläufe und Bildungssysteme in Deutschland und Uganda unter Verwendung eines angemessenen Vokabulars zu vergleichen und die Bedeutung zwischenmenschlicher Beziehungen und gesellschaftlicher Verantwortung zu verstehen...",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GER-A-S5-T2-0001",
+                    "topic_title": "SUB-TOPIC 6.1: SCHOOL",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 8
+                  },
+                  "core_competency": "Die Lernenden sind in der Lage, Vorlieben für verschiedene Schultypen auszudrücken, Schulabläufe und Bildungssysteme in Deutschland und Uganda unter Verwendung eines angemessenen Vokabulars zu vergleichen und die Bedeutung zwischenmenschlicher Beziehungen und gesellschaftlicher Verantwortung zu verstehen, wobei sie Reflexivpronomen verwenden, um eine positive Kommunikation und kulturelle Wertschätzung zu fördern.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "a. express preferences for different types of schools using appropriate vocabulary, enhancing vocabulary related to school life, and following instructions on school activities and responsibilities. (\"Lernende können Präferenzen für verschiedene Schultypen mit geeignetem Vokabular ausdrücken, das Vokabular im Zusammenhang mit dem Schulleben erweitern und Anweisungen zu schulischen Aktivitäten und Verantwortlichkeiten befolgen.\") (u,s,v,gs)",
+                      "domain": "cognitive"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Work",
+                      "description": "a. In groups learners match flash cards of different types of schools and school activities with their definitions."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "a. Observe the learners as they play the matching game, looking out for engagement in the activity, and the correct use of vocabulary."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 8,
+                    "unit": "periods",
+                    "source_page": "58"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 3",
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "TOPIC 12: LISTENING AND READING (OCCUPATIONS, WORK, AND FREE TIME IN GERMAN SPEAKING COUNTRIES)",
+              "theme_description": "Die Lernenden entwickeln die Fähigkeit, zukünftige Berufswünsche und die kulturelle Bedeutung von Freizeit und Arbeit in deutschsprachigen Ländern zu verstehen und zu diskutieren.",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "GER-A-S5-T3-0001",
+                    "topic_title": "SUB-TOPIC 12.1: THE WORLD OF WORK",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 28
+                  },
+                  "core_competency": "Die Lernenden entwickeln die Fähigkeit, zukünftige Berufswünsche und die kulturelle Bedeutung von Freizeit und Arbeit in deutschsprachigen Ländern zu verstehen und zu diskutieren. Sie beherrschen relevante Vokabeln und Ausdrücke, identifizieren verschiedene Berufe und deren Anforderungen und diskutieren die Nachteile der Arbeitslosigkeit. Darüber hinaus werden die Schüler ihr Verständnis und ihre Verwendung von spezifischem Arbeitsplatzvokabular, dem Passiv und der Konjunktion „wenn“verbessern und erkennen, wie wichtig eine effektive Kommunikation am Arbeitsplatz ist und welche Auswirkungen sie auf den beruflichen Erfolg und die persönliche Zufriedenheit hat.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "a. discuss future career aspirations and the value of leisure using appropriate vocabulary and expressions, gaining an understanding of the cultural significance of leisure and work in German-speaking countries, while appreciating the societal impact of employment and joblessness. (\"Die Lernenden sind in der Lage, zukünftige Berufswünsche und den Wert der Freizeit zu diskutieren, indem sie geeignetes Vokabular und Ausdrücke verwenden und ein Verständnis für die kulturelle Bedeutung von Freizeit und Arbeit in deutschsprachigen Ländern beherrschen.\")",
+                      "domain": "cognitive"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Interview",
+                      "description": "a. Learners interview each other about their future career aspirations and the importance of leisure, using a provided set of vocabulary and expressions."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "a. Observe the learners during interviews focusing on usage of appropriate vocabulary, engagement, fluency, accuracy, and engagement."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 28,
+                    "unit": "periods",
+                    "source_page": "84"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

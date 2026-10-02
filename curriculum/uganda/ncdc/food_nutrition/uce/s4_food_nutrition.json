@@ -1,0 +1,682 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Nutrition and Food Technology",
+        "level": "O-Level",
+        "class_group": "Senior Four",
+        "year": "2019",
+        "version": "1",
+        "source_document": "NUTRITION AND FOOD TECHNOLOGY SYLLABUS.pdf"
+    },
+    "global_framework": {
+        "competencies": [
+            "self – assured individuals",
+            "responsible and patriotic citizens",
+            "lifelong learners",
+            "positive contributors to society"
+        ],
+        "generic_skills": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Communication",
+            "Co-operation and Self-Directed Learning",
+            "Mathematical competition and ICT proficiency"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Four",
+            "class_code": "S4",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Dietary Therapy",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "NFT-O-S4-T1-0001",
+                                        "topic_title": "TOPIC 22: NUTRITION AND THE LIFE CYCLE",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 20
+                                    },
+                                    "core_competency": "The learner applies their understanding of nutrition to plan meals for individuals with different needs.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Understanding the importance of optimum nutrition at each stage of the life cycle.",
+                                            "domain": "u, s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "plan and prepare meals for people in the different phases of the life cycle (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "apply their knowledge of optimum nutrition to support a productive life (u, s, v)",
+                                            "domain": "u, s, v"
+                                        },
+                                        {
+                                            "outcome_text": "understand the importance of a healthy lifestyle to the community (u, s)",
+                                            "domain": "u, s"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "planning",
+                                            "description": "Guide the learners to plan and prepare sample meals for people in the different phases of their life."
+                                        },
+                                        {
+                                            "activity_type": "discussion",
+                                            "description": "Guide the learners to discuss how they can use their knowledge of optimum nutrition to achieve a productive life."
+                                        },
+                                        {
+                                            "activity_type": "group_work",
+                                            "description": "In groups, learners should work together to raise community awareness of how to lead a healthy lifestyle. They might make charts, compose poems and songs."
+                                        },
+                                        {
+                                            "activity_type": "field_work",
+                                            "description": "Learners should take these healthy lifestyle messages to a community and write a report of the visit, showing what worked well and what did not."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "observation",
+                                            "description": "Observe learners planning and preparing their meals. (observation)"
+                                        },
+                                        {
+                                            "assessment_type": "product_analysis",
+                                            "description": "Analyse charts showing different ways of influencing the community to live healthy lifestyles. This should include, having a healthy diet, taking regular physical exercise, having regular medical check- ups.(product)"
+                                        },
+                                        {
+                                            "assessment_type": "product_analysis",
+                                            "description": "Analyse the report of the community visit. and charts or poems or songs (product)."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 20,
+                                        "unit": "periods",
+                                        "source_page": "38"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "NFT-O-S4-T1-0002",
+                                        "topic_title": "TOPIC 23: MANAGEMENT OF NUTRITIONAL RELATED DISEASES AND DISORDERS",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 28
+                                    },
+                                    "core_competency": "The learner follows the guidelines for the management of some nutritionally related conditions to prepare suitable meals for the management of a given nutritionally related conditions.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "illustrate different nutritionally related conditions (u, s)",
+                                            "domain": "u, s"
+                                        },
+                                        {
+                                            "outcome_text": "understand the measures taken in the nutritional management of the above conditions (u)",
+                                            "domain": "u"
+                                        },
+                                        {
+                                            "outcome_text": "manage the nutritionally related conditions (u, s, v, a)",
+                                            "domain": "u, s, v, a"
+                                        },
+                                        {
+                                            "outcome_text": "design and prepare meals for persons with a nutritionally related disease (u, s, v, a, gs)",
+                                            "domain": "u, s, v, a, gs"
+                                        },
+                                        {
+                                            "outcome_text": "manage the effects of alcohol and drugs on nutrient intake (s, gs,v, a)",
+                                            "domain": "s, gs,v, a"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Protein-Energy malnutrition (PEM)",
+                                            "obesity",
+                                            "anaemia",
+                                            "HIV/AIDS",
+                                            "anorexia"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "discussion",
+                                            "description": "Use whole class discussion and illustrations to guide learners to describe the signs and symptoms of nutritionally related conditions such as Protein-Energy malnutrition (PEM), obesity, anaemia, HIV/ AIDS, and anorexia."
+                                        },
+                                        {
+                                            "activity_type": "creation",
+                                            "description": "Learners could make a chart showing the signs and symptoms of the different forms of PEM."
+                                        },
+                                        {
+                                            "activity_type": "group_work",
+                                            "description": "In small groups, learners suggest the guidelines and procedure taken in the management of each of the above nutritionally related diseases."
+                                        },
+                                        {
+                                            "activity_type": "demonstration",
+                                            "description": "Use demonstration to show learners how to prepare meals for the management of each of the nutritionally related conditions mentioned above."
+                                        },
+                                        {
+                                            "activity_type": "practical",
+                                            "description": "Guide learners to plan and prepare sample meals for some of the above nutritionally related conditions."
+                                        },
+                                        {
+                                            "activity_type": "guest_speaker",
+                                            "description": "Learners should listen to a health professional talk about the different nutritionally related conditions and write a report."
+                                        },
+                                        {
+                                            "activity_type": "discussion",
+                                            "description": "Guide learners to discuss the effects of alcohol and drugs on nutrition."
+                                        },
+                                        {
+                                            "activity_type": "description",
+                                            "description": "Learners describe different ways of managing the alcohol and drug effects using nutrition."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "conversation",
+                                            "description": "Talk to learners about the critical nutritional needs for each condition and the correct procedures to follow in preparation of dishes.(conversation)"
+                                        },
+                                        {
+                                            "assessment_type": "product_analysis",
+                                            "description": "Analyse the charts showing comparison of the signs and symptoms of the different forms of PEM.(product)"
+                                        },
+                                        {
+                                            "assessment_type": "product_analysis",
+                                            "description": "Analyse sample dishes.(product)"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 28,
+                                        "unit": "periods",
+                                        "source_page": "39"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Value Addition",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "NFT-O-S4-T2-0001",
+                                        "topic_title": "TOPIC 24: PROCESSING MEAT, FISH AND POULTRY PRODUCTS",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 30
+                                    },
+                                    "core_competency": "The learner processes and preserves meat, fish and poultry products and packages and markets processed products.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "process meat by mincing, smoking, curing and grinding (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "process poultry products by filleting, mincing and curing (u, s,v, gs)",
+                                            "domain": "u, s,v, gs"
+                                        },
+                                        {
+                                            "outcome_text": "process fish by smoking, salting and filleting (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "package, market and sell meat, poultry and fish products (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "apply recipes to make different food items(s, gs, v)",
+                                            "domain": "s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "package, market and sell a variety of sausages, fish powder and meat powder (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "sausages",
+                                            "mukene snacks",
+                                            "enriched food items using meat, chicken and rabbit"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "demonstration",
+                                            "description": "Demonstrate the methods of processing and preserving, meats, fish and poultry."
+                                        },
+                                        {
+                                            "activity_type": "practical",
+                                            "description": "Guide the learners to process and preserve a variety of meats, fish and poultry, using these methods."
+                                        },
+                                        {
+                                            "activity_type": "practical",
+                                            "description": "Learners package, market and sell the meat and fish products."
+                                        },
+                                        {
+                                            "activity_type": "demonstration",
+                                            "description": "Demonstrate to the learners the steps involved in processing sausages, mukene snacks and enriched food items using meat, chicken and rabbit."
+                                        },
+                                        {
+                                            "activity_type": "practical",
+                                            "description": "Guide the learners to package, market and sell the processed food items."
+                                        },
+                                        {
+                                            "activity_type": "project",
+                                            "description": "Project – processing, costing and selling meat, poultry and fish products and sausages."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "observation",
+                                            "description": "Observe the learners processing and preserving foods (observation). Ask why they are using particular methods to check their understanding.(conversation)"
+                                        },
+                                        {
+                                            "assessment_type": "conversation",
+                                            "description": "Talk to learners about the choice of ingredients, preservatives and casing material for sausages.(conversation)"
+                                        },
+                                        {
+                                            "assessment_type": "product_analysis",
+                                            "description": "Analyse the market-ready foodstuffs to check understanding and skills.(product)"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "Project – processing, costing and selling meat, poultry and fish products and sausages.",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "40"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 30,
+                                        "unit": "periods",
+                                        "source_page": "40"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Meal Management",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "NFT-O-S4-T2-0002",
+                                        "topic_title": "TOPIC 25: IMPORTANCE OF RECHAUFFE AND CONVENIENCE FOODS IN THE DIET",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 18
+                                    },
+                                    "core_competency": "The learner, in the preparation of meals, uses convenience foods, such as left overs, to makes attractive dishes.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "make rechauffé dishes from a variety of ingredients (u, s, v)",
+                                            "domain": "u, s, v"
+                                        },
+                                        {
+                                            "outcome_text": "understand the advantages and disadvantages of different sorts of convenience foods(u)",
+                                            "domain": "u"
+                                        },
+                                        {
+                                            "outcome_text": "use convenience foods to prepare different healthy meals(s)",
+                                            "domain": "s"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "left-over beans",
+                                            "peas",
+                                            "potatoes",
+                                            "meat",
+                                            "rice",
+                                            "fish"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "demonstration",
+                                            "description": "Demonstrate to learners how to make rechauffé dishes. These could be from: left-over beans, peas, potatoes, meat, rice, fish."
+                                        },
+                                        {
+                                            "activity_type": "practical",
+                                            "description": "Guide learners to make their own rechauffé dishes, using some of the above ingredients."
+                                        },
+                                        {
+                                            "activity_type": "discussion",
+                                            "description": "Guide learners to understand the advantages and disadvantages of different types of convenience foods."
+                                        },
+                                        {
+                                            "activity_type": "demonstration",
+                                            "description": "Demonstrate the ways in which convenience foods can be used to produce healthy meals."
+                                        },
+                                        {
+                                            "activity_type": "practical",
+                                            "description": "Guide learners to plan and produce their own healthy meals from a range of convenience foods."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "conversation",
+                                            "description": "Talk to learners about the ways in which food can be reheated.(conversation)"
+                                        },
+                                        {
+                                            "assessment_type": "observation",
+                                            "description": "Observe learners as they make reheated dishes. (observation)"
+                                        },
+                                        {
+                                            "assessment_type": "product_analysis",
+                                            "description": "Appraise the finished dishes.(product)"
+                                        },
+                                        {
+                                            "assessment_type": "conversation",
+                                            "description": "Talk to learners about the ways in which convenience foods can be used. (conversation)"
+                                        },
+                                        {
+                                            "assessment_type": "observation",
+                                            "description": "Observe learners as they make meals form convenience foods.(observation)"
+                                        },
+                                        {
+                                            "assessment_type": "product_analysis",
+                                            "description": "Appraise the finished dishes.(product)"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 18,
+                                        "unit": "periods",
+                                        "source_page": "41"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Meal Management",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "NFT-O-S4-T3-0001",
+                                        "topic_title": "TOPIC 26: TABLE SETTING AND FOOD SERVICE",
+                                        "sequence_order": 5,
+                                        "recommended_duration_periods": 32
+                                    },
+                                    "core_competency": "The learner chooses appropriate food covers to set a table serve diners at different occasions.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "know how to set tables for different food covers (k)",
+                                            "domain": "k"
+                                        },
+                                        {
+                                            "outcome_text": "creatively make a centre piece and food tags (s, gs, v)",
+                                            "domain": "s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "Consolidate skills in meal plans, food processing and making confectionaries and pastries (u, gs, v, a)",
+                                            "domain": "u, gs, v, a"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "demonstration",
+                                            "description": "Show learners different table settings to enable them to adapt settings to different courses and meal types."
+                                        },
+                                        {
+                                            "activity_type": "field_trip",
+                                            "description": "Visit the websites of different restaurants to look at the different sorts of table settings used."
+                                        },
+                                        {
+                                            "activity_type": "demonstration",
+                                            "description": "Demonstrate the sort of cutlery and table settings used for different occasions, courses and foods."
+                                        },
+                                        {
+                                            "activity_type": "demonstration",
+                                            "description": "Show learners different sorts of table Centre pieces and decorations."
+                                        },
+                                        {
+                                            "activity_type": "practical",
+                                            "description": "Guide learners to make their own table centre pieces for different occasions."
+                                        },
+                                        {
+                                            "activity_type": "ict_resource",
+                                            "description": "Watch a video of waiters serving diners at a table."
+                                        },
+                                        {
+                                            "activity_type": "practical",
+                                            "description": "Guide learners to plan and prepare a whole meal, lay the tables and wait on diners."
+                                        },
+                                        {
+                                            "activity_type": "practical",
+                                            "description": "Guide learners to consolidate practical skills in the following areas: Making meal plans, Food processing, Making cakes, biscuits and pastries"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "conversation",
+                                            "description": "Talk to learners about how tables should be set for deferent courses and meals. (conversation)"
+                                        },
+                                        {
+                                            "assessment_type": "observation",
+                                            "description": "Observe learners as they plan and prepare a meal and set the table. (observation)"
+                                        },
+                                        {
+                                            "assessment_type": "product_analysis",
+                                            "description": "Appraise the finished meal. (product)"
+                                        },
+                                        {
+                                            "assessment_type": "observation",
+                                            "description": "Observe learners as they make different products in skills consolidation and appraise the finished products"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 32,
+                                        "unit": "periods",
+                                        "source_page": "42"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Visit the websites of different restaurants to look at the different sorts of table settings used.",
+                                            "Watch a video of waiters serving diners at a table."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

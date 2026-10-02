@@ -1,0 +1,806 @@
+{
+  "_comment": "MASTER SYLLABUS FILE - Biology Senior Two. Based on NCDC Lower Secondary Curriculum 2019.",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "Biology",
+    "class_group": "Senior Two",
+    "year": "2019",
+    "version": "1.0",
+    "source_document": "Biology Syllabus.pdf"
+  },
+  "global_framework": {
+    "_comment": "Inherits from global framework defined in S1/Master context.",
+    "competencies": [],
+    "generic_skills": [],
+    "values": [],
+    "attitudes": [],
+    "cross_cutting_issues": []
+  },
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "terms": [
+    {
+      "term_name": "Term 1",
+      "term_number": 1,
+      "themes": [
+        {
+          "theme_title": "Soil",
+          "theme_description": "Physical and chemical properties, erosion and conservation.",
+          "topics": [
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S2-T1-01",
+                "topic_title": "PHYSICAL AND CHEMICAL PROPERTIES OF SOIL",
+                "recommended_duration_periods": "20",
+                "sequence_order": 1
+              },
+              "core_competency": "The learner knows that different soil types are made of different components and the balance of these components determines the properties of the soil.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "identify the types of soil",
+                  "domain": "u, v"
+                },
+                {
+                  "outcome_text": "determine soil constituents and identify their properties",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "understand that different soil samples have different properties: water retention, drainage, capillarity and pH; learners conduct experiments to investigate these properties",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "carry out experiments to find the percentage of air, water and humus in a soil sample",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "understand the importance of air and water in soil to other living organisms",
+                  "domain": "u"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Soil types (clay, sand, loam)",
+                  "Soil constituents (air, water, humus)",
+                  "Properties: water retention, drainage, capillarity, pH",
+                  "Importance of soil components"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": []
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Observation",
+                  "description": "In pairs or groups, learners observe three different soil samples – clay, sand and loam, and: examine the dry soil samples; shake the samples in water and allow them to settle to show different layers/ particle sizes. Pairs/groups record their observations relating to the following characteristics: the colour of each soil sample; the texture of each soil sample; the size of particles in each soil sample"
+                },
+                {
+                  "activity_type": "Experiment/Design",
+                  "description": "Task groups of learners to design, perform and report on investigations to show: retention, drainage and capillarity in loam, clay, and sandy soils. The report for each experiment should follow scientific methods."
+                },
+                {
+                  "activity_type": "Experiment",
+                  "description": "In pairs, learners determine the pH of a soil sample and discuss the significance of their findings."
+                },
+                {
+                  "activity_type": "Investigation/Calculation",
+                  "description": "In pairs or groups, learners use practical investigations and/or a set of data to calculate the percentage of air, water, and humus in different soil samples and report conclusions."
+                },
+                {
+                  "activity_type": "Discussion",
+                  "description": "In pairs, learners discuss and explain the importance of air and water in soil to living organisms."
+                },
+                {
+                  "activity_type": "Group Project",
+                  "description": "Aim: To investigate whether crop growth is different in different soil types. Design and carry out an experiment using annual plants in soils with different percentages of contents; e.g. high clay content or high sand content. Remember to make sure to design a fair test, controlling variables; e.g. the amount of water and light the plants receive. Observe the plants and record their appearance and the yield of the crop. From your observations deduce which type of soil is best for the chosen plants, and suggest why. Record conclusions."
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe pairs/groups as they examine soil samples."
+                },
+                {
+                  "assessment_type": "Product Evaluation",
+                  "description": "Evaluate products: records of characteristics of each soil type."
+                },
+                {
+                  "assessment_type": "Observation/Check",
+                  "description": "Observe groups and pairs carrying out activities. Check that they plan investigations that will give meaningful results."
+                },
+                {
+                  "assessment_type": "Listening/Questioning",
+                  "description": "Listen to pairs' discussions and monitor understanding and progress towards learning outcomes. Ask probing questions to promote critical thinking and deepen learning."
+                },
+                {
+                  "assessment_type": "Product Evaluation",
+                  "description": "Evaluate quality of products from activities: reports of investigations; conclusions relating to impact of different properties on quality of soil; explanations of importance of air, water, and humus, as well as the impact of soil types on crop yield and reasons for it."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [
+                  "The learner can use a digital camera to capture images to be used in a word-processed experiment or report."
+                ],
+                "restrictions": []
+              },
+              "syllabus_notes": [
+                {
+                  "text_verbatim": "The actual (quality) soil types should be used for experiments.",
+                  "note_type": "constraint",
+                  "source_page": "24"
+                }
+              ]
+            },
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S2-T1-02",
+                "topic_title": "SOIL EROSION AND CONSERVATION: CAUSES, EFFECTS, AND PREVENTION",
+                "recommended_duration_periods": "16",
+                "sequence_order": 2
+              },
+              "core_competency": "The learner knows how and why soil fertility should be maintained for the soil to continue to be useful to living organisms.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "know the features of fertile soil",
+                  "domain": "k"
+                },
+                {
+                  "outcome_text": "understand the process of and factors leading to soil erosion",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "understand the causes of reduced soil fertility and describe methods of soil conservation",
+                  "domain": "u, v"
+                },
+                {
+                  "outcome_text": "understand the importance of microorganisms in the nitrogen and other cycles that keep soil fertile",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "outline the processes involved in the nitrogen cycle",
+                  "domain": "u"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Features of fertile soil",
+                  "Causes/effects of soil erosion",
+                  "Soil conservation methods (regional focus)",
+                  "Nitrogen cycle",
+                  "Decomposers"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": []
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Discussion/Presentation",
+                  "description": "In groups, learners discuss conclusions from Topic 2 [previous topic] and agree on a list of the features of fertile soil. Present their conclusions to the class."
+                },
+                {
+                  "activity_type": "Research/Presentation",
+                  "description": "In groups, learner's research on the causes of soil erosion and the impact erosion has on communities. Produce a short presentation to show the types and the possible impact."
+                },
+                {
+                  "activity_type": "Research/Report",
+                  "description": "In groups, learners discuss what steps farmers and gardeners in their locality take to maintain the fertility of their soils. Then research and write a report on the different methods used to maintain soil fertility and conserve soil in the following regions of Uganda: Lake Victoria basin, Kigezi highlands, Karamoja region"
+                },
+                {
+                  "activity_type": "Research/Drama",
+                  "description": "In groups, learners carry out research into soil organisms that are called decomposers. Produce a short presentation/drama to explain why they are so important."
+                },
+                {
+                  "activity_type": "Role Play",
+                  "description": "In groups, learners use labelled cards to role play and explain the nitrogen cycle."
+                },
+                {
+                  "activity_type": "Investigation",
+                  "description": "In groups, learners design and carry out an investigation to show the presence of microorganisms in root nodules, soils and compost. Present their findings to the whole class and compare with other groups"
+                },
+                {
+                  "activity_type": "Group Project",
+                  "description": "Design, perform and write a report on an investigation into the formation of compost in a compost bin. Report on the process of composting, how fast different materials decompose, any organisms (decomposers) that seem to be involved in the process, and anything else significant or interesting."
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Discussion",
+                  "description": "Through listening to group discussions, or through whole class discussion, gauge whether all learners understand the features of fertile soils, the causes and impact of soil erosion, and the steps taken to increase fertility and reduce erosion"
+                },
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe groups carrying out activities and check they communicate effectively and work as teams so that everyone is learning and developing skills"
+                },
+                {
+                  "assessment_type": "Evaluation",
+                  "description": "Evaluate quality of products: presentations and reports"
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [
+                  "The learner can use mind mapping or word processing software to relate methods of soil conservation to the principles that apply to them.",
+                  "The learner can use a suitable graphical program to develop simulations of the nitrogen cycle."
+                ],
+                "restrictions": []
+              },
+              "syllabus_notes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "term_name": "Term 2",
+      "term_number": 2,
+      "themes": [
+        {
+          "theme_title": "Nutrition in plants and animals",
+          "theme_description": "Food nutrients, diet, and nutrition in plants and mammals.",
+          "topics": [
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S2-T2-01",
+                "topic_title": "NUTRITION TYPES AND NUTRIENT COMPOUNDS",
+                "recommended_duration_periods": "11",
+                "sequence_order": 1
+              },
+              "core_competency": "The learner understands that organisms have different nutritional requirements, and that humans have different requirements; depending on age and other factors.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "understand the term nutrition",
+                  "domain": "k, u"
+                },
+                {
+                  "outcome_text": "identify the food nutrients, their sources, and importance to humans",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "perform food tests for various nutrients (only quality testing required)",
+                  "domain": "s"
+                },
+                {
+                  "outcome_text": "appreciate the importance of a diet containing the different nutrients",
+                  "domain": "u, v"
+                },
+                {
+                  "outcome_text": "appreciate the concept of balanced diet in relation to age, sex, and an individual's activity",
+                  "domain": "u, v"
+                },
+                {
+                  "outcome_text": "appreciate the causes and effects of nutrient deficiency in humans including diseases related to malnutrition",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "calculate body mass index (BMI) and explain its implication",
+                  "domain": "s, v"
+                },
+                {
+                  "outcome_text": "identify the major plant mineral nutrients (N, P, K, Mg, Ca, S, Mg), their role, and the symptoms of deficiencies",
+                  "domain": "u"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Food nutrients (sources/importance)",
+                  "Food tests (quality only)",
+                  "Balanced diet factors",
+                  "Malnutrition/deficiency diseases",
+                  "BMI calculation",
+                  "Plant mineral nutrients (N, P, K, Mg, Ca, S)"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [
+                  {
+                    "text_verbatim": "(only quality testing required)",
+                    "override_allowed_by_user": true
+                  }
+                ],
+                "depth_limitations": [
+                  {
+                    "text_verbatim": "Minerals are limited to Ca P Fe and I; vitamins are limited to B, C, D and K.",
+                    "override_allowed_by_user": true
+                  }
+                ]
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Brainstorming/Research",
+                  "description": "In pairs, learners brainstorm and research on the meaning of the term nutrition. Share and agree on meaning with the class."
+                },
+                {
+                  "activity_type": "Experiment",
+                  "description": "In groups or pairs, learners carry out tests on foods such as potato, egg yolk, milk, groundnuts, and pineapple to determine what main food nutrients they contain."
+                },
+                {
+                  "activity_type": "Discussion/Research/Report",
+                  "description": "In groups or as a whole class, learners discuss, research and report on: the meaning of the term 'balanced diet' and what this might mean for a baby, a child, an adult woman and adult, an athlete, and an inactive person. They record their conclusions; the likely effects of an imbalanced diet"
+                },
+                {
+                  "activity_type": "Discussion/Research",
+                  "description": "In groups, learners discuss, research and report on the dangers of: obesity, bulimia and anorexia; use of drugs (diet pills and steroids) to change body image"
+                },
+                {
+                  "activity_type": "Calculation/Analysis",
+                  "description": "In groups, learners measure their weight (kg) and height (cm), and use the results to calculate their BMI. With reference to the standard BMI chart they determine their BMI status. They discuss the implications of being underweight and overweight, and what to do in both cases."
+                },
+                {
+                  "activity_type": "Listening/Writing",
+                  "description": "Learners listen to a talk or write a short speech on self-esteem in relation to physical differences in body shape and size."
+                },
+                {
+                  "activity_type": "Experiment",
+                  "description": "In groups, learners design and perform an experiment to compare the growth of a plant in distilled water and pond water and/or other water rich in nutrients. Learners use scientific method to write a report."
+                },
+                {
+                  "activity_type": "Research/Presentation",
+                  "description": "In groups, learners research on the uses of N, P, K, Mg, Ca, S and Mg to plants and the effects of deficiencies. Groups present their findings to the class (illustrated, if possible), with examples of leaves in good health, and showing deficiencies found in the locality."
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe groups and pairs carrying out activities. Check they carry out tests and research effectively, and plan experiments that will give valid results."
+                },
+                {
+                  "assessment_type": "Evaluation",
+                  "description": "Evaluate quality of products from activities: reports and conclusions from tests and investigations; presentations, and explanations."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [
+                  "use mind mapping or word processing software to categorise food groups and their sources.",
+                  "use spreadsheets to record and analyse experimental data.",
+                  "use the internet to research on malnutrition"
+                ],
+                "restrictions": []
+              },
+              "syllabus_notes": [
+                {
+                  "text_verbatim": "Minerals are limited to Ca P Fe and I; vitamins are limited to B, C, D and K.",
+                  "note_type": "constraint",
+                  "source_page": "26"
+                }
+              ]
+            },
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S2-T2-02",
+                "topic_title": "NUTRITION IN GREEN PLANTS",
+                "recommended_duration_periods": "10",
+                "sequence_order": 2
+              },
+              "core_competency": "The learner understands that plants are autotrophic, carrying out photosynthesis to make complex food molecules from light energy, water, and carbon dioxide.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "understand the meaning of autotrophic and heterotrophic nutrition",
+                  "domain": "k"
+                },
+                {
+                  "outcome_text": "derive the meaning of the term photosynthesis and understand the process",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "perform experiments to investigate the factors that affect the rate of photosynthesis",
+                  "domain": "s, gs"
+                },
+                {
+                  "outcome_text": "appreciate the structures and adaptations that enable a leaf to carry out the process of photosynthesis",
+                  "domain": "k, u"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Autotrophic vs Heterotrophic",
+                  "Photosynthesis (definition, equation, process)",
+                  "Factors affecting photosynthesis (CO2, light, chlorophyll)",
+                  "Leaf structure and adaptations"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": []
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Discussion/Research",
+                  "description": "In pairs or groups, learners discuss, research on and document: the meaning of autotrophic and heterotrophic nutrition; why autotrophs are the providers of all food; the origin and meaning of the term photosynthesis; the equation for photosynthesis and its implications regarding what plants need for photosynthesis"
+                },
+                {
+                  "activity_type": "Experiment",
+                  "description": "In groups, learners design and carry out experiments to show the need for carbon dioxide, light and chlorophyll, during photosynthesis. Learners produce a formal report at the end of the experiments that includes the following: title, question, prediction, materials, procedure, record/analysis of results, and conclusion. Groups present their report to the rest of the class"
+                },
+                {
+                  "activity_type": "Examination/Discussion",
+                  "description": "In groups learners examine diagrams, photographs or microscope slides of sections through a leaf and discuss how the structure is adapted so that cells can obtain the water, carbon dioxide, light, and energy they need."
+                },
+                {
+                  "activity_type": "Group Project",
+                  "description": "Develop a simple 3D model of the internal structure of a leaf using locally available materials."
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Listening/Questioning",
+                  "description": "Listen to discussion and ask probing questions to promote critical thinking and guide learners towards learning outcomes."
+                },
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe pair and group activities to monitor development of practical skills, effectiveness of experiment designs, and accuracy of models."
+                },
+                {
+                  "assessment_type": "Product Evaluation",
+                  "description": "Evaluate products: conclusions from discussion and research; reports on experiments, findings about leaf structure, and 3D leaf models."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [
+                  "use the internet to research on photosynthesis,",
+                  "use a word processor or slide presentation software to report findings of the experiments,",
+                  "use data collection technology such as oxygen and carbon dioxide sensors to examine the products of photosynthesis."
+                ],
+                "restrictions": []
+              },
+              "syllabus_notes": []
+            },
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S2-T2-03",
+                "topic_title": "NUTRITION IN MAMMALS",
+                "recommended_duration_periods": "15",
+                "sequence_order": 3
+              },
+              "core_competency": "The learner knows that animals are heterotrophic; obtaining their nutrients from existing plant or animal sources.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "understand the role of enzymes in influencing life processes; and appreciate that the working of enzymes may be affected by different factors (No details of lock and key mechanism required)",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "conduct experiments on and explain the effects of pH and temperature on enzyme activity",
+                  "domain": "s, gs"
+                },
+                {
+                  "outcome_text": "understand the effect of pH and temperature on enzyme activity",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "know and identify different types of mammalian teeth, and relate their structure and position in the jaw to diet",
+                  "domain": "k, u, s"
+                },
+                {
+                  "outcome_text": "understand the importance of oral hygiene, and describe good practice in caring for teeth and gums in humans",
+                  "domain": "u, v"
+                },
+                {
+                  "outcome_text": "appreciate the structure of the different parts of the mammalian alimentary canal, and its role in the digestion of food",
+                  "domain": "k, u"
+                },
+                {
+                  "outcome_text": "understand how the end products of digestion are absorbed and assimilated",
+                  "domain": "u"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Role/properties of enzymes",
+                  "Factors affecting enzymes (pH, temperature)",
+                  "Mammalian teeth (types, structure, dental formula)",
+                  "Oral hygiene",
+                  "Alimentary canal structure/function",
+                  "Digestion process",
+                  "Absorption and assimilation"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [
+                  {
+                    "text_verbatim": "(No details of lock and key mechanism required)",
+                    "override_allowed_by_user": true
+                  }
+                ],
+                "depth_limitations": []
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Research/Discussion",
+                  "description": "In groups, learners research on and discuss the effects of enzymes on chemical reactions, list the properties of enzymes, and the names and functions of some enzymes, that work in the human digestive system. Produce a presentation to explain findings."
+                },
+                {
+                  "activity_type": "Experiment",
+                  "description": "In groups, learners design and carry out an experiment to determine the effect of one factor (pH or temperature) on enzyme activity."
+                },
+                {
+                  "activity_type": "Observation/Drawing",
+                  "description": "In pairs, learners observe a molar, canine, pre-molar and incisor tooth and identify: the common structural features of each of the teeth in a mammal; the adaptations of each type of tooth to its function. Learners make an accurate labelled drawing of each tooth and state the magnification."
+                },
+                {
+                  "activity_type": "Research/Guide Creation",
+                  "description": "In pairs, learners share experience and research on reasons for, and methods of ensuring dental hygiene as well as consequences of poor hygiene. Produce a short good practice guide."
+                },
+                {
+                  "activity_type": "Research",
+                  "description": "In pairs, learners research on and write the dental formula for a herbivore, a carnivore and an omnivore."
+                },
+                {
+                  "activity_type": "Observation/Labeling",
+                  "description": "In pairs, learners observe an unlabelled chart and, through discussion and research, identify and name the parts of the alimentary canal and associated organs, labelling the parts and adding their functions"
+                },
+                {
+                  "activity_type": "Experiment Design",
+                  "description": "Guide groups of learners to design a controlled experiment to determine what substances are digested in the mouth: include the hypothesis, describe the experimental design, indicate the control group(s), describe the results of the test"
+                },
+                {
+                  "activity_type": "Simulation",
+                  "description": "In groups, learners simulate the process of digestion, its products and their absorption using either: labelled cards with names of parts of the alimentary canal and different food types; strings of beads that can be linked and unlinked; role play."
+                },
+                {
+                  "activity_type": "Research/Diagramming",
+                  "description": "Learners produce annotated diagrams to explain their understanding of digestion and absorption. Use a variety of methods... to enable learners to understand the meaning of assimilation... Learners document their findings in a mind map or spider diagram"
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe groups carrying out research and experiments to check that engagement in skills development and experiment designs is appropriate for achieving learning outcomes."
+                },
+                {
+                  "assessment_type": "Evaluation",
+                  "description": "Evaluate quality of products: findings on role of enzymes; explanation of effect of pH and temperature; clarity of drawings; accuracy and creativity of presentations; drawings; guide and dental formulae; experiment reports, simulations, mind maps/spider diagrams."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [
+                  "The learner can use the internet to study enzymes and their roles in life processes."
+                ],
+                "restrictions": []
+              },
+              "syllabus_notes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "term_name": "Term 3",
+      "term_number": 3,
+      "themes": [
+        {
+          "theme_title": "Transport in Plants and Animals",
+          "theme_description": "Movement of materials, transpiration, circulation, and immunity.",
+          "topics": [
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S2-T3-01",
+                "topic_title": "TRANSPORT IN PLANTS",
+                "recommended_duration_periods": "18",
+                "sequence_order": 1
+              },
+              "core_competency": "The learner appreciates how substances enter and exit from cells and knows the transport processes in plants, the structures involved, and their functions.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "understand the importance and key methods of movement of materials into and out of cells",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "investigate the different ways in which materials move into, though, and out of cells",
+                  "domain": "s"
+                },
+                {
+                  "outcome_text": "know how the root hair is adopted for absorption of water and mineral salts",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "understand the processes of transpiration and translocation",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "conduct experiments on and understand the factors that affect transpiration",
+                  "domain": "s, u"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Diffusion, Osmosis, Active Transport",
+                  "Root hair adaptation",
+                  "Transpiration process",
+                  "Translocation process",
+                  "Factors affecting transpiration (wind, temperature, light)"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": [
+                  {
+                    "text_verbatim": "Cover the basic principles of diffusion, osmosis, and active transport ONLY.",
+                    "override_allowed_by_user": true
+                  }
+                ]
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Observation/Discussion",
+                  "description": "In pairs, learners observe a tea bag in a clear glass container of still warm water for a period of five minutes, then discuss and explain their observations. Whole class discussion leads to understanding of the process of diffusion."
+                },
+                {
+                  "activity_type": "Experiment",
+                  "description": "In groups, learners use scientific process skills to design and carry out an experiment to show the effect of solutions of different concentrations on raw unshelled eggs and raw potatoes. Groups discuss and draw conclusions... Individuals write reports."
+                },
+                {
+                  "activity_type": "Research/Comparison",
+                  "description": "In groups, learners discuss and research the meanings of diffusion, osmosis and active transport, as well as the circumstances in which each is involved... Groups present conclusions in a comparison table"
+                },
+                {
+                  "activity_type": "Observation/Explanation",
+                  "description": "In pairs, learners use a drawing and look at germinated seedlings to explain how the root hair is adopted for absorption of water and mineral salts."
+                },
+                {
+                  "activity_type": "Explanation/Diagramming",
+                  "description": "In pairs, learners consider what they know about leaf structure... and connect their learning to explain how the process of transpiration takes place. Individuals produce an annotated diagram."
+                },
+                {
+                  "activity_type": "Research",
+                  "description": "In pairs or groups, learners research on the need for, and the meaning of, translocation in plants."
+                },
+                {
+                  "activity_type": "Experiment",
+                  "description": "In groups, learners use scientific process skills to design and carry out experiments to investigate how wind, temperature, and light intensity affect the rate of transpiration."
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe pairs and groups carrying out activities. Check that they understand how to use resources effectively, take due account of prior learning, use research skills well, and plan valid experiments."
+                },
+                {
+                  "assessment_type": "Product Evaluation",
+                  "description": "Evaluate quality of products from activities: report on root hairs; transpiration diagram; Translocation, and investigations of conditions affecting transpiration rates"
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [
+                  "The learner can use any word processor to prepare an activity report on their investigation of the osmotic flow of water through plant material."
+                ],
+                "restrictions": []
+              },
+              "syllabus_notes": [
+                {
+                  "text_verbatim": "Cover the basic principles of diffusion, osmosis, and active transport ONLY.",
+                  "note_type": "constraint",
+                  "source_page": "30"
+                }
+              ]
+            },
+            {
+              "topic_metadata": {
+                "topic_id": "BIO-S2-T3-02",
+                "topic_title": "TRANSPORT IN ANIMALS",
+                "recommended_duration_periods": "18",
+                "sequence_order": 2
+              },
+              "core_competency": "The learner appreciates that animals have special systems for the efficient transport of materials around their bodies, and understand the principles of how these systems operate.",
+              "learning_outcomes": [
+                {
+                  "outcome_text": "understand the principle of the surface area to volume ratio",
+                  "domain": "s"
+                },
+                {
+                  "outcome_text": "know the need for a transport system, and identify the components involved in the transport system in mammals",
+                  "domain": "k"
+                },
+                {
+                  "outcome_text": "describe the structure of the heart and how it functions",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "understand how structure of blood vessels are related to their function by comparing arteries, veins and capillaries",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "identify the major functions of blood, and relate the functions to the components of blood",
+                  "domain": "u, s"
+                },
+                {
+                  "outcome_text": "understand the causes and prevention of diseases associated with the heart (high blood pressure, coronary heart disease and stroke)",
+                  "domain": "u, v"
+                },
+                {
+                  "outcome_text": "understand the importance of knowledge of blood groups for blood transfusion",
+                  "domain": "k, u"
+                },
+                {
+                  "outcome_text": "appreciate the role of blood in the defence of the human body",
+                  "domain": "u"
+                },
+                {
+                  "outcome_text": "know how immunity is weakened by various infections including HIV",
+                  "domain": "k, u"
+                },
+                {
+                  "outcome_text": "understand the process of the formation of lymph and its flow around the body",
+                  "domain": "k, u"
+                },
+                {
+                  "outcome_text": "appreciate the function of the lymphatic system in maintaining a healthy body",
+                  "domain": "u"
+                }
+              ],
+              "content_scope": {
+                "must_cover": [
+                  "Surface area to volume ratio",
+                  "Mammalian transport system components",
+                  "Heart structure and function",
+                  "Blood vessels (arteries, veins, capillaries)",
+                  "Blood components and functions",
+                  "Heart diseases (HBP, Coronary heart disease, stroke)",
+                  "Blood groups/transfusion",
+                  "Immunity and HIV",
+                  "Lymphatic system"
+                ],
+                "optional_enrichment": [],
+                "explicitly_excluded": [],
+                "depth_limitations": []
+              },
+              "suggested_learning_activities": [
+                {
+                  "activity_type": "Calculation/Discussion",
+                  "description": "In pairs, learners use cubes of different dimensions to calculate the surface area to volume ratios of the cubes, then discuss and explain the biological significance of calculated ratios."
+                },
+                {
+                  "activity_type": "Discussion",
+                  "description": "In pairs, learners discuss what they already know about the components of their circulatory systems."
+                },
+                {
+                  "activity_type": "Discussion/Drawing",
+                  "description": "In pairs, learners discuss the structure and function of the heart, referring to diagrams and a model. Learners draw and label the parts of a mammalian heart adding clear notes relating to function."
+                },
+                {
+                  "activity_type": "Design/Model",
+                  "description": "In groups, learners design a model, visual aid, animation or drama to illustrate blood flow/circulation in the human body and present to the class."
+                },
+                {
+                  "activity_type": "Research/Comparison",
+                  "description": "In pairs, learners research on structures of arteries, capillaries and veins, and produce tables, models or diagrams to show how structure is related to function in each case."
+                },
+                {
+                  "activity_type": "Research/Summary",
+                  "description": "In pairs, learners research on components of blood and their functions and produce a table summarising their findings to share with the class."
+                },
+                {
+                  "activity_type": "Visit/Report",
+                  "description": "Organise learners to visit a health facility to find out about the causes and prevention of high blood pressure, coronary heart disease, and stroke. Learners write a report on the causes and their prevention."
+                },
+                {
+                  "activity_type": "Video/Research",
+                  "description": "Learners watch a video clip or listen to a talk from blood bank personnel to find out the importance of blood transfusion and the possible risks involved. In pairs, learners complete a short report on the benefits and risks of transfusions, including compatible blood groups."
+                }
+              ],
+              "suggested_assessment_activities": [
+                {
+                  "assessment_type": "Listening",
+                  "description": "Listen to pair and group conversations and whole class discussion to monitor progress towards learning outcomes."
+                },
+                {
+                  "assessment_type": "Observation",
+                  "description": "Observe pairs and groups carrying out activities; check that all contribute so that everyone is learning and developing skills."
+                },
+                {
+                  "assessment_type": "Product Evaluation",
+                  "description": "Evaluate quality of products of each activity: annotated diagrams, Presentations, summary tables, reports, and role plays."
+                }
+              ],
+              "ict_guidance": {
+                "suggested_uses": [],
+                "restrictions": []
+              },
+              "syllabus_notes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

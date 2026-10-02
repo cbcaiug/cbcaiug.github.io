@@ -1,0 +1,1311 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "General Science",
+        "level": "O-Level",
+        "class_group": "Senior One",
+        "year": "2019",
+        "version": "1.0",
+        "source_document": "GENERAL SCIENCE SYLLABUS"
+    },
+    "global_framework": {
+        "competencies": [
+            "Self-assured individuals",
+            "Responsible and patriotic citizens",
+            "Lifelong learners",
+            "Positive contributors to society"
+        ],
+        "generic_skills": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Co-operation and Self-Directed Learning",
+            "Mathematical Computation and ICT Proficiency",
+            "Communication"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior One",
+            "class_code": "S1",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Introduction to General Science",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GSC-O-S1-T1-0001",
+                                        "topic_title": "INTRODUCTION TO GENERAL SCIENCE",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 10
+                                    },
+                                    "core_competency": "The learner understands the meaning of integrated science and why it is important to study.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Highlight some of the science issues that were studied in the primary school (k, u)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "Understand the difference between Natural Science and Social Science, and between science and technology (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "Identify some daily phenomena that can be explained using scientific knowledge (u,gs)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "Understand how science and technology affect society (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "Understand the instances in which science and technology have been misused (u)",
+                                            "domain": "Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss the differences between science and technology and outline examples of areas of life where science and technology have improved the quality of life"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss how science helps us to obtain knowledge and also how it helps to explain superstitions, beliefs and taboos."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss how science and technology are misused in society e.g. warfare, etc."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Ask learners to identify the areas of life where science and technology have brought improvements. Converse with the learners what improvements have been brought and assess how they communicate."
+                                        },
+                                        {
+                                            "assessment_type": "Individual Activity",
+                                            "description": "Ask individual learners to state one problem facing their community and outline the steps scientists will go through to solve the problem. Assess how the learners communicate scientifically."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 10,
+                                        "unit": "periods",
+                                        "source_page": "17"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Science for Health and Safety",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GSC-O-S1-T1-0002",
+                                        "topic_title": "HAZARDS AND FIRST AID",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 26
+                                    },
+                                    "core_competency": "The learner identifies the various hazards and devises appropriate methods of preventing hazards in the home and at school.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the term hazard (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "know examples of hazards in the home and at school (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "identify warning and safety signs (u, s)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand safety precautions to prevent hazards (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "describe “first aid” and explain its role (u, v/a)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "know the contents of a first aid box and their uses (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "Describe how to administer first aid to common hazards (scald, burn, cut, electric shock, fracture. Fainting, bites, chemical contact) (u, s, v/a)",
+                                            "domain": "Skills"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "Discuss causes of hazards that are encountered in teaching /learning of science and how they can be discuss the common hazards that occur at home and how they can be prevented"
+                                        },
+                                        {
+                                            "activity_type": "Design",
+                                            "description": "Design a poster to help avoid the occurrence of hazards at school"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Task",
+                                            "description": "Task individual learners to identify and discuss three hazards that can occur (in teaching and learning science). Let learners write a brief note (product) of what they would do in case such a hazard occurred."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Ask learners to mention/describe safety or warning signs and interpret them in a conversation. Allow learners to critique their peers."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 26,
+                                        "unit": "periods",
+                                        "source_page": "17"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Science and Technology",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GSC-O-S1-T1-0003",
+                                        "topic_title": "MEASUREMENTS, DENSITY",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 36
+                                    },
+                                    "core_competency": "The learner estimates and measures length, mass, time, area, volume and density and expresses them in appropriate units.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the meaning and importance of measuring and state instances where it is applied (u, v/a)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "know the fundamental quantities and instruments used to measure them (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "estimate and measure different physical quantities using appropriate equipment and express them using appropriate units (s)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "determine volume of irregular objects (u, s)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand the meaning of fundamental/ base and derived physical quantities and states their examples (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "Understand the meaning of density and solve simple numerical problems on density (u, s)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "Relate the density and relative density of substances (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "Determine the densities of different solids and liquids (u, s)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "Predict whether a material floats or sinks in water in relation to its density (u)",
+                                            "domain": "Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [
+                                            {
+                                                "text_verbatim": "The reading of vernier calipers and micrometer screw gauge is not required",
+                                                "override_allowed_by_user": true,
+                                                "source_page": "18"
+                                            }
+                                        ],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Measurement",
+                                            "description": "measure length for a variety of objects such as a desk, one’s height, height of the classroom and others, express the readings using different units and compare their readings"
+                                        },
+                                        {
+                                            "activity_type": "Measurement",
+                                            "description": "measure mass for different objects and compare their answers, then they discuss why their answers are different."
+                                        },
+                                        {
+                                            "activity_type": "Measurement",
+                                            "description": "measure the volume of regular and irregular objects using measuring cylinder and describe the steps they undertake."
+                                        },
+                                        {
+                                            "activity_type": "Experiment",
+                                            "description": "plan and carry out experiments to determine densities of solids of different materials such as cork, plastic, wood, glass blocks and predict whether they float or sink in water"
+                                        },
+                                        {
+                                            "activity_type": "Experiment",
+                                            "description": "carry out experiments to determine densities of some liquids."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Measurement Task",
+                                            "description": "Learners work together to measure and record each of the following: The length of a football pitch, The width of your classroom, The area of the desk top, The thickness of the desk top, The time a friend takes to walk 20 paces, The mass of your pen"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with the learners about how they choose the instrument, the teamwork, the accuracy and the recording of units."
+                                        },
+                                        {
+                                            "assessment_type": "Calculation",
+                                            "description": "Learners calculate the density in g cm-3 and kg m-3 for a block of material of mass 600 g and volume 200 cm3 and predicting whether this block will float or sink in water."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe how learners state the formula, the substitution in the formula, stating the final answer and in a conversation, let learners state how they relate the answer to floating/sinking in water."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 36,
+                                        "unit": "periods",
+                                        "source_page": "18"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "The reading of vernier calipers and micrometer screw gauge is not required",
+                                            "note_type": "constraint",
+                                            "source_page": "18"
+                                        },
+                                        {
+                                            "text_verbatim": "Both digital and analog clocks to be used where available",
+                                            "note_type": "constraint",
+                                            "source_page": "18"
+                                        },
+                                        {
+                                            "text_verbatim": "Accuracy and significant figures should be emphasised throughout the whole syllabus",
+                                            "note_type": "constraint",
+                                            "source_page": "18"
+                                        },
+                                        {
+                                            "text_verbatim": "Scientific method should be continuously applied to many other topics and sub-topics",
+                                            "note_type": "constraint",
+                                            "source_page": "18"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Science in Industry",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GSC-O-S1-T2-0004",
+                                        "topic_title": "MATTER",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 22
+                                    },
+                                    "core_competency": "The leaner appreciates and relates properties of the states of matter to physical and chemical phenomena in daily life.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand what matter is and identify different states of matter (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "use knowledge of kinetic theory and particulate nature of matter to explain the states of matter and their properties (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "know the factors that affect the rate of diffusion of a gas (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "use scientific knowledge of the particle theory to explain common phenomena such as gas pressure, clothes drying, rain formation and making a cup of tea (u, v/a)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand the processes of change of state such as melting, boiling, evaporation, condensation, freezing and sublimation in terms of either heat gain or heat loss (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "compare physical and chemical changes (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "categorise processes in everyday life as physical and chemical changes (u, gs)",
+                                            "domain": "Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "investigate the differences between the common three states of matter as accounted for by the particle and kinetic theory and make reports"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "discuss why a wet piece of cloth dries faster on: hot still (windless) day than a cold day; cold windy day than a cold still day"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "carry out a discussion on the effect of cooling and heating on the states of common substances"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "discuss the changes of state in terms of the kinetic theory and make a report"
+                                        },
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "investigate the difference between chemical and physical changes, basing on boiling of water, melting of ice, sublimation of iodine, burning a piece of wood, ripening of fruits, rusting of iron, and any other daily processes"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Modelling",
+                                            "description": "Learners use models (from local materials) to explain the difference between solids, liquids and gases in terms of arrangement of particles. Consider how learners select and arrange the materials and the written report of what they do."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "In a conversation, learners describe the changes of state of matter that occur in the following cases: melting candle wax, Heating of ice, boiling water, heating iodine"
+                                        },
+                                        {
+                                            "assessment_type": "Classification",
+                                            "description": "Classify the following processes as physical change or chemical change and give reasons for your answer: Burning of wood, Rotting of fruits, Melting of candle wax, Condensation of steam, Dissolving sugar in water"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 22,
+                                        "unit": "periods",
+                                        "source_page": "19"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Science and Energy",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GSC-O-S1-T2-0005",
+                                        "topic_title": "TEMPERATURE AND THERMOMETERS",
+                                        "sequence_order": 5,
+                                        "recommended_duration_periods": 20
+                                    },
+                                    "core_competency": "The learner understands the construction and use of thermometers",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "compare temperature and heat (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand the meaning of thermometric properties (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "demonstrate how temperature scales are obtained from thermometric properties (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "solve simple numerical problems related to temperature scales (u, s)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "compare mercury, alcohol and water as thermometric liquids (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "demonstrate the construction and use of clinical thermometer (u, s)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "convert temperature from one scale to another (u, s)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand the daily variations in temperature of the atmosphere (u, gs)",
+                                            "domain": "Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [
+                                            {
+                                                "text_verbatim": "The operation of gas thermometers and resistance thermometer should not to be discussed at this level",
+                                                "override_allowed_by_user": true,
+                                                "source_page": "20"
+                                            }
+                                        ],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Measurement",
+                                            "description": "measure their body temperature and compare it with the known value."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss the advantages and disadvantages of mercury and water as thermometric liquids"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss the best practices which a health worker should use to care for a clinical thermometer"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "In a conversation, learners explain why mercury is sometimes a better thermometric liquid than alcohol’. Assess the communication of learners."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 20,
+                                        "unit": "periods",
+                                        "source_page": "20"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "The operation of gas thermometers and resistance thermometer should not to be discussed at this level",
+                                            "note_type": "constraint",
+                                            "source_page": "20"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Science and Environment",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GSC-O-S1-T2-0006",
+                                        "topic_title": "DIVERSITY OF LIVING THINGS",
+                                        "sequence_order": 6,
+                                        "recommended_duration_periods": 30
+                                    },
+                                    "core_competency": "The learner identifies and appreciates the diversity of animals, plants and microorganisms and the importance of organisms in life.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "know the processes that are characteristic of all living things and their importance (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "know the parts and functions of typical animal and plant cells (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "understand the levels of cellular organisation in multi-cellular organisms (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "know the seven levels of taxonomy (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "understand the two-word naming system of living organisms (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "know characteristics of organisms in the following categories of living things: monera, protoctista, fungi, plantae, arthropoda, chordata and viruses (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "analyse the uses and harmful effects of organisms in kingdom monera and fungi (k, v/a)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "know the main characteristics of insects and understand the lifecycles of a housefly, cockroach, mosquito, bee and butterfly (k, u, v/a)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "appreciate the useful and harmful aspects of a housefly, cockroach, mosquito, bee and butterfly and devise methods of controlling them (u, v/a)",
+                                            "domain": "Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": [
+                                            {
+                                                "text_verbatim": "The parts of the cells should be limited to cell membrane, cell wall, chloroplast, cytoplasm, nucleus, nuclear membrane cell vacuole and cell vacuole membrane",
+                                                "override_allowed_by_user": true,
+                                                "source_page": "21"
+                                            }
+                                        ]
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss the following scenario and present their work to the rest of the class. A “boda-boda motorcycle” consumes petrol, takes in air, it moves gives off waste products in form of smoke. Is a boda-boda motorcycle a living organism? Give reasons for your answer"
+                                        },
+                                        {
+                                            "activity_type": "Research/Role Play",
+                                            "description": "use ICT or other sources to research and play out a short drama skit on the functions of the parts in a plant and animal cell"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss how housefly, cockroach, mosquito, bee and butterfly are useful and harmful and make presentations"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Scenario Analysis",
+                                            "description": "A new vertebrate is found in a tropical rain forest. It spends a lot of time in water, has four limbs, two eyes and a body temperature that varies with the surroundings. Basing on this information and in a conversation, task learners to answer the following questions: To which classes of vertebrates might it belong? What other features would you look for to be reasonably sure of the correct class?"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 30,
+                                        "unit": "periods",
+                                        "source_page": "21"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "use ICT or other sources to research and play out a short drama skit on the functions of the parts in a plant and animal cell"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "The parts of the cells should be limited to cell membrane, cell wall, chloroplast, cytoplasm, nucleus, nuclear membrane cell vacuole and cell vacuole membrane",
+                                            "note_type": "constraint",
+                                            "source_page": "21"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Science in Agriculture",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GSC-O-S1-T3-0007",
+                                        "topic_title": "PLANT STRUCTURE",
+                                        "sequence_order": 7,
+                                        "recommended_duration_periods": 14
+                                    },
+                                    "core_competency": "The learner identifies the different parts of flowering plants and their functions.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "know the external parts of a typical flowering plant (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "know the functions of a root, stem, leaf, flower and fruit to a plant (k, u)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "understand the various ways by which different plant parts are used by the society (u, v/a)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand that there are modified roots, stems and leaves and identify their functions for both the plant and the society (u, v/a)",
+                                            "domain": "Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [
+                                            {
+                                                "text_verbatim": "The parts and functions of the internal structure of a plant NOT required",
+                                                "override_allowed_by_user": true,
+                                                "source_page": "22"
+                                            }
+                                        ],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Identification",
+                                            "description": "feel and identify the different parts of a typical flowering plant. Then they discuss and list functions of different plant parts (roots, stems, leaves, flowers and fruits)"
+                                        },
+                                        {
+                                            "activity_type": "Identification",
+                                            "description": "use observable features to identify a modified root, stem and leaf and describe the modifications and how they are useful"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Classification Task",
+                                            "description": "Task learners to group the following plant parts which we use as foods into roots, leaves, stems and fruits: cabbage, sugar cane, Irish potato, pumpkin, carrot, onion, tomato, groundnuts, cassava root, sweet potato tuber, maize grain."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "In a peer conversation, let learners give the reasons why they make such grouping"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 14,
+                                        "unit": "periods",
+                                        "source_page": "22"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "The parts and functions of the internal structure of a plant NOT required",
+                                            "note_type": "constraint",
+                                            "source_page": "22"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GSC-O-S1-T3-0008",
+                                        "topic_title": "REPRODUCTION IN PLANTS",
+                                        "sequence_order": 8,
+                                        "recommended_duration_periods": 14
+                                    },
+                                    "core_competency": "The learner understands that the flower is the organ where sexual reproduction occurs leading to a new plant and that parts other than the seed can develop into new independent plants.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the meaning of pollination and describes the types and agents of pollination (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand the meaning of fertilization and identifies its products (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "compare seeds and fruits (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand the meaning of fruit/ seed dispersal, its agents and explain its importance to the plant species and farming (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand that there are other parts of a plant other than the seed that can develop into a new plant of the same kind (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "practice vegetative propagation by cutting, grafting and suckers and give examples (k, u, gs)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "know the advantages and disadvantages of vegetative propagation (u, v/a)",
+                                            "domain": "Knowledge"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss and suggest what would transfer pollen from the anther to the stigma and hence identify types of pollination. And make a report"
+                                        },
+                                        {
+                                            "activity_type": "Listening",
+                                            "description": "Learners listen to a talk by a farmer/ agriculturist about obtaining new plants from other plant parts and make a report."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Individual Task",
+                                            "description": "Ask individual learners to describe what would happen to a given plant species if seed/fruit dispersal does not take place over a long period of time. Assess how learners can communicate scientific ideas in this case."
+                                        },
+                                        {
+                                            "assessment_type": "Outline/Conversation",
+                                            "description": "Let learners outline the common features of all plant parts used for vegetative propagation have. In a conversation, let the learners explain the way the parts develop into new plants"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 14,
+                                        "unit": "periods",
+                                        "source_page": "22"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Science in Industry",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GSC-O-S1-T3-0009",
+                                        "topic_title": "ELEMENTS, COMPOUNDS AND MIXTURES",
+                                        "sequence_order": 9,
+                                        "recommended_duration_periods": 20
+                                    },
+                                    "core_competency": "The learner explains composition and properties of different forms of matter.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the meaning of elements, compounds and mixtures (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "compare between metals and nonmetals using laboratory tests (k)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "Demonstrate how the purity of a substance can be determined (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "demonstrate methods by which mixtures can be separated (u, s)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "compare mixtures and pure substances, mixtures and compound (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "compare miscible and immiscible liquids (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand methods by which miscible and immiscible liquids can be separated (u, s)",
+                                            "domain": "Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "Carry out a discussion on how components of some mixtures can be separated e.g. mixture of iron filings and sulphur powder, Mixture of sand and salt."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "Carry out a group discussion on selecting appropriate scientific methods of separation, such as evaporation, distillation, filtration, crystallisation and chromatography to separate mixtures"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Classification",
+                                            "description": "Learners classify the following substances into compounds, mixture or elements; in table below oxide, oxygen, hydrochloric acid, air, chlorine, gold, Chlorophyll"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "In a conversation, let learners give reasons for the answers."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 20,
+                                        "unit": "periods",
+                                        "source_page": "23"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "GSC-O-S1-T3-0010",
+                                        "topic_title": "AIR, BURNING AND RUSTING",
+                                        "sequence_order": 10,
+                                        "recommended_duration_periods": 24
+                                    },
+                                    "core_competency": "The learner understands the composition and properties of air and how to keep air clean.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "show how air is a mixture and not a compound ()",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "know the components of air and their proportions (k, u)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "know the importance of each of the components of air (u)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "understand the methods of separation of the major components in air (u, s)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "determine the percentage of oxygen in air (u,s)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "know the properties of oxygen and carbon dioxide (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "demonstrate how to identify oxygen and carbon dioxide based on their properties (u, s)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "know the uses of oxygen and carbon dioxide both in nature and industry (u, v/a)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "know the requirements and products of respiration (k)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "understand what combustion is, the need of oxygen for combustion and products of combustion (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "Demonstrate how substances such as magnesium, sulphur and carbon undergo combustion (u)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "understand the behavior of some substances when exposed to air in terms of absorbing or giving out water (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "understand the meaning of rusting and how it affects iron materials/tools (k, u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "know the conditions necessary for rusting and describe how to show that each condition is necessary for rusting (u)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "know the various methods of preventing rusting of iron (u, v/a)",
+                                            "domain": "Knowledge"
+                                        },
+                                        {
+                                            "outcome_text": "Understand the term air pollution, and identifies the main examples of air pollutants and their sources (u)",
+                                            "domain": "Understanding"
+                                        },
+                                        {
+                                            "outcome_text": "Analyse the effects of air pollution and the steps needed to prevent, control or mitigate air pollution (u, v/a)",
+                                            "domain": "Skills"
+                                        },
+                                        {
+                                            "outcome_text": "Appreciate the value of clean air and practices or habits that keep the air clean (u, v/a)",
+                                            "domain": "Understanding"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss the composition of air and represent their discussion using a pie chart"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss the variation of the composition of air at different surfaces of the earth"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "In groups, learners discuss the properties of oxygen and carbon dioxide basing on the following aspects: solubility in water; the effect on: glowing and burning wooden splint, litmus paper, lime water"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "carry out a discussion to explain that during respiration, living things use oxygen and give out carbon dioxide."
+                                        },
+                                        {
+                                            "activity_type": "Observation",
+                                            "description": "watch simulations of the combustion of some metals and discuss the process of combustion of metals and non-metals"
+                                        },
+                                        {
+                                            "activity_type": "Investigation",
+                                            "description": "In groups and with help from the teacher, learners gather information and carry out a discussion on the meaning of deliquescence, efflorescence and hygroscopy"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss the different processes that use oxygen in the atmosphere and the importance of these processes"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss the effectiveness of different ways of preventing rusting"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss: how man is responsible for air pollutants and present a report"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "discuss: the steps needed to control air pollution or ensure clean air and make a report."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Drawing",
+                                            "description": "Observe learners drawing a pie chart showing the percentage composition of air by volume. Assess how learners use mathematical knowledge to communicate in science."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners carrying out tests to distinguish between oxygen and carbon dioxide. Converse with the learners how they can use the observations of the tests"
+                                        },
+                                        {
+                                            "assessment_type": "Task",
+                                            "description": "Task learners to compare burning and respiration. Assess how learners communicate precisely."
+                                        },
+                                        {
+                                            "assessment_type": "Task",
+                                            "description": "Task learners to leave a few pellets of sodium hydroxide in the open for a short time. In a conversation, ask the learners to explain what happens to the pellets."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "In a conversation, ask learner to explain scientifically what happens to a hoe or knife that is left outside for a week. Assess how learners communicate scientifically in this case"
+                                        },
+                                        {
+                                            "assessment_type": "Writing",
+                                            "description": "Task individual learners to write a newspaper article describing how human activities can lead to air pollution. Assess how learners communicate and express values in this case."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "24"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "watch simulations of the combustion of some metals"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,804 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Christian Religious Education",
+        "level": "Lower Secondary",
+        "class_group": "Senior Two",
+        "year": "2019",
+        "version": "1.0",
+        "source_document": "Christian Religious Education Syllabus.pdf"
+    },
+    "global_framework": {
+        "competencies": [
+            "self – assured individuals",
+            "responsible and patriotic citizens",
+            "lifelong learners",
+            "positive contributors to society"
+        ],
+        "generic_skills": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Communication",
+            "Co-operation and Self-Directed Learning",
+            "Mathematical computation and ICT proficiency"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Diversity and inclusion",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Two",
+            "class_code": "S2",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Man’s Social Relations",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "CRE-O-S2-T1-0001",
+                                        "topic_title": "RESPECT FOR HUMAN LIFE",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 24
+                                    },
+                                    "core_competency": "Learner understands how religions promote respect for human life by fostering the values of tolerance, respect, fairness, harmony and peaceful co-existence.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Appreciate Christian teaching of human dignity and respect for life (u/v)",
+                                            "domain": "u/v"
+                                        },
+                                        {
+                                            "outcome_text": "Appreciate life as a special gift from God that should be respected and protected (u, v)",
+                                            "domain": "u, v"
+                                        },
+                                        {
+                                            "outcome_text": "Appreciate sexuality as God’s design of creation(v/a)",
+                                            "domain": "v/a"
+                                        },
+                                        {
+                                            "outcome_text": "Understand the importance of respecting oneself by valuing one’s own body(u, v)",
+                                            "domain": "u, v"
+                                        },
+                                        {
+                                            "outcome_text": "Appreciate the complementary nature of men and women (v).",
+                                            "domain": "v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Human dignity and respect for life",
+                                            "Sanctity of life in Exodus 20:13 and John 8:11",
+                                            "Self-esteem and assertiveness in the promotion of human dignity",
+                                            "Sexuality as God’s design",
+                                            "Valuing one's own body",
+                                            "Personal hygiene",
+                                            "Abstinence from sex"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Observation/Discussion",
+                                            "description": "Watch movies depicting human dignity or discuss the meaning of human dignity with examples from school where community members have not been respected."
+                                        },
+                                        {
+                                            "activity_type": "Debate",
+                                            "description": "Debate whether being human is not conditional to one’s status, level of education, wealth and religion."
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Use the Bible to explain that human beings are created in God’s image (Genesis 1:26-28, 5:1-2 and 9:6)"
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Identify teaching about the sanctity of life in Exodus 20:13 and John 8:11"
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Use John 8:11 to explain Jesus’ attitude to human dignity."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Write a summary of teachings about the sanctity of life in Exodus 20:13 and John 8:11"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Discuss ways through which life should be respected and protected."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Use examples to describe acts that deprive respect for human life."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Discuss self-esteem and assertiveness in the promotion of human dignity."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "Discuss how respect for human life is presented through the teaching about slaves in Leviticus 19:12-18 and Numbers 35:9-12."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "Discuss ways in which Jesus promoted the human dignity of sinners with a focus on Mathew 9:9-13 and Luke 19:1-10"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "Identify ways through which human dignity should be promoted and protected with a focus on Exodus 20:12-17"
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "Identify ways through which human dignity of the underprivileged should be protected with an emphasis on Exodus 21:1-3, 2 Samuel 9:1-8, 1 Peter 18-20, James 5:1-6. Colossians 3:22, 4:1 and Mark 1:40 – 45"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Discuss how Jesus promoted the human dignity of children and women in Mark 10:13-16, John 4:1-9 and Luke 7:36 -39 and 11:38 - 42"
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Write a summary of the lessons learnt about respect for human life from biblical teachings."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Discuss acts that promote human dignity"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "State reasons why life should be respected and protected."
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Choose verses relating to human dignity from the Bible, other than those given, and explain what they teach about human dignity."
+                                        },
+                                        {
+                                            "activity_type": "Group Research/Discussion",
+                                            "description": "Use the internet to search or discuss human development and sexuality according to God’s plan in relation to the creation story in the bible."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "Discuss the complementary nature of men and women."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "Explain concepts in human life and sexuality, such as dignity of human sexuality and hygiene."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "Discuss the importance of self-respect in terms of: Valuing your own body, Observing personal hygiene, Protecting self from communicable diseases, Abstinence from sex."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Write about religious teachings on sexuality"
+                                        },
+                                        {
+                                            "activity_type": "Individual Writing",
+                                            "description": "Word process or write an article on ways young people can value their bodies."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Discuss ways in which the Africans promoted human dignity"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they exchange ideas about human dignity, listen for accuracy of facts and the logic in the ideas presented"
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "Assess the accuracy of the Bible quotations used in the summary report"
+                                        },
+                                        {
+                                            "assessment_type": "Investigation",
+                                            "description": "Investigate the written reports to ascertain knowledge and accuracy."
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "Assess learners’ written products for evidence of understanding the Biblical teaching about human dignity"
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "Assess the accuracy of the Bible quotations used in the summary report"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners work in groups to find out the promotion of respect"
+                                        },
+                                        {
+                                            "assessment_type": "Listening",
+                                            "description": "Listen to learners’ discussion in relation to the promotion of the gift of life."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learner’s interaction and individual contribution in the group activity."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "In a conversation, question individual learners and assess their understanding of sexuality in relation to God’s plan."
+                                        },
+                                        {
+                                            "assessment_type": "Examination",
+                                            "description": "Examine the written products for evidence of accuracy of information given in relation to sexuality."
+                                        },
+                                        {
+                                            "assessment_type": "Listening",
+                                            "description": "Listen to learners’ discussion about the African perspective of human dignity."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "Use the internet to search or discuss human development and sexuality",
+                                            "assessment_method": "Examination of written products"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "14"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use the internet to search or discuss human development and sexuality",
+                                            "Word process or write an article on ways young people can value their bodies"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Man’s Social Relations",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "CRE-O-S2-T2-0001",
+                                        "topic_title": "MARRIAGE",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 24
+                                    },
+                                    "core_competency": "The Learner appreciates the importance of marriage and how it fosters the values of love, honesty, respect, harmony and generosity.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Understand the meaning and purpose of courtship and marriage in the promotion of love and honesty(u, v)",
+                                            "domain": "u, v"
+                                        },
+                                        {
+                                            "outcome_text": "Appreciates the purpose of marriage(v)",
+                                            "domain": "v"
+                                        },
+                                        {
+                                            "outcome_text": "Appreciate the importance of children in marriage and society (u, v)",
+                                            "domain": "u, v"
+                                        },
+                                        {
+                                            "outcome_text": "Understand the right for pregnancy in order to be a good parent",
+                                            "domain": ""
+                                        },
+                                        {
+                                            "outcome_text": "Appreciate Christian teachings about marriage (u, v)",
+                                            "domain": "u, v"
+                                        },
+                                        {
+                                            "outcome_text": "Appreciate traditional African marriage and the values therein (u, v)",
+                                            "domain": "u, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Meaning and purpose of courtship and marriage",
+                                            "Values of love and honesty in marriage",
+                                            "Unity in marriage (Genesis 2:18-25)",
+                                            "Importance of children in marriage (Genesis 1:28, 21:6-7, 1 Samuel 2:8)",
+                                            "Christian values in marriage: love, patience, forgiveness (Hosea 2 and 3)",
+                                            "Conduct of husbands and wives (1 Peter 3:17)",
+                                            "Stability in marriage (John 2:1)",
+                                            "Traditional African marriage practices"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Discover the meaning and purpose of marriage and give examples, which reflect marriage as a custodian of the values of love and honesty."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Explain marriage as a custodian of love and honesty using examples."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Describe the importance of courtship period using examples"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Discuss the problems associated with not having courtship period"
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Identify and record the value of preparing for marriage with reference to Genesis 24."
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Analyse the values of unity in marriage with reference to the Bible text in Genesis 2:18 -25"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Discuss the importance of children in a marriage relationship using examples."
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Analyse the value of children in a marriage with reference to Genesis 1:28, 21:6-7 and 1Samuel 2:8"
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Word process or write about and suggest ways of keeping a childless marriage happy."
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Identify the values of love, patience and forgiveness with reference to Hosea 2 and 3"
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Discuss the conduct of husbands and wives in a marriage and how it applies today with reference to 1 Peter 3:17"
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Identify ways of promoting stability in a marriage using John 2:1"
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Write about the expected Christian behaviour in a marriage with reference to 1Corinthians"
+                                        },
+                                        {
+                                            "activity_type": "Research",
+                                            "description": "Use the internet or research and report about courtship and marriage in traditional Africa"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Discuss the good practices of traditional African marriage"
+                                        },
+                                        {
+                                            "activity_type": "Comparison",
+                                            "description": "Compare traditional and Christian marriages"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Examination",
+                                            "description": "Examine the quality and accuracy of the research presented by the learners."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe group discussions and conversations for evidence of individual participation and respect for others ‘opinions."
+                                        },
+                                        {
+                                            "assessment_type": "Examination",
+                                            "description": "Examine the written products for evidence of accurate Bible references and presentation of personal opinion"
+                                        },
+                                        {
+                                            "assessment_type": "Examination",
+                                            "description": "Examine the written products for accuracy of facts provided"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners discuss for evidence of co-operation"
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "Assess the learners products"
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "Assess learners’ written products for evidence of understanding the Biblical teaching about marriage"
+                                        },
+                                        {
+                                            "assessment_type": "Assessment",
+                                            "description": "Assess learners’ written products for evidence of understanding the African teaching about marriage"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe group discussion for evidence of individual participation and respect for others’ opinions"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [
+                                        {
+                                            "text_verbatim": "Use the internet or research and report about courtship and marriage in traditional Africa",
+                                            "assessment_method": "Examination of research quality"
+                                        }
+                                    ],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "14"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Word process or write about and suggest ways of keeping a childless marriage happy.",
+                                            "Use the internet or research and report about courtship and marriage in traditional Africa"
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Man’s Social Relations",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "CRE-O-S2-T3-0001",
+                                        "topic_title": "FAMILY",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 24
+                                    },
+                                    "core_competency": "The Learner understands how the family promotes the values of responsibility unity, loyalty, generosity and harmony as derived from Christianity and African traditional society.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "Understand the importance of family to society to promote unity (u)",
+                                            "domain": "u"
+                                        },
+                                        {
+                                            "outcome_text": "Know the various types of family to develop unity, empathy, loyalty and generosity (k)",
+                                            "domain": "k"
+                                        },
+                                        {
+                                            "outcome_text": "Understand the roles of the different members of the family to promote the values of individual responsibility (u/v/a)",
+                                            "domain": "u/v/a"
+                                        },
+                                        {
+                                            "outcome_text": "Appreciate the values of harmony within the family relationships (u, v)",
+                                            "domain": "u, v"
+                                        },
+                                        {
+                                            "outcome_text": "Understand current family trends (u)",
+                                            "domain": "u"
+                                        },
+                                        {
+                                            "outcome_text": "Appreciate Christian teaching about family (u, v)",
+                                            "domain": "u, v"
+                                        },
+                                        {
+                                            "outcome_text": "Understand the types of family in traditional African Society (u)",
+                                            "domain": "u"
+                                        },
+                                        {
+                                            "outcome_text": "Understand the nature of the traditional African family(u, v)",
+                                            "domain": "u, v"
+                                        },
+                                        {
+                                            "outcome_text": "Understand how modernity has influenced the African family(u, v)",
+                                            "domain": "u, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [
+                                            "Meaning and importance of family",
+                                            "Types of family",
+                                            "Roles of family members (Ephesians 6:1-4, 1 Peter 3:1-7, Exodus 2:1-3, 20:12, Genesis 24)",
+                                            "Family harmony and misunderstanding",
+                                            "Current family trends",
+                                            "Biblical teachings on family (Ephesians 5:22-33, 6:1-4)",
+                                            "Traditional African family values and nature"
+                                        ],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Explain the meaning of a family using examples"
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Write about the members who constitute a family"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Share ideas about the importance of a family in society."
+                                        },
+                                        {
+                                            "activity_type": "Explanation",
+                                            "description": "Explain the two major types of family"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Share ideas and experiences about the advantages and disadvantages of each of them."
+                                        },
+                                        {
+                                            "activity_type": "Recording",
+                                            "description": "Record the values that are promoted by each type of family."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Discuss the value of courtesy in the family and community"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Discuss and record the roles played by different members of the family"
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Write the responsibilities of each of the family members"
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Use Ephesians 6:1-4, 1 Peter 3:1-7, Exodus 2:1-3, 20:12 and Genesis 24 to identify the roles of different members of the family."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Write about the ideal relationship in a family as expressed in Paul’s letter to the Ephesians."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Share ideas about misunderstandings between children and their parents."
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Write about the causes of misunderstandings between husbands and wives."
+                                        },
+                                        {
+                                            "activity_type": "Summarisation",
+                                            "description": "Summarise the dangers of family instability of family members and society in general."
+                                        },
+                                        {
+                                            "activity_type": "Suggestion",
+                                            "description": "Suggest and record possible ways of resolving misunderstandings within the family."
+                                        },
+                                        {
+                                            "activity_type": "Explanation",
+                                            "description": "Explain the importance of harmony in the family."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Discuss the challenges facing the modern family setting and give solutions in your exercise book."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Discuss the current family trends"
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Share ideas about the challenges brought about by the new family."
+                                        },
+                                        {
+                                            "activity_type": "Suggestion",
+                                            "description": "Suggest ways of promoting the right attitudes to family."
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Use the Bible to identify and record teachings about the family"
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Use the example of Abraham’s family to identify the values expressed"
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Use Ephesians 5:22-33 to describe the relationship within in a family setting."
+                                        },
+                                        {
+                                            "activity_type": "Biblical Study",
+                                            "description": "Use Ephesians 6:1-4 to explain the ideal relationship between children and parents."
+                                        },
+                                        {
+                                            "activity_type": "Explanation",
+                                            "description": "Explain the nature of family in the traditional African setting"
+                                        },
+                                        {
+                                            "activity_type": "Role Play",
+                                            "description": "Use role play to express the roles of family members"
+                                        },
+                                        {
+                                            "activity_type": "Identification",
+                                            "description": "Identify the features of a good family in traditional Africa"
+                                        },
+                                        {
+                                            "activity_type": "Explanation",
+                                            "description": "Explain the place of the family in the community"
+                                        },
+                                        {
+                                            "activity_type": "Writing",
+                                            "description": "Word process or write about the African family values that are relevant to today."
+                                        },
+                                        {
+                                            "activity_type": "Comparison",
+                                            "description": "Compare the African traditional family to the modern family in Uganda today"
+                                        },
+                                        {
+                                            "activity_type": "Inference",
+                                            "description": "Draw lessons from the good practices of the traditional African family."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners’ discussion in group work\\examine their writings in their exercise books"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learner’s interaction and individual contribution in the group activity."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "In a conversation, question individual learners and assess their understanding of the family institution."
+                                        },
+                                        {
+                                            "assessment_type": "Examination",
+                                            "description": "Examine the quality and accuracy of the Biblical understanding of the texts presented by the learners"
+                                        },
+                                        {
+                                            "assessment_type": "Analysis",
+                                            "description": "Analyse the written product about the family for accuracy and value progression"
+                                        },
+                                        {
+                                            "assessment_type": "Examination",
+                                            "description": "Examine the quality and accuracy of the research presented by the learners"
+                                        },
+                                        {
+                                            "assessment_type": "Examination",
+                                            "description": "Examine the quality and accuracy of the Biblical understanding of the texts about family presented by the learners"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners discuss for accuracy and co-operation amongst the learners"
+                                        },
+                                        {
+                                            "assessment_type": "Listening",
+                                            "description": "Listen to learners discuss the Biblical verses for accuracy and proper understanding"
+                                        },
+                                        {
+                                            "assessment_type": "Analysis",
+                                            "description": "Analyse written products in regard to respect for the relationship between children and parents"
+                                        },
+                                        {
+                                            "assessment_type": "Examination",
+                                            "description": "Examine the quality and accuracy of the research presented by the learners"
+                                        },
+                                        {
+                                            "assessment_type": "Analysis",
+                                            "description": "Analyse the written products for accuracy of facts"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "14"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Word process or write about the African family values that are relevant to today."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

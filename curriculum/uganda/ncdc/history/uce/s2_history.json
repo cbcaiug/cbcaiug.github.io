@@ -1,0 +1,1141 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "History and Political Education",
+    "level": "O-Level",
+    "class_group": "Senior Two",
+    "year": "2019",
+    "version": "1.0",
+    "source_document": "History and Political Education Syllabus.pdf"
+  },
+
+  "global_framework": {
+    "competencies": [
+      "Critical thinking and problem-solving",
+      "Creativity and innovation",
+      "Communication",
+      "Co-operation and self-directed learning",
+      "Mathematical computation & ICT proficiency"
+    ],
+    "generic_skills": [
+      "Listen attentively and with comprehension",
+      "Talk confidently and explain issues clearly",
+      "Read accurately and fluently",
+      "Write and present coherently",
+      "Use a range of media to communicate ideas",
+      "Work effectively in diverse teams",
+      "Interact effectively with others",
+      "Take responsibility for own learning",
+      "Work independently with persistence",
+      "Manage goals and time",
+      "Use numbers and measurements accurately",
+      "Interpret and interrogate mathematical data",
+      "Use mathematics to justify and support decisions",
+      "Use technology to create, manipulate and process information",
+      "Use technology to collaborate, communicate and refine their work",
+      "Plan and carry out investigations",
+      "Sort and analyse information",
+      "Identify problems and ways forward",
+      "Predict outcomes and make reasoned decisions",
+      "Evaluate different solutions",
+      "Use imaginations to explore possibilities",
+      "Work with others to generate ideas",
+      "Suggest and develop new solutions",
+      "Try out innovative alternatives",
+      "Look for patterns and make generalisations"
+    ],
+    "values": [
+      "Respect for humanity and environment",
+      "Honesty; uphold and defend the truth at all times",
+      "Justice and fairness in dealing with others",
+      "Hard work for self-reliance",
+      "Integrity; moral uprightness and sound character",
+      "Creativity and innovativeness",
+      "Social responsibility",
+      "Social harmony",
+      "National unity",
+      "National consciousness and patriotism"
+    ],
+    "attitudes": [
+      "Self-motivation",
+      "Self-esteem",
+      "Conscientiousness",
+      "Positive attitude to work"
+    ],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Life skills",
+      "Mixed abilities and involvement",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+
+  "classes": [
+    {
+      "class_name": "Senior Two",
+      "class_code": "S2",
+      "terms": [
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Theme 2: Colonisation and the Struggle for Independence in East Africa",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S2-T1-0001",
+                    "topic_title": "Topic 01: The Colonial Administrative Systems in East Africa",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner understands the nature and impact of colonial administrative systems on the peoples of East Africa.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the colonial administration systems in Uganda. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "know the reasons why different types of colonial administration was used in East Africa. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "know the effects of indirect and direct rule used in East Africa. (v, s, u)",
+                      "domain": "Values; Skills; Understanding"
+                    },
+                    {
+                      "outcome_text": "appreciate the contribution of colonial administration systems used in East Africa.(s, u)",
+                      "domain": "Skills; Understanding"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Colonial administration system used in East Africa",
+                      "Indirect rule in Uganda",
+                      "Direct rule in Tanzania",
+                      "Features of indirect rule and direct rule",
+                      "Impact of colonial administration"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "let the learners use ICT or library research to find out the colonial administration system used in East Africa."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "In a brainstorm session, guide learners to find out the reason why indirect rule was used in Uganda, and direct rule used in Tanzania."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Involve learners in a brainstorm session on the effects of colonial administration in East Africa."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Guide learners to use the Internet or library research to find out the factors that led to the use of direct rule in Tanganyika."
+                    },
+                    {
+                      "activity_type": "Comparison",
+                      "description": "Task learners to compare the features of indirect rule for the British and the direct rule for Germans."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "Individually let learners write a report and show how the current local administration of current Uganda has some relationship with indirect rule system of the British."
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "In a role play, let learners dramatise how the indirect rule was applied in East Africa and make their own notes."
+                    },
+                    {
+                      "activity_type": "Reflection",
+                      "description": "Let learners write key issues in their reflective journal."
+                    },
+                    {
+                      "activity_type": "Project",
+                      "description": "Guide learners to establish a History and Political Education Club and begin to build a school based history centre."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In conversation, assess learners’ critical abilities highlighting the key features of a colonial system used in Uganda."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the discussion and find out whether learners can give immediate and far reaching effects of colonial administration in Uganda."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners analysing the results of direct rule in Tanganyika."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": true,
+                    "project_scope_verbatim": "Guide learners to establish a History and Political Education Club and begin to build a school based history centre.",
+                    "deliverables_verbatim": "History and Political Education Club established; school based history centre started.",
+                    "source_page": "26"
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "26"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use ICT or library research to find out the colonial administration system used in East Africa.",
+                      "Use the Internet or library research to find out the factors that led to the use of direct rule in Tanganyika."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S2-T1-0002",
+                    "topic_title": "Topic 02: The Colonial Economy in East Africa",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner understands the impact of road network and general colonial economy in East Africa.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand economic conditions before and after the introduction of a colonial economy. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "know the features of colonial economy in East Africa.",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "understand the reasons why the colonial administration encouraged both peasant and plantation farming. (v, u)",
+                      "domain": "Values; Understanding"
+                    },
+                    {
+                      "outcome_text": "understand why industries were established in colonial East Africa. (v, u)",
+                      "domain": "Values; Understanding"
+                    },
+                    {
+                      "outcome_text": "know the impact of the development of transport system in colonial East Africa.",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "understand the health and social problems that were faced during the colonial economy period. (k, u)",
+                      "domain": "Knowledge; Understanding"
+                    },
+                    {
+                      "outcome_text": "appreciate the impact of colonial economy in East Africa. (v, u)",
+                      "domain": "Values; Understanding"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Economic conditions before and after colonial economy",
+                      "Features of colonial economy",
+                      "Peasant vs plantation farming",
+                      "Industries in colonial East Africa",
+                      "Transport system (Uganda Railway)",
+                      "Health and social problems",
+                      "Impact of colonial economy"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "Guide learners to use the Internet or library research to compare the situation in East Africa before and after the colonial economy was established."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners to discuss the features of colonial economy in East Africa."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "In groups, let learners engage in a guided discussion about the reasons why the colonial administration encouraged both peasant and plantation farming, speculating as to whether or not this was the best for East Africans."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Involve learners in a discussion to understand the road network system used in colonial East Africa."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Guide learners to find out the course and the impact for the construction of the Uganda Railway."
+                    },
+                    {
+                      "activity_type": "Research/Writing",
+                      "description": "Let learners use ICT or library research to find out the nature of colonial agriculture and write a report."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners to understand the reasons and impact of the construction of health facilities in the colonial time."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Involve learners in a discussion about the challenges faced by whites in the colonial economy industries."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "With regard to the colonial economy, let learners debate the motion: “Colonisation of East Africa was a burden to whites.” Discuss."
+                    },
+                    {
+                      "activity_type": "Compilation",
+                      "description": "Ask learners to compile information on the colonial economy for their history club. Let them give an analysis on its impact to East Africa."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners to establish whether they know the pre and post-colonial economic situations in East Africa."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the given instruction and find out whether the learners can draw the map of East Africa and on it, mark the area where the Uganda Railway passes."
+                    },
+                    {
+                      "assessment_type": "Discussion",
+                      "description": "Engage learners in a discussion to access their understanding and critical thinking and cooperation."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "Ask learners to compile information on the colonial economy for their history club.",
+                    "deliverables_verbatim": "Compilation of information on colonial economy.",
+                    "source_page": "27"
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "27"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use the Internet or library research to compare the situation in East Africa before and after the colonial economy was established.",
+                      "Use ICT or library research to find out the nature of colonial agriculture."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "Theme 2: Colonisation and the Struggle for Independence in East Africa",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S2-T2-0001",
+                    "topic_title": "Topic 03: World Wars and their Impact in East Africa - Sub-topic 3.1: World War I",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 7
+                  },
+                  "core_competency": "The learner understands the impact of World Wars in East Africa.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the meaning of World War I. (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "understand the major countries or powers involved at World War I. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "know the reasons why the East African countries were involved in World War I. (a, v)",
+                      "domain": "Attitudes; Values"
+                    },
+                    {
+                      "outcome_text": "understand how the events of World War I influenced future history of East Africa. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "appreciate the impact of World War 1 in East Africa. (a, v)",
+                      "domain": "Attitudes; Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Meaning of World War I",
+                      "Major countries/powers involved",
+                      "Reasons for East African involvement",
+                      "Impact of World War I in East Africa"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "Using ICT or library research, let learners explain the meaning of the phenomenon of World War I."
+                    },
+                    {
+                      "activity_type": "Identification",
+                      "description": "Guide learners to identify the major countries or powers involved at each stage of the war."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Involve learners in a discussion about the reasons why East Africa was involved in World War I."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "In a brainstorm session, task learners to take notes about the causes of World War I."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Organise the class in a debate session to discuss the impact of World War I in East Africa."
+                    },
+                    {
+                      "activity_type": "Reflection",
+                      "description": "Let learners write key issues in their reflective journals."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe a discussion in class and find out whether learners can identify the problems brought to the peoples of East Africa by World War I."
+                    },
+                    {
+                      "assessment_type": "Interview/Report",
+                      "description": "Send learners in a nearby community, interview the elderly men about World War I, and write a report, present to class in the next lesson."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "source_page": ""
+                  },
+                  "time_allocation": {
+                    "periods": 7,
+                    "unit": "periods",
+                    "source_page": "28"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Using ICT or library research, let learners explain the meaning of the phenomenon of World War I."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S2-T2-0002",
+                    "topic_title": "Topic 03: World Wars and their Impact in East Africa - Sub-topic 3.2: World War II in East Africa, 1939-1945",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 7
+                  },
+                  "core_competency": "The learner understands the impact of World Wars in East Africa.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the background for the outbreak of World War II. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "understand the reasons for East Africa’s involvement in World War II.",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "know some of the East African personalities who were involved in world war II. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "appreciate the role of East African states in the World War II. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "appreciate the impact of World War II towards the rise of independence in the East African states. (v, k, u).",
+                      "domain": "Values; Knowledge; Understanding"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Background of World War II",
+                      "Reasons for East Africa's involvement",
+                      "East African personalities involved",
+                      "Role of East African states",
+                      "Impact of World War II on independence"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Documentary/Reading",
+                      "description": "Let learners watch a documentary, or read extracts, about the events that led to World War II, and identify the world powers that were involved in the war."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Let learners research on how East Africa became involved in World War II, and summarise the role its leaders took."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "In groups, organise learners to discuss and analyse the part played by East Africans in World War II."
+                    },
+                    {
+                      "activity_type": "Timeline Creation",
+                      "description": "Learners read articles/or watch a documentary about the course of World War II, and create a summary in the form of timelines of key events."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners in a discussion to evaluate the effects of World War II on East African social, political and economic spheres."
+                    },
+                    {
+                      "activity_type": "Field Study",
+                      "description": "Organise a field study and guide learners to interview the knowledgeable community elders about causes for the participation of East African people in World War II and its results. Learners take notes and present to class."
+                    },
+                    {
+                      "activity_type": "Reflection",
+                      "description": "Let them write key issues in the reflective journals."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners and assess their ability to evaluate East Africa’s role in World War II, and its effects."
+                    },
+                    {
+                      "assessment_type": "Examination of Work",
+                      "description": "Examine the presentation/notes from field work to check accuracy of the information written."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "source_page": ""
+                  },
+                  "time_allocation": {
+                    "periods": 7,
+                    "unit": "periods",
+                    "source_page": "29"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Watch a documentary about the events that led to World War II.",
+                      "Watch a documentary about the course of World War II."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S2-T2-0003",
+                    "topic_title": "Topic 04: Struggle for Independence in East Africa",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 14
+                  },
+                  "core_competency": "The learner understands the causes and results of independence struggles in East Africa.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the reasons for the rise of nationalism in Kenya, Uganda and Tanzania. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "know the various approaches used by people of East Africa to demand for their independence from colonial rule. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "appreciate the steps taken in the struggle for East African states independence. (u, v)",
+                      "domain": "Understanding; Values"
+                    },
+                    {
+                      "outcome_text": "compare the Ugandan struggle for independence with that of the East African states. (k, u)",
+                      "domain": "Knowledge; Understanding"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Rise of nationalism in Kenya, Uganda, Tanzania",
+                      "Approaches to independence",
+                      "Devonshire White Paper",
+                      "Political parties in Uganda",
+                      "Independence struggle in Tanganyika"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "Let the learners use ICT or library research to find out the background of the rise of nationalism in Uganda, Kenya and Tanzania."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Let them research on the various approaches used by East Africans to demand for their independence from the colonialists."
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "Let them carry out a role play and show how one of the steps towards independence attainment was carried out in East Africa."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners to understand the contribution of Devonshire White Paper in the struggle for the independence of Kenya."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Engage learners in a discussion to find out the contribution of political parties towards the attainment of the independence in Uganda."
+                    },
+                    {
+                      "activity_type": "Argument/Reflection",
+                      "description": "Involve learners in an argument to find out the contribution of various personalities in the independence struggle for Tanganyika. Let learners write key issues in the reflective journals."
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "Let learners write about the struggle for independence on any selected East African country and tease out key highlights which relate to Ugandan struggle."
+                    },
+                    {
+                      "activity_type": "Summarization",
+                      "description": "Guide learners to write a summary in their reflective journal about Uganda’s struggle for independence."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners to assess their understanding of nationalism in principle and how it was expressed in East Africa."
+                    },
+                    {
+                      "assessment_type": "Assignment",
+                      "description": "Assess the learners’ assignment for the process comparison in the struggle for independence of East African countries."
+                    },
+                    {
+                      "assessment_type": "Assessment",
+                      "description": "Assess their comparative table, showing the specific challenges faced by East African states in the struggle for the independence."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "source_page": ""
+                  },
+                  "time_allocation": {
+                    "periods": 14,
+                    "unit": "periods",
+                    "source_page": "30"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use ICT or library research to find out the background of the rise of nationalism."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S2-T2-0004",
+                    "topic_title": "Topic 05: Post Independence Socio-Economic Challenges in East Africa",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 14
+                  },
+                  "core_competency": "The learner understands and evaluates the challenges faced by East African states after independence.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the various European states that passed on independence to African leaders. (k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "understands the social and economic challenges faced by East African states after the independence. (u)",
+                      "domain": "Understanding"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "European states that granted independence",
+                      "External debt burden",
+                      "Poverty",
+                      "Structural changes",
+                      "Power wrangles",
+                      "Socio-economic challenges"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "Using ICT or library research, let learners find out the processes followed by the East African states to regain their independence and from which European states."
+                    },
+                    {
+                      "activity_type": "Explanation",
+                      "description": "Guide learners to explain how external debt burden affected Kenya, Uganda and Tanzania after independence."
+                    },
+                    {
+                      "activity_type": "Drama",
+                      "description": "Organise learners in class and dramatise how poverty affected Ugandans after the independence."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Involve learners in a discussion about the effects of structural changes after independence in East Africa."
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "Guide learners in a role play to show how power wrangles became a challenge after independence in one of the East African states."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "In a group discussion, guide learners to find out other socio-economic challenges faced by East African states after independence and present to class."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Involve learners in a discussion to propose solutions for these post independent challenges in East Africa."
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "Organise a role play in class to show how one of the post impendent communities in Uganda tried to solve the poverty problem."
+                    },
+                    {
+                      "activity_type": "Compilation",
+                      "description": "Guide learners to compile key information for their history club and place it appropriately in their history room."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Debate",
+                      "description": "In a class debate, observe learners and find out whether they understand well who got many problems after the East African independence between the Africans and the whites."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners to confirm whether they can suggest strategies to overcome these challenges that affected East Africa after the independence."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "source_page": ""
+                  },
+                  "time_allocation": {
+                    "periods": 14,
+                    "unit": "periods",
+                    "source_page": "31"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Using ICT or library research, let learners find out the processes followed by the East African states to regain their independence."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 3",
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "Theme 2: Colonisation and the Struggle for Independence in East Africa",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S2-T3-0001",
+                    "topic_title": "Topic 06: Civil Society and Non-Government Organisations in East Africa",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner understands the civil society organisations (CSOs) and non-governmental organisations (NGOs) and their roles and challenges they face in promoting community welfare.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the origin and the background for CSOs and NGOs formation in East Africa. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "know the difference between CSO’s, and NGO’s.(k)",
+                      "domain": "Knowledge"
+                    },
+                    {
+                      "outcome_text": "Understand the role of a CSO, and NGOs in East Africa (u, k)",
+                      "domain": "Understanding; Knowledge"
+                    },
+                    {
+                      "outcome_text": "appreciate the challenges facing CSOs and NGOs in East Africa. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "appreciate the role of CSO and NGOs in the development of the East African states. (a, v)",
+                      "domain": "Attitudes; Values"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Origin and background of CSOs and NGOs",
+                      "Differences between CSOs, CBOs, NGOs and Labour Unions",
+                      "Role of FIDA and World Vision",
+                      "Challenges facing CSOs and NGOs"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners to understand why CSOs and NGOs were formed in the post-independent East African states."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Use Internet or library research to identify the similarities and differences between CSOs, community based organisations (CBOs), NGO’s and Labour Unions in East Africa."
+                    },
+                    {
+                      "activity_type": "Comparison",
+                      "description": "Guide learners to create a comparison table of these organisations giving examples of those operating in Uganda."
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "Host an expert in CSO work and present a paper about the benefits and the challenges of CSOs and NGOs. Allow learners to ask questions."
+                    },
+                    {
+                      "activity_type": "Research/Report",
+                      "description": "Let learners carry out a research on school clubs and write a report on what they do in comparison to CSOs and NGOs."
+                    },
+                    {
+                      "activity_type": "Group Research",
+                      "description": "In groups, task learners to do research about the roles of FIDA and World Vision in Uganda and present their findings to class."
+                    },
+                    {
+                      "activity_type": "Simulation",
+                      "description": "Guide learners to simulate that they are staff of HURINET or any CSO and show how you can solve a conflict rising out of gender conflict that government has ignored."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ engagement and interaction with a CSO representative to assess their communication skills and critical thinking."
+                    },
+                    {
+                      "assessment_type": "Report Analysis",
+                      "description": "In written report, assess the learners’ ability to summarise the presentation using key points showing the difference between CSOs and NGOs using ICT or Manual approach."
+                    },
+                    {
+                      "assessment_type": "Listening",
+                      "description": "Listen to the learners’ conversations or discussions of their reports to establish their understanding of the organisation’s role and challenges."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "source_page": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "32"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Use Internet or library research to identify the similarities and differences between CSOs, CBOs, NGOs and Labour Unions."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S2-T3-0002",
+                    "topic_title": "Topic 07: Changing Land Tenure System in East Africa",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 10
+                  },
+                  "core_competency": "The learner understands and evaluates issues of land ownership and management in Uganda.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the various types of land ownership in Uganda. (v, k)",
+                      "domain": "Values; Knowledge"
+                    },
+                    {
+                      "outcome_text": "understand how land was traditionally owned in Uganda, Kenya and Tanzania. (v, u)",
+                      "domain": "Values; Understanding"
+                    },
+                    {
+                      "outcome_text": "know the main land reforms carried out in Uganda since independence.",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "understand the historical development of land ownership in Uganda. (u)",
+                      "domain": "Understanding"
+                    },
+                    {
+                      "outcome_text": "appreciate the value of land as a cornerstone to development in Uganda. (u)",
+                      "domain": "Understanding"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Types of land ownership: Mailo, freehold, customary, crown land",
+                      "Traditional land ownership",
+                      "Land reforms in Uganda",
+                      "Land acquisition, use and fragmentation",
+                      "Historical development of land ownership"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "Guide learners to use ICT or library research and record types of land ownership that include; Mailo, freehold, customary and crown land."
+                    },
+                    {
+                      "activity_type": "Group Discussion",
+                      "description": "In groups, learners discuss different laws and policies on land ownership in East Africa."
+                    },
+                    {
+                      "activity_type": "Survey",
+                      "description": "Let learners carry out a survey in the community and find out how land was traditionally owned in East Africa, and compare with the practice today."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Guide learners to understand the key land reforms carried out in Uganda since independence."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Engage learners in a discussion on how land was traditionally owned in Uganda."
+                    },
+                    {
+                      "activity_type": "Guidance",
+                      "description": "Guide learners on how land is acquired, used and factors leading to its fragmentation."
+                    },
+                    {
+                      "activity_type": "Drawing Timelines",
+                      "description": "Task learners to draw timelines that track the changes that have occurred in land ownership in Uganda since 1900 as related to different ethnic groups, in order to discuss the value of land in the development of Uganda."
+                    },
+                    {
+                      "activity_type": "Compilation",
+                      "description": "Learners compile key information on land tenure system for sharing in the History and Political Education Club and indicate key issues in their reflective journal."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners to establish their knowledge about different land ownership types for various communities in Uganda."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners in a discussion about the challenges of land ownership in Uganda since 1900, the value of land for the different ethnic groups and the historical changes in land ownership."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "Learners compile key information on land tenure system for sharing in the History and Political Education Club",
+                    "deliverables_verbatim": "Key information on land tenure system compiled.",
+                    "source_page": "33"
+                  },
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": "33"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Guide learners to use ICT or library research and record types of land ownership."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "HPE-O-S2-T3-0003",
+                    "topic_title": "Topic 08: Key Personalities in the History of East Africa Before Independence",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 18
+                  },
+                  "core_competency": "The learner understands and appreciates the nationalists who struggled for the independence of East African states.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the background and the East African problems caused by colonialists.",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "understand key personalities who struggled for the independence of East African states.",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "appreciate the impact of East African personalities in the struggle for independence.",
+                      "domain": ""
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Background of independence struggle",
+                      "Personalities: Mutesa 1, Kabaleega, Semei Kakungulu, Ignatius Musaazi (Uganda)",
+                      "Personalities: Mukwawa, Julius Nyerere (Tanzania)",
+                      "Personalities: Tom Mboya, Jommo Kenyatta (Kenya)",
+                      "Challenges faced by nationalists",
+                      "Other personalities: Joseph Kasolo, Matia Mugwanya"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "Using ICT and library research, guide learners to know the reasons why some individual East Africans chose to struggle for their independence."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Involve learners in a discussion about the career, development and achievements of personalities like; Mutesa 1, Kabaleega, Semei Kakungulu, Ignatius Musaazi of Uganda among others."
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Guide learners to find out the contribution of men like; Mukwawa, Julius Nyerere of Tanzania before the independence."
+                    },
+                    {
+                      "activity_type": "Group Assessment",
+                      "description": "In groups engage learners to assess the contributions of Tom Mboya and Jommo Kenyatta towards the independence of Kenya."
+                    },
+                    {
+                      "activity_type": "Role Play",
+                      "description": "In a role play, dramatise the challenges faced by these nationalists before the independence of their countries."
+                    },
+                    {
+                      "activity_type": "Research/Reflection",
+                      "description": "Let learners carry out a research on other key personalities in the struggle for independence, like Joseph Kasolo and Matia Mugwanya of the Democratic Party and take note of them in their reflective journals."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Converse with learners and find out whether they can suggest other names of people who participated in the independence struggle of East African states."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners’ discussion to assess the individuals as they rank the contributions of the East African personalities in the struggle for the independence of their countries."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "source_page": ""
+                  },
+                  "time_allocation": {
+                    "periods": 18,
+                    "unit": "periods",
+                    "source_page": "34"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Using ICT and library research, guide learners to know the reasons why some individual East Africans chose to struggle for their independence."
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

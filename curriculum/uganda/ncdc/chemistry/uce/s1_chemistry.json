@@ -1,0 +1,1294 @@
+{
+  "_comment": "MASTER SYLLABUS TEMPLATE — Populated verbatim from Lower Secondary Curriculum CHEMISTRY SYLLABUS PDF.",
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC), Ministry of Education and Sports",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "Chemistry",
+    "level": "Lower Secondary",
+    "class_group": "Senior One",
+    "year": "2025",
+    "version": "1.0",
+    "source_document": "Lower Secondary Curriculum CHEMISTRY SYLLABUS"
+  },
+  "global_framework": {
+    "competencies": [
+      {
+        "text_verbatim": "The new curriculum is a move from a knowledge-based curriculum to a competence and skill-based curriculum... A level of competence is the ability to use knowledge rather than just to acquire it.",
+        "source_page": 4
+      }
+    ],
+    "generic_skills": [
+      {
+        "skill": "Critical thinking and problem-solving",
+        "definition": "Plan and carry out investigations; Sort and analyse information; Identify problems and ways forward; Predict outcomes and make reasoned decisions; Evaluate different solutions",
+        "source_page": 7
+      },
+      {
+        "skill": "Creativity and innovation",
+        "definition": "Use imaginations to explore possibilities; Work with others to generate ideas; Suggest and develop new solutions; Try out innovative alternatives; Look for patterns and make generalisations",
+        "source_page": 7
+      },
+      {
+        "skill": "Communication",
+        "definition": "Listen attentively and with comprehension; Talk confidently and explain things clearly; Read accurately and fluently; Write and present coherently; Use a range of media to communicate idea",
+        "source_page": 7
+      },
+      {
+        "skill": "Co-operation and Learning",
+        "definition": "Work effectively in diverse teams; Interact effectively with others; Take responsibility for own learning; Work independently with persistence; Manage goals and time",
+        "source_page": 7
+      },
+      {
+        "skill": "Calculation and ICT",
+        "definition": "Use numbers and measurements accurately; Interpret and interrogate mathematical data; Use mathematics to justify and support decisions; Use technology to create, manipulate and process information; Use technology to collaborate, communicate and refine their work",
+        "source_page": 7
+      }
+    ],
+    "values": [
+      "Peace and harmony",
+      "Integrity and honesty",
+      "Patriotism",
+      "Positive attitude towards work",
+      "Respect for human rights",
+      "Self-Control"
+    ],
+    "attitudes": [],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Diversity and inclusion",
+      "Socio-economic challenges",
+      "Citizenship"
+    ]
+  },
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "classes": [
+    {
+      "class_name": "Senior One",
+      "class_code": "S1",
+      "terms": [
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Introduction to Chemistry and Experimental",
+              "theme_description": "Introduction to chemistry and experimental techniques",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHEM-LS-S1-T1-0001",
+                    "topic_title": "CHEMISTRY AND SOCIETY",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 6,
+                    "keywords": [
+                      "chemistry",
+                      "society",
+                      "careers",
+                      "industry",
+                      "uganda",
+                      "products"
+                    ]
+                  },
+                  "core_competency": "The learner is able to assess the application of chemistry in our everyday life and its contribution to our economy.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know appropriate activities to explain the discrete nature of chemistry (k, u)",
+                      "domain": "Knowledge/Understanding",
+                      "source_page": 13
+                    },
+                    {
+                      "outcome_text": "understand why chemistry is studied and how it overlaps with other subjects such as biology, physics, mathematics, and geology (k, u)",
+                      "domain": "Knowledge/Understanding",
+                      "source_page": 13
+                    },
+                    {
+                      "outcome_text": "understand the importance of chemistry and relate knowledge of chemistry to relevant careers (u)",
+                      "domain": "Understanding",
+                      "source_page": 13
+                    },
+                    {
+                      "outcome_text": "know the contribution of chemistry to the Ugandan economy (k)",
+                      "domain": "Knowledge",
+                      "source_page": 13
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Discussion/Mind-map",
+                      "description": "In groups, learners discuss what they already know about chemistry and common chemicals in pharmaceutics and cosmetics, plastics, food and beverages, soaps and detergents, water treatment, and indigenous chemistry in local environments. They produce a mind-map to show their conclusions.",
+                      "source_page": 13
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "In groups, learners brainstorm why we study chemistry and careers related to knowledge of chemistry; areas such as human and animal medicine, pharmacy, chemical engineering, teaching, etc. and produce a table to present their ideas.",
+                      "source_page": 13
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Learners research how chemistry contributes to the economy of Uganda: medicines, industries, transport, agriculture",
+                      "source_page": 13
+                    },
+                    {
+                      "activity_type": "Field Visit/Research",
+                      "description": "In groups, learners make a field visit and carry out research to explore the common industrial products in our country and relate their uses to the importance of chemistry. Groups write a report on their research and give a presentation in class.",
+                      "source_page": 13
+                    },
+                    {
+                      "activity_type": "Writing",
+                      "description": "Individuals write reports of visits to show a knowledge of the importance of chemistry to the Ugandan society.",
+                      "source_page": 13
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe group interactions and engagement in field study and research, offering guidance to ensure all are participating and learning.",
+                      "source_page": 13
+                    },
+                    {
+                      "assessment_type": "Observation/Listening",
+                      "description": "Listen to learners discussing common chemicals, the reasons for studying chemistry and brainstorming on the careers related to chemistry, intervening to ask questions to help them achieve learning outcomes.",
+                      "source_page": 13
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Gauge learners’ progress towards achieving learning outcomes by assessment of their products: common chemical mind-maps; tables of reasons for studying chemistry and chemistry careers; group reports and presentations on chemistry in Uganda; individual reports.",
+                      "source_page": 13
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "time_allocation": {
+                    "periods": 6,
+                    "unit": "periods",
+                    "source_page": 13
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHEM-LS-S1-T1-0002",
+                    "topic_title": "EXPERIMENTAL CHEMISTRY",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 12,
+                    "keywords": [
+                      "laboratory",
+                      "safety",
+                      "equipment",
+                      "scientific method",
+                      "purification",
+                      "separation",
+                      "chromatography",
+                      "distillation"
+                    ]
+                  },
+                  "core_competency": "Understand that chemistry is a process of evidence-based enquiry involving the collection of evidence about the natural world, the identification of trends and patterns in the evidence and the development of theories that help us explain the evidence.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know laboratory rules and regulations and understand the importance of risk assessment in order to work safely, and action required in the event of an accident (k)",
+                      "domain": "Knowledge",
+                      "source_page": 14
+                    },
+                    {
+                      "outcome_text": "know and use laboratory equipment (such as burettes, pipettes, measuring cylinders, thermometers, the Bunsen burner, and balance) appropriately for measuring time, temperature, mass and volume (s, k)",
+                      "domain": "Skills/Knowledge",
+                      "source_page": 14
+                    },
+                    {
+                      "outcome_text": "understand the scientific method to carry out investigations and the importance of risk assessment to keep self and others safe (u)",
+                      "domain": "Understanding",
+                      "source_page": 14
+                    },
+                    {
+                      "outcome_text": "know how to purify a mixture, given information about the substances involved (s, k)",
+                      "domain": "Skills/Knowledge",
+                      "source_page": 14
+                    },
+                    {
+                      "outcome_text": "know how to identify substances and their purity by using their melting and boiling points (k, s)",
+                      "domain": "Knowledge/Skills",
+                      "source_page": 14
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group Activity",
+                      "description": "In groups, learners a) examine a list of laboratory rules and produce a table or diagram showing the reasons for each rule; b) observe a demonstration of how to deal with a fire and how a fire extinguisher is used, and produce a set of guidelines",
+                      "source_page": 14
+                    },
+                    {
+                      "activity_type": "Practical Investigation",
+                      "description": "In groups, learners plan and carry out an investigation using measuring cylinders, separating funnel, a thermometer, Bunsen burner and balance to mix 5g of sand and 200 cm3 water, separating them and recording detailed observations and measurements.",
+                      "source_page": 14
+                    },
+                    {
+                      "activity_type": "Practical Investigation",
+                      "description": "In groups, learners plan and carry out investigations, using the scientific method to purify named impure substances and formally write up investigations individually. Techniques: physical separation e.g. sulphur and iron filings; dissolving, filtration and crystallization, e.g. salt and sand; distillation of a solution and fractional distillation, with particular references to the fractional distillation of crude oil, liquid air and fermented liquor",
+                      "source_page": 14
+                    },
+                    {
+                      "activity_type": "Practical/Chromatography",
+                      "description": "In groups, learners carry out chromatography using some common dyes/inks and then: interpret chromatograms; develop and apply knowledge of paper chromatography in explaining results; research and use locating agents in chromatography of colourless compounds",
+                      "source_page": 14
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Groups discuss, research and agree explanations of their observations. Individuals record results and conclusions.",
+                      "source_page": 14
+                    },
+                    {
+                      "activity_type": "Practical Investigation",
+                      "description": "In groups, learners investigate the melting and boiling points of substances, comparing their results with those of pure substances and drawing conclusions about the purity of their samples. Groups produce tables comparing their actual results with theoretical results and show conclusions and possible experimental errors.",
+                      "source_page": 15
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe the learners in the laboratory when taking part in practical experiments and offer guidance to ensure safe practice and effective use of techniques so that learning outcomes are achieved",
+                      "source_page": 14
+                    },
+                    {
+                      "assessment_type": "Listening/Guidance",
+                      "description": "Listen to group discussions and: guide learners as necessary on the use of different apparatus and correct techniques for using them safely; intervene to ensure knowledge, understanding and skills are developing appropriately",
+                      "source_page": 14
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Gauge learners’ developing knowledge, understanding and skills through assessment of products: reasons for lab rules and fire guidelines; observations and results re boiling water; experiment reports on separating mixtures, including chromatography; purity of substances.",
+                      "source_page": 14
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Separating Mixtures Investigation",
+                        "description_verbatim": "In groups, learners plan and carry out an investigation using measuring cylinders, separating funnel, a thermometer, Bunsen burner and balance to mix 5g of sand and 200 cm3 water, separating them and recording detailed observations and measurements. Learners should: plan by selecting techniques, apparatus and materials; make predictions based on prior knowledge and propose a hypothesis; record observations and measurements in a table; interpret observations and report results; compare observations and results with other groups; discuss and develop explanations",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "measuring cylinders",
+                          "separating funnel",
+                          "thermometer",
+                          "Bunsen burner",
+                          "balance",
+                          "5g sand",
+                          "200cm3 water"
+                        ],
+                        "source_page": 14
+                      },
+                      {
+                        "title": "Purification Techniques",
+                        "description_verbatim": "In groups, learners plan and carry out investigations, using the scientific method to purify named impure substances... Techniques: physical separation e.g. sulphur and iron filings; dissolving, filtration and crystallization, e.g. salt and sand; distillation of a solution and fractional distillation",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "sulphur",
+                          "iron filings",
+                          "salt",
+                          "sand",
+                          "distillation apparatus"
+                        ],
+                        "source_page": 14
+                      },
+                      {
+                        "title": "Chromatography",
+                        "description_verbatim": "In groups, learners carry out chromatography using some common dyes/inks",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "common dyes/inks",
+                          "chromatography paper"
+                        ],
+                        "source_page": 14
+                      },
+                      {
+                        "title": "Melting and Boiling Points",
+                        "description_verbatim": "In groups, learners investigate the melting and boiling points of substances, comparing their results with those of pure substances and drawing conclusions about the purity of their samples.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": 15
+                      }
+                    ]
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": 14
+                  }
+                }
+              ]
+            },
+            {
+              "theme_title": "Particle Nature of Matter",
+              "theme_description": "States and changes of states of matter / Using materials",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHEM-LS-S1-T1-0003",
+                    "topic_title": "STATES AND CHANGES OF STATES OF MATTER",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 9,
+                    "keywords": [
+                      "solid",
+                      "liquid",
+                      "gas",
+                      "plasma",
+                      "kinetic theory",
+                      "diffusion",
+                      "brownian motion",
+                      "evaporation"
+                    ]
+                  },
+                  "core_competency": "The learner uses knowledge of the arrangement and motion of particles to explain the properties of solids, liquids and gases.",
+                  "prerequisites": [
+                    {
+                      "text_verbatim": "In groups, learners use the results from Topic 1.2 and explain them in terms of how matter exists and kinetic theory.",
+                      "notes": "Refers to Experimental Chemistry topic"
+                    }
+                  ],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand that matter is anything which occupies space and has mass and can exist in a solid, liquid, gas and plasma form (u)",
+                      "domain": "Understanding",
+                      "source_page": 15
+                    },
+                    {
+                      "outcome_text": "understand that solids, liquids and gases have different properties including shape, pouring and compressing (u, s)",
+                      "domain": "Understanding/Skills",
+                      "source_page": 15
+                    },
+                    {
+                      "outcome_text": "know the kinetic theory of matter and use it to explain particle arrangement, inter-particle forces, movement of particles and the properties of solids, liquids and gases (k, u)",
+                      "domain": "Knowledge/Understanding",
+                      "source_page": 15
+                    },
+                    {
+                      "outcome_text": "understand that a change from one state to another involves either heat gain or heat loss (u, s)",
+                      "domain": "Understanding/Skills",
+                      "source_page": 15
+                    },
+                    {
+                      "outcome_text": "appreciate the cooling effect of evaporation and how this contributes to maintaining constant body temperature (k, u, s)",
+                      "domain": "Knowledge/Understanding/Skills",
+                      "source_page": 15
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners research what is known about states of matter and kinetic theory, and in groups, they discuss where they are observed in everyday life.",
+                      "source_page": 15
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners use the results from Topic 1.2 and explain them in terms of how matter exists and kinetic theory.",
+                      "source_page": 15
+                    },
+                    {
+                      "activity_type": "Practical Investigation",
+                      "description": "In groups, learners plan and use the scientific method to investigate changes of state of matter and record observations in a table, e. g melting a candle wax, or ice, boiling water (observe the change of state with temperature), heating iodine or naphthalene.",
+                      "source_page": 15
+                    },
+                    {
+                      "activity_type": "Practical Investigation",
+                      "description": "In groups, learners investigate diffusion in a gas, liquid and solid using the scientific method: Ammonia, from concentrated ammonia solution and, concentrated hydrochloric acid to form ammonium chloride; Potassium manganate (VII) in water and in a hot gel solution.",
+                      "source_page": 15
+                    },
+                    {
+                      "activity_type": "Observation/Explanation",
+                      "description": "In groups, learners observe Brownian motion and use the particle theory to explain: the properties of solids, liquids and gases and phenomena such as gas pressure, clothes drying, rain formation and making a cup of tea, and how diffusion takes place faster in a gas than in a liquid or a solid, and then explain why this is the case.",
+                      "source_page": 15
+                    },
+                    {
+                      "activity_type": "Investigation",
+                      "description": "In groups, learners use the scientific method to investigate the heat changes as ice melts and water is heated and cooled, and then produce diagrams to explain why heat is taken in during melting and boiling but given out during condensing and freezing.",
+                      "source_page": 16
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners use their knowledge of kinetic theory to discuss and explain the importance of evaporation in preventing the body from overheating on a hot day.",
+                      "source_page": 16
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe how individuals use texts or the Internet and use it to contribute to group discussion about the kinetic theory, and then use the information to explain states of matter. Intervene to pose questions to clarify and deepen understanding.",
+                      "source_page": 15
+                    },
+                    {
+                      "assessment_type": "Listening",
+                      "description": "Listen to gauge progress towards achieving an understanding of kinetic theory and states of matter as solid, liquid, gas and plasma, and intervene to ensure knowledge and understanding are developing appropriately.",
+                      "source_page": 15
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate learners’ knowledge of the kinetic theory through their explanations of diffusion and pressure illustrated by common phenomena.",
+                      "source_page": 15
+                    },
+                    {
+                      "assessment_type": "Listening",
+                      "description": "Listen to group discussion and the explanation of changes of state to: check understanding of kinetic theory; evaluate understanding of changes in states of matter and heating and cooling; intervene where misconceptions are identified",
+                      "source_page": 15
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Changes of State Investigation",
+                        "description_verbatim": "In groups, learners plan and use the scientific method to investigate changes of state of matter and record observations in a table, e. g melting a candle wax, or ice, boiling water (observe the change of state with temperature), heating iodine or naphthalene.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "candle wax",
+                          "ice",
+                          "water",
+                          "iodine",
+                          "naphthalene"
+                        ],
+                        "source_page": 15
+                      },
+                      {
+                        "title": "Diffusion Investigation",
+                        "description_verbatim": "In groups, learners investigate diffusion in a gas, liquid and solid using the scientific method... Ammonia, from concentrated ammonia solution and, concentrated hydrochloric acid to form ammonium chloride. Potassium manganate (VII) in water and in a hot gel solution.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "concentrated ammonia solution",
+                          "concentrated hydrochloric acid",
+                          "Potassium manganate (VII)",
+                          "water",
+                          "gel solution"
+                        ],
+                        "source_page": 15
+                      },
+                      {
+                        "title": "Heat Changes Investigation",
+                        "description_verbatim": "In groups, learners use the scientific method to investigate the heat changes as ice melts and water is heated and cooled",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "ice",
+                          "water"
+                        ],
+                        "source_page": 16
+                      }
+                    ]
+                  },
+                  "time_allocation": {
+                    "periods": 9,
+                    "unit": "periods",
+                    "source_page": 15
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHEM-LS-S1-T1-0004",
+                    "topic_title": "USING MATERIALS",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 9,
+                    "keywords": [
+                      "materials",
+                      "natural",
+                      "synthetic",
+                      "polymers",
+                      "molecular structure",
+                      "recycling",
+                      "pollution",
+                      "tensile strength"
+                    ]
+                  },
+                  "core_competency": "The Learner should be able to explore how materials are used and relate these uses to their molecular structures.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know that materials used in everyday life can be classified into natural and synthetic group, and how this affects their use in everyday life (s, k)",
+                      "domain": "Skills/Knowledge",
+                      "source_page": 16
+                    },
+                    {
+                      "outcome_text": "understand how the physical properties of polymers determine uses in everyday life such as in building, as fabrics, fabricating utensils used in homes, etc. (k, u)",
+                      "domain": "Knowledge/Understanding",
+                      "source_page": 16
+                    },
+                    {
+                      "outcome_text": "know about the molecular structures of materials and relate this to their use (k, u)",
+                      "domain": "Knowledge/Understanding",
+                      "source_page": 16
+                    },
+                    {
+                      "outcome_text": "know that polymers are useful long chain molecules made by both natural and synthetic processes (k, u)",
+                      "domain": "Knowledge/Understanding",
+                      "source_page": 16
+                    },
+                    {
+                      "outcome_text": "understand how the physical properties of polymers determine uses in everyday life such as in building, as fabrics, fabricating utensils used in homes, etc. (k, u)",
+                      "domain": "Knowledge/Understanding",
+                      "source_page": 16
+                    },
+                    {
+                      "outcome_text": "know how common materials can pollute environment and which materials can be recycled (k)",
+                      "domain": "Knowledge",
+                      "source_page": 16
+                    },
+                    {
+                      "outcome_text": "understand that heating changes the structure and properties of some materials (u, s)",
+                      "domain": "Understanding/Skills",
+                      "source_page": 17
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Classification",
+                      "description": "In groups, learners classify samples of natural and synthetic material (wood, paper, natural and synthetic fibres, plastics, cotton, sisal, silk, nylon, wood, polythene, polyester, protein, rubber, starch, wool, polystyrene, Glass polytetrafluoroethene) on the basis of physical properties such as tensile and compressive strength, flexibility, elasticity, ability to absorb water, etc. and tabulate the observations. Learners identify patterns in their observations.",
+                      "source_page": 16
+                    },
+                    {
+                      "activity_type": "Research/Report",
+                      "description": "Individually, learners research and write a report on the molecular structure of materials and relate the structure of polymers to their use",
+                      "source_page": 16
+                    },
+                    {
+                      "activity_type": "Practical Investigation",
+                      "description": "In groups, learners plan and use the scientific method to investigate: a) the tensile strengths of cement strips made with different proportions of sand and cement b) the insulating properties of common roofing materials such as tiles, corrugated iron and thatch",
+                      "source_page": 16
+                    },
+                    {
+                      "activity_type": "Report",
+                      "description": "Individuals write reports to explain why the physical and molecular structure of some materials makes them suitable for building",
+                      "source_page": 16
+                    },
+                    {
+                      "activity_type": "Classification/Recycling",
+                      "description": "In groups, learners classify materials in everyday use (wood, paper, natural and synthetic fibres, plastics, cotton, sisal, silk, nylon, polythene, polyester, protein, rubber, starch, wool, polystyrene, glass, polytetrafluoroethene), into those that can be recycled and those that are not recyclable; record result in a table, use prior learning to label them according to a) their molecular structure and b) whether they are natural or synthetic",
+                      "source_page": 17
+                    },
+                    {
+                      "activity_type": "Research/Report",
+                      "description": "Individually, learners carry out research and write reports on ways to: dispose of materials using appropriate methods to guard against polluting the environment; identify which of the following materials can be recycled: paper, ink cartridges, plastic plates, old TVs, clay pots, light bulbs, broken glass, fabrics/textiles/clothing etc.",
+                      "source_page": 17
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners in discussion and how they come to a group judgement about an agreed standard for ‘physical properties and their use’.",
+                      "source_page": 16
+                    },
+                    {
+                      "assessment_type": "Listening",
+                      "description": "Listen and gauge learners’ progress towards an understanding of: o how the physical and molecular structure of materials makes them suitable for use in building o how natural and artificial polymers determine their use",
+                      "source_page": 16
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe how learners carry out the test on burning materials, pay due regard to safety, the accuracy of their observations and whether they can identify patterns in the nature of changes",
+                      "source_page": 16
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Using products of activities, gauge learners’ understanding that some materials are resistant to change, others change in form and colour, and may give off fumes, and some may be recycled and reused in the same or a different form.",
+                      "source_page": 16
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Materials Investigation",
+                        "description_verbatim": "In groups, learners plan and use the scientific method to investigate: a) the tensile strengths of cement strips made with different proportions of sand and cement b) the insulating properties of common roofing materials such as tiles, corrugated iron and thatch",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "cement",
+                          "sand",
+                          "tiles",
+                          "corrugated iron",
+                          "thatch"
+                        ],
+                        "source_page": 16
+                      },
+                      {
+                        "title": "Burning Materials Test",
+                        "description_verbatim": "Observe how learners carry out the test on burning materials, pay due regard to safety...",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "pay due regard to safety",
+                        "equipment_list": [],
+                        "source_page": 16
+                      }
+                    ]
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use Internet to download or view an appropriate simulation about particle nature of matter.",
+                      "use data collection tools such as a temperature sensor to capture temperature-time data."
+                    ],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 9,
+                    "unit": "periods",
+                    "source_page": 16
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "Temporary and Permanent Changes to Materials",
+              "theme_description": "Temporary and permanent changes / Mixtures, Elements and compounds",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHEM-LS-S1-T2-0001",
+                    "topic_title": "TEMPORARY AND PERMANENT CHANGES",
+                    "sequence_order": 5,
+                    "recommended_duration_periods": 16,
+                    "keywords": [
+                      "temporary change",
+                      "permanent change",
+                      "reversible",
+                      "irreversible",
+                      "physical change",
+                      "chemical change"
+                    ]
+                  },
+                  "core_competency": "The learner should be able to recognise occurrence of temporary and permanent changes, and their importance in everyday life.",
+                  "prerequisites": [
+                    {
+                      "text_verbatim": "In groups, learners draw on prior learning from Topic 2 and identify which materials underwent permanent change when heated.",
+                      "notes": ""
+                    }
+                  ],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand that many substances undergo permanent changes when they are heated or burnt, forming new materials while other substances change temporarily (u, s)",
+                      "domain": "Understanding/Skills",
+                      "source_page": 17
+                    },
+                    {
+                      "outcome_text": "recognise temporary (reversible) and permanent (irreversible) changes to matter under different conditions (u)",
+                      "domain": "Understanding",
+                      "source_page": 17
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Review",
+                      "description": "In groups, learners draw on prior learning from Topic 2 and identify which materials underwent permanent change when heated.",
+                      "source_page": 17
+                    },
+                    {
+                      "activity_type": "Practical Investigation",
+                      "description": "In groups, learners plan and carry out a practical investigation to find out which are temporary, and which are permanent changes and record the results in a table: boiling and condensing water; heating and cooling candle wax; sublimation of iodine; breaking a wooden stick; melting of ice; boiling an egg; dissolving salt in water; rusting an iron nail",
+                      "source_page": 17
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe group interaction and engagement in the practical investigation and gauge skill in making and recording observations; intervene to help them understand temporary (reversible) and permanent (irreversible) changes to matter.",
+                      "source_page": 17
+                    },
+                    {
+                      "assessment_type": "Listening",
+                      "description": "Listen to discussions and ask questions to deepen learning.",
+                      "source_page": 17
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate how well learners apply their learning to explain which are permanent and which are temporary changes.",
+                      "source_page": 17
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Investigation of Changes",
+                        "description_verbatim": "In groups, learners plan and carry out a practical investigation to find out which are temporary, and which are permanent changes and record the results in a table: boiling and condensing water; heating and cooling candle wax; sublimation of iodine; breaking a wooden stick; melting of ice; boiling an egg; dissolving salt in water; rusting an iron nail",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "water",
+                          "candle wax",
+                          "iodine",
+                          "wooden stick",
+                          "ice",
+                          "egg",
+                          "salt",
+                          "iron nail",
+                          "heat source"
+                        ],
+                        "source_page": 17
+                      }
+                    ]
+                  },
+                  "time_allocation": {
+                    "periods": 16,
+                    "unit": "periods",
+                    "source_page": 17
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHEM-LS-S1-T2-0002",
+                    "topic_title": "MIXTURES, ELEMENTS AND COMPOUNDS",
+                    "sequence_order": 6,
+                    "recommended_duration_periods": 20,
+                    "keywords": [
+                      "pure",
+                      "element",
+                      "mixture",
+                      "compound",
+                      "separation",
+                      "solvent",
+                      "solute",
+                      "solution",
+                      "filtration",
+                      "crystallisation"
+                    ]
+                  },
+                  "core_competency": "The learner should be able to recognize the characteristics of mixtures and compounds.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the criteria for determining whether a substance is pure or not (k, s)",
+                      "domain": "Knowledge/Skills",
+                      "source_page": 18
+                    },
+                    {
+                      "outcome_text": "understand that substances are either elements, mixtures or compounds (u)",
+                      "domain": "Understanding",
+                      "source_page": 18
+                    },
+                    {
+                      "outcome_text": "identify different mixtures and devise ways of separating pure substances from them (u, s)",
+                      "domain": "Understanding/Skills",
+                      "source_page": 18
+                    },
+                    {
+                      "outcome_text": "know that, when added together, some liquids mix while others form two layers (k)",
+                      "domain": "Knowledge",
+                      "source_page": 18
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Practical Investigation",
+                      "description": "In groups, learners plan and carry out a practical investigation to find out whether 100g of crushed ice made from distilled water melts faster or slower than crushed ice made from tap water which contains salts; they should record their results in a table and discuss.",
+                      "source_page": 18
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individually, learners research and then discuss in groups examples of elements, compounds and mixtures and list the characteristics. These might include: Elements: made from one type of atom; Compounds: a mixture of elements that can only be separated by chemical means; Mixtures: made up of two or more substances that can be separated by physical means",
+                      "source_page": 18
+                    },
+                    {
+                      "activity_type": "Classification",
+                      "description": "In groups, learners research and then classify substances into compounds, mixtures or elements: e.g. carbon dioxide, hydrochloric acid, sugar, air, chlorine, gold, chlorophyll, oxygen, salt plus other examples",
+                      "source_page": 18
+                    },
+                    {
+                      "activity_type": "Practical Investigation",
+                      "description": "In groups, learners use a spatula to slowly add 10gms sugar to 150cm3 distilled water and record their observations. Learners should discuss whether dissolving and disappearing are the same and explain their thinking. They should be introduced to the terms: solvent, solute and solution, and if necessary revise their observations using these terms.",
+                      "source_page": 18
+                    },
+                    {
+                      "activity_type": "Research/Practical",
+                      "description": "Individually, learners research the terms soluble and insoluble. Having been informed that rock salt is a mixture of rock which is insoluble in water and salt which is soluble in water, in groups, learners plan and implement a procedure to separate the rock from the salt. Learners use the following terms to explain their method: filtration, dissolve, soluble, solute and solution.",
+                      "source_page": 18
+                    },
+                    {
+                      "activity_type": "Planning",
+                      "description": "Learners use their experience of evaporation to plan a procedure to separate the solute from the solvent (water) and so recover the salt by crystallisation.",
+                      "source_page": 18
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners discuss what will happen when palm oil is mixed with tap water, using the terms miscible and immiscible liquids, and how they might separate them.",
+                      "source_page": 19
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners investigating, note their understanding of a fair test, and intervene to check their understanding that pure (distilled) water melts at a different rate from tap (impure) water which is a mixture.",
+                      "source_page": 18
+                    },
+                    {
+                      "assessment_type": "Listening",
+                      "description": "Listen to group discussion and intervene where appropriate to assist understanding. Encourage learners to add to their list of characteristics and share them and check the correct use of definitions.",
+                      "source_page": 18
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Gauge learners’ progress towards achieving learning outcomes",
+                      "source_page": 18
+                    },
+                    {
+                      "assessment_type": "Listening",
+                      "description": "Listen to learners and encourage use of the terms: solvent, solute and solution and link their thinking to prior learning about mixtures.",
+                      "source_page": 18
+                    },
+                    {
+                      "assessment_type": "Listening",
+                      "description": "Listen to learners in the process of planning the separation of salt and encourage learners to use and record the process using the correct terms.",
+                      "source_page": 18
+                    },
+                    {
+                      "assessment_type": "Intervention",
+                      "description": "Intervene where necessary to avoid misunderstandings and gauge learners’ progress towards achieving learning outcomes through the products of activities.",
+                      "source_page": 18
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Ice Melting Investigation",
+                        "description_verbatim": "In groups, learners plan and carry out a practical investigation to find out whether 100g of crushed ice made from distilled water melts faster or slower than crushed ice made from tap water which contains salts",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "100g crushed ice (distilled)",
+                          "100g crushed ice (tap water)"
+                        ],
+                        "source_page": 18
+                      },
+                      {
+                        "title": "Dissolving Sugar",
+                        "description_verbatim": "In groups, learners use a spatula to slowly add 10gms sugar to 150cm3 distilled water and record their observations.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "spatula",
+                          "10gms sugar",
+                          "150cm3 distilled water"
+                        ],
+                        "source_page": 18
+                      },
+                      {
+                        "title": "Separating Rock Salt",
+                        "description_verbatim": "In groups, learners plan and implement a procedure to separate the rock from the salt... Learners use their experience of evaporation to plan a procedure to separate the solute from the solvent (water) and so recover the salt by crystallisation.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "rock salt",
+                          "water",
+                          "filtration apparatus",
+                          "evaporation apparatus"
+                        ],
+                        "source_page": 18
+                      }
+                    ]
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use the Internet to research elements, compounds and mixtures",
+                      "use a digital camera to take images to show the stages of separating rock and salt, and then purifying the salt by crystallisation."
+                    ],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 20,
+                    "unit": "periods",
+                    "source_page": 18
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 3",
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "Air and environment",
+              "theme_description": "Air / Water / Rocks and Minerals",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHEM-LS-S1-T3-0001",
+                    "topic_title": "AIR",
+                    "sequence_order": 7,
+                    "recommended_duration_periods": 10,
+                    "keywords": [
+                      "air",
+                      "mixture",
+                      "pollution",
+                      "oxygen",
+                      "rusting",
+                      "corrosion",
+                      "oxides",
+                      "fractional distillation"
+                    ]
+                  },
+                  "core_competency": "The learner appreciates air is a mixture of gases in which oxygen is the active constituent, and he/she can describe processes that may affect air quality.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand that air is a mixture of different gases that can be separated and used (k, u)",
+                      "domain": "Knowledge/Understanding",
+                      "source_page": 19
+                    },
+                    {
+                      "outcome_text": "understand how air pollution can affect the atmosphere (u)",
+                      "domain": "Understanding",
+                      "source_page": 19
+                    },
+                    {
+                      "outcome_text": "Understand and appreciate that processes such as burning and rusting/corrosion use oxygen from the air to form oxides (k, u)",
+                      "domain": "Knowledge/Understanding",
+                      "source_page": 19
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Research",
+                      "description": "In pairs or individually, learners research: the composition of air, the percentage of each chemical from a pie chart of the composition of air; consider what else might be in the air",
+                      "source_page": 19
+                    },
+                    {
+                      "activity_type": "Discussion/Research",
+                      "description": "In groups, learners examine a fractionating column and draw on research to discuss how different liquids have different boiling points, and how this is used to separate them into fractions.",
+                      "source_page": 19
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "In groups, learners research and discuss how air pollution occurs when excessive quantities of gases and particles change the composition of air, and report on the causes and consequences",
+                      "source_page": 19
+                    },
+                    {
+                      "activity_type": "Research/Discussion",
+                      "description": "Individuals or pairs research and explain how oxygen and nitrogen can be separated from liquid air using a fractionating column, and then discuss in groups",
+                      "source_page": 19
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "In groups, learners discuss what is necessary for wood to burn and understand that oxygen is the active ingredient in air that allows burning to take place and causes iron to rust.",
+                      "source_page": 19
+                    },
+                    {
+                      "activity_type": "Investigation",
+                      "description": "Groups plan an investigation of the factors that affect the rate of rusting of iron, using the scientific method. Steps include: selecting apparatus and materials; making predictions based on prior knowledge and proposing a hypothesis; recording observations and measurements; interpreting observations and reporting results; comparing observations and results with other groups; discussing and developing explanations. Conditions to include a clean nail placed: in air where water is removed with anhydrous CaCl2; in normal air containing water vapour; in tap water; in boiled water (where air has been removed by boiling)",
+                      "source_page": 20
+                    },
+                    {
+                      "activity_type": "Writing Equations",
+                      "description": "In groups, learners write word equations for the reaction between elements (metals and non-metals) and oxygen when they burn or corrode to form oxides",
+                      "source_page": 20
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Listening",
+                      "description": "Listen to discussions and gauge learners’ understanding of why air is considered a mixture of gases rather than a compound, how the gases can be separated, how air pollution occurs, and its consequences. Intervene appropriately to clarify understanding about the composition of air and fractional distillation.",
+                      "source_page": 19
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Evaluate how learners draw on prior knowledge of burning and rusting (and breathing) to develop the idea that there is an active ingredient (oxygen) in air.",
+                      "source_page": 19
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe and listen to discussions about group planning and guide learners on the equipment required and the importance of controlling variables. Note the accuracy of their observations and whether their conclusions reflect their observations and predictions.",
+                      "source_page": 19
+                    },
+                    {
+                      "assessment_type": "Listening/Guidance",
+                      "description": "Listen to discussion about word equations and guide learners to understand that oxygen from the air combines with other element to form oxides.",
+                      "source_page": 19
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate quality of learning through assessment of products: outcomes of investigation reports and correct use of scientific notation.",
+                      "source_page": 19
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Rusting Investigation",
+                        "description_verbatim": "Groups plan an investigation of the factors that affect the rate of rusting of iron, using the scientific method... Conditions to include a clean nail placed: in air where water is removed with anhydrous CaCl2; in normal air containing water vapour; in tap water; in boiled water (where air has been removed by boiling)",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [
+                          "clean iron nails",
+                          "anhydrous CaCl2",
+                          "tap water",
+                          "boiled water",
+                          "containers"
+                        ],
+                        "source_page": 20
+                      }
+                    ]
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use a digital camera to take images to show how oxygen reacts with iron."
+                    ],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 10,
+                    "unit": "periods",
+                    "source_page": 19
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHEM-LS-S1-T3-0002",
+                    "topic_title": "WATER",
+                    "sequence_order": 8,
+                    "recommended_duration_periods": 14,
+                    "keywords": [
+                      "water",
+                      "natural resource",
+                      "water cycle",
+                      "evaporation",
+                      "condensation",
+                      "sewage treatment",
+                      "pollution"
+                    ]
+                  },
+                  "core_competency": "The learner should investigate evaporation and condensation as natural processes essential to replenishing supplies of fresh water in the water cycle.",
+                  "prerequisites": [
+                    {
+                      "text_verbatim": "In groups, learners draw on prior learning to brainstorm ideas about evaporation and condensation of water, ice and steam as changes of state",
+                      "notes": ""
+                    }
+                  ],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the occurrence of water as a natural resource, its physical and chemical properties and importance in everyday life (u, s)",
+                      "domain": "Understanding/Skills",
+                      "source_page": 21
+                    },
+                    {
+                      "outcome_text": "appreciate how water is recycled by natural processes (u, v)",
+                      "domain": "Understanding/Values",
+                      "source_page": 21
+                    },
+                    {
+                      "outcome_text": "understand the process of water and sewage treatment (u, k)",
+                      "domain": "Understanding/Knowledge",
+                      "source_page": 21
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Brainstorming/Charting",
+                      "description": "In groups, learners draw on prior learning to brainstorm ideas about evaporation and condensation of water, ice and steam as changes of state, and produce a chart of the water cycle to explain its physical and chemical properties and the role of the sun in providing energy to drive the cycle.",
+                      "source_page": 21
+                    },
+                    {
+                      "activity_type": "Identification/Report",
+                      "description": "In groups, learners use their water cycle charts, and prior learning about the characteristics of water, to identify and report upon where pollution might occur, its causes, impact and possible ways to prevent it.",
+                      "source_page": 21
+                    },
+                    {
+                      "activity_type": "Field Visit",
+                      "description": "Learners visit a sewage treatment plant and find out how effluent is recycled into useable water. Individuals produce reports to explain the process of sewage treatment using their prior learning about the characteristics of water.",
+                      "source_page": 21
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Listening",
+                      "description": "Listen to group discussion and encourage learners to draw on and consolidate prior learning about changes of state, solvents and solutions, and then apply it to their understanding of the water cycle, the causes and prevention of water pollution, and the treatment of sewage.",
+                      "source_page": 21
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Gauge learners’ progress towards achieving the learning outcomes by assessing their understanding of the characteristics of water and the chemistry of water through their products of the activities.",
+                      "source_page": 21
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use mind-mapping/graphic or word processing software to draw a diagram of the water cycle.",
+                      "use a digital camera to take images showing different stages for water purification."
+                    ],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 14,
+                    "unit": "periods",
+                    "source_page": 21
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "CHEM-LS-S1-T3-0003",
+                    "topic_title": "ROCKS AND MINERALS",
+                    "sequence_order": 9,
+                    "recommended_duration_periods": 12,
+                    "keywords": [
+                      "igneous",
+                      "sedimentary",
+                      "metamorphic",
+                      "minerals",
+                      "weathering",
+                      "soil",
+                      "granite",
+                      "sandstone",
+                      "slate"
+                    ]
+                  },
+                  "core_competency": "The learner appreciates that rocks are composed of different minerals and these determine the properties of the rocks.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand how igneous, sedimentary and metamorphic rocks are formed, that they are made up of minerals, and that some minerals are useful (k, u, s)",
+                      "domain": "Knowledge/Understanding/Skills",
+                      "source_page": 22
+                    },
+                    {
+                      "outcome_text": "identify the physical properties of rocks and distinguish between the different types (s)",
+                      "domain": "Skills",
+                      "source_page": 22
+                    },
+                    {
+                      "outcome_text": "understand the process of weathering and how weathered rock particles form the basis of soil (u, s)",
+                      "domain": "Understanding/Skills",
+                      "source_page": 22
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Observation/Classification",
+                      "description": "In groups, learners examine and discuss the general appearance of igneous, sedimentary and metamorphic rocks and record characteristics such as colour, patterns, texture, and particle size in a chart. Individually, learners create a dichotomous key using the information from their observations.",
+                      "source_page": 22
+                    },
+                    {
+                      "activity_type": "Research",
+                      "description": "Individuals or pairs research and report on the minerals found in granite, sandstone and slate, and identify any patterns. Learners share their research with the class and discuss the use made of the minerals.",
+                      "source_page": 22
+                    },
+                    {
+                      "activity_type": "Discussion/Report",
+                      "description": "Groups discuss the role that water (rain, ice, rivers) might play in extracting the minerals from the rocks, and how these minerals are deposited in the soil. Individually, learners write a report about their understanding of weathering.",
+                      "source_page": 22
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe group interaction and assess the accuracy of observations and words used to record the results, and gauge learner’s ability to transfer this information to use it to create a dichotomous key; observe their progress towards the learning outcomes.",
+                      "source_page": 22
+                    },
+                    {
+                      "assessment_type": "Evaluation",
+                      "description": "Gauge learners’ ability to access and summarise information from complex text and understand where minerals (chemicals) originate.",
+                      "source_page": 22
+                    },
+                    {
+                      "assessment_type": "Listening",
+                      "description": "Listen to learners’ discussions and presentations on weathering and where appropriate, make suggestions to improve clarity and understanding",
+                      "source_page": 22
+                    },
+                    {
+                      "assessment_type": "Product Assessment",
+                      "description": "Evaluate quality of learning through assessment of products: keys; tables; reports.",
+                      "source_page": 22
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "use Internet to research on useful minerals and present to the class.",
+                      "use any word processor to write the research report."
+                    ],
+                    "restrictions": []
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": 22
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

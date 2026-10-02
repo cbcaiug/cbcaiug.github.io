@@ -1,0 +1,897 @@
+{
+  "curriculum_metadata": {
+    "country": "Uganda",
+    "authority": "National Curriculum Development Centre (NCDC)",
+    "curriculum_name": "Lower Secondary Curriculum",
+    "subject": "Entrepreneurship",
+    "level": "Lower Secondary",
+    "class_group": "Senior One",
+    "year": "2019",
+    "version": "1",
+    "source_document": "ENTREPRENEURSHIP SYLLABUS"
+  },
+  "global_framework": {
+    "competencies": [],
+    "generic_skills": [
+      "Critical thinking and problem-solving",
+      "Creativity and innovation",
+      "Communication",
+      "Co-operation and Self-Directed Learning",
+      "Mathematical computation and ICT Proficiency"
+    ],
+    "values": [
+      "Respect for humanity and environment",
+      "Honesty; uphold and defend the truth at all times",
+      "Justice and fairness in dealing with others",
+      "Hard work for self-reliance",
+      "Integrity; moral uprightness and sound character",
+      "Creativity and innovativeness",
+      "Social Responsibility",
+      "Social Harmony",
+      "National Unity",
+      "National Consciousness and patriotism"
+    ],
+    "attitudes": [],
+    "cross_cutting_issues": [
+      "Environmental awareness",
+      "Health awareness",
+      "Mixed abilities and involvement",
+      "Life skills",
+      "Socio-economic challenges",
+      "Citizenship and patriotism"
+    ]
+  },
+  "authority_model": {
+    "precedence_order": [
+      "user_prompt",
+      "attached_documents",
+      "syllabus_constraints",
+      "ai_defaults"
+    ]
+  },
+  "classes": [
+    {
+      "class_name": "Senior One",
+      "class_code": "S1",
+      "terms": [
+        {
+          "term_name": "Term 1",
+          "term_number": 1,
+          "themes": [
+            {
+              "theme_title": "Creating an Entrepreneurial Awareness",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S1-T1-0001",
+                    "topic_title": "Introduction to Entrepreneurship Education",
+                    "sequence_order": 1,
+                    "recommended_duration_periods": 24
+                  },
+                  "core_competency": "The learner appreciates the importance of studying Entrepreneurship Education and demonstrates characteristics of an Entrepreneur.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the purpose of Entrepreneurship Education.(u, v)",
+                      "domain": "u, v"
+                    },
+                    {
+                      "outcome_text": "identify key characteristics of an entrepreneur. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "assess the benefits of an entrepreneur. (s)",
+                      "domain": "s"
+                    },
+                    {
+                      "outcome_text": "understand creativity and innovation design, make and evaluate a product (gs, s)",
+                      "domain": "gs, s"
+                    },
+                    {
+                      "outcome_text": "know risks in business (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "assess risks in business (s, gs))",
+                      "domain": "s, gs"
+                    },
+                    {
+                      "outcome_text": "understand the role of technology in businesses (u,v)",
+                      "domain": "u, v"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Sub-topic 1.1: The Entrepreneur",
+                      "Sub-topic 1.2: Creativity and Innovation",
+                      "Sub-topic 1.3: Risks in Business",
+                      "Sub-topic 1.4: Technology and Business"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners to be given a definition of Entrepreneurship to discuss. Can they tell each other what they understand in their own words?"
+                    },
+                    {
+                      "activity_type": "Mind-mapping",
+                      "description": "As a group, learners produce a mind-map to show the purpose of Entrepreneurship Education."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "Learners discuss entrepreneurship as a career option."
+                    },
+                    {
+                      "activity_type": "Design/Creation",
+                      "description": "Learners design a poster to advertise why students should study Entrepreneurship Education and share these with the rest of the class."
+                    },
+                    {
+                      "activity_type": "Pair work/Discussion",
+                      "description": "In pairs, learners consider what characteristics define an entrepreneur, giving reasons to justify their responses. Ask learners to explore and decide how they differ in their approach and success."
+                    },
+                    {
+                      "activity_type": "Pair work/Creation",
+                      "description": "In pairs, learners create a list of key characteristics of an entrepreneur to share with the rest of the class."
+                    },
+                    {
+                      "activity_type": "Group work",
+                      "description": "In groups, learners now think of and identify entrepreneurs in their communities, explaining the characteristics they have that make them an entrepreneur."
+                    },
+                    {
+                      "activity_type": "Guest Speaker/Interaction",
+                      "description": "Teacher invites successful entrepreneurs (male/female) from their community to class. In groups, learners identify key questions to ask the entrepreneurs."
+                    },
+                    {
+                      "activity_type": "Group work",
+                      "description": "In groups, learners revisit their list of key characteristics of an entrepreneur and add further information to this from their questioning and understanding."
+                    },
+                    {
+                      "activity_type": "Group work/Design",
+                      "description": "In groups learners will: generate ideas as to how they will make a product e.g. devise a bridge-making simulation game using a range of locally available resources. They will explain this to the class. They should plan what they will need to do, agreeing a set of actions and alternatives if needed."
+                    },
+                    {
+                      "activity_type": "Communication",
+                      "description": "communicate design ideas for different products in different ways, bearing in mind aesthetic qualities and purpose for which the product was intended."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "identify and then select key local resources and techniques, and demonstrate to class how to make products."
+                    },
+                    {
+                      "activity_type": "Case Study/Group work",
+                      "description": "Learners should study a range of case studies that illustrate different sorts of risks and listen to accounts from business people. Working in groups, they should identify the different risks in the studies and agree explanations for these and ways of minimising the risks."
+                    },
+                    {
+                      "activity_type": "Presentation/Simulation",
+                      "description": "They should present findings to the class about business risks in various ways (using ICT where possible). They should play risk-taking simulation games to distinguish between the types of risk and how they can be assessed."
+                    },
+                    {
+                      "activity_type": "Group work/Discussion",
+                      "description": "In groups, learners consider the statement: Technology in business is a necessity."
+                    },
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Learners to start by thinking through the different ways in which technology can be used in business. What are the benefits and challenges of e-business?"
+                    },
+                    {
+                      "activity_type": "Analysis",
+                      "description": "Challenge learners to think of examples of businesses in Uganda that use technology, and then relate this to the benefits/challenges."
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "In groups, learners present their ideas to the class about the use of technology in businesses that they know about or have researched."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation/Product",
+                      "description": "Observe the posters produced by learners to explore how clear they are in describing and persuading people to study Entrepreneurship Education."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe learners interacting with the visiting entrepreneur. Do learners ask relevant questions that build on previous answers during the interview?"
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In conversation, ask learners about the report they have written as a result of the interview with a successful entrepreneur. Evaluate the extent to which learners describe key characteristics and skills all entrepreneurs share."
+                    },
+                    {
+                      "assessment_type": "Observation/Product",
+                      "description": "Observe how well learners communicate a design for an innovative product. Evaluate how they present their ideas and how effectively they are able to articulate key features."
+                    },
+                    {
+                      "assessment_type": "Peer Evaluation",
+                      "description": "Challenge groups to develop criteria with which they are able to evaluate/judge each other’s games/product. Evaluate how well the criteria judge quality of design and process."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In conversation, ask learners to explain the risk that is illustrated in a case study describing a new business."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe how well learners listen to presentations from their peers, and the extent to which they ask relevant questions."
+                    },
+                    {
+                      "assessment_type": "Critical Review",
+                      "description": "Critically review writing by learners to describe a business that they know well. Evaluate how well learners describe the role of technology, and the challenges and opportunities that this presents to business development."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In conversation with learners, discuss contrasting examples of the way technology has been used in large businesses across Africa. Evaluate the extent to which learners are able to identify key factors in what technology is able to bring to a growing business."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Product Creation",
+                        "description_verbatim": "identify and then select key local resources and techniques, and demonstrate to class how to make products.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "19"
+                      }
+                    ]
+                  },
+                  "investigative_skills": [
+                    {
+                      "text_verbatim": "identify the different risks in the studies",
+                      "assessment_method": "Observation"
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 24,
+                    "unit": "periods",
+                    "source_page": "15, 18"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [
+                      "Using ICT where possible to present findings about business risks"
+                    ],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 2",
+          "term_number": 2,
+          "themes": [
+            {
+              "theme_title": "Scanning the Environment",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S1-T2-0001",
+                    "topic_title": "Businesses in Uganda",
+                    "sequence_order": 2,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner participates in business operations in Uganda.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "understand the various types of businesses in Uganda. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "appreciate the importance of businesses to the community.(u,v)",
+                      "domain": "u, v"
+                    },
+                    {
+                      "outcome_text": "know what makes a business successful (u,v, s)",
+                      "domain": "u, v, s"
+                    },
+                    {
+                      "outcome_text": "evaluate what causes a business to fail (k, u)",
+                      "domain": "k, u"
+                    },
+                    {
+                      "outcome_text": "understand ways of reviving a failing business. (k, s)",
+                      "domain": "k, s"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Sub-topic 2.1: Types of Businesses",
+                      "Sub-topic 2.2: Success in Business"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group work/Discussion",
+                      "description": "In groups, learners are presented with a range of businesses in Uganda. Learners can choose a business (all groups to have a different business if possible) and discuss and record: what type of business this is; what the key characteristics of the business are; what benefits this business provides to the country"
+                    },
+                    {
+                      "activity_type": "Peer interaction",
+                      "description": "Learners share their recordings about a business with another group, who add any further thoughts by commenting on what has been said and by asking further probing questions."
+                    },
+                    {
+                      "activity_type": "Group work",
+                      "description": "In groups, learners think about a local business that they know of in their communities, and list key features of its organisation and product or service."
+                    },
+                    {
+                      "activity_type": "Case Study/Interaction",
+                      "description": "Learners should study a range of businesses that are successful and unsuccessful and listen to accounts from business people."
+                    },
+                    {
+                      "activity_type": "Group work/Analysis",
+                      "description": "Working in groups, they should identify the indicators of a successful business, factors leading to success in business, causes of business failure."
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "They should consider ways of presenting findings about successes in businesses to the rest of the class."
+                    },
+                    {
+                      "activity_type": "Role play",
+                      "description": "Groups can take on the role of one of the businesses that is not successful, and role play how they could revive the business. Groups to share their strategies with another group and to discuss similarities/ differences in strategies identified."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Observation/Product",
+                      "description": "Observe and evaluate how well individual learners are able to choose one local business and write a report for their local newspaper about that business. They should include, for example, the type of business it is, key characteristics of the entrepreneur behind the business and how the business has benefited the community and entrepreneur."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "In conversation with groups of learners, explore to what extent learners recognise the role that businesses have in supporting community cohesion and what challenges a community can face when a new business is developed in their area."
+                    },
+                    {
+                      "assessment_type": "Written assignment/Analysis",
+                      "description": "Ask learners to read a case study about a business that has failed. Evaluate how well learners explain the initial successes of the business, as well as the following steps that led to the business failing."
+                    },
+                    {
+                      "assessment_type": "Product/List",
+                      "description": "Ask learners to produce a list of things that a new business should avoid if it is to become successful. Evaluate how well this list reflects what has been learnt in the lesson, as well as new ideas to describe route to business failure."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": []
+                  },
+                  "investigative_skills": [
+                    {
+                      "text_verbatim": "identify the indicators of a successful business, factors leading to success in business, causes of business failure",
+                      "assessment_method": "Group work/Analysis"
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "15, 21"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S1-T2-0002",
+                    "topic_title": "Business Ideas and Opportunities",
+                    "sequence_order": 3,
+                    "recommended_duration_periods": 12
+                  },
+                  "core_competency": "The learner selects a business opportunity from the environment and conducts a market survey.",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "demonstrate an understand how to generate a business idea from the environment(u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "generate a business idea",
+                      "domain": ""
+                    },
+                    {
+                      "outcome_text": "select a good business idea (u, s)",
+                      "domain": "u, s"
+                    },
+                    {
+                      "outcome_text": "understand the difference between a business idea and a business opportunity (u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "appreciate the characteristics of a good business opportunity. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "understand the importance of a market survey. (u,v)",
+                      "domain": "u, v"
+                    },
+                    {
+                      "outcome_text": "to carry out a market survey. (s, gs)",
+                      "domain": "s, gs"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Sub-topic 3.1: Business Ideas",
+                      "Sub-topic 3.2: Business Opportunities",
+                      "Sub-topic 3.3: Market Survey"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "As a class, learners brainstorm sources of business ideas, grouping them where possible."
+                    },
+                    {
+                      "activity_type": "Field work/Observation",
+                      "description": "Lead learners to a nearby trading centre and ask them to critically observe the environment and generate various business ideas."
+                    },
+                    {
+                      "activity_type": "Group work/Discussion",
+                      "description": "In groups, learners discuss factors that lead to a good business idea. Can learners relate the factors to businesses in their community to check them out?"
+                    },
+                    {
+                      "activity_type": "Instruction",
+                      "description": "Learners are shown how to create a decision tree, with an explanation of the benefits of thinking in this way."
+                    },
+                    {
+                      "activity_type": "Group work/Creation",
+                      "description": "In groups, learners select a dilemma or probing question and create a decision tree, using a series of questions to map possible outcomes for the dilemma."
+                    },
+                    {
+                      "activity_type": "Presentation",
+                      "description": "Groups present decision tree to another group to work through."
+                    },
+                    {
+                      "activity_type": "Discussion/Differentiation",
+                      "description": "Describe and differentiate between a business idea and a business opportunity."
+                    },
+                    {
+                      "activity_type": "Group work",
+                      "description": "In groups, learners think of an example of an idea and one example of an opportunity. Are these good examples of an idea/opportunity? What are the possible outcomes?"
+                    },
+                    {
+                      "activity_type": "Group work/Discussion",
+                      "description": "In groups, learners discuss the characteristics of a good business opportunity. Ask learners to consider well-known businesses, and role play conversations between business people as this opportunity was initially explored."
+                    },
+                    {
+                      "activity_type": "Instruction/Guide",
+                      "description": "Show learners a good example of an effective market survey and then guide learners on the necessary steps to follow to conduct a market survey."
+                    },
+                    {
+                      "activity_type": "Group work/Listing",
+                      "description": "In groups, learners list reasons why a market survey is important and how it can inform strategies for advertising goods and services."
+                    },
+                    {
+                      "activity_type": "Planning/Field work",
+                      "description": "In groups, learners plan and conduct a simple market survey in the nearby community for a business opportunity, considering the following aspects: customers, price, raw materials, location, competition etc."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Ask learners to identify 3 business ideas from a range of sources, including newspapers, magazines and leaflets. In conversation, ask learners to demonstrate their understanding of how they think these businesses ideas can be turned into a real business."
+                    },
+                    {
+                      "assessment_type": "Conversation/Challenge",
+                      "description": "Challenge learners to select what they believe to be a ‘good’ business idea. In conversation, explore the reasons for their choices and from this, assess their understanding of secure routes to business success."
+                    },
+                    {
+                      "assessment_type": "Observation",
+                      "description": "Observe discussions between learners about how it is possible to turn a business opportunity into a good business idea and vice versa. Evaluate the questions asked by individuals and how well other learners respond to probing questions."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Ask learners to explain their ideas for a business opportunity in their community. Evaluate how well their idea reflects their understanding of an opportunity, rather than simply something that they would like to do."
+                    },
+                    {
+                      "assessment_type": "Observation/Presentation",
+                      "description": "Observe how well learners present a report on what they find out about the structure of market surveys. Aspects of a successful report should include a description of what a market survey can tell you about the customer base, cost/price, attitudes towards materials, the choice of location and aspects of competition."
+                    },
+                    {
+                      "assessment_type": "Product/List",
+                      "description": "Ask learners to produce a list of questions which could be used to conduct some research into how well local transport systems work. Observe how effectively these questions could be used in identifying solutions to challenges faced by these systems."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Market Survey",
+                        "description_verbatim": "In groups, learners plan and conduct a simple market survey in the nearby community for a business opportunity, considering the following aspects: customers, price, raw materials, location, competition etc.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "24"
+                      }
+                    ]
+                  },
+                  "investigative_skills": [
+                    {
+                      "text_verbatim": "conduct a simple market survey",
+                      "assessment_method": "Observation/Presentation"
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 12,
+                    "unit": "periods",
+                    "source_page": "15, 23"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "term_name": "Term 3",
+          "term_number": 3,
+          "themes": [
+            {
+              "theme_title": "Start Up Process",
+              "theme_description": "",
+              "topics": [
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S1-T3-0001",
+                    "topic_title": "Business Start-up Process",
+                    "sequence_order": 4,
+                    "recommended_duration_periods": 18
+                  },
+                  "core_competency": "The learner follows the steps involved in starting a business, saves money and invests in a profitable venture",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "know the factors that enable an individual to start up a business, including some basic principles of effective record keeping. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "follow the correct steps in starting a business which will eventually lead to developing a business plan. (k, s)",
+                      "domain": "k, s"
+                    },
+                    {
+                      "outcome_text": "prepare a budget, recognising its value to business development. (u, s, gs)",
+                      "domain": "u, s, gs"
+                    },
+                    {
+                      "outcome_text": "Know the different sources of business finance. (k)",
+                      "domain": "k"
+                    },
+                    {
+                      "outcome_text": "assess the benefits and challenges of each source of business finance. (s, u,v, gs)",
+                      "domain": "s, u, v, gs"
+                    },
+                    {
+                      "outcome_text": "know the factors that determine saving and investment. (u, s, gs)",
+                      "domain": "u, s, gs"
+                    },
+                    {
+                      "outcome_text": "appreciate the reasons for and forms of saving. (k,v)",
+                      "domain": "k, v"
+                    },
+                    {
+                      "outcome_text": "understand how to prepare a savings plan, including how spreadsheets, books and calculators are used. (u, s, gs)",
+                      "domain": "u, s, gs"
+                    },
+                    {
+                      "outcome_text": "know factors to consider before taking an investment decision. (k, u)",
+                      "domain": "k, u"
+                    },
+                    {
+                      "outcome_text": "know factors that are considered for locating a business. (k, u)",
+                      "domain": "k, u"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [
+                      "Sub-topic 4.1: Steps in Starting a Business",
+                      "Sub-topic 4.2: Sources of Business Finance",
+                      "Sub-topic 4.3: Savings and Investments",
+                      "Sub-topic 4.4: Location of a Business"
+                    ],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Brainstorming",
+                      "description": "Learners brainstorm the factors that enhance business start-ups and explain why they think these factors are important."
+                    },
+                    {
+                      "activity_type": "Guest Speaker/Listening",
+                      "description": "Learners listen to a presentation from a prominent entrepreneur in their community explaining how he/she started their business. Learners should prepare and ask questions to further their understanding of the steps involved."
+                    },
+                    {
+                      "activity_type": "Group work/Summary",
+                      "description": "In groups, learners agree and summarise the steps in starting a business and share these with the class, including how to prepare a budget based on examples of useful budget formats and strategies."
+                    },
+                    {
+                      "activity_type": "Group work/Discussion",
+                      "description": "In groups, learners discuss the sources of business finance and justify why these sources are a starting point."
+                    },
+                    {
+                      "activity_type": "Case Study",
+                      "description": "Learners read a range of case studies on the sources of business finance, their benefits and challenges. They should discuss the similarities and differences between sources, giving some explanation for them."
+                    },
+                    {
+                      "activity_type": "Group work/Analysis",
+                      "description": "In groups, learners explore and identify the challenge and benefit of each source, agreeing reasons for their responses."
+                    },
+                    {
+                      "activity_type": "Discussion",
+                      "description": "As a class, learners agree definitions for saving and investment."
+                    },
+                    {
+                      "activity_type": "Group work/Investigation",
+                      "description": "In groups, learners investigate and discuss: purpose and forms of saving; purpose and forms of investment"
+                    },
+                    {
+                      "activity_type": "Discussion/Agreement",
+                      "description": "Following the discussion, learners agree a generalised statement to share with the class for when to save and when to invest, providing reasons to support their statements."
+                    },
+                    {
+                      "activity_type": "Practical",
+                      "description": "Guide learners to prepare a savings plan for themselves."
+                    },
+                    {
+                      "activity_type": "Simulation",
+                      "description": "Learners form a savings group/SACCO and start saving."
+                    },
+                    {
+                      "activity_type": "Group work/Investigation",
+                      "description": "In groups, learners investigate a range of investment plans and consider the benefits of each one."
+                    },
+                    {
+                      "activity_type": "Group work/Agreement",
+                      "description": "In the group, learners agree one investment plan that they would go with, explaining the benefits of this."
+                    },
+                    {
+                      "activity_type": "Group work/Discussion",
+                      "description": "In groups, learners discuss factors which influence business location and present this to class."
+                    },
+                    {
+                      "activity_type": "Discussion/Analysis",
+                      "description": "Learners discuss contrasting locations of businesses and try to link the chosen location to the type of business. They should try to explain situations where the location does not seem to match the type of business."
+                    },
+                    {
+                      "activity_type": "Design/Creation",
+                      "description": "Learners should discuss what is involved in selecting a location for business, and then design a guide for entrepreneurs who may also wish to do so."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Ask learners to share different opinions and experiences that describe good strategies for staring up a new business. In conversation, evaluate how well learners are able to identify key features of success."
+                    },
+                    {
+                      "assessment_type": "Product/Report",
+                      "description": "Ask learners to work in groups to produce a written report that describes important aspects of a presentation made to the class about business start-ups. Assess how well learners have been able to successfully identify important features."
+                    },
+                    {
+                      "assessment_type": "Case Study/Written",
+                      "description": "Ask learners to write a case study to describe a business person in their community which illustrates the source of their funds, the benefits of this source of funds and the challenges presented by this source. In conversation with learners, assess how well they understand the effects of how businesses are funded."
+                    },
+                    {
+                      "assessment_type": "Product/Report",
+                      "description": "Ask learners to write a monthly report on their savings and investment activities, identifying any challenges and considering practical solutions to these challenges. Observe how well these reports are written in relation to the accuracy of information and the nature of the content of the report."
+                    },
+                    {
+                      "assessment_type": "Conversation",
+                      "description": "Ask learners to identify and describe a business in their community and find out the factors that led to its location. Observe how well learners explain their ideas and how relevant they are to business development."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Savings Group Simulation",
+                        "description_verbatim": "Learners form a savings group/SACCO and start saving.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "26"
+                      }
+                    ]
+                  },
+                  "investigative_skills": [],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 18,
+                    "unit": "periods",
+                    "source_page": "15, 25"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                },
+                {
+                  "topic_metadata": {
+                    "topic_id": "ENT-O-S1-T3-0002",
+                    "topic_title": "Introduction to Government Revenue",
+                    "sequence_order": 5,
+                    "recommended_duration_periods": 6
+                  },
+                  "core_competency": "",
+                  "prerequisites": [],
+                  "learning_outcomes": [
+                    {
+                      "outcome_text": "Understand government revenue and why the government needs revenue.(u)",
+                      "domain": "u"
+                    },
+                    {
+                      "outcome_text": "know the sources of government revenue. (u,v)",
+                      "domain": "u, v"
+                    }
+                  ],
+                  "content_scope": {
+                    "must_cover": [],
+                    "optional_enrichment": [],
+                    "explicitly_excluded": [],
+                    "depth_limitations": []
+                  },
+                  "suggested_learning_activities": [
+                    {
+                      "activity_type": "Group work/Discussion",
+                      "description": "In groups, learners discuss ‘Where does the government get its money from?’ Encourage learners to think of examples locally, nationally and internationally. Each group presents its answers to the class, using examples, and also explaining the benefits and disadvantages of these sources of income for the government."
+                    },
+                    {
+                      "activity_type": "Research/Presentation",
+                      "description": "Ask learners to look at 2 sources of government revenue in detail. Ask them to present what they can find out about the structures, conditions and aims of these sources in a diagram of their choice so as to be able to compare the sources easily."
+                    },
+                    {
+                      "activity_type": "Group work/Discussion",
+                      "description": "In groups, learners are provided with a range of sources of government revenue across Africa. They should discuss why governments need this revenue and how it is distributed. learners should consider the effects of the way revenue is distributed, comparing systems in Uganda to those in other neighbouring countries."
+                    },
+                    {
+                      "activity_type": "Debate",
+                      "description": "Class splits into 2 groups and debates a given example in Uganda where government revenue has benefited/not benefited the community in which they live. The debate should result in a range of further questions that learners can use to conduct further research in government revenue."
+                    }
+                  ],
+                  "suggested_assessment_activities": [
+                    {
+                      "assessment_type": "Field Study",
+                      "description": "Ask learners to conduct a field study around the school community in order to identify facilities which the government has provided. In conversation with learners, ask them to explain which of these facilities have had a particularly positive impact on learning and school improvement in general."
+                    },
+                    {
+                      "assessment_type": "Product/Letter",
+                      "description": "Challenge learners to write a letter to the local government, outlining some funds that they believe are required to improve their community. Observe how well learners are able to reasonably request such funds and how relevant they are to the needs of their community."
+                    }
+                  ],
+                  "practical_requirements": {
+                    "practicals": [
+                      {
+                        "title": "Field Study",
+                        "description_verbatim": "Ask learners to conduct a field study around the school community in order to identify facilities which the government has provided.",
+                        "min_trials_or_reps": "",
+                        "safety_notes_verbatim": "",
+                        "equipment_list": [],
+                        "source_page": "27"
+                      }
+                    ]
+                  },
+                  "investigative_skills": [
+                    {
+                      "text_verbatim": "conduct a field study around the school community",
+                      "assessment_method": "Conversation"
+                    }
+                  ],
+                  "project_requirements": {
+                    "is_project_required": false,
+                    "project_scope_verbatim": "",
+                    "deliverables_verbatim": "",
+                    "assessment_weight_percent": null,
+                    "source_page": ""
+                  },
+                  "assessment_weightings": {
+                    "summative_percent": null,
+                    "formative_percent": null,
+                    "practical_percent": null,
+                    "project_percent": null,
+                    "notes_verbatim": ""
+                  },
+                  "time_allocation": {
+                    "periods": 6,
+                    "unit": "periods",
+                    "source_page": "15, 27"
+                  },
+                  "ict_guidance": {
+                    "suggested_uses": [],
+                    "restrictions": []
+                  },
+                  "syllabus_notes": [],
+                  "advanced_content_flag": {
+                    "contains_extended_content": false,
+                    "extended_content_notes": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

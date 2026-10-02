@@ -1,0 +1,973 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Lower Secondary Curriculum",
+        "subject": "Nutrition and Food Technology",
+        "level": "O-Level",
+        "class_group": "Senior Three",
+        "year": "2019",
+        "version": "1.0",
+        "source_document": "Nutrition and Food Technology Syllabus.pdf"
+    },
+    "global_framework": {
+        "competencies": [
+            "Self-assured individuals",
+            "Responsible and patriotic citizens",
+            "Lifelong learners",
+            "Positive contributors to society"
+        ],
+        "generic_skills": [
+            "Critical thinking and problem-solving",
+            "Creativity and innovation",
+            "Communication",
+            "Co-operation and Self-Directed Learning",
+            "Mathematical competition and ICT proficiency"
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty; uphold and defend the truth at all times",
+            "Justice and fairness in dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovativeness",
+            "Social Responsibility",
+            "Social Harmony",
+            "National Unity",
+            "National Consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Three",
+            "class_code": "S3",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Meal Management",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "NFT-O-S3-T1-0001",
+                                        "topic_title": "STOCKS, SOUPS, SAUCES AND GRAVY",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 14
+                                    },
+                                    "core_competency": "The learner prepares and serves soups, sauces and gravy.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the importance of soups, sauces and gravies in the diet (k, u)",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "understand the rules and procedure to be followed when making soups, sauces and gravies (k, u)",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "prepare soups, sauces and gravies (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Guide the learners to discuss the importance of soups, sauces and gravies in the diet, and help them identify the different types of soups, sauces and gravies."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Guide the learners to discuss what needs to be taken into account when making soups, sauces and gravies, and use illustrations to describe the different procedures to be followed when preparing soups, sauces and gravies."
+                                        },
+                                        {
+                                            "activity_type": "Demonstration/Practice",
+                                            "description": "Use demonstration to guide the learners to follow the right steps in preparing soups, sauces and gravies."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Learners should choose a soup, sauce or gravy to make themselves and explain their choice."
+                                        },
+                                        {
+                                            "activity_type": "Creation",
+                                            "description": "Learners should create their own recipe for a soup or sauce."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Talk to learners about the factors to take into account when making sauces and soups."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they make a sauce etc. .to ensure they understand the process."
+                                        },
+                                        {
+                                            "assessment_type": "Product Analysis",
+                                            "description": "Analyse learners’ own recipes to ensure they understand the key factors in the process."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Preparation of Soup, Sauce or Gravy",
+                                                "description_verbatim": "Learners should choose a soup, sauce or gravy to make themselves and explain their choice.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "33"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 14,
+                                        "unit": "periods",
+                                        "source_page": "33"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "NFT-O-S3-T1-0002",
+                                        "topic_title": "SWEETS AND PUDDINGS",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 14
+                                    },
+                                    "core_competency": "The learner prepares and uses sweet dishes and puddings (desserts) as part of a meal.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the types and uses of sweet dishes and puddings in the diet (u)",
+                                            "domain": "u"
+                                        },
+                                        {
+                                            "outcome_text": "prepare sweet dishes and puddings (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "present sweet dishes and puddings (u, s, v)",
+                                            "domain": "u, s, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "In small groups, learners should discuss the different sweet dishes and puddings used in the diet."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Guide the learners to discuss the role of sweet dishes in the diet and their advantages and disadvantages."
+                                        },
+                                        {
+                                            "activity_type": "Demonstration",
+                                            "description": "Through demonstration, guide the learners to follow the recommended procedure for making sweet dishes and puddings and how to present them."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Learners should make a sweet dish or pudding and explain their choice."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they carry out measurements and use ingredients; observe them mixing the ingredients to make the sweets and puddings; observe the cooking and presentation of the dishes."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Talk with learners on the choice of ingredients; importance of sweets and puddings in a meal; how to present attractively."
+                                        },
+                                        {
+                                            "assessment_type": "Product Appraisal",
+                                            "description": "Appraise the sample sweets and puddings."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Making a Sweet Dish or Pudding",
+                                                "description_verbatim": "Learners should make a sweet dish or pudding and explain their choice.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "33"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 14,
+                                        "unit": "periods",
+                                        "source_page": "33"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "NFT-O-S3-T1-0003",
+                                        "topic_title": "PREPARATION OF BASIC MEALS",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 20
+                                    },
+                                    "core_competency": "The learner uses different methods of cooking to prepare a suitable nourishing meal for different people and occasions.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "follow the principles involved in the application of the different methods of cooking (u, s)",
+                                            "domain": "u, s"
+                                        },
+                                        {
+                                            "outcome_text": "select suitable dishes cooked using each method of cooking (u, s)",
+                                            "domain": "u, s"
+                                        },
+                                        {
+                                            "outcome_text": "understand the uses of cereal based dishes in the diet (u)",
+                                            "domain": "u"
+                                        },
+                                        {
+                                            "outcome_text": "use available cereals to prepare breakfast dishes (u, s)",
+                                            "domain": "u, s"
+                                        },
+                                        {
+                                            "outcome_text": "prepare nutritious meals for different categories of people (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "prepare various traditional dishes of drinks, vegetables, proteins and carbohydrates (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "present meals attractively (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Guide the learners to discuss how to present a meal and to set a table."
+                                        },
+                                        {
+                                            "activity_type": "Demonstration",
+                                            "description": "Demonstrate to learners, and then let them follow the steps for preparing foods such as: appetizers, protein, carbohydrate and vegetable dishes, puddings and desserts."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Guide the learners in whole class discussion on the key points to remember when using different methods of cooking."
+                                        },
+                                        {
+                                            "activity_type": "Group Activity",
+                                            "description": "In small groups, learners identify different dishes cooked with each method of cooking."
+                                        },
+                                        {
+                                            "activity_type": "Group Practical",
+                                            "description": "In groups, learners in choose, prepare and make a basic meal for a family and a dish suitable for young children. Learners present their meal and set a table. They explain their choices."
+                                        },
+                                        {
+                                            "activity_type": "Discussion/Modification",
+                                            "description": "Guide the learners to discuss traditional meals, and to modify a recipe to make a traditional dish of their choice."
+                                        },
+                                        {
+                                            "activity_type": "Research/Report",
+                                            "description": "Learners should carry out research and report on the importance of cereal-based dishes in the diet."
+                                        },
+                                        {
+                                            "activity_type": "Demonstration",
+                                            "description": "Through demonstration, guide the learners to prepare breakfast cereals (millet, maize, wheat, oats and rice)."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Learners should choose dishes to prepare and present to the class. They should explain their choice of dishes and presentation."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners when they are cooking meals. Do they understand the different cooking methods?"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation/Product Appraisal",
+                                            "description": "Talk to learners about their presentation. What did they consider when deciding what to cook? Did their use of various cooking methods demonstrate understanding? Did they present the food attractively and set the table appropriately?"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Basic Meal Preparation",
+                                                "description_verbatim": "In groups, learners in choose, prepare and make a basic meal for a family and a dish suitable for young children. Learners present their meal and set a table.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "34"
+                                            },
+                                            {
+                                                "title": "Preparation of Breakfast Cereals",
+                                                "description_verbatim": "Through demonstration, guide the learners to prepare breakfast cereals (millet, maize, wheat, oats and rice).",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "34"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 20,
+                                        "unit": "periods",
+                                        "source_page": "34"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Meal Management",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "NFT-O-S3-T2-0001",
+                                        "topic_title": "MEALS FOR SPECIAL OCCASIONS",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 24
+                                    },
+                                    "core_competency": "The learner plans and prepares meals for a special occasion.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "plan meals for special occasions (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "prepare special meals (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "serve the prepared meals for special occasions (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "pack meals to be eaten away from home (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Guide the learners to discuss the points to consider when planning meals for special occasions."
+                                        },
+                                        {
+                                            "activity_type": "Demonstration",
+                                            "description": "Use demonstration to guide the learners to plan, prepare and serve meals for special occasions."
+                                        },
+                                        {
+                                            "activity_type": "Note",
+                                            "description": "These will include: buffets, cocktails, barbecues, high tea, packed meals and luncheon."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Learners could choose a special occasion and cook a dish."
+                                        },
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Guide the learners to discuss what needs to be taken into account when deciding on packing and presentation for food that is to be eaten outside the home."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Talk to learners about what needs to be taken into account when planning for a special occasion."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they carry out the correct application of the recipes: right measurement of ingredients, correct procedure, time and temperature control and presentation."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Talk to learners about: the use of the different ingredients; methods of preparation used; duration of cooking; proper presentation; quality control"
+                                        },
+                                        {
+                                            "assessment_type": "Product Appraisal",
+                                            "description": "Appraise the special dishes prepared by learners."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Cooking for Special Occasions",
+                                                "description_verbatim": "Learners could choose a special occasion and cook a dish.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "35"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "35"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Value Addition",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "NFT-O-S3-T2-0002",
+                                        "topic_title": "MILK AND MILK PRODUCTS",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 24
+                                    },
+                                    "core_competency": "The learner processes milk and milk-based products using the key principles and practices of milk processing.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "understand the importance of safe production and processing of milk (u)",
+                                            "domain": "u"
+                                        },
+                                        {
+                                            "outcome_text": "select the right equipment for processing milk (k, s, v)",
+                                            "domain": "k, s, v"
+                                        },
+                                        {
+                                            "outcome_text": "follow the procedure when making ice cream, making yoghurt and making ghee (u, s, v)",
+                                            "domain": "u, s, v"
+                                        },
+                                        {
+                                            "outcome_text": "process milk and milk products (u, s, v)",
+                                            "domain": "u, s, v"
+                                        },
+                                        {
+                                            "outcome_text": "package, market and sell the milk products (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Discussion",
+                                            "description": "Guide the learners to discuss how milk can be prepared safely in the home and during production, and to choose the appropriate equipment for processing milk; this may include a double pan, thermometer, spatula/spoon."
+                                        },
+                                        {
+                                            "activity_type": "Research/Report",
+                                            "description": "Learners should research and report on making ice cream, yoghurt and cheese."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Guide the learners to process milk products for themselves; this should include ice cream, yoghurt, and ghee."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Learners should package, label, market and sell the processed milk products."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Talk to learners about the conditions necessary for ensuring safety of milk in a home."
+                                        },
+                                        {
+                                            "assessment_type": "Observation/Conversation",
+                                            "description": "Observe learners and converse with learners as they make milk products. Do they understand the correct procedures?"
+                                        },
+                                        {
+                                            "assessment_type": "Product Appraisal",
+                                            "description": "Appraise the packaged and labelled products."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Processing Milk Products",
+                                                "description_verbatim": "Guide the learners to process milk products for themselves; this should include ice cream, yoghurt, and ghee.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [
+                                                    "double pan",
+                                                    "thermometer",
+                                                    "spatula/spoon"
+                                                ],
+                                                "source_page": "35"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "Process, cost and sell milk products and write a report",
+                                        "deliverables_verbatim": "Report",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "35"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 24,
+                                        "unit": "periods",
+                                        "source_page": "35"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Meal Management",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "NFT-O-S3-T3-0001",
+                                        "topic_title": "YEAST COOKERY",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 18
+                                    },
+                                    "core_competency": "The learner understands the principles of yeast cookery and applies this to make bread, buns, doughnuts, and a cereal based fermented drink.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "ensure suitable conditions during the preparation of yeast mixtures (u, s)",
+                                            "domain": "u, s"
+                                        },
+                                        {
+                                            "outcome_text": "understand the procedure followed and the difficulties associated with yeast cookery (u)",
+                                            "domain": "u"
+                                        },
+                                        {
+                                            "outcome_text": "make different products using the bread dough (s, gs, v)",
+                                            "domain": "s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "make a non-alcoholic fermented drink from cereals (s, gs, v)",
+                                            "domain": "s, gs, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Explanation",
+                                            "description": "Explain to learners the ingredients used in yeast cookery and the conditions required for yeast growth."
+                                        },
+                                        {
+                                            "activity_type": "Research/Report",
+                                            "description": "Guide the learners to carry out research and report on the procedure for making each of the following yeast mixtures: bread, fancy rolls and doughnuts."
+                                        },
+                                        {
+                                            "activity_type": "Demonstration",
+                                            "description": "Use demonstration to show learners the correct procedure for making bread loaves, buns, rolls and doughnuts."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Learners should make and package some of these for themselves."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Guide learners to make a fermented cereal drink."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe the learners in the selection, mixing and modification of ingredients used in making bread dough."
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners on the uses of the different ingredients in bread making and the process of bread making."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners making bread products. Do they understand the principles of yeast cookery?"
+                                        },
+                                        {
+                                            "assessment_type": "Product Appraisal",
+                                            "description": "Appraise the non-alcoholic fermented drink."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Making Bread Products",
+                                                "description_verbatim": "Learners should make and package some of these for themselves.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "36"
+                                            },
+                                            {
+                                                "title": "Making Fermented Cereal Drink",
+                                                "description_verbatim": "Guide learners to make a fermented cereal drink.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "36"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "Making bread products and bushera. Cost and sell the products and write a project report",
+                                        "deliverables_verbatim": "Project report",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "36"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 18,
+                                        "unit": "periods",
+                                        "source_page": "36"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "NFT-O-S3-T3-0002",
+                                        "topic_title": "CONFECTIONERIES AND PASTRIES",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 30
+                                    },
+                                    "core_competency": "The learner prepares a variety of confectionery and pastry dishes, and decorates cakes using appropriate types of icing.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "use several recipes to demonstrate skills in making different confectioneries (u, s)",
+                                            "domain": "u, s"
+                                        },
+                                        {
+                                            "outcome_text": "understand the procedure followed and faults likely to occur during cake making (u)",
+                                            "domain": "u"
+                                        },
+                                        {
+                                            "outcome_text": "decorate cakes for various occasions using butter icing and royal icing (u, s, v)",
+                                            "domain": "u, s, v"
+                                        },
+                                        {
+                                            "outcome_text": "package, market and sell the confectioneries produced (u, s, v)",
+                                            "domain": "u, s, v"
+                                        },
+                                        {
+                                            "outcome_text": "understand the importance of the basic ingredients used in making pastries (k, u)",
+                                            "domain": "k, u"
+                                        },
+                                        {
+                                            "outcome_text": "follow the right procedure to make chapattis and samosas (u, s)",
+                                            "domain": "u, s"
+                                        },
+                                        {
+                                            "outcome_text": "prepare short crust and rough puff pastries (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "demonstrate skills in preparing items using short crust and rough puff pastries (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        },
+                                        {
+                                            "outcome_text": "package, market and sell the pastry products (u, s, gs, v)",
+                                            "domain": "u, s, gs, v"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Explanation",
+                                            "description": "Explain to learners the ingredients used in making confectioneries such as cakes, biscuits and cookies and scones."
+                                        },
+                                        {
+                                            "activity_type": "Demonstration",
+                                            "description": "Demonstrate the different procedures used in confectionery making. To include butter and royal icing."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Learners should make and present some of these confectioneries for themselves, and decorate cakes using butter icing and royal icing."
+                                        },
+                                        {
+                                            "activity_type": "Group Discussion",
+                                            "description": "In small groups, learners should discuss the common problems associated with cake making and decorating."
+                                        },
+                                        {
+                                            "activity_type": "Guided Discovery",
+                                            "description": "Use guided discovery to enable learners to package, market and sell confectioneries."
+                                        },
+                                        {
+                                            "activity_type": "Explanation/Demonstration",
+                                            "description": "Explain to learners the ingredients used in pastry making and demonstrate how to make basic pastries such as chapatti, samosas and short crust and puff pastry."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Guide the learners to prepare some of these dishes by themselves."
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "Learners package, label and market their pastry products."
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners in making and presenting their confectioneries. Do they demonstrate necessary skills and an understanding of the basic processes?"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "Converse with learners about how to use the products made; arrive at quality product; importance of time and temperature control."
+                                        },
+                                        {
+                                            "assessment_type": "Product Appraisal",
+                                            "description": "Appraise the finished articles."
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners making their pastries and appraise the finished product."
+                                        },
+                                        {
+                                            "assessment_type": "Product Analysis",
+                                            "description": "Analyse the project report."
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Making and Decorating Confectioneries",
+                                                "description_verbatim": "Learners should make and present some of these confectioneries for themselves, and decorate cakes using butter icing and royal icing.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "37"
+                                            },
+                                            {
+                                                "title": "Making Pastries",
+                                                "description_verbatim": "Guide the learners to prepare some of these dishes by themselves.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "37"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "making and selling confectioneries and pastry products.",
+                                        "deliverables_verbatim": "Write a project report",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "37"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 30,
+                                        "unit": "periods",
+                                        "source_page": "37"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

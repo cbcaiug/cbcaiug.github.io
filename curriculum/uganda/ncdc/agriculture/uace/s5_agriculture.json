@@ -1,0 +1,1000 @@
+{
+    "_comment": "MASTER SYLLABUS TEMPLATE — DO NOT FILL WITH SAMPLE DATA. Populate verbatim from PDF.",
+    "curriculum_metadata": {
+        "country": "Uganda",
+        "authority": "National Curriculum Development Centre (NCDC)",
+        "curriculum_name": "Advanced Secondary Curriculum",
+        "subject": "Agriculture",
+        "level": "A-level",
+        "class_group": "Senior Five",
+        "year": "2025",
+        "version": "1.0",
+        "source_document": "Agriculture Syllabus Advanced Secondary Curriculum 2025.pdf"
+    },
+    "global_framework": {
+        "competencies": [],
+        "generic_skills": [
+            {
+                "skill_name": "Critical thinking and problem-solving",
+                "sub_skills": [
+                    "Planning and carrying out investigations",
+                    "Sorting and analysing information",
+                    "Identifying problems and proposing solutions",
+                    "Predicting outcomes and making reasoned decisions",
+                    "Evaluating different solutions"
+                ],
+                "source_page": "11"
+            },
+            {
+                "skill_name": "Co-operation and Self-Directed Learning",
+                "sub_skills": [
+                    "Working effectively in diverse teams",
+                    "Interacting effectively with others",
+                    "Taking responsibility for own learning",
+                    "Working independently with persistence",
+                    "Managing goals and time"
+                ],
+                "source_page": "11"
+            },
+            {
+                "skill_name": "Creativity and Innovation",
+                "sub_skills": [
+                    "Using imaginations to explore possibilities",
+                    "Working with others to generate ideas",
+                    "Suggesting and developing new solutions",
+                    "Experimenting with innovative alternatives",
+                    "Looking for patterns and making generalisation"
+                ],
+                "source_page": "11"
+            },
+            {
+                "skill_name": "Communication",
+                "sub_skills": [
+                    "Listening attentively and with comprehension",
+                    "Talking confidently and explaining ideas/opinions clearly",
+                    "Reading accurately and fluently",
+                    "Writing and presenting information coherently",
+                    "Using a range of media to communicate ideas"
+                ],
+                "source_page": "11"
+            },
+            {
+                "skill_name": "Mathematical Computation",
+                "sub_skills": [
+                    "Using numbers and measurements accurately",
+                    "Interpreting and interrogating mathematical data",
+                    "Using mathematics to justify and support decisions"
+                ],
+                "source_page": "11"
+            },
+            {
+                "skill_name": "Information and Communication Technology (ICT) Proficiency",
+                "sub_skills": [
+                    "Using technology to create, manipulate and process information",
+                    "Using technology to collaborate, communicate and refine work"
+                ],
+                "source_page": "11"
+            },
+            {
+                "skill_name": "Diversity and Multicultural Skills",
+                "sub_skills": [
+                    "Appreciate cultural diversity",
+                    "Respectfully responding to people of all cultures",
+                    "Respecting positive cultural practices",
+                    "Appreciating ethnicity as a cradle for creativity and innovation"
+                ],
+                "source_page": "11"
+            }
+        ],
+        "values": [
+            "Respect for humanity and environment",
+            "Honesty, upholding and defending the truth at all times",
+            "Justice and dealing with others",
+            "Hard work for self-reliance",
+            "Integrity; moral uprightness and sound character",
+            "Creativity and innovation",
+            "Social responsibility",
+            "Social harmony",
+            "National unity",
+            "National consciousness and patriotism"
+        ],
+        "attitudes": [],
+        "cross_cutting_issues": [
+            "Environmental awareness",
+            "Health awareness",
+            "Life skills",
+            "Mixed abilities and involvement",
+            "Socio-economic challenges",
+            "Citizenship and patriotism"
+        ]
+    },
+    "authority_model": {
+        "precedence_order": [
+            "user_prompt",
+            "attached_documents",
+            "syllabus_constraints",
+            "ai_defaults"
+        ]
+    },
+    "classes": [
+        {
+            "class_name": "Senior Five",
+            "class_code": "S5",
+            "terms": [
+                {
+                    "term_name": "Term 1",
+                    "term_number": 1,
+                    "themes": [
+                        {
+                            "theme_title": "Construct: Animal Production",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-A-S5-T1-0001",
+                                        "topic_title": "Agricultural Biology in Crops and Animals",
+                                        "sequence_order": 1,
+                                        "recommended_duration_periods": 63,
+                                        "keywords": [
+                                            "cells",
+                                            "dna",
+                                            "genetics",
+                                            "enzymes",
+                                            "osmosis",
+                                            "diffusion",
+                                            "inheritance",
+                                            "microscope"
+                                        ]
+                                    },
+                                    "core_competency": "The learner demonstrates understanding of cellular Biology principles to illustrate their role in supporting agricultural production.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "explore the role of plant cells and animal cells in agriculture production. (k, u, s, v/a, gs)",
+                                            "domain": "k, u, s, v/a, gs"
+                                        },
+                                        {
+                                            "outcome_text": "apply the knowledge of genetics and genes to address challenges in crop and animal production. (k, u, s, v/a, gs)",
+                                            "domain": "k, u, s, v/a, gs"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Observation/Practical",
+                                            "description": "In groups, learners use microscopes to examine cells to see and draw shapes from different parts of crops and animals.",
+                                            "source_page": "18"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Experiment",
+                                            "description": "In pairs or individually, learners extract DNA from common fruits (like strawberries or bananas) to see the physical form of this biochemical compound.",
+                                            "source_page": "18"
+                                        },
+                                        {
+                                            "activity_type": "Scientific Investigation",
+                                            "description": "In groups learners carry out scientific investigations on the effect of enzymes on different substrates, such as the breakdown of hydrogen peroxide by catalase (and others like Amylase, found in saliva or commercial amylase) breaks down starch. Protease (such as: papain found in papaya or bromelain found in pineapple) break down proteins like gelatin into smaller peptides or amino acids.",
+                                            "source_page": "18"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Experiment",
+                                            "description": "In pairs, learners demonstrate diffusion, osmosis and active transport in cells.",
+                                            "source_page": "19"
+                                        },
+                                        {
+                                            "activity_type": "Experiment",
+                                            "description": "In groups, learners perform experiments to observe the effects of different factors on the rate of diffusion, osmosis and active transport in cells.",
+                                            "source_page": "19"
+                                        },
+                                        {
+                                            "activity_type": "Brainstorming",
+                                            "description": "As a class, learners brainstorm the causes, similarities and differences among organisms with a focus on genetics.",
+                                            "source_page": "19"
+                                        },
+                                        {
+                                            "activity_type": "Project Work",
+                                            "description": "In groups, learners predict the outcomes of genetic crosses according to Mendelian theory and create a poster illustrating their predictions.",
+                                            "source_page": "19"
+                                        },
+                                        {
+                                            "activity_type": "Project-based learning",
+                                            "description": "In groups, learners participate in project-based learning on how we can improve yields and health of crops and animals using genetics in their community.",
+                                            "source_page": "19"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "The teacher observes how learners manipulate the microscope and the drawing of different cell shapes.",
+                                            "source_page": "18"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "The teacher converses with learners about how alcohol is used to precipitate the DNA checks their scientific methods of documenting the role and significance of reagents/extracted DNA.",
+                                            "source_page": "18"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation/Observation",
+                                            "description": "The teacher converses with learners about what happens to Iodine, how Iodine will turn blue-black in the presence of starch and as the amylase breaks down the starch, the solution will no longer turn blue-black, indicating the enzymatic activity.",
+                                            "source_page": "18"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "The teacher converses with learners about the scientific inquiry process skills including the key steps of scientific investigation such as aim, questioning hypothesis/prediction, aim, procedure for the experiment, observation, analysis, conclusion and recommendation.",
+                                            "source_page": "18"
+                                        },
+                                        {
+                                            "assessment_type": "Product Review",
+                                            "description": "The teacher checks the scientific investigations being performed by learners to ensure chronology of the steps expected.",
+                                            "source_page": "19"
+                                        },
+                                        {
+                                            "assessment_type": "Product Review",
+                                            "description": "The teacher checks the poster presented by learners showing the genetic crosses according to Mendelian theory.",
+                                            "source_page": "19"
+                                        },
+                                        {
+                                            "assessment_type": "Observation/Scoring",
+                                            "description": "The teacher uses the observation checklist and scoring grid with a scale of 1—4 to record achievements on several areas including; group work behaviour, being on task, group work participation, communication to an audience, organisation of portfolio, use and application of concepts when learners are engaged in project-based learning activities.",
+                                            "source_page": "19"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "In groups, learners participate in project-based learning on how we can improve yields and health of crops and animals using genetics in their community.",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "19"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 63,
+                                        "unit": "periods",
+                                        "source_page": "18"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use reputable online resources like Open Educational Resources for Agriculture, Open Genetics, Khan Academy and Educational YouTube channels to gather background information on cells, biochemical compound, genetics, various agricultural biology experiments and project-based learning task.",
+                                            "Use interactive simulations to create virtual experiments to manipulate variables to see how changes affect diffusion, osmosis, and active transport.",
+                                            "Participate in a simulation game to understand the process of cellular respiration and the role of biochemical compounds like glucose and ATP.",
+                                            "Use PowerPoint, Prezi, or other presentation software to present their findings from scientific investigation, inquiry or methods.",
+                                            "Use Excel or Google Sheets for students to input their data on how to predict the outcomes of genetic crosses according to Mendelian theory."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 2",
+                    "term_number": 2,
+                    "themes": [
+                        {
+                            "theme_title": "Construct: Animal Production",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-A-S5-T2-0001",
+                                        "topic_title": "Anatomy, Morphology and Physiology",
+                                        "sequence_order": 2,
+                                        "recommended_duration_periods": 40,
+                                        "keywords": [
+                                            "anatomy",
+                                            "morphology",
+                                            "physiology",
+                                            "digestive system",
+                                            "reproductive system",
+                                            "dissection",
+                                            "livestock selection",
+                                            "body systems"
+                                        ]
+                                    },
+                                    "core_competency": "The learner demonstrates the relationship between anatomy and physiology of animals for increased production.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "examine the shape, form and appearance of an animal to determine the quality of the animal. (k, u, s, v/a, gs)",
+                                            "domain": "k, u, s, v/a, gs"
+                                        },
+                                        {
+                                            "outcome_text": "analyse the relationship between different animal body systems for increased production. (k, u, s, v/a, gs)",
+                                            "domain": "k, u, s, v/a, gs"
+                                        },
+                                        {
+                                            "outcome_text": "apply the knowledge of morphology to select an animal to rear. (k, u, s, v/a, gs)",
+                                            "domain": "k, u, s, v/a, gs"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "In groups, learners choose an animal to examine and record the shape, form and appearance which has been discussed and agreed upon by the parties concerned to align with the learners' goals, resources, and capabilities.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "activity_type": "Field Visit",
+                                            "description": "As a class, learners make a field visit to a farmer rearing animals to examine the morphological features and make recommendations about individual animals then write a field visit report.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "activity_type": "Dissection",
+                                            "description": "In groups, learners dissect a selected animal to examine its digestive and reproductive systems to explain how different systems interact to ensure growth, health and productivity.",
+                                            "source_page": "20"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "The teacher observes and checks the criteria the learners use to choose an animal for rearing which aligns with the learners' goals, resources, and capabilities.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "assessment_type": "Product Review",
+                                            "description": "The teacher checks the accuracy and coherence of the report (subject knowledge, organisation, structure, technical correctness, being attractive to the reader and communication effectiveness) about the field visit which includes the recommendations they made.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "The teacher observes and checks how learners analyse the relationship between the body systems using a dissection safety protocol including pre dissection preparation, actual dissection of the structural parts, display of the parts, clean up and reporting of information gathered from the analysis.",
+                                            "source_page": "20"
+                                        },
+                                        {
+                                            "assessment_type": "Product Review",
+                                            "description": "The teacher checks the organisation, accuracy and coherence (subject knowledge, organisation, structure, technical correctness, being attractive to the reader and communication effectiveness) of the learners’ charts/leaflets on the digestive and reproductive system.",
+                                            "source_page": "20-21"
+                                        },
+                                        {
+                                            "assessment_type": "Product Review",
+                                            "description": "The teacher checks for accuracy of subject details, sequencing and coherence of the report and an article for a newspaper guiding farmers on how to select an animal for rearing.",
+                                            "source_page": "21"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Dissection of a selected animal",
+                                                "description_verbatim": "In groups, learners dissect a selected animal to examine its digestive and reproductive systems to explain how different systems interact to ensure growth, health and productivity.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "The teacher observes and checks how learners analyse the relationship between the body systems using a dissection safety protocol including pre dissection preparation...",
+                                                "equipment_list": [],
+                                                "source_page": "20"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 40,
+                                        "unit": "periods",
+                                        "source_page": "20"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use digital forms or apps (e.g., Google Forms) for learners to input data on morphological features, health status, and other observations of the animals in real-time.",
+                                            "Use tablets or smartphones after getting permission and consent to take photos, videos, record interviews with the farmer and notes during the field visit.",
+                                            "Use any word processor to write the field visit report.",
+                                            "Use tools like Google Docs or Microsoft OneNote for learners to collaboratively write their field visit report.",
+                                            "Use virtual dissection software to complement the hands-on dissection and to allow you explore and understand the anatomy of the animal in a controlled repeatable environment.",
+                                            "Write and send emails to your instructor or any relevant stakeholder to demonstrate how to professionally communicate dissection findings."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-A-S5-T2-0002",
+                                        "topic_title": "Livestock Management and Rearing Practices",
+                                        "sequence_order": 3,
+                                        "recommended_duration_periods": 50,
+                                        "keywords": [
+                                            "livestock",
+                                            "rearing",
+                                            "management",
+                                            "feed formulation",
+                                            "animal health",
+                                            "housing",
+                                            "enterprise",
+                                            "business model"
+                                        ]
+                                    },
+                                    "core_competency": "The learner applies evidence-based livestock management and rearing practices to ensure optimal quality production.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "establish a farm animal enterprise for a selected animal to rear. (k, u, s, v/a, gs)",
+                                            "domain": "k, u, s, v/a, gs"
+                                        },
+                                        {
+                                            "outcome_text": "perform relevant animal husbandry practices for a selected animal for optimal production. (k, u, s, v/a, gs)",
+                                            "domain": "k, u, s, v/a, gs"
+                                        },
+                                        {
+                                            "outcome_text": "apply basic occupational health, safety and environmental protection practices in production of a selected animal. (k, u, s, v/a, gs)",
+                                            "domain": "k, u, s, v/a, gs"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Business Planning",
+                                            "description": "In groups, learners prepare a business model canvas for rearing a selected animal.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "activity_type": "Construction/Practical",
+                                            "description": "As a class, learners construct or renovate structures for a selected animal.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "activity_type": "Scientific Investigation",
+                                            "description": "In groups, learners analyse feed samples to determine nutrient composition and formulate a feed for the selected animal.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "As a class, learners perform the required management and rearing practices for a selected animal.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Health",
+                                            "description": "In groups, learners handle and manage health in a selected animal while observing basic occupational health, safety and environmental protection practices.",
+                                            "source_page": "22"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Product Review",
+                                            "description": "The teacher checks for the accuracy and coherence (subject knowledge, organisation, structure, technical correctness, being attractive to the reader and communication effectiveness) of the learners’ chart/leaflet that has been made to address the components of a business model canvas for rearing a selected animal.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "The teacher observes and checks learners using a psychomotor skills checklist (Imitation, manipulation, precision, articulation and naturalisation) as they are constructing or renovating structures for a selected animal.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "assessment_type": "Observation/Conversation",
+                                            "description": "The teacher observes and converses with learners while checking the 25 steps of scientific investigation protocol when analysing feed samples.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "The teacher observes learners with an affective skills checklist (starting with receiving/ attending to, responding, valuing, organising and characterising) as they are performing the required management and rearing practices for a selected animal.",
+                                            "source_page": "22"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "The teacher observes learners and checks with both affective and psychomotor skills checklist (Imitation, manipulation, precision, articulation and naturalisation) as they handle ill health in a selected animal while observing basic occupational environmental protection practices.",
+                                            "source_page": "22"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Feed Analysis",
+                                                "description_verbatim": "In groups, learners analyse feed samples to determine nutrient composition and formulate a feed for the selected animal.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "22"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 50,
+                                        "unit": "periods",
+                                        "source_page": "22"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use tools like Microsoft PowerPoint, Google Slides, or Prezi to create engaging presentations that showcase the business model canvas and key insights.",
+                                            "Use word processors like Microsoft Word or Google Docs to write details that explain your business model canvas and justify your decisions.",
+                                            "Use digital scales to measure feed samples accurately and sensors for collecting data on moisture content, temperature, and other relevant parameters when analysing feed samples.",
+                                            "Utilize spreadsheet software like Microsoft Excel or Google Sheets to input raw data and perform calculations for nutrient composition when analysing feed samples.",
+                                            "Use apps or software designed for analysing the nutrient composition of animal feeds to obtain detailed accurate information on protein, fat, carbohydrate content, mineral salts and more when analysing feed samples.",
+                                            "Use word processors like Microsoft Word or Google Docs to write a detailed report on analysis of feed samples and ensuring proper formatting, grammar checks, and the inclusion of multimedia elements.",
+                                            "Use the internet and digital libraries to research different animals, or specifically, the selected animal and their habitats.",
+                                            "Use digital whiteboards to display instructions, diagrams, and videos of constructing of a selected animal.",
+                                            "Create detailed plans and models using CAD (Computer-Aided Design) software.",
+                                            "Utilize platforms like YouTube or educational websites that show videos on proper animal care techniques for the selected animal.",
+                                            "Use apps, Google sheets or software to maintain records of feeding schedules, health checks, and growth progress when performing the required management and rearing practices.",
+                                            "Use online platforms to remotely consult with veterinarians or animal health experts to access professional guidance on handling and treating ill animals.",
+                                            "Use available mobile apps to access information on animal care, symptoms of common illnesses, and first aid procedures for the selected animal.",
+                                            "Utilize health monitoring devices that can track an animal's vital signs, animal occupational safety and health parameters for the selected animal."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [
+                                        {
+                                            "text_verbatim": "Note to stakeholders including teachers, school managers and assessors: a) Educators, teachers and school managers should establish a strong relationship and build trust with the local community as a foundation of community engagement in animal and crop production. This will enable them use community resources for teaching. b) Choice of livestock to rear as you teach animal production. Select the livestock to rear from any one of the following categories according to resources you have: i) Ruminants: Cattle, sheep, goats, deer, giraffes, camels, and buffalos ii) Non-Ruminants: Fowls, horses, dogs, rabbits, crocodiles, elephants, donkeys, pigs, cats iii) PISCES: Tilapia, Nile perch, silverfish, cat fish, lung fish, tiger fish",
+                                            "note_type": "constraint",
+                                            "source_page": "23"
+                                        }
+                                    ],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "term_name": "Term 3",
+                    "term_number": 3,
+                    "themes": [
+                        {
+                            "theme_title": "Construct: Animal Production",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-A-S5-T3-0001",
+                                        "topic_title": "Harvesting Farm Animals and Animal Products",
+                                        "sequence_order": 4,
+                                        "recommended_duration_periods": 27,
+                                        "keywords": [
+                                            "harvesting",
+                                            "animal products",
+                                            "regulations",
+                                            "food safety",
+                                            "animal welfare",
+                                            "market",
+                                            "slaughter",
+                                            "handling"
+                                        ]
+                                    },
+                                    "core_competency": "The learner harvests optimal quality farm animals and animal products for the market.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "demonstrate understanding of various harvesting techniques for the selected animal and animal product for the market. (k, u, s, v/a,g s)",
+                                            "domain": "k, u, s, v/a,g s"
+                                        },
+                                        {
+                                            "outcome_text": "harvest farm animals and animal products in compliance with local and international regulations to ensure product safety and animal welfare. (k, u, s, v/a,g s)",
+                                            "domain": "k, u, s, v/a,g s"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Field Visit",
+                                            "description": "As a class, learners make a field visit to a farm to observe the harvesting of farm animals and animal products or interact with a video simulating the harvesting of animals and animal products and make a report.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "activity_type": "Group Work",
+                                            "description": "In groups, learners investigate and present findings using a leaflet on local and international regulations regarding farm animal harvesting and animal product safety.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "activity_type": "Case Study Analysis",
+                                            "description": "In pairs or groups, learners analyse a case study on animal welfare and product safety in farm animal harvesting and recommend improvements, key takeaways and insights on a poster.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "activity_type": "Practical",
+                                            "description": "In groups, learners harvest the animal and products for the market while exhibiting the affective and psychomotor skills including harvesting process and procedures, animal handling techniques, attention to details, coordinating the animal movement, respect for the animal, taking ownership of harvesting decisions and showing compassion for the animal being taken to the market.",
+                                            "source_page": "24-25"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Product Review",
+                                            "description": "The teacher checks for accuracy and coherence (subject knowledge, organisation, structure, technical correctness, being attractive to the reader and communication effectiveness) of the learners’ report on the experiences during the field visit or interaction with a video of harvesting of animals and animal products.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "assessment_type": "Product Review",
+                                            "description": "The teacher checks learners for accuracy and coherence (subject knowledge, organisation, structure, technical correctness, being attractive to the reader and communication effectiveness) of the learners’ leaflet on the local and international regulations regarding farm animal harvesting and animal product safety to produce.",
+                                            "source_page": "24"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation/Observation",
+                                            "description": "The teacher converses and checks with learners (using sentences like: Can you describe a situation where you…? How do you think [specific concept or principle] relates to real-life? What do you think are the most important factors to consider when….? What did you learn about …? How would you overcome challenges or obstacles highlighted during this learning experience? Can you provide an example…? Can you describe a situation where you had to adapt [specific concept/idea/skill] to a new or unfamiliar context? What do you think are the most important factors to consider when….?) about the case study and poster to check for accuracy and coherence of what they recommend as improvements to ensure animal welfare and product safety.",
+                                            "source_page": "24-25"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "The teacher observes and checks learners’ achievement using affective and psychomotor skills checklist and scoring rubric with a scale 1 to 4 as learners harvest the farm animals and animal products for the market.",
+                                            "source_page": "25"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Harvesting Animal Products",
+                                                "description_verbatim": "In groups, learners harvest the animal and products for the market while exhibiting the affective and psychomotor skills including harvesting process and procedures, animal handling techniques, attention to details, coordinating the animal movement, respect for the animal, taking ownership of harvesting decisions and showing compassion for the animal being taken to the market.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "",
+                                                "equipment_list": [],
+                                                "source_page": "24-25"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 27,
+                                        "unit": "periods",
+                                        "source_page": "24"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use online databases and resources where you find up-to-date information on international and local regulations and safety standards for farm animal harvesting and animal product safety.",
+                                            "Use presentation software like PowerPoint, Prezi, or Canva to create visually appealing and informative leaflets on local and international regulations regarding farm animal harvesting and animal product safety.",
+                                            "Share your leaflets and findings on local and international regulations regarding farm animal harvesting and animal product safety using available social media platforms,",
+                                            "Utilize platforms like YouTube or educational websites that show step-by-step videos on the proper procedures for harvesting animals and products.",
+                                            "Use apps or software to maintain digital records of the harvesting process, including animal health data, harvesting schedules, and product quality and pay attention to details and track progress.",
+                                            "Create digital journals, blogs, or presentations documenting animal harvesting experiences, the decisions made during the process, and the emotions felt each time of harvest and word process all these into reflective paragraphs."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "theme_title": "Construct: Value Addition for the Market",
+                            "theme_description": "",
+                            "topics": [
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-A-S5-T3-0002",
+                                        "topic_title": "Value Addition to Farm Animal and Animal Products",
+                                        "sequence_order": 5,
+                                        "recommended_duration_periods": 23,
+                                        "keywords": [
+                                            "value addition",
+                                            "packaging",
+                                            "branding",
+                                            "labelling",
+                                            "advertising",
+                                            "budget",
+                                            "investment plan",
+                                            "marketing"
+                                        ]
+                                    },
+                                    "core_competency": "The learner adds value to the farm animal and to animal products for the market.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "demonstrate knowledge and practical skills in adding value to farm animal and animal products for market readiness. (k, u, s, v/a, g s)",
+                                            "domain": "k, u, s, v/a, g s"
+                                        },
+                                        {
+                                            "outcome_text": "design effective packaging, branding, labelling, and advertising material to be used on farm animal and animal products ensuring compliance with local and international regulations. (k, u, s, v/a, g s)",
+                                            "domain": "k, u, s, v/a, g s"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Field Visit",
+                                            "description": "As a class, learners visit a farm to observe and make a report on the post-harvest handling of farm animals and animal products for market readiness.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Role-play/Simulation",
+                                            "description": "In groups learners engage in a role-playing game or presentation where they act as entrepreneurs who are able to create a simple budget, savings plan and investment plan based on their personal financial goals; to manage their business for marketing an animal or animal product.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Practical/Product Development",
+                                            "description": "In groups learners or individually transform an animal product from their selected enterprise to demonstrate value addition for the market.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "activity_type": "Design Project",
+                                            "description": "In groups, learners design a packaging, branding, labelling and advertising system for their assigned farm animal and animal product adhering to the local and international regulations.",
+                                            "source_page": "28"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Product Review",
+                                            "description": "The teacher checks for accuracy and coherence (subject knowledge, organisation, structure, technical correctness, being attractive to the reader and communication effectiveness) of the learners’ report on the experiences of post-harvest handling of farm animals and animal products that meets market readiness standards.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "assessment_type": "Observation/Scoring",
+                                            "description": "The teacher observes, converses and checks learners as they engage in the role-playing game using a checklist and scoring rubric of participation in the task; engagement with the task; make informed decisions using available information; working together effectively; sharing ideas; building on each other's strengths; generation of a budget, saving plan, and investment plan; ability to clearly and effectively communicate to a given audience.",
+                                            "source_page": "26"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "The teacher converses and checks learners as they engage in the role-playing game using open -end questions like: a) What are your short-term and long-term financial goals? b) How did you determine your budget and savings plan? c) What investment strategies are you using, and why? d) How might your financial plans be impacted by real-world factors, such as economic changes or unexpected happenings?",
+                                            "source_page": "26-27"
+                                        },
+                                        {
+                                            "assessment_type": "Product Review",
+                                            "description": "The teacher checks for accuracy and coherence of the financial plans completeness and feasibility to ensure they include all required components for the personal goals stated when making the budget, savings plan, and investment plan report (subject knowledge, organisation, structure, technical correctness, being attractive to the reader and communication effectiveness) including",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "The teacher observes and checks learners as they engage in the role-playing game using a checklist and scoring rubric for their ability to clearly and effectively present their financial plans, using visual aids or using presentation tools like PowerPoint, Prezi, or Canva and clear language.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation/Product Review",
+                                            "description": "The teacher converses and checks the learners’ design processes and products in making packaging, branding, labelling, and advertising material using a scoring rubric including knowledge of the product, planning of activities, consideration of target audience, depth of investigation about animal product designs process, collaboration, communication about the market product, compliance to standards, preservation and protection of the products to serve the user, advertising strategies, persuasives of the messages and promoting of the brand.",
+                                            "source_page": "27"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners as they perform each step transforming the animal product and use checklist to assess their adherence to each step by checking correct handling and preparation of materials, observing occupational health, safety and environmental protection practical’s following food safety guidelines and good manufacturing practices",
+                                            "source_page": "27-28"
+                                        },
+                                        {
+                                            "assessment_type": "Observation",
+                                            "description": "Observe learners to check team work and collaboration during the activity, hoe they come to agreement during each step and their individual participation in the task.",
+                                            "source_page": "28"
+                                        },
+                                        {
+                                            "assessment_type": "Product Review",
+                                            "description": "Examine the product presentation and display for the market.",
+                                            "source_page": "28"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": [
+                                            {
+                                                "title": "Value Addition Product Transformation",
+                                                "description_verbatim": "In groups learners or individually transform an animal product from their selected enterprise to demonstrate value addition for the market.",
+                                                "min_trials_or_reps": "",
+                                                "safety_notes_verbatim": "observing occupational health, safety and environmental protection practical’s following food safety guidelines and good manufacturing practices",
+                                                "equipment_list": [],
+                                                "source_page": "26-28"
+                                            }
+                                        ]
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": false,
+                                        "project_scope_verbatim": "",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": ""
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 23,
+                                        "unit": "periods",
+                                        "source_page": "26"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use tablets or smartphones after getting permission and consent to take notes, photos, and videos during the farm visit so that the learner can capture observations in real-time about farm animal and animal products and have visual references for including in the word-processed reports.",
+                                            "Use video conferencing tools like Zoom or Skype to facilitate live interviews, interaction, or Question and Answer sessions on value addition to farm animal and animal products.",
+                                            "Use digital cameras after getting permission and consent to take high-quality images of the post-harvest processes to be included in the reports as visual evidence of findings for the farm visit where farm animal and animal products are obtained from.",
+                                            "Use online resources and databases where to find additional information about best practices in post-harvest handling and market readiness of farm animal and animal products.",
+                                            "Use software like PowerPoint, Canva, or Prezi to create engaging and visually appealing reports on experiences and findings about value addition to farm animal and animal products.",
+                                            "Use digital maps to mark different locations and stages of the post-harvest process of farm animal and animal products.",
+                                            "Use online resources to research on local and international regulations regarding packaging, labelling, and advertising to ensure that the designs created are compliant with industry standards for value addition to farm animal and animal products.",
+                                            "Use graphic design tools like Adobe Illustrator, Photoshop, or Canva to create professional-looking packaging designs, logos, and labels for farm animal and animal products.",
+                                            "Use survey platforms like Google Forms, Kobo Collect or SurveyMonkey to gather feedback on the designs and advertising concepts of farm animal and animal products.",
+                                            "Create social media marketing strategies using platforms like Instagram, Facebook, WhatsApp or TikTok to establish and appreciate the importance of digital marketing and audience engagement for farm animal and animal products."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                },
+                                {
+                                    "topic_metadata": {
+                                        "topic_id": "AGR-A-S5-T3-0003",
+                                        "topic_title": "Animal Product Marketing",
+                                        "sequence_order": 6,
+                                        "recommended_duration_periods": 22,
+                                        "keywords": [
+                                            "market trends",
+                                            "profit",
+                                            "market channels",
+                                            "survey",
+                                            "marketing strategy",
+                                            "campaign",
+                                            "project-based learning"
+                                        ]
+                                    },
+                                    "core_competency": "The learner markets the farm animal and animal products for profit.",
+                                    "prerequisites": [],
+                                    "learning_outcomes": [
+                                        {
+                                            "outcome_text": "analyse market trends and opportunities to determine the most profitable market channels for farm animal and animal products. (k, u, s, v/a, g s)",
+                                            "domain": "k, u, s, v/a, g s"
+                                        },
+                                        {
+                                            "outcome_text": "execute a marketing strategy that effectively promotes farm animals and animal products to target markets. (k, u, s, v/a, g s)",
+                                            "domain": "k, u, s, v/a, g s"
+                                        }
+                                    ],
+                                    "content_scope": {
+                                        "must_cover": [],
+                                        "optional_enrichment": [],
+                                        "explicitly_excluded": [],
+                                        "depth_limitations": []
+                                    },
+                                    "suggested_learning_activities": [
+                                        {
+                                            "activity_type": "Market Research",
+                                            "description": "In groups, learners conduct a market survey and investigation to identify trends and opportunities for farm animals and animal products using survey tools and templates that will support their presentation of findings in a report.",
+                                            "source_page": "29"
+                                        },
+                                        {
+                                            "activity_type": "Project-based learning",
+                                            "description": "In groups, learners participate in a project-based learning task using the driving question of; how can we execute a marketing campaign that promotes farm animals and animal products to target markets in our community.",
+                                            "source_page": "29"
+                                        }
+                                    ],
+                                    "suggested_assessment_activities": [
+                                        {
+                                            "assessment_type": "Product Review",
+                                            "description": "The teacher checks for accuracy and coherence of the market survey report (subject knowledge, organisation, structure, technical correctness, being attractive to the reader and communication effectiveness) including how data was collected, the sampling methods, the use of appropriate charts, graphs, and tables to visually represent findings, a detailed analysis of the data gathered, recommendation and the lesson learnt about the market channel of farm animals and animal products.",
+                                            "source_page": "29"
+                                        },
+                                        {
+                                            "assessment_type": "Conversation",
+                                            "description": "The teacher converses and checks learners using prompts like; what market trends and opportunities did you identify? How did you respond to changes in the market? What were the most profitable market channels for your product? What did you learn about the importance of market analysis and adaptation in the agriculture industry?",
+                                            "source_page": "29"
+                                        },
+                                        {
+                                            "assessment_type": "Observation/Scoring",
+                                            "description": "The teacher uses the observation checklist and scoring grid with a scale of 1–4 to record achievement on several areas including group work behaviour, being on task, group work participation, communication to an audience, organisation of portfolio, use and application of concepts when learners are engaged in project-based learning.",
+                                            "source_page": "29"
+                                        }
+                                    ],
+                                    "practical_requirements": {
+                                        "practicals": []
+                                    },
+                                    "investigative_skills": [],
+                                    "project_requirements": {
+                                        "is_project_required": true,
+                                        "project_scope_verbatim": "In groups, learners participate in a project-based learning task using the driving question of; how can we execute a marketing campaign that promotes farm animals and animal products to target markets in our community.",
+                                        "deliverables_verbatim": "",
+                                        "assessment_weight_percent": null,
+                                        "source_page": "29"
+                                    },
+                                    "assessment_weightings": {
+                                        "summative_percent": null,
+                                        "formative_percent": null,
+                                        "practical_percent": null,
+                                        "project_percent": null,
+                                        "notes_verbatim": ""
+                                    },
+                                    "time_allocation": {
+                                        "periods": 22,
+                                        "unit": "periods",
+                                        "source_page": "29"
+                                    },
+                                    "ict_guidance": {
+                                        "suggested_uses": [
+                                            "Use tools like Google Forms, SurveyMonkey, or Typeform to create and distribute surveys so that there is easy and fast data collection and analysis of data on animal product marketing.",
+                                            "Use computer software like Excel, Google Sheets, or Tableau to analyze survey data and identify trends and opportunities after visualizing the data through charts and graphs for data on animal product marketing.",
+                                            "Use digital whiteboards like SMART Boards to display survey instructions, diagrams, and videos to help in visualizing the steps involved in the market survey process during animal product marketing.",
+                                            "Use the internet and digital libraries to conduct research on market trends and opportunities to enhance marketing of farm animals and animal products.",
+                                            "Use graphic design software such as Adobe Illustrator, Canva, or Photoshop to create logos, branding materials, and packaging designs for the marketing campaign.",
+                                            "Execute a social media campaign using platforms like Instagram, WhatsApp, TikTok, Facebook, and Twitter.",
+                                            "Create an online presence for their marketing campaign by developing a website for the marketing campaign using website builders like Wix, WordPress, or Squarespace to put the animal product features or information, blogs, and an online store.",
+                                            "Use presentation software like PowerPoint, Prezi, or Canva to create presentations summarizing the animal product marketing research carried out, strategies employed, and the marketing campaign results."
+                                        ],
+                                        "restrictions": []
+                                    },
+                                    "syllabus_notes": [],
+                                    "advanced_content_flag": {
+                                        "contains_extended_content": false,
+                                        "extended_content_notes": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
