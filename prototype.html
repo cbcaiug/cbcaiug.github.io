@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curriculum Picker — Prototype</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, sans-serif; background: #0f1115; color: #e6e8eb; margin: 0; padding: 16px; max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 18px; font-weight: 600; margin: 0 0 16px; }
+  label { display: block; font-size: 12px; color: #9aa3ad; margin: 12px 0 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+  select, button { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #2a2f38; background: #171a21; color: #e6e8eb; font-size: 15px; }
+  select:disabled { opacity: 0.4; }
+  button { margin-top: 20px; background: #2f6fed; border-color: #2f6fed; font-weight: 600; }
+  button:disabled { background: #2a2f38; border-color: #2a2f38; color: #6b7280; }
+  .status { font-size: 13px; color: #9aa3ad; margin-top: 12px; }
+  .error { color: #f87171; }
+  .summary { margin-top: 20px; padding: 12px; border-radius: 8px; background: #171a21; font-size: 13px; white-space: pre-wrap; max-height: 400px; overflow: auto; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #2a2f38; font-size: 11px; margin-right: 4px; }
+</style>
+</head>
+<body>
+
+<h1>Curriculum Picker</h1>
+
+<label>Country</label>
+<select id="country" disabled><option>Loading…</option></select>
+
+<label>Curriculum / Level</label>
+<select id="curriculum" disabled></select>
+
+<label>Class</label>
+<select id="classLevel" disabled></select>
+
+<label>Subject</label>
+<select id="subject" disabled></select>
+
+<button id="load" disabled>Load syllabus</button>
+
+<div class="status" id="status"></div>
+<div class="summary" id="summary" style="display:none"></div>
+
+<script>
+const BASE = "https://cbcaiug.cbcaitool.workers.dev";
+const $ = id => document.getElementById(id);
+
+let manifest = null;
+
+async function init() {
+  try {
+    const res = await fetch(`${BASE}/_manifest.json`);
+    manifest = await res.json();
+    populateCountries();
+    setStatus(`Manifest loaded — ${manifest.total_files} files`);
+  } catch (err) {
+    setStatus(`Failed to load manifest: ${err.message}`, true);
+  }
+}
+
+function paths() {
+  // Filter only JSON syllabus files (skip top-level manifests)
+  return manifest.files.filter(f =>
+    f.type === "json" &&
+    f.path !== "_manifest.json" &&
+    !f.path.endsWith("/manifest.json")
+  );
+}
+
+function populateCountries() {
+  const countries = [...new Set(paths().map(f => f.path.split("/")[0]))].sort();
+  fill($("country"), countries);
+  $("country").disabled = false;
+  $("country").onchange = populateCurricula;
+}
+
+function populateCurricula() {
+  const country = $("country").value;
+  const curricula = [...new Set(
+    paths().filter(f => f.path.startsWith(country + "/"))
+           .map(f => f.path.split("/")[1])
+  )].sort();
+  fill($("curriculum"), curricula);
+  $("curriculum").disabled = false;
+  $("curriculum").onchange = populateClasses;
+  $("classLevel").disabled = true;
+  $("subject").disabled = true;
+  $("load").disabled = true;
+  $("summary").style.display = "none";
+}
+
+function populateClasses() {
+  const prefix = `${$("country").value}/${$("curriculum").value}/`;
+  const classes = [...new Set(
+    paths().filter(f => f.path.startsWith(prefix))
+           .map(f => f.path.split("/")[2])
+  )].sort();
+  fill($("classLevel"), classes);
+  $("classLevel").disabled = false;
+  $("classLevel").onchange = populateSubjects;
+  $("subject").disabled = true;
+  $("load").disabled = true;
+  $("summary").style.display = "none";
+}
+
+function populateSubjects() {
+  const prefix = `${$("country").value}/${$("curriculum").value}/${$("classLevel").value}/`;
+  const subjects = [...new Set(
+    paths().filter(f => f.path.startsWith(prefix))
+           .map(f => f.path.split("/")[3])
+  )].sort();
+  fill($("subject"), subjects);
+  $("subject").disabled = false;
+  $("subject").onchange = () => { $("load").disabled = false; };
+  $("load").disabled = true;
+  $("summary").style.display = "none";
+}
+
+function fill(select, options) {
+  select.innerHTML = "";
+  for (const opt of options) {
+    const o = document.createElement("option");
+    o.value = opt;
+    o.textContent = opt;
+    select.appendChild(o);
+  }
+}
+
+async function loadSyllabus() {
+  const country = $("country").value;
+  const curriculum = $("curriculum").value;
+  const cls = $("classLevel").value;
+  const subject = $("subject").value;
+
+  const file = paths().find(f =>
+    f.path.startsWith(`${country}/${curriculum}/${cls}/${subject}/`) &&
+    f.name.startsWith(cls + "_")
+  );
+
+  if (!file) {
+    setStatus(`No syllabus file found for ${country}/${curriculum}/${cls}/${subject}`, true);
+    return;
+  }
+
+  setStatus(`Fetching ${file.path} (${(file.size_bytes/1024).toFixed(1)} KB)…`);
+  try {
+    const res = await fetch(`${BASE}/curriculum/${file.path}`);
+    const data = await res.json();
+    showSummary(file, data);
+    setStatus(`Loaded ${file.path}`);
+  } catch (err) {
+    setStatus(`Failed: ${err.message}`, true);
+  }
+}
+
+function showSummary(file, data) {
+  const counts = countArrays(data);
+  const summary = $("summary");
+  summary.style.display = "block";
+  summary.innerHTML = `
+    <div><strong>${file.path}</strong></div>
+    <div style="margin-top:8px">
+      <span class="badge">${(file.size_bytes/1024).toFixed(1)} KB</span>
+      <span class="badge">${counts.length} top-level keys</span>
+    </div>
+    <div style="margin-top:12px"><strong>Top-level shape:</strong></div>
+    <div>${Object.keys(data).map(k => `<code>${k}</code>`).join(", ")}</div>
+    <div style="margin-top:12px"><strong>Arrays found (potential units):</strong></div>
+    <div>${counts.map(c => `<div>${c.path} → ${c.length} items</div>`).join("") || "<em>none</em>"}</div>
+    <details style="margin-top:12px">
+      <summary style="cursor:pointer">Raw JSON preview</summary>
+      <pre style="max-height:300px; overflow:auto; font-size:11px;">${JSON.stringify(data, null, 2).slice(0, 4000)}…</pre>
+    </details>
+  `;
+}
+
+function countArrays(obj, base = "", depth = 0) {
+  if (depth > 3 || !obj || typeof obj !== "object") return [];
+  const found = [];
+  if (Array.isArray(obj)) {
+    found.push({ path: base || "(root)", length: obj.length });
+    return found;
+  }
+  for (const [k, v] of Object.entries(obj)) {
+    const path = base ? `${base}.${k}` : k;
+    if (Array.isArray(v)) found.push({ path, length: v.length });
+    else if (v && typeof v === "object") found.push(...countArrays(v, path, depth + 1));
+  }
+  return found;
+}
+
+function setStatus(msg, isError = false) {
+  const el = $("status");
+  el.textContent = msg;
+  el.className = "status" + (isError ? " error" : "");
+}
+
+$("load").onclick = loadSyllabus;
+init();
+</script>
+</body>
+</html>
