@@ -2,7 +2,8 @@
   "name": "cbcaiug",
   "private": true,
   "scripts": {
-    "deploy": "node manifest.js && npx wrangler deploy"
+    "deploy": "node manifest.js && npx wrangler deploy && wrangler deploy",
+    "preview": "node manifest.js && npx wrangler deploy && wrangler dev"
   },
   "devDependencies": {
     "wrangler": "^4.147.0"

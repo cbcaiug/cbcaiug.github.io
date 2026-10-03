@@ -18,13 +18,11 @@
   button.secondary { background: #171a21; border-color: #2a2f38; color: #e6e8eb; font-weight: 500; padding: 8px 14px; font-size: 13px; }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .muted { color: #6b7280; font-size: 12px; }
-  .error { color: #f87171; font-size: 13px; margin-top: 8px; }
   .unit-item { padding: 12px; border: 1px solid #2a2f38; border-radius: 8px; margin: 8px 0; cursor: pointer; background: #171a21; }
   .unit-item:hover { border-color: #2f6fed; }
   .unit-title { font-weight: 600; margin-bottom: 4px; }
   .unit-meta { font-size: 12px; color: #6b7280; }
   .fieldgroup { border: 1px solid #2a2f38; border-radius: 8px; padding: 12px; margin: 0; }
-  .fieldgroup legend { display: none; }
   .fieldgroup-options { column-count: 2; column-gap: 20px; }
   @media (max-width: 640px) { .fieldgroup-options { column-count: 1; } }
   .checkbox { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; font-size: 14px; cursor: pointer; font-weight: normal; color: #e6e8eb; break-inside: avoid; }
@@ -47,33 +45,56 @@
   details#settings summary { cursor: pointer; font-size: 13px; color: #9aa3ad; text-transform: uppercase; letter-spacing: .05em; }
   details#settings[open] summary { margin-bottom: 12px; }
 
-  /* Collapsible sections */
   details.section { margin: 8px 0; padding: 10px 14px; border: 1px solid #2a2f38; border-radius: 8px; background: #13161c; }
-  details.section > summary { cursor: pointer; font-size: 13px; font-weight: 600; color: #e6e8eb; text-transform: uppercase; letter-spacing: .05em; list-style: none; display: flex; align-items: center; gap: 8px; }
+  details.section > summary { cursor: pointer; font-size: 13px; font-weight: 600; color: #e6e8eb; text-transform: uppercase; letter-spacing: .05em; list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   details.section > summary::-webkit-details-marker { display: none; }
   details.section > summary::before { content: "▸"; display: inline-block; transition: transform .15s; color: #6b7280; font-size: 10px; }
   details.section[open] > summary::before { transform: rotate(90deg); }
-  details.section > summary .section-req { color: #f87171; font-size: 10px; margin-left: auto; }
   details.section > *:not(summary) { margin-top: 12px; }
+  .section-counts { margin-left: auto; display: flex; gap: 8px; font-weight: 400; font-size: 11px; text-transform: none; letter-spacing: 0; }
+  .section-counts .c-ai { color: #34d399; }
+  .section-counts .c-user { color: #60a5fa; }
+  .section-counts .c-blank { color: #6b7280; }
+  .section-counts .c-req { color: #f87171; }
 
-  /* Field wrapper */
   .field-wrapper { margin: 14px 0; }
   .field-wrapper:first-child { margin-top: 4px; }
-  .field-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; gap: 8px; }
+  .field-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; gap: 8px; flex-wrap: wrap; }
   .field-header label { font-size: 13px; color: #9aa3ad; }
   .required-mark { color: #f87171; font-weight: 700; }
+  .field-status { font-size: 11px; padding: 1px 8px; border-radius: 999px; background: #1f242e; color: #6b7280; text-transform: uppercase; letter-spacing: .05em; font-weight: 500; }
+  .field-status.status-ai { color: #34d399; background: rgba(52,211,153,0.1); }
+  .field-status.status-user { color: #60a5fa; background: rgba(96,165,250,0.1); }
   .sparkle-btn { width: auto; padding: 4px 10px; font-size: 13px; border-radius: 6px; background: #171a21; border: 1px solid #2a2f38; color: #6b7280; cursor: pointer; line-height: 1; transition: all .15s; }
   .sparkle-btn:hover { color: #e6e8eb; border-color: #4b5563; }
-  .sparkle-btn.active { background: #f59e0b; border-color: #f59e0b; color: #0f1115; font-weight: 700; }
+  .sparkle-btn.active { background: #34d399; border-color: #34d399; color: #0f1115; font-weight: 700; box-shadow: 0 0 12px rgba(52,211,153,0.35); }
   .field-wrapper.sparkled .field-input { opacity: 0.35; pointer-events: none; }
   .field-wrapper.sparkled .field-header label { color: #6b7280; }
 
   .suggest-section { margin-top: 20px; padding: 14px; border: 1px solid #2a2f38; border-radius: 8px; background: #13161c; }
   .suggest-section h3 { margin: 0 0 8px; font-size: 14px; }
   .suggest-section textarea { min-height: 80px; margin-bottom: 10px; }
+
+  /* Unit context banner */
+  .unit-context { padding: 10px 14px; border-radius: 8px; background: #13161c; border: 1px solid #2a2f38; font-size: 13px; margin-bottom: 12px; }
+  .unit-context .uc-row { display: flex; gap: 6px; margin: 3px 0; flex-wrap: wrap; }
+  .unit-context .uc-key { color: #6b7280; min-width: 90px; }
+  .unit-context .uc-val { color: #e6e8eb; }
+
+  /* Token counter (fixed top-right) */
+  .token-counter { position: fixed; top: 12px; right: 12px; padding: 6px 12px; background: #13161c; border: 1px solid #2a2f38; border-radius: 999px; font-size: 11px; font-family: ui-monospace, monospace; color: #9aa3ad; z-index: 100; display: flex; gap: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+  .token-counter span { display: inline-flex; align-items: center; gap: 4px; }
+  .token-counter .t-in { color: #60a5fa; }
+  .token-counter .t-out { color: #34d399; }
+  .token-counter .t-label { color: #4b5563; font-size: 10px; }
 </style>
 </head>
 <body>
+
+<div class="token-counter" id="tokenCounter" title="Input / Output tokens — this session vs last request">
+  <span><span class="t-label">IN</span> <span class="t-in" id="tokIn">0</span></span>
+  <span><span class="t-label">OUT</span> <span class="t-out" id="tokOut">0</span></span>
+</div>
 
 <h1>Lesson Plan Wizard</h1>
 <p class="muted">Pick a class, choose a unit, fill the form, generate.</p>
@@ -92,6 +113,7 @@
     <div style="margin-top:12px">
       <button class="secondary" id="saveSettings" type="button">Save</button>
       <button class="secondary" id="clearSettings" type="button">Clear key</button>
+      <button class="secondary" id="resetTokens" type="button">Reset token counter</button>
       <span class="status" id="settingsStatus"></span>
     </div>
   </div>
@@ -141,7 +163,7 @@
 
 <section id="step-wizard" style="display:none">
   <h2>3 · Fill lesson plan</h2>
-  <p class="muted" id="wizardMeta"></p>
+  <div id="unitContext"></div>
   <form id="wizardForm"></form>
   <div class="sticky-footer">
     <button type="button" class="secondary" id="backToUnits">← Back</button>
@@ -158,7 +180,7 @@
   <div class="suggest-section" id="suggestSection" style="display:none">
     <h3>Suggest Changes</h3>
     <p class="muted" style="margin:0 0 8px">Describe edits for the plan above. Regenerate resends the syllabus payload, this plan, and your changes.</p>
-    <textarea id="suggestChanges" placeholder="e.g. Shorten the development section. Replace the group activity with a teacher demonstration. Add a homework task."></textarea>
+    <textarea id="suggestChanges" placeholder="e.g. Shorten the development section. Replace the group activity with a teacher demonstration."></textarea>
     <div style="display:flex; gap:12px; flex-wrap:wrap;">
       <button type="button" id="regenerateBtn" disabled>Regenerate</button>
       <button type="button" class="secondary" id="backToWizard">← Back to wizard</button>
@@ -330,7 +352,7 @@ function loadRwandaClass(json, sourceFile) {
   for (const term of json.terms ?? [])
     for (const theme of term.themes ?? [])
       for (const topic of theme.topics ?? [])
-        units.push(mapRwandaTopic(topic, meta, classLevel, level, sourceFile));
+        units.push(mapRwandaTopic(topic, theme, term, meta, classLevel, level, sourceFile));
   return { country: "rwanda", curriculum: "reb", level, subject: meta.subject ?? "", classLevel, units };
 }
 function inferRwandaLevel(cg) {
@@ -338,7 +360,7 @@ function inferRwandaLevel(cg) {
   if (!m) return null;
   return parseInt(m[1], 10) <= 3 ? "o-level" : "a-level";
 }
-function mapRwandaTopic(t, meta, classLevel, level, sourceFile) {
+function mapRwandaTopic(t, theme, term, meta, classLevel, level, sourceFile) {
   const m = t.topic_metadata ?? {};
   const lod = t.learning_objectives_by_domain ?? {};
   const knowledge = (lod.knowledge_and_understanding ?? []).map(String);
@@ -364,7 +386,9 @@ function mapRwandaTopic(t, meta, classLevel, level, sourceFile) {
     contentScope: { mustCover: t.content_scope?.must_cover ?? [], explicitlyExcluded: excluded },
     activities: (t.suggested_learning_activities ?? []).map(a => a.description ?? String(a)),
     materials: parseMaterialsString(t.materials_verbatim ?? ""),
-    project, sourceFile
+    project, sourceFile,
+    themeTitle: theme?.theme_title ?? "",
+    termName: term?.term_name ?? ""
   };
 }
 function parseMaterialsString(s) {
@@ -380,7 +404,7 @@ function loadUgandaClass(json, sourceFile) {
   for (const term of classObj.terms ?? [])
     for (const theme of term.themes ?? [])
       for (const topic of theme.topics ?? [])
-        units.push(mapUgandaTopic(topic, meta, classLevel, level, sourceFile));
+        units.push(mapUgandaTopic(topic, theme, term, meta, classLevel, level, sourceFile));
   return { country: "uganda", curriculum: "ncdc", level, subject: meta.subject ?? "", classLevel, units };
 }
 function inferUgandaLevel(classCode, levelStr) {
@@ -389,7 +413,7 @@ function inferUgandaLevel(classCode, levelStr) {
   if (/s[1234]|lower/.test(s)) return "uce";
   return null;
 }
-function mapUgandaTopic(t, meta, classLevel, level, sourceFile) {
+function mapUgandaTopic(t, theme, term, meta, classLevel, level, sourceFile) {
   const m = t.topic_metadata ?? {};
   const outcomes = t.learning_outcomes ?? [];
   const all = outcomes.map(o => ({
@@ -418,7 +442,9 @@ function mapUgandaTopic(t, meta, classLevel, level, sourceFile) {
     contentScope: { mustCover: t.content_scope?.must_cover ?? [], explicitlyExcluded: excluded },
     activities: (t.suggested_learning_activities ?? []).map(a => a.description ?? ""),
     materials: Array.from(materialSet),
-    project, sourceFile
+    project, sourceFile,
+    themeTitle: theme?.theme_title ?? "",
+    termName: term?.term_name ?? ""
   };
 }
 function domainFromUganda(d) {
@@ -451,6 +477,50 @@ const state = {
 };
 
 /* ──────────────────────────────────────────────────────────────
+   TOKEN COUNTER
+────────────────────────────────────────────────────────────── */
+function loadTokenCounts() {
+  return {
+    in: parseInt(localStorage.getItem("tok_session_in") || "0", 10),
+    out: parseInt(localStorage.getItem("tok_session_out") || "0", 10)
+  };
+}
+function updateTokenDisplay() {
+  const t = loadTokenCounts();
+  $("tokIn").textContent = t.in.toLocaleString();
+  $("tokOut").textContent = t.out.toLocaleString();
+}
+function addTokens(inTok, outTok) {
+  const t = loadTokenCounts();
+  t.in += (inTok || 0);
+  t.out += (outTok || 0);
+  localStorage.setItem("tok_session_in", String(t.in));
+  localStorage.setItem("tok_session_out", String(t.out));
+  updateTokenDisplay();
+}
+function resetTokens() {
+  localStorage.removeItem("tok_session_in");
+  localStorage.removeItem("tok_session_out");
+  updateTokenDisplay();
+}
+
+/* ──────────────────────────────────────────────────────────────
+   FIELD STATUS
+────────────────────────────────────────────────────────────── */
+function isBlank(v) {
+  if (v === undefined || v === null) return true;
+  if (Array.isArray(v)) return v.length === 0;
+  if (typeof v === "string") return v.trim() === "";
+  return false;
+}
+function fieldStatus(fieldId) {
+  if (state.aiDecide[fieldId]) return "ai";
+  const v = state.form[fieldId];
+  if (isBlank(v)) return "blank";
+  return "user";
+}
+
+/* ──────────────────────────────────────────────────────────────
    PAYLOAD BUILDER
 ────────────────────────────────────────────────────────────── */
 function buildPayload(unit, form, template, aiDecide) {
@@ -472,7 +542,6 @@ function buildPayload(unit, form, template, aiDecide) {
     }
   }
 
-  // Objectives
   let selectedObjectives;
   if (aiDecide["selected_outcomes"]) {
     selectedObjectives = null;
@@ -486,12 +555,11 @@ function buildPayload(unit, form, template, aiDecide) {
       ...(form.selected_attitudes ?? []).map(t => ({ text: t, domain: "attitudes" }))
     ];
   } else if (form.selected_knowledge !== undefined || form.selected_skills !== undefined || form.selected_attitudes !== undefined) {
-    selectedObjectives = []; // Rwanda mode with nothing picked
+    selectedObjectives = [];
   } else {
     selectedObjectives = unit.objectives.all;
   }
 
-  // Activities
   let selectedActivities;
   if (aiDecide["selected_activities"]) {
     selectedActivities = null;
@@ -502,7 +570,6 @@ function buildPayload(unit, form, template, aiDecide) {
     selectedActivities = unit.activities;
   }
 
-  // Materials
   let selectedMaterials;
   if (aiDecide["selected_materials"]) {
     selectedMaterials = null;
@@ -513,7 +580,6 @@ function buildPayload(unit, form, template, aiDecide) {
     selectedMaterials = unit.materials;
   }
 
-  // User materials
   let userMaterials;
   if (aiDecide["user_materials"]) {
     userMaterials = null;
@@ -539,22 +605,17 @@ function buildPayload(unit, form, template, aiDecide) {
       !aiDecide["selected_materials"] && !aiDecide["user_materials"]
   };
 
-  if (aiDecide["selected_outcomes"]) {
-    content.available_objectives = unit.objectives.all;
-  }
-  if (aiDecide["selected_activities"]) {
-    content.available_activities = unit.activities;
-  }
-  if (aiDecide["selected_materials"]) {
-    content.available_materials = unit.materials;
-  }
+  if (aiDecide["selected_outcomes"]) content.available_objectives = unit.objectives.all;
+  if (aiDecide["selected_activities"]) content.available_activities = unit.activities;
+  if (aiDecide["selected_materials"]) content.available_materials = unit.materials;
 
   return {
     template_id: template.template_id,
     curriculum_context: {
       country: unit.country, subject: unit.subject, class_level: unit.classLevel,
       level: unit.level, unit_number: unit.unitNumber, unit_title: unit.unitTitle,
-      sub_topic_area: unit.subTopicArea, duration_periods: unit.durationPeriods
+      sub_topic_area: unit.subTopicArea, duration_periods: unit.durationPeriods,
+      theme: unit.themeTitle, term: unit.termName
     },
     locked: {
       core_competency: unit.coreCompetency,
@@ -582,7 +643,7 @@ function show(id) {
   ["step-picker","step-units","step-wizard","step-result"].forEach(s => $(s).style.display = s === id ? "" : "none");
 }
 function uniq(a) { return [...new Set(a)].sort(); }
-function fill(sel, opts) { sel.innerHTML = ""; for (const o of opts) { const e = document.createElement("option"); e.value = o; e.textContent = o; sel.appendChild(e); } }
+function fill(select, opts) { select.innerHTML = ""; for (const o of opts) { const e = document.createElement("option"); e.value = o; e.textContent = o; select.appendChild(e); } }
 function parsePath(path) {
   const parts = path.split("/");
   const file = parts[parts.length - 1];
@@ -605,6 +666,7 @@ function canSparkle(field) {
    INIT + PICKER
 ────────────────────────────────────────────────────────────── */
 async function init() {
+  updateTokenDisplay();
   try {
     const res = await fetch(MANIFEST_URL);
     const m = await res.json();
@@ -693,7 +755,7 @@ function showUnits() {
     div.className = "unit-item";
     div.innerHTML = `
       <div class="unit-title">Unit ${u.unitNumber}: ${u.unitTitle || "(untitled)"}</div>
-      <div class="unit-meta">${u.durationPeriods} periods${u.subTopicArea ? " · " + u.subTopicArea : ""}</div>
+      <div class="unit-meta">${u.durationPeriods} periods${u.subTopicArea ? " · " + u.subTopicArea : ""}${u.themeTitle ? " · " + u.themeTitle : ""}</div>
     `;
     div.onclick = () => selectUnit(idx);
     list.appendChild(div);
@@ -718,16 +780,36 @@ function selectUnit(idx) {
   }
   state.form.duration_minutes = tpl.duration_default;
   if (tpl.template_id === "rwanda_lesson_plan_v1") state.form.unit_no = String(state.unit.unitNumber);
+  renderUnitContext();
   renderWizard();
   show("step-wizard");
 }
 
+function renderUnitContext() {
+  const u = state.unit;
+  const el = $("unitContext");
+  const rows = [
+    ["Subject", u.subject],
+    ["Class", u.classLevel],
+    u.termName ? ["Term", u.termName] : null,
+    u.themeTitle ? ["Theme", u.themeTitle] : null,
+    ["Unit", `Unit ${u.unitNumber}: ${u.unitTitle}`],
+    u.subTopicArea ? ["Sub-topic Area", u.subTopicArea] : null,
+    ["Duration (syllabus)", `${u.durationPeriods} periods`]
+  ].filter(Boolean);
+  el.innerHTML = `<div class="unit-context">${rows.map(([k,v]) =>
+    `<div class="uc-row"><span class="uc-key">${k}:</span><span class="uc-val">${escapeHtml(v)}</span></div>`
+  ).join("")}</div>`;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
 function renderWizard() {
-  $("wizardMeta").textContent = `${state.template.label} · ${state.unit.unitTitle}`;
   const form = $("wizardForm");
   form.innerHTML = "";
 
-  // Compute visible fields (hide use_only_user_materials when materials sparkled)
   const visibleFields = state.template.user_fields.filter(f => {
     if (f.id === "use_only_user_materials") {
       return !state.aiDecide["selected_materials"] && !state.aiDecide["user_materials"];
@@ -735,7 +817,6 @@ function renderWizard() {
     return true;
   });
 
-  // Group into sections in declared order
   const sectionOrder = state.template.sections || [];
   const groups = {};
   for (const name of sectionOrder) groups[name] = { name, fields: [], hasRequired: false };
@@ -752,8 +833,23 @@ function renderWizard() {
     const det = document.createElement("details");
     det.className = "section";
     if (g.hasRequired) det.open = true;
+
+    // Summary with counts
+    let userCount = 0, aiCount = 0, blankCount = 0;
+    for (const f of g.fields) {
+      const st = fieldStatus(f.id);
+      if (st === "ai") aiCount++;
+      else if (st === "user") userCount++;
+      else blankCount++;
+    }
+    const parts = [];
+    if (userCount) parts.push(`<span class="c-user">${userCount} filled</span>`);
+    if (aiCount) parts.push(`<span class="c-ai">✦ ${aiCount} AI</span>`);
+    if (blankCount) parts.push(`<span class="c-blank">${blankCount} blank</span>`);
+    if (g.hasRequired) parts.push(`<span class="c-req">required</span>`);
+
     const sum = document.createElement("summary");
-    sum.innerHTML = `<span>${g.name}</span>` + (g.hasRequired ? `<span class="section-req">required</span>` : "");
+    sum.innerHTML = `<span>${g.name}</span><span class="section-counts">${parts.join(" · ")}</span>`;
     det.appendChild(sum);
     for (const field of g.fields) det.appendChild(renderField(field));
     form.appendChild(det);
@@ -768,12 +864,28 @@ function renderField(field) {
   const sparkled = !!state.aiDecide[field.id];
   if (sparkled) wrap.classList.add("sparkled");
 
-  // Header row with label + optional sparkle
   const header = document.createElement("div");
   header.className = "field-header";
   const label = document.createElement("label");
   label.innerHTML = `${field.label}${field.required ? ' <span class="required-mark">*</span>' : ''}`;
   header.appendChild(label);
+
+  // Status pill
+  const st = fieldStatus(field.id);
+  const statusPill = document.createElement("span");
+  if (field.type === "boolean") {
+    statusPill.style.display = "none";
+  } else if (st === "ai") {
+    statusPill.className = "field-status status-ai";
+    statusPill.textContent = "✦ Let AI decide";
+  } else if (st === "user") {
+    statusPill.className = "field-status status-user";
+    statusPill.textContent = "User-filled";
+  } else {
+    statusPill.className = "field-status";
+    statusPill.textContent = field.required ? "Required" : "Left blank";
+  }
+  header.appendChild(statusPill);
 
   if (canSparkle(field)) {
     const btn = document.createElement("button");
@@ -789,7 +901,6 @@ function renderField(field) {
   }
   wrap.appendChild(header);
 
-  // Input area
   const inputArea = document.createElement("div");
   inputArea.className = "field-input";
   const val = state.form[field.id];
@@ -799,21 +910,38 @@ function renderField(field) {
     const inp = document.createElement("input");
     inp.type = field.type === "number" ? "number" : "text";
     inp.value = val ?? "";
-    inp.oninput = e => onChange(field.type === "number" ? Number(e.target.value) : e.target.value);
+    inp.oninput = e => {
+      onChange(field.type === "number" ? Number(e.target.value) : e.target.value);
+      // Update status pill live
+      const pill = header.querySelector(".field-status");
+      const isUser = field.type === "number" ? !isBlank(Number(e.target.value)) : !isBlank(e.target.value);
+      if (pill && !sparkled) {
+        if (isUser) { pill.className = "field-status status-user"; pill.textContent = "User-filled"; }
+        else { pill.className = "field-status"; pill.textContent = field.required ? "Required" : "Left blank"; }
+      }
+      updateSectionCounts();
+    };
     inputArea.appendChild(inp);
   } else if (field.type === "textarea") {
     const ta = document.createElement("textarea");
     ta.rows = 3;
     ta.value = val ?? "";
-    ta.oninput = e => onChange(e.target.value);
+    ta.oninput = e => {
+      onChange(e.target.value);
+      const pill = header.querySelector(".field-status");
+      if (pill && !sparkled) {
+        if (!isBlank(e.target.value)) { pill.className = "field-status status-user"; pill.textContent = "User-filled"; }
+        else { pill.className = "field-status"; pill.textContent = field.required ? "Required" : "Left blank"; }
+      }
+      updateSectionCounts();
+    };
     inputArea.appendChild(ta);
   } else if (field.type === "boolean") {
     const lbl = document.createElement("label");
     lbl.className = "checkbox";
     lbl.innerHTML = `<input type="checkbox" ${val ? "checked" : ""}> <span>${field.label}</span>`;
-    lbl.querySelector("input").onchange = e => onChange(e.target.checked);
+    lbl.querySelector("input").onchange = e => { onChange(e.target.checked); updateSectionCounts(); };
     inputArea.appendChild(lbl);
-    // Boolean hides its header label since it's in the checkbox
     header.style.display = "none";
   } else if (field.type === "select") {
     const sel = document.createElement("select");
@@ -879,6 +1007,35 @@ function renderField(field) {
   return wrap;
 }
 
+function updateSectionCounts() {
+  // Lightweight: only updates the summary counts without full re-render
+  const details = document.querySelectorAll("details.section");
+  const visibleFields = state.template.user_fields.filter(f => {
+    if (f.id === "use_only_user_materials") {
+      return !state.aiDecide["selected_materials"] && !state.aiDecide["user_materials"];
+    }
+    return true;
+  });
+  for (const det of details) {
+    const sectionName = det.querySelector("summary > span")?.textContent;
+    if (!sectionName) continue;
+    const fields = visibleFields.filter(f => (f.section || "Other") === sectionName);
+    let u = 0, a = 0, b = 0;
+    for (const f of fields) {
+      const st = fieldStatus(f.id);
+      if (st === "ai") a++; else if (st === "user") u++; else b++;
+    }
+    const hasReq = fields.some(f => f.required);
+    const parts = [];
+    if (u) parts.push(`<span class="c-user">${u} filled</span>`);
+    if (a) parts.push(`<span class="c-ai">✦ ${a} AI</span>`);
+    if (b) parts.push(`<span class="c-blank">${b} blank</span>`);
+    if (hasReq) parts.push(`<span class="c-req">required</span>`);
+    const counts = det.querySelector(".section-counts");
+    if (counts) counts.innerHTML = parts.join(" · ");
+  }
+}
+
 function extractItems(unit, source) {
   switch (source) {
     case "objectives.all": return unit.objectives.all;
@@ -934,10 +1091,31 @@ function previewPayload() {
 /* ──────────────────────────────────────────────────────────────
    STREAMING GENERATE
 ────────────────────────────────────────────────────────────── */
-async function streamGemini({ systemInstruction, userMessage, onChunk, onDone, onError }) {
+const PROGRESS_MESSAGES = [
+  "Collecting curriculum information…",
+  "Mapping syllabus objectives…",
+  "Aligning with the 5E lesson structure…",
+  "Considering activities and resources…",
+  "Drafting the lesson plan…",
+  "Formatting tables…"
+];
+
+function startProgressCycle(statusElId) {
+  let idx = 0;
+  setStatus(statusElId, `<span class="spinner"></span>${PROGRESS_MESSAGES[0]}`);
+  const timer = setInterval(() => {
+    idx = Math.min(idx + 1, PROGRESS_MESSAGES.length - 1);
+    setStatus(statusElId, `<span class="spinner"></span>${PROGRESS_MESSAGES[idx]}`);
+  }, 2500);
+  return () => clearInterval(timer);
+}
+
+async function streamGemini({ systemInstruction, userMessage, statusElId, onChunk, onDone, onError }) {
   const apiKey = localStorage.getItem("gemini_api_key");
   const model = localStorage.getItem("gemini_model") || DEFAULT_MODEL;
   if (!apiKey) throw new Error("Missing API key");
+
+  const stopProgress = startProgressCycle(statusElId);
 
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${encodeURIComponent(apiKey)}`;
   const body = {
@@ -952,6 +1130,7 @@ async function streamGemini({ systemInstruction, userMessage, onChunk, onDone, o
     body: JSON.stringify(body)
   });
   if (!res.ok) {
+    stopProgress();
     const errText = await res.text();
     throw new Error(`Gemini HTTP ${res.status}: ${errText.slice(0, 300)}`);
   }
@@ -962,6 +1141,7 @@ async function streamGemini({ systemInstruction, userMessage, onChunk, onDone, o
   let fullText = "";
   let lastFinishReason = null;
   let firstChunk = true;
+  let usage = { in: 0, out: 0 };
 
   const processLine = (line) => {
     const trimmed = line.trim();
@@ -972,13 +1152,17 @@ async function streamGemini({ systemInstruction, userMessage, onChunk, onDone, o
       const chunk = JSON.parse(data);
       const candidate = chunk.candidates?.[0];
       if (candidate?.finishReason) lastFinishReason = candidate.finishReason;
+      if (chunk.usageMetadata) {
+        if (chunk.usageMetadata.promptTokenCount) usage.in = chunk.usageMetadata.promptTokenCount;
+        if (chunk.usageMetadata.candidatesTokenCount) usage.out = chunk.usageMetadata.candidatesTokenCount;
+      }
       const text = candidate?.content?.parts?.map(p => p.text).filter(Boolean).join("") || "";
       if (text) {
-        if (firstChunk) { onChunk("", true); firstChunk = false; }
+        if (firstChunk) { stopProgress(); onChunk("", true); firstChunk = false; }
         fullText += text;
         onChunk(fullText, false);
       }
-    } catch { /* ignore malformed */ }
+    } catch { /* ignore */ }
   };
 
   while (true) {
@@ -989,10 +1173,10 @@ async function streamGemini({ systemInstruction, userMessage, onChunk, onDone, o
     buffer = lines.pop();
     for (const line of lines) processLine(line);
   }
-  // Flush trailing buffer
   if (buffer.trim()) processLine(buffer);
+  stopProgress();
 
-  onDone({ fullText, finishReason: lastFinishReason });
+  onDone({ fullText, finishReason: lastFinishReason, usage });
 }
 
 async function generate() {
@@ -1007,7 +1191,6 @@ async function generate() {
   }
 
   btn.disabled = true;
-  setStatus("genStatus", `<span class="spinner"></span>Fetching system prompt…`);
 
   try {
     const promptRes = await fetch(`${PROMPTS_PREFIX}/${state.template.prompt_file}`);
@@ -1017,40 +1200,38 @@ async function generate() {
     const payload = buildPayload(state.unit, state.form, state.template, state.aiDecide);
     state.lastPayload = payload;
 
-    $("resultTitle").textContent = "Streaming response…";
-    $("result").innerHTML = `<div class="muted" style="padding:8px;"><span class="spinner"></span>Waiting for first chunk…</div>`;
+    $("resultTitle").textContent = "Generating…";
+    $("result").innerHTML = `<div class="muted" style="padding:8px;"><span class="spinner"></span>Preparing…</div>`;
     $("suggestSection").style.display = "none";
     $("resultActions").style.display = "";
     show("step-result");
 
-    setStatus("genStatus", `<span class="spinner"></span>Streaming from Gemini (${model})…`);
     const startedAt = Date.now();
 
     await streamGemini({
       systemInstruction,
       userMessage: JSON.stringify(payload, null, 2),
+      statusElId: "genStatus",
       onChunk: (fullText, reset) => {
         const el = $("result");
         if (reset) el.innerHTML = "";
         if (looksLikeHtml(fullText)) el.innerHTML = fullText;
         else el.innerHTML = marked.parse(fullText);
-        // Auto-scroll to bottom as chunks arrive
         el.scrollTop = el.scrollHeight;
         window.scrollTo(0, document.body.scrollHeight);
-        // Live status
         const secs = ((Date.now() - startedAt) / 1000).toFixed(0);
-        setStatus("genStatus", `<span class="spinner"></span>Streaming… ${fullText.length.toLocaleString()} chars · ${secs}s`);
+        setStatus("genStatus", `<span class="spinner"></span>Writing… ${fullText.length.toLocaleString()} chars · ${secs}s`);
       },
-      onDone: ({ fullText, finishReason }) => {
+      onDone: ({ fullText, finishReason, usage }) => {
         renderFinal(fullText);
         state.lastPlanText = fullText;
+        addTokens(usage.in, usage.out);
         if (finishReason && finishReason !== "STOP") {
           setStatus("genStatus", `⚠ Stream ended with finishReason="${finishReason}". Output may be incomplete.`);
         } else {
           setStatus("genStatus", `Done. ${fullText.length.toLocaleString()} characters.`);
         }
         $("resultTitle").textContent = "Lesson Plan";
-        // Reveal the Suggest Changes section
         $("suggestSection").style.display = "";
         $("resultActions").style.display = "none";
         $("suggestChanges").value = "";
@@ -1077,7 +1258,6 @@ async function regenerate() {
   if (!state.lastPayload || !state.lastPlanText) { setStatus("regenStatus", "No previous plan to revise.", true); return; }
 
   btn.disabled = true;
-  setStatus("regenStatus", `<span class="spinner"></span>Streaming revision…`);
 
   try {
     const promptRes = await fetch(`${PROMPTS_PREFIX}/${state.template.prompt_file}`);
@@ -1101,13 +1281,14 @@ async function regenerate() {
       "Output the complete revised plan."
     ].join("\n");
 
-    $("resultTitle").textContent = "Streaming revised plan…";
-    $("result").innerHTML = `<div class="muted" style="padding:8px;"><span class="spinner"></span>Waiting for first chunk…</div>`;
+    $("resultTitle").textContent = "Revising…";
+    $("result").innerHTML = `<div class="muted" style="padding:8px;"><span class="spinner"></span>Preparing…</div>`;
     const startedAt = Date.now();
 
     await streamGemini({
       systemInstruction,
       userMessage,
+      statusElId: "regenStatus",
       onChunk: (fullText, reset) => {
         const el = $("result");
         if (reset) el.innerHTML = "";
@@ -1115,11 +1296,12 @@ async function regenerate() {
         else el.innerHTML = marked.parse(fullText);
         el.scrollTop = el.scrollHeight;
         const secs = ((Date.now() - startedAt) / 1000).toFixed(0);
-        setStatus("regenStatus", `<span class="spinner"></span>Streaming… ${fullText.length.toLocaleString()} chars · ${secs}s`);
+        setStatus("regenStatus", `<span class="spinner"></span>Writing… ${fullText.length.toLocaleString()} chars · ${secs}s`);
       },
-      onDone: ({ fullText, finishReason }) => {
+      onDone: ({ fullText, finishReason, usage }) => {
         renderFinal(fullText);
         state.lastPlanText = fullText;
+        addTokens(usage.in, usage.out);
         if (finishReason && finishReason !== "STOP") {
           setStatus("regenStatus", `⚠ finishReason="${finishReason}". Output may be incomplete.`);
         } else {
@@ -1170,6 +1352,11 @@ $("generateBtn").onclick = generate;
 $("regenerateBtn").onclick = regenerate;
 $("suggestChanges").oninput = e => {
   $("regenerateBtn").disabled = !e.target.value.trim();
+};
+$("resetTokens").onclick = () => {
+  resetTokens();
+  $("settingsStatus").textContent = "Token counter reset.";
+  setTimeout(() => $("settingsStatus").textContent = "", 2000);
 };
 
 /* Settings */
