@@ -10,7 +10,8 @@
 <script src="extractors/uganda_uace.js"></script>
 <style>
   * { box-sizing: border-box; }
-  body { font-family: system-ui, -apple-system, sans-serif; background: #0f1115; color: #e6e8eb; margin: 0; padding: 16px; padding-bottom: calc(16px + env(safe-area-inset-bottom)); max-width: 900px; margin: 0 auto; line-height: 1.5; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #0f1115; color: #e6e8eb; padding: 16px; padding-bottom: calc(16px + env(safe-area-inset-bottom)); max-width: 900px; margin: 0 auto; line-height: 1.5; }
   h1 { font-size: 20px; margin: 0 0 4px; }
   h2 { font-size: 16px; margin: 24px 0 12px; color: #9aa3ad; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
   label { display: block; font-size: 13px; color: #9aa3ad; margin: 0; }
@@ -43,8 +44,6 @@
   @keyframes spin { to { transform: rotate(360deg); } }
   details.debug { margin-top: 20px; font-size: 12px; }
   details.debug pre { background: #171a21; padding: 10px; border-radius: 6px; overflow: auto; max-height: 500px; }
-  details#settings { margin: 12px 0; padding: 12px; border: 1px solid #2a2f38; border-radius: 8px; background: #171a21; }
-  details#settings summary { cursor: pointer; font-size: 13px; color: #9aa3ad; text-transform: uppercase; letter-spacing: .05em; }
   details.section { margin: 8px 0; padding: 10px 14px; border: 1px solid #2a2f38; border-radius: 8px; background: #13161c; }
   details.section > summary { cursor: pointer; font-size: 13px; font-weight: 600; color: #e6e8eb; text-transform: uppercase; letter-spacing: .05em; list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   details.section > summary::-webkit-details-marker { display: none; }
@@ -92,29 +91,91 @@
   .readonly-context .rc-row { display: flex; gap: 8px; margin: 4px 0; font-size: 13px; opacity: 0.75; }
   .readonly-context .rc-key { color: #6b7280; min-width: 110px; font-weight: 500; }
   .readonly-context .rc-val { color: #b8bec7; }
-  .page-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
-  .page-header h1 { margin: 0 0 4px; }
+
+  /* Main header */
+  .main-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+  .menu-btn {
+    width: 42px; height: 42px;
+    padding: 0; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: #171a21; border: 1px solid #2a2f38; color: #e6e8eb;
+    font-size: 20px; border-radius: 10px;
+    transition: border-color .15s;
+  }
+  .menu-btn:hover { border-color: #4b5563; }
+  .header-text { flex: 1; }
+  .header-text h1 { margin: 0 0 2px; }
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 340px; max-width: 88vw;
+    background: #0f1115;
+    border-right: 1px solid #2a2f38;
+    transform: translateX(-100%);
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1000;
+    display: flex; flex-direction: column;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 16px;
+    border-bottom: 1px solid #2a2f38;
+    position: sticky; top: 0;
+    background: #0f1115;
+    z-index: 2;
+  }
+  .sidebar-top h2 { margin: 0; font-size: 15px; text-transform: none; letter-spacing: 0; color: #e6e8eb; }
+  .sidebar-close {
+    width: auto; padding: 4px 10px;
+    background: transparent; border: none; color: #9aa3ad;
+    font-size: 22px; line-height: 1; cursor: pointer;
+  }
+  .sidebar-close:hover { color: #e6e8eb; }
+  .sidebar-content {
+    padding: 16px;
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+    flex: 1;
+  }
+  .sidebar-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.55);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 999;
+  }
+  .sidebar-backdrop.show { opacity: 1; pointer-events: auto; }
+  .sidebar details { margin: 0 0 10px; padding: 10px 14px; border: 1px solid #2a2f38; border-radius: 8px; background: #13161c; }
+  .sidebar details > summary { cursor: pointer; font-size: 13px; font-weight: 600; color: #e6e8eb; list-style: none; display: flex; align-items: center; gap: 8px; }
+  .sidebar details > summary::-webkit-details-marker { display: none; }
+  .sidebar details > summary::before { content: "▸"; display: inline-block; transition: transform .15s; color: #6b7280; font-size: 10px; }
+  .sidebar details[open] > summary::before { transform: rotate(90deg); }
+  .sidebar details > *:not(summary) { margin-top: 12px; }
 
   /* Wallet card */
   .wallet-card {
-    padding: 10px 14px;
+    padding: 14px 16px;
     background: linear-gradient(135deg, #1a2230 0%, #13161c 100%);
     border: 1px solid #2a2f38;
     border-radius: 12px;
-    min-width: 240px;
-    flex-shrink: 0;
+    margin-bottom: 12px;
   }
   .wallet-card .wallet-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-  .wallet-card .wallet-row.primary { margin-bottom: 6px; padding-bottom: 8px; border-bottom: 1px solid #2a2f38; }
+  .wallet-card .wallet-row.primary { margin-bottom: 8px; padding-bottom: 10px; border-bottom: 1px solid #2a2f38; }
   .wallet-card .wallet-label { font-size: 10px; color: #6b7280; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
   .wallet-card .wallet-value {
     font-family: ui-monospace, monospace;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     color: #34d399;
     transition: color 0.2s;
   }
-  .wallet-card .wallet-value.low { color: #fbbf24; }
+  .wallet-card .wallet-value.low { color: #a3e635; }
+  .wallet-card .wallet-value.warning { color: #fbbf24; }
   .wallet-card .wallet-value.empty { color: #f87171; }
   .wallet-card .wallet-value.flash { color: #f87171; text-shadow: 0 0 12px rgba(248,113,113,0.6); }
   .wallet-card .wallet-unit { font-size: 11px; color: #6b7280; font-family: ui-monospace, monospace; font-weight: 500; }
@@ -125,6 +186,7 @@
     font-size: 10px;
     color: #6b7280;
     flex-wrap: wrap;
+    margin-top: 6px;
   }
   .wallet-card .usage-row .t-in { color: #60a5fa; }
   .wallet-card .usage-row .t-out { color: #34d399; }
@@ -133,7 +195,7 @@
 
   /* Wallet controls */
   .wallet-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-  .wallet-controls .topup-input { width: 90px; padding: 6px 10px; font-size: 13px; }
+  .wallet-controls .topup-input { width: 110px; padding: 6px 10px; font-size: 13px; }
 
   /* Admin pricing editor */
   .pricing-model { margin: 10px 0; padding: 10px 12px; border-radius: 8px; background: #0f1115; border: 1px solid #1f242e; }
@@ -179,14 +241,13 @@
   .live-status-bar .timer { font-family: ui-monospace, monospace; font-size: 12px; color: #60a5fa; }
   .live-status-bar .model-tag { font-family: ui-monospace, monospace; font-size: 11px; color: #9aa3ad; padding: 2px 8px; border-radius: 999px; background: #1f242e; }
   .live-status-bar .cost-tag { font-family: ui-monospace, monospace; font-size: 11px; color: #fbbf24; padding: 2px 8px; border-radius: 999px; background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.3); }
+  .live-status-bar .tokens-tag { font-family: ui-monospace, monospace; font-size: 11px; color: #9aa3ad; padding: 2px 8px; border-radius: 999px; background: #1f242e; }
 
   @media (max-width: 640px) {
     body { padding: 12px 12px calc(12px + env(safe-area-inset-bottom)); }
     h1 { font-size: 17px; }
     h2 { font-size: 14px; margin: 16px 0 8px; }
-    .page-header { flex-direction: column; gap: 8px; }
-    .wallet-card { min-width: 100%; }
-    .wallet-card .wallet-value { font-size: 15px; }
+    .menu-btn { width: 38px; height: 38px; font-size: 18px; }
     .row { grid-template-columns: 1fr; gap: 8px; }
     .doctype-cards { grid-template-columns: 1fr; }
     .sticky-footer { flex-direction: column; }
@@ -208,6 +269,7 @@
     .toast-container { bottom: calc(16px + env(safe-area-inset-bottom)); }
     .toast { font-size: 13px; padding: 12px 16px; }
     .pricing-model .pm-row { grid-template-columns: 1fr; }
+    .wallet-card .wallet-value { font-size: 16px; }
   }
 </style>
 </head>
@@ -215,82 +277,111 @@
 
 <div class="toast-container" id="toastContainer"></div>
 
-<div class="page-header">
-  <div>
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar" aria-hidden="true">
+  <div class="sidebar-top">
+    <h2>The CBC AI Tool</h2>
+    <button class="sidebar-close" id="sidebarClose" type="button" aria-label="Close menu">×</button>
+  </div>
+  <div class="sidebar-content">
+    <!-- Wallet card -->
+    <div class="wallet-card" id="walletCard">
+      <div class="wallet-row primary">
+        <span class="wallet-label">Wallet</span>
+        <span><span class="wallet-value" id="walletBalance">0.00</span> <span class="wallet-unit">UGX</span></span>
+      </div>
+      <div class="usage-row">
+        <span><span class="t-label">IN</span> <span class="t-in" id="tokIn">0</span></span>
+        <span><span class="t-label">OUT</span> <span class="t-out" id="tokOut">0</span></span>
+        <span><span class="t-label">SPENT</span> <span class="t-spent" id="tokCost">0.00</span></span>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <details id="settings">
+      <summary>⚙ Settings</summary>
+      <div>
+        <label>API Mode</label>
+        <select id="apiModeSelect">
+          <option value="proxy">Shared (fast, no setup)</option>
+          <option value="byok">Use my own key</option>
+        </select>
+        <div class="field-hint" id="apiModeHint"></div>
+        <div id="byokFields" style="display:none">
+          <label style="margin-top:12px">Gemini API Key</label>
+          <input type="password" id="apiKeyInput" placeholder="AIza..." autocomplete="off">
+          <div class="muted" style="margin-top:4px">Stored in this browser only.</div>
+        </div>
+        <label style="margin-top:12px">Model</label>
+        <select id="modelSelect"></select>
+        <div class="field-hint">Flash and Gemma models only. Auto-fallback if one is unavailable.</div>
+        <div style="margin-top:12px; display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="secondary" id="saveSettings" type="button">Save</button>
+          <span class="status" id="settingsStatus"></span>
+        </div>
+      </div>
+    </details>
+
+    <!-- Wallet -->
+    <details id="walletSettings">
+      <summary>💰 Wallet</summary>
+      <div>
+        <p class="muted" style="margin-top:0">Balance is deducted automatically after each successful generation based on actual token usage. Seed value: 3,000 UGX.</p>
+        <div class="field-wrapper">
+          <div class="field-header"><label>Current balance</label></div>
+          <input type="text" id="walletBalanceInput" readonly>
+        </div>
+
+        <div class="wallet-controls" style="margin-bottom: 4px;">
+          <div class="muted" style="font-size: 11px; width: 100%; margin-bottom: 4px;">Adjust balance (testing)</div>
+          <button class="secondary tiny" data-topup="100" type="button">+100</button>
+          <button class="secondary tiny" data-topup="500" type="button">+500</button>
+          <button class="secondary tiny" data-topup="1000" type="button">+1,000</button>
+          <button class="secondary tiny" data-topup="2000" type="button">+2,000</button>
+          <button class="secondary tiny" data-topup="-100" type="button">−100</button>
+          <button class="secondary tiny" data-topup="-500" type="button">−500</button>
+        </div>
+
+        <div class="wallet-controls" style="margin-bottom: 4px;">
+          <input type="number" id="setBalanceInput" class="topup-input" placeholder="Set to…" min="0">
+          <button class="secondary tiny" id="setBalanceBtn" type="button">Set balance</button>
+          <button class="secondary tiny" id="setZeroBtn" type="button">Set to 0</button>
+          <button class="secondary tiny" id="setWarnBtn" type="button">Set to 400</button>
+          <button class="secondary tiny" id="resetWallet" type="button">Reset to 3,000</button>
+        </div>
+
+        <div class="wallet-controls">
+          <button class="secondary tiny" id="resetSession" type="button">Reset session tokens &amp; spent</button>
+        </div>
+        <span class="status" id="walletStatus"></span>
+      </div>
+    </details>
+
+    <!-- Admin Pricing -->
+    <details id="adminPricing">
+      <summary>🔧 Admin — Pricing Overrides</summary>
+      <div>
+        <p class="muted" style="margin-top:0">Override default Google rates per model. Values are USD per 1M tokens. Leave blank to use the default. Stored locally, applied to future generations.</p>
+        <div id="pricingEditor"></div>
+        <div style="margin-top:12px; display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="secondary" id="savePricing" type="button">Save overrides</button>
+          <button class="secondary" id="resetPricing" type="button">Reset to defaults</button>
+          <span class="status" id="pricingStatus"></span>
+        </div>
+      </div>
+    </details>
+  </div>
+</aside>
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<!-- Main header -->
+<header class="main-header">
+  <button class="menu-btn" id="sidebarToggle" type="button" aria-label="Open menu">☰</button>
+  <div class="header-text">
     <h1>The CBC AI Tool</h1>
-    <p class="muted">Lesson plans and schemes of work from NCDC and REB syllabi.</p>
+    <p class="muted" style="margin:0">Lesson plans and schemes of work from NCDC and REB syllabi.</p>
   </div>
-  <div class="wallet-card" id="walletCard">
-    <div class="wallet-row primary">
-      <span class="wallet-label">Wallet</span>
-      <span><span class="wallet-value" id="walletBalance">0.00</span> <span class="wallet-unit">UGX</span></span>
-    </div>
-    <div class="usage-row">
-      <span><span class="t-label">IN</span> <span class="t-in" id="tokIn">0</span></span>
-      <span><span class="t-label">OUT</span> <span class="t-out" id="tokOut">0</span></span>
-      <span><span class="t-label">SPENT</span> <span class="t-spent" id="tokCost">0.00</span></span>
-    </div>
-  </div>
-</div>
-
-<details id="settings">
-  <summary>⚙ Settings</summary>
-  <div>
-    <label>API Mode</label>
-    <select id="apiModeSelect">
-      <option value="proxy">Shared (fast, no setup)</option>
-      <option value="byok">Use my own key</option>
-    </select>
-    <div class="field-hint" id="apiModeHint"></div>
-    <div id="byokFields" style="display:none">
-      <label style="margin-top:12px">Gemini API Key</label>
-      <input type="password" id="apiKeyInput" placeholder="AIza..." autocomplete="off">
-      <div class="muted" style="margin-top:4px">Stored in this browser only.</div>
-    </div>
-    <label style="margin-top:12px">Model</label>
-    <select id="modelSelect"></select>
-    <div class="field-hint">Flash and Gemma models only. Auto-fallback if one is unavailable.</div>
-    <div style="margin-top:12px; display: flex; gap: 8px; flex-wrap: wrap;">
-      <button class="secondary" id="saveSettings" type="button">Save</button>
-      <span class="status" id="settingsStatus"></span>
-    </div>
-  </div>
-</details>
-
-<details id="walletSettings">
-  <summary>💰 Wallet</summary>
-  <div>
-    <p class="muted" style="margin-top:0">Your balance is deducted automatically after each successful generation based on actual token usage. Seed value for testing: 3,000 UGX.</p>
-    <div class="field-wrapper">
-      <div class="field-header"><label>Current balance</label></div>
-      <input type="text" id="walletBalanceInput" readonly>
-    </div>
-    <div class="wallet-controls">
-      <button class="secondary tiny" data-topup="500" type="button">+500</button>
-      <button class="secondary tiny" data-topup="1000" type="button">+1,000</button>
-      <button class="secondary tiny" data-topup="2000" type="button">+2,000</button>
-      <button class="secondary tiny" data-topup="5000" type="button">+5,000</button>
-      <input type="number" id="customTopup" class="topup-input" placeholder="Custom" min="1">
-      <button class="secondary tiny" id="customTopupBtn" type="button">Top up</button>
-      <button class="secondary tiny" id="resetWallet" type="button">Reset to 3,000</button>
-      <button class="secondary tiny" id="resetSession" type="button">Reset session tokens</button>
-    </div>
-    <span class="status" id="walletStatus"></span>
-  </div>
-</details>
-
-<details id="adminPricing">
-  <summary>🔧 Admin — Pricing Overrides</summary>
-  <div>
-    <p class="muted" style="margin-top:0">Override default Google rates per model. Values are USD per 1M tokens. Leave blank to use the default. Changes are stored locally and applied to all future generations.</p>
-    <div id="pricingEditor"></div>
-    <div style="margin-top:12px; display: flex; gap: 8px; flex-wrap: wrap;">
-      <button class="secondary" id="savePricing" type="button">Save overrides</button>
-      <button class="secondary" id="resetPricing" type="button">Reset to defaults</button>
-      <span class="status" id="pricingStatus"></span>
-    </div>
-  </div>
-</details>
+</header>
 
 <section id="step-doctype">
   <h2>What do you want to generate?</h2>
@@ -372,6 +463,7 @@
     <h2 id="resultTitle" style="margin: 0;">Output</h2>
     <div class="live-status-bar">
       <span class="model-tag" id="modelTag" style="display:none;"></span>
+      <span class="tokens-tag" id="tokensTag" style="display:none;"></span>
       <span class="cost-tag" id="costTag" style="display:none;"></span>
       <span class="timer" id="timerTag" style="display:none;">0.0s</span>
       <button id="cancelBtn" class="danger" type="button" style="display:none; padding: 6px 14px; font-size: 13px;">Stop</button>
@@ -418,8 +510,6 @@ const FLASH_MODELS = [
 ];
 const DEFAULT_MODEL = "gemini-3.5-flash";
 
-/* Default pricing per 1M tokens (USD) — Google AI Studio public rates, Oct 2026.
-   Can be overridden via the Admin Pricing panel. */
 const DEFAULT_PRICING = {
   "gemini-3.5-flash":       { input: 1.50, output: 9.00 },
   "gemini-3.5-flash-lite":  { input: 0.30, output: 2.50 },
@@ -435,9 +525,6 @@ const DEFAULT_PRICING = {
 const USD_TO_UGX = 3970;
 const WALLET_SEED_UGX = 3000;
 
-/* ───────────── WALLET MODULE ─────────────
-   All balance reads/writes go through this. Later, swap localStorage
-   for Firestore reads/writes + GAS calls without touching the rest of the app. */
 const Wallet = {
   KEY_BALANCE: "wallet_balance_ugx",
   KEY_SESSION_SPENT: "session_cost_ugx",
@@ -470,12 +557,9 @@ const Wallet = {
   }
 };
 
-/* ───────────── PRICING MODULE ───────────── */
 const Pricing = {
   KEY: "pricing_overrides",
-  getOverrides() {
-    try { return JSON.parse(localStorage.getItem(this.KEY) || "{}"); } catch { return {}; }
-  },
+  getOverrides() { try { return JSON.parse(localStorage.getItem(this.KEY) || "{}"); } catch { return {}; } },
   saveOverrides(obj) { localStorage.setItem(this.KEY, JSON.stringify(obj || {})); },
   get(model) {
     const o = this.getOverrides();
@@ -629,6 +713,24 @@ const state = {
   streamAbort: null, streamTimerInterval: null, streamStartedAt: null, streamProgressInterval: null
 };
 
+/* ───────────── SIDEBAR ───────────── */
+const sidebar = $("sidebar");
+const sidebarBackdrop = $("sidebarBackdrop");
+function openSidebar() {
+  sidebar.classList.add("open");
+  sidebar.setAttribute("aria-hidden", "false");
+  sidebarBackdrop.classList.add("show");
+}
+function closeSidebar() {
+  sidebar.classList.remove("open");
+  sidebar.setAttribute("aria-hidden", "true");
+  sidebarBackdrop.classList.remove("show");
+}
+$("sidebarToggle").onclick = openSidebar;
+$("sidebarClose").onclick = closeSidebar;
+sidebarBackdrop.onclick = closeSidebar;
+document.addEventListener("keydown", e => { if (e.key === "Escape" && sidebar.classList.contains("open")) closeSidebar(); });
+
 function showToast(msg, type = "info", title = null) {
   const c = $("toastContainer");
   const el = document.createElement("div");
@@ -645,16 +747,23 @@ function updateTokenDisplay() {
   $("tokOut").textContent = Wallet.getSessionOut().toLocaleString();
   $("tokCost").textContent = Wallet.getSessionSpent().toFixed(2);
 }
+
 function updateWalletDisplay() {
   const bal = Wallet.getBalance();
   const el = $("walletBalance");
   el.textContent = bal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  el.classList.remove("low", "empty");
-  if (bal <= 0) el.classList.add("empty");
-  else if (bal < 500) el.classList.add("low");
+  el.classList.remove("low", "empty", "warning");
+  if (bal <= 0) {
+    el.classList.add("empty");
+  } else if (bal < 500) {
+    el.classList.add("warning");
+  } else if (bal < 1000) {
+    el.classList.add("low");
+  }
   const inp = $("walletBalanceInput");
   if (inp) inp.value = `UGX ${bal.toFixed(2)}`;
 }
+
 function flashWallet() {
   const el = $("walletBalance");
   el.classList.add("flash");
@@ -689,6 +798,7 @@ function isNearBottom(el, t = 100) { return (el.scrollHeight - el.scrollTop - el
 function todayISO() { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`; }
 function splitLines(t) { return typeof t === "string" ? t.split("\n").map(x => x.trim()).filter(Boolean) : []; }
 function fmtElapsed(ms) { return (ms / 1000).toFixed(1) + "s"; }
+function fmtTokens(n) { if (n >= 1000) return (n / 1000).toFixed(n >= 10000 ? 0 : 1) + "k"; return String(n); }
 
 function beginLiveUI(modelName) {
   state.streamStartedAt = Date.now();
@@ -700,6 +810,8 @@ function beginLiveUI(modelName) {
   $("modelTag").textContent = modelName || "…";
   $("costTag").style.display = "none";
   $("costTag").textContent = "";
+  $("tokensTag").style.display = "none";
+  $("tokensTag").textContent = "";
   clearInterval(state.streamTimerInterval);
   state.streamTimerInterval = setInterval(() => {
     if (!state.streamStartedAt) return;
@@ -1496,6 +1608,7 @@ function previewPayload(kind) {
   $("resultStatus").innerHTML = "";
   $("modelTag").style.display = "none";
   $("costTag").style.display = "none";
+  $("tokensTag").style.display = "none";
   $("timerTag").style.display = "none";
   $("cancelBtn").style.display = "none";
   $("regenerateBtn").style.display = "none";
@@ -1636,9 +1749,11 @@ function applyCostAndWallet(modelUsed, usage) {
     Wallet.addTokens(usage.in, usage.out);
     deductFromWallet(cost.ugx);
   } else {
-    // Fallback: still record tokens even if pricing is missing
     Wallet.addTokens(usage.in, usage.out);
   }
+  $("tokensTag").style.display = "";
+  $("tokensTag").textContent = `IN ${fmtTokens(usage.in)} · OUT ${fmtTokens(usage.out)}`;
+  $("tokensTag").title = `Input: ${usage.in.toLocaleString()} · Output: ${usage.out.toLocaleString()}`;
   updateTokenDisplay();
   return cost;
 }
@@ -1647,6 +1762,7 @@ function checkWalletBeforeRequest() {
   const bal = Wallet.getBalance();
   if (bal <= 0) {
     showToast("Your wallet balance is 0 UGX. Top up to continue generating.", "error", "Insufficient balance");
+    openSidebar();
     return false;
   }
   return true;
@@ -1684,6 +1800,8 @@ async function generateDoc(kind) {
     $("jumpToBottom").style.display = "none";
     $("suggestSection").style.display = "none";
     $("regenerateBtn").style.display = "none";
+    $("tokensTag").style.display = "none";
+    $("costTag").style.display = "none";
     show("step-result");
     await streamGemini({
       systemInstruction, userMessage: JSON.stringify(payload, null, 2), kind,
@@ -1736,6 +1854,8 @@ async function regenerate() {
     $("resultTitle").textContent = "Revising…";
     $("resultStatus").innerHTML = "";
     $("jumpToBottom").style.display = "none";
+    $("tokensTag").style.display = "none";
+    $("costTag").style.display = "none";
     await streamGemini({
       systemInstruction, userMessage, kind: state.docType === "sow" ? "sow" : "lp",
       onChunk: (text, startedAt) => {
@@ -1792,29 +1912,50 @@ function loadSettingsUI() {
 }
 
 function setupWalletUI() {
+  // Quick +/− adjustment buttons
   document.querySelectorAll("[data-topup]").forEach(btn => {
     btn.onclick = () => {
       const amt = parseFloat(btn.dataset.topup);
-      Wallet.topUp(amt);
+      const next = Math.max(0, Wallet.getBalance() + amt);
+      Wallet.setBalance(next);
       updateWalletDisplay();
-      $("walletStatus").textContent = `Added ${amt.toLocaleString()} UGX.`;
-      showToast(`Wallet topped up by ${amt.toLocaleString()} UGX.`, "success");
+      const label = amt >= 0 ? `+${amt.toLocaleString()}` : `−${Math.abs(amt).toLocaleString()}`;
+      $("walletStatus").textContent = `${label} UGX.`;
       setTimeout(() => $("walletStatus").textContent = "", 1500);
     };
   });
-  $("customTopupBtn").onclick = () => {
-    const v = parseFloat($("customTopup").value);
-    if (!v || v <= 0) { showToast("Enter a positive amount.", "error"); return; }
-    Wallet.topUp(v);
+
+  // Set to exact value
+  $("setBalanceBtn").onclick = () => {
+    const v = parseFloat($("setBalanceInput").value);
+    if (isNaN(v) || v < 0) { showToast("Enter a value ≥ 0.", "error"); return; }
+    Wallet.setBalance(v);
     updateWalletDisplay();
-    $("customTopup").value = "";
-    showToast(`Wallet topped up by ${v.toLocaleString()} UGX.`, "success");
+    $("setBalanceInput").value = "";
+    $("walletStatus").textContent = `Set to ${v.toLocaleString()} UGX.`;
+    setTimeout(() => $("walletStatus").textContent = "", 1500);
   };
+
+  // Test shortcuts
+  $("setZeroBtn").onclick = () => {
+    Wallet.setBalance(0);
+    updateWalletDisplay();
+    showToast("Balance set to 0. Next request will be blocked.", "warn", "Zero balance");
+  };
+  $("setWarnBtn").onclick = () => {
+    Wallet.setBalance(400);
+    updateWalletDisplay();
+    showToast("Balance set to 400. Amber warning state active.", "success");
+  };
+
+  // Reset to seed
   $("resetWallet").onclick = () => {
     Wallet.reset();
     updateWalletDisplay();
     showToast("Wallet reset to 3,000 UGX.", "success");
   };
+
+  // Reset session totals
   $("resetSession").onclick = () => {
     Wallet.resetSession();
     updateTokenDisplay();
