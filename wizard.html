@@ -19,6 +19,8 @@
   button { padding: 12px 20px; border-radius: 8px; border: 1px solid #2f6fed; background: #2f6fed; color: #fff; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit; }
   button:disabled { background: #2a2f38; border-color: #2a2f38; color: #6b7280; cursor: not-allowed; }
   button.secondary { background: #171a21; border-color: #2a2f38; color: #e6e8eb; font-weight: 500; padding: 8px 14px; font-size: 13px; }
+  button.danger { background: #7f1d1d; border-color: #991b1b; color: #fecaca; }
+  button.danger:hover { background: #991b1b; }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .muted { color: #6b7280; font-size: 12px; }
   .fieldgroup { border: 1px solid #2a2f38; border-radius: 8px; padding: 12px; margin: 0; }
@@ -27,7 +29,7 @@
   .checkbox input { width: auto; margin-top: 3px; flex-shrink: 0; }
   .badge-inline { display: inline; background: transparent; padding: 0; margin: 0 6px 0 0; color: #6b7280; font-size: 12px; }
   .sticky-footer { position: sticky; bottom: 0; padding: 12px 0; background: #0f1115; border-top: 1px solid #2a2f38; margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
-  #result { margin-top: 12px; padding: 16px; border-radius: 8px; background: #171a21; font-size: 14px; overflow-x: auto; overflow-y: auto; max-height: 70vh; -webkit-overflow-scrolling: touch; }
+  #result { margin-top: 12px; padding: 16px; border-radius: 8px; background: #171a21; font-size: 14px; overflow-x: auto; overflow-y: auto; max-height: 70vh; -webkit-overflow-scrolling: touch; transition: opacity 0.15s ease; }
   #result:empty { display: none; }
   #result table { border-collapse: collapse; min-width: max-content; margin: 12px 0; font-size: 13px; }
   #result th, #result td { border: 1px solid #2a2f38; padding: 6px 8px; text-align: left; vertical-align: top; }
@@ -116,6 +118,9 @@
   .topic-item { margin-left: 12px; }
   .lo-list { margin: 4px 0 8px 32px; padding: 8px 12px; background: #0f1115; border-radius: 6px; border: 1px solid #1f242e; }
   .lo-list .lo-title { font-size: 11px; color: #6b7280; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
+  .live-status-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .live-status-bar .timer { font-family: ui-monospace, monospace; font-size: 12px; color: #60a5fa; }
+  .live-status-bar .model-tag { font-family: ui-monospace, monospace; font-size: 11px; color: #9aa3ad; padding: 2px 8px; border-radius: 999px; background: #1f242e; }
   @media (max-width: 640px) {
     body { padding: 12px 12px 16px; }
     h1 { font-size: 17px; }
@@ -259,13 +264,20 @@
 </section>
 
 <section id="step-result" style="display:none">
-  <h2 id="resultTitle">Output</h2>
-  <div class="status" id="resultStatus"></div>
+  <div class="live-status-bar">
+    <h2 id="resultTitle" style="margin: 0;">Output</h2>
+    <div class="live-status-bar">
+      <span class="model-tag" id="modelTag" style="display:none;"></span>
+      <span class="timer" id="timerTag" style="display:none;">0.0s</span>
+      <button id="cancelBtn" class="danger" type="button" style="display:none; padding: 6px 14px; font-size: 13px;">Stop</button>
+    </div>
+  </div>
+  <div class="status" id="resultStatus" style="margin-top:8px;"></div>
   <div id="result"></div>
   <button id="jumpToBottom">↓ Jump to latest</button>
   <div class="suggest-section" id="suggestSection" style="display:none">
     <h3>Suggest Changes</h3>
-    <textarea id="suggestChanges" placeholder="Describe edits."></textarea>
+    <textarea id="suggestChanges" placeholder="e.g. Shorten the development section. Replace the group activity with a teacher demonstration. Add a homework task."></textarea>
     <div style="display:flex; gap:12px; flex-wrap:wrap;">
       <button type="button" id="regenerateBtn" disabled>Regenerate</button>
       <button type="button" class="secondary" id="backToForm">← Back</button>
@@ -445,9 +457,15 @@ const state = {
   docType: null, parsedFiles: [], classData: null, selected: null, lpTemplate: null, sowTemplate: null,
   form: {}, sowForm: {}, aiDecide: {}, sowAiDecide: {}, sowColumnInstructions: {}, sectionOpen: {},
   lastPayload: null, lastDoc: "", _flatItems: null,
-  sowAllTopics: true, sowSelectedTopics: {}, sowSelectedOutcomes: {}
+  sowAllTopics: true, sowSelectedTopics: {}, sowSelectedOutcomes: {},
+  // Live-streaming controls
+  streamAbort: null,
+  streamTimerInterval: null,
+  streamStartedAt: null,
+  streamProgressInterval: null
 };
 
+/* ───────────── TOAST ───────────── */
 function showToast(msg, type = "info", title = null) {
   const c = $("toastContainer");
   const el = document.createElement("div");
@@ -459,6 +477,7 @@ function showToast(msg, type = "info", title = null) {
   setTimeout(() => { el.classList.remove("show"); setTimeout(() => el.remove(), 350); }, 4200);
 }
 
+/* ───────────── HELPERS ───────────── */
 function updateTokenDisplay() {
   $("tokIn").textContent = (parseInt(localStorage.getItem("tok_session_in") || "0", 10)).toLocaleString();
   $("tokOut").textContent = (parseInt(localStorage.getItem("tok_session_out") || "0", 10)).toLocaleString();
@@ -485,7 +504,50 @@ function itemDomain(it) { if (!it || typeof it === "string") return null; return
 function isNearBottom(el, t = 100) { return (el.scrollHeight - el.scrollTop - el.clientHeight) < t; }
 function todayISO() { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`; }
 function splitLines(t) { return typeof t === "string" ? t.split("\n").map(x => x.trim()).filter(Boolean) : []; }
+function fmtElapsed(ms) { return (ms / 1000).toFixed(1) + "s"; }
 
+/* ───────────── LIVE STREAM UI ───────────── */
+function beginLiveUI(modelName) {
+  // Show cancel button, timer, and model tag. Reset them.
+  state.streamStartedAt = Date.now();
+  $("cancelBtn").style.display = "";
+  $("cancelBtn").disabled = false;
+  $("timerTag").style.display = "";
+  $("timerTag").textContent = "0.0s";
+  $("modelTag").style.display = "";
+  $("modelTag").textContent = modelName || "…";
+  clearInterval(state.streamTimerInterval);
+  state.streamTimerInterval = setInterval(() => {
+    if (!state.streamStartedAt) return;
+    $("timerTag").textContent = fmtElapsed(Date.now() - state.streamStartedAt);
+  }, 100);
+}
+function endLiveUI(modelName, aborted) {
+  clearInterval(state.streamTimerInterval);
+  state.streamTimerInterval = null;
+  $("cancelBtn").style.display = "none";
+  if (state.streamStartedAt) {
+    $("timerTag").textContent = fmtElapsed(Date.now() - state.streamStartedAt);
+    state.streamStartedAt = null;
+  }
+  if (modelName) {
+    $("modelTag").style.display = "";
+    $("modelTag").textContent = modelName;
+  }
+}
+function stopProgressCycle() {
+  if (state.streamProgressInterval) {
+    clearInterval(state.streamProgressInterval);
+    state.streamProgressInterval = null;
+  }
+}
+function cancelStream() {
+  if (state.streamAbort) {
+    state.streamAbort.abort();
+  }
+}
+
+/* ───────────── INIT ───────────── */
 async function init() {
   updateTokenDisplay();
   loadSettingsUI();
@@ -583,7 +645,7 @@ function countItems(data) {
   return n;
 }
 
-/* ───────────── ITEM PICKER (native select + optgroups) ───────────── */
+/* ───────────── ITEM PICKER ───────────── */
 function showItems() {
   const data = state.classData;
   const term = data.terminology;
@@ -1252,17 +1314,26 @@ function previewPayload(kind) {
   const sizeKb = (new Blob([json]).size / 1024).toFixed(2);
   $("resultTitle").textContent = "Payload Preview";
   $("resultStatus").innerHTML = "";
+  $("modelTag").style.display = "none";
+  $("timerTag").style.display = "none";
+  $("cancelBtn").style.display = "none";
   $("result").innerHTML = `<div style="margin-bottom:12px; padding:12px; background:#0f1115; border-radius:6px;"><strong>Size:</strong> ${sizeKb} KB</div><pre>${escapeHtml(json)}</pre>`;
   $("suggestSection").style.display = "none"; $("resultActions").style.display = ""; show("step-result");
 }
 
+/* ───────────── STREAMING ───────────── */
 const PROGRESS_LP = ["Collecting curriculum information…","Mapping syllabus objectives…","Aligning with the 5E lesson structure…","Considering activities and resources…","Drafting the lesson plan…","Formatting tables…"];
 const PROGRESS_SOW = ["Collecting term data…","Mapping topics and outcomes…","Building the week schedule…","Applying column format…","Drafting the scheme of work…","Formatting tables…"];
+
 function startProgress(kind) {
+  stopProgressCycle();
   const msgs = kind === "sow" ? PROGRESS_SOW : PROGRESS_LP;
   let i = 0;
-  $("resultStatus").innerHTML = `<span class="spinner"></span>${msgs[0]}`;
-  return setInterval(() => { i = Math.min(i + 1, msgs.length - 1); $("resultStatus").innerHTML = `<span class="spinner"></span>${msgs[i]}`; }, 2500);
+  const render = () => {
+    $("result").innerHTML = `<div style="text-align:center; padding:32px 12px; color:#9aa3ad; font-size:14px;"><span class="spinner"></span>${msgs[i]}</div>`;
+  };
+  render();
+  state.streamProgressInterval = setInterval(() => { i = Math.min(i + 1, msgs.length - 1); render(); }, 2500);
 }
 
 async function streamGemini({ systemInstruction, userMessage, kind, onChunk, onDone }) {
@@ -1270,50 +1341,102 @@ async function streamGemini({ systemInstruction, userMessage, kind, onChunk, onD
   const key = localStorage.getItem("gemini_api_key") || "";
   const preferredModel = localStorage.getItem("gemini_model") || DEFAULT_MODEL;
   if (mode === "byok" && !key) throw new Error("Enter your Gemini API key in Settings, or switch to Shared mode.");
+
+  // Reset abort state
+  state.streamAbort = new AbortController();
+
+  // Show progress cycle in #result immediately
+  startProgress(kind);
+
   const models = [preferredModel, ...FLASH_MODELS.filter(m => m !== preferredModel)];
   let lastErr = null;
+
   for (let i = 0; i < models.length; i++) {
+    if (state.streamAbort.signal.aborted) { stopProgressCycle(); throw new Error("Cancelled"); }
     const model = models[i];
-    // ─── URL construction ───
-    // Proxy hardcodes /v1beta in its own URL builder → do NOT include it here.
-    // Direct Google API needs the /v1beta prefix + key.
     const url = mode === "proxy"
       ? `${PROXY_URL}/models/${model}:streamGenerateContent?alt=sse`
       : `${GEMINI_DIRECT}/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${encodeURIComponent(key)}`;
     const body = { system_instruction: { parts: [{ text: systemInstruction }] }, contents: [{ role: "user", parts: [{ text: userMessage }] }], generationConfig: { maxOutputTokens: 65536, temperature: 0.7 } };
+
+    // Update the model tag when we switch models
+    $("modelTag").style.display = "";
+    $("modelTag").textContent = model;
+
     let res;
-    try { res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }); }
-    catch (e) { lastErr = e; continue; }
+    try {
+      res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+        signal: state.streamAbort.signal
+      });
+    } catch (e) {
+      if (e.name === "AbortError") { stopProgressCycle(); throw new Error("Cancelled"); }
+      lastErr = e; continue;
+    }
+
     if (!res.ok) {
       const errText = await res.text();
-      if ([404, 429, 503].includes(res.status) || /overloaded|unavailable|not found/i.test(errText)) { lastErr = new Error(`${model}: ${res.status}`); continue; }
+      if ([404, 429, 503].includes(res.status) || /overloaded|unavailable|not found/i.test(errText)) {
+        lastErr = new Error(`${model}: ${res.status}`);
+        continue;
+      }
+      stopProgressCycle();
       throw new Error(`Gemini HTTP ${res.status}: ${errText.slice(0, 300)}`);
     }
-    const timer = startProgress(kind);
-    const reader = res.body.getReader(); const decoder = new TextDecoder();
+
+    // First successful response — start the live timer
+    beginLiveUI(model);
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
     let buffer = "", fullText = "", lastFinishReason = null, firstChunk = true, usage = { in: 0, out: 0 };
-    const startedAt = Date.now();
+
     const processLine = (line) => {
       const t = line.trim(); if (!t.startsWith("data:")) return;
       const d = t.slice(5).trim(); if (!d || d === "[DONE]") return;
       try {
-        const chunk = JSON.parse(d); const c = chunk.candidates?.[0];
+        const chunk = JSON.parse(d);
+        const c = chunk.candidates?.[0];
         if (c?.finishReason) lastFinishReason = c.finishReason;
-        if (chunk.usageMetadata) { if (chunk.usageMetadata.promptTokenCount) usage.in = chunk.usageMetadata.promptTokenCount; if (chunk.usageMetadata.candidatesTokenCount) usage.out = chunk.usageMetadata.candidatesTokenCount; }
+        if (chunk.usageMetadata) {
+          if (chunk.usageMetadata.promptTokenCount) usage.in = chunk.usageMetadata.promptTokenCount;
+          if (chunk.usageMetadata.candidatesTokenCount) usage.out = chunk.usageMetadata.candidatesTokenCount;
+        }
         const text = c?.content?.parts?.map(p => p.text).filter(Boolean).join("") || "";
-        if (text) { if (firstChunk) { clearInterval(timer); firstChunk = false; } fullText += text; onChunk(fullText, startedAt); }
+        if (text) {
+          if (firstChunk) { stopProgressCycle(); firstChunk = false; }
+          fullText += text;
+          onChunk(fullText, state.streamStartedAt);
+        }
       } catch {}
     };
-    while (true) {
-      const { value, done } = await reader.read(); if (done) break;
-      buffer += decoder.decode(value, { stream: true }); const lines = buffer.split("\n"); buffer = lines.pop();
-      for (const line of lines) processLine(line);
+
+    try {
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n"); buffer = lines.pop();
+        for (const line of lines) processLine(line);
+      }
+      if (buffer.trim()) processLine(buffer);
+    } catch (e) {
+      if (e.name === "AbortError") {
+        stopProgressCycle();
+        endLiveUI(model, true);
+        throw new Error("Cancelled");
+      }
+      throw e;
     }
-    if (buffer.trim()) processLine(buffer);
-    clearInterval(timer);
+
+    stopProgressCycle();
+    endLiveUI(model, false);
     onDone({ fullText, finishReason: lastFinishReason, usage, modelUsed: model });
     return;
   }
+  stopProgressCycle();
   throw lastErr || new Error("All models failed");
 }
 
@@ -1326,6 +1449,7 @@ function renderStreamChunk(text) {
 function looksLikeHtml(t) { t = t.trimStart(); return t.startsWith("<") || /<table[\s>]/i.test(t); }
 function renderFinal(t) { const el = $("result"); if (looksLikeHtml(t)) el.innerHTML = t; else el.innerHTML = marked.parse(t); }
 
+/* ───────────── GENERATE ───────────── */
 async function generateDoc(kind) {
   const isSOW = kind === "sow";
   const btn = isSOW ? $("sowGenerateBtn") : $("generateBtn");
@@ -1353,27 +1477,46 @@ async function generateDoc(kind) {
     const payload = isSOW ? buildSOWPayload() : buildLPPayload();
     state.lastPayload = payload;
     $("resultTitle").textContent = isSOW ? "Generating Scheme of Work…" : "Generating Lesson Plan…";
-    $("resultStatus").innerHTML = ""; $("result").innerHTML = "";
-    $("jumpToBottom").style.display = "none"; $("suggestSection").style.display = "none"; $("resultActions").style.display = "";
+    $("resultStatus").innerHTML = "";
+    $("jumpToBottom").style.display = "none";
+    $("suggestSection").style.display = "none";
+    $("resultActions").style.display = "";
     show("step-result");
     await streamGemini({
       systemInstruction, userMessage: JSON.stringify(payload, null, 2), kind,
       onChunk: (text, startedAt) => {
         renderStreamChunk(text);
-        const secs = ((Date.now() - startedAt) / 1000).toFixed(0);
-        $("resultStatus").innerHTML = `<span class="spinner"></span>Writing… ${text.length.toLocaleString()} chars · ${secs}s`;
+        const secs = startedAt ? ((Date.now() - startedAt) / 1000).toFixed(1) : "0.0";
+        $("resultStatus").textContent = `Writing… ${text.length.toLocaleString()} chars · ${secs}s`;
       },
       onDone: ({ fullText, finishReason, usage, modelUsed }) => {
         renderFinal(fullText); state.lastDoc = fullText;
-        $("jumpToBottom").style.display = "none"; addTokens(usage.in, usage.out);
-        if (finishReason && finishReason !== "STOP") setStatus("resultStatus", `⚠ finishReason="${finishReason}".`, true);
-        else setStatus("resultStatus", `Done. ${fullText.length.toLocaleString()} characters. (${modelUsed})`);
+        $("jumpToBottom").style.display = "none";
+        addTokens(usage.in, usage.out);
+        const elapsed = $("timerTag").textContent;
+        if (finishReason && finishReason !== "STOP") setStatus("resultStatus", `⚠ finishReason="${finishReason}". Elapsed: ${elapsed}`, true);
+        else setStatus("resultStatus", `Done. ${fullText.length.toLocaleString()} characters · ${elapsed} · ${modelUsed}`);
         $("resultTitle").textContent = isSOW ? "Scheme of Work" : "Lesson Plan";
-        $("suggestSection").style.display = ""; $("resultActions").style.display = "none";
-        $("suggestChanges").value = ""; $("regenerateBtn").disabled = true;
+        $("suggestSection").style.display = "";
+        $("resultActions").style.display = "none";
+        $("suggestChanges").value = "";
+        $("regenerateBtn").disabled = true;
       }
     });
-  } catch (e) { setStatus(statusId, `Error: ${e.message}`, true); showToast(e.message, "error", "Generation failed"); btn.disabled = false; }
+  } catch (e) {
+    stopProgressCycle();
+    if (e.message === "Cancelled") {
+      $("result").innerHTML = `<div style="text-align:center; padding:32px 12px; color:#fbbf24; font-size:14px;">Generation stopped by user.</div>`;
+      setStatus(statusId, `Stopped at ${$("timerTag").textContent}.`, "warn");
+    } else {
+      $("result").innerHTML = `<div style="text-align:center; padding:32px 12px; color:#f87171; font-size:14px;">Generation failed. ${escapeHtml(e.message)}</div>`;
+      setStatus(statusId, `Error: ${e.message}`, true);
+      showToast(e.message, "error", "Generation failed");
+    }
+    endLiveUI(null, false);
+    $("cancelBtn").style.display = "none";
+    btn.disabled = false;
+  }
 }
 
 async function regenerate() {
@@ -1386,23 +1529,39 @@ async function regenerate() {
     const promptRes = await fetch(`${PROMPTS_PREFIX}/${tpl.prompt_file}`);
     const systemInstruction = await promptRes.text();
     const userMessage = ["ORIGINAL REQUEST:", JSON.stringify(state.lastPayload, null, 2), "", "PREVIOUSLY GENERATED DOCUMENT:", state.lastDoc, "", "REQUESTED CHANGES:", changes, "", "INSTRUCTIONS:", "Revise the document above according to the requested changes.", "Preserve structure and formatting unless asked.", "Output the complete revised document."].join("\n");
-    $("resultTitle").textContent = "Revising…"; $("result").innerHTML = ""; $("jumpToBottom").style.display = "none";
+    $("resultTitle").textContent = "Revising…";
+    $("resultStatus").innerHTML = "";
+    $("jumpToBottom").style.display = "none";
     await streamGemini({
       systemInstruction, userMessage, kind: state.docType === "sow" ? "sow" : "lp",
       onChunk: (text, startedAt) => {
         renderStreamChunk(text);
-        const secs = ((Date.now() - startedAt) / 1000).toFixed(0);
-        $("resultStatus").innerHTML = `<span class="spinner"></span>Writing… ${text.length.toLocaleString()} chars · ${secs}s`;
+        const secs = startedAt ? ((Date.now() - startedAt) / 1000).toFixed(1) : "0.0";
+        $("resultStatus").textContent = `Writing… ${text.length.toLocaleString()} chars · ${secs}s`;
       },
       onDone: ({ fullText, usage, modelUsed }) => {
         renderFinal(fullText); state.lastDoc = fullText;
-        $("jumpToBottom").style.display = "none"; addTokens(usage.in, usage.out);
-        setStatus("resultStatus", `Done. ${fullText.length.toLocaleString()} characters. (${modelUsed})`);
+        $("jumpToBottom").style.display = "none";
+        addTokens(usage.in, usage.out);
+        const elapsed = $("timerTag").textContent;
+        setStatus("resultStatus", `Done. ${fullText.length.toLocaleString()} characters · ${elapsed} · ${modelUsed}`);
         $("resultTitle").textContent = (state.docType === "sow" ? "Scheme of Work" : "Lesson Plan") + " (revised)";
         btn.disabled = false;
       }
     });
-  } catch (e) { setStatus("resultStatus", `Error: ${e.message}`, true); btn.disabled = false; }
+  } catch (e) {
+    stopProgressCycle();
+    if (e.message === "Cancelled") {
+      $("result").innerHTML = `<div style="text-align:center; padding:32px 12px; color:#fbbf24; font-size:14px;">Revision stopped by user.</div>`;
+      setStatus("resultStatus", `Stopped at ${$("timerTag").textContent}.`, "warn");
+    } else {
+      $("result").innerHTML = `<div style="text-align:center; padding:32px 12px; color:#f87171; font-size:14px;">Revision failed. ${escapeHtml(e.message)}</div>`;
+      setStatus("resultStatus", `Error: ${e.message}`, true);
+    }
+    endLiveUI(null, false);
+    $("cancelBtn").style.display = "none";
+    btn.disabled = false;
+  }
 }
 
 function loadSettingsUI() {
@@ -1441,9 +1600,11 @@ $("sowPreviewBtn").onclick = () => previewPayload("sow");
 $("generateBtn").onclick = () => generateDoc("lp");
 $("sowGenerateBtn").onclick = () => generateDoc("sow");
 $("regenerateBtn").onclick = regenerate;
+$("cancelBtn").onclick = () => { $("cancelBtn").disabled = true; cancelStream(); };
 $("suggestChanges").oninput = e => { $("regenerateBtn").disabled = !e.target.value.trim(); };
 $("jumpToBottom").onclick = () => { const el = $("result"); el.scrollTop = el.scrollHeight; $("jumpToBottom").style.display = "none"; };
 $("startOver").onclick = () => {
+  cancelStream();
   state.classData = null; state.selected = null; state.lpTemplate = null; state.sowTemplate = null;
   state.form = {}; state.sowForm = {}; state.aiDecide = {}; state.sowAiDecide = {}; state.sowColumnInstructions = {};
   state.sectionOpen = {}; state._flatItems = null; state.docType = null; state.lastPayload = null; state.lastDoc = "";
