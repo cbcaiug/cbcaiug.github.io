@@ -10,11 +10,10 @@
   body { font-family: system-ui, -apple-system, sans-serif; background: #0f1115; color: #e6e8eb; margin: 0; padding: 16px; max-width: 900px; margin: 0 auto; line-height: 1.5; }
   h1 { font-size: 20px; margin: 0 0 4px; }
   h2 { font-size: 16px; margin: 24px 0 12px; color: #9aa3ad; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
-  h3 { font-size: 15px; margin: 16px 0 8px; }
-  label { display: block; font-size: 13px; color: #9aa3ad; margin: 12px 0 4px; }
-  input, select, textarea { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid #2a2f38; background: #171a21; color: #e6e8eb; font-size: 15px; font-family: inherit; }
+  label { display: block; font-size: 13px; color: #9aa3ad; margin: 0; }
+  input[type="text"], input[type="number"], input[type="password"], select, textarea { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid #2a2f38; background: #171a21; color: #e6e8eb; font-size: 15px; font-family: inherit; }
   textarea { resize: vertical; min-height: 60px; }
-  button { padding: 12px 20px; border-radius: 8px; border: 1px solid #2f6fed; background: #2f6fed; color: #fff; font-size: 15px; font-weight: 600; cursor: pointer; }
+  button { padding: 12px 20px; border-radius: 8px; border: 1px solid #2f6fed; background: #2f6fed; color: #fff; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit; }
   button:disabled { background: #2a2f38; border-color: #2a2f38; color: #6b7280; cursor: not-allowed; }
   button.secondary { background: #171a21; border-color: #2a2f38; color: #e6e8eb; font-weight: 500; padding: 8px 14px; font-size: 13px; }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -24,9 +23,11 @@
   .unit-item:hover { border-color: #2f6fed; }
   .unit-title { font-weight: 600; margin-bottom: 4px; }
   .unit-meta { font-size: 12px; color: #6b7280; }
-  .fieldgroup { border: 1px solid #2a2f38; border-radius: 8px; padding: 12px; margin: 12px 0; }
-  .fieldgroup legend { padding: 0 6px; font-size: 12px; color: #9aa3ad; text-transform: uppercase; letter-spacing: .05em; }
-  .checkbox { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; font-size: 14px; cursor: pointer; font-weight: normal; color: #e6e8eb; }
+  .fieldgroup { border: 1px solid #2a2f38; border-radius: 8px; padding: 12px; margin: 0; }
+  .fieldgroup legend { display: none; }
+  .fieldgroup-options { column-count: 2; column-gap: 20px; }
+  @media (max-width: 640px) { .fieldgroup-options { column-count: 1; } }
+  .checkbox { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; font-size: 14px; cursor: pointer; font-weight: normal; color: #e6e8eb; break-inside: avoid; }
   .checkbox input { width: auto; margin-top: 3px; }
   .badge { display: inline-block; padding: 1px 6px; border-radius: 999px; background: #2a2f38; font-size: 10px; color: #9aa3ad; margin-right: 6px; text-transform: uppercase; letter-spacing: .05em; }
   .sticky-footer { position: sticky; bottom: 0; padding: 12px 0; background: #0f1115; border-top: 1px solid #2a2f38; margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
@@ -45,6 +46,31 @@
   details#settings { margin: 12px 0; padding: 12px; border: 1px solid #2a2f38; border-radius: 8px; background: #171a21; }
   details#settings summary { cursor: pointer; font-size: 13px; color: #9aa3ad; text-transform: uppercase; letter-spacing: .05em; }
   details#settings[open] summary { margin-bottom: 12px; }
+
+  /* Collapsible sections */
+  details.section { margin: 8px 0; padding: 10px 14px; border: 1px solid #2a2f38; border-radius: 8px; background: #13161c; }
+  details.section > summary { cursor: pointer; font-size: 13px; font-weight: 600; color: #e6e8eb; text-transform: uppercase; letter-spacing: .05em; list-style: none; display: flex; align-items: center; gap: 8px; }
+  details.section > summary::-webkit-details-marker { display: none; }
+  details.section > summary::before { content: "▸"; display: inline-block; transition: transform .15s; color: #6b7280; font-size: 10px; }
+  details.section[open] > summary::before { transform: rotate(90deg); }
+  details.section > summary .section-req { color: #f87171; font-size: 10px; margin-left: auto; }
+  details.section > *:not(summary) { margin-top: 12px; }
+
+  /* Field wrapper */
+  .field-wrapper { margin: 14px 0; }
+  .field-wrapper:first-child { margin-top: 4px; }
+  .field-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; gap: 8px; }
+  .field-header label { font-size: 13px; color: #9aa3ad; }
+  .required-mark { color: #f87171; font-weight: 700; }
+  .sparkle-btn { width: auto; padding: 4px 10px; font-size: 13px; border-radius: 6px; background: #171a21; border: 1px solid #2a2f38; color: #6b7280; cursor: pointer; line-height: 1; transition: all .15s; }
+  .sparkle-btn:hover { color: #e6e8eb; border-color: #4b5563; }
+  .sparkle-btn.active { background: #f59e0b; border-color: #f59e0b; color: #0f1115; font-weight: 700; }
+  .field-wrapper.sparkled .field-input { opacity: 0.35; pointer-events: none; }
+  .field-wrapper.sparkled .field-header label { color: #6b7280; }
+
+  .suggest-section { margin-top: 20px; padding: 14px; border: 1px solid #2a2f38; border-radius: 8px; background: #13161c; }
+  .suggest-section h3 { margin: 0 0 8px; font-size: 14px; }
+  .suggest-section textarea { min-height: 80px; margin-bottom: 10px; }
 </style>
 </head>
 <body>
@@ -60,12 +86,12 @@
     <div class="muted" style="margin-top:4px">Saved to this browser only. Never sent anywhere except Google.</div>
 
     <label>Model</label>
-    <input type="text" id="modelInput" placeholder="gemini-2.5-flash" value="gemini-2.5-flash">
-    <div class="muted" style="margin-top:4px">e.g. gemini-2.5-flash, gemini-2.5-pro, gemini-3.8-flash</div>
+    <input type="text" id="modelInput" placeholder="gemini-3.5-flash" value="gemini-3.5-flash">
+    <div class="muted" style="margin-top:4px">e.g. gemini-3.5-flash, gemini-2.5-pro</div>
 
     <div style="margin-top:12px">
-      <button class="secondary" id="saveSettings">Save</button>
-      <button class="secondary" id="clearSettings">Clear key</button>
+      <button class="secondary" id="saveSettings" type="button">Save</button>
+      <button class="secondary" id="clearSettings" type="button">Clear key</button>
       <span class="status" id="settingsStatus"></span>
     </div>
   </div>
@@ -118,9 +144,9 @@
   <p class="muted" id="wizardMeta"></p>
   <form id="wizardForm"></form>
   <div class="sticky-footer">
-    <button class="secondary" id="backToUnits">← Back</button>
+    <button type="button" class="secondary" id="backToUnits">← Back</button>
     <button type="button" class="secondary" id="previewBtn">Preview Payload</button>
-    <button id="generateBtn" disabled>Generate Lesson Plan</button>
+    <button type="button" id="generateBtn" disabled>Generate Lesson Plan</button>
   </div>
   <div class="status" id="genStatus"></div>
 </section>
@@ -128,9 +154,22 @@
 <section id="step-result" style="display:none">
   <h2 id="resultTitle">Output</h2>
   <div id="result"></div>
-  <div style="margin-top:16px">
-    <button class="secondary" id="backToWizard">← Back to wizard</button>
-    <button class="secondary" id="startOver">Start over</button>
+
+  <div class="suggest-section" id="suggestSection" style="display:none">
+    <h3>Suggest Changes</h3>
+    <p class="muted" style="margin:0 0 8px">Describe edits for the plan above. Regenerate resends the syllabus payload, this plan, and your changes.</p>
+    <textarea id="suggestChanges" placeholder="e.g. Shorten the development section. Replace the group activity with a teacher demonstration. Add a homework task."></textarea>
+    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <button type="button" id="regenerateBtn" disabled>Regenerate</button>
+      <button type="button" class="secondary" id="backToWizard">← Back to wizard</button>
+      <button type="button" class="secondary" id="startOver">Start over</button>
+    </div>
+    <div class="status" id="regenStatus"></div>
+  </div>
+
+  <div id="resultActions" style="margin-top:16px">
+    <button type="button" class="secondary" id="backToWizard2">← Back to wizard</button>
+    <button type="button" class="secondary" id="startOver2">Start over</button>
   </div>
 </section>
 
@@ -147,10 +186,16 @@ const BASE = "https://cbcaiug.cbcaitool.workers.dev";
 const MANIFEST_URL = `${BASE}/_manifest.json`;
 const CURRICULUM_PREFIX = `${BASE}/curriculum`;
 const PROMPTS_PREFIX = `${BASE}/prompts`;
+const DEFAULT_MODEL = "gemini-3.5-flash";
 
 /* ──────────────────────────────────────────────────────────────
    TEMPLATES
 ────────────────────────────────────────────────────────────── */
+const UCE_GENERIC_SKILLS = ["Creativity and innovation","Mathematical computation and ICT proficiency","Critical thinking and problem-solving","Co-operation and self-directed learning","Communication"];
+const UCE_VALUES = ["Respect for humanity and environment","Honesty","Justice and fairness","Hard work for self-reliance","Integrity","Creativity and innovativeness","Social Responsibility","Social Harmony","National Unity","National Consciousness and patriotism"];
+const UCE_KEY_LO = ["Self-assured individuals","Responsible and patriotic citizens","Lifelong learners","Positive contributors to society"];
+const UCE_CROSS = ["Environmental awareness","Health awareness","Mixed abilities and involvement","Life skills","Socio-economic challenges","Citizenship and patriotism"];
+
 const TEMPLATES = [
   {
     template_id: "uganda_uce_lesson_plan_v1",
@@ -158,25 +203,34 @@ const TEMPLATES = [
     label: "Uganda UCE Lesson Plan (5E)",
     prompt_file: "uce.txt",
     duration_default: 80,
+    sections: ["Basic Details","Lesson Parameters","Learning Outcomes","Activities","Curriculum Alignment","Lesson Context","Materials","Additional Information"],
     user_fields: [
-      { id: "school_name", label: "School Name", type: "text" },
-      { id: "teacher_name", label: "Teacher's Name", type: "text" },
-      { id: "term", label: "Term", type: "text" },
-      { id: "date", label: "Date", type: "text" },
-      { id: "time", label: "Time", type: "text" },
-      { id: "duration_minutes", label: "Duration (minutes)", type: "number", required: true, default: 80 },
-      { id: "class_size", label: "Number of Learners", type: "number" },
-      { id: "selected_outcomes", label: "Learning Outcomes to Cover", type: "multi_from_unit", source: "objectives.all", required: true, group_by: "rawDomain" },
-      { id: "selected_activities", label: "Suggested Learning Activities", type: "multi_from_unit", source: "activities" },
-      { id: "generic_skills", label: "Generic Skill(s)", type: "multi_select", max: 3, options: ["Creativity and innovation","Mathematical computation and ICT proficiency","Critical thinking and problem-solving","Co-operation and self-directed learning","Communication"] },
-      { id: "values", label: "Value(s)", type: "multi_select", max: 3, options: ["Respect for humanity and environment","Honesty","Justice and fairness","Hard work for self-reliance","Integrity","Creativity and innovativeness","Social Responsibility","Social Harmony","National Unity","National Consciousness and patriotism"] },
-      { id: "key_learning_outcomes", label: "Key Learning Outcomes", type: "multi_select", max: 3, options: ["Self-assured individuals","Responsible and patriotic citizens","Lifelong learners","Positive contributors to society"] },
-      { id: "cross_cutting_issues", label: "Cross-cutting Issues", type: "multi_select", max: 3, options: ["Environmental awareness","Health awareness","Mixed abilities and involvement","Life skills","Socio-economic challenges","Citizenship and patriotism"] },
-      { id: "prerequisite_knowledge", label: "Pre-Requisite Knowledge", type: "textarea" },
-      { id: "references", label: "References", type: "textarea" },
-      { id: "user_materials", label: "Additional Materials", type: "textarea" },
-      { id: "use_only_user_materials", label: "Use only my materials", type: "boolean", default: false },
-      { id: "user_notes", label: "Notes for the AI", type: "textarea" }
+      { id: "school_name", label: "School Name", type: "text", section: "Basic Details" },
+      { id: "teacher_name", label: "Teacher's Name", type: "text", section: "Basic Details" },
+      { id: "term", label: "Term", type: "text", section: "Basic Details" },
+      { id: "date", label: "Date", type: "text", section: "Basic Details" },
+      { id: "time", label: "Time", type: "text", section: "Basic Details" },
+
+      { id: "duration_minutes", label: "Duration (minutes)", type: "number", required: true, default: 80, section: "Lesson Parameters" },
+      { id: "class_size", label: "Number of Learners", type: "number", section: "Lesson Parameters" },
+
+      { id: "selected_outcomes", label: "Learning Outcomes to Cover", type: "multi_from_unit", source: "objectives.all", required: true, section: "Learning Outcomes" },
+
+      { id: "selected_activities", label: "Suggested Learning Activities", type: "multi_from_unit", source: "activities", section: "Activities" },
+
+      { id: "generic_skills", label: "Generic Skill(s)", type: "multi_select", max: 3, options: UCE_GENERIC_SKILLS, section: "Curriculum Alignment" },
+      { id: "values", label: "Value(s)", type: "multi_select", max: 3, options: UCE_VALUES, section: "Curriculum Alignment" },
+      { id: "key_learning_outcomes", label: "Key Learning Outcomes", type: "multi_select", max: 3, options: UCE_KEY_LO, section: "Curriculum Alignment" },
+      { id: "cross_cutting_issues", label: "Cross-cutting Issues", type: "multi_select", max: 3, options: UCE_CROSS, section: "Curriculum Alignment" },
+
+      { id: "prerequisite_knowledge", label: "Pre-Requisite Knowledge", type: "textarea", section: "Lesson Context" },
+      { id: "references", label: "References", type: "textarea", section: "Lesson Context" },
+
+      { id: "selected_materials", label: "Syllabus Materials", type: "multi_from_unit", source: "materials", section: "Materials" },
+      { id: "user_materials", label: "Additional Materials", type: "textarea", section: "Materials" },
+      { id: "use_only_user_materials", label: "Use only my materials (ignore syllabus materials)", type: "boolean", default: false, section: "Materials" },
+
+      { id: "user_notes", label: "Additional information", type: "textarea", section: "Additional Information" }
     ]
   },
   {
@@ -185,29 +239,38 @@ const TEMPLATES = [
     label: "Uganda UACE Lesson Plan (5E)",
     prompt_file: "uace.txt",
     duration_default: 80,
+    sections: ["Basic Details","Lesson Parameters","Learning Outcomes","Activities","Curriculum Alignment","Lesson Context","Materials","Additional Information"],
     user_fields: [
-      { id: "school_name", label: "School Name", type: "text" },
-      { id: "teacher_name", label: "Name of the Teacher", type: "text" },
-      { id: "date", label: "Date", type: "text" },
-      { id: "term", label: "Term", type: "text" },
-      { id: "time_start_end", label: "Time (Start–End)", type: "text" },
-      { id: "duration_minutes", label: "Duration (minutes)", type: "number", required: true, default: 80 },
-      { id: "class_size_total", label: "Total Learners", type: "number" },
-      { id: "class_size_boys", label: "Boys", type: "number" },
-      { id: "class_size_girls", label: "Girls", type: "number" },
-      { id: "class_size_sen", label: "SEN", type: "number" },
-      { id: "selected_outcomes", label: "Learning Outcome(s) to Cover", type: "multi_from_unit", source: "objectives.all", required: true, group_by: "rawDomain" },
-      { id: "selected_activities", label: "Suggested Activities", type: "multi_from_unit", source: "activities" },
-      { id: "value", label: "Value", type: "select", options: ["Respect for humanity and environment","Honesty","Justice and fairness","Hard work for self-reliance","Integrity","Creativity and innovativeness","Social Responsibility","Social Harmony","National Unity","National Consciousness and patriotism"] },
-      { id: "cross_cutting_issue", label: "Cross-cutting Issue", type: "select", options: ["Environmental awareness","Health awareness","Mixed abilities and involvement","Life skills","Socio-economic challenges","Citizenship and patriotism"] },
-      { id: "generic_skill", label: "Generic Skill", type: "select", options: ["Creativity and innovation","Mathematical computation and ICT proficiency","Critical thinking and problem-solving","Co-operation and self-directed learning","Communication"] },
-      { id: "rationale", label: "Rationale", type: "textarea" },
-      { id: "differentiated_learning", label: "Differentiated Learning", type: "textarea" },
-      { id: "key_words", label: "Key words", type: "textarea" },
-      { id: "prerequisite_knowledge", label: "Prerequisite Knowledge", type: "textarea" },
-      { id: "user_materials", label: "Teaching/learning Resources (additional)", type: "textarea" },
-      { id: "references", label: "References", type: "textarea" },
-      { id: "user_notes", label: "Notes for the AI", type: "textarea" }
+      { id: "school_name", label: "School Name", type: "text", section: "Basic Details" },
+      { id: "teacher_name", label: "Name of the Teacher", type: "text", section: "Basic Details" },
+      { id: "term", label: "Term", type: "text", section: "Basic Details" },
+      { id: "date", label: "Date", type: "text", section: "Basic Details" },
+      { id: "time_start_end", label: "Time (Start–End)", type: "text", section: "Basic Details" },
+
+      { id: "duration_minutes", label: "Duration (minutes)", type: "number", required: true, default: 80, section: "Lesson Parameters" },
+      { id: "class_size_total", label: "Total Learners", type: "number", section: "Lesson Parameters" },
+      { id: "class_size_boys", label: "Boys", type: "number", section: "Lesson Parameters" },
+      { id: "class_size_girls", label: "Girls", type: "number", section: "Lesson Parameters" },
+      { id: "class_size_sen", label: "SEN", type: "number", section: "Lesson Parameters" },
+
+      { id: "selected_outcomes", label: "Learning Outcome(s) to Cover", type: "multi_from_unit", source: "objectives.all", required: true, section: "Learning Outcomes" },
+
+      { id: "selected_activities", label: "Suggested Activities", type: "multi_from_unit", source: "activities", section: "Activities" },
+
+      { id: "value", label: "Value(s)", type: "multi_select", max: 3, options: UCE_VALUES, section: "Curriculum Alignment" },
+      { id: "cross_cutting_issue", label: "Cross-cutting Issue(s)", type: "multi_select", max: 3, options: UCE_CROSS, section: "Curriculum Alignment" },
+      { id: "generic_skill", label: "Generic Skill(s)", type: "multi_select", max: 3, options: UCE_GENERIC_SKILLS, section: "Curriculum Alignment" },
+
+      { id: "rationale", label: "Rationale", type: "textarea", section: "Lesson Context" },
+      { id: "differentiated_learning", label: "Differentiated Learning", type: "textarea", section: "Lesson Context" },
+      { id: "key_words", label: "Key words", type: "textarea", section: "Lesson Context" },
+      { id: "prerequisite_knowledge", label: "Prerequisite Knowledge", type: "textarea", section: "Lesson Context" },
+      { id: "references", label: "References", type: "textarea", section: "Lesson Context" },
+
+      { id: "selected_materials", label: "Syllabus Materials", type: "multi_from_unit", source: "materials", section: "Materials" },
+      { id: "user_materials", label: "Additional Materials", type: "textarea", section: "Materials" },
+
+      { id: "user_notes", label: "Additional information", type: "textarea", section: "Additional Information" }
     ]
   },
   {
@@ -216,25 +279,33 @@ const TEMPLATES = [
     label: "Rwanda CBC Lesson Plan (S1–S6)",
     prompt_file: "rwanda.txt",
     duration_default: 40,
+    sections: ["Basic Details","Lesson Parameters","Lesson Title","Learning Objectives","Activities","Lesson Context","Materials","Additional Information"],
     user_fields: [
-      { id: "school_name", label: "School Name", type: "text" },
-      { id: "teacher_name", label: "Teacher's Name", type: "text" },
-      { id: "term", label: "Term", type: "text" },
-      { id: "date", label: "Date", type: "text" },
-      { id: "unit_no", label: "Unit No", type: "text" },
-      { id: "lesson_no", label: "Lesson No", type: "text" },
-      { id: "duration_minutes", label: "Duration (minutes)", type: "number", required: true, default: 40 },
-      { id: "class_size", label: "Class size", type: "number" },
-      { id: "sen_note", label: "Special educational needs (with numbers)", type: "textarea" },
-      { id: "lesson_title", label: "Title of the lesson", type: "text", required: true },
-      { id: "selected_knowledge", label: "Knowledge and understanding objectives", type: "multi_from_unit", source: "objectives.knowledge" },
-      { id: "selected_skills", label: "Skills objectives", type: "multi_from_unit", source: "objectives.skills" },
-      { id: "selected_attitudes", label: "Attitudes and values objectives", type: "multi_from_unit", source: "objectives.attitudes" },
-      { id: "selected_activities", label: "Suggested Learning Activities", type: "multi_from_unit", source: "activities" },
-      { id: "plan_of_class", label: "Plan of this class (Location: in/outside)", type: "text" },
-      { id: "user_materials", label: "Learning materials (additional)", type: "textarea" },
-      { id: "references", label: "References", type: "textarea" },
-      { id: "user_notes", label: "Notes for the AI", type: "textarea" }
+      { id: "school_name", label: "School Name", type: "text", section: "Basic Details" },
+      { id: "teacher_name", label: "Teacher's Name", type: "text", section: "Basic Details" },
+      { id: "term", label: "Term", type: "text", section: "Basic Details" },
+      { id: "date", label: "Date", type: "text", section: "Basic Details" },
+      { id: "unit_no", label: "Unit No", type: "text", section: "Basic Details" },
+      { id: "lesson_no", label: "Lesson No", type: "text", section: "Basic Details" },
+
+      { id: "duration_minutes", label: "Duration (minutes)", type: "number", required: true, default: 40, section: "Lesson Parameters" },
+      { id: "class_size", label: "Class size", type: "number", section: "Lesson Parameters" },
+      { id: "sen_note", label: "Special educational needs (with numbers)", type: "textarea", section: "Lesson Parameters" },
+
+      { id: "lesson_title", label: "Title of the lesson", type: "text", required: true, section: "Lesson Title" },
+
+      { id: "selected_knowledge", label: "Knowledge and understanding objectives", type: "multi_from_unit", source: "objectives.knowledge", section: "Learning Objectives" },
+      { id: "selected_skills", label: "Skills objectives", type: "multi_from_unit", source: "objectives.skills", section: "Learning Objectives" },
+      { id: "selected_attitudes", label: "Attitudes and values objectives", type: "multi_from_unit", source: "objectives.attitudes", section: "Learning Objectives" },
+
+      { id: "selected_activities", label: "Suggested Learning Activities", type: "multi_from_unit", source: "activities", section: "Activities" },
+
+      { id: "plan_of_class", label: "Plan of this class (Location: in/outside)", type: "text", section: "Lesson Context" },
+
+      { id: "selected_materials", label: "Syllabus Materials", type: "multi_from_unit", source: "materials", section: "Materials" },
+      { id: "user_materials", label: "Additional Materials", type: "textarea", section: "Materials" },
+
+      { id: "user_notes", label: "Additional information", type: "textarea", section: "Additional Information" }
     ]
   }
 ];
@@ -249,10 +320,7 @@ function getTemplate(country, curriculum, level) {
 /* ──────────────────────────────────────────────────────────────
    LOADERS
 ────────────────────────────────────────────────────────────── */
-const LOADERS = {
-  "rwanda/reb": loadRwandaClass,
-  "uganda/ncdc": loadUgandaClass
-};
+const LOADERS = { "rwanda/reb": loadRwandaClass, "uganda/ncdc": loadUgandaClass };
 
 function loadRwandaClass(json, sourceFile) {
   const meta = json.curriculum_metadata ?? {};
@@ -265,13 +333,11 @@ function loadRwandaClass(json, sourceFile) {
         units.push(mapRwandaTopic(topic, meta, classLevel, level, sourceFile));
   return { country: "rwanda", curriculum: "reb", level, subject: meta.subject ?? "", classLevel, units };
 }
-
 function inferRwandaLevel(cg) {
   const m = cg.match(/S(\d)/i);
   if (!m) return null;
   return parseInt(m[1], 10) <= 3 ? "o-level" : "a-level";
 }
-
 function mapRwandaTopic(t, meta, classLevel, level, sourceFile) {
   const m = t.topic_metadata ?? {};
   const lod = t.learning_objectives_by_domain ?? {};
@@ -286,8 +352,7 @@ function mapRwandaTopic(t, meta, classLevel, level, sourceFile) {
   const excluded = (t.content_scope?.explicitly_excluded ?? []).map(e => typeof e === "string" ? e : e.text_verbatim).filter(Boolean);
   const projReq = t.project_requirements ?? {};
   const project = projReq.is_project_required
-    ? { required: true, details: projReq.project_scope_verbatim ?? "" }
-    : null;
+    ? { required: true, details: projReq.project_scope_verbatim ?? "" } : null;
   return {
     country: "rwanda", curriculum: "reb", level, subject: meta.subject ?? "", classLevel,
     unitNumber: Number(m.sequence_order) || 0,
@@ -296,22 +361,16 @@ function mapRwandaTopic(t, meta, classLevel, level, sourceFile) {
     durationPeriods: Number(m.recommended_duration_periods) || 0,
     coreCompetency: t.core_competency ?? "",
     objectives: { all, knowledge, skills, attitudes },
-    contentScope: {
-      mustCover: t.content_scope?.must_cover ?? [],
-      explicitlyExcluded: excluded
-    },
+    contentScope: { mustCover: t.content_scope?.must_cover ?? [], explicitlyExcluded: excluded },
     activities: (t.suggested_learning_activities ?? []).map(a => a.description ?? String(a)),
     materials: parseMaterialsString(t.materials_verbatim ?? ""),
-    project,
-    sourceFile
+    project, sourceFile
   };
 }
-
 function parseMaterialsString(s) {
   if (!s) return [];
   return s.replace(/\.$/, "").split(/[,;]/).map(x => x.trim()).filter(Boolean);
 }
-
 function loadUgandaClass(json, sourceFile) {
   const meta = json.curriculum_metadata ?? {};
   const classObj = (json.classes ?? [])[0] ?? {};
@@ -324,14 +383,12 @@ function loadUgandaClass(json, sourceFile) {
         units.push(mapUgandaTopic(topic, meta, classLevel, level, sourceFile));
   return { country: "uganda", curriculum: "ncdc", level, subject: meta.subject ?? "", classLevel, units };
 }
-
 function inferUgandaLevel(classCode, levelStr) {
   const s = `${classCode} ${levelStr}`.toLowerCase();
   if (/s[56]|a-?level|advanced/.test(s)) return "uace";
   if (/s[1234]|lower/.test(s)) return "uce";
   return null;
 }
-
 function mapUgandaTopic(t, meta, classLevel, level, sourceFile) {
   const m = t.topic_metadata ?? {};
   const outcomes = t.learning_outcomes ?? [];
@@ -349,8 +406,7 @@ function mapUgandaTopic(t, meta, classLevel, level, sourceFile) {
   const excluded = (t.content_scope?.explicitly_excluded ?? []).map(e => typeof e === "string" ? e : e.text_verbatim).filter(Boolean);
   const projReq = t.project_requirements ?? {};
   const project = projReq.is_project_required
-    ? { required: true, details: projReq.project_scope_verbatim ?? "" }
-    : null;
+    ? { required: true, details: projReq.project_scope_verbatim ?? "" } : null;
   return {
     country: "uganda", curriculum: "ncdc", level, subject: meta.subject ?? "", classLevel,
     unitNumber: Number(m.sequence_order) || 0,
@@ -359,17 +415,12 @@ function mapUgandaTopic(t, meta, classLevel, level, sourceFile) {
     durationPeriods: Number(m.recommended_duration_periods) || 0,
     coreCompetency: t.core_competency ?? "",
     objectives: { all, knowledge, skills, attitudes },
-    contentScope: {
-      mustCover: t.content_scope?.must_cover ?? [],
-      explicitlyExcluded: excluded
-    },
+    contentScope: { mustCover: t.content_scope?.must_cover ?? [], explicitlyExcluded: excluded },
     activities: (t.suggested_learning_activities ?? []).map(a => a.description ?? ""),
     materials: Array.from(materialSet),
-    project,
-    sourceFile
+    project, sourceFile
   };
 }
-
 function domainFromUganda(d) {
   const s = d.toLowerCase();
   const att = /attitude|value|v\/a|\(v\)|\(a\)/.test(s);
@@ -385,20 +436,48 @@ function domainFromUganda(d) {
 }
 
 /* ──────────────────────────────────────────────────────────────
+   STATE
+────────────────────────────────────────────────────────────── */
+const $ = id => document.getElementById(id);
+const state = {
+  parsedFiles: [],
+  classData: null,
+  unit: null,
+  template: null,
+  form: {},
+  aiDecide: {},
+  lastPayload: null,
+  lastPlanText: "",
+};
+
+/* ──────────────────────────────────────────────────────────────
    PAYLOAD BUILDER
 ────────────────────────────────────────────────────────────── */
-function buildPayload(unit, form, template) {
+function buildPayload(unit, form, template, aiDecide) {
   const userInputs = {};
+  const aiDecideList = [];
+
   for (const f of template.user_fields) {
     if (f.type === "multi_from_unit") continue;
+    if (f.id === "selected_materials") continue;
     if (f.id === "user_materials") continue;
     if (f.id === "use_only_user_materials") continue;
     if (f.id === "user_notes") continue;
-    userInputs[f.id] = form[f.id] ?? f.default ?? null;
+
+    if (aiDecide[f.id]) {
+      userInputs[f.id] = null;
+      aiDecideList.push(f.id);
+    } else {
+      userInputs[f.id] = form[f.id] ?? f.default ?? null;
+    }
   }
 
+  // Objectives
   let selectedObjectives;
-  if (Array.isArray(form.selected_outcomes) && form.selected_outcomes.length) {
+  if (aiDecide["selected_outcomes"]) {
+    selectedObjectives = null;
+    aiDecideList.push("selected_outcomes");
+  } else if (Array.isArray(form.selected_outcomes) && form.selected_outcomes.length) {
     selectedObjectives = form.selected_outcomes;
   } else if (form.selected_knowledge || form.selected_skills || form.selected_attitudes) {
     selectedObjectives = [
@@ -406,15 +485,69 @@ function buildPayload(unit, form, template) {
       ...(form.selected_skills ?? []).map(t => ({ text: t, domain: "skills" })),
       ...(form.selected_attitudes ?? []).map(t => ({ text: t, domain: "attitudes" }))
     ];
+  } else if (form.selected_knowledge !== undefined || form.selected_skills !== undefined || form.selected_attitudes !== undefined) {
+    selectedObjectives = []; // Rwanda mode with nothing picked
   } else {
     selectedObjectives = unit.objectives.all;
   }
 
-  const userMaterials = Array.isArray(form.user_materials)
-    ? form.user_materials
-    : typeof form.user_materials === "string"
-      ? form.user_materials.split("\n").map(s => s.trim()).filter(Boolean)
-      : [];
+  // Activities
+  let selectedActivities;
+  if (aiDecide["selected_activities"]) {
+    selectedActivities = null;
+    aiDecideList.push("selected_activities");
+  } else if (Array.isArray(form.selected_activities) && form.selected_activities.length) {
+    selectedActivities = form.selected_activities;
+  } else {
+    selectedActivities = unit.activities;
+  }
+
+  // Materials
+  let selectedMaterials;
+  if (aiDecide["selected_materials"]) {
+    selectedMaterials = null;
+    aiDecideList.push("selected_materials");
+  } else if (Array.isArray(form.selected_materials) && form.selected_materials.length) {
+    selectedMaterials = form.selected_materials;
+  } else {
+    selectedMaterials = unit.materials;
+  }
+
+  // User materials
+  let userMaterials;
+  if (aiDecide["user_materials"]) {
+    userMaterials = null;
+    aiDecideList.push("user_materials");
+  } else {
+    userMaterials = Array.isArray(form.user_materials)
+      ? form.user_materials
+      : typeof form.user_materials === "string"
+        ? form.user_materials.split("\n").map(s => s.trim()).filter(Boolean)
+        : [];
+  }
+
+  const content = {
+    selected_objectives: selectedObjectives && selectedObjectives.map(o => ({
+      text: o.text ?? o,
+      domain: o.domain ?? "other",
+      rawDomain: o.rawDomain
+    })),
+    selected_activities: selectedActivities,
+    selected_materials: selectedMaterials,
+    user_materials: userMaterials,
+    use_only_user_materials: !!form.use_only_user_materials &&
+      !aiDecide["selected_materials"] && !aiDecide["user_materials"]
+  };
+
+  if (aiDecide["selected_outcomes"]) {
+    content.available_objectives = unit.objectives.all;
+  }
+  if (aiDecide["selected_activities"]) {
+    content.available_activities = unit.activities;
+  }
+  if (aiDecide["selected_materials"]) {
+    content.available_materials = unit.materials;
+  }
 
   return {
     template_id: template.template_id,
@@ -428,28 +561,16 @@ function buildPayload(unit, form, template) {
       excluded_content: unit.contentScope.explicitlyExcluded,
       required_project: unit.project
     },
-    content: {
-      selected_objectives: selectedObjectives.map(o => ({
-        text: o.text ?? o,
-        domain: o.domain ?? "other",
-        rawDomain: o.rawDomain
-      })),
-      selected_activities: Array.isArray(form.selected_activities) && form.selected_activities.length
-        ? form.selected_activities : unit.activities,
-      syllabus_materials: unit.materials,
-      user_materials: userMaterials,
-      use_only_user_materials: !!form.use_only_user_materials
-    },
-    user_inputs: { ...userInputs, user_notes: form.user_notes ?? null }
+    content,
+    user_inputs: { ...userInputs, user_notes: form.user_notes ?? null },
+    ai_decide: aiDecideList,
+    _note: "Fields listed in ai_decide are delegated to the AI. Other fields with null values were left blank by the user."
   };
 }
 
 /* ──────────────────────────────────────────────────────────────
-   UI STATE + FLOW
+   UI HELPERS
 ────────────────────────────────────────────────────────────── */
-const $ = id => document.getElementById(id);
-const state = { allFiles: [], parsedFiles: [], classData: null, unit: null, template: null, form: {} };
-
 function setDebug(obj) { $("debug").textContent = JSON.stringify(obj, null, 2); }
 function setStatus(id, msg, isErr) {
   const el = $(id);
@@ -457,7 +578,9 @@ function setStatus(id, msg, isErr) {
   el.innerHTML = msg || "";
   el.style.color = isErr ? "#f87171" : "#9aa3ad";
 }
-function show(id) { ["step-picker","step-units","step-wizard","step-result"].forEach(s => $(s).style.display = s === id ? "" : "none"); }
+function show(id) {
+  ["step-picker","step-units","step-wizard","step-result"].forEach(s => $(s).style.display = s === id ? "" : "none");
+}
 function uniq(a) { return [...new Set(a)].sort(); }
 function fill(sel, opts) { sel.innerHTML = ""; for (const o of opts) { const e = document.createElement("option"); e.value = o; e.textContent = o; sel.appendChild(e); } }
 function parsePath(path) {
@@ -471,7 +594,16 @@ function parsePath(path) {
     file, path
   };
 }
+function canSparkle(field) {
+  if (field.required) return false;
+  if (field.id === "user_notes") return false;
+  if (field.id === "use_only_user_materials") return false;
+  return true;
+}
 
+/* ──────────────────────────────────────────────────────────────
+   INIT + PICKER
+────────────────────────────────────────────────────────────── */
 async function init() {
   try {
     const res = await fetch(MANIFEST_URL);
@@ -485,7 +617,6 @@ async function init() {
     setStatus("loadStatus", `Manifest load failed: ${e.message}`, true);
   }
 }
-
 function populateCountries() {
   fill($("country"), uniq(state.parsedFiles.map(f => f.country)));
   $("country").disabled = false;
@@ -570,12 +701,16 @@ function showUnits() {
   show("step-units");
 }
 
+/* ──────────────────────────────────────────────────────────────
+   WIZARD
+────────────────────────────────────────────────────────────── */
 function selectUnit(idx) {
   state.unit = state.classData.units[idx];
   const tpl = getTemplate(state.classData.country, state.classData.curriculum, state.classData.level);
   if (!tpl) { alert("No template for this curriculum/level combination."); return; }
   state.template = tpl;
   state.form = {};
+  state.aiDecide = {};
   for (const f of tpl.user_fields) {
     if (f.default !== undefined) state.form[f.id] = f.default;
     if (f.type === "multi_select" || f.type === "multi_from_unit") state.form[f.id] = [];
@@ -591,45 +726,106 @@ function renderWizard() {
   $("wizardMeta").textContent = `${state.template.label} · ${state.unit.unitTitle}`;
   const form = $("wizardForm");
   form.innerHTML = "";
-  for (const field of state.template.user_fields) {
-    form.appendChild(renderField(field));
+
+  // Compute visible fields (hide use_only_user_materials when materials sparkled)
+  const visibleFields = state.template.user_fields.filter(f => {
+    if (f.id === "use_only_user_materials") {
+      return !state.aiDecide["selected_materials"] && !state.aiDecide["user_materials"];
+    }
+    return true;
+  });
+
+  // Group into sections in declared order
+  const sectionOrder = state.template.sections || [];
+  const groups = {};
+  for (const name of sectionOrder) groups[name] = { name, fields: [], hasRequired: false };
+  for (const f of visibleFields) {
+    const s = f.section || "Other";
+    if (!groups[s]) groups[s] = { name: s, fields: [], hasRequired: false };
+    groups[s].fields.push(f);
+    if (f.required) groups[s].hasRequired = true;
   }
+
+  for (const name of Object.keys(groups)) {
+    const g = groups[name];
+    if (!g.fields.length) continue;
+    const det = document.createElement("details");
+    det.className = "section";
+    if (g.hasRequired) det.open = true;
+    const sum = document.createElement("summary");
+    sum.innerHTML = `<span>${g.name}</span>` + (g.hasRequired ? `<span class="section-req">required</span>` : "");
+    det.appendChild(sum);
+    for (const field of g.fields) det.appendChild(renderField(field));
+    form.appendChild(det);
+  }
+
   updateGenerateState();
 }
 
 function renderField(field) {
   const wrap = document.createElement("div");
+  wrap.className = "field-wrapper";
+  const sparkled = !!state.aiDecide[field.id];
+  if (sparkled) wrap.classList.add("sparkled");
+
+  // Header row with label + optional sparkle
+  const header = document.createElement("div");
+  header.className = "field-header";
+  const label = document.createElement("label");
+  label.innerHTML = `${field.label}${field.required ? ' <span class="required-mark">*</span>' : ''}`;
+  header.appendChild(label);
+
+  if (canSparkle(field)) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "sparkle-btn" + (sparkled ? " active" : "");
+    btn.textContent = "✦";
+    btn.title = sparkled ? "AI will decide this field" : "Let AI decide";
+    btn.onclick = () => {
+      state.aiDecide[field.id] = !state.aiDecide[field.id];
+      renderWizard();
+    };
+    header.appendChild(btn);
+  }
+  wrap.appendChild(header);
+
+  // Input area
+  const inputArea = document.createElement("div");
+  inputArea.className = "field-input";
   const val = state.form[field.id];
   const onChange = v => { state.form[field.id] = v; updateGenerateState(); };
 
   if (field.type === "text" || field.type === "number") {
-    wrap.innerHTML = `<label>${field.label}${field.required ? " *" : ""}</label>`;
     const inp = document.createElement("input");
     inp.type = field.type === "number" ? "number" : "text";
     inp.value = val ?? "";
     inp.oninput = e => onChange(field.type === "number" ? Number(e.target.value) : e.target.value);
-    wrap.appendChild(inp);
+    inputArea.appendChild(inp);
   } else if (field.type === "textarea") {
-    wrap.innerHTML = `<label>${field.label}</label>`;
     const ta = document.createElement("textarea");
     ta.rows = 3;
     ta.value = val ?? "";
     ta.oninput = e => onChange(e.target.value);
-    wrap.appendChild(ta);
+    inputArea.appendChild(ta);
   } else if (field.type === "boolean") {
-    wrap.innerHTML = `<label class="checkbox"><input type="checkbox" ${val ? "checked" : ""}> ${field.label}</label>`;
-    wrap.querySelector("input").onchange = e => onChange(e.target.checked);
+    const lbl = document.createElement("label");
+    lbl.className = "checkbox";
+    lbl.innerHTML = `<input type="checkbox" ${val ? "checked" : ""}> <span>${field.label}</span>`;
+    lbl.querySelector("input").onchange = e => onChange(e.target.checked);
+    inputArea.appendChild(lbl);
+    // Boolean hides its header label since it's in the checkbox
+    header.style.display = "none";
   } else if (field.type === "select") {
-    wrap.innerHTML = `<label>${field.label}</label>`;
     const sel = document.createElement("select");
     sel.innerHTML = `<option value="">—</option>` + (field.options ?? []).map(o => `<option value="${o}">${o}</option>`).join("");
     sel.value = val ?? "";
     sel.onchange = e => onChange(e.target.value);
-    wrap.appendChild(sel);
+    inputArea.appendChild(sel);
   } else if (field.type === "multi_select") {
-    const fg = document.createElement("fieldset");
+    const fg = document.createElement("div");
     fg.className = "fieldgroup";
-    fg.innerHTML = `<legend>${field.label}${field.max ? " (max " + field.max + ")" : ""}</legend>`;
+    const opts = document.createElement("div");
+    opts.className = "fieldgroup-options";
     const selected = Array.isArray(val) ? val : [];
     for (const opt of field.options ?? []) {
       const lbl = document.createElement("label");
@@ -644,34 +840,42 @@ function renderField(field) {
         state.form[field.id] = next;
         renderWizard();
       };
-      fg.appendChild(lbl);
+      opts.appendChild(lbl);
     }
-    wrap.appendChild(fg);
+    fg.appendChild(opts);
+    inputArea.appendChild(fg);
   } else if (field.type === "multi_from_unit") {
     const items = extractItems(state.unit, field.source);
-    const fg = document.createElement("fieldset");
+    const fg = document.createElement("div");
     fg.className = "fieldgroup";
-    fg.innerHTML = `<legend>${field.label}${field.required ? " *" : ""}</legend>`;
+    const opts = document.createElement("div");
+    opts.className = "fieldgroup-options";
     const selected = Array.isArray(val) ? val : [];
-    if (!items.length) fg.innerHTML += `<div class="muted">No items available.</div>`;
-    items.forEach(item => {
-      const text = typeof item === "string" ? item : item.text;
-      const domain = typeof item === "string" ? null : (item.rawDomain || item.domain);
-      const checked = selected.some(s => (typeof s === "string" ? s : s.text) === text);
-      const lbl = document.createElement("label");
-      lbl.className = "checkbox";
-      lbl.innerHTML = `<input type="checkbox" ${checked ? "checked" : ""}> ${domain ? `<span class="badge">${domain}</span>` : ""} <span>${text}</span>`;
-      lbl.querySelector("input").onchange = () => {
-        const next = checked
-          ? selected.filter(s => (typeof s === "string" ? s : s.text) !== text)
-          : [...selected, item];
-        state.form[field.id] = next;
-        renderWizard();
-      };
-      fg.appendChild(lbl);
-    });
-    wrap.appendChild(fg);
+    if (!items.length) {
+      opts.innerHTML = `<div class="muted">No items available.</div>`;
+    } else {
+      items.forEach(item => {
+        const text = typeof item === "string" ? item : item.text;
+        const domain = typeof item === "string" ? null : (item.rawDomain || item.domain);
+        const checked = selected.some(s => (typeof s === "string" ? s : s.text) === text);
+        const lbl = document.createElement("label");
+        lbl.className = "checkbox";
+        lbl.innerHTML = `<input type="checkbox" ${checked ? "checked" : ""}> ${domain ? `<span class="badge">${domain}</span>` : ""} <span>${text}</span>`;
+        lbl.querySelector("input").onchange = () => {
+          const next = checked
+            ? selected.filter(s => (typeof s === "string" ? s : s.text) !== text)
+            : [...selected, item];
+          state.form[field.id] = next;
+          renderWizard();
+        };
+        opts.appendChild(lbl);
+      });
+    }
+    fg.appendChild(opts);
+    inputArea.appendChild(fg);
   }
+
+  wrap.appendChild(inputArea);
   return wrap;
 }
 
@@ -699,17 +903,17 @@ function updateGenerateState() {
 }
 
 /* ──────────────────────────────────────────────────────────────
-   PREVIEW PAYLOAD
+   PREVIEW
 ────────────────────────────────────────────────────────────── */
 function previewPayload() {
-  const payload = buildPayload(state.unit, state.form, state.template);
+  const payload = buildPayload(state.unit, state.form, state.template, state.aiDecide);
   const json = JSON.stringify(payload, null, 2);
   const sizeKb = (new Blob([json]).size / 1024).toFixed(2);
   const classMatch = state.parsedFiles.find(f =>
-    f.country === state.classData.country &&
-    f.curriculum === state.classData.curriculum &&
-    f.subject === state.classData.subject &&
-    f.classVal === state.classData.classLevel
+    (f.country || "").toLowerCase() === (state.classData.country || "").toLowerCase() &&
+    (f.curriculum || "").toLowerCase() === (state.classData.curriculum || "").toLowerCase() &&
+    (f.subject || "").toLowerCase() === (state.classData.subject || "").toLowerCase() &&
+    (f.classVal || "").toLowerCase() === (state.classData.classLevel || "").toLowerCase()
   );
   const classSizeKb = classMatch ? (classMatch.size / 1024).toFixed(0) : "?";
 
@@ -722,16 +926,79 @@ function previewPayload() {
     </div>
     <pre>${json.replace(/</g, "&lt;")}</pre>
   `;
+  $("suggestSection").style.display = "none";
+  $("resultActions").style.display = "";
   show("step-result");
 }
 
 /* ──────────────────────────────────────────────────────────────
-   GENERATE (STREAMING)
+   STREAMING GENERATE
 ────────────────────────────────────────────────────────────── */
+async function streamGemini({ systemInstruction, userMessage, onChunk, onDone, onError }) {
+  const apiKey = localStorage.getItem("gemini_api_key");
+  const model = localStorage.getItem("gemini_model") || DEFAULT_MODEL;
+  if (!apiKey) throw new Error("Missing API key");
+
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${encodeURIComponent(apiKey)}`;
+  const body = {
+    system_instruction: { parts: [{ text: systemInstruction }] },
+    contents: [{ role: "user", parts: [{ text: userMessage }] }],
+    generationConfig: { maxOutputTokens: 32768, temperature: 0.7 }
+  };
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`Gemini HTTP ${res.status}: ${errText.slice(0, 300)}`);
+  }
+
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+  let fullText = "";
+  let lastFinishReason = null;
+  let firstChunk = true;
+
+  const processLine = (line) => {
+    const trimmed = line.trim();
+    if (!trimmed.startsWith("data:")) return;
+    const data = trimmed.slice(5).trim();
+    if (!data || data === "[DONE]") return;
+    try {
+      const chunk = JSON.parse(data);
+      const candidate = chunk.candidates?.[0];
+      if (candidate?.finishReason) lastFinishReason = candidate.finishReason;
+      const text = candidate?.content?.parts?.map(p => p.text).filter(Boolean).join("") || "";
+      if (text) {
+        if (firstChunk) { onChunk("", true); firstChunk = false; }
+        fullText += text;
+        onChunk(fullText, false);
+      }
+    } catch { /* ignore malformed */ }
+  };
+
+  while (true) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split("\n");
+    buffer = lines.pop();
+    for (const line of lines) processLine(line);
+  }
+  // Flush trailing buffer
+  if (buffer.trim()) processLine(buffer);
+
+  onDone({ fullText, finishReason: lastFinishReason });
+}
+
 async function generate() {
   const btn = $("generateBtn");
   const apiKey = localStorage.getItem("gemini_api_key");
-  const model = localStorage.getItem("gemini_model") || "gemini-2.5-flash";
+  const model = localStorage.getItem("gemini_model") || DEFAULT_MODEL;
 
   if (!apiKey) {
     setStatus("genStatus", "Enter your Gemini API key in ⚙ Settings first.", true);
@@ -747,93 +1014,127 @@ async function generate() {
     if (!promptRes.ok) throw new Error(`Prompt missing: prompts/${state.template.prompt_file}`);
     const systemInstruction = await promptRes.text();
 
-    const payload = buildPayload(state.unit, state.form, state.template);
+    const payload = buildPayload(state.unit, state.form, state.template, state.aiDecide);
+    state.lastPayload = payload;
 
-    // Show result area immediately, ready for streaming
     $("resultTitle").textContent = "Streaming response…";
     $("result").innerHTML = `<div class="muted" style="padding:8px;"><span class="spinner"></span>Waiting for first chunk…</div>`;
+    $("suggestSection").style.display = "none";
+    $("resultActions").style.display = "";
     show("step-result");
 
     setStatus("genStatus", `<span class="spinner"></span>Streaming from Gemini (${model})…`);
+    const startedAt = Date.now();
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${encodeURIComponent(apiKey)}`;
-    const body = {
-      system_instruction: { parts: [{ text: systemInstruction }] },
-      contents: [{
-        role: "user",
-        parts: [{ text: JSON.stringify(payload, null, 2) }]
-      }],
-      generationConfig: {
-        maxOutputTokens: 32768,
-        temperature: 0.7
-      }
-    };
-
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body)
-    });
-
-    if (!res.ok) {
-      const errText = await res.text();
-      throw new Error(`Gemini HTTP ${res.status}: ${errText.slice(0, 300)}`);
-    }
-
-    const reader = res.body.getReader();
-    const decoder = new TextDecoder();
-    let buffer = "";
-    let fullText = "";
-    let firstChunk = true;
-    let lastFinishReason = null;
-
-    while (true) {
-      const { value, done } = await reader.read();
-      if (done) break;
-
-      buffer += decoder.decode(value, { stream: true });
-
-      const lines = buffer.split("\n");
-      buffer = lines.pop();
-
-      for (const line of lines) {
-        const trimmed = line.trim();
-        if (!trimmed.startsWith("data:")) continue;
-        const data = trimmed.slice(5).trim();
-        if (!data || data === "[DONE]") continue;
-
-        try {
-          const chunk = JSON.parse(data);
-          const candidate = chunk.candidates?.[0];
-          if (candidate?.finishReason) lastFinishReason = candidate.finishReason;
-          const text = candidate?.content?.parts?.map(p => p.text).filter(Boolean).join("") || "";
-          if (text) {
-            if (firstChunk) {
-              $("result").innerHTML = "";
-              firstChunk = false;
-            }
-            fullText += text;
-            renderStreaming(fullText);
-          }
-        } catch {
-          // ignore malformed chunk
+    await streamGemini({
+      systemInstruction,
+      userMessage: JSON.stringify(payload, null, 2),
+      onChunk: (fullText, reset) => {
+        const el = $("result");
+        if (reset) el.innerHTML = "";
+        if (looksLikeHtml(fullText)) el.innerHTML = fullText;
+        else el.innerHTML = marked.parse(fullText);
+        // Auto-scroll to bottom as chunks arrive
+        el.scrollTop = el.scrollHeight;
+        window.scrollTo(0, document.body.scrollHeight);
+        // Live status
+        const secs = ((Date.now() - startedAt) / 1000).toFixed(0);
+        setStatus("genStatus", `<span class="spinner"></span>Streaming… ${fullText.length.toLocaleString()} chars · ${secs}s`);
+      },
+      onDone: ({ fullText, finishReason }) => {
+        renderFinal(fullText);
+        state.lastPlanText = fullText;
+        if (finishReason && finishReason !== "STOP") {
+          setStatus("genStatus", `⚠ Stream ended with finishReason="${finishReason}". Output may be incomplete.`);
+        } else {
+          setStatus("genStatus", `Done. ${fullText.length.toLocaleString()} characters.`);
         }
+        $("resultTitle").textContent = "Lesson Plan";
+        // Reveal the Suggest Changes section
+        $("suggestSection").style.display = "";
+        $("resultActions").style.display = "none";
+        $("suggestChanges").value = "";
+        $("regenerateBtn").disabled = true;
+      },
+      onError: (e) => {
+        setStatus("genStatus", `Error: ${e.message}`, true);
+        btn.disabled = false;
       }
-    }
-
-    // Final render — decide HTML vs markdown now that we have the full text
-    renderFinal(fullText);
-
-    if (lastFinishReason === "MAX_TOKENS") {
-      setStatus("genStatus", "⚠ Output truncated (MAX_TOKENS). Reduce scope or increase maxOutputTokens.");
-    } else {
-      setStatus("genStatus", `Done. ${fullText.length.toLocaleString()} characters.`);
-    }
-
-    $("resultTitle").textContent = "Lesson Plan";
-
+    });
   } catch (e) {
     setStatus("genStatus", `Error: ${e.message}`, true);
+    btn.disabled = false;
+  }
+}
+
+async function regenerate() {
+  const changes = $("suggestChanges").value.trim();
+  if (!changes) return;
+  const btn = $("regenerateBtn");
+  const apiKey = localStorage.getItem("gemini_api_key");
+  const model = localStorage.getItem("gemini_model") || DEFAULT_MODEL;
+  if (!apiKey) { setStatus("regenStatus", "Missing API key.", true); return; }
+  if (!state.lastPayload || !state.lastPlanText) { setStatus("regenStatus", "No previous plan to revise.", true); return; }
+
+  btn.disabled = true;
+  setStatus("regenStatus", `<span class="spinner"></span>Streaming revision…`);
+
+  try {
+    const promptRes = await fetch(`${PROMPTS_PREFIX}/${state.template.prompt_file}`);
+    if (!promptRes.ok) throw new Error(`Prompt missing: prompts/${state.template.prompt_file}`);
+    const systemInstruction = await promptRes.text();
+
+    const userMessage = [
+      "ORIGINAL REQUEST:",
+      JSON.stringify(state.lastPayload, null, 2),
+      "",
+      "PREVIOUSLY GENERATED LESSON PLAN:",
+      state.lastPlanText,
+      "",
+      "REQUESTED CHANGES:",
+      changes,
+      "",
+      "INSTRUCTIONS:",
+      "Revise the lesson plan above according to the requested changes.",
+      "Preserve structure, formatting, and section order unless the changes explicitly ask to alter them.",
+      "Do not touch parts not mentioned in the changes.",
+      "Output the complete revised plan."
+    ].join("\n");
+
+    $("resultTitle").textContent = "Streaming revised plan…";
+    $("result").innerHTML = `<div class="muted" style="padding:8px;"><span class="spinner"></span>Waiting for first chunk…</div>`;
+    const startedAt = Date.now();
+
+    await streamGemini({
+      systemInstruction,
+      userMessage,
+      onChunk: (fullText, reset) => {
+        const el = $("result");
+        if (reset) el.innerHTML = "";
+        if (looksLikeHtml(fullText)) el.innerHTML = fullText;
+        else el.innerHTML = marked.parse(fullText);
+        el.scrollTop = el.scrollHeight;
+        const secs = ((Date.now() - startedAt) / 1000).toFixed(0);
+        setStatus("regenStatus", `<span class="spinner"></span>Streaming… ${fullText.length.toLocaleString()} chars · ${secs}s`);
+      },
+      onDone: ({ fullText, finishReason }) => {
+        renderFinal(fullText);
+        state.lastPlanText = fullText;
+        if (finishReason && finishReason !== "STOP") {
+          setStatus("regenStatus", `⚠ finishReason="${finishReason}". Output may be incomplete.`);
+        } else {
+          setStatus("regenStatus", `Done. ${fullText.length.toLocaleString()} characters.`);
+        }
+        $("resultTitle").textContent = "Lesson Plan (revised)";
+        btn.disabled = false;
+      },
+      onError: (e) => {
+        setStatus("regenStatus", `Error: ${e.message}`, true);
+        btn.disabled = false;
+      }
+    });
+  } catch (e) {
+    setStatus("regenStatus", `Error: ${e.message}`, true);
     btn.disabled = false;
   }
 }
@@ -842,23 +1143,10 @@ function looksLikeHtml(text) {
   const t = text.trimStart();
   return t.startsWith("<") || /<table[\s>]/i.test(text);
 }
-
-function renderStreaming(text) {
-  const el = $("result");
-  if (looksLikeHtml(text)) {
-    el.innerHTML = text;
-  } else {
-    el.innerHTML = marked.parse(text);
-  }
-}
-
 function renderFinal(text) {
   const el = $("result");
-  if (looksLikeHtml(text)) {
-    el.innerHTML = text;
-  } else {
-    el.innerHTML = marked.parse(text);
-  }
+  if (looksLikeHtml(text)) el.innerHTML = text;
+  else el.innerHTML = marked.parse(text);
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -868,21 +1156,33 @@ $("loadClass").onclick = loadClass;
 $("backToPicker").onclick = () => show("step-picker");
 $("backToUnits").onclick = () => show("step-units");
 $("backToWizard").onclick = () => { $("generateBtn").disabled = false; show("step-wizard"); };
-$("startOver").onclick = () => { state.classData = null; state.unit = null; $("generateBtn").disabled = false; show("step-picker"); };
+$("backToWizard2").onclick = () => { $("generateBtn").disabled = false; show("step-wizard"); };
+$("startOver").onclick = () => {
+  state.classData = null; state.unit = null; state.template = null;
+  state.form = {}; state.aiDecide = {};
+  state.lastPayload = null; state.lastPlanText = "";
+  $("generateBtn").disabled = false;
+  show("step-picker");
+};
+$("startOver2").onclick = () => $("startOver").onclick();
 $("previewBtn").onclick = previewPayload;
 $("generateBtn").onclick = generate;
+$("regenerateBtn").onclick = regenerate;
+$("suggestChanges").oninput = e => {
+  $("regenerateBtn").disabled = !e.target.value.trim();
+};
 
 /* Settings */
 function loadSettings() {
   const key = localStorage.getItem("gemini_api_key") || "";
-  const model = localStorage.getItem("gemini_model") || "gemini-2.5-flash";
+  const model = localStorage.getItem("gemini_model") || DEFAULT_MODEL;
   $("apiKeyInput").value = key;
   $("modelInput").value = model;
   if (key) $("settingsStatus").textContent = "Key saved.";
 }
 $("saveSettings").onclick = () => {
   localStorage.setItem("gemini_api_key", $("apiKeyInput").value.trim());
-  localStorage.setItem("gemini_model", $("modelInput").value.trim() || "gemini-2.5-flash");
+  localStorage.setItem("gemini_model", $("modelInput").value.trim() || DEFAULT_MODEL);
   $("settingsStatus").textContent = "Saved.";
   setTimeout(() => $("settingsStatus").textContent = "", 2000);
 };
@@ -890,6 +1190,7 @@ $("clearSettings").onclick = () => {
   localStorage.removeItem("gemini_api_key");
   localStorage.removeItem("gemini_model");
   $("apiKeyInput").value = "";
+  $("modelInput").value = DEFAULT_MODEL;
   $("settingsStatus").textContent = "Cleared.";
 };
 loadSettings();
