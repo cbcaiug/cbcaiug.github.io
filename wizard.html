@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Curriculum Assistant</title>
+<title>The CBC AI Tool</title>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="extractors/rwanda.js"></script>
 <script src="extractors/uganda_uce.js"></script>
 <script src="extractors/uganda_uace.js"></script>
 <style>
   * { box-sizing: border-box; }
-  body { font-family: system-ui, -apple-system, sans-serif; background: #0f1115; color: #e6e8eb; margin: 0; padding: 16px; max-width: 900px; margin: 0 auto; line-height: 1.5; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #0f1115; color: #e6e8eb; margin: 0; padding: 16px; padding-bottom: calc(16px + env(safe-area-inset-bottom)); max-width: 900px; margin: 0 auto; line-height: 1.5; }
   h1 { font-size: 20px; margin: 0 0 4px; }
   h2 { font-size: 16px; margin: 24px 0 12px; color: #9aa3ad; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
   label { display: block; font-size: 13px; color: #9aa3ad; margin: 0; }
@@ -21,6 +21,7 @@
   button.secondary { background: #171a21; border-color: #2a2f38; color: #e6e8eb; font-weight: 500; padding: 8px 14px; font-size: 13px; }
   button.danger { background: #7f1d1d; border-color: #991b1b; color: #fecaca; }
   button.danger:hover { background: #991b1b; }
+  button.tiny { padding: 4px 10px; font-size: 12px; font-weight: 600; }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .muted { color: #6b7280; font-size: 12px; }
   .fieldgroup { border: 1px solid #2a2f38; border-radius: 8px; padding: 12px; margin: 0; }
@@ -28,13 +29,13 @@
   .checkbox { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; font-size: 14px; cursor: pointer; font-weight: normal; color: #e6e8eb; break-inside: avoid; line-height: 1.4; }
   .checkbox input { width: auto; margin-top: 3px; flex-shrink: 0; }
   .badge-inline { display: inline; background: transparent; padding: 0; margin: 0 6px 0 0; color: #6b7280; font-size: 12px; }
-  .sticky-footer { position: sticky; bottom: 0; padding: 12px 0; background: #0f1115; border-top: 1px solid #2a2f38; margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
-  #result { margin-top: 12px; padding: 16px; border-radius: 8px; background: #171a21; font-size: 14px; overflow-x: auto; overflow-y: auto; max-height: 70vh; -webkit-overflow-scrolling: touch; transition: opacity 0.15s ease; }
+  .sticky-footer { position: sticky; bottom: 0; padding: 12px 0 calc(12px + env(safe-area-inset-bottom)); background: #0f1115; border-top: 1px solid #2a2f38; margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; z-index: 10; }
+  #result { margin-top: 12px; padding: 16px; border-radius: 8px; background: #171a21; font-size: 15px; overflow-x: auto; overflow-y: auto; max-height: 70vh; -webkit-overflow-scrolling: touch; transition: opacity 0.15s ease; }
   #result:empty { display: none; }
-  #result table { border-collapse: collapse; min-width: max-content; margin: 12px 0; font-size: 13px; }
-  #result th, #result td { border: 1px solid #2a2f38; padding: 6px 8px; text-align: left; vertical-align: top; }
+  #result table { border-collapse: collapse; min-width: 500px; width: auto; margin: 12px 0; font-size: 13px; }
+  #result th, #result td { border: 1px solid #2a2f38; padding: 6px 10px; text-align: left; vertical-align: top; word-break: normal; overflow-wrap: break-word; }
   #result th { background: #1f242e; font-weight: 600; }
-  #result pre { background: #0f1115; padding: 12px; border-radius: 6px; overflow: auto; max-height: 500px; font-size: 12px; white-space: pre-wrap; word-break: break-word; }
+  #result pre { background: #0f1115; padding: 12px; border-radius: 6px; overflow: auto; max-height: 500px; font-size: 13px; white-space: pre-wrap; word-break: break-word; }
   .status { font-size: 13px; color: #9aa3ad; margin-top: 8px; min-height: 20px; }
   .status.error { color: #f87171; }
   .status.warn { color: #fbbf24; }
@@ -73,7 +74,19 @@
   .additions-label span { color: #6b7280; font-size: 11px; }
   .suggest-section { margin-top: 20px; padding: 14px; border: 1px solid #2a2f38; border-radius: 8px; background: #13161c; }
   .suggest-section h3 { margin: 0 0 8px; font-size: 14px; }
-  .suggest-section textarea { min-height: 80px; margin-bottom: 10px; }
+  .suggest-section textarea { min-height: 80px; margin-bottom: 0; }
+  .result-sticky-bar {
+    position: sticky;
+    bottom: 0;
+    margin-top: 16px;
+    padding: 12px 0 calc(12px + env(safe-area-inset-bottom));
+    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, #0f1115 20%);
+    border-top: 1px solid #2a2f38;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    z-index: 15;
+  }
   .readonly-context { margin: 4px 0 16px; padding: 12px 14px; border-radius: 8px; background: #0f1115; border: 1px dashed #2a2f38; }
   .readonly-context .rc-hint { font-size: 11px; color: #6b7280; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
   .readonly-context .rc-row { display: flex; gap: 8px; margin: 4px 0; font-size: 13px; opacity: 0.75; }
@@ -81,10 +94,54 @@
   .readonly-context .rc-val { color: #b8bec7; }
   .page-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
   .page-header h1 { margin: 0 0 4px; }
-  .token-counter { padding: 6px 12px; background: #13161c; border: 1px solid #2a2f38; border-radius: 999px; font-size: 11px; font-family: ui-monospace, monospace; color: #9aa3ad; display: flex; gap: 12px; flex-shrink: 0; white-space: nowrap; }
-  .token-counter .t-in { color: #60a5fa; }
-  .token-counter .t-out { color: #34d399; }
-  .token-counter .t-label { color: #4b5563; font-size: 10px; }
+
+  /* Wallet card */
+  .wallet-card {
+    padding: 10px 14px;
+    background: linear-gradient(135deg, #1a2230 0%, #13161c 100%);
+    border: 1px solid #2a2f38;
+    border-radius: 12px;
+    min-width: 240px;
+    flex-shrink: 0;
+  }
+  .wallet-card .wallet-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .wallet-card .wallet-row.primary { margin-bottom: 6px; padding-bottom: 8px; border-bottom: 1px solid #2a2f38; }
+  .wallet-card .wallet-label { font-size: 10px; color: #6b7280; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+  .wallet-card .wallet-value {
+    font-family: ui-monospace, monospace;
+    font-size: 16px;
+    font-weight: 700;
+    color: #34d399;
+    transition: color 0.2s;
+  }
+  .wallet-card .wallet-value.low { color: #fbbf24; }
+  .wallet-card .wallet-value.empty { color: #f87171; }
+  .wallet-card .wallet-value.flash { color: #f87171; text-shadow: 0 0 12px rgba(248,113,113,0.6); }
+  .wallet-card .wallet-unit { font-size: 11px; color: #6b7280; font-family: ui-monospace, monospace; font-weight: 500; }
+  .wallet-card .usage-row {
+    display: flex;
+    gap: 10px;
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    color: #6b7280;
+    flex-wrap: wrap;
+  }
+  .wallet-card .usage-row .t-in { color: #60a5fa; }
+  .wallet-card .usage-row .t-out { color: #34d399; }
+  .wallet-card .usage-row .t-spent { color: #fbbf24; }
+  .wallet-card .usage-row .t-label { color: #4b5563; font-size: 9px; }
+
+  /* Wallet controls */
+  .wallet-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .wallet-controls .topup-input { width: 90px; padding: 6px 10px; font-size: 13px; }
+
+  /* Admin pricing editor */
+  .pricing-model { margin: 10px 0; padding: 10px 12px; border-radius: 8px; background: #0f1115; border: 1px solid #1f242e; }
+  .pricing-model .pm-header { font-family: ui-monospace, monospace; font-size: 12px; color: #b8bec7; margin-bottom: 8px; font-weight: 600; }
+  .pricing-model .pm-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .pricing-model input { font-size: 13px; padding: 6px 10px; }
+  .pricing-model .pm-label { font-size: 11px; color: #6b7280; margin-bottom: 2px; }
+
   #jumpToBottom { position: fixed; bottom: 90px; right: 16px; z-index: 50; padding: 8px 14px; border-radius: 999px; background: #2f6fed; color: #fff; border: none; font-size: 12px; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.4); display: none; }
   .doctype-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
   .doctype-card { padding: 24px 20px; border: 2px solid #2a2f38; border-radius: 12px; background: #171a21; cursor: pointer; transition: all .2s; text-align: center; }
@@ -121,16 +178,21 @@
   .live-status-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
   .live-status-bar .timer { font-family: ui-monospace, monospace; font-size: 12px; color: #60a5fa; }
   .live-status-bar .model-tag { font-family: ui-monospace, monospace; font-size: 11px; color: #9aa3ad; padding: 2px 8px; border-radius: 999px; background: #1f242e; }
+  .live-status-bar .cost-tag { font-family: ui-monospace, monospace; font-size: 11px; color: #fbbf24; padding: 2px 8px; border-radius: 999px; background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.3); }
+
   @media (max-width: 640px) {
-    body { padding: 12px 12px 16px; }
+    body { padding: 12px 12px calc(12px + env(safe-area-inset-bottom)); }
     h1 { font-size: 17px; }
     h2 { font-size: 14px; margin: 16px 0 8px; }
-    .page-header { flex-direction: column; gap: 6px; }
-    .token-counter { font-size: 10px; padding: 5px 10px; align-self: flex-start; }
+    .page-header { flex-direction: column; gap: 8px; }
+    .wallet-card { min-width: 100%; }
+    .wallet-card .wallet-value { font-size: 15px; }
     .row { grid-template-columns: 1fr; gap: 8px; }
     .doctype-cards { grid-template-columns: 1fr; }
     .sticky-footer { flex-direction: column; }
     .sticky-footer button { width: 100%; }
+    .result-sticky-bar { flex-direction: column; }
+    .result-sticky-bar button { width: 100%; }
     details.section { padding: 8px 10px; }
     details.section > summary { font-size: 12px; }
     .section-counts { font-size: 10px; gap: 6px; }
@@ -139,12 +201,13 @@
     .field-status { font-size: 10px; }
     .sparkle-btn { padding: 3px 8px; }
     .readonly-context .rc-key { min-width: 80px; }
-    #result { padding: 10px; font-size: 13px; border-radius: 6px; max-height: 75vh; }
-    #result table { font-size: 11px; }
-    #result th, #result td { padding: 4px 6px; }
-    #jumpToBottom { bottom: 100px; right: 12px; }
-    .toast-container { bottom: 16px; }
+    #result { padding: 10px; font-size: 14px; border-radius: 6px; max-height: 75vh; }
+    #result table { font-size: 12px; min-width: 440px; }
+    #result th, #result td { padding: 5px 8px; }
+    #jumpToBottom { bottom: 110px; right: 12px; }
+    .toast-container { bottom: calc(16px + env(safe-area-inset-bottom)); }
     .toast { font-size: 13px; padding: 12px 16px; }
+    .pricing-model .pm-row { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -154,12 +217,19 @@
 
 <div class="page-header">
   <div>
-    <h1>Curriculum Assistant</h1>
+    <h1>The CBC AI Tool</h1>
     <p class="muted">Lesson plans and schemes of work from NCDC and REB syllabi.</p>
   </div>
-  <div class="token-counter" id="tokenCounter">
-    <span><span class="t-label">IN</span> <span class="t-in" id="tokIn">0</span></span>
-    <span><span class="t-label">OUT</span> <span class="t-out" id="tokOut">0</span></span>
+  <div class="wallet-card" id="walletCard">
+    <div class="wallet-row primary">
+      <span class="wallet-label">Wallet</span>
+      <span><span class="wallet-value" id="walletBalance">0.00</span> <span class="wallet-unit">UGX</span></span>
+    </div>
+    <div class="usage-row">
+      <span><span class="t-label">IN</span> <span class="t-in" id="tokIn">0</span></span>
+      <span><span class="t-label">OUT</span> <span class="t-out" id="tokOut">0</span></span>
+      <span><span class="t-label">SPENT</span> <span class="t-spent" id="tokCost">0.00</span></span>
+    </div>
   </div>
 </div>
 
@@ -182,8 +252,42 @@
     <div class="field-hint">Flash and Gemma models only. Auto-fallback if one is unavailable.</div>
     <div style="margin-top:12px; display: flex; gap: 8px; flex-wrap: wrap;">
       <button class="secondary" id="saveSettings" type="button">Save</button>
-      <button class="secondary" id="resetTokens" type="button">Reset tokens</button>
       <span class="status" id="settingsStatus"></span>
+    </div>
+  </div>
+</details>
+
+<details id="walletSettings">
+  <summary>💰 Wallet</summary>
+  <div>
+    <p class="muted" style="margin-top:0">Your balance is deducted automatically after each successful generation based on actual token usage. Seed value for testing: 3,000 UGX.</p>
+    <div class="field-wrapper">
+      <div class="field-header"><label>Current balance</label></div>
+      <input type="text" id="walletBalanceInput" readonly>
+    </div>
+    <div class="wallet-controls">
+      <button class="secondary tiny" data-topup="500" type="button">+500</button>
+      <button class="secondary tiny" data-topup="1000" type="button">+1,000</button>
+      <button class="secondary tiny" data-topup="2000" type="button">+2,000</button>
+      <button class="secondary tiny" data-topup="5000" type="button">+5,000</button>
+      <input type="number" id="customTopup" class="topup-input" placeholder="Custom" min="1">
+      <button class="secondary tiny" id="customTopupBtn" type="button">Top up</button>
+      <button class="secondary tiny" id="resetWallet" type="button">Reset to 3,000</button>
+      <button class="secondary tiny" id="resetSession" type="button">Reset session tokens</button>
+    </div>
+    <span class="status" id="walletStatus"></span>
+  </div>
+</details>
+
+<details id="adminPricing">
+  <summary>🔧 Admin — Pricing Overrides</summary>
+  <div>
+    <p class="muted" style="margin-top:0">Override default Google rates per model. Values are USD per 1M tokens. Leave blank to use the default. Changes are stored locally and applied to all future generations.</p>
+    <div id="pricingEditor"></div>
+    <div style="margin-top:12px; display: flex; gap: 8px; flex-wrap: wrap;">
+      <button class="secondary" id="savePricing" type="button">Save overrides</button>
+      <button class="secondary" id="resetPricing" type="button">Reset to defaults</button>
+      <span class="status" id="pricingStatus"></span>
     </div>
   </div>
 </details>
@@ -268,6 +372,7 @@
     <h2 id="resultTitle" style="margin: 0;">Output</h2>
     <div class="live-status-bar">
       <span class="model-tag" id="modelTag" style="display:none;"></span>
+      <span class="cost-tag" id="costTag" style="display:none;"></span>
       <span class="timer" id="timerTag" style="display:none;">0.0s</span>
       <button id="cancelBtn" class="danger" type="button" style="display:none; padding: 6px 14px; font-size: 13px;">Stop</button>
     </div>
@@ -278,13 +383,9 @@
   <div class="suggest-section" id="suggestSection" style="display:none">
     <h3>Suggest Changes</h3>
     <textarea id="suggestChanges" placeholder="e.g. Shorten the development section. Replace the group activity with a teacher demonstration. Add a homework task."></textarea>
-    <div style="display:flex; gap:12px; flex-wrap:wrap;">
-      <button type="button" id="regenerateBtn" disabled>Regenerate</button>
-      <button type="button" class="secondary" id="backToForm">← Back</button>
-      <button type="button" class="secondary" id="startOver">Start over</button>
-    </div>
   </div>
-  <div id="resultActions" style="margin-top:16px">
+  <div id="resultActions" class="result-sticky-bar">
+    <button type="button" id="regenerateBtn" style="display:none" disabled>Regenerate</button>
     <button type="button" class="secondary" id="backToForm2">← Back</button>
     <button type="button" class="secondary" id="startOver2">Start over</button>
   </div>
@@ -316,6 +417,73 @@ const FLASH_MODELS = [
   "gemma-4-26b-a4b-it"
 ];
 const DEFAULT_MODEL = "gemini-3.5-flash";
+
+/* Default pricing per 1M tokens (USD) — Google AI Studio public rates, Oct 2026.
+   Can be overridden via the Admin Pricing panel. */
+const DEFAULT_PRICING = {
+  "gemini-3.5-flash":       { input: 1.50, output: 9.00 },
+  "gemini-3.5-flash-lite":  { input: 0.30, output: 2.50 },
+  "gemini-3.6-flash":       { input: 1.50, output: 7.50 },
+  "gemini-3.7-flash":       { input: 0.75, output: 3.75 },
+  "gemini-3.8-flash":       { input: 0.75, output: 3.75 },
+  "gemini-3.1-flash":       { input: 2.00, output: 8.00 },
+  "gemini-3.1-flash-lite":  { input: 0.25, output: 1.50 },
+  "gemini-3-flash-preview": { input: 0.50, output: 3.00 },
+  "gemma-4-31b-it":         { input: 0.14, output: 0.40 },
+  "gemma-4-26b-a4b-it":     { input: 0.13, output: 0.40 }
+};
+const USD_TO_UGX = 3970;
+const WALLET_SEED_UGX = 3000;
+
+/* ───────────── WALLET MODULE ─────────────
+   All balance reads/writes go through this. Later, swap localStorage
+   for Firestore reads/writes + GAS calls without touching the rest of the app. */
+const Wallet = {
+  KEY_BALANCE: "wallet_balance_ugx",
+  KEY_SESSION_SPENT: "session_cost_ugx",
+  KEY_SESSION_IN: "tok_session_in",
+  KEY_SESSION_OUT: "tok_session_out",
+  getBalance() {
+    const v = localStorage.getItem(this.KEY_BALANCE);
+    if (v === null) {
+      localStorage.setItem(this.KEY_BALANCE, WALLET_SEED_UGX.toFixed(4));
+      return WALLET_SEED_UGX;
+    }
+    return parseFloat(v) || 0;
+  },
+  setBalance(v) { localStorage.setItem(this.KEY_BALANCE, Math.max(0, v).toFixed(4)); },
+  topUp(amount) { this.setBalance(this.getBalance() + amount); },
+  deduct(amount) { const next = Math.max(0, this.getBalance() - amount); this.setBalance(next); return next; },
+  reset() { this.setBalance(WALLET_SEED_UGX); },
+  getSessionSpent() { return parseFloat(localStorage.getItem(this.KEY_SESSION_SPENT) || "0"); },
+  addSessionSpent(v) { localStorage.setItem(this.KEY_SESSION_SPENT, (this.getSessionSpent() + v).toFixed(4)); },
+  getSessionIn() { return parseInt(localStorage.getItem(this.KEY_SESSION_IN) || "0", 10); },
+  getSessionOut() { return parseInt(localStorage.getItem(this.KEY_SESSION_OUT) || "0", 10); },
+  addTokens(inTok, outTok) {
+    localStorage.setItem(this.KEY_SESSION_IN, String(this.getSessionIn() + (inTok || 0)));
+    localStorage.setItem(this.KEY_SESSION_OUT, String(this.getSessionOut() + (outTok || 0)));
+  },
+  resetSession() {
+    localStorage.removeItem(this.KEY_SESSION_SPENT);
+    localStorage.removeItem(this.KEY_SESSION_IN);
+    localStorage.removeItem(this.KEY_SESSION_OUT);
+  }
+};
+
+/* ───────────── PRICING MODULE ───────────── */
+const Pricing = {
+  KEY: "pricing_overrides",
+  getOverrides() {
+    try { return JSON.parse(localStorage.getItem(this.KEY) || "{}"); } catch { return {}; }
+  },
+  saveOverrides(obj) { localStorage.setItem(this.KEY, JSON.stringify(obj || {})); },
+  get(model) {
+    const o = this.getOverrides();
+    if (o[model]) return o[model];
+    return DEFAULT_PRICING[model] || null;
+  },
+  reset() { localStorage.removeItem(this.KEY); }
+};
 
 const UCE_GENERIC_SKILLS = ["Creativity and innovation","Mathematical computation and ICT proficiency","Critical thinking and problem-solving","Co-operation and self-directed learning","Communication"];
 const UCE_VALUES = ["Respect for humanity and environment","Honesty","Justice and fairness","Hard work for self-reliance","Integrity","Creativity and innovativeness","Social Responsibility","Social Harmony","National Unity","National Consciousness and patriotism"];
@@ -458,14 +626,9 @@ const state = {
   form: {}, sowForm: {}, aiDecide: {}, sowAiDecide: {}, sowColumnInstructions: {}, sectionOpen: {},
   lastPayload: null, lastDoc: "", _flatItems: null,
   sowAllTopics: true, sowSelectedTopics: {}, sowSelectedOutcomes: {},
-  // Live-streaming controls
-  streamAbort: null,
-  streamTimerInterval: null,
-  streamStartedAt: null,
-  streamProgressInterval: null
+  streamAbort: null, streamTimerInterval: null, streamStartedAt: null, streamProgressInterval: null
 };
 
-/* ───────────── TOAST ───────────── */
 function showToast(msg, type = "info", title = null) {
   const c = $("toastContainer");
   const el = document.createElement("div");
@@ -477,17 +640,38 @@ function showToast(msg, type = "info", title = null) {
   setTimeout(() => { el.classList.remove("show"); setTimeout(() => el.remove(), 350); }, 4200);
 }
 
-/* ───────────── HELPERS ───────────── */
 function updateTokenDisplay() {
-  $("tokIn").textContent = (parseInt(localStorage.getItem("tok_session_in") || "0", 10)).toLocaleString();
-  $("tokOut").textContent = (parseInt(localStorage.getItem("tok_session_out") || "0", 10)).toLocaleString();
+  $("tokIn").textContent = Wallet.getSessionIn().toLocaleString();
+  $("tokOut").textContent = Wallet.getSessionOut().toLocaleString();
+  $("tokCost").textContent = Wallet.getSessionSpent().toFixed(2);
 }
-function addTokens(i, o) {
-  localStorage.setItem("tok_session_in", String(parseInt(localStorage.getItem("tok_session_in") || "0", 10) + (i || 0)));
-  localStorage.setItem("tok_session_out", String(parseInt(localStorage.getItem("tok_session_out") || "0", 10) + (o || 0)));
-  updateTokenDisplay();
+function updateWalletDisplay() {
+  const bal = Wallet.getBalance();
+  const el = $("walletBalance");
+  el.textContent = bal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  el.classList.remove("low", "empty");
+  if (bal <= 0) el.classList.add("empty");
+  else if (bal < 500) el.classList.add("low");
+  const inp = $("walletBalanceInput");
+  if (inp) inp.value = `UGX ${bal.toFixed(2)}`;
 }
-function resetTokens() { localStorage.removeItem("tok_session_in"); localStorage.removeItem("tok_session_out"); updateTokenDisplay(); }
+function flashWallet() {
+  const el = $("walletBalance");
+  el.classList.add("flash");
+  setTimeout(() => el.classList.remove("flash"), 800);
+}
+function deductFromWallet(ugx) {
+  Wallet.deduct(ugx);
+  updateWalletDisplay();
+  flashWallet();
+}
+function computeCost(model, inputTokens, outputTokens) {
+  const p = Pricing.get(model);
+  if (!p || !inputTokens || !outputTokens) return null;
+  const usd = (inputTokens / 1e6) * p.input + (outputTokens / 1e6) * p.output;
+  const ugx = usd * USD_TO_UGX;
+  return { usd, ugx };
+}
 function setDebug(o) { $("debug").textContent = JSON.stringify(o, null, 2); }
 function setStatus(id, msg, isErr) { const el = $(id); if (!el) return; el.innerHTML = msg || ""; el.className = "status" + (isErr === true ? " error" : isErr === "warn" ? " warn" : ""); }
 const ALL_STEPS = ["step-doctype","step-picker","step-items","step-sow","step-wizard","step-result"];
@@ -506,9 +690,7 @@ function todayISO() { const d = new Date(); return `${d.getFullYear()}-${String(
 function splitLines(t) { return typeof t === "string" ? t.split("\n").map(x => x.trim()).filter(Boolean) : []; }
 function fmtElapsed(ms) { return (ms / 1000).toFixed(1) + "s"; }
 
-/* ───────────── LIVE STREAM UI ───────────── */
 function beginLiveUI(modelName) {
-  // Show cancel button, timer, and model tag. Reset them.
   state.streamStartedAt = Date.now();
   $("cancelBtn").style.display = "";
   $("cancelBtn").disabled = false;
@@ -516,6 +698,8 @@ function beginLiveUI(modelName) {
   $("timerTag").textContent = "0.0s";
   $("modelTag").style.display = "";
   $("modelTag").textContent = modelName || "…";
+  $("costTag").style.display = "none";
+  $("costTag").textContent = "";
   clearInterval(state.streamTimerInterval);
   state.streamTimerInterval = setInterval(() => {
     if (!state.streamStartedAt) return;
@@ -542,15 +726,14 @@ function stopProgressCycle() {
   }
 }
 function cancelStream() {
-  if (state.streamAbort) {
-    state.streamAbort.abort();
-  }
+  if (state.streamAbort) state.streamAbort.abort();
 }
 
-/* ───────────── INIT ───────────── */
 async function init() {
   updateTokenDisplay();
+  updateWalletDisplay();
   loadSettingsUI();
+  renderPricingEditor();
   try {
     const res = await fetch(MANIFEST_URL);
     const m = await res.json();
@@ -645,7 +828,6 @@ function countItems(data) {
   return n;
 }
 
-/* ───────────── ITEM PICKER ───────────── */
 function showItems() {
   const data = state.classData;
   const term = data.terminology;
@@ -709,7 +891,6 @@ function pickSelectedItem() {
   enterWizard();
 }
 
-/* ───────────── WIZARD ───────────── */
 function enterWizard() {
   const tpl = getLPTemplate(state.classData.country, state.classData.curriculum, state.classData.level);
   if (!tpl) { alert("No template for this combination."); return; }
@@ -998,7 +1179,6 @@ function buildLPPayload() {
   };
 }
 
-/* ───────────── SOW ───────────── */
 function showSOW() {
   const data = state.classData;
   state.sowTemplate = getSOWTemplate(data.country, data.curriculum);
@@ -1315,13 +1495,15 @@ function previewPayload(kind) {
   $("resultTitle").textContent = "Payload Preview";
   $("resultStatus").innerHTML = "";
   $("modelTag").style.display = "none";
+  $("costTag").style.display = "none";
   $("timerTag").style.display = "none";
   $("cancelBtn").style.display = "none";
+  $("regenerateBtn").style.display = "none";
   $("result").innerHTML = `<div style="margin-bottom:12px; padding:12px; background:#0f1115; border-radius:6px;"><strong>Size:</strong> ${sizeKb} KB</div><pre>${escapeHtml(json)}</pre>`;
-  $("suggestSection").style.display = "none"; $("resultActions").style.display = ""; show("step-result");
+  $("suggestSection").style.display = "none";
+  show("step-result");
 }
 
-/* ───────────── STREAMING ───────────── */
 const PROGRESS_LP = ["Collecting curriculum information…","Mapping syllabus objectives…","Aligning with the 5E lesson structure…","Considering activities and resources…","Drafting the lesson plan…","Formatting tables…"];
 const PROGRESS_SOW = ["Collecting term data…","Mapping topics and outcomes…","Building the week schedule…","Applying column format…","Drafting the scheme of work…","Formatting tables…"];
 
@@ -1342,10 +1524,7 @@ async function streamGemini({ systemInstruction, userMessage, kind, onChunk, onD
   const preferredModel = localStorage.getItem("gemini_model") || DEFAULT_MODEL;
   if (mode === "byok" && !key) throw new Error("Enter your Gemini API key in Settings, or switch to Shared mode.");
 
-  // Reset abort state
   state.streamAbort = new AbortController();
-
-  // Show progress cycle in #result immediately
   startProgress(kind);
 
   const models = [preferredModel, ...FLASH_MODELS.filter(m => m !== preferredModel)];
@@ -1359,7 +1538,6 @@ async function streamGemini({ systemInstruction, userMessage, kind, onChunk, onD
       : `${GEMINI_DIRECT}/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${encodeURIComponent(key)}`;
     const body = { system_instruction: { parts: [{ text: systemInstruction }] }, contents: [{ role: "user", parts: [{ text: userMessage }] }], generationConfig: { maxOutputTokens: 65536, temperature: 0.7 } };
 
-    // Update the model tag when we switch models
     $("modelTag").style.display = "";
     $("modelTag").textContent = model;
 
@@ -1386,7 +1564,6 @@ async function streamGemini({ systemInstruction, userMessage, kind, onChunk, onD
       throw new Error(`Gemini HTTP ${res.status}: ${errText.slice(0, 300)}`);
     }
 
-    // First successful response — start the live timer
     beginLiveUI(model);
 
     const reader = res.body.getReader();
@@ -1449,7 +1626,32 @@ function renderStreamChunk(text) {
 function looksLikeHtml(t) { t = t.trimStart(); return t.startsWith("<") || /<table[\s>]/i.test(t); }
 function renderFinal(t) { const el = $("result"); if (looksLikeHtml(t)) el.innerHTML = t; else el.innerHTML = marked.parse(t); }
 
-/* ───────────── GENERATE ───────────── */
+function applyCostAndWallet(modelUsed, usage) {
+  const cost = computeCost(modelUsed, usage.in, usage.out);
+  if (cost) {
+    $("costTag").style.display = "";
+    $("costTag").textContent = `UGX ${cost.ugx.toFixed(2)}`;
+    $("costTag").title = `≈ $${cost.usd.toFixed(6)} @ ${USD_TO_UGX} UGX/USD`;
+    Wallet.addSessionSpent(cost.ugx);
+    Wallet.addTokens(usage.in, usage.out);
+    deductFromWallet(cost.ugx);
+  } else {
+    // Fallback: still record tokens even if pricing is missing
+    Wallet.addTokens(usage.in, usage.out);
+  }
+  updateTokenDisplay();
+  return cost;
+}
+
+function checkWalletBeforeRequest() {
+  const bal = Wallet.getBalance();
+  if (bal <= 0) {
+    showToast("Your wallet balance is 0 UGX. Top up to continue generating.", "error", "Insufficient balance");
+    return false;
+  }
+  return true;
+}
+
 async function generateDoc(kind) {
   const isSOW = kind === "sow";
   const btn = isSOW ? $("sowGenerateBtn") : $("generateBtn");
@@ -1468,6 +1670,7 @@ async function generateDoc(kind) {
       return;
     }
   }
+  if (!checkWalletBeforeRequest()) return;
   btn.disabled = true;
   try {
     const tpl = isSOW ? state.sowTemplate : state.lpTemplate;
@@ -1480,7 +1683,7 @@ async function generateDoc(kind) {
     $("resultStatus").innerHTML = "";
     $("jumpToBottom").style.display = "none";
     $("suggestSection").style.display = "none";
-    $("resultActions").style.display = "";
+    $("regenerateBtn").style.display = "none";
     show("step-result");
     await streamGemini({
       systemInstruction, userMessage: JSON.stringify(payload, null, 2), kind,
@@ -1492,15 +1695,15 @@ async function generateDoc(kind) {
       onDone: ({ fullText, finishReason, usage, modelUsed }) => {
         renderFinal(fullText); state.lastDoc = fullText;
         $("jumpToBottom").style.display = "none";
-        addTokens(usage.in, usage.out);
+        const cost = applyCostAndWallet(modelUsed, usage);
         const elapsed = $("timerTag").textContent;
         if (finishReason && finishReason !== "STOP") setStatus("resultStatus", `⚠ finishReason="${finishReason}". Elapsed: ${elapsed}`, true);
-        else setStatus("resultStatus", `Done. ${fullText.length.toLocaleString()} characters · ${elapsed} · ${modelUsed}`);
+        else setStatus("resultStatus", `Done. ${fullText.length.toLocaleString()} characters · ${elapsed} · ${modelUsed}${cost ? ` · UGX ${cost.ugx.toFixed(2)} deducted` : ""}`);
         $("resultTitle").textContent = isSOW ? "Scheme of Work" : "Lesson Plan";
         $("suggestSection").style.display = "";
-        $("resultActions").style.display = "none";
+        $("regenerateBtn").style.display = "";
+        $("regenerateBtn").disabled = false;
         $("suggestChanges").value = "";
-        $("regenerateBtn").disabled = true;
       }
     });
   } catch (e) {
@@ -1523,6 +1726,7 @@ async function regenerate() {
   const changes = $("suggestChanges").value.trim(); if (!changes) return;
   const btn = $("regenerateBtn");
   if (!state.lastPayload || !state.lastDoc) { showToast("No previous document.", "error"); return; }
+  if (!checkWalletBeforeRequest()) return;
   btn.disabled = true;
   try {
     const tpl = state.docType === "sow" ? state.sowTemplate : state.lpTemplate;
@@ -1542,9 +1746,9 @@ async function regenerate() {
       onDone: ({ fullText, usage, modelUsed }) => {
         renderFinal(fullText); state.lastDoc = fullText;
         $("jumpToBottom").style.display = "none";
-        addTokens(usage.in, usage.out);
+        const cost = applyCostAndWallet(modelUsed, usage);
         const elapsed = $("timerTag").textContent;
-        setStatus("resultStatus", `Done. ${fullText.length.toLocaleString()} characters · ${elapsed} · ${modelUsed}`);
+        setStatus("resultStatus", `Done. ${fullText.length.toLocaleString()} characters · ${elapsed} · ${modelUsed}${cost ? ` · UGX ${cost.ugx.toFixed(2)} deducted` : ""}`);
         $("resultTitle").textContent = (state.docType === "sow" ? "Scheme of Work" : "Lesson Plan") + " (revised)";
         btn.disabled = false;
       }
@@ -1585,15 +1789,90 @@ function loadSettingsUI() {
     $("settingsStatus").textContent = "Saved."; showToast("Settings saved.", "success", "Done");
     setTimeout(() => $("settingsStatus").textContent = "", 1500);
   };
-  $("resetTokens").onclick = () => { resetTokens(); showToast("Token counter reset.", "success"); };
+}
+
+function setupWalletUI() {
+  document.querySelectorAll("[data-topup]").forEach(btn => {
+    btn.onclick = () => {
+      const amt = parseFloat(btn.dataset.topup);
+      Wallet.topUp(amt);
+      updateWalletDisplay();
+      $("walletStatus").textContent = `Added ${amt.toLocaleString()} UGX.`;
+      showToast(`Wallet topped up by ${amt.toLocaleString()} UGX.`, "success");
+      setTimeout(() => $("walletStatus").textContent = "", 1500);
+    };
+  });
+  $("customTopupBtn").onclick = () => {
+    const v = parseFloat($("customTopup").value);
+    if (!v || v <= 0) { showToast("Enter a positive amount.", "error"); return; }
+    Wallet.topUp(v);
+    updateWalletDisplay();
+    $("customTopup").value = "";
+    showToast(`Wallet topped up by ${v.toLocaleString()} UGX.`, "success");
+  };
+  $("resetWallet").onclick = () => {
+    Wallet.reset();
+    updateWalletDisplay();
+    showToast("Wallet reset to 3,000 UGX.", "success");
+  };
+  $("resetSession").onclick = () => {
+    Wallet.resetSession();
+    updateTokenDisplay();
+    showToast("Session tokens and cost reset.", "success");
+  };
+}
+
+function renderPricingEditor() {
+  const container = $("pricingEditor");
+  container.innerHTML = "";
+  const overrides = Pricing.getOverrides();
+  for (const model of FLASH_MODELS) {
+    const def = DEFAULT_PRICING[model] || { input: 0, output: 0 };
+    const ov = overrides[model] || {};
+    const row = document.createElement("div");
+    row.className = "pricing-model";
+    row.innerHTML = `
+      <div class="pm-header">${escapeHtml(model)}</div>
+      <div class="pm-row">
+        <div>
+          <div class="pm-label">Input USD / 1M tokens</div>
+          <input type="number" step="0.01" min="0" data-model="${escapeHtml(model)}" data-field="input"
+                 value="${ov.input !== undefined ? ov.input : ''}" placeholder="${def.input}">
+        </div>
+        <div>
+          <div class="pm-label">Output USD / 1M tokens</div>
+          <input type="number" step="0.01" min="0" data-model="${escapeHtml(model)}" data-field="output"
+                 value="${ov.output !== undefined ? ov.output : ''}" placeholder="${def.output}">
+        </div>
+      </div>`;
+    container.appendChild(row);
+  }
+}
+
+function savePricingFromUI() {
+  const inputs = document.querySelectorAll("#pricingEditor input[data-model]");
+  const next = {};
+  inputs.forEach(inp => {
+    const model = inp.dataset.model;
+    const field = inp.dataset.field;
+    const v = inp.value.trim();
+    if (v === "") return;
+    const num = parseFloat(v);
+    if (isNaN(num) || num < 0) return;
+    if (!next[model]) next[model] = {};
+    next[model][field] = num;
+  });
+  Pricing.saveOverrides(next);
+  $("pricingStatus").textContent = "Saved.";
+  showToast("Pricing overrides saved.", "success");
+  setTimeout(() => $("pricingStatus").textContent = "", 1500);
 }
 
 $("loadClass").onclick = loadClass;
 $("pickItemBtn").onclick = pickSelectedItem;
 $("backToPicker").onclick = () => show("step-picker");
 $("backToItems").onclick = () => show("step-items");
-$("backToForm").onclick = () => show(state.docType === "sow" ? "step-sow" : "step-wizard");
-$("backToForm2").onclick = () => $("backToForm").onclick();
+$("backToForm2").onclick = () => show(state.docType === "sow" ? "step-sow" : "step-wizard");
 $("sowBackToPicker").onclick = () => show("step-picker");
 $("previewBtn").onclick = () => previewPayload("lp");
 $("sowPreviewBtn").onclick = () => previewPayload("sow");
@@ -1603,7 +1882,7 @@ $("regenerateBtn").onclick = regenerate;
 $("cancelBtn").onclick = () => { $("cancelBtn").disabled = true; cancelStream(); };
 $("suggestChanges").oninput = e => { $("regenerateBtn").disabled = !e.target.value.trim(); };
 $("jumpToBottom").onclick = () => { const el = $("result"); el.scrollTop = el.scrollHeight; $("jumpToBottom").style.display = "none"; };
-$("startOver").onclick = () => {
+$("startOver2").onclick = () => {
   cancelStream();
   state.classData = null; state.selected = null; state.lpTemplate = null; state.sowTemplate = null;
   state.form = {}; state.sowForm = {}; state.aiDecide = {}; state.sowAiDecide = {}; state.sowColumnInstructions = {};
@@ -1611,8 +1890,17 @@ $("startOver").onclick = () => {
   document.querySelectorAll(".doctype-card").forEach(c => c.classList.remove("selected"));
   show("step-doctype");
 };
-$("startOver2").onclick = () => $("startOver").onclick();
 
+$("savePricing").onclick = savePricingFromUI;
+$("resetPricing").onclick = () => {
+  Pricing.reset();
+  renderPricingEditor();
+  $("pricingStatus").textContent = "Reset to defaults.";
+  showToast("Pricing reset to defaults.", "success");
+  setTimeout(() => $("pricingStatus").textContent = "", 1500);
+};
+
+setupWalletUI();
 init();
 </script>
 </body>
