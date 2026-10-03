@@ -1,7 +1,0 @@
-.git
-.gitignore
-.wrangler
-node_modules
-manifest.js
-wrangler.jsonc
-*.md
