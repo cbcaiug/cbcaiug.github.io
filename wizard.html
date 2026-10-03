@@ -1,0 +1,900 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson Plan Wizard</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #0f1115; color: #e6e8eb; margin: 0; padding: 16px; max-width: 900px; margin: 0 auto; line-height: 1.5; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  h2 { font-size: 16px; margin: 24px 0 12px; color: #9aa3ad; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+  h3 { font-size: 15px; margin: 16px 0 8px; }
+  label { display: block; font-size: 13px; color: #9aa3ad; margin: 12px 0 4px; }
+  input, select, textarea { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid #2a2f38; background: #171a21; color: #e6e8eb; font-size: 15px; font-family: inherit; }
+  textarea { resize: vertical; min-height: 60px; }
+  button { padding: 12px 20px; border-radius: 8px; border: 1px solid #2f6fed; background: #2f6fed; color: #fff; font-size: 15px; font-weight: 600; cursor: pointer; }
+  button:disabled { background: #2a2f38; border-color: #2a2f38; color: #6b7280; cursor: not-allowed; }
+  button.secondary { background: #171a21; border-color: #2a2f38; color: #e6e8eb; font-weight: 500; padding: 8px 14px; font-size: 13px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .muted { color: #6b7280; font-size: 12px; }
+  .error { color: #f87171; font-size: 13px; margin-top: 8px; }
+  .unit-item { padding: 12px; border: 1px solid #2a2f38; border-radius: 8px; margin: 8px 0; cursor: pointer; background: #171a21; }
+  .unit-item:hover { border-color: #2f6fed; }
+  .unit-title { font-weight: 600; margin-bottom: 4px; }
+  .unit-meta { font-size: 12px; color: #6b7280; }
+  .fieldgroup { border: 1px solid #2a2f38; border-radius: 8px; padding: 12px; margin: 12px 0; }
+  .fieldgroup legend { padding: 0 6px; font-size: 12px; color: #9aa3ad; text-transform: uppercase; letter-spacing: .05em; }
+  .checkbox { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; font-size: 14px; cursor: pointer; font-weight: normal; color: #e6e8eb; }
+  .checkbox input { width: auto; margin-top: 3px; }
+  .badge { display: inline-block; padding: 1px 6px; border-radius: 999px; background: #2a2f38; font-size: 10px; color: #9aa3ad; margin-right: 6px; text-transform: uppercase; letter-spacing: .05em; }
+  .sticky-footer { position: sticky; bottom: 0; padding: 12px 0; background: #0f1115; border-top: 1px solid #2a2f38; margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
+  #result { margin-top: 24px; padding: 16px; border-radius: 8px; background: #171a21; font-size: 14px; overflow-x: auto; }
+  #result table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  #result th, #result td { border: 1px solid #2a2f38; padding: 6px 8px; text-align: left; vertical-align: top; }
+  #result th { background: #1f242e; font-weight: 600; }
+  #result h1, #result h2, #result h3 { color: #e6e8eb; }
+  #result code { background: #2a2f38; padding: 1px 5px; border-radius: 4px; }
+  #result pre { background: #0f1115; padding: 12px; border-radius: 6px; overflow: auto; max-height: 500px; font-size: 12px; }
+  .status { font-size: 13px; color: #9aa3ad; margin-top: 8px; }
+  .spinner { display: inline-block; width: 12px; height: 12px; border: 2px solid #2a2f38; border-top-color: #2f6fed; border-radius: 50%; animation: spin .8s linear infinite; margin-right: 6px; vertical-align: middle; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  details.debug { margin-top: 20px; font-size: 12px; }
+  details.debug pre { background: #171a21; padding: 10px; border-radius: 6px; overflow: auto; max-height: 300px; }
+  details#settings { margin: 12px 0; padding: 12px; border: 1px solid #2a2f38; border-radius: 8px; background: #171a21; }
+  details#settings summary { cursor: pointer; font-size: 13px; color: #9aa3ad; text-transform: uppercase; letter-spacing: .05em; }
+  details#settings[open] summary { margin-bottom: 12px; }
+</style>
+</head>
+<body>
+
+<h1>Lesson Plan Wizard</h1>
+<p class="muted">Pick a class, choose a unit, fill the form, generate.</p>
+
+<details id="settings">
+  <summary>⚙ Settings</summary>
+  <div>
+    <label>Gemini API Key</label>
+    <input type="password" id="apiKeyInput" placeholder="AIza..." autocomplete="off">
+    <div class="muted" style="margin-top:4px">Saved to this browser only. Never sent anywhere except Google.</div>
+
+    <label>Model</label>
+    <input type="text" id="modelInput" placeholder="gemini-2.5-flash" value="gemini-2.5-flash">
+    <div class="muted" style="margin-top:4px">e.g. gemini-2.5-flash, gemini-2.5-pro, gemini-3.8-flash</div>
+
+    <div style="margin-top:12px">
+      <button class="secondary" id="saveSettings">Save</button>
+      <button class="secondary" id="clearSettings">Clear key</button>
+      <span class="status" id="settingsStatus"></span>
+    </div>
+  </div>
+</details>
+
+<section id="step-picker">
+  <h2>1 · Select curriculum</h2>
+  <div class="row">
+    <div>
+      <label>Country</label>
+      <select id="country" disabled><option>Loading…</option></select>
+    </div>
+    <div>
+      <label>Curriculum</label>
+      <select id="curriculum" disabled></select>
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <label>Subject</label>
+      <select id="subject" disabled></select>
+    </div>
+    <div id="levelWrap" style="display:none">
+      <label>Level</label>
+      <select id="level" disabled></select>
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <label>Class</label>
+      <select id="classLevel" disabled></select>
+    </div>
+    <div></div>
+  </div>
+  <div style="margin-top:12px">
+    <button id="loadClass" disabled>Load class</button>
+    <span class="status" id="loadStatus"></span>
+  </div>
+</section>
+
+<section id="step-units" style="display:none">
+  <h2>2 · Choose unit</h2>
+  <p class="muted" id="unitsMeta"></p>
+  <div id="unitList"></div>
+  <button class="secondary" id="backToPicker" style="margin-top:12px">← Back</button>
+</section>
+
+<section id="step-wizard" style="display:none">
+  <h2>3 · Fill lesson plan</h2>
+  <p class="muted" id="wizardMeta"></p>
+  <form id="wizardForm"></form>
+  <div class="sticky-footer">
+    <button class="secondary" id="backToUnits">← Back</button>
+    <button type="button" class="secondary" id="previewBtn">Preview Payload</button>
+    <button id="generateBtn" disabled>Generate Lesson Plan</button>
+  </div>
+  <div class="status" id="genStatus"></div>
+</section>
+
+<section id="step-result" style="display:none">
+  <h2 id="resultTitle">Output</h2>
+  <div id="result"></div>
+  <div style="margin-top:16px">
+    <button class="secondary" id="backToWizard">← Back to wizard</button>
+    <button class="secondary" id="startOver">Start over</button>
+  </div>
+</section>
+
+<details class="debug">
+  <summary>Debug</summary>
+  <pre id="debug"></pre>
+</details>
+
+<script>
+/* ──────────────────────────────────────────────────────────────
+   CONFIG
+────────────────────────────────────────────────────────────── */
+const BASE = "https://cbcaiug.cbcaitool.workers.dev";
+const MANIFEST_URL = `${BASE}/_manifest.json`;
+const CURRICULUM_PREFIX = `${BASE}/curriculum`;
+const PROMPTS_PREFIX = `${BASE}/prompts`;
+
+/* ──────────────────────────────────────────────────────────────
+   TEMPLATES
+────────────────────────────────────────────────────────────── */
+const TEMPLATES = [
+  {
+    template_id: "uganda_uce_lesson_plan_v1",
+    country: "uganda", curriculum: "ncdc", level: "uce",
+    label: "Uganda UCE Lesson Plan (5E)",
+    prompt_file: "uce.txt",
+    duration_default: 80,
+    user_fields: [
+      { id: "school_name", label: "School Name", type: "text" },
+      { id: "teacher_name", label: "Teacher's Name", type: "text" },
+      { id: "term", label: "Term", type: "text" },
+      { id: "date", label: "Date", type: "text" },
+      { id: "time", label: "Time", type: "text" },
+      { id: "duration_minutes", label: "Duration (minutes)", type: "number", required: true, default: 80 },
+      { id: "class_size", label: "Number of Learners", type: "number" },
+      { id: "selected_outcomes", label: "Learning Outcomes to Cover", type: "multi_from_unit", source: "objectives.all", required: true, group_by: "rawDomain" },
+      { id: "selected_activities", label: "Suggested Learning Activities", type: "multi_from_unit", source: "activities" },
+      { id: "generic_skills", label: "Generic Skill(s)", type: "multi_select", max: 3, options: ["Creativity and innovation","Mathematical computation and ICT proficiency","Critical thinking and problem-solving","Co-operation and self-directed learning","Communication"] },
+      { id: "values", label: "Value(s)", type: "multi_select", max: 3, options: ["Respect for humanity and environment","Honesty","Justice and fairness","Hard work for self-reliance","Integrity","Creativity and innovativeness","Social Responsibility","Social Harmony","National Unity","National Consciousness and patriotism"] },
+      { id: "key_learning_outcomes", label: "Key Learning Outcomes", type: "multi_select", max: 3, options: ["Self-assured individuals","Responsible and patriotic citizens","Lifelong learners","Positive contributors to society"] },
+      { id: "cross_cutting_issues", label: "Cross-cutting Issues", type: "multi_select", max: 3, options: ["Environmental awareness","Health awareness","Mixed abilities and involvement","Life skills","Socio-economic challenges","Citizenship and patriotism"] },
+      { id: "prerequisite_knowledge", label: "Pre-Requisite Knowledge", type: "textarea" },
+      { id: "references", label: "References", type: "textarea" },
+      { id: "user_materials", label: "Additional Materials", type: "textarea" },
+      { id: "use_only_user_materials", label: "Use only my materials", type: "boolean", default: false },
+      { id: "user_notes", label: "Notes for the AI", type: "textarea" }
+    ]
+  },
+  {
+    template_id: "uganda_uace_lesson_plan_v1",
+    country: "uganda", curriculum: "ncdc", level: "uace",
+    label: "Uganda UACE Lesson Plan (5E)",
+    prompt_file: "uace.txt",
+    duration_default: 80,
+    user_fields: [
+      { id: "school_name", label: "School Name", type: "text" },
+      { id: "teacher_name", label: "Name of the Teacher", type: "text" },
+      { id: "date", label: "Date", type: "text" },
+      { id: "term", label: "Term", type: "text" },
+      { id: "time_start_end", label: "Time (Start–End)", type: "text" },
+      { id: "duration_minutes", label: "Duration (minutes)", type: "number", required: true, default: 80 },
+      { id: "class_size_total", label: "Total Learners", type: "number" },
+      { id: "class_size_boys", label: "Boys", type: "number" },
+      { id: "class_size_girls", label: "Girls", type: "number" },
+      { id: "class_size_sen", label: "SEN", type: "number" },
+      { id: "selected_outcomes", label: "Learning Outcome(s) to Cover", type: "multi_from_unit", source: "objectives.all", required: true, group_by: "rawDomain" },
+      { id: "selected_activities", label: "Suggested Activities", type: "multi_from_unit", source: "activities" },
+      { id: "value", label: "Value", type: "select", options: ["Respect for humanity and environment","Honesty","Justice and fairness","Hard work for self-reliance","Integrity","Creativity and innovativeness","Social Responsibility","Social Harmony","National Unity","National Consciousness and patriotism"] },
+      { id: "cross_cutting_issue", label: "Cross-cutting Issue", type: "select", options: ["Environmental awareness","Health awareness","Mixed abilities and involvement","Life skills","Socio-economic challenges","Citizenship and patriotism"] },
+      { id: "generic_skill", label: "Generic Skill", type: "select", options: ["Creativity and innovation","Mathematical computation and ICT proficiency","Critical thinking and problem-solving","Co-operation and self-directed learning","Communication"] },
+      { id: "rationale", label: "Rationale", type: "textarea" },
+      { id: "differentiated_learning", label: "Differentiated Learning", type: "textarea" },
+      { id: "key_words", label: "Key words", type: "textarea" },
+      { id: "prerequisite_knowledge", label: "Prerequisite Knowledge", type: "textarea" },
+      { id: "user_materials", label: "Teaching/learning Resources (additional)", type: "textarea" },
+      { id: "references", label: "References", type: "textarea" },
+      { id: "user_notes", label: "Notes for the AI", type: "textarea" }
+    ]
+  },
+  {
+    template_id: "rwanda_lesson_plan_v1",
+    country: "rwanda", curriculum: "reb", level: null,
+    label: "Rwanda CBC Lesson Plan (S1–S6)",
+    prompt_file: "rwanda.txt",
+    duration_default: 40,
+    user_fields: [
+      { id: "school_name", label: "School Name", type: "text" },
+      { id: "teacher_name", label: "Teacher's Name", type: "text" },
+      { id: "term", label: "Term", type: "text" },
+      { id: "date", label: "Date", type: "text" },
+      { id: "unit_no", label: "Unit No", type: "text" },
+      { id: "lesson_no", label: "Lesson No", type: "text" },
+      { id: "duration_minutes", label: "Duration (minutes)", type: "number", required: true, default: 40 },
+      { id: "class_size", label: "Class size", type: "number" },
+      { id: "sen_note", label: "Special educational needs (with numbers)", type: "textarea" },
+      { id: "lesson_title", label: "Title of the lesson", type: "text", required: true },
+      { id: "selected_knowledge", label: "Knowledge and understanding objectives", type: "multi_from_unit", source: "objectives.knowledge" },
+      { id: "selected_skills", label: "Skills objectives", type: "multi_from_unit", source: "objectives.skills" },
+      { id: "selected_attitudes", label: "Attitudes and values objectives", type: "multi_from_unit", source: "objectives.attitudes" },
+      { id: "selected_activities", label: "Suggested Learning Activities", type: "multi_from_unit", source: "activities" },
+      { id: "plan_of_class", label: "Plan of this class (Location: in/outside)", type: "text" },
+      { id: "user_materials", label: "Learning materials (additional)", type: "textarea" },
+      { id: "references", label: "References", type: "textarea" },
+      { id: "user_notes", label: "Notes for the AI", type: "textarea" }
+    ]
+  }
+];
+
+function getTemplate(country, curriculum, level) {
+  return TEMPLATES.find(t =>
+    t.country === country && t.curriculum === curriculum &&
+    (t.level === null || t.level === level)
+  );
+}
+
+/* ──────────────────────────────────────────────────────────────
+   LOADERS
+────────────────────────────────────────────────────────────── */
+const LOADERS = {
+  "rwanda/reb": loadRwandaClass,
+  "uganda/ncdc": loadUgandaClass
+};
+
+function loadRwandaClass(json, sourceFile) {
+  const meta = json.curriculum_metadata ?? {};
+  const classLevel = meta.class_group ?? "";
+  const level = inferRwandaLevel(classLevel);
+  const units = [];
+  for (const term of json.terms ?? [])
+    for (const theme of term.themes ?? [])
+      for (const topic of theme.topics ?? [])
+        units.push(mapRwandaTopic(topic, meta, classLevel, level, sourceFile));
+  return { country: "rwanda", curriculum: "reb", level, subject: meta.subject ?? "", classLevel, units };
+}
+
+function inferRwandaLevel(cg) {
+  const m = cg.match(/S(\d)/i);
+  if (!m) return null;
+  return parseInt(m[1], 10) <= 3 ? "o-level" : "a-level";
+}
+
+function mapRwandaTopic(t, meta, classLevel, level, sourceFile) {
+  const m = t.topic_metadata ?? {};
+  const lod = t.learning_objectives_by_domain ?? {};
+  const knowledge = (lod.knowledge_and_understanding ?? []).map(String);
+  const skills = (lod.skills ?? []).map(String);
+  const attitudes = (lod.attitudes_and_values ?? []).map(String);
+  const all = [
+    ...knowledge.map(x => ({ text: x, domain: "knowledge" })),
+    ...skills.map(x => ({ text: x, domain: "skills" })),
+    ...attitudes.map(x => ({ text: x, domain: "attitudes" }))
+  ];
+  const excluded = (t.content_scope?.explicitly_excluded ?? []).map(e => typeof e === "string" ? e : e.text_verbatim).filter(Boolean);
+  const projReq = t.project_requirements ?? {};
+  const project = projReq.is_project_required
+    ? { required: true, details: projReq.project_scope_verbatim ?? "" }
+    : null;
+  return {
+    country: "rwanda", curriculum: "reb", level, subject: meta.subject ?? "", classLevel,
+    unitNumber: Number(m.sequence_order) || 0,
+    unitTitle: m.topic_title ?? "",
+    subTopicArea: m.sub_topic_area ?? "",
+    durationPeriods: Number(m.recommended_duration_periods) || 0,
+    coreCompetency: t.core_competency ?? "",
+    objectives: { all, knowledge, skills, attitudes },
+    contentScope: {
+      mustCover: t.content_scope?.must_cover ?? [],
+      explicitlyExcluded: excluded
+    },
+    activities: (t.suggested_learning_activities ?? []).map(a => a.description ?? String(a)),
+    materials: parseMaterialsString(t.materials_verbatim ?? ""),
+    project,
+    sourceFile
+  };
+}
+
+function parseMaterialsString(s) {
+  if (!s) return [];
+  return s.replace(/\.$/, "").split(/[,;]/).map(x => x.trim()).filter(Boolean);
+}
+
+function loadUgandaClass(json, sourceFile) {
+  const meta = json.curriculum_metadata ?? {};
+  const classObj = (json.classes ?? [])[0] ?? {};
+  const classLevel = classObj.class_code ?? meta.class_group ?? "";
+  const level = inferUgandaLevel(classLevel, meta.level ?? "");
+  const units = [];
+  for (const term of classObj.terms ?? [])
+    for (const theme of term.themes ?? [])
+      for (const topic of theme.topics ?? [])
+        units.push(mapUgandaTopic(topic, meta, classLevel, level, sourceFile));
+  return { country: "uganda", curriculum: "ncdc", level, subject: meta.subject ?? "", classLevel, units };
+}
+
+function inferUgandaLevel(classCode, levelStr) {
+  const s = `${classCode} ${levelStr}`.toLowerCase();
+  if (/s[56]|a-?level|advanced/.test(s)) return "uace";
+  if (/s[1234]|lower/.test(s)) return "uce";
+  return null;
+}
+
+function mapUgandaTopic(t, meta, classLevel, level, sourceFile) {
+  const m = t.topic_metadata ?? {};
+  const outcomes = t.learning_outcomes ?? [];
+  const all = outcomes.map(o => ({
+    text: o.outcome_text ?? "",
+    domain: domainFromUganda(o.domain ?? ""),
+    rawDomain: o.domain ?? ""
+  }));
+  const knowledge = all.filter(o => o.domain === "knowledge").map(o => o.text);
+  const skills = all.filter(o => o.domain === "skills").map(o => o.text);
+  const attitudes = all.filter(o => o.domain === "attitudes").map(o => o.text);
+  const practicals = (t.practical_requirements?.practicals ?? []);
+  const materialSet = new Set();
+  practicals.forEach(p => (p.equipment_list ?? []).forEach(e => materialSet.add(e)));
+  const excluded = (t.content_scope?.explicitly_excluded ?? []).map(e => typeof e === "string" ? e : e.text_verbatim).filter(Boolean);
+  const projReq = t.project_requirements ?? {};
+  const project = projReq.is_project_required
+    ? { required: true, details: projReq.project_scope_verbatim ?? "" }
+    : null;
+  return {
+    country: "uganda", curriculum: "ncdc", level, subject: meta.subject ?? "", classLevel,
+    unitNumber: Number(m.sequence_order) || 0,
+    unitTitle: m.topic_title ?? "",
+    subTopicArea: "",
+    durationPeriods: Number(m.recommended_duration_periods) || 0,
+    coreCompetency: t.core_competency ?? "",
+    objectives: { all, knowledge, skills, attitudes },
+    contentScope: {
+      mustCover: t.content_scope?.must_cover ?? [],
+      explicitlyExcluded: excluded
+    },
+    activities: (t.suggested_learning_activities ?? []).map(a => a.description ?? ""),
+    materials: Array.from(materialSet),
+    project,
+    sourceFile
+  };
+}
+
+function domainFromUganda(d) {
+  const s = d.toLowerCase();
+  const att = /attitude|value|v\/a|\(v\)|\(a\)/.test(s);
+  const sk = /skill|\(s\)|\bs\b/.test(s);
+  const kn = /knowledge|understanding|\(k\)|\(u\)/.test(s);
+  if (att && !sk && !kn) return "attitudes";
+  if (sk && !kn && !att) return "skills";
+  if (kn && !sk && !att) return "knowledge";
+  if (kn) return "knowledge";
+  if (sk) return "skills";
+  if (att) return "attitudes";
+  return "other";
+}
+
+/* ──────────────────────────────────────────────────────────────
+   PAYLOAD BUILDER
+────────────────────────────────────────────────────────────── */
+function buildPayload(unit, form, template) {
+  const userInputs = {};
+  for (const f of template.user_fields) {
+    if (f.type === "multi_from_unit") continue;
+    if (f.id === "user_materials") continue;
+    if (f.id === "use_only_user_materials") continue;
+    if (f.id === "user_notes") continue;
+    userInputs[f.id] = form[f.id] ?? f.default ?? null;
+  }
+
+  let selectedObjectives;
+  if (Array.isArray(form.selected_outcomes) && form.selected_outcomes.length) {
+    selectedObjectives = form.selected_outcomes;
+  } else if (form.selected_knowledge || form.selected_skills || form.selected_attitudes) {
+    selectedObjectives = [
+      ...(form.selected_knowledge ?? []).map(t => ({ text: t, domain: "knowledge" })),
+      ...(form.selected_skills ?? []).map(t => ({ text: t, domain: "skills" })),
+      ...(form.selected_attitudes ?? []).map(t => ({ text: t, domain: "attitudes" }))
+    ];
+  } else {
+    selectedObjectives = unit.objectives.all;
+  }
+
+  const userMaterials = Array.isArray(form.user_materials)
+    ? form.user_materials
+    : typeof form.user_materials === "string"
+      ? form.user_materials.split("\n").map(s => s.trim()).filter(Boolean)
+      : [];
+
+  return {
+    template_id: template.template_id,
+    curriculum_context: {
+      country: unit.country, subject: unit.subject, class_level: unit.classLevel,
+      level: unit.level, unit_number: unit.unitNumber, unit_title: unit.unitTitle,
+      sub_topic_area: unit.subTopicArea, duration_periods: unit.durationPeriods
+    },
+    locked: {
+      core_competency: unit.coreCompetency,
+      excluded_content: unit.contentScope.explicitlyExcluded,
+      required_project: unit.project
+    },
+    content: {
+      selected_objectives: selectedObjectives.map(o => ({
+        text: o.text ?? o,
+        domain: o.domain ?? "other",
+        rawDomain: o.rawDomain
+      })),
+      selected_activities: Array.isArray(form.selected_activities) && form.selected_activities.length
+        ? form.selected_activities : unit.activities,
+      syllabus_materials: unit.materials,
+      user_materials: userMaterials,
+      use_only_user_materials: !!form.use_only_user_materials
+    },
+    user_inputs: { ...userInputs, user_notes: form.user_notes ?? null }
+  };
+}
+
+/* ──────────────────────────────────────────────────────────────
+   UI STATE + FLOW
+────────────────────────────────────────────────────────────── */
+const $ = id => document.getElementById(id);
+const state = { allFiles: [], parsedFiles: [], classData: null, unit: null, template: null, form: {} };
+
+function setDebug(obj) { $("debug").textContent = JSON.stringify(obj, null, 2); }
+function setStatus(id, msg, isErr) {
+  const el = $(id);
+  if (!el) return;
+  el.innerHTML = msg || "";
+  el.style.color = isErr ? "#f87171" : "#9aa3ad";
+}
+function show(id) { ["step-picker","step-units","step-wizard","step-result"].forEach(s => $(s).style.display = s === id ? "" : "none"); }
+function uniq(a) { return [...new Set(a)].sort(); }
+function fill(sel, opts) { sel.innerHTML = ""; for (const o of opts) { const e = document.createElement("option"); e.value = o; e.textContent = o; sel.appendChild(e); } }
+function parsePath(path) {
+  const parts = path.split("/");
+  const file = parts[parts.length - 1];
+  const name = file.replace(/\.json$/, "");
+  return {
+    country: parts[0], curriculum: parts[1], subject: parts[2],
+    level: parts.length === 5 ? parts[3] : null,
+    classVal: name.split("_")[0],
+    file, path
+  };
+}
+
+async function init() {
+  try {
+    const res = await fetch(MANIFEST_URL);
+    const m = await res.json();
+    state.parsedFiles = m.files
+      .filter(f => f.type === "json" && f.path !== "_manifest.json" && !f.path.endsWith("/manifest.json"))
+      .map(f => ({ ...parsePath(f.path), size: f.size_bytes }));
+    setDebug({ total: state.parsedFiles.length, sample: state.parsedFiles.slice(0,5) });
+    populateCountries();
+  } catch (e) {
+    setStatus("loadStatus", `Manifest load failed: ${e.message}`, true);
+  }
+}
+
+function populateCountries() {
+  fill($("country"), uniq(state.parsedFiles.map(f => f.country)));
+  $("country").disabled = false;
+  $("country").onchange = populateCurricula;
+  populateCurricula();
+}
+function populateCurricula() {
+  const c = $("country").value;
+  fill($("curriculum"), uniq(state.parsedFiles.filter(f => f.country === c).map(f => f.curriculum)));
+  $("curriculum").disabled = false;
+  $("curriculum").onchange = populateSubjects;
+  populateSubjects();
+}
+function populateSubjects() {
+  const c = $("country").value, cur = $("curriculum").value;
+  fill($("subject"), uniq(state.parsedFiles.filter(f => f.country === c && f.curriculum === cur).map(f => f.subject)));
+  $("subject").disabled = false;
+  $("subject").onchange = populateLevels;
+  populateLevels();
+}
+function populateLevels() {
+  const c = $("country").value, cur = $("curriculum").value, sub = $("subject").value;
+  const pool = state.parsedFiles.filter(f => f.country === c && f.curriculum === cur && f.subject === sub);
+  const levels = uniq(pool.filter(f => f.level).map(f => f.level));
+  if (levels.length > 0) {
+    $("levelWrap").style.display = "";
+    fill($("level"), levels);
+    $("level").disabled = false;
+    $("level").onchange = populateClasses;
+    populateClasses();
+  } else {
+    $("levelWrap").style.display = "none";
+    populateClasses();
+  }
+}
+function populateClasses() {
+  const c = $("country").value, cur = $("curriculum").value, sub = $("subject").value;
+  const lvl = $("levelWrap").style.display !== "none" ? $("level").value : null;
+  const pool = state.parsedFiles.filter(f =>
+    f.country === c && f.curriculum === cur && f.subject === sub && (lvl ? f.level === lvl : true));
+  fill($("classLevel"), uniq(pool.map(f => f.classVal)));
+  $("classLevel").disabled = false;
+  $("loadClass").disabled = false;
+}
+
+async function loadClass() {
+  const c = $("country").value, cur = $("curriculum").value, sub = $("subject").value;
+  const cls = $("classLevel").value;
+  const lvl = $("levelWrap").style.display !== "none" ? $("level").value : null;
+  const match = state.parsedFiles.find(f =>
+    f.country === c && f.curriculum === cur && f.subject === sub && f.classVal === cls && (lvl ? f.level === lvl : true));
+  if (!match) { setStatus("loadStatus", "No matching class file.", true); return; }
+
+  setStatus("loadStatus", `<span class="spinner"></span>Loading ${match.path}…`);
+  try {
+    const res = await fetch(`${CURRICULUM_PREFIX}/${match.path}`);
+    const json = await res.json();
+    const loader = LOADERS[`${c}/${cur}`];
+    if (!loader) throw new Error(`No loader for ${c}/${cur}`);
+    state.classData = loader(json, match.path);
+    showUnits();
+    setStatus("loadStatus", `Loaded ${state.classData.units.length} units.`);
+  } catch (e) {
+    setStatus("loadStatus", `Load failed: ${e.message}`, true);
+  }
+}
+
+function showUnits() {
+  $("unitsMeta").textContent = `${state.classData.subject} · ${state.classData.classLevel} · ${state.classData.units.length} units`;
+  const list = $("unitList");
+  list.innerHTML = "";
+  state.classData.units.forEach((u, idx) => {
+    const div = document.createElement("div");
+    div.className = "unit-item";
+    div.innerHTML = `
+      <div class="unit-title">Unit ${u.unitNumber}: ${u.unitTitle || "(untitled)"}</div>
+      <div class="unit-meta">${u.durationPeriods} periods${u.subTopicArea ? " · " + u.subTopicArea : ""}</div>
+    `;
+    div.onclick = () => selectUnit(idx);
+    list.appendChild(div);
+  });
+  show("step-units");
+}
+
+function selectUnit(idx) {
+  state.unit = state.classData.units[idx];
+  const tpl = getTemplate(state.classData.country, state.classData.curriculum, state.classData.level);
+  if (!tpl) { alert("No template for this curriculum/level combination."); return; }
+  state.template = tpl;
+  state.form = {};
+  for (const f of tpl.user_fields) {
+    if (f.default !== undefined) state.form[f.id] = f.default;
+    if (f.type === "multi_select" || f.type === "multi_from_unit") state.form[f.id] = [];
+    if (f.type === "boolean") state.form[f.id] = false;
+  }
+  state.form.duration_minutes = tpl.duration_default;
+  if (tpl.template_id === "rwanda_lesson_plan_v1") state.form.unit_no = String(state.unit.unitNumber);
+  renderWizard();
+  show("step-wizard");
+}
+
+function renderWizard() {
+  $("wizardMeta").textContent = `${state.template.label} · ${state.unit.unitTitle}`;
+  const form = $("wizardForm");
+  form.innerHTML = "";
+  for (const field of state.template.user_fields) {
+    form.appendChild(renderField(field));
+  }
+  updateGenerateState();
+}
+
+function renderField(field) {
+  const wrap = document.createElement("div");
+  const val = state.form[field.id];
+  const onChange = v => { state.form[field.id] = v; updateGenerateState(); };
+
+  if (field.type === "text" || field.type === "number") {
+    wrap.innerHTML = `<label>${field.label}${field.required ? " *" : ""}</label>`;
+    const inp = document.createElement("input");
+    inp.type = field.type === "number" ? "number" : "text";
+    inp.value = val ?? "";
+    inp.oninput = e => onChange(field.type === "number" ? Number(e.target.value) : e.target.value);
+    wrap.appendChild(inp);
+  } else if (field.type === "textarea") {
+    wrap.innerHTML = `<label>${field.label}</label>`;
+    const ta = document.createElement("textarea");
+    ta.rows = 3;
+    ta.value = val ?? "";
+    ta.oninput = e => onChange(e.target.value);
+    wrap.appendChild(ta);
+  } else if (field.type === "boolean") {
+    wrap.innerHTML = `<label class="checkbox"><input type="checkbox" ${val ? "checked" : ""}> ${field.label}</label>`;
+    wrap.querySelector("input").onchange = e => onChange(e.target.checked);
+  } else if (field.type === "select") {
+    wrap.innerHTML = `<label>${field.label}</label>`;
+    const sel = document.createElement("select");
+    sel.innerHTML = `<option value="">—</option>` + (field.options ?? []).map(o => `<option value="${o}">${o}</option>`).join("");
+    sel.value = val ?? "";
+    sel.onchange = e => onChange(e.target.value);
+    wrap.appendChild(sel);
+  } else if (field.type === "multi_select") {
+    const fg = document.createElement("fieldset");
+    fg.className = "fieldgroup";
+    fg.innerHTML = `<legend>${field.label}${field.max ? " (max " + field.max + ")" : ""}</legend>`;
+    const selected = Array.isArray(val) ? val : [];
+    for (const opt of field.options ?? []) {
+      const lbl = document.createElement("label");
+      lbl.className = "checkbox";
+      lbl.innerHTML = `<input type="checkbox" ${selected.includes(opt) ? "checked" : ""}> <span>${opt}</span>`;
+      lbl.querySelector("input").onchange = () => {
+        const next = selected.includes(opt)
+          ? selected.filter(x => x !== opt)
+          : field.max && selected.length >= field.max
+            ? selected
+            : [...selected, opt];
+        state.form[field.id] = next;
+        renderWizard();
+      };
+      fg.appendChild(lbl);
+    }
+    wrap.appendChild(fg);
+  } else if (field.type === "multi_from_unit") {
+    const items = extractItems(state.unit, field.source);
+    const fg = document.createElement("fieldset");
+    fg.className = "fieldgroup";
+    fg.innerHTML = `<legend>${field.label}${field.required ? " *" : ""}</legend>`;
+    const selected = Array.isArray(val) ? val : [];
+    if (!items.length) fg.innerHTML += `<div class="muted">No items available.</div>`;
+    items.forEach(item => {
+      const text = typeof item === "string" ? item : item.text;
+      const domain = typeof item === "string" ? null : (item.rawDomain || item.domain);
+      const checked = selected.some(s => (typeof s === "string" ? s : s.text) === text);
+      const lbl = document.createElement("label");
+      lbl.className = "checkbox";
+      lbl.innerHTML = `<input type="checkbox" ${checked ? "checked" : ""}> ${domain ? `<span class="badge">${domain}</span>` : ""} <span>${text}</span>`;
+      lbl.querySelector("input").onchange = () => {
+        const next = checked
+          ? selected.filter(s => (typeof s === "string" ? s : s.text) !== text)
+          : [...selected, item];
+        state.form[field.id] = next;
+        renderWizard();
+      };
+      fg.appendChild(lbl);
+    });
+    wrap.appendChild(fg);
+  }
+  return wrap;
+}
+
+function extractItems(unit, source) {
+  switch (source) {
+    case "objectives.all": return unit.objectives.all;
+    case "objectives.knowledge": return unit.objectives.knowledge;
+    case "objectives.skills": return unit.objectives.skills;
+    case "objectives.attitudes": return unit.objectives.attitudes;
+    case "activities": return unit.activities;
+    case "materials": return unit.materials;
+    default: return [];
+  }
+}
+
+function updateGenerateState() {
+  const ok = state.template.user_fields
+    .filter(f => f.required)
+    .every(f => {
+      const v = state.form[f.id];
+      if (Array.isArray(v)) return v.length > 0;
+      return v !== undefined && v !== null && v !== "";
+    });
+  $("generateBtn").disabled = !ok;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   PREVIEW PAYLOAD
+────────────────────────────────────────────────────────────── */
+function previewPayload() {
+  const payload = buildPayload(state.unit, state.form, state.template);
+  const json = JSON.stringify(payload, null, 2);
+  const sizeKb = (new Blob([json]).size / 1024).toFixed(2);
+  const classMatch = state.parsedFiles.find(f =>
+    f.country === state.classData.country &&
+    f.curriculum === state.classData.curriculum &&
+    f.subject === state.classData.subject &&
+    f.classVal === state.classData.classLevel
+  );
+  const classSizeKb = classMatch ? (classMatch.size / 1024).toFixed(0) : "?";
+
+  $("resultTitle").textContent = "Payload Preview";
+  $("result").innerHTML = `
+    <div style="margin-bottom:12px; padding:12px; background:#0f1115; border-radius:6px;">
+      <strong>Payload size:</strong> ${sizeKb} KB<br>
+      <strong>Class JSON size:</strong> ${classSizeKb} KB<br>
+      <strong>Ratio:</strong> ${classSizeKb !== "?" ? ((sizeKb / classSizeKb) * 100).toFixed(1) + "%" : "?"}
+    </div>
+    <pre>${json.replace(/</g, "&lt;")}</pre>
+  `;
+  show("step-result");
+}
+
+/* ──────────────────────────────────────────────────────────────
+   GENERATE (STREAMING)
+────────────────────────────────────────────────────────────── */
+async function generate() {
+  const btn = $("generateBtn");
+  const apiKey = localStorage.getItem("gemini_api_key");
+  const model = localStorage.getItem("gemini_model") || "gemini-2.5-flash";
+
+  if (!apiKey) {
+    setStatus("genStatus", "Enter your Gemini API key in ⚙ Settings first.", true);
+    $("settings").open = true;
+    return;
+  }
+
+  btn.disabled = true;
+  setStatus("genStatus", `<span class="spinner"></span>Fetching system prompt…`);
+
+  try {
+    const promptRes = await fetch(`${PROMPTS_PREFIX}/${state.template.prompt_file}`);
+    if (!promptRes.ok) throw new Error(`Prompt missing: prompts/${state.template.prompt_file}`);
+    const systemInstruction = await promptRes.text();
+
+    const payload = buildPayload(state.unit, state.form, state.template);
+
+    // Show result area immediately, ready for streaming
+    $("resultTitle").textContent = "Streaming response…";
+    $("result").innerHTML = `<div class="muted" style="padding:8px;"><span class="spinner"></span>Waiting for first chunk…</div>`;
+    show("step-result");
+
+    setStatus("genStatus", `<span class="spinner"></span>Streaming from Gemini (${model})…`);
+
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${encodeURIComponent(apiKey)}`;
+    const body = {
+      system_instruction: { parts: [{ text: systemInstruction }] },
+      contents: [{
+        role: "user",
+        parts: [{ text: JSON.stringify(payload, null, 2) }]
+      }],
+      generationConfig: {
+        maxOutputTokens: 32768,
+        temperature: 0.7
+      }
+    };
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    });
+
+    if (!res.ok) {
+      const errText = await res.text();
+      throw new Error(`Gemini HTTP ${res.status}: ${errText.slice(0, 300)}`);
+    }
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+    let fullText = "";
+    let firstChunk = true;
+    let lastFinishReason = null;
+
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+
+      buffer += decoder.decode(value, { stream: true });
+
+      const lines = buffer.split("\n");
+      buffer = lines.pop();
+
+      for (const line of lines) {
+        const trimmed = line.trim();
+        if (!trimmed.startsWith("data:")) continue;
+        const data = trimmed.slice(5).trim();
+        if (!data || data === "[DONE]") continue;
+
+        try {
+          const chunk = JSON.parse(data);
+          const candidate = chunk.candidates?.[0];
+          if (candidate?.finishReason) lastFinishReason = candidate.finishReason;
+          const text = candidate?.content?.parts?.map(p => p.text).filter(Boolean).join("") || "";
+          if (text) {
+            if (firstChunk) {
+              $("result").innerHTML = "";
+              firstChunk = false;
+            }
+            fullText += text;
+            renderStreaming(fullText);
+          }
+        } catch {
+          // ignore malformed chunk
+        }
+      }
+    }
+
+    // Final render — decide HTML vs markdown now that we have the full text
+    renderFinal(fullText);
+
+    if (lastFinishReason === "MAX_TOKENS") {
+      setStatus("genStatus", "⚠ Output truncated (MAX_TOKENS). Reduce scope or increase maxOutputTokens.");
+    } else {
+      setStatus("genStatus", `Done. ${fullText.length.toLocaleString()} characters.`);
+    }
+
+    $("resultTitle").textContent = "Lesson Plan";
+
+  } catch (e) {
+    setStatus("genStatus", `Error: ${e.message}`, true);
+    btn.disabled = false;
+  }
+}
+
+function looksLikeHtml(text) {
+  const t = text.trimStart();
+  return t.startsWith("<") || /<table[\s>]/i.test(text);
+}
+
+function renderStreaming(text) {
+  const el = $("result");
+  if (looksLikeHtml(text)) {
+    el.innerHTML = text;
+  } else {
+    el.innerHTML = marked.parse(text);
+  }
+}
+
+function renderFinal(text) {
+  const el = $("result");
+  if (looksLikeHtml(text)) {
+    el.innerHTML = text;
+  } else {
+    el.innerHTML = marked.parse(text);
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   WIRE UP
+────────────────────────────────────────────────────────────── */
+$("loadClass").onclick = loadClass;
+$("backToPicker").onclick = () => show("step-picker");
+$("backToUnits").onclick = () => show("step-units");
+$("backToWizard").onclick = () => { $("generateBtn").disabled = false; show("step-wizard"); };
+$("startOver").onclick = () => { state.classData = null; state.unit = null; $("generateBtn").disabled = false; show("step-picker"); };
+$("previewBtn").onclick = previewPayload;
+$("generateBtn").onclick = generate;
+
+/* Settings */
+function loadSettings() {
+  const key = localStorage.getItem("gemini_api_key") || "";
+  const model = localStorage.getItem("gemini_model") || "gemini-2.5-flash";
+  $("apiKeyInput").value = key;
+  $("modelInput").value = model;
+  if (key) $("settingsStatus").textContent = "Key saved.";
+}
+$("saveSettings").onclick = () => {
+  localStorage.setItem("gemini_api_key", $("apiKeyInput").value.trim());
+  localStorage.setItem("gemini_model", $("modelInput").value.trim() || "gemini-2.5-flash");
+  $("settingsStatus").textContent = "Saved.";
+  setTimeout(() => $("settingsStatus").textContent = "", 2000);
+};
+$("clearSettings").onclick = () => {
+  localStorage.removeItem("gemini_api_key");
+  localStorage.removeItem("gemini_model");
+  $("apiKeyInput").value = "";
+  $("settingsStatus").textContent = "Cleared.";
+};
+loadSettings();
+
+init();
+</script>
+</body>
+</html>
