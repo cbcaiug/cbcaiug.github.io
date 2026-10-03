@@ -18,25 +18,21 @@
   button.secondary { background: #171a21; border-color: #2a2f38; color: #e6e8eb; font-weight: 500; padding: 8px 14px; font-size: 13px; }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .muted { color: #6b7280; font-size: 12px; }
-  .unit-item { padding: 12px; border: 1px solid #2a2f38; border-radius: 8px; margin: 8px 0; cursor: pointer; background: #171a21; }
-  .unit-item:hover { border-color: #2f6fed; }
-  .unit-title { font-weight: 600; margin-bottom: 4px; }
-  .unit-meta { font-size: 12px; color: #6b7280; }
   .fieldgroup { border: 1px solid #2a2f38; border-radius: 8px; padding: 12px; margin: 0; }
   .fieldgroup-options { column-count: 2; column-gap: 20px; }
-  @media (max-width: 640px) { .fieldgroup-options { column-count: 1; } }
-  .checkbox { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; font-size: 14px; cursor: pointer; font-weight: normal; color: #e6e8eb; break-inside: avoid; }
-  .checkbox input { width: auto; margin-top: 3px; }
-  .badge { display: inline-block; padding: 1px 6px; border-radius: 999px; background: #2a2f38; font-size: 10px; color: #9aa3ad; margin-right: 6px; text-transform: uppercase; letter-spacing: .05em; }
+  .checkbox { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; font-size: 14px; cursor: pointer; font-weight: normal; color: #e6e8eb; break-inside: avoid; line-height: 1.4; }
+  .checkbox input { width: auto; margin-top: 3px; flex-shrink: 0; }
+  .badge { display: inline-block; padding: 1px 6px; border-radius: 999px; background: #2a2f38; font-size: 10px; color: #9aa3ad; margin-right: 6px; text-transform: uppercase; letter-spacing: .05em; white-space: nowrap; }
+  .badge-inline { display: inline; background: transparent; padding: 0; margin: 0 4px 0 0; color: #6b7280; font-size: 12px; text-transform: none; letter-spacing: 0; }
   .sticky-footer { position: sticky; bottom: 0; padding: 12px 0; background: #0f1115; border-top: 1px solid #2a2f38; margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
-  #result { margin-top: 12px; padding: 16px; border-radius: 8px; background: #171a21; font-size: 14px; overflow-x: auto; }
+  #result { margin-top: 12px; padding: 16px; border-radius: 8px; background: #171a21; font-size: 14px; overflow-x: auto; overflow-y: auto; max-height: 70vh; -webkit-overflow-scrolling: touch; }
   #result:empty { display: none; }
-  #result table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  #result table { border-collapse: collapse; min-width: max-content; margin: 12px 0; font-size: 13px; }
   #result th, #result td { border: 1px solid #2a2f38; padding: 6px 8px; text-align: left; vertical-align: top; }
   #result th { background: #1f242e; font-weight: 600; }
   #result h1, #result h2, #result h3 { color: #e6e8eb; }
   #result code { background: #2a2f38; padding: 1px 5px; border-radius: 4px; }
-  #result pre { background: #0f1115; padding: 12px; border-radius: 6px; overflow: auto; max-height: 500px; font-size: 12px; }
+  #result pre { background: #0f1115; padding: 12px; border-radius: 6px; overflow: auto; max-height: 500px; font-size: 12px; white-space: pre-wrap; word-break: break-word; }
   .status { font-size: 13px; color: #9aa3ad; margin-top: 8px; min-height: 20px; }
   .status.error { color: #f87171; }
   .spinner { display: inline-block; width: 12px; height: 12px; border: 2px solid #2a2f38; border-top-color: #2f6fed; border-radius: 50%; animation: spin .8s linear infinite; margin-right: 6px; vertical-align: middle; }
@@ -53,7 +49,7 @@
   details.section > summary::before { content: "▸"; display: inline-block; transition: transform .15s; color: #6b7280; font-size: 10px; }
   details.section[open] > summary::before { transform: rotate(90deg); }
   details.section > *:not(summary) { margin-top: 12px; }
-  .section-counts { margin-left: auto; display: flex; gap: 8px; font-weight: 400; font-size: 11px; text-transform: none; letter-spacing: 0; }
+  .section-counts { margin-left: auto; display: flex; gap: 8px; font-weight: 400; font-size: 11px; text-transform: none; letter-spacing: 0; flex-wrap: wrap; }
   .section-counts .c-ai { color: #34d399; }
   .section-counts .c-user { color: #60a5fa; }
   .section-counts .c-blank { color: #6b7280; }
@@ -64,7 +60,7 @@
   .field-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; gap: 8px; flex-wrap: wrap; }
   .field-header label { font-size: 13px; color: #9aa3ad; }
   .required-mark { color: #f87171; font-weight: 700; }
-  .field-status { font-size: 11px; padding: 1px 8px; border-radius: 999px; background: #1f242e; color: #6b7280; text-transform: uppercase; letter-spacing: .05em; font-weight: 500; }
+  .field-status { font-size: 11px; padding: 1px 8px; border-radius: 999px; background: #1f242e; color: #6b7280; text-transform: uppercase; letter-spacing: .05em; font-weight: 500; white-space: nowrap; }
   .field-status.status-ai { color: #34d399; background: rgba(52,211,153,0.1); }
   .field-status.status-user { color: #60a5fa; background: rgba(96,165,250,0.1); }
   .sparkle-btn { width: auto; padding: 4px 10px; font-size: 13px; border-radius: 6px; background: #171a21; border: 1px solid #2a2f38; color: #6b7280; cursor: pointer; line-height: 1; transition: all .15s; }
@@ -82,22 +78,57 @@
   .unit-context .uc-key { color: #6b7280; min-width: 90px; }
   .unit-context .uc-val { color: #e6e8eb; }
 
-  .token-counter { position: fixed; top: 12px; right: 12px; padding: 6px 12px; background: #13161c; border: 1px solid #2a2f38; border-radius: 999px; font-size: 11px; font-family: ui-monospace, monospace; color: #9aa3ad; z-index: 100; display: flex; gap: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+  /* Page header + token counter */
+  .page-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+  .page-header h1 { margin: 0 0 4px; }
+  .token-counter { padding: 6px 12px; background: #13161c; border: 1px solid #2a2f38; border-radius: 999px; font-size: 11px; font-family: ui-monospace, monospace; color: #9aa3ad; display: flex; gap: 12px; flex-shrink: 0; white-space: nowrap; }
   .token-counter span { display: inline-flex; align-items: center; gap: 4px; }
   .token-counter .t-in { color: #60a5fa; }
   .token-counter .t-out { color: #34d399; }
   .token-counter .t-label { color: #4b5563; font-size: 10px; }
+
+  /* Mobile responsiveness */
+  @media (max-width: 640px) {
+    body { padding: 12px 12px 16px; }
+    h1 { font-size: 17px; }
+    h2 { font-size: 14px; margin: 16px 0 8px; }
+    .page-header { flex-direction: column; gap: 6px; }
+    .token-counter { font-size: 10px; padding: 5px 10px; align-self: flex-start; }
+
+    .row { grid-template-columns: 1fr; gap: 8px; }
+    .sticky-footer { flex-direction: column; }
+    .sticky-footer button { width: 100%; }
+
+    details.section { padding: 8px 10px; }
+    details.section > summary { font-size: 12px; }
+    .section-counts { font-size: 10px; gap: 6px; }
+
+    .fieldgroup-options { column-count: 1; }
+    .field-header { align-items: flex-start; }
+    .field-status { font-size: 10px; }
+    .sparkle-btn { padding: 3px 8px; }
+
+    .unit-context { font-size: 12px; padding: 8px 10px; }
+    .unit-context .uc-key { min-width: 70px; }
+
+    #result { padding: 10px; font-size: 13px; border-radius: 6px; max-height: 75vh; }
+    #result table { font-size: 11px; }
+    #result th, #result td { padding: 4px 6px; }
+  }
 </style>
 </head>
 <body>
 
-<div class="token-counter" id="tokenCounter" title="Session cumulative tokens — reset in Settings">
-  <span><span class="t-label">IN</span> <span class="t-in" id="tokIn">0</span></span>
-  <span><span class="t-label">OUT</span> <span class="t-out" id="tokOut">0</span></span>
+<div class="page-header">
+  <div>
+    <h1>Lesson Plan Wizard</h1>
+    <p class="muted">Pick a class, choose a unit, fill the form, generate.</p>
+  </div>
+  <div class="token-counter" id="tokenCounter" title="Session cumulative tokens — reset in Settings">
+    <span><span class="t-label">IN</span> <span class="t-in" id="tokIn">0</span></span>
+    <span><span class="t-label">OUT</span> <span class="t-out" id="tokOut">0</span></span>
+  </div>
 </div>
-
-<h1>Lesson Plan Wizard</h1>
-<p class="muted">Pick a class, choose a unit, fill the form, generate.</p>
 
 <details id="settings">
   <summary>⚙ Settings</summary>
@@ -105,9 +136,9 @@
     <label>Gemini API Key</label>
     <input type="password" id="apiKeyInput" placeholder="AIza..." autocomplete="off">
     <div class="muted" style="margin-top:4px">Saved to this browser only. Never sent anywhere except Google.</div>
-    <label>Model</label>
+    <label style="margin-top:12px">Model</label>
     <input type="text" id="modelInput" placeholder="gemini-3.5-flash" value="gemini-3.5-flash">
-    <div style="margin-top:12px">
+    <div style="margin-top:12px; display: flex; gap: 8px; flex-wrap: wrap;">
       <button class="secondary" id="saveSettings" type="button">Save</button>
       <button class="secondary" id="clearSettings" type="button">Clear key</button>
       <button class="secondary" id="resetTokens" type="button">Reset token counter</button>
@@ -139,8 +170,13 @@
 <section id="step-units" style="display:none">
   <h2>2 · Choose unit</h2>
   <p class="muted" id="unitsMeta"></p>
-  <div id="unitList"></div>
-  <button class="secondary" id="backToPicker" style="margin-top:12px">← Back</button>
+  <label style="margin-top:12px">Select a unit</label>
+  <select id="unitSelect"></select>
+  <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+    <button id="pickUnitBtn">Continue →</button>
+    <button class="secondary" id="backToPicker">← Back</button>
+  </div>
+  <div class="status" id="unitStatus"></div>
 </section>
 
 <section id="step-wizard" style="display:none">
@@ -623,6 +659,25 @@ function canSparkle(field) {
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
+function extractDomainBadge(rawDomain) {
+  // Extract short KUSVA-style letters from a rawDomain string like "Understanding, Skills" → "u, s"
+  if (!rawDomain) return null;
+  const s = rawDomain.toLowerCase();
+  const letters = [];
+  if (/knowledge|\bk\b/.test(s)) letters.push("k");
+  if (/understanding|\bu\b/.test(s)) letters.push("u");
+  if (/skill|\bs\b/.test(s)) letters.push("s");
+  if (/attitude|\ba\b/.test(s)) letters.push("a");
+  if (/value|\bv\b/.test(s)) letters.push("v");
+  // Also parse parenthesised letters like (k, u, s)
+  const paren = rawDomain.match(/\(([^)]+)\)/);
+  if (paren) {
+    const inner = paren[1].split(/[,\s]+/).map(x => x.trim().toLowerCase()).filter(Boolean);
+    for (const t of inner) if (!letters.includes(t)) letters.push(t);
+  }
+  if (!letters.length) return rawDomain;
+  return letters.join(", ");
+}
 
 /* ──────────────────────────────────────────────────────────────
    INIT + PICKER
@@ -709,19 +764,24 @@ async function loadClass() {
 
 function showUnits() {
   $("unitsMeta").textContent = `${state.classData.subject} · ${state.classData.classLevel} · ${state.classData.units.length} units`;
-  const list = $("unitList");
-  list.innerHTML = "";
+  const sel = $("unitSelect");
+  sel.innerHTML = "";
   state.classData.units.forEach((u, idx) => {
-    const div = document.createElement("div");
-    div.className = "unit-item";
-    div.innerHTML = `
-      <div class="unit-title">Unit ${u.unitNumber}: ${u.unitTitle || "(untitled)"}</div>
-      <div class="unit-meta">${u.durationPeriods} periods${u.subTopicArea ? " · " + u.subTopicArea : ""}${u.themeTitle ? " · " + u.themeTitle : ""}</div>
-    `;
-    div.onclick = () => selectUnit(idx);
-    list.appendChild(div);
+    const opt = document.createElement("option");
+    opt.value = String(idx);
+    const title = u.unitTitle || "(untitled)";
+    opt.textContent = `Unit ${u.unitNumber}: ${title}`;
+    sel.appendChild(opt);
   });
+  sel.size = Math.min(state.classData.units.length + 1, 8); // Hint browsers; still renders as dropdown on mobile
+  $("unitStatus").textContent = "";
   show("step-units");
+}
+
+function pickSelectedUnit() {
+  const idx = parseInt($("unitSelect").value, 10);
+  if (isNaN(idx)) { setStatus("unitStatus", "Please select a unit.", true); return; }
+  selectUnit(idx);
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -792,7 +852,6 @@ function renderWizard() {
     det.className = "section";
     det.dataset.sectionName = name;
 
-    // Open state: default = required sections open, others closed. Preserved via state.sectionOpen.
     const stored = state.sectionOpen[name];
     det.open = stored !== undefined ? stored : g.hasRequired;
 
@@ -800,7 +859,6 @@ function renderWizard() {
     sum.innerHTML = `<span>${name}</span><span class="section-counts"></span>`;
     det.appendChild(sum);
 
-    // Save open state on toggle — no re-render triggered
     det.addEventListener("toggle", () => {
       state.sectionOpen[name] = det.open;
     });
@@ -843,7 +901,7 @@ function renderField(field) {
     btn.title = state.aiDecide[field.id] ? "AI will decide this field" : "Let AI decide";
     btn.onclick = () => {
       state.aiDecide[field.id] = !state.aiDecide[field.id];
-      renderWizard(); // discrete action, acceptable to re-render
+      renderWizard();
     };
     header.appendChild(btn);
   }
@@ -929,12 +987,13 @@ function renderField(field) {
     } else {
       for (const item of items) {
         const text = typeof item === "string" ? item : item.text;
-        const domain = typeof item === "string" ? null : (item.rawDomain || item.domain);
+        const rawDomain = typeof item === "string" ? null : (item.rawDomain || item.domain);
+        const kusva = rawDomain ? extractDomainBadge(rawDomain) : null;
         const current = Array.isArray(state.form[field.id]) ? state.form[field.id] : [];
         const checked = current.some(s => (typeof s === "string" ? s : s.text) === text);
         const lbl = document.createElement("label");
         lbl.className = "checkbox";
-        lbl.innerHTML = `<input type="checkbox" ${checked ? "checked" : ""}> ${domain ? `<span class="badge">${domain}</span>` : ""} <span>${text}</span>`;
+        lbl.innerHTML = `<input type="checkbox" ${checked ? "checked" : ""}> <span><span class="badge-inline">${kusva ? escapeHtml(kusva) : ""}</span>${escapeHtml(text)}</span>`;
         lbl.querySelector("input").onchange = (e) => {
           const cur = Array.isArray(state.form[field.id]) ? state.form[field.id] : [];
           state.form[field.id] = e.target.checked
@@ -1133,7 +1192,6 @@ async function streamGemini({ systemInstruction, userMessage, onChunk, onDone, o
 async function generate() {
   const btn = $("generateBtn");
   const apiKey = localStorage.getItem("gemini_api_key");
-  const model = localStorage.getItem("gemini_model") || DEFAULT_MODEL;
   if (!apiKey) {
     setStatus("genStatus", "Enter your Gemini API key in ⚙ Settings first.", true);
     $("settings").open = true;
@@ -1275,6 +1333,7 @@ function renderFinal(text) {
    WIRE UP
 ────────────────────────────────────────────────────────────── */
 $("loadClass").onclick = loadClass;
+$("pickUnitBtn").onclick = pickSelectedUnit;
 $("backToPicker").onclick = () => show("step-picker");
 $("backToUnits").onclick = () => show("step-units");
 $("backToWizard").onclick = () => { $("generateBtn").disabled = false; show("step-wizard"); };
