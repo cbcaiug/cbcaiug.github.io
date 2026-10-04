@@ -1,0 +1,26 @@
+1. raw.githubusercontent.com
+https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/main/android-chrome-192x192.png
+https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/main/android-chrome-512x512.png
+https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/main/apple-touch-icon.png
+https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/main/favicon-16x16.png
+https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/main/favicon-32x32.png
+https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/main/favicon.ico
+https://raw.githubusercontent.com/cbcaiug/cbcaiug.github.io/main/onlineSeminar.jpeg
+
+2. jsDelivr (CDN)
+https://cdn.jsdelivr.net/gh/cbcaiug/cbcaiug.github.io@main/android-chrome-192x192.png
+https://cdn.jsdelivr.net/gh/cbcaiug/cbcaiug.github.io@main/android-chrome-512x512.png
+https://cdn.jsdelivr.net/gh/cbcaiug/cbcaiug.github.io@main/apple-touch-icon.png
+https://cdn.jsdelivr.net/gh/cbcaiug/cbcaiug.github.io@main/favicon-16x16.png
+https://cdn.jsdelivr.net/gh/cbcaiug/cbcaiug.github.io@main/favicon-32x32.png
+https://cdn.jsdelivr.net/gh/cbcaiug/cbcaiug.github.io@main/favicon.ico
+https://cdn.jsdelivr.net/gh/cbcaiug/cbcaiug.github.io@main/onlineSeminar.jpeg
+
+3. GitHub Pages (native, same-origin)
+https://cbcaiug.github.io/android-chrome-192x192.png
+https://cbcaiug.github.io/android-chrome-512x512.png
+https://cbcaiug.github.io/apple-touch-icon.png
+https://cbcaiug.github.io/favicon-16x16.png
+https://cbcaiug.github.io/favicon-32x32.png
+https://cbcaiug.github.io/favicon.ico
+https://cbcaiug.github.io/onlineSeminar.jpeg
