@@ -1,0 +1,1234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CBC AI Tool | Plans &amp; Quotas (v9 demo)</title>
+<link rel="icon" type="image/png" sizes="32x32" href="https://cbcaiug.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cbcaiug.github.io/favicon-16x16.png">
+<link rel="apple-touch-icon" href="https://cbcaiug.github.io/apple-touch-icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700;800&display=swap">
+<style>
+  :root{
+    --ink:#111827; --muted:#6b7280; --faint:#9ca3af; --line:#e5e7eb; --soft:#f3f4f6;
+    --bg:#f8fafc; --card:#fff; --blue:#1d4ed8; --blue-soft:#eff6ff; --blue-line:#bfdbfe;
+    --green:#079b79; --green-soft:#ecfdf3; --amber:#b7791f;
+    font-family:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);-webkit-text-size-adjust:100%}
+  button{font-family:inherit}
+
+  .topbar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:#fffffff2;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+  .brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:16px;letter-spacing:-.02em}
+  .logo{width:26px;height:26px;border-radius:50%;object-fit:cover;flex:none}
+  .sponsor .logo{width:28px;height:28px;border-radius:8px;background:#fff}
+  .back{font-size:12px;font-weight:700;color:var(--muted);text-decoration:none}
+
+  /* bottom padding leaves room for the fixed sponsored banner */
+  main{max-width:560px;margin:0 auto;padding:14px 12px 88px}
+
+  .head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 2px 4px}
+  h1{margin:0;font-size:22px;letter-spacing:-.035em;font-weight:800}
+  .country{display:flex;align-items:center;gap:4px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 8px 5px 10px;font-size:12px;font-weight:700}
+  .country select{border:0;background:transparent;font:inherit;color:var(--ink);outline-offset:2px}
+  .sub{margin:0 2px 10px;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .dot{width:7px;height:7px;border-radius:50%;background:#22c55e;flex:none}
+
+  /* ---------- Plan tabs (name + validity) ---------- */
+  .tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding-top:6px;scroll-margin-top:60px}
+  .tab{position:relative;min-width:0;min-height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:5px 4px;font-size:13px;font-weight:800;color:#374151;cursor:pointer;line-height:1.1}
+  .badge{position:absolute;top:-6px;right:6px;background:#059669;color:#fff;font-size:8.5px;font-weight:800;line-height:1.1;padding:2px 6px;border-radius:999px;pointer-events:none}
+  .tab small{font-size:10.5px;font-weight:700;color:#2563a8}
+  .tab[aria-selected="true"]{background:#eaf2ff;border-color:#93c5fd;color:var(--blue);box-shadow:0 1px 3px #1d4ed814}
+  .tab[aria-selected="true"] small{color:var(--blue)}
+
+  /* ---------- Summary table accordion ---------- */
+  .compare{margin-top:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .compare>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 14px;cursor:pointer;min-height:52px}
+  .compare>summary::-webkit-details-marker{display:none}
+  .compare h2{margin:0;font-size:15px;font-weight:800;letter-spacing:-.02em}
+  .compare .s-sub{margin:2px 0 0;font-size:11px;color:var(--muted)}
+  .compare .s-side{display:flex;align-items:center;gap:8px}
+  .count{white-space:nowrap;font-size:10px;font-weight:800;color:#2563a8;background:var(--blue-soft);border-radius:999px;padding:4px 8px}
+  .compare .s-side svg{width:16px;height:16px;color:var(--muted);transition:transform .15s}
+  .compare[open] .s-side svg{transform:rotate(180deg)}
+  .compare[open]>summary{border-bottom:1px solid var(--line)}
+  .table-hint{margin:0;padding:8px 12px;font-size:10.5px;color:var(--faint);border-top:1px solid var(--line);background:#fafafa}
+  table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:12.5px}
+  thead th{padding:8px 3px 7px;font-size:10px;line-height:1.15;font-weight:700;color:var(--muted);text-align:center;background:#f9fafb;border-bottom:1px solid var(--line)}
+  thead th:first-child{text-align:left;padding-left:12px}
+  tbody tr{cursor:pointer;height:42px;border-bottom:1px solid var(--soft);transition:background .12s}
+  tbody tr:last-child{border-bottom:0}
+  tbody tr:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+  tbody tr[aria-selected="true"]{background:var(--blue-soft)}
+  tbody th,tbody td{padding:0 3px;text-align:center;font-weight:600;color:#4b5563;white-space:nowrap}
+  tbody th{text-align:left;padding-left:12px;font-weight:800;color:var(--ink);font-size:13px}
+  tbody tr[aria-selected="true"] th{color:var(--blue);box-shadow:inset 3px 0 0 var(--blue)}
+  tbody td.price{font-weight:800;color:var(--ink)}
+  tr.soon th,tr.soon td{color:var(--faint)}
+  .tag.best{background:#d1fae5;color:#047857}
+  .tag{display:inline-block;margin-left:4px;padding:1px 5px;border-radius:6px;background:#fef3c7;color:var(--amber);font-size:9px;font-weight:800;vertical-align:1px}
+  .yes{width:16px;height:16px;color:var(--green);vertical-align:middle}
+  .no{color:#d1d5db;font-weight:700}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .common{display:flex;gap:6px;align-items:flex-start;margin:10px 0 0;font-size:11px;line-height:1.4;color:var(--muted)}
+  .common svg{width:14px;height:14px;color:var(--green);flex:none;margin-top:1px}
+  .common b{color:#374151;font-weight:700}
+
+  /* ---------- Selected plan card ---------- */
+  .detail{margin-top:10px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 16px 14px;transition:opacity .12s}
+  .detail.swap{opacity:.55}
+  .d-top{margin-bottom:12px}
+  .d-row{display:flex;justify-content:space-between;gap:8px}
+  .d-row.head{align-items:center;margin-bottom:2px}
+  .d-row.main{align-items:flex-end;flex-wrap:wrap;row-gap:6px}
+  .d-name{font-size:15px;font-weight:800;color:var(--muted);margin:0;min-width:0}
+  .for{font-weight:600;font-size:12.5px}
+  .d-price{white-space:nowrap}
+  .m-long{display:none}
+  .best-pill{font-size:11px;font-weight:800;color:#047857;background:#d1fae5;border-radius:999px;padding:3px 9px;white-space:nowrap}
+  .d-price{font-size:28px;font-weight:800;letter-spacing:-.04em;line-height:1.05}
+  .d-price small{font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.02em;margin-left:4px}
+  .chip{font-size:11px;font-weight:700;color:var(--blue);background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:999px;padding:4px 9px;white-space:nowrap}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .fact{background:#f9fafb;border:1px solid var(--soft);border-radius:12px;padding:8px 10px;min-height:52px}
+  .fact.wide{grid-column:1/-1;min-height:0}
+  .fact .k{font-size:11px;color:var(--muted);font-weight:600}
+  .fact .v{font-size:14px;font-weight:800;margin-top:1px;display:flex;align-items:center;gap:5px}
+  .fact .v.off{color:var(--faint);font-weight:700}
+  .fact .v svg{width:15px;height:15px;color:var(--green);flex:none}
+  .fact .hint{font-size:11px;font-weight:600;color:var(--muted)}
+  .link{border:0;background:none;padding:0;color:var(--blue);font-weight:700;font-size:11px;text-decoration:underline;cursor:pointer}
+
+  .more{margin:8px 0 10px}
+  .more summary{list-style:none;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:12px;font-weight:700;color:var(--muted);min-height:28px}
+  .more summary::-webkit-details-marker{display:none}
+  .more svg{width:14px;height:14px;transition:transform .15s}
+  .more[open] svg{transform:rotate(180deg)}
+  .more ul{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:12.5px;color:#374151}
+  .more li{display:flex;gap:7px;align-items:flex-start}
+  .more li svg{transform:none;color:var(--green);margin-top:2px;flex:none}
+
+  .actions{display:grid;grid-template-columns:1.6fr 1fr;gap:8px}
+  .pay{border:0;border-radius:12px;min-height:46px;background:linear-gradient(105deg,#079b79,#0b9f91);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;box-shadow:0 6px 12px #05966922}
+  .pay svg{width:16px;height:16px}
+  .pay:disabled{background:#e5e7eb;color:var(--faint);box-shadow:none;cursor:not-allowed}
+  .guide{border:0;border-radius:12px;min-height:46px;background:var(--soft);color:#374151;font-size:12px;font-weight:700;cursor:pointer}
+  button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+  /* ---------- Below the fold: guide, refunds, contact ---------- */
+  .panel{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;scroll-margin-top:60px}
+  .panel h2{margin:0 0 10px;font-size:17px;font-weight:800;letter-spacing:-.02em}
+  .steps{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:s}
+  .steps li{counter-increment:s;display:flex;gap:10px;align-items:flex-start;background:#f9fafb;border:1px solid var(--soft);border-radius:12px;padding:10px;font-size:13px;line-height:1.4;color:#374151}
+  .steps li::before{content:counter(s);flex:none;width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center}
+  .steps li.crit{background:var(--blue-soft);border-color:var(--blue-line)}
+  .refund h3{margin:12px 0 3px;font-size:12px;font-weight:800;color:#374151}
+  .refund p{margin:0;font-size:13px;line-height:1.5;color:var(--muted)}
+  .contact{background:var(--blue-soft);border-color:var(--blue-line);text-align:center}
+  .contact p{margin:0 0 12px;font-size:13px;color:#2563a8}
+  .contact .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .contact button{min-height:44px;border-radius:12px;font-size:13px;font-weight:800;cursor:pointer;border:1px solid var(--blue-line);background:#fff;color:var(--blue)}
+  .contact button.solid{background:#2563eb;color:#fff;border-color:#2563eb}
+  .demo-note{margin:14px 4px 0;font-size:10.5px;color:var(--faint);text-align:center}
+
+  /* stand-in for the real fixed "Sponsored" banner so you can judge the true visible height */
+  .sponsor{position:fixed;left:0;right:0;bottom:0;z-index:6;display:flex;align-items:center;gap:10px;padding:9px 12px calc(9px + env(safe-area-inset-bottom,0px));background:#fdebd6;color:#92591f;font-size:12px;line-height:1.3}
+  .sponsor span{flex:1}
+  .sponsor b{background:#c9792a;color:#fff;border-radius:999px;padding:6px 12px;font-size:12px}
+
+  .toast{position:fixed;left:50%;bottom:78px;transform:translate(-50%,16px);opacity:0;pointer-events:none;background:var(--ink);color:#fff;border-radius:12px;padding:10px 14px;font-size:12px;font-weight:700;max-width:calc(100vw - 32px);text-align:center;transition:opacity .18s,transform .18s;z-index:40}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  /* short phones: trim spacing so the table header stays above the banner */
+  @media(max-width:719px) and (max-height:780px){
+    main{padding-top:8px}
+    .sub{display:none}.head{margin-bottom:8px}
+    .detail{padding:12px 14px 12px}.d-top{margin-bottom:8px}
+    .fact{min-height:46px;padding:6px 10px}
+    .common{margin-top:8px}.more{margin:4px 0 8px}
+  }
+  @media(max-width:340px){tbody th{font-size:12px}table{font-size:12px}.d-price{font-size:24px}}
+  /* ---------- Responsive: mobile is the base; scale up for tablet and PC ---------- */
+  @media(hover:hover){.tab:hover{border-color:#93c5fd}tbody tr:hover{background:#f8fbff}.guide:hover{background:#e5e7eb}}
+  @media(min-width:720px){
+    main{max-width:880px;padding:28px 24px 96px}
+    .topbar{height:60px;padding-inline:max(24px,calc((100% - 832px)/2))}
+    .brand{font-size:18px}.logo{width:30px;height:30px}
+    .sponsor{padding-inline:max(24px,calc((100% - 832px)/2));font-size:14px}
+    h1{font-size:32px}
+    .country{font-size:14px;padding:7px 12px}
+    .sub{font-size:14px;margin-bottom:18px}
+    .tabs{grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+    .tab{min-height:66px;font-size:16px;border-radius:14px;gap:4px}
+    .tab small{font-size:12.5px}
+    .tabs{padding-top:8px}
+    .badge{font-size:10.5px;top:-8px;right:10px;padding:3px 8px}
+    .for{font-size:15px}
+    .m-long{display:inline}.m-short{display:none}
+    .best-pill{font-size:13px;padding:4px 12px}
+    .detail{margin-top:16px;padding:26px 30px 24px;border-radius:24px}
+    .d-top{margin-bottom:18px}
+    .d-name{font-size:17px}.d-price{font-size:40px}.d-price small{font-size:14px}
+    .chip{font-size:13px;padding:6px 13px}
+    .facts{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .fact{padding:13px 15px;min-height:82px;border-radius:14px}
+    .fact .k{font-size:13px}.fact .v{font-size:16px}.fact .hint,.link{font-size:12.5px}
+    .fact .v svg{width:17px;height:17px}
+    .common{font-size:13px;margin-top:14px}
+    .more{margin:12px 0 16px}
+    .more summary{font-size:14px}
+    .more ul{grid-template-columns:1fr 1fr;font-size:14px;gap:8px 20px}
+    .actions{grid-template-columns:280px 170px;gap:12px}
+    .pay{min-height:52px;font-size:16px}.guide{min-height:52px;font-size:14px}
+    .compare{margin-top:16px}
+    .compare>summary{padding:16px 22px}
+    .compare h2{font-size:18px}.compare .s-sub{font-size:13px}.count{font-size:11px}
+    table{font-size:15px}
+    thead th{font-size:12px;padding:12px 6px}
+    tbody tr{height:52px}
+    tbody th{font-size:15px;padding-left:22px}
+    .yes{width:19px;height:19px}
+    .table-hint{font-size:12px;padding:10px 22px}
+    .panel{margin-top:20px;padding:26px 28px}
+    .panel h2{font-size:20px}
+    .steps li{font-size:15px;padding:12px 14px}
+    .refund h3{font-size:13px}.refund p{font-size:15px}
+    .contact p{font-size:15px}
+    .contact .row{max-width:460px;margin:0 auto}
+    .contact button{min-height:48px;font-size:15px}
+    .toast{bottom:88px;font-size:14px}
+  }
+
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+  /* ---------- Page additions ---------- */
+  .tb-right{display:flex;align-items:center;gap:12px}
+  .demo-btn{border:1px dashed #cbd5e1;background:#fff;color:#475569;border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800;cursor:pointer}
+  .comm-line{margin:7px 0 0;font-size:12px;font-weight:700;color:#047857}
+  .demo-pop{position:fixed;top:56px;right:10px;z-index:15;width:min(300px,calc(100vw - 20px));background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:0 12px 32px #0f172a2e;font-size:12px;color:#374151}
+  .demo-pop[hidden]{display:none}
+  .demo-pop h3{margin:0 0 8px;font-size:13px;font-weight:800}
+  .demo-pop h3 small{font-weight:600;color:var(--faint);margin-left:4px}
+  .demo-pop label{display:block;margin:10px 0 5px;font-weight:700}
+  .demo-pop input{width:100%;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font:inherit;font-size:14px;font-weight:700}
+  .dp-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+  .dp-row button{border:1px solid var(--line);background:#f9fafb;border-radius:999px;padding:5px 10px;font-size:11.5px;font-weight:700;color:#374151;cursor:pointer}
+  .dp-row button[aria-pressed="true"]{background:var(--blue-soft);border-color:var(--blue-line);color:var(--blue)}
+  .dp-reset{margin-top:12px;width:100%;border:0;background:var(--soft);border-radius:10px;padding:8px;font-weight:800;font-size:12px;cursor:pointer}
+
+  /* ---------- Pay modal ---------- */
+  .overlay{position:fixed;inset:0;z-index:20;background:#111827a6;display:flex;align-items:flex-end;justify-content:center;visibility:hidden;opacity:0;transition:opacity .18s,visibility .18s}
+  .overlay.open{visibility:visible;opacity:1}
+  .sheet{width:100%;max-width:480px;max-height:92vh;max-height:92dvh;overflow:auto;overscroll-behavior:contain;background:#fff;border-radius:24px 24px 0 0;padding:8px 18px calc(18px + env(safe-area-inset-bottom,0px));transform:translateY(28px);transition:transform .22s ease}
+  .overlay.open .sheet{transform:none}
+  .grab{width:38px;height:4px;border-radius:2px;background:#d1d5db;margin:2px auto 12px}
+  body.m-open{overflow:hidden}
+  body.m-open .toast{bottom:auto;top:14px;transform:translate(-50%,-12px)}
+  body.m-open .toast.show{transform:translate(-50%,0)}
+  [data-focus]{outline:none}
+
+  .m-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .m-ico{width:40px;height:40px;border-radius:12px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;flex:none}
+  .m-ico svg{width:20px;height:20px}
+  .m-head h2{margin:0;font-size:17px;font-weight:800;letter-spacing:-.02em}
+  .m-sub{margin:1px 0 0;font-size:12px;color:var(--muted)}
+  .m-x{margin-left:auto;width:36px;height:36px;border:0;background:var(--soft);border-radius:50%;color:#4b5563;display:grid;place-items:center;cursor:pointer;flex:none}
+  .m-x svg{width:16px;height:16px}
+
+  .seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;background:var(--soft);border-radius:14px;padding:4px;margin-bottom:12px}
+  .seg button{border:0;background:transparent;border-radius:11px;min-height:48px;padding:4px 6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;cursor:pointer;color:var(--muted)}
+  .seg button span{font-size:13px;font-weight:800}
+  .seg button small{font-size:11px;font-weight:700}
+  .seg button em{font-style:normal;color:#047857}
+  .seg button[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 4px #0f172a1f}
+
+  .bd{background:#f9fafb;border:1px solid #eef0f3;border-radius:16px;padding:4px 14px}
+  .row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;font-size:13.5px;color:#4b5563}
+  .row b{color:var(--ink);font-weight:700;white-space:nowrap}
+  .row.strong{border-top:1px solid var(--line);padding-top:10px;color:var(--ink);font-weight:800}
+  .row b.green{color:#047857;font-weight:800;font-size:15px}
+  .row b.pill{background:#dbeafe;color:#1e3a8a;border-radius:10px;padding:5px 10px;font-weight:800;font-size:14px}
+  .row b.pill.ok{background:#d1fae5;color:#065f46}
+  .row b.pill.bad{background:#fee2e2;color:#b91c1c}
+  .row .old{color:var(--faint);font-weight:600;font-size:12px;margin-right:6px}
+  .row.perk{justify-content:flex-start;gap:6px;color:#047857;font-weight:700;font-size:12.5px;padding:2px 0 8px}
+  .row.perk svg{width:15px;height:15px;flex:none}
+  .i{width:17px;height:17px;border-radius:50%;border:0;background:#9ca3af;color:#fff;font-size:10px;font-weight:800;margin-left:6px;cursor:pointer;padding:0;line-height:17px;vertical-align:1px}
+  .tip{margin:-2px 0 6px;font-size:12px;line-height:1.45;color:var(--muted)}
+
+  .lbl{display:block;margin:12px 0 6px;font-size:13px;font-weight:800;color:#374151}
+  .field{display:flex;align-items:center;gap:10px;min-height:52px;border:2px solid #d1d5db;border-radius:14px;padding:0 12px;background:#fff}
+  .field:focus-within{border-color:#10b981}
+  .field.err{border-color:#dc2626}
+  .field .cc{font-weight:700;color:var(--muted);white-space:nowrap;border-right:1px solid var(--line);padding-right:10px}
+  .field input{border:0;outline:0;flex:1;min-width:0;font:inherit;font-size:16px;font-weight:700;background:transparent;color:var(--ink)}
+  .net{font-size:10.5px;font-weight:800;border-radius:6px;padding:2px 6px;flex:none}
+  .net:empty{display:none}
+  .net.mtn{background:#fef3c7;color:#92400e}.net.airtel{background:#fee2e2;color:#b91c1c}
+  .err-msg{margin:5px 0 0;font-size:12px;font-weight:600;color:#b91c1c;min-height:0}
+  .err-msg:empty{display:none}
+
+  .note{display:flex;gap:8px;align-items:flex-start;background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:9px 11px;margin:12px 0 0;font-size:12px;line-height:1.45;color:#7c2d12}
+  .note svg{width:16px;height:16px;color:#d97706;flex:none;margin-top:1px}
+  .note a,.note .lnk{color:var(--blue);font-weight:700;text-decoration:underline;background:none;border:0;padding:0;font:inherit;font-weight:700;cursor:pointer}
+  .note.warn{font-weight:600;color:#92400e;font-size:12.5px}
+  .short{margin:10px 0 0;font-size:12.5px;line-height:1.45;color:#b91c1c;font-weight:600}
+
+  .stack{display:grid;gap:8px;margin-top:14px}
+  .btn{width:100%;min-height:50px;border:0;border-radius:14px;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;font-family:inherit}
+  .btn svg{width:17px;height:17px;flex:none}
+  .btn.primary{background:linear-gradient(105deg,#059669,#0b9f91);color:#fff;box-shadow:0 6px 12px #05966922}
+  .btn.blue{background:#2563eb;color:#fff;box-shadow:0 6px 12px #2563eb2e}
+  .btn.soft{background:var(--blue-soft);color:var(--blue);font-size:14px;min-height:46px}
+  .btn.gray{background:var(--soft);color:#374151;font-size:14px;font-weight:700;min-height:46px}
+  .btn.danger{background:#fef2f2;color:#be123c;border:1px solid #fecdd3;font-size:14px;min-height:46px}
+  .btn[disabled]{background:#e5e7eb;color:var(--faint);box-shadow:none;cursor:not-allowed}
+  .textlink{border:0;background:none;color:var(--blue);font:inherit;font-weight:700;font-size:14px;min-height:42px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;width:100%}
+  .textlink svg{width:15px;height:15px}
+
+  .hero{text-align:center;padding:14px 0 2px}
+  .hero h2{margin:0 0 6px;font-size:21px;font-weight:800;letter-spacing:-.02em}
+  .hero p{margin:0;font-size:14px;line-height:1.55;color:#4b5563}
+  .hero p b{color:var(--ink)}
+  .ring{position:relative;width:84px;height:84px;margin:0 auto 14px;display:grid;place-items:center;color:#059669}
+  .ring::before{content:"";position:absolute;inset:0;border-radius:50%;border:4px solid #d1fae5;border-top-color:#059669;animation:spin 1s linear infinite}
+  .ring svg{width:34px;height:34px}
+  .mark{width:76px;height:76px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center}
+  .mark svg{width:38px;height:38px}
+  .mark.ok{background:#d1fae5;color:#059669;animation:pop .35s ease}
+  .mark.bad{background:#fef3c7;color:#d97706}
+  .wait{margin:14px 0 0;text-align:center;font-size:13px;font-weight:700;color:var(--faint)}
+  .foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+  .foot button{border:0;background:none;font:inherit;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;min-height:36px}
+  .foot .wa{color:#047857}.foot .wa svg{width:16px;height:16px}
+  .foot .cl{color:var(--muted)}
+  .bd.sum{margin-top:16px;text-align:left}
+  .bd.sum .row{padding:7px 0}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes pop{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+  @media(min-width:720px){
+    .overlay{align-items:center}
+    .sheet{border-radius:24px;max-width:460px;padding:14px 26px 26px}
+    .grab{display:none}
+    .demo-pop{top:66px}
+  }
+  @media(prefers-reduced-motion:reduce){.ring::before{animation-duration:3s}.mark.ok{animation:none}}
+
+  /* ---------- Compact modal: every screen fits without vertical scrolling ---------- */
+  .sheet{padding:6px 16px calc(14px + env(safe-area-inset-bottom,0px));max-height:98vh;max-height:98dvh}
+  .grab{margin:0 auto 8px}
+  .m-head{gap:10px;margin-bottom:8px}
+  .m-ico{width:36px;height:36px;border-radius:11px}.m-ico svg{width:18px;height:18px}
+  .m-head h2{font-size:16px}.m-sub{font-size:11.5px}
+  .m-x{width:32px;height:32px}
+  .note{margin:10px 0 0;padding:7px 10px;font-size:11.5px;line-height:1.4}
+  .note.top{margin:0 0 8px}
+  .note.warn{font-size:12px}
+  .seg{margin-bottom:8px}
+  .seg button{min-height:44px}
+  .bd{padding:2px 12px}
+  .row{padding:5px 0;font-size:13px}
+  .row.strong{padding-top:7px}
+  .row b.green{font-size:14.5px}
+  .row b.pill{padding:3px 9px;font-size:13.5px}
+  .row.perk{padding:0 0 6px}
+  .tiprow{position:relative}
+  .tipbox{display:none;position:absolute;left:0;right:0;top:100%;z-index:3;margin-top:2px;background:#111827;color:#fff;border-radius:10px;padding:8px 10px;font-size:12px;line-height:1.4;box-shadow:0 8px 20px #0f172a40}
+  .tip-open .tipbox{display:block}
+  .lbl{margin:9px 0 4px;font-size:12.5px}
+  .field{min-height:46px}
+  .err-msg{margin:3px 0 0}
+  .stack{margin-top:10px;gap:6px}
+  .btn{min-height:46px}
+  .btn.soft,.btn.gray,.btn.danger{min-height:44px}
+  .textlink{min-height:36px}
+  .hero{padding:4px 0 0}
+  .hero h2{font-size:19px}
+  .hero p{font-size:13.5px;line-height:1.5}
+  .ring{width:72px;height:72px;margin-bottom:10px}.ring svg{width:30px;height:30px}
+  .mark{width:64px;height:64px;margin-bottom:10px}.mark svg{width:32px;height:32px}
+  .wait{margin-top:10px;font-size:12.5px}
+  .foot{margin-top:10px;padding-top:8px}
+  .bd.sum{margin-top:12px}
+  .bd.sum .row{padding:5px 0}
+  .short{margin:8px 0 0;font-size:12px}
+  @media(max-height:640px){
+    .sheet{padding-top:4px}
+    .grab{margin-bottom:5px}
+    .m-head{margin-bottom:6px}
+    .note.top{margin-bottom:6px;padding:5px 9px;font-size:11px}
+    .seg{margin-bottom:6px}.seg button{min-height:40px}
+    .row{padding:3px 0;font-size:12.5px}.row.strong{padding-top:5px}
+    .lbl{margin:6px 0 3px}
+    .field{min-height:42px}
+    .stack{margin-top:8px}
+    .btn,.btn.soft,.btn.gray,.btn.danger{min-height:42px}
+    .textlink{min-height:30px}
+    .hero h2{font-size:18px}.hero p{font-size:13px}
+    .ring{width:56px;height:56px;margin-bottom:6px}.ring svg{width:24px;height:24px}
+    .mark{width:52px;height:52px;margin-bottom:6px}.mark svg{width:26px;height:26px}
+    .note.warn{font-size:11.5px;margin-top:6px}
+    .wait{margin-top:6px}
+  }
+  @media(min-width:720px){.sheet{padding:14px 26px 24px;max-height:92vh}}
+
+  /* ---------- Payment panes share one grid cell: switching tabs never resizes the modal ---------- */
+  .panes{display:grid}
+  .pane{grid-area:1/1;display:flex;flex-direction:column;min-width:0}
+  .pane:not(.on){visibility:hidden;pointer-events:none}
+  .pane .stack{margin-top:auto;padding-top:10px}
+  .seg button span{font-size:12px;white-space:nowrap;letter-spacing:-.01em}
+  .seg button small{font-size:12.5px;font-weight:800}
+  .row b.save{color:#047857}
+  .perkbox{display:flex;align-items:center;gap:8px;min-height:60px;margin-top:10px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;padding:8px 11px;font-size:12px;line-height:1.45;color:#065f46}
+  .perkbox svg{width:17px;height:17px;flex:none}
+  .perkbox.bad{background:#fef2f2;border-color:#fecaca;color:#b91c1c;font-weight:600}
+  @media(max-height:640px){.perkbox{min-height:52px;margin-top:6px}.pane .stack{padding-top:8px}}
+
+  .closebtn{display:block;width:100%;min-height:40px;margin-top:2px;border:0;border-radius:12px;background:var(--soft);color:#374151;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+  @media(max-height:640px){.closebtn{min-height:36px}}
+
+  /* ---------- Shell: view switch ---------- */
+  .vsw{display:flex;background:var(--soft);border-radius:999px;padding:3px}
+  .vsw button{border:0;background:transparent;border-radius:999px;padding:5px 12px;font:inherit;font-size:12px;font-weight:800;color:var(--muted);cursor:pointer}
+  .vsw button[aria-selected="true"]{background:#fff;color:#4f46e5;box-shadow:0 1px 3px #0f172a1f}
+  .tb-right{gap:8px}
+  @media(max-width:520px){.back{display:none}}
+  body.v-admin .sponsor{display:none}
+  body.v-admin .toast{bottom:20px}
+  [hidden]{display:none!important}
+  .textlink:disabled{color:var(--faint);cursor:not-allowed}
+  .seg button:disabled{opacity:.55;cursor:not-allowed}
+
+  /* ---------- Admin (indigo, like the existing admin) ---------- */
+  .admin{max-width:620px;margin:0 auto;padding:14px 12px 40px}
+  .a-head{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-bottom:12px}
+  .a-head h1{font-size:22px}
+  .a-sub{margin:2px 0 0;font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--faint)}
+  .a-btn{border:0;background:#4f46e5;color:#fff;border-radius:12px;padding:10px 14px;font:inherit;font-size:13px;font-weight:800;cursor:pointer}
+  .acard{background:#f8fafc;border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:10px}
+  .acard.retired{opacity:.6}
+  .acard-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .acard h3{margin:0;font-size:16px;font-weight:800}
+  .aprice{background:#e0e7ff;color:#4338ca;border-radius:10px;padding:4px 10px;font-size:12px;font-weight:800;white-space:nowrap}
+  .achips{display:flex;gap:6px;margin:8px 0 6px}
+  .achip{background:#eef2ff;border:1px solid #c7d2fe;color:#4338ca;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:800}
+  .achip.red{background:#fee2e2;border-color:#fecaca;color:#b91c1c}
+  .ameta{margin:0 0 8px;font-size:11px;font-weight:800;letter-spacing:.05em;color:var(--faint)}
+  .pchips{display:inline-flex;gap:5px;flex-wrap:wrap}
+  .pchip{font-size:10.5px;font-weight:800;border-radius:7px;padding:2px 7px;background:#f3f4f6;color:#9ca3af}
+  .pchip.y{background:#d1fae5;color:#047857}
+  .acard-act{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:12px}
+  .a-edit,.a-ret{border:0;border-radius:12px;min-height:42px;font:inherit;font-size:12px;font-weight:800;letter-spacing:.04em;cursor:pointer}
+  .a-edit{background:#fff;border:1px solid var(--line);color:#374151}
+  .a-ret{background:#fef2f2;color:#dc2626;padding:0 16px}
+  .gbox{background:#fff;border:1px solid var(--line);border-radius:18px;margin-top:6px}
+  .gbox .asec-b{padding:0 14px 14px}
+  .a-tools{display:flex;gap:8px;margin-top:12px}
+  .a-tools button{flex:1;border:1px solid var(--line);background:#fff;border-radius:12px;min-height:42px;font:inherit;font-size:12px;font-weight:800;color:#374151;cursor:pointer}
+
+  .aover{position:fixed;inset:0;z-index:20;background:#111827a6;display:flex;align-items:flex-end;justify-content:center;visibility:hidden;opacity:0;transition:opacity .18s,visibility .18s}
+  .aover.open{visibility:visible;opacity:1}
+  .asheet{width:100%;max-width:560px;height:94vh;height:94dvh;background:#fff;border-radius:24px 24px 0 0;display:flex;flex-direction:column;overflow:hidden}
+  .ahd{display:flex;justify-content:space-between;align-items:flex-start;padding:18px 18px 10px;border-bottom:1px solid var(--soft)}
+  .ahd h2{margin:0;font-size:19px;font-weight:800}
+  .ahd p{margin:3px 0 0;font-size:10.5px;font-weight:800;letter-spacing:.07em;color:var(--faint)}
+  .abody{flex:1;overflow:auto;padding:12px 18px 18px}
+  .aft{padding:10px 18px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--soft);background:#fff}
+  .a-save{width:100%;min-height:50px;border:0;border-radius:16px;background:#4f46e5;color:#fff;font:inherit;font-size:14px;font-weight:800;letter-spacing:.04em;cursor:pointer}
+  .a-save:disabled{opacity:.6}
+  .af{margin:10px 0}
+  .af>label,.a-between label{display:block;margin-bottom:5px;font-size:10.5px;font-weight:800;letter-spacing:.07em;color:#9ca3af}
+  .ai{width:100%;border:1px solid #eef0f3;background:#f8fafc;border-radius:14px;padding:11px 13px;font:inherit;font-size:14px;font-weight:700;color:var(--ink);min-width:0}
+  textarea.ai{font-weight:600;line-height:1.5;resize:vertical}
+  .ai:focus{outline:2px solid #a5b4fc;background:#fff}
+  .ai.sm{padding:8px 10px;font-size:13px;border-radius:11px}
+  .ai.red{background:#fef2f2;color:#dc2626;border-color:#fecaca;font-size:11px;letter-spacing:.03em;text-transform:uppercase}
+  .ahint{margin:5px 0 0;font-size:11.5px;line-height:1.4;color:var(--muted)}
+  .warn{color:#b45309;font-weight:700}
+  .aerr{background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:10px 12px;margin-bottom:6px;font-size:12.5px;color:#b91c1c;font-weight:600}
+  .aerr p{margin:2px 0}
+  .a-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .a-three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .a-between{display:flex;justify-content:space-between;align-items:center}
+  .mini{border:0;background:#e0e7ff;color:#4338ca;border-radius:8px;padding:4px 9px;font:inherit;font-size:11px;font-weight:800;cursor:pointer}
+  .mini.gray{background:var(--soft);color:#6b7280}
+  .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;background:#f8fafc;border-radius:14px;padding:12px}
+  .ack{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;cursor:pointer}
+  .ack input{width:18px;height:18px;accent-color:#4f46e5;flex:none}
+  .asec{border-top:1px solid var(--soft);margin-top:10px}
+  .asec>summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:13px 0;font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;min-height:48px}
+  .asec>summary::-webkit-details-marker{display:none}
+  .asec>summary::after{content:"SHOW";font-size:10.5px;color:var(--faint);letter-spacing:.05em;margin-left:auto}
+  .asec[open]>summary::after{content:"HIDE"}
+  .asec>summary small{text-transform:none;letter-spacing:0;font-weight:700;font-size:11px;color:var(--muted)}
+  .asec>summary small .pchips{margin-right:4px}
+  .asec-b{padding-bottom:6px}
+  .popt{background:#f8fafc;border:1px solid #eef0f3;border-radius:14px;padding:12px;margin-bottom:8px}
+  .popt.is-on{background:#f5f7ff;border-color:#c7d2fe}
+  .popt .af{margin:8px 0 0}
+  .off-row select{background:#fef2f2;color:#dc2626;border-color:#fecaca;font-size:12px;text-transform:uppercase}
+  .frow{display:grid;grid-template-columns:minmax(100px,1.1fr) repeat(2,minmax(0,1fr));gap:8px;align-items:center;padding:6px 0}
+  .frow-t{min-width:0}
+  .frow .ai.sm:only-of-type{grid-column:span 2}
+  .ajson{background:#0f172a;color:#cbd5e1;border-radius:14px;padding:12px;font-size:11px;line-height:1.5;overflow:auto;white-space:pre}
+  @media(min-width:720px){.admin{max-width:720px}.aover{align-items:center}.asheet{border-radius:24px;height:90vh}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img class="logo" src="https://cbcaiug.github.io/android-chrome-192x192.png" alt="" width="26" height="26" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/cbcaiug/cbcaiug.github.io@main/android-chrome-192x192.png'">
+    CBC AI
+  </div>
+  <div class="tb-right"><div class="vsw" role="tablist" aria-label="Prototype view"><button role="tab" data-v="billing" aria-selected="true">Billing</button><button role="tab" data-v="admin" aria-selected="false">Admin</button></div><button class="demo-btn" id="demoBtn" aria-expanded="false" aria-controls="demoPop">⚙ Demo</button><a class="back" href="#" id="back">Back to App</a></div>
+</header>
+
+<main id="billingView">
+  <div class="head">
+    <h1>Plans &amp; Quotas</h1>
+    <label class="country"><span aria-hidden="true">🌐</span>
+      <select id="ctry" aria-label="Country"></select>
+    </label>
+  </div>
+  <p class="sub" id="subLine"></p>
+
+  <div class="tabs" id="tabs" role="tablist" aria-label="Plans"></div>
+
+  <article class="detail" id="detail" role="tabpanel" aria-live="polite"></article>
+
+  <details class="compare" id="compare">
+    <summary>
+      <div><h2>Compare all plans</h2><p class="s-sub">Price, messages, validity and key features</p></div>
+      <span class="s-side"><span class="count" id="count"></span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 9 7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </summary>
+    <table>
+      <colgroup><col style="width:25%"><col style="width:17%"><col style="width:11%"><col style="width:11%"><col style="width:12%"><col style="width:11%"><col style="width:13%"></colgroup>
+      <thead><tr>
+        <th scope="col">Plan</th><th scope="col">Price</th><th scope="col">Msgs</th><th scope="col">Days</th>
+        <th scope="col">Deep<br>think</th><th scope="col">Web<br>search</th><th scope="col">File<br>upload</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="table-hint">Tap a row to view that plan in the card above.</p>
+  </details>
+
+  <!-- Everything below is the existing page content, unchanged in purpose -->
+  <section class="panel" id="guide">
+    <h2>5 easy steps to pay</h2>
+    <ol class="steps">
+      <li>Tap <b>Pay</b> on your preferred plan.</li>
+      <li>Select your payment method (MTN or Airtel), fill in your details and tap <b>Pay</b>.</li>
+      <li>Enter your MoMo PIN on your phone and tap Send.</li>
+      <li>After confirming, tap the blue <b>Continue</b> button.</li>
+      <li class="crit"><span><b>Critical:</b> open the Receipts page, fill in your details and tap <b>Verify &amp; Activate</b>.</span></li>
+    </ol>
+  </section>
+
+  <section class="panel refund">
+    <h2>Refund &amp; quota guarantee</h2>
+    <h3>Purchase refunds</h3>
+    <p>Full refund if requested within 7 days and fewer than 10 AI messages have been used.</p>
+    <h3>Quota protection</h3>
+    <p>Messages are only deducted for successful results. Timeouts and server errors are not charged.</p>
+    <h3>Validity</h3>
+    <p>Validity is shown on each plan. Re-subscribing before a plan ends resets the quota and starts a new period.</p>
+  </section>
+
+  <section class="panel contact">
+    <h2>Need custom quotas?</h2>
+    <p>Get a tailored plan for your school.</p>
+    <div class="row"><button class="solid" data-toast="Demo only: opens WhatsApp.">WhatsApp us</button><button data-toast="Demo only: opens email.">Email us</button></div>
+  </section>
+
+  <p class="demo-note">Prototype: switch to <b>Admin</b> (top bar), edit and save a plan, then come back. Billing re-reads everything. ⚙ Demo sets the commission balance and the Mobile Money result.</p>
+</main>
+
+<div class="sponsor"><img class="logo" src="https://cbcaiug.github.io/android-chrome-192x192.png" alt="" width="28" height="28" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/cbcaiug/cbcaiug.github.io@main/android-chrome-192x192.png'"><span><small>Sponsored</small> Advertise your products and services to 100s teachers daily!</span><b>Start</b></div>
+<section id="adminView" class="admin" hidden>
+  <div class="a-head"><div><h1>Plans</h1><p class="a-sub" id="aCount"></p></div><button class="a-btn" id="aNew">+ New plan</button></div>
+  <div id="aList"></div>
+  <details class="asec gbox"><summary style="padding:13px 14px">Global settings<small>used by billing</small></summary><div class="asec-b">
+    <div class="af"><label>Service surcharge (%)</label><input class="ai" id="gSur" type="number" min="0" step="0.5"></div>
+    <div class="af"><label>Support WhatsApp number</label><input class="ai" id="gSup"></div>
+    <div class="af"><label>Telecom tariff tiers (up to amount : fee, one per line)</label><textarea class="ai" id="gTar" rows="4"></textarea></div>
+  </div></details>
+  <div class="a-tools"><button id="aJson">View data (JSON)</button><button id="aReset">Reset sample data</button></div>
+</section>
+<div class="aover" id="aOver"><div class="asheet" role="dialog" aria-modal="true" aria-labelledby="aTitle">
+  <div class="ahd"><div><h2 id="aTitle"></h2><p>CONFIGURE QUOTAS AND PRICING</p></div><button class="m-x" id="aX" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>
+  <div class="abody" id="aBody"></div>
+  <div class="aft"><button class="a-save" id="aSave">SAVE PLAN CONFIG</button></div>
+</div></div>
+
+<div class="overlay" id="overlay">
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="grab" aria-hidden="true"></div>
+    <div id="sheetBody"></div>
+  </div>
+</div>
+
+<div class="demo-pop" id="demoPop" hidden>
+  <h3>Demo controls <small>testing only</small></h3>
+  <label for="dCom">Your commission balance (UGX)</label>
+  <input id="dCom" type="number" min="0" step="500" inputmode="numeric">
+  <div class="dp-row" id="dComChips">
+    <button data-v="0">0</button><button data-v="1500">1,500</button><button data-v="12500">12,500</button><button data-v="50000">50,000</button>
+  </div>
+  <label>Mobile Money PIN prompt result</label>
+  <div class="dp-row" id="dMomo">
+    <button data-v="approve">Approved</button><button data-v="decline">Declined</button><button data-v="timeout">No response</button>
+  </div>
+  <button class="dp-reset" id="dReset">Reset demo</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  /* =====================================================================
+     SIMULATED FIRESTORE (browser localStorage). Production: Firestore
+       plans collection · settings/global · users/{uid}
+     Billing never hard-codes plan content: everything below comes from here.
+     ===================================================================== */
+  const COUNTRIES = {
+    UG:{n:'Uganda',f:'🇺🇬',cur:'UGX',dial:'256',ph:'0772 123 456'}, KE:{n:'Kenya',f:'🇰🇪',cur:'KES',dial:'254'},
+    RW:{n:'Rwanda',f:'🇷🇼',cur:'RWF',dial:'250'}, CD:{n:'DR Congo',f:'🇨🇩',cur:'CDF',dial:'243'},
+    ZM:{n:'Zambia',f:'🇿🇲',cur:'ZMW',dial:'260'}, CM:{n:'Cameroon',f:'🇨🇲',cur:'XAF',dial:'237'},
+    GA:{n:'Gabon',f:'🇬🇦',cur:'XAF',dial:'241'}, CG:{n:'Congo-Brazzaville',f:'🇨🇬',cur:'XAF',dial:'242'},
+    BJ:{n:'Benin',f:'🇧🇯',cur:'XOF',dial:'229'}, CI:{n:'Côte d’Ivoire',f:'🇨🇮',cur:'XOF',dial:'225'},
+    SN:{n:'Senegal',f:'🇸🇳',cur:'XOF',dial:'221'}, SL:{n:'Sierra Leone',f:'🇸🇱',cur:'SLE',dial:'232'}
+  };
+  const STATES = [['upgrade','Upgrade'],['disabled','Disabled'],['unavailable','Unavailable'],['getting_fixed','Getting fixed'],['coming_soon','Coming soon'],['maintenance','Maintenance'],['hide','Hide (remove button)']];
+  const STATE_LABEL = Object.fromEntries(STATES.filter(s => s[0] !== 'hide'));
+  const FLAGS = [['webSearch','Web search',[['daily','Daily limit']]],['deepThink','Deep think',[['budget','Token budget'],['daily','Daily limit']]],['canvas','Canvas mode',[]],['customInstr','Custom instructions',[['chars','Max chars']]],['liveChat','Live chat',[['minMonth','Min/month']]],['transcription','Transcription',[['daily','Daily limit']]],['voiceOut','Voice output',[['monthly','Monthly limit']]],['audioAttach','Audio attach',[]],['reportBtn','Report button',[]],['pdfExport','PDF export',[]],['docxExport','DOCX export',[]],['gasDocx','GAS DOCX',[]],['gasPdf','GAS PDF',[]],['html2pdf','HTML2PDF',[]]];
+  const MAIN = 'Full AI Toolkit Access\nUnlimited Downloads\nResponsive AI Support';
+  const EXTRA = ['Lesson plan generator','Scheme of work builder','Exam and quiz maker','Marking guide generator','Notes and handout creator','CBC competency assessment tools','Rubric builder','Learner report comments'];
+
+  const newPlan = (o = {}) => {
+    const flags = Object.fromEntries(FLAGS.map(([k]) => [k, {on:false, state:'upgrade'}]));
+    Object.entries(o.flags || {}).forEach(([k, v]) => Object.assign(flags[k], v));
+    const pay = {momo:{on:true,state:'hide'}, link:{on:false,url:'',state:'hide'}, comm:{on:false,price:'',state:'hide'}};
+    Object.entries(o.pay || {}).forEach(([k, v]) => Object.assign(pay[k], v));
+    return Object.assign({id:'p' + Math.random().toString(36).slice(2,8), name:'', tagline:'', price:0, countries:['UG'], durationValue:30, durationUnit:'days', msgQuota:0, dlQuota:9999, referrerCommission:0,
+      mainFeatures:MAIN, additionalFeatures:EXTRA.slice(0,4).join('\n'), upload:{enabled:false,maxFiles:0,maxMb:0,period:'daily',periodLimit:''},
+      recommended:false, isSchool:false, autoRenew:false, accumulate:false, blockExpiry:false, active:true}, o, {flags, pay});
+  };
+  const up = (on, mb, files) => ({enabled:on, maxFiles:files, maxMb:mb, period:'daily', periodLimit:''});
+  const seed = () => ({
+    plans: [
+      newPlan({id:'byok', name:'BYOK Plan', durationValue:90, pay:{momo:{on:false}}}),
+      newPlan({id:'free', name:'Free', durationValue:1, msgQuota:5, upload:up(false,5,1), flags:{liveChat:{on:true,minMonth:15}, gasPdf:{on:true}}, pay:{momo:{on:false}}}),
+      newPlan({id:'starter_rw', name:'Starter_RW', price:1133, countries:['RW'], durationValue:2, msgQuota:40, upload:up(true,2,1), flags:{webSearch:{on:true}}}),
+      newPlan({id:'starter', name:'Starter', tagline:'Try it out', price:3000, durationValue:7, msgQuota:40, additionalFeatures:EXTRA.join('\n'), upload:up(true,2,1), flags:{webSearch:{on:true}},
+        pay:{link:{on:true,url:'https://wallet.wearemarz.com/pay/starter'}, comm:{on:true,price:2000}}}),
+      newPlan({id:'plus', name:'Plus', tagline:'Light monthly use', price:5000, durationValue:30, msgQuota:100, additionalFeatures:EXTRA.slice(0,6).join('\n'), upload:up(true,5,3), flags:{webSearch:{on:true}},
+        pay:{link:{on:true,url:'https://wallet.wearemarz.com/pay/plus'}, comm:{on:true,price:3500}}}),
+      newPlan({id:'standard', name:'Standard', tagline:'Regular term use', price:7000, durationValue:90, msgQuota:140, additionalFeatures:EXTRA.slice(0,5).join('\n'), upload:up(true,10,5), flags:{webSearch:{on:true}, deepThink:{on:true,daily:20}},
+        pay:{link:{on:true,url:'https://wallet.wearemarz.com/pay/standard'}, comm:{on:true,price:5000}}}),
+      newPlan({id:'pro', name:'Pro', tagline:'Heavy daily use', price:15000, durationValue:90, msgQuota:350, recommended:true, additionalFeatures:EXTRA.slice(0,7).join('\n'), upload:up(true,20,10), flags:{webSearch:{on:true}, deepThink:{on:true}},
+        pay:{link:{on:true,url:'https://wallet.wearemarz.com/pay/pro'}, comm:{on:true,price:11000}}}),
+      newPlan({id:'max', name:'Max', tagline:'Heavy use, 4 months', price:35000, durationValue:120, msgQuota:800, additionalFeatures:EXTRA.join('\n'), upload:up(true,25,10), flags:{webSearch:{on:true}, deepThink:{on:true}},
+        pay:{link:{on:true,url:'https://wallet.wearemarz.com/pay/max'}, comm:{on:true,price:26000}}}),
+      newPlan({id:'school', name:'School Plan', tagline:'Whole-school use', price:250000, durationValue:90, msgQuota:2000, isSchool:true, upload:up(true,50,20), flags:{webSearch:{on:true}, deepThink:{on:true}},
+        pay:{momo:{on:false,state:'coming_soon'}, link:{state:'coming_soon'}}}),
+      newPlan({id:'plus_rw', name:'Plus_RW', price:1890, countries:['RW'], durationValue:30, msgQuota:100, upload:up(true,5,3), flags:{webSearch:{on:true}}})
+    ],
+    global: {surcharge:3, support:'${db.global.support}', tariffs:'5000:150\n15000:330\n30000:600\n999999999:1000'},
+    user: {commission:12500}
+  });
+  const KEY = 'cbc-demo-db-v2';
+  let db = null;
+  try { db = JSON.parse(localStorage.getItem(KEY)); } catch(e) {}
+  if(!db || !db.plans) db = seed();
+  const user = db.user;                                   // production: signed-in user's profile
+  const subs = [], onDb = f => subs.push(f);
+  const emit = () => { try { localStorage.setItem(KEY, JSON.stringify(db)); } catch(e) {} subs.forEach(f => f()); };
+
+  /* ---- admin plan -> what billing shows (the ONLY place billing interprets admin data) ---- */
+  const curOf = p => (COUNTRIES[p.countries[0]] || COUNTRIES.UG).cur;
+  const lines = t => String(t || '').split('\n').map(x => x.trim()).filter(Boolean);
+  const UNIT = {days:['d','day'], weeks:['w','week'], months:['mo','month']};
+  function view(p){
+    const cur = curOf(p), v = +p.durationValue, un = UNIT[p.durationUnit] || UNIT.days, f = p.flags, u = p.upload;
+    const off = s => ({coming_soon:'Coming soon', maintenance:'Under maintenance', getting_fixed:'Being fixed'}[s] || 'Not included');
+    const ft = fl => fl.on ? 'Included' + (fl.daily ? ` · ${fl.daily}/day` : '') : off(fl.state);
+    const mm = k => ({on:!!p.pay[k].on, state:p.pay[k].state || 'hide'});
+    const methods = {momo:mm('momo'), link:Object.assign(mm('link'), {url:p.pay.link.url}), comm:mm('comm')};
+    methods.link.on = methods.link.on && /^https?:\/\//.test(p.pay.link.url || '');
+    methods.comm.on = methods.comm.on && cur === 'UGX' && +p.pay.comm.price > 0;   // commission is held in UGX
+    const vis = k => methods[k].on || methods[k].state !== 'hide';
+    const payable = methods.momo.on || methods.link.on || methods.comm.on;
+    const fv = ['momo','link','comm'].find(vis);
+    const main = lines(p.mainFeatures);
+    return {id:p.id, name:p.name, tagline:p.tagline, price:+p.price, cur, country:p.countries[0],
+      durShort:v + un[0], durLabel:`${v} ${un[1]}${v === 1 ? '' : 's'}`, msgs:+p.msgQuota,
+      think:f.deepThink.on, thinkTxt:ft(f.deepThink), web:f.webSearch.on, webTxt:ft(f.webSearch),
+      uploadOn:!!u.enabled, uploadTxt:+u.maxMb > 0 ? `Up to ${u.maxMb} MB` : 'No size limit', uploadShort:+u.maxMb > 0 ? `${u.maxMb} MB` : 'Any',
+      uploadHint:+u.maxFiles > 0 ? `${u.maxFiles} file${+u.maxFiles === 1 ? '' : 's'} per session` : 'per file',
+      rec:!!p.recommended, payable, methods, cp:methods.comm.on ? +p.pay.comm.price : 0,
+      tag:payable ? '' : (fv ? (methods[fv].state === 'coming_soon' ? 'Soon' : 'N/A') : 'N/A'),
+      payLabel:payable ? 'Pay' : (fv ? STATE_LABEL[methods[fv].state] : 'Not available'),
+      main, feats:[...main, ...lines(p.additionalFeatures)],
+      until:() => { const d = new Date(); if(p.durationUnit === 'months') d.setMonth(d.getMonth() + v); else d.setDate(d.getDate() + v * (p.durationUnit === 'weeks' ? 7 : 1)); return d; }};
+  }
+  let ctry = 'UG', plans = [], availC = [];
+  function refreshPlans(){
+    const live = db.plans.filter(p => p.active && +p.price > 0);          // paid plans only (assumption: Free/BYOK never listed)
+    availC = [...new Set(live.flatMap(p => p.countries))].filter(c => COUNTRIES[c]);
+    if(!availC.includes(ctry)) ctry = availC[0] || 'UG';
+    plans = live.filter(p => p.countries.includes(ctry)).sort((a, b) => a.price - b.price).map(view);
+  }
+  const commonFeatures = () => !plans.length ? [] : plans[0].main.filter(l => plans.every(p => p.main.some(x => x.toLowerCase() === l.toLowerCase())));
+  refreshPlans();
+
+  const fmt = n => Number(n).toLocaleString('en-US');
+  const money = (n, cur) => cur === 'UGX' ? `${fmt(n)}/=` : `${fmt(n)} ${cur}`;
+
+  const tick = '<svg class="yes" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const yes = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const chev = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 9 7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const phone = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="1.5" stroke="currentColor" stroke-width="2"/><path d="M10 18.5h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
+
+  const $ = id => document.getElementById(id);
+  let current = plans[0] ? plans[0].id : null;
+
+  function cell(on, text){
+    return on ? `<td>${text ? `<span>${text}</span>` : tick}<span class="sr">Included</span></td>`
+              : `<td><span class="no" aria-hidden="true">–</span><span class="sr">Not included</span></td>`;
+  }
+
+  function renderTable(){
+    $('rows').innerHTML = plans.map(p => `
+      <tr data-id="${p.id}" tabindex="0" aria-selected="${p.id===current}" class="${p.payable?'':'soon'}">
+        <th scope="row">${p.name}${p.tag?`<span class="tag">${p.tag}</span>`:''}${p.rec?'<span class="tag best">Rec.</span>':''}</th>
+        <td class="price">${fmt(p.price)}</td>
+        <td>${fmt(p.msgs)}</td>
+        <td>${p.durShort}</td>
+        ${cell(p.think)}${cell(p.web)}${cell(p.uploadOn, p.uploadShort)}
+      </tr>`).join('');
+    $('count').textContent = plans.length + ' PLANS';
+  }
+
+  function renderTabs(){
+    $('tabs').innerHTML = plans.map(p => `
+      <button class="tab" role="tab" id="tab-${p.id}" aria-controls="detail" data-id="${p.id}" aria-selected="${p.id===current}" tabindex="${p.id===current?0:-1}">
+        <span>${p.name}</span><small>${p.durLabel}</small>${p.rec?'<span class="badge">Recommended</span>':''}
+      </button>`).join('');
+  }
+
+  function renderDetail(){
+    const p = plans.find(x => x.id===current);
+    if(!p){ $('detail').innerHTML = '<p class="m-sub" style="padding:18px 4px;text-align:center">No plans are available for this country yet.</p>'; return; }
+    const perMsg = p.msgs > 0 ? Math.round(p.price / p.msgs) : 0;
+    const firstThink = plans.find(x => x.think && x.payable && x.id !== p.id);
+    const thinkFact = p.think
+      ? `<div class="v">${yes}${p.thinkTxt}</div>`
+      : `<div class="v off">${p.thinkTxt}</div>${firstThink?`<button class="link" data-go="${firstThink.id}">Available on ${firstThink.name}</button>`:''}`;
+    const com = commonFeatures();
+    $('detail').setAttribute('aria-labelledby', 'tab-' + p.id);
+    $('detail').innerHTML = `
+      <div class="d-top">
+        <div class="d-row head">
+          <p class="d-name">${p.name}${p.tag?`<span class="tag">${p.tag}</span>`:''}${p.tagline?`<span class="for"> · ${p.tagline}</span>`:''}</p>
+          ${p.rec?'<span class="best-pill">★ Recommended</span>':''}
+        </div>
+        <div class="d-row main">
+          <div class="d-price">${money(p.price, p.cur)}<small>/ ${p.durLabel.toUpperCase()}</small></div>
+          ${perMsg?`<span class="chip">≈ ${money(perMsg, p.cur)}<span class="m-long"> per message</span><span class="m-short"> / msg</span></span>`:''}
+        </div>
+        ${p.cp?`<p class="comm-line">★ OR pay ${money(p.cp, p.cur)} using your referral commission</p>`:''}
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="k">AI messages</div><div class="v">${fmt(p.msgs)} credits</div></div>
+        <div class="fact"><div class="k">Deep Think</div>${thinkFact}</div>
+        <div class="fact"><div class="k">Web search</div>${p.web?`<div class="v">${yes}${p.webTxt}</div>`:`<div class="v off">${p.webTxt}</div>`}</div>
+        <div class="fact"><div class="k">File upload</div>${p.uploadOn?`<div class="v">${yes}${p.uploadTxt}</div><span class="hint">${p.uploadHint}</span>`:'<div class="v off">Not included</div>'}</div>
+      </div>
+      ${com.length?`<p class="common">${tick}<span><b>Every plan includes</b> ${com.join(', ')}.</span></p>`:''}
+      <details class="more">
+        <summary>Included features (${p.feats.length})${chev}</summary>
+        <ul>${p.feats.map(f=>`<li>${yes}${f}</li>`).join('')}</ul>
+      </details>
+      <div class="actions">
+        <button class="pay" data-act="pay" ${p.payable?'':'disabled'}>${phone}${p.payLabel}</button>
+        <button class="guide" data-act="guide">Payment guide</button>
+      </div>`;
+  }
+
+  function select(id){
+    if(id===current) return;
+    current = id;
+    const d = $('detail'); d.classList.add('swap');
+    document.querySelectorAll('#rows tr').forEach(r => r.setAttribute('aria-selected', r.dataset.id===id));
+    document.querySelectorAll('.tab').forEach(t => { const on=t.dataset.id===id; t.setAttribute('aria-selected',on); t.tabIndex=on?0:-1; });
+    setTimeout(()=>{ renderDetail(); d.classList.remove('swap'); }, 70);
+  }
+
+  $('tabs').addEventListener('click', e => { const t = e.target.closest('.tab'); if(t) select(t.dataset.id); });
+  $('tabs').addEventListener('keydown', e => {
+    const t = e.target.closest('.tab'); if(!t) return;
+    const d = e.key==='ArrowRight' ? 1 : e.key==='ArrowLeft' ? -1 : 0; if(!d) return;
+    e.preventDefault();
+    const list=[...document.querySelectorAll('.tab')], n=list[(list.indexOf(t)+d+list.length)%list.length];
+    n.focus(); select(n.dataset.id);
+  });
+
+  /* table rows select a plan and bring the tabs back into view */
+  const pick = r => { select(r.dataset.id); $('tabs').scrollIntoView({behavior:'smooth',block:'start'}); };
+  $('rows').addEventListener('click', e => { const r = e.target.closest('tr'); if(r) pick(r); });
+  $('rows').addEventListener('keydown', e => {
+    const r = e.target.closest('tr'); if(!r) return;
+    if(e.key==='Enter' || e.key===' '){ e.preventDefault(); pick(r); }
+    if(e.key==='ArrowDown' && r.nextElementSibling){ e.preventDefault(); r.nextElementSibling.focus(); }
+    if(e.key==='ArrowUp' && r.previousElementSibling){ e.preventDefault(); r.previousElementSibling.focus(); }
+  });
+  document.querySelectorAll('[data-toast]').forEach(b => b.addEventListener('click', () => toast(b.dataset.toast)));
+  $('detail').addEventListener('click', e => {
+    const go = e.target.closest('[data-go]'); if(go){ select(go.dataset.go); return; }
+    const a = e.target.closest('[data-act]'); if(!a) return;
+    if(a.dataset.act==='pay') openPay(current);
+    else $('guide').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  $('back').addEventListener('click', e => { e.preventDefault(); toast('Demo only: Back to App is not connected.'); });
+
+  let t; function toast(msg){ const el=$('toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(t); t=setTimeout(()=>el.classList.remove('show'),2200); }
+
+
+  /* =====================================================================
+     Pay modal: Mobile Money or Commission, one shared flow
+     review -> waiting -> success | failure
+     ===================================================================== */
+  const sim  = { momo: 'approve' };     // demo only: approve | decline | timeout
+  const M = {open:false, plan:null, method:'momo', step:'review', phoneRaw:'', phoneErr:'', tip:false, reason:'', ref:'', paid:null, timers:[], opener:null};
+
+  const svg = (d, extra='') => `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" ${extra}>${d}</svg>`;
+  const S = 'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+  const ico = {
+    receipt: svg(`<path d="M6 3h12v18l-2.5-1.6L13 21l-2.5-1.6L8 21l-2-1.3V3Z" ${S}/><path d="M9 8h6M9 12h6" ${S}/>`),
+    x:       svg(`<path d="M6 6l12 12M18 6 6 18" ${S}/>`),
+    warn:    svg(`<path d="M12 3.5 2.8 19.5h18.4L12 3.5Z" ${S}/><path d="M12 10v4M12 17v.3" ${S}/>`),
+    link:    svg(`<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" ${S}/>`),
+    ban:     svg(`<circle cx="12" cy="12" r="8.5" ${S}/><path d="m6 6 12 12" ${S}/>`),
+    wa:      svg(`<path d="M4 20l1.3-4A8 8 0 1 1 8 18.7L4 20Z" ${S}/>`),
+    coin:    svg(`<circle cx="12" cy="12" r="9" ${S}/><path d="M12 7v10M9.5 9.8c0-1 1-1.6 2.5-1.6s2.5.6 2.5 1.6-1 1.4-2.5 1.8-2.5.8-2.5 1.8 1 1.7 2.5 1.7 2.5-.7 2.5-1.7" ${S}/>`),
+    check:   svg(`<path d="m6 12.5 4 4L18.5 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`)
+  };
+
+  /* ---- money helpers (surcharge %, tariffs, support number and currency all come from admin data) ---- */
+  const CC = () => COUNTRIES[ctry] || COUNTRIES.UG;
+  const CUR = () => (M.plan ? M.plan.cur : CC().cur);
+  const amt = n => `${fmt(n)} ${CUR()}`;
+  function momoCalc(price){
+    const direct = Math.ceil(price / (1 - (+db.global.surcharge || 0) / 100));          // 3,000 @3% -> 3,093
+    const tiers = String(db.global.tariffs).split('\n').map(l => l.split(':').map(Number)).filter(a => a.length === 2 && !a.some(isNaN)).sort((a, b) => a[0] - b[0]);
+    const tariff = (tiers.find(([max]) => direct <= max) || tiers[tiers.length - 1] || [0, 0])[1];
+    return {price, surcharge: direct - price, direct, tariff, required: direct + tariff};
+  }
+  function digitsOf(v){ let d = v.replace(/\D/g,''); const dc = CC().dial; if(d.startsWith(dc)) d = d.slice(dc.length); if(d.startsWith('0')) d = d.slice(1); return d; }
+  const validPhone = v => { const d = digitsOf(v); return (ctry === 'UG' ? /^[37]\d{8}$/ : /^\d{8,10}$/).test(d) ? d : null; };
+  const fmtPhone = d => `+${CC().dial} ${d.slice(0,3)} ${d.slice(3,6)} ${d.slice(6)}`;
+  function netOf(v){
+    if(ctry !== 'UG') return null;
+    const p = digitsOf(v).slice(0,2);
+    if(['77','78','76','39'].includes(p)) return ['MTN','mtn'];
+    if(['70','75','74','20'].includes(p)) return ['Airtel','airtel'];
+    return null;
+  }
+
+  /* ---- step views ---- */
+  /* The amber warning sits at the very top of every screen except success, as in the original modal. */
+  const getAmber = () => `<div class="note top">${ico.warn}<span><b>Before paying again:</b> if money was deducted earlier but no credits arrived, contact support on <button class="lnk" data-m="ext" data-t="Demo only: opens WhatsApp support (${db.global.support})">WhatsApp (${db.global.support})</button>.</span></div>`;
+
+  Object.defineProperty(window, 'amber', {get: getAmber});
+  const pane = (id, inner) => `<div class="pane ${M.method===id?'on':''}" data-pane="${id}" ${M.method===id?'':'inert'}>${inner}</div>`;
+
+  /* Which payment buttons exist is decided ONLY by the plan's admin Payment options:
+     on -> active · off + state -> grayed with that word · off + Hide -> not rendered */
+  function reviewHTML(){
+    const p = M.plan, mm = p.methods, cc = CC();
+    const on  = ['momo','comm'].filter(k => mm[k].on);
+    const vis = ['momo','comm'].filter(k => mm[k].on || mm[k].state !== 'hide');
+    if(!on.includes(M.method) && on.length) M.method = on[0];
+    const head = `<div class="m-head"><span class="m-ico">${ico.receipt}</span>
+        <div><h2 id="mTitle" data-focus tabindex="-1">Review &amp; confirm</h2><p class="m-sub">${p.name} plan · ${p.durLabel} · ${fmt(p.msgs)} messages</p></div>
+        <button class="m-x" data-m="close" aria-label="Close">${ico.x}</button></div>`;
+    const closeBtn = `<button class="closebtn" data-m="close">Close</button>`;
+    const linkBtn = mm.link.on ? `<button class="textlink" data-m="link" data-keep>${ico.link}Use payment link instead</button>`
+      : mm.link.state !== 'hide' ? `<button class="textlink" disabled>${ico.link}Payment link: ${STATE_LABEL[mm.link.state]}</button>` : '';
+
+    if(!on.length) return head + amber + `
+      <div class="bd"><div class="row"><span>Plan price</span><b>${amt(p.price)}</b></div></div>
+      <div class="perkbox">${ico.link}<span>Payment for this plan is completed on the secure payment page.</span></div>
+      <div class="stack"><button class="btn blue" data-m="link" data-keep>${ico.link}Use payment link</button></div>` + closeBtn;
+
+    const mo = momoCalc(p.price), [nl, nc] = netOf(M.phoneRaw) || ['',''];
+    const momoInner = `
+        <div class="bd">
+          <div class="row"><span>Plan price</span><b>${amt(mo.price)}</b></div>
+          <div class="row tiprow"><span>Service surcharge (${+db.global.surcharge}%)<button class="i" data-m="tip" aria-label="About the service surcharge" aria-expanded="false">i</button></span><b>${amt(mo.surcharge)}</b>
+            <div class="tipbox" role="note">A small fee added to Mobile Money payments.${on.includes('comm')?' Pay with commission to avoid it.':''}</div></div>
+          <div class="row strong"><span>Direct charge amount</span><b class="green">${amt(mo.direct)}</b></div>
+          <div class="row"><span>Telecom tariff (estimate)</span><b>${amt(mo.tariff)}</b></div>
+          <div class="row strong"><span>Required account balance</span><b class="pill">${amt(mo.required)}</b></div>
+        </div>
+        <label class="lbl" for="phone">Mobile Money number</label>
+        <div class="field ${M.phoneErr?'err':''}"><span class="cc">${cc.f} +${cc.dial}</span>
+          <input id="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="${cc.ph||'0712 345 678'}" maxlength="14" value="${M.phoneRaw}" aria-describedby="phoneErr">
+          <span class="net ${nc}" id="net">${nl}</span></div>
+        <p class="err-msg" id="phoneErr" role="alert">${M.phoneErr}</p>
+        <div class="stack">
+          <button class="btn primary" data-m="payMomo">${phone}Send PIN request to my phone</button>
+          ${linkBtn}
+        </div>`;
+    const cp = p.cp, bal = user.commission, enough = bal >= cp, pct = Math.round((p.price - cp) / p.price * 100);
+    const commInner = !on.includes('comm') ? '' : `
+        <div class="bd">
+          <div class="row"><span>Plan price</span><b>${amt(p.price)}</b></div>
+          <div class="row"><span>Commission discount (${pct}%)</span><b class="save">−${amt(p.price - cp)}</b></div>
+          <div class="row strong"><span>Commission price</span><b class="green">${amt(cp)}</b></div>
+          <div class="row"><span>Available commission</span><b>${amt(bal)}</b></div>
+          <div class="row strong"><span>Balance after payment</span>${enough ? `<b class="pill ok">${amt(bal - cp)}</b>` : `<b class="pill bad">Short by ${amt(cp - bal)}</b>`}</div>
+        </div>
+        ${enough
+          ? `<div class="perkbox">${yes}<span><b>No service surcharge or telecom fees.</b> The amount is deducted instantly from your commission.</span></div>`
+          : `<div class="perkbox bad">${ico.warn}<span>You need ${amt(cp - bal)} more commission for this plan. Pay another way, or refer more teachers to earn it.</span></div>`}
+        <div class="stack">
+          ${enough ? `<button class="btn primary" data-m="payComm">${ico.coin}Pay ${amt(cp)} with commission</button>` : `<button class="btn" disabled>Not enough commission</button>`}
+          ${linkBtn}
+        </div>`;
+    const tab = (k, label, price) => mm[k].on
+      ? `<button role="tab" data-m="method" data-v="${k}" aria-selected="${M.method===k}"><span>${label}</span><small>${amt(price)}</small></button>`
+      : `<button role="tab" disabled aria-selected="false"><span>${label}</span><small>${STATE_LABEL[mm[k].state]}</small></button>`;
+    const seg = vis.length >= 2 ? `<div class="seg" role="tablist" aria-label="Payment method">${tab('momo','Pay with Mobile Money',p.price)}${tab('comm','Pay with commission',p.cp||p.price)}</div>` : '';
+    return head + amber + seg + `<div class="panes">${on.includes('momo')?pane('momo', momoInner):''}${on.includes('comm')?pane('comm', commInner):''}</div>` + closeBtn;
+  }
+
+  function setMethod(v){
+    M.method = v;
+    document.querySelectorAll('.seg button').forEach(b => b.setAttribute('aria-selected', b.dataset.v === v));
+    document.querySelectorAll('.pane').forEach(el => { const on = el.dataset.pane === v; el.classList.toggle('on', on); el.inert = !on; });
+    document.querySelectorAll('.tip-open').forEach(r => r.classList.remove('tip-open'));
+  }
+
+  function waitingHTML(){
+    if(M.method === 'momo') return amber + `
+      <div class="hero"><div class="ring">${phone}</div>
+        <h2 id="mTitle" data-focus tabindex="-1">Check your phone!</h2>
+        <p>A PIN prompt was sent to <b>${fmtPhone(M.phone)}</b>.<br>Enter your Mobile Money PIN now to approve.</p></div>
+      <div class="note warn">${ico.warn}<span>Keep your phone connected to the internet and do NOT close this browser tab/app until you approve the payment. Disconnecting or closing now can cause the payment to fail.</span></div>
+      <p class="wait">Waiting for network confirmation…</p>
+      <div class="stack">
+        <button class="btn danger" data-m="cancel">${ico.ban}Cancel payment</button>
+        <button class="textlink" data-m="link">Use payment link instead</button>
+      </div>`;
+    return amber + `
+      <div class="hero"><div class="ring">${ico.coin}</div>
+        <h2 id="mTitle" data-focus tabindex="-1">Processing payment…</h2>
+        <p>Using <b>${amt(M.plan.cp)}</b> of your commission. This only takes a moment.</p></div>
+      <p class="wait">Confirming your payment…</p>
+      <div class="stack"><button class="btn danger" data-m="cancel">${ico.ban}Cancel</button></div>`;
+  }
+
+  function successHTML(){
+    const p = M.plan, k = M.paid;
+    const until = p.until().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+    const how = k.method === 'momo' ? `Mobile Money ${fmtPhone(k.phone).replace(/(\d{3}) (\d{3}) (\d{3})$/,'$1 ••• $3')}` : `Commission (−${amt(k.cp)})`;
+    return `
+      <div class="hero"><div class="mark ok">${ico.check}</div>
+        <h2 id="mTitle" data-focus tabindex="-1">Payment successful</h2>
+        <p>Your <b>${p.name}</b> plan is active and your messages were added automatically.</p></div>
+      <div class="bd sum">
+        <div class="row"><span>Messages added</span><b>+${fmt(p.msgs)}</b></div>
+        <div class="row"><span>Valid until</span><b>${until}</b></div>
+        <div class="row"><span>Paid with</span><b>${how}</b></div>
+        ${k.method==='comm' ? `<div class="row"><span>Commission left</span><b>${amt(user.commission)}</b></div>` : ''}
+        <div class="row"><span>Reference</span><b>${M.ref}</b></div>
+      </div>
+      <div class="stack"><button class="btn blue" data-m="done">Back to app</button></div>`;
+  }
+
+  function failureHTML(){
+    const texts = {
+      left:      'You left the waiting screen. If you already entered your PIN on your phone, your account and credits will still update automatically.',
+      declined:  'The payment was declined or the PIN was incorrect. No credits were added.',
+      timeout:   'We did not get a response from your phone. If you entered your PIN, your account and credits will still update automatically.',
+      cancelled: 'You cancelled the payment, so no commission was deducted.'
+    };
+    const actions = M.method === 'momo'
+      ? `<button class="btn blue" data-m="link">${ico.link}Use payment link instead</button>
+         <button class="btn gray" data-m="another">Try again with another number</button>`
+      : `<button class="btn blue" data-m="retryComm">Try again</button>
+         ${M.plan.methods.momo.on?'<button class="btn gray" data-m="method" data-v="momo">Pay with Mobile Money instead</button>':''}`;
+    return amber + `
+      <div class="hero"><div class="mark bad">${ico.warn}</div>
+        <h2 id="mTitle" data-focus tabindex="-1">Payment didn’t complete</h2>
+        <p>${texts[M.reason]}</p></div>
+      <div class="stack">${actions}</div>
+      <div class="foot">
+        <button class="wa" data-m="ext" data-t="Demo only: opens WhatsApp support (${db.global.support})">${ico.wa}Report problem on WhatsApp</button>
+        <button class="cl" data-m="close">Close</button>
+      </div>`;
+  }
+
+  /* ---- render + lifecycle ---- */
+  function render(){
+    const view = {review:reviewHTML, waiting:waitingHTML, success:successHTML, failure:failureHTML}[M.step];
+    $('sheetBody').innerHTML = view();
+    if(!M.plan.methods.link.on) $('sheetBody').querySelectorAll('[data-m=link]:not([data-keep])').forEach(e => e.remove());
+    $('sheet').scrollTop = 0;
+    const h = $('sheetBody').querySelector('[data-focus]'); if(h) h.focus({preventScroll:true});
+  }
+  const setInert = on => document.querySelectorAll('.topbar,main,.sponsor').forEach(e => e.inert = on);
+  const clearTimers = () => { M.timers.forEach(clearTimeout); M.timers = []; };
+  const later = (fn, ms) => M.timers.push(setTimeout(fn, ms));
+
+  function openPay(id){
+    const p = plans.find(x => x.id===id); if(!p || !p.payable) return;
+    const first = ['momo','comm'].find(k => p.methods[k].on);
+    Object.assign(M, {open:true, plan:p, method:first || 'link', step:'review', phoneErr:'', tip:false, reason:'', opener:document.activeElement});
+    render();
+    $('overlay').classList.add('open'); document.body.classList.add('m-open'); setInert(true);
+  }
+  function closeModal(){
+    clearTimers(); M.open = false;
+    $('overlay').classList.remove('open'); document.body.classList.remove('m-open'); setInert(false);
+    if(M.opener) M.opener.focus();
+  }
+  function fail(reason){ clearTimers(); M.reason = reason; M.step = 'failure'; render(); }
+  function succeed(){
+    clearTimers();
+    const p = M.plan;
+    if(M.method === 'comm') user.commission -= p.cp;          // production: server deducts, then returns the new balance
+    M.paid = {method:M.method, phone:M.phone, cp:p.cp};
+    M.ref = 'CBC-' + Math.random().toString(36).slice(2,8).toUpperCase();
+    M.step = 'success'; render();
+  }
+
+  function payMomo(){
+    const input = $('phone'), d = validPhone(input.value);
+    M.phoneRaw = input.value;
+    if(!d){ M.phoneErr = `Enter a valid mobile number, e.g. ${CC().ph||'0712 345 678'}`; render(); $('phone').focus(); return; }
+    M.phone = d; M.phoneErr = ''; M.step = 'waiting'; render();
+    const r = sim.momo;                                       // production: wait for the provider callback / poll status
+    if(r === 'approve') later(succeed, 5200);
+    else if(r === 'decline') later(() => fail('declined'), 4200);
+    else later(() => fail('timeout'), 14000);
+  }
+  function payComm(){
+    if(user.commission < M.plan.cp) return;
+    M.step = 'waiting'; render();
+    later(succeed, 2600);
+  }
+
+  $('sheet').addEventListener('input', e => {
+    if(e.target.id !== 'phone') return;
+    M.phoneRaw = e.target.value;
+    if(M.phoneErr){ M.phoneErr = ''; $('phoneErr').textContent = ''; e.target.closest('.field').classList.remove('err'); }
+    const n = netOf(M.phoneRaw), el = $('net');
+    el.textContent = n ? n[0] : ''; el.className = 'net ' + (n ? n[1] : '');
+  });
+  $('sheet').addEventListener('keydown', e => { if(e.key==='Enter' && e.target.id==='phone'){ e.preventDefault(); payMomo(); } });
+  $('sheet').addEventListener('click', e => {
+    if(!e.target.closest('.i')) $('sheetBody').querySelectorAll('.tip-open').forEach(r => { r.classList.remove('tip-open'); r.querySelector('.i').setAttribute('aria-expanded','false'); });
+    const b = e.target.closest('[data-m]'); if(!b) return;
+    switch(b.dataset.m){
+      case 'close':   closeModal(); break;
+      case 'method':  if(M.step === 'review') setMethod(b.dataset.v); else { M.method = b.dataset.v; M.step = 'review'; M.phoneErr = ''; render(); } break;
+      case 'tip': { const r = b.closest('.row'), on = !r.classList.contains('tip-open'); r.classList.toggle('tip-open', on); b.setAttribute('aria-expanded', on); break; }
+      case 'payMomo': payMomo(); break;
+      case 'payComm': payComm(); break;
+      case 'cancel':  fail(M.method==='momo' ? 'left' : 'cancelled'); break;
+      case 'another': M.method='momo'; M.step='review'; M.phoneRaw=''; M.phoneErr=''; render(); $('phone').focus(); break;
+      case 'retryComm': M.method='comm'; M.step='review'; render(); break;
+      case 'link':    toast('Demo only: opens ' + M.plan.methods.link.url); break;
+      case 'done':    closeModal(); toast('Demo only: returns to the app.'); break;
+      case 'ext':     toast(b.dataset.t); break;
+    }
+  });
+  document.addEventListener('keydown', e => {
+    if(e.key !== 'Escape' || !M.open) return;
+    if(M.step === 'waiting') fail(M.method==='momo' ? 'left' : 'cancelled'); else closeModal();
+  });
+
+  /* ---- demo controls (not part of the real page) ---- */
+  const pop = $('demoPop');
+  function syncDemo(){
+    $('dCom').value = user.commission;
+    document.querySelectorAll('#dMomo button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v===sim.momo));
+    document.querySelectorAll('#dComChips button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.v===user.commission));
+  }
+  $('demoBtn').addEventListener('click', e => { e.stopPropagation(); pop.hidden = !pop.hidden; $('demoBtn').setAttribute('aria-expanded', !pop.hidden); syncDemo(); });
+  document.addEventListener('click', e => { if(!pop.hidden && !pop.contains(e.target) && e.target !== $('demoBtn')){ pop.hidden = true; $('demoBtn').setAttribute('aria-expanded','false'); } });
+  $('dCom').addEventListener('input', e => { user.commission = Math.max(0, parseInt(e.target.value,10) || 0); syncDemo(); $('dCom').value = e.target.value; });
+  $('dComChips').addEventListener('click', e => { const b = e.target.closest('button'); if(b){ user.commission = +b.dataset.v; syncDemo(); } });
+  $('dMomo').addEventListener('click', e => { const b = e.target.closest('button'); if(b){ sim.momo = b.dataset.v; syncDemo(); } });
+  $('dReset').addEventListener('click', () => { user.commission = 12500; sim.momo = 'approve'; syncDemo(); toast('Demo reset.'); });
+
+
+  /* =====================================================================
+     ADMIN: plan list + edit modal (writes to the simulated Firestore)
+     ===================================================================== */
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const getP = (o, k) => k.split('.').reduce((a, b) => (a == null ? a : a[b]), o);
+  const setP = (o, k, v) => { const a = k.split('.'), l = a.pop(); a.reduce((x, y) => x[y], o)[l] = v; };
+  let E = null, A = {open:new Set(), errs:[], mode:'edit', isNew:false};
+
+  const I  = (k, o = {}) => `<input class="ai" data-k="${k}" type="${o.type||'text'}" ${o.type==='number'?'inputmode="decimal" min="0"':''} placeholder="${o.ph||''}" value="${esc(getP(E,k))}">`;
+  const Ck = (k, label) => `<label class="ack"><input type="checkbox" data-k="${k}" ${getP(E,k)?'checked':''}> <span>${label}</span></label>`;
+  const Sl = (k, opts) => `<select class="ai" data-k="${k}">${opts.map(([v, l]) => `<option value="${v}" ${getP(E,k)===v?'selected':''}>${l}</option>`).join('')}</select>`;
+  const Fd = (label, html, hint) => `<div class="af"><label>${label}</label>${html}${hint?`<p class="ahint">${hint}</p>`:''}</div>`;
+  const Sec = (id, title, inner, note) => `<details class="asec" data-sec="${id}" ${A.open.has(id)?'open':''}><summary>${title}${note?`<small>${note}</small>`:''}</summary><div class="asec-b">${inner}</div></details>`;
+  const stateRow = k => `<div class="af off-row"><label>When off, show</label>${Sl(k, STATES)}<p class="ahint">Button text: ${getP(E,k)==='hide'?'<b>none (button is removed)</b>':`<b>“${STATE_LABEL[getP(E,k)]}”</b> (grayed)`}</p></div>`;
+
+  function payOptions(){
+    const cur = curOf(E), pm = E.pay;
+    const block = (key, title, onInner) => `<div class="popt ${pm[key].on?'is-on':''}">${Ck(`pay.${key}.on`, title)}${pm[key].on ? onInner : stateRow(`pay.${key}.state`)}</div>`;
+    return block('momo', 'Pay in app (MoMo)', '<p class="ahint">Uses the plan price. The user enters a number and approves the PIN prompt.</p>')
+      + block('link', 'Pay via link (MoMo)', Fd('Payment link (https://…)', I('pay.link.url', {type:'url', ph:'https://wallet.wearemarz.com/pay/…'})))
+      + block('comm', 'Pay with commission', cur !== 'UGX'
+          ? '<p class="ahint warn">Commission is held in UGX, so it can only be enabled for UGX plans.</p>'
+          : Fd(`Price when paying with commission (${cur})`, I('pay.comm.price', {type:'number', ph:'e.g. 2000'}), 'Shown on the plan card, in the payment breakdown and used as the amount deducted.'));
+  }
+  const paySummary = P => ['momo:In app','link:Link','comm:Commission'].map(x => { const [k, l] = x.split(':'); return `<span class="pchip ${P[k].on?'y':''}">${l} ${P[k].on?'✓':'✗'}</span>`; }).join('');
+
+  function editBody(){
+    const cur = curOf(E), curs = new Set(E.countries.map(c => COUNTRIES[c].cur));
+    const mismatch = (() => { const m = /(\d[\d,]*)\s*message credits?/i.exec(E.mainFeatures); return m && +m[1].replace(/,/g,'') !== +E.msgQuota ? `A line says ${m[1]} message credits but the quota is ${E.msgQuota || 0}. Billing shows the quota.` : ''; })();
+    return (A.errs.length ? `<div class="aerr" id="aErr">${A.errs.map(e => `<p>• ${esc(e)}</p>`).join('')}</div>` : '')
+      + Fd('PLAN NAME', I('name')) + Fd('TAGLINE (OPTIONAL, SHOWN NEXT TO THE NAME)', I('tagline', {ph:'e.g. Try it out'}))
+      + Fd(`PRICE (${cur})`, I('price', {type:'number'}))
+      + `<div class="af"><div class="a-between"><label>COUNTRY AVAILABILITY</label><span><button class="mini" data-a="all">Select all</button> <button class="mini gray" data-a="none">Clear</button></span></div>
+          <div class="cgrid">${Object.entries(COUNTRIES).map(([c, o]) => `<label class="ack"><input type="checkbox" data-c="${c}" ${E.countries.includes(c)?'checked':''}> <span>${o.f} ${o.n}</span></label>`).join('')}</div>
+          <p class="ahint">${E.countries.length} countr${E.countries.length===1?'y':'ies'} · currency <b>${cur}</b>${curs.size>1?' <span class="warn">· selected countries use different currencies</span>':''}</p></div>`
+      + `<div class="a-two">${Fd('DURATION VALUE', I('durationValue', {type:'number'}))}${Fd('DURATION UNIT', Sl('durationUnit', [['days','Days'],['weeks','Weeks'],['months','Months']]))}</div>`
+      + `<div class="a-three">${Fd('MESSAGE QUOTA', I('msgQuota', {type:'number'}))}${Fd('DOWNLOAD QUOTA', I('dlQuota', {type:'number'}))}${Fd('COMMISSION EARNED (UGX)', I('referrerCommission', {type:'number'}))}</div>`
+      + Sec('pay', 'Payment options', payOptions(), `<span class="pchips">${paySummary(E.pay)}</span>`)
+      + Fd('MAIN FEATURES (ONE PER LINE)', `<textarea class="ai" data-k="mainFeatures" rows="4">${esc(E.mainFeatures)}</textarea>`, mismatch ? `<span class="warn">${esc(mismatch)}</span>` : 'Lines every plan shares appear once as “Every plan includes”.')
+      + Fd('ADDITIONAL FEATURES (ONE PER LINE)', `<textarea class="ai" data-k="additionalFeatures" rows="4">${esc(E.additionalFeatures)}</textarea>`)
+      + Sec('file', 'File uploads', Ck('upload.enabled', 'Enable file uploads') + `<div class="a-two">${Fd('MAX FILES/SESSION (0 = UNLIMITED)', I('upload.maxFiles', {type:'number'}))}${Fd('MAX SIZE (MB, 0 = UNLIMITED)', I('upload.maxMb', {type:'number'}))}</div>`
+          + `<div class="a-two">${Fd('LIMIT PERIOD', Sl('upload.period', [['daily','Daily'],['weekly','Weekly'],['monthly','Monthly']]))}${Fd('PERIOD LIMIT', I('upload.periodLimit', {type:'number', ph:'Unlimited'}))}</div>`)
+      + Sec('flags', 'Feature flags', FLAGS.map(([k, label, lim]) => { const f = E.flags[k]; return `<div class="frow"><div class="frow-t">${Ck(`flags.${k}.on`, label)}</div>
+            ${f.on ? lim.map(([lk, ph]) => `<input class="ai sm" data-k="flags.${k}.${lk}" type="number" min="0" placeholder="${ph}" value="${esc(f[lk])}">`).join('') : `<select class="ai sm red" data-k="flags.${k}.state">${STATES.map(([v, l]) => `<option value="${v}" ${f.state===v?'selected':''}>${l}</option>`).join('')}</select>`}</div>`; }).join(''),
+          'billing reads Web search and Deep think')
+      + Sec('school', 'School & pool config', `<div class="cgrid">${Ck('isSchool','Is school / pool plan')}${Ck('recommended','Recommended')}${Ck('autoRenew','Auto-renew')}${Ck('accumulate','Accumulate')}${Ck('blockExpiry','Block expiry')}</div>`, 'Recommended shows a badge in billing')
+      + Sec('stub', 'Input &amp; chat mode · Network routing · AI model access', '<p class="ahint">Unchanged in this prototype. Billing does not read these.</p>');
+  }
+
+  function renderAdmin(){
+    $('aCount').textContent = `SHOWING ${db.plans.length} OF ${db.plans.length} PLANS`;
+    $('aList').innerHTML = db.plans.map(p => `
+      <div class="acard ${p.active?'':'retired'}">
+        <div class="acard-top"><h3>${esc(p.name)}</h3><span class="aprice">${fmt(p.price)} ${curOf(p)}</span></div>
+        <div class="achips">${p.countries.map(c => `<span class="achip">${COUNTRIES[c].f} ${c}</span>`).join('')}${p.active?'':'<span class="achip red">RETIRED</span>'}</div>
+        <p class="ameta">💬 ${p.msgQuota} MESSAGES · 🕒 ${p.durationValue} ${p.durationUnit.toUpperCase()}</p>
+        <div class="pchips">${paySummary(p.pay)}</div>
+        <div class="acard-act"><button class="a-edit" data-ed="${p.id}">EDIT</button><button class="a-ret" data-ret="${p.id}">${p.active?'RETIRE':'RESTORE'}</button></div>
+      </div>`).join('');
+    $('gSur').value = db.global.surcharge; $('gSup').value = db.global.support; $('gTar').value = db.global.tariffs;
+  }
+
+  function openSheet(){ $('aOver').classList.add('open'); document.body.classList.add('m-open'); }
+  function closeSheet(){ $('aOver').classList.remove('open'); document.body.classList.remove('m-open'); }
+  function paintEdit(keepScroll){
+    const b = $('aBody'), y = b.scrollTop;
+    b.innerHTML = editBody(); b.scrollTop = keepScroll ? y : 0;
+  }
+  function openEdit(id){
+    A.mode = 'edit'; A.errs = []; A.open = new Set(); A.isNew = !id;
+    E = id ? JSON.parse(JSON.stringify(db.plans.find(p => p.id === id))) : newPlan({name:'', price:0});
+    $('aTitle').textContent = id ? `Edit Plan: ${E.name}` : 'New Plan';
+    $('aSave').hidden = false; $('aSave').textContent = 'SAVE PLAN CONFIG'; $('aSave').disabled = false;
+    paintEdit(false); openSheet();
+  }
+  function validate(p){
+    const e = [], cur = curOf(p);
+    if(!String(p.name).trim()) e.push('Plan name is required.');
+    if(!(+p.price >= 0) || p.price === '') e.push('Price must be 0 or more.');
+    if(!p.countries.length) e.push('Select at least one country.');
+    if(new Set(p.countries.map(c => COUNTRIES[c].cur)).size > 1) e.push('Selected countries use different currencies. Pick countries that share one currency.');
+    if(!(+p.durationValue >= 1)) e.push('Duration must be at least 1.');
+    if(p.pay.link.on && !/^https?:\/\/\S+$/.test(p.pay.link.url || '')) e.push('Pay via link is on: enter a valid link starting with https://');
+    if(p.pay.comm.on){
+      if(cur !== 'UGX') e.push('Pay with commission needs a UGX plan.');
+      else if(!(+p.pay.comm.price > 0)) e.push('Pay with commission is on: enter the commission price.');
+      else if(+p.pay.comm.price >= +p.price) e.push('Commission price should be lower than the plan price.');
+    }
+    if(+p.price > 0 && !p.pay.momo.on && !p.pay.link.on && !p.pay.comm.on) e.push('All three payment options are off. Billing will show a grayed Pay button (this is allowed, just check it is intended).');
+    return e;
+  }
+  function savePlan(){
+    const errs = validate(E), blocking = errs.filter(x => !x.startsWith('All three'));
+    A.errs = errs;
+    if(blocking.length){ paintEdit(false); return; }
+    E.name = E.name.trim(); ['price','durationValue','msgQuota','dlQuota','referrerCommission'].forEach(k => E[k] = +E[k] || 0);
+    if(E.pay.comm.price !== '') E.pay.comm.price = +E.pay.comm.price || 0;
+    const i = db.plans.findIndex(p => p.id === E.id);
+    $('aSave').disabled = true; $('aSave').textContent = 'SAVING…';
+    setTimeout(() => {
+      if(i >= 0) db.plans[i] = E; else db.plans.push(E);
+      emit(); closeSheet(); toast('Saved to Firestore (simulated). Billing re-read the plans.');
+    }, 550);
+  }
+
+  $('aList').addEventListener('click', e => {
+    const ed = e.target.closest('[data-ed]'), rt = e.target.closest('[data-ret]');
+    if(ed) openEdit(ed.dataset.ed);
+    if(rt){ const p = db.plans.find(x => x.id === rt.dataset.ret); p.active = !p.active; emit(); toast(p.active ? `${p.name} restored.` : `${p.name} retired. It no longer shows in billing.`); }
+  });
+  $('aNew').addEventListener('click', () => openEdit(null));
+  $('aX').addEventListener('click', closeSheet);
+  $('aSave').addEventListener('click', savePlan);
+  $('aBody').addEventListener('input', e => {
+    const k = e.target.dataset.k; if(!k || e.target.type === 'checkbox' || e.target.tagName === 'SELECT') return;
+    setP(E, k, e.target.type === 'number' ? (e.target.value === '' ? '' : +e.target.value) : e.target.value);
+    if(k === 'price' || k === 'pay.comm.price' || k === 'msgQuota' || k === 'mainFeatures'){ /* hints refresh on next structural change */ }
+  });
+  $('aBody').addEventListener('change', e => {
+    const t = e.target;
+    if(t.dataset.c){ const c = t.dataset.c; E.countries = t.checked ? [...E.countries, c] : E.countries.filter(x => x !== c); paintEdit(true); return; }
+    if(!t.dataset.k) return;
+    setP(E, t.dataset.k, t.type === 'checkbox' ? t.checked : (t.type === 'number' ? +t.value : t.value));
+    paintEdit(true);
+  });
+  $('aBody').addEventListener('click', e => {
+    const a = e.target.closest('[data-a]'); if(!a) return;
+    E.countries = a.dataset.a === 'all' ? Object.keys(COUNTRIES) : []; paintEdit(true);
+  });
+  $('aBody').addEventListener('toggle', e => { const id = e.target.dataset && e.target.dataset.sec; if(id) e.target.open ? A.open.add(id) : A.open.delete(id); }, true);
+
+  /* global settings + tools */
+  [['gSur','surcharge',true],['gSup','support'],['gTar','tariffs']].forEach(([id, k, num]) => $(id).addEventListener('change', e => { db.global[k] = num ? (+e.target.value || 0) : e.target.value; emit(); toast('Global settings saved.'); }));
+  $('aJson').addEventListener('click', () => {
+    A.mode = 'json'; $('aTitle').textContent = 'Data (Firestore shape)';
+    $('aBody').innerHTML = `<p class="ahint">What billing reads. Plans live in the <b>plans</b> collection, the rest in settings and the user profile.</p><pre class="ajson">${esc(JSON.stringify({plans:db.plans, global:db.global, user:db.user}, null, 1))}</pre>`;
+    $('aSave').hidden = true; openSheet();
+  });
+  $('aReset').addEventListener('click', () => { const s = seed(); db.plans = s.plans; db.global = s.global; Object.assign(db.user, s.user); emit(); toast('Sample data restored.'); });
+
+  /* view switch + billing refresh */
+  function fillCountries(){
+    $('ctry').innerHTML = availC.map(c => `<option value="${c}" ${c===ctry?'selected':''}>${COUNTRIES[c].f} ${COUNTRIES[c].n}</option>`).join('');
+  }
+  function refresh(){
+    refreshPlans();
+    if(!plans.find(p => p.id === current)) current = plans[0] ? plans[0].id : null;
+    fillCountries(); renderTabs(); renderTable(); renderDetail();
+    $('subLine').innerHTML = `<span class="dot"></span>Live from Firestore (simulated) · prices in ${CC().cur}. Pick a plan to see what it includes.`;
+    renderAdmin();
+  }
+  $('ctry').addEventListener('change', e => { ctry = e.target.value; current = null; refresh(); });
+  function showView(v){
+    const adm = v === 'admin';
+    $('billingView').hidden = adm; $('adminView').hidden = !adm; document.body.classList.toggle('v-admin', adm);
+    document.querySelectorAll('.vsw button').forEach(b => b.setAttribute('aria-selected', b.dataset.v === v));
+    window.scrollTo(0, 0);
+  }
+  document.querySelector('.vsw').addEventListener('click', e => { const b = e.target.closest('button'); if(b) showView(b.dataset.v); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && $('aOver').classList.contains('open')) closeSheet(); });
+  onDb(refresh);
+
+  refresh();
+</script>
+</body>
+</html>
